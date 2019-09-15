@@ -9,7 +9,7 @@ The  aim  of  this  lab  is  to  introduce  the  DFET  virtualisation  teaching 
 
 <h2>Activities</h2>
 
-Complete Lab 1:Vyatta Firewall
+Complete Lab 1: Vyatta Firewall. The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf" target="_blank">here].
 
 <h2>Learning activities</h2>
 At the end of this lab, you should understand:
