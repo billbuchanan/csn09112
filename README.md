@@ -1,12 +1,6 @@
       <h2>Timetable</h2>
-      <style type="text/css">
-.r {
-	color: #CCC;
-}
-.table1 {
-	color: #FFF;
-}
-</style>
+      
+
 <table width="100%" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td width="5%" bgcolor="#990000" class="table1"><strong>No</strong></td>
