@@ -18,6 +18,6 @@ The key objectives of this unit are:</p>
 <p>The test for this unit is <a href="https://asecuritysite.com/tests/tests?sortBy=sfc02">Test</a>.</p>
 <p>There is a fun test at: <a href="https://asecuritysite.com/tests/fun?sortBy=sfc02">Test</a>.</p>
 <h2>Slides</h2>
-<p>The slides for the chapter are [<a href="week02_ids//lecture/unit02.pdf">here</a>]</p>
+<p>The slides for the chapter are [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lecture/unit02_ids.pdf">here</a>]</p>
 
 
