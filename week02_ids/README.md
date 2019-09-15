@@ -1,15 +1,13 @@
 <h1 id="logo">Chapter 2: IDS</h1>
 <h2>Objectives</h2>
-<p>[<a href="javascript:history.go(-1)">Back</a>] The key objectives of this chapter are:</p>
+The key objectives of this unit are:</p>
 <ul>
   <li>Provide  an overview of the requirement for Intrusion Detection Systems (IDSs), and  where they are used.</li>
   <li>Define  a practical implementation of IDS using Snort.</li>
   <li>Outline  some typical detection procedures, such as for ping sweeps.</li>
 </ul>
 <h2>Lecture</h2>
-<p>
-<iframe width="640" height="360" src="//www.youtube.com/embed/IguN0dFZ23I?rel=0" frameborder="0" allowfullscreen></iframe>
-</p>
+<p>The lecture is <a reg="/www.youtube.com/embed/IguN0dFZ23I?rel=0" target=_blank>here</a></p>
 <h2>Test</h2>
 <p>The test for this unit is <a href="/tests/tests?sortBy=sfc02">Test</a>.</p>
 <p>There is a fun test at: <a href="/tests/fun?sortBy=sfc02">Test</a>.</p>
