@@ -23,7 +23,7 @@ Our main focus is to investigate secure infrastructures and some core principles
   <tr >
     <td bgcolor="#990000" class="table1"><strong>3</strong></td>
     <td bgcolor="#990000" class="table1"><strong>23 Sept 2019</strong></td>
-    <td>3. Network Security [<a href="http://www.asecuritysite.com/subjects/chapter06">Link</a>]</td>
+    <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
       <td>Vyatta and Snort. <a href="/log/csn09112_lab02.pdf" target="_blank">Lab</a> <a href="https://youtu.be/8siHSSs3RQc" target="_blank">Demo</a></td>
 
    
