@@ -26,7 +26,7 @@ At the end of this lab, you should understand:
 <h2>IP Allocation</p>
 
 <p>Allocation A</p>
-<pre>
+<pre style="font-size: 8px">
 Allocated	Ubuntu	        	Windows	        Em0	    Em1 (Private)	    Em2 (DMZ)
 ----------------------------------------------------------------------------------------
 Group_001	192.168.1.7/24		192.168.2.7/24	DHCP	192.168.1.254/24	192.168.2.254/24
@@ -119,7 +119,7 @@ Group_087	192.168.173.7/24	192.168.174.7/24 DHCP	192.168.173.254/24	192.168.174.
 </pre>
 
 <p>Allocation B</p>
-<pre>
+<pre style="font-size: 8px">
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	    Em2 (DMZ)
 ----------------------------------------------------------------------------------------
 Group_001	172.16.1.7/24		172.16.2.7/24	DHCP	172.16.1.254/24	172.16.2.254/24
@@ -212,7 +212,7 @@ Group_087	172.16.173.7/24	172.16.174.7/24 DHCP	172.16.173.254/24	172.16.174.254/
 </pre>
 
 <p>Allocation C</p>
-<pre>
+<pre style="font-size: 8px">
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_001	10.10.1.7/24	10.10.2.7/24	DHCP	10.10.1.254/24	10.10.2.254/24
