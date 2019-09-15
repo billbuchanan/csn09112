@@ -1,0 +1,21 @@
+set zone-policy  zone  private  description  "Inside"
+set zone-policy  zone  public  description  "Outside"
+set zone-policy  zone  dmz description  "DMZ"
+
+set zone-policy  zone  public  interface  eth0
+set zone-policy  zone  private interface  eth1
+set zone-policy  zone  dmz  interface  eth2
+
+set firewall  name  dmz2private description  "DMZ to private"
+set firewall  name  dmz2private rule  1  action  accept
+set firewall  name  dmz2private rule  1  state  established  enable
+set firewall  name  dmz2private rule  1  state  related enable
+set firewall  name  dmz2private rule  10  action  accept
+set firewall  name  dmz2private rule  10  destination  port  80,443  
+set firewall  name  dmz2private rule  10  protocol tcp
+
+set firewall  name  private2dmz description  "private to DMZ"
+set firewall  name  private2dmz rule  1  action  accept
+
+set  zone-policy  zone  private from  dmz firewall  name  dmz2private
+set  zone-policy  zone  dmz from  private firewall  name  private2dmz
