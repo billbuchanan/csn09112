@@ -7,7 +7,12 @@ The key objectives of this unit are:</p>
   <li>Outline  some typical detection procedures, such as for ping sweeps.</li>
 </ul>
 <h2>Lecture</h2>
-<p>The lecture is <a href="/www.youtube.com/embed/IguN0dFZ23I?rel=0" target=_blank>here</a></p>
+<p>The lecture is <a href="https://www.youtube.com/embed/IguN0dFZ23I?rel=0" target=_blank>here</a></p>
+<h2>Lab</h2>
+<p>There are two labs to complete. The first is the main lab and the second is an additional one to build up your Python skills. These  are:</p>
+<ul>
+  <li>Lab: Vyatta Firewall</li>
+  
 <h2>Test</h2>
 <p>The test for this unit is <a href="/tests/tests?sortBy=sfc02">Test</a>.</p>
 <p>There is a fun test at: <a href="/tests/fun?sortBy=sfc02">Test</a>.</p>
