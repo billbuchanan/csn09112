@@ -1,4 +1,4 @@
-<h1 id="logo">Chapter 2: IDS</h1>
+<h1 id="logo">Unit 2: IDS</h1>
 <h2>Objectives</h2>
 The key objectives of this unit are:</p>
 <ul>
