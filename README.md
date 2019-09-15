@@ -28,7 +28,7 @@ git clone https://github.com/billbuchanan/csn09112
     <td bgcolor="#990000" class="table1"><strong>3</strong></td>
     <td bgcolor="#990000" class="table1"><strong>23 Sept 2019</strong></td>
     <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
-      <td>Vyatta and Snort. <a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs" target="_blank">Lab</a></td>
+      <td>Vyatta and Snort. </td>
 
    
   </tr>
@@ -36,14 +36,14 @@ git clone https://github.com/billbuchanan/csn09112
     <td bgcolor="#990000" class="table1"><strong>4</strong></td>
     <td bgcolor="#990000" class="table1"><strong>30 Sept 2019</strong></td>
     <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="/cryptobook/crypto01">Link</a>]</td>
-       <td>pfSense. <a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs" target="_blank">Lab</a> </td>
+       <td>pfSense.  </td>
     
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>5</strong></td>
     <td bgcolor="#990000" class="table1"><strong>7 Oct 2019</strong></td>
     <td bgcolor="#ffe6e6">5. Secret Key [<a href="https://asecuritysite.com/cryptobook/crypto02">Link</a>]<br />6. Hashing [<a href="/cryptobook/crypto03">Link</a>]</td>
-           <td>Vulnerability Analysis and IDS <a href="https://asecuritysite.com/log/csn09112_lab04.pdf" target="_blank">Lab</a> <a href="https://youtu.be/1wn2io8EWvs" target="_blank">Demo</a></td>
+           <td>Vulnerability Analysis and IDS</td>
     
     
      
@@ -53,15 +53,13 @@ git clone https://github.com/billbuchanan/csn09112
             <td bgcolor="#990000" class="table1"><strong>6</strong></td>
             <td bgcolor="#990000" class="table1"><strong>14 Oct 2019</strong></td>
     <td bgcolor="#ffe6e6">7. Public Key [<a href="https://asecuritysite.com/cryptobook/crypto04">Link</a>]<br />8. Key Exchange [<a href="/cryptobook/crypto05">Link</a>]</td>
- <td>Public/Private Key and Hashing <a href="https://asecuritysite.com/public/csn09112_lab06.pdf" target="_blank">Lab</a> 
-              <a href="https://youtu.be/3n2TMpHqE18" target="_blank">Demo 1</a> <a href="https://youtu.be/Xvbk2nSzEPk" target="_blank">Demo 2</a></td>
+ <td>Public/Private Key and Hashing</td>
       
   </tr>
   <tr >
     <td bgcolor="#990000" class="table1"><strong>7</strong></td>
     <td bgcolor="#990000" class="table1"><strong>21 Oct 2019</strong></td>
-    <td bgcolor="#ffe6e6">9. Digital Certificates  [<a href="https://asecuritysite.com/cryptobook/crypto06">Link</a>]</td>
-    <td>Ciphers and Digital Certs. <a href="https://asecuritysite.com/public/csn09112_lab05.pdf" target="_blank">Lab</a> </td>
+    <td bgcolor="#ffe6e6">9. Digital Certificates </td>
   
       
   </tr>
