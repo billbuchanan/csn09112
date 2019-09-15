@@ -18,7 +18,7 @@ git clone https://github.com/billbuchanan/csn09112
   <tr>
     <td bgcolor="#990000" class="table1"><strong>2</strong></td>
     <td bgcolor="#990000" class="table1"><strong>16 Sept 2019</strong></td>
-    <td>1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>]</td>
+    <td>1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>]</td>
   
 <td>Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab</a></td>
    
