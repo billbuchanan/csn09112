@@ -12,13 +12,12 @@ The key objectives of this unit are:</p>
 <p>There are two labs to complete. The first is the main lab and the second is an additional one to build up your Python skills. These  are:</p>
 <ul>
   <li>Lab: Vyatta Firewall</li>
+ </ul>
   
 <h2>Test</h2>
-<p>The test for this unit is <a href="/tests/tests?sortBy=sfc02">Test</a>.</p>
-<p>There is a fun test at: <a href="/tests/fun?sortBy=sfc02">Test</a>.</p>
+<p>The test for this unit is <a href="https://asecuritysite.com/tests/tests?sortBy=sfc02">Test</a>.</p>
+<p>There is a fun test at: <a href="https://asecuritysite.com/tests/fun?sortBy=sfc02">Test</a>.</p>
 <h2>Slides</h2>
-The slides for the chapter are [<a href="/unit02.pdf">here</a>]
-<h2>Source code</h2>
-TBC
-<p>Remember to install WinPCap: [<a href="http://www.winpcap.org/install/default.htm">here</a>] </p>
+<p>The slides for the chapter are [<a href="week02_ids//lecture/unit02.pdf">here</a>]</p>
+
 
