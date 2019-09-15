@@ -13,7 +13,7 @@ Our main focus is to investigate secure infrastructures and some core principles
       
   <tr>
     <td bgcolor="#990000" class="table1"><strong>2</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>17 Sept 2018</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>16 Sept 2019</strong></td>
     <td>1. Introduction [<a href="http://www.asecuritysite.com/subjects/chapter01">Link</a>]<br />2. Intrusion Detection Systems [<a href="http://www.asecuritysite.com/subjects/chapter02">Link</a>]</td>
   
 <td>Introduction to the vSoC Cloud <a href="/public/Lab1_vyatta_intro.pdf" target="_blank">Lab</a> <a href="https://youtu.be/ACldSA_uKM0" target="_blank">Demo (Part 1)</a></td>
@@ -22,7 +22,7 @@ Our main focus is to investigate secure infrastructures and some core principles
   </tr>
   <tr >
     <td bgcolor="#990000" class="table1"><strong>3</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>24 Sept 2018</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>23 Sept 2019</strong></td>
     <td>3. Network Security [<a href="http://www.asecuritysite.com/subjects/chapter06">Link</a>]</td>
       <td>Vyatta and Snort. <a href="/log/csn09112_lab02.pdf" target="_blank">Lab</a> <a href="https://youtu.be/8siHSSs3RQc" target="_blank">Demo</a></td>
 
@@ -30,7 +30,7 @@ Our main focus is to investigate secure infrastructures and some core principles
   </tr>
   <tr >
     <td bgcolor="#990000" class="table1"><strong>4</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>1 Oct 2018</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>30 Sept 2019</strong></td>
     <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="/cryptobook/crypto01">Link</a>]</td>
        <td>pfSense. <a href="/log/csn09112_lab03.pdf" target="_blank">Lab</a> <a href="https://youtu.be/d4a0bDhlyvI" target="_blank">Demo</a></td>
     
