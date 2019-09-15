@@ -1,3 +1,4 @@
+<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 <h1>CSN09112 - Network Security and Cryptography</h1>
 <h2>Outline</h2>
 <p>Our main focus is to investigate secure infrastructures and some core principles around cryptography.  To download the source, use:</p>

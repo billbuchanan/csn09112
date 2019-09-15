@@ -1,3 +1,4 @@
+<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 <h1>Lab 1: Vyatta Firewalls</h2>
 <h2>Aim</h2>
 The  aim  of  this  lab  is  to  introduce  the  DFET  virtualisation  teaching  platform  and  VSphere client  access  to  your  own  virtual  machines  and  to  understand  how  to  configure  a  Vyatta firewall  for  NAT  and  firewall  rules, demonstrating  some  fundamentals  around  network security and device configuration.
