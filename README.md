@@ -89,14 +89,14 @@ git clone https://github.com/billbuchanan/csn09112
   <tr>
     <td bgcolor="#990000" class="table1"><strong>11</strong></td>
     <td bgcolor="#990000" class="table1"><strong>18 Nov 2019</strong></td>
-          <td  bgcolor="#e6ffee">12. Blockchain and Cryptocurrencies 1 [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
+          <td  bgcolor="#e6ffee">12. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
        <td>Blockchain Lab</td>
     
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>12</strong></td>
     <td bgcolor="#990000" class="table1"><strong>25 Nov 2019</strong></td>
-      <td  bgcolor="#e6ffee">12. Blockchain (Tokens) </td>
+      <td  bgcolor="#e6ffee">13. Blockchain (Tokens) </td>
        <td>Network Protocols and Python</td>
    
   </tr>
