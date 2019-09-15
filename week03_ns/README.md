@@ -1,4 +1,4 @@
-<h1 id="logo">Chapter 2: Network Security</h1>
+<h1 id="logo">Chapter 3: Network Security</h1>
 <h2>Objectives</h2>
 The key objectives of this unit are:</p>
 <ul>
