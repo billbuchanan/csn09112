@@ -14,9 +14,9 @@ Our main focus is to investigate secure infrastructures and some core principles
   <tr>
     <td bgcolor="#990000" class="table1"><strong>2</strong></td>
     <td bgcolor="#990000" class="table1"><strong>16 Sept 2019</strong></td>
-    <td>1. Introduction [<a href="http://www.asecuritysite.com/subjects/chapter01">Link</a>]<br />2. Intrusion Detection Systems [<a href="http://www.asecuritysite.com/subjects/chapter02">Link</a>]</td>
+    <td>1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="http://www.asecuritysite.com/subjects/chapter02">Link</a>]</td>
   
-<td>Introduction to the vSoC Cloud <a href="/public/Lab1_vyatta_intro.pdf" target="_blank">Lab</a> <a href="https://youtu.be/ACldSA_uKM0" target="_blank">Demo (Part 1)</a></td>
+<td>Introduction to the vSoC Cloud <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab</a> <a href="https://youtu.be/ACldSA_uKM0" target="_blank">Demo (Part 1)</a></td>
    
      
   </tr>
