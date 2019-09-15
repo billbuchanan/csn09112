@@ -23,7 +23,7 @@ At the end of this lab, you should understand:
 
 <h2>Lab setup</h2>
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
-<h2>IP Allocation</p>
+<h2>IP Allocation</h2>
 
 <p>Allocation A</p>
 <pre style="font-size: 8px">
