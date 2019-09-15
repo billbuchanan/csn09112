@@ -23,6 +23,14 @@ At the end of this lab, you should understand:
 
 <h2>Lab setup</h2>
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
+<h2>Quick guide</h2>
+<p>For Ubtunta configuration:</p>
+<pre>
+ip addr add 192.1.1.1 dev eth1
+route add default gw 192.168.1.254 eth0
+nano /etc/resolve.conf and change "name-server 10.200.3.354"
+</pre>
+
 <h2>IP Allocation</h2>
 
 <p>Allocation A</p>
