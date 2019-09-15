@@ -23,6 +23,6 @@ At the end of this lab, you should understand:
 <h2>Demo</h2>
 <p>Here is a demo: [<a href="https://www.youtube.com/watch?v=ACldSA_uKM0" target="_blank">link</a>].</p>
 <h2>Lab setup</h2>
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
 
 
