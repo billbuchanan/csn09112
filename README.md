@@ -1,4 +1,4 @@
-      <h2>Timetable</h2>
+
       
 
 <table width="100%" border="1" cellpadding="0" cellspacing="0">
@@ -8,17 +8,15 @@
     <td width="35%" bgcolor="#990000" class="table1"><strong>Subject</strong></td>
     <td width="45%" bgcolor="#990000" class="table1"><strong>Lab</strong></td>
   </tr>
+      
   <tr>
     <td bgcolor="#990000" class="table1"><strong>2</strong></td>
     <td bgcolor="#990000" class="table1"><strong>17 Sept 2018</strong></td>
     <td>1. Introduction [<a href="http://www.asecuritysite.com/subjects/chapter01">Link</a>]<br />2. Intrusion Detection Systems [<a href="http://www.asecuritysite.com/subjects/chapter02">Link</a>]</td>
   
-   
-   
-          <td>Introduction to the vSoC Cloud <a href="/public/Lab1_vyatta_intro.pdf" target="_blank">Lab</a> <a href="https://youtu.be/ACldSA_uKM0" target="_blank">Demo (Part 1)</a></td>
+<td>Introduction to the vSoC Cloud <a href="/public/Lab1_vyatta_intro.pdf" target="_blank">Lab</a> <a href="https://youtu.be/ACldSA_uKM0" target="_blank">Demo (Part 1)</a></td>
    
      
-      
   </tr>
   <tr >
     <td bgcolor="#990000" class="table1"><strong>3</strong></td>
