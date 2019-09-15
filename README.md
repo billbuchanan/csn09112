@@ -28,7 +28,7 @@ git clone https://github.com/billbuchanan/csn09112
     <td bgcolor="#990000" class="table1"><strong>3</strong></td>
     <td bgcolor="#990000" class="table1"><strong>23 Sept 2019</strong></td>
     <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
-      <td>Vyatta and Snort. <a href="/log/csn09112_lab02.pdf" target="_blank">Lab</a></td>
+      <td>Vyatta and Snort. <a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs" target="_blank">Lab</a></td>
 
    
   </tr>
