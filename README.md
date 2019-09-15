@@ -1,6 +1,8 @@
+<h1>CSN09112 - Network Security and Cryptography</h1>
+<h2>Outline</h2>
+Our main focus is to investigate secure infrastructures and some core principles. 
 
-      
-
+<h2>Timetable</h2>
 <table width="100%" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td width="5%" bgcolor="#990000" class="table1"><strong>No</strong></td>
