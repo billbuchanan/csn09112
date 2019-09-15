@@ -27,7 +27,7 @@ git clone https://github.com/billbuchanan/csn09112
     <td bgcolor="#990000" class="table1"><strong>3</strong></td>
     <td bgcolor="#990000" class="table1"><strong>23 Sept 2019</strong></td>
     <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
-      <td>Vyatta and Snort. <a href="/log/csn09112_lab02.pdf" target="_blank">Lab</a> <a href="https://youtu.be/8siHSSs3RQc" target="_blank">Demo</a></td>
+      <td>Vyatta and Snort. <a href="/log/csn09112_lab02.pdf" target="_blank">Lab</a></td>
 
    
   </tr>
@@ -35,7 +35,7 @@ git clone https://github.com/billbuchanan/csn09112
     <td bgcolor="#990000" class="table1"><strong>4</strong></td>
     <td bgcolor="#990000" class="table1"><strong>30 Sept 2019</strong></td>
     <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="/cryptobook/crypto01">Link</a>]</td>
-       <td>pfSense. <a href="https://asecuritysite.com/log/csn09112_lab03.pdf" target="_blank">Lab</a> <a href="https://youtu.be/d4a0bDhlyvI" target="_blank">Demo</a></td>
+       <td>pfSense. <a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs" target="_blank">Lab</a> </td>
     
   </tr>
   <tr>
