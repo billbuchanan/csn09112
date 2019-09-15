@@ -1,10 +1,6 @@
-<h1 id="logo">Chapter 3: Network Security</h1>
+<h1 id="logo">Unit 4: Ciphers and Fundamentals</h1>
 <h2>Objectives</h2>
-The key objectives of this unit are:</p>
-<ul>
-  <li>Provide an overview of security devices and infrastructures.</li>
-   <li> Provide an introduction to key network security devices including proxy servers, and firewalls.</li>
 
-</ul>
 
+<p>The key concepts are: Ciphers. Encoding methods (ASCII, UTF-16, Base64, Hex). Prime Numbers. GCD. Large numbers. Random Number Generators. Data Integrity (CRC-32). Frequency Analysis. Key-based encryption. Key sizes.</p>
 
