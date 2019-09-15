@@ -9,7 +9,7 @@ The  aim  of  this  lab  is  to  introduce  the  DFET  virtualisation  teaching 
 
 <h2>Activities</h2>
 
-Complete Lab 1: Vyatta Firewall. The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf" target="_blank">here].
+Complete Lab 1: Vyatta Firewall. The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf" target="_blank">here]. [<a href="https://www.youtube.com/watch?v=ACldSA_uKM0" target="_blank">Demo</a>].</p>
 
 <h2>Learning activities</h2>
 At the end of this lab, you should understand:
@@ -20,8 +20,7 @@ At the end of this lab, you should understand:
 <li>How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.</li>
 <li>How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services</li>
   </ul>
-<h2>Demo</h2>
-<p>Here is a demo: [<a href="https://www.youtube.com/watch?v=ACldSA_uKM0" target="_blank">link</a>].</p>
+
 <h2>Lab setup</h2>
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
 <h2>IP Allocation</p>
