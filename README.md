@@ -67,22 +67,21 @@ git clone https://github.com/billbuchanan/csn09112
     <td bgcolor="#990000" class="table1"><strong>8</strong></td>
     <td bgcolor="#990000" class="table1"><strong>28 Oct 2019</strong></td>
     <td ><form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09112/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form></td>
-     <td bgcolor="#ffe6e6">Test 1    
-</td>
+     <td bgcolor="#ffe6e6">Test 1    </td>
   
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>9</strong></td>
     <td bgcolor="#990000" class="table1"><strong>4 Nov 2019</strong></td>
       <td bgcolor="#e6ffee">10. Network Forensics  [<a href="http://www.asecuritysite.com/subjects/chapter09">Link</a>]</td>
-    <td>Network Forensics <a href="https://asecuritysite.com/public/lab07_network_forensics_protocols.pdf" target="_blank">Lab</a> </td>
+    <td>Network Forensics</td>
   
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>10</strong></td>
     <td bgcolor="#990000" class="table1"><strong>11 Nov 2019</strong></td>
        <td  bgcolor="#e6ffee">11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>]</td>
- <td>Tunnelling <a href="https://asecuritysite.com/public/lab08_tunnelling.pdf" target="_blank">Lab</a> </td>
+ <td>Tunnelling</td>
   
       
   </tr>
@@ -91,21 +90,21 @@ git clone https://github.com/billbuchanan/csn09112
     <td bgcolor="#990000" class="table1"><strong>11</strong></td>
     <td bgcolor="#990000" class="table1"><strong>18 Nov 2019</strong></td>
           <td  bgcolor="#e6ffee">12. Blockchain and Cryptocurrencies 1 [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
-       <td>Blockchain Lab: <a href="https://asecuritysite.com/public/blockchain_lab.pdf" target="_blank">here</a></td>
+       <td>Blockchain Lab</td>
     
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>12</strong></td>
     <td bgcolor="#990000" class="table1"><strong>25 Nov 2019</strong></td>
-      <td  bgcolor="#e6ffee">12. Blockchain (Tokens) <!--[<a href="http://www.asecuritysite.com/subjects/chapter12">Link</a> --></td>
-       <td>Network Protocols and Python <a href="https://asecuritysite.com/public/lab09_python.pdf" target="_blank">Lab</a> <a href="https://www.youtube.com/watch?v=raphJCH2SPE" target="_blank">Demo</a> [<a href="http://www.asecuritysite.com/csn09112/software01" target="_blank">code</a>]</td>
+      <td  bgcolor="#e6ffee">12. Blockchain (Tokens) </td>
+       <td>Network Protocols and Python</td>
    
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>13</strong></td>
     <td bgcolor="#990000" class="table1"><strong>2 Dec 2019</strong></td>
     <td><form action="https://asecuritysite.com/csn09112/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details</button> </form></td>
-    <td bgcolor="#e6ffee">Test 2 (Network Forensics and Blockchain)    </td>
+    <td bgcolor="#e6ffee">Test 2 (Network Forensics and Blockchain) </td>
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>14</strong></td>
