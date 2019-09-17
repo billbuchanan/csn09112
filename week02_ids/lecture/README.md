@@ -17,4 +17,4 @@ The key objectives of this unit are:
 
 
 <h2>Slides</h2>
-<p>The slides for the chapter are [here]
+<p>The slides for the chapter are [<a href="https://www.asecuritysite.com/unit02.pdf">here</a>]
