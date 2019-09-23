@@ -5,7 +5,7 @@ The  aim  of  this  lab  is  to  build  on  the  basic  Vyatta  firewall  config
 
 <h2>Activities</h2>
 
-Complete Lab 2: The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_vyatta_ids.pdf" target="_blank">here]. [<a href="https://youtu.be/8siHSSs3RQc" target="_blank">Demo</a>].</p>
+Complete Lab 2: The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_vyatta_ids.pdf" target="_blank">here</a>]. [<a href="https://youtu.be/8siHSSs3RQc" target="_blank">Demo</a>].</p>
 
 <h2>Learning activities</h2>
 At the end of this lab, you should understand:
