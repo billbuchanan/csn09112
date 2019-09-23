@@ -32,17 +32,17 @@ print "Binary: ",bin(val)
 <h2>WinPCap</h2>
 <p>We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://asecuritysite.com/winpcapy.zip">here</a></b>. Put this into the default Python folder (such as c:\python27). Next create the following script [<a href="/public/dump01.txt">code</a>]:</p>
 <pre>
-## Based on code at https://code.google.com/p/winpcapy/downloads/detail?name=winpcapy.zip
+\#\# Based on code at https://code.google.com/p/winpcapy/downloads/detail?name=winpcapy.zip
 from ctypes import *
 from winpcapy import *
 import time
 import sys
 import string
 
-# Packet capture function
+\# Packet capture function
 PHAND=CFUNCTYPE(None,POINTER(c_ubyte),POINTER(pcap_pkthdr),POINTER(c_ubyte))
 
-## Callback function which is called for every new packet
+\#\# Callback function which is called for every new packet
 def _packet_handler(param,header,pkt_data):
 	local_tv_sec = header.contents.ts.tv_sec
 	ltime=time.localtime(local_tv_sec);
@@ -75,10 +75,10 @@ def get_ad():
 		d=d.contents.next
 	return d.contents
 
-## Define the Callback function name
+\#\# Define the Callback function name
 packet_handler=PHAND(_packet_handler)
 
-## Find all the devices
+\#\# Find all the devices
 alldevs=POINTER(pcap_if_t)()
 errbuf= create_string_buffer(PCAP_ERRBUF_SIZE)
 
@@ -86,13 +86,13 @@ if (pcap_findalldevs(byref(alldevs), errbuf) == -1):
 	print ("Error in pcap_findalldevs: %s\n" % errbuf.value)
 	sys.exit(1)
 
-## Get adapator
+\#\# Get adapator
 d=get_ad()
 adhandle = pcap_open_live(d.name,65536,1,1000,errbuf)
 
 print("\nStarting to listen on %s...\n" % (d.description))
 
-## Get 20 packets
+\#\# Get 20 packets
 pcap_loop(adhandle, 20, packet_handler, None)
 pcap_close(adhandle)
 </pre>
@@ -126,7 +126,7 @@ class ip_header(BigEndianStructure):
 </pre>
 <p>Next replace the call back function with:</p>
 <pre>
-## Callback function which is called for every new packet
+\#\# Callback function which is called for every new packet
 def _packet_handler(param,header,pkt_data):
 
     # retrieve the position of the ip header
