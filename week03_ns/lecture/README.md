@@ -18,4 +18,4 @@ The key objectives of this unit are:
 
 
 <h2>Slides</h2>
-<p>The slides for the chapter are [<a href="/">here</a>]
+<p>The slides for the chapter are [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf">here</a>]
