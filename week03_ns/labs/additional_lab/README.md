@@ -30,7 +30,7 @@ print "Binary: ",bin(val)
 </td></tr>
 </table>
 <h2>WinPCap</h2>
-<p>We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://asecuritysite.com/winpcapy.zip">here</a></b>. Put this into the default Python folder (such as c:\python27). Next create the following script [<a href="/public/dump01.txt">code</a>]:</p>
+<p>We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://asecuritysite.com/winpcapy.zip">here</a></b>. Put this into the default Python folder (such as c:\python27). Next create the following script [<a href="https://asecuritysite.com/public/dump01.txt">code</a>]:</p>
 <pre>
 \#\# Based on code at https://code.google.com/p/winpcapy/downloads/detail?name=winpcapy.zip
 from ctypes import *
