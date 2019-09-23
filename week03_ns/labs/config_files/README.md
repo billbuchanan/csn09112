@@ -49,4 +49,17 @@ set firewall  name  public2private rule  1  state  established  enable
 set firewall  name  public2private rule  1  state  related enable
 set zone-policy  zone  private from  public firewall  name  public2private
 </pre>
+<h2>Config 4</p>
+<pre>
+
+set firewall  name  private2public description  "private to public"
+set firewall  name  private2public rule  1  action  accept
+set zone-policy  zone  public from  private firewall  name  private2public
+
+set firewall  name  public2private description  "public to private"
+set firewall  name  public2private rule  1  action  accept
+set firewall  name  public2private rule  1  state  established  enable
+set firewall  name  public2private rule  1  state  related enable
+set zone-policy  zone  private from  public firewall  name  public2private
+</pre>
 
