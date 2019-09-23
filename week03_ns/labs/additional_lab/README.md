@@ -94,7 +94,7 @@ pcap_close(adhandle)
 <p>Run the script. What are the names of your interfaces?</p>
 <p>For the first 20 packets, what is the minimum and maximum packet size?</p>
 <h2>IP address capture</h2>
-<p>Next we will parse the packets for the IP addresses. First add the following to define the parsing of the packets [<a href="/public/dump02.txt">code</a>]:</p>
+<p>Next we will parse the packets for the IP addresses. First add the following to define the parsing of the packets [<a href="https://asecuritysite.com/public/dump02.txt">code</a>]:</p>
 <pre>
 u_short = c_ushort
 u_char = c_ubyte
@@ -134,7 +134,7 @@ def _packet_handler(param,header,pkt_data):
 <p>Run the code and find the IP address connections for the first five connections?</p>
 
 <h2>Displaying connection details</h2>
-<p>Now we will read the TCP header, and which follows the IP address. In this case we will just display the TCP ports. First we add the format of the TCP packet (we have just used the first four fields) [<a href="/public/dump03.txt">code</a>]:</p>
+<p>Now we will read the TCP header, and which follows the IP address. In this case we will just display the TCP ports. First we add the format of the TCP packet (we have just used the first four fields) [<a href="https://asecuritysite.com/public/dump03.txt">code</a>]:</p>
 <pre>
 class tcp_header(BigEndianStructure):
     _fields_ = [("source_port", u_short),
@@ -159,7 +159,7 @@ def _packet_handler(param,header,pkt_data):
 	print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port))
 </pre>
 <h2>Examining the Transport Layer protocol</h2>
-<p>The problem with the previous example is that there can be several transport layer protocols. So we must look at the Protocol field in the IP packet. Now modify your packet hander to add the IP Protocol field [<a href="/public/dump04.txt">Download</a>]:</p>
+<p>The problem with the previous example is that there can be several transport layer protocols. So we must look at the Protocol field in the IP packet. Now modify your packet hander to add the IP Protocol field [<a href="https://asecuritysite.com/public/dump04.txt">Download</a>]:</p>
 <pre>
 	print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{} Protocol: {}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port,ih.proto))
 </pre>
@@ -167,7 +167,7 @@ def _packet_handler(param,header,pkt_data):
 
 <p>Run the code and find the IP address connections and TCP ports used for the first five packets?</p>
 <h2>Filtering for TCP</h2>
-<p>Now we can filter for just TCP traffic by examining the IP Protocol field. For this just replace your packet handler with [<a href="/public/dump05.txt">code</a>]:</p>
+<p>Now we can filter for just TCP traffic by examining the IP Protocol field. For this just replace your packet handler with [<a href="https://asecuritysite.com/public/dump05.txt">code</a>]:</p>
 <pre>
 def _packet_handler(param,header,pkt_data):
     # retrieve the position of the ip header
@@ -252,7 +252,7 @@ while True:
         exit()
 </pre>
 <p>You should now be able to capture until a key is pressed.</p>
-<p>The final solution is [<a href="/public/dump07.txt">Here</a>]</p>
+<p>The final solution is [<a href="https://asecuritysite.com/public/dump07.txt">Here</a>]</p>
 <h2>Demo</h2>
 <iframe width="640" height="480" src="https://www.youtube.com/embed/raphJCH2SPE?rel=0" frameborder="0" allowfullscreen></iframe>
 <h2>Note</h2>
