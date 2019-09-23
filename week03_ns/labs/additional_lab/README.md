@@ -254,7 +254,7 @@ while True:
 <p>You should now be able to capture until a key is pressed.</p>
 <p>The final solution is [<a href="https://asecuritysite.com/public/dump07.txt">Here</a>]</p>
 <h2>Demo</h2>
-<iframe width="640" height="480" src="https://www.youtube.com/embed/raphJCH2SPE?rel=0" frameborder="0" allowfullscreen></iframe>
+<p>There is a demo <a href="https://www.youtube.com/watch?v=raphJCH2SPE">here</a></p>
 <h2>Note</h2>
 <p>In the lecture I say the IP header is 16 bytes, but it is actually 4 times the value in the Header Len of the IP field (which is the first four bits after the IP Version field). So the code:</p>
 <pre>
