@@ -53,7 +53,6 @@ def _packet_handler(param,header,pkt_data):
 def get_ad():
 	i=0
 	d=alldevs.contents
-
 	while d:
 		i=i+1
 		print("%d. %s" % (i, d.name))
@@ -62,15 +61,11 @@ def get_ad():
 			d=d.next.contents
 		else:
 			d=False
-
 	print ("Enter the interface number (1-%d):" % (i))
 	inum= raw_input('--> ')
-
 	inum=int(inum)
-
 	d=alldevs
-
-	## Get Selected adaptor
+	\#\# Get Selected adaptor
 	for i in range(0,inum-1):
 		d=d.contents.next
 	return d.contents
