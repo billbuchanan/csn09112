@@ -19,3 +19,8 @@ The key objectives of this unit are:
 
 <h2>Slides</h2>
 <p>The slides for the chapter are [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf">here</a>]
+  
+  
+  <h2>Mentimeter test</h2>
+  <p>A fun test is [<a href="https://www.mentimeter.com/s/02c5d35a0ccf1b150b4b071528593f36/23236e92e0e4">here</a>].</p>
+  
