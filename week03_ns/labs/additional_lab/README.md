@@ -180,12 +180,12 @@ def _packet_handler(param,header,pkt_data):
 	v_ip_header = ctypes.c_void_p(v_pkt_data.value + 14)
 	pih = ctypes.cast(v_ip_header, ctypes.POINTER(ip_header))
 	ih = pih.contents
-
  	ip_len = (ih.ver_ihl & 0xf) * 4
 	th = ctypes.cast(ctypes.cast(pih, ctypes.c_void_p).value + ip_len,
                      ctypes.POINTER(tcp_header)).contents
 	if (ih.proto==6):
-		print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{} Protocol: {}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port,ih.proto))</pre>
+		print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{} Protocol: {}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port,ih.proto))
+</pre>
 <p>Next generate some traffic by accessing a Web site (or refreshing the cache). Note the IP addresses and TCP ports of the Web connections:</p>
 <p>If you go to https://Google.com, and run your script, which server port is used?</p>
 <p>If you go to https://asecuritysite.com, and run your script, which server port is used?</p>
