@@ -263,5 +263,3 @@ ip_len = (ih.ver_ihl & 0xf) * 4
 <p>masks off the lower four bits and multiplies by four to get the IP packet header length (and where TCP or UDP header will start).</p>
         </div>
 
-  <!-- end post-entry -->
-        </div>
