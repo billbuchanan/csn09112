@@ -3,7 +3,7 @@
 <table width="100%" border="1" cellpadding="0" cellspacing="0"> 
 <tr><td valign="top">
  <h1 id="logo">Network Security and Cryptography (Software Tut 1)</h1>
-<p>This is a basically an introduction to Python coding for network packet capture [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_additional.pdf">Lab</a>]. To do the lab you must have WinPCap install [<a href="http://www.winpcap.org/install/default.htm">Download</a>]. There is a demo of the lab [<a href="https://www.youtube.com/watch?v=raphJCH2SPE" target="_blank"> here</a>].</p>
+<p>This is a basically an introduction to Python coding for network packet capture [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_additional.pdf">Lab</a>]. To do the lab you must have WinPCap install [<a href="http://www.winpcap.org/install/default.htm">Download</a>]. There is a demo of the lab [<a href="https://www.youtube.com/watch?v=raphJCH2SPE" target="_blank">here</a>].</p>
     <h2>Number conversions</h2>
     <p>Within cryptography we often have to present numbers in different formating, and typically have to convert from decimal into hexadecimal (based 16). Enter the following Python program:</p>
     <pre>
