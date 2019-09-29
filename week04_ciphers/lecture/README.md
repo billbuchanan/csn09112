@@ -15,10 +15,10 @@ The key objectives of this unit are:
 <h2>Test</h2>
 
 <p>A test for unit is [<a href="https://asecuritysite.com/tests/tests?sortBy=crypto01">here</a>].</p>
-<p>Can you crack these ciphers in five minutes? [<a href="https://asecuritysite.com/challenges/scramb">here</a>].</p>
 <p>Hex coding [<a href="https://asecuritysite.com/tests/tests?sortBy=hex01">here</a>].</p>
 
 <h2>Cipher challenges</h2>
+<p>Can you crack these ciphers in five minutes? [<a href="https://asecuritysite.com/challenges/scramb">here</a>].</p>
 <p>A cipher challenge test for unit is: [<a href="https://asecuritysite.com/challenges/hex">here</a>].</p>
 
 <h2>Slides</h2>
