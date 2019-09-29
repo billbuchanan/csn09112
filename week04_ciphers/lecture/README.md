@@ -14,10 +14,12 @@ The key objectives of this unit are:
 <p>The lecture is [<a href="https://www.youtube.com/watch?v=zqmjUpJNcJA">here</a>].</p>
 <h2>Test</h2>
 
-<p>A cipher challenge test for unit is [<a href="https://asecuritysite.com/challenges/hex">here</a>].</p>
 <p>A test for unit is [<a href="https://asecuritysite.com/tests/tests?sortBy=crypto01">here</a>].</p>
+<p>Can you crack these ciphers in five minutes? [<a href="https://asecuritysite.com/challenges/scramb">here</a>].</p>
+<p>Hex coding [<a href="https://asecuritysite.com/tests/tests?sortBy=hex01">here</a>].</p>
 
-
+<h2>Cipher challenges</h2>
+<p>A cipher challenge test for unit is: [<a href="https://asecuritysite.com/challenges/hex">here</a>].</p>
 
 <h2>Slides</h2>
 <p>The slides for the chapter are [<a href="https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/lecture/day01_ciphers_fundamentals.pdf">here</a>]
