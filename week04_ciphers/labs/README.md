@@ -1,23 +1,31 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 <h1>Lab 3: Creating Secure Architectures</h2>
 <h2>Aim</h2>
-The  aim  of  this  lab  is  to  build  on  the  basic  Vyatta  firewall  configuration,  adding  firewalling, IDS, and other hardening capabilities.
+The  aim  of  this  lab  is  to  build a secure architecture.
 
 <h2>Activities</h2>
 
-Complete Lab 2: The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_vyatta_ids.pdf" target="_blank">here</a>]. [<a href="https://youtu.be/8siHSSs3RQc" target="_blank">Demo</a>].</p>
+Complete Lab 2: The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf" target="_blank">here</a>]. [<a href="https://www.youtube.com/watch?v=d4a0bDhlyvI" target="_blank">Demo</a>].</p>
 
 <h2>Learning activities</h2>
-At the end of this lab, you should understand:
+At the end of this lab, you should be able to do the following:
 <ul>
-<li>How to use your own credentials to access the vSoC Cloud.</li>
-<li>How to remotely configure a Vyatta firewall for zones, and set up the firewalling.</li>
-<li>Set-up Snort IDS system on a host and create useful rules to detect potential attacks.</li>
-<li>How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services.</li>
+<li>The hosts on your network can connect to each other. Test: Ping from the host in the Private network to the DMZ, and vice-versa.</li>
+
+<li>You are able to connect to the Internet from a host in the Private network. Test: Open up Google.com from a browser from the host in the Private network</li>
+
+<li>A host on the DMZ is contactable from outside your network. Test: You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the TEST network to ping.</li>
+
+<li>You are able to discover the range of other firewalls which connect to the network. Test: You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways.</li>
+
+<li>You are able to perform a scan of the services on a host from another network from your private network. Test: You run NMAP on a server address on another network.</li>
+
   </ul>
 
 <h2>Lab setup</h2>
-Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). Table 1 outlines your challenges and how you might achieve them. You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. 
+Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. 
+
+First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation A.
 
 <img src="https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pf.png"/>
 <h2>Quick guide</h2>
