@@ -29,7 +29,7 @@ print g
 
 The Linear Congruential Random Number Generator is a popular method of creating random numbers. It is linear congruential as the values are related to each other in a linear way, modulo m. It uses the sequence generator of:
 
-Xi =(a×Xi−1+c)modm
+Xi =(a×Xi−1+c) (mod m)
 
 and where X0 is the initial seed value of the series. Enter some values and the program should generate 200 random values:
 
