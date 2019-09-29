@@ -2,7 +2,6 @@
 <h1>Network Security and Cryptography (Software Tut 2)</h1>
 
 <p>This is an introduction to Python coding for ciphers.<p>
-This is a basically an introduction to Python coding for ciphers.
 <h2>GCD</h2>
 
 Within cryptography we often have to present numbers in different formating, and typically have to convert from decimal into hexadecimal (based 16). Enter the following Python program:
@@ -21,9 +20,9 @@ print g
 
 <p>Now use it to complete determine the following:</p>
 <ul>
-    The GCD of 4032 and 76?
-    The GCD of 9999 and 77?
-    The GCD of 125 and 32?
+<li>The GCD of 4032 and 76?</li>
+<li>The GCD of 9999 and 77?</li>
+<li>The GCD of 125 and 32?</li>
  </ul> 
 
 <h2>Random Number Generator</h2>
