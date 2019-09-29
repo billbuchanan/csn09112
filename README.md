@@ -35,7 +35,7 @@ git clone https://github.com/billbuchanan/csn09112
   <tr >
     <td bgcolor="#990000" class="table1"><strong>4</strong></td>
     <td bgcolor="#990000" class="table1"><strong>30 Sept 2019</strong></td>
-    <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="/cryptobook/crypto01">Link</a>]</td>
+    <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_crypto">Link</a>]</td>
        <td>pfSense.  </td>
     
   </tr>
