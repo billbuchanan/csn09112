@@ -1,5 +1,5 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1>Lab 2: Vyatta and Snort</h2>
+<h1>Lab 3: Pfsense and Snort</h2>
 <h2>Aim</h2>
 The  aim  of  this  lab  is  to  build  on  the  basic  Vyatta  firewall  configuration,  adding  firewalling, IDS, and other hardening capabilities.
 
