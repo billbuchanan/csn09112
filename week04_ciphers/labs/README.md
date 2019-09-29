@@ -1,5 +1,5 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1>Lab 3: Pfsense and Snort</h2>
+<h1>Lab 3: Creating Secure Architectures</h2>
 <h2>Aim</h2>
 The  aim  of  this  lab  is  to  build  on  the  basic  Vyatta  firewall  configuration,  adding  firewalling, IDS, and other hardening capabilities.
 
@@ -19,7 +19,7 @@ At the end of this lab, you should understand:
 <h2>Lab setup</h2>
 Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). Table 1 outlines your challenges and how you might achieve them. You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. 
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pf.png"/>
 <h2>Quick guide</h2>
 <p>For Ubtunta configuration:</p>
 <pre>
