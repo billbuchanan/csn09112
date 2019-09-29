@@ -17,6 +17,8 @@ At the end of this lab, you should understand:
   </ul>
 
 <h2>Lab setup</h2>
+Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). Table 1 outlines your challenges and how you might achieve them. You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. 
+
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
 <h2>Quick guide</h2>
 <p>For Ubtunta configuration:</p>
