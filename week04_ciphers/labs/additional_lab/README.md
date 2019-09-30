@@ -90,6 +90,35 @@ a   b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
 
 </pre>
 
+4. The Baudot code uses a 5-bit conversion from English characters. Based on the code below, write a Python program which converts plaintext into a cipher stream of bits:
+
+<pre>
+        public string baud(string str)
+        {
+            string[] conversion = new string[] {"*", "E","%", "A", " ", "S", "I", "U","\r", "D",
+            "R", "J", "N", "F", "C", "K", "T", "Z", "L", "W",
+            "H", "Y", "P", "Q", "O", "B", "G",  "", "M", "X",   
+           "V", ""};
+            if (str==null) return("");
+            string result = "";
+            str = str.ToUpper();
+            foreach (char ch in str)
+            {
+                string ch2 = ch.ToString();
+                int ptr = 0;
+                foreach (string ch1 in conversion)
+                {
+                    if (ch2 == ch1) result += "[" + ptr + "-"+GetBinaryString(ptr)+ "]";
+                    ptr++;
+                }
+            }
+            return (result);
+        }
+</pre>
+
+<img src="https://asecuritysite.com/content/baud.jpg"/>
+
+
 <h2>Random Number Generator</h2>
 
 The Linear Congruential Random Number Generator is a popular method of creating random numbers. It is linear congruential as the values are related to each other in a linear way, modulo m. It uses the sequence generator of:
