@@ -68,7 +68,7 @@ print res
 2. If we change the a value to 22, what do you observe from the random values generated?
 
 3. If a developer uses this method to generate encryption keys, what what you expect to happen when the random numbers are generated?
-Prime Numbers
+<h2>Prime Numbers</h2>
 
 A prime sieve creates all the prime numbers up to a given limit. It progressively removes composite numbers until it only has prime numbers left, and it is the most efficient way to generate a range of prime numbers. Implement the following code:
 
