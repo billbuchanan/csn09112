@@ -27,7 +27,7 @@ print g
  </ul> 
 
 <h2>Ciphers</h2>
-<p>Morse code is a simple substitution cipher. Implement some Python code which allows the user to enter a word, and the program should convert it into Morse code. Some reference code can be found <a href="https://gist.github.com/guinslym/ebb4fefe0f7d63beab01a70a8fd630d7" target="_blank">here</a>. Using your program, decipher the following:
+<p>1. Morse code is a simple substitution cipher. Implement some Python code which allows the user to enter a word, and the program should convert it into Morse code. Some reference code can be found <a href="https://gist.github.com/guinslym/ebb4fefe0f7d63beab01a70a8fd630d7" target="_blank">here</a>. Using your program, decipher the following:
 	
 <pre>
 (—···) (— — —) (—··—) (·) (···) 		
@@ -36,7 +36,7 @@ print g
 (—·—·) (·—··) (··) (·) (—·) (—) 
 </pre>
 
-With the Caesar cipher we can shift the plaintext alphabet by one of 25 combinations. Create a Caesar cipher program which will shift a plaintext or a ciphertext word by each of the 25 shifts. A sample run is given below:
+2. With the Caesar cipher we can shift the plaintext alphabet by one of 25 combinations. Create a Caesar cipher program which will shift a plaintext or a ciphertext word by each of the 25 shifts. A sample run is given below:
 
 <pre>
 Shifts	Back	Result
@@ -68,6 +68,8 @@ Shifts	Back	Result
 24	[2]	JGNNQ
 25	[1]	KHOOR
 </pre>
+
+Using your program, can you find the plaintext for the Caesar cipher of "SQDYMZK"?
 
 <h2>Random Number Generator</h2>
 
