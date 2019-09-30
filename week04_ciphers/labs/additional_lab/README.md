@@ -71,6 +71,25 @@ Shifts	Back	Result
 
 Using your program, can you find the plaintext for the Caesar cipher of "SQDYMZK"?
 
+3. The homomorphic substitution cipher tries to make each cipher code occur with the same frequency. Write a program which creates the homorphonic substitution cipher for the following cipher mapping:
+
+<pre>
+a   b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+07 11 17 10 25 08 44 19 02 18 41 42 40 00 16 01 15 04 06 05 13 22 45 12 55 47
+31 64 33 27 26 09 83 20 03       81 52 43 30 62    24 34 23 14    46    93
+50    49 51 28       21 29       86    80 61       39 56 35 36            
+63       76 32       54 53       95    88 65       58 57 37   
+66          48       70 68             89 91       71 59 38   
+77          67       87 73                94       00 90 60   
+84          69                            96             74   
+            72                                           78   
+            75                                           92   
+            79                                                
+            82 
+            85
+
+</pre>
+
 <h2>Random Number Generator</h2>
 
 The Linear Congruential Random Number Generator is a popular method of creating random numbers. It is linear congruential as the values are related to each other in a linear way, modulo m. It uses the sequence generator of:
