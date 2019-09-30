@@ -90,7 +90,13 @@ a   b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
 
 </pre>
 
-4. The Baudot code uses a 5-bit conversion from English characters. Based on the code below, write a Python program which converts plaintext into a cipher stream of bits:
+4. A standard method for cracking ciphers is to perform a frequency analysis of the ciphertext. Write a Python program which will analyse an input cipherstream from a scrambled alphabet output, and display the frequency of the letters. Use this to make a guess of the cipher character that maps to a plaintext 'e'. In the following, which plaintext character is likely to be an 'e':
+
+<pre>
+TB L YLAAFQ KR L RFD JFMLJFI AHF DKQGJ HLI MHLBEFJ RQKY LB TBJPIAQTLG LEF TBAK LB TBRKQYLATKB LEF. TA TI KBF DHTMH, PBGTSF FLQGTFQ LEFI, FBMLWIPGLAFI VTQAPLGGX AHF DHKGF DKQGJ. TA TI LGIK KBF DHTMH LGGKDI AHF BFD TBJPIAQTFI AK OF OLIFJ TB LBX GKMLATKB DTAHKPA QFNPTQTBE LBX BLAPQLG QFIKPQMFI, KQ AK OF TB LBX LMAPLG WHXITMLG GKMLATKBI. AXWTMLGGX LGG AHLA TI QFNPTQFJ TI L QFGTLOGF BFADKQS MKBBFMATKB. KPQ DKQGJ TI MHLBETBE OX AHF JLX, LI AQLJTATKBLG RKQYI KR OPITBFII LQF OFTBE QFWGLMFJ, TB YLBX MLIFI, OX YKQF QFGTLOGF LBJ RLIAFQ DLXI KR KWFQLATBE. KPQ WKIALG IXIAFY, DHTGF IATGG PIFJ RKQ YLBX PIFRPG LWWGTMLATKBI, HLI OFFB GLQEFGX QFWGLMFJ OX FGFMAQKBTM YLTG. DTAH VKATBE, AHF IGKD LBJ MPYOFQIKYF ALIS KR YLQSTBE VKATBE WL-WFQI DTAH AHF WQFRFQQFJ MLBJTJLAF, TI BKD OFTBE QFWGLMFJ OX FGFMAQKBTM VKATBE. AHF AQLJTATKBLG IXIAFYI, AHKPEH, HLVF OFFB LQKPBJ RKQ HPBJQFJI TR BKA AHKPILBJI KR XFLQI, LBJ AXWTMLGGX PIF DFGG AQTFJ-LBJ-AFIAFJ YFMHLBTIYI. RKQ AHF YKIA WLQA, RKQ FCLYWGF, DF AQPIA L WLWFQ-OLIFJ VKATBE IXIAFY, FVFB AHKPEH TA TI DFGG SBKDB AHLA L MKPBA KR AHF VKAFI DTAHTB LB FGFMATKB DTGG KRAFB WQKJPMF JTRRFQFBA QFIPGAI FLMH ATYF AHLA AHF VKAF TI MKPBAFJ, LBJ AHFB QFMKPBAFJ. LB FGFMAQKBTM YFAHKJ DTGG, KB AHF KAHFQ HLBJ, YKIA GTSFGX HLVF L IPMMFII QLAF KR 100%.
+</pre>
+
+5. The Baudot code uses a 5-bit conversion from English characters. Based on the code below, write a Python program which converts plaintext into a cipher stream of bits:
 
 <pre>
         public string baud(string str)
