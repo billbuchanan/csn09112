@@ -36,6 +36,39 @@ print g
 (—·—·) (·—··) (··) (·) (—·) (—) 
 </pre>
 
+With the Caesar cipher we can shift the plaintext alphabet by one of 25 combinations. Create a Caesar cipher program which will shift a plaintext or a ciphertext word by each of the 25 shifts. A sample run is given below:
+
+<pre>
+Shifts	Back	Result
+-------------------------
+0	[26]	LIPPS
+1	[25]	MJQQT
+2	[24]	NKRRU
+3	[23]	OLSSV
+4	[22]	PMTTW
+5	[21]	QNUUX
+6	[20]	ROVVY
+7	[19]	SPWWZ
+8	[18]	TQXXA
+9	[17]	URYYB
+10	[16]	VSZZC
+11	[15]	WTAAD
+12	[14]	XUBBE
+13	[13]	YVCCF
+14	[12]	ZWDDG
+15	[11]	AXEEH
+16	[10]	BYFFI
+17	[9]	CZGGJ
+18	[8]	DAHHK
+19	[7]	EBIIL
+20	[6]	FCJJM
+21	[5]	GDKKN
+<b>22	[4]	HELLO</b>
+23	[3]	IFMMP
+24	[2]	JGNNQ
+25	[1]	KHOOR
+</pre>
+
 <h2>Random Number Generator</h2>
 
 The Linear Congruential Random Number Generator is a popular method of creating random numbers. It is linear congruential as the values are related to each other in a linear way, modulo m. It uses the sequence generator of:
