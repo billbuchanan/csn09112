@@ -26,6 +26,16 @@ print g
 <li>The GCD of 125 and 32?</li>
  </ul> 
 
+<h2>Ciphers</h2>
+<p>Morse code is a simple substitution cipher. Implement some Python code which allows the user to enter a word, and the program should convert it into Morse code. Some reference code can be found <a href="https://gist.github.com/guinslym/ebb4fefe0f7d63beab01a70a8fd630d7" target="_blank">here</a>. Using your program, decipher the following:
+	
+<pre>
+(—···) (— — —) (—··—) (·) (···) 		
+(·—) (·—·) (·—·) (·—) (—·— —) 		
+(···) (·) (·—·) (···—) (·) (·—·) 		
+(—·—·) (·—··) (··) (·) (—·) (—) 
+</pre>
+
 <h2>Random Number Generator</h2>
 
 The Linear Congruential Random Number Generator is a popular method of creating random numbers. It is linear congruential as the values are related to each other in a linear way, modulo m. It uses the sequence generator of:
