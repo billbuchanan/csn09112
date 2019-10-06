@@ -19,7 +19,7 @@
 
 <ul>
     <li>Presentation (PDF) - Symmetric Key Encryption: <a href="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/chapter02_secret.pdf" target="_blank">here</a></li>
-    <li> Presentation (video) - Symmetric Key Encryption and Padding: here </li>
+    <li> Presentation (video) - Symmetric Key Encryption and Padding: <a href="https://www.youtube.com/watch?v=nLRV34K3xIo&feature=youtu.be" target="_blank">here</a> </li>
 </ul>
 <h3>Tests</h3>
 <ul>
