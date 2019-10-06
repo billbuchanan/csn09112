@@ -42,7 +42,7 @@ git clone https://github.com/billbuchanan/csn09112
   <tr>
     <td bgcolor="#990000" class="table1"><strong>5</strong></td>
     <td bgcolor="#990000" class="table1"><strong>7 Oct 2019</strong></td>
-    <td bgcolor="#ffe6e6">5. Secret Key [<a href="https://asecuritysite.com/cryptobook/crypto02">Link</a>]<br />6. Hashing [<a href="/cryptobook/crypto03">Link</a>]</td>
+    <td bgcolor="#ffe6e6">5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>]</td>
            <td>Vulnerability Analysis and IDS</td>
     
     
