@@ -30,6 +30,8 @@
 
 In the lecture, at the end of Unit 2 (Symmetric Key) the table should be:
 
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/unit02_update.png" width="500px"/>
+
 <h2>Hashing</h2>
 <h3>What you should know at the end of unit?</h2>
 <ul>
@@ -48,4 +50,6 @@ In the lecture, at the end of Unit 2 (Symmetric Key) the table should be:
     </ul>
     
 
+<h2>Fun Test</h2>
+The fun test is <a href="https://www.mentimeter.com/s/6627a76d5f0d06865b1fdda5b4fe634b/3eb24007164d" target="_blank">here</a>.
 
