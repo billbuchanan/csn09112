@@ -1,3 +1,4 @@
+<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 <h1 id="logo">Unit 5: Secret (Symmetric) Key and Hashing</h1>
 <h2>Objectives</h2>
 
@@ -39,7 +40,7 @@ In the lecture, at the end of Unit 2 (Symmetric Key) the table should be:
     <li>HImplement hash cracking methods (John the Ripper and Hashcat).</li>
     <li>HDefines the usage of signed hashes (eg HMAC).</li>
     <li>HOutlines the usage of OTP and Timed Passwords.</li>
-<ul>
+</ul>
 <h3>Presentations</h3>
 <ul>
     <li>Presentation (PDF) - Hashing: here</li>
