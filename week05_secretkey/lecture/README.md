@@ -45,7 +45,7 @@ In the lecture, at the end of Unit 2 (Symmetric Key) the table should be:
 </ul>
 <h3>Presentations</h3>
 <ul>
-    <li>Presentation (PDF) - Hashing: here</li>
+    <li>Presentation (PDF) - Hashing: <a href="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/chapter03_hashing.pdf" target="_blank">link</a></li>
     <li>Presentation (video) - Hashing: here</li>
     </ul>
     
