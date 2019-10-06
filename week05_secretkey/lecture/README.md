@@ -7,20 +7,22 @@
 <h2>Symmetric key</h2>
 <h3>What you should know at the end of unit?</h3>
 <ul>
-    The differences between a stream cipher and a block cipher.
-    How salting is used to change the cipher blocks.
-    Use openssl to perform practical operations.
-    Understand the encoding formats used for cipher text and keys.
+<li>The differences between a stream cipher and a block cipher.</li>
+<li>How salting is used to change the cipher blocks.</li>
+<li>Use openssl to perform practical operations.</li>
+<li>Understand the encoding formats used for cipher text and keys.</li>
 </ul>
 
 <h3>Presentations</h3>
 
-    Presentation (PDF) - Symmetric Key Encryption: here
-    Presentation (video) - Symmetric Key Encryption and Padding: here
-
+<ul>
+    <li>Presentation (PDF) - Symmetric Key Encryption: here</li>
+    <li> Presentation (video) - Symmetric Key Encryption and Padding: here </li>
+</ul>
 <h3>Tests</h3>
-
-    Test (Symmetric Key Encryption): here
+<ul>
+    <li>Test (Symmetric Key Encryption): here</li>
+</ul>    
 
 <h3>Addendum</h3>
 
