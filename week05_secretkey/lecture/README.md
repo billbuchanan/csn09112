@@ -30,6 +30,8 @@
 
 In the lecture, at the end of Unit 2 (Symmetric Key) the table should be:
 
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/unit02_update.png"/>
+
 <h2>Hashing</h2>
 <h3>What you should know at the end of unit?</h2>
 <ul>
