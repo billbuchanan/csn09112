@@ -12,13 +12,13 @@ At the end of this lab, you should be able to do the following:
 <ul>
 <li>Setup Pfsense and the hosts so that you can connect all the required hosts. Test: Successful pings.</li>
   
-<li>You should be able to discover the hosts on all your networks, and the services on hosts in your own network (DMZ and LAN). Test: List the hostsRun NMAP with a range of options, including –sP (to perform a host scan), and -sS (to perform a service scan on a host). </li>
+<li>You should be able to discover the hosts on all your networks, and the services on hosts in your own network (DMZ and LAN). Test: List the hosts. Run NMAP with a range of options, including –sP (to perform a host scan), and -sS (to perform a service scan on a host). </li>
 
-<li>You should be able to discover the operating system of the hosts on your network (DMZ and LAN). Test: List the operating systems.Run NMAP with the –O flag.</li>
+<li>You should be able to discover the operating system of the hosts on your network (DMZ and LAN). Test: List the operating systems. Run NMAP with the –O flag.</li>
 
-<li>You should be able to discover the Web services that are running and their version. Test: List the Web services.Run NMAP with the –sV flag.</li>
+<li>You should be able to discover the Web services that are running and their version. Test: List the Web services. Run NMAP with the –sV flag.</li>
 
-<li>You should be able to craft network packets which can exercise servers and the firewall. Test: Use hping to assess response.Run hping with various flags.</li>
+<li>You should be able to craft network packets which can exercise servers and the firewall. Test: Use hping to assess response. Run hping with various flags.</li>
   
 <li>You should be able to setup basic IDS rules.Test:Use Snort to detect simple network events. Test: Run Snort for detection.</li>
 
