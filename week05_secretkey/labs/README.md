@@ -10,20 +10,22 @@ Complete Lab 4: The lab is [<a href="https://github.com/billbuchanan/csn09112/bl
 <h2>Learning activities</h2>
 At the end of this lab, you should be able to do the following:
 <ul>
-<li>The hosts on your network can connect to each other. Test: Ping from the host in the Private network to the DMZ, and vice-versa.</li>
+<li>Setup Pfsense and the hosts so that you can connect all the required hosts. Test: Successful pings.</li>
+  
+<li>You should be able to discover the hosts on all your networks, and the services on hosts in your own network (DMZ and LAN). Test: List the hostsRun NMAP with a range of options, including –sP (to perform a host scan), and -sS (to perform a service scan on a host). </li>
 
-<li>You are able to connect to the Internet from a host in the Private network. Test: Open up Google.com from a browser from the host in the Private network</li>
+<li>3You should be able to discover the operating system of the hosts on your network (DMZ and LAN). Test: List the operating systems.Run NMAP with the –O flag.</li>
 
-<li>A host on the DMZ is contactable from outside your network. Test: You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the host on your public network to ping.</li>
+<li>You should be able to discover the Web services that are running and their version. Test: List the Web services.Run NMAP with the –sV flag.</li>
 
-<li>You are able to discover the range of other firewalls which connect to the network. Test: You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways.</li>
-
-<li>You are able to perform a scan of the services on a host from another network from your private network. Test: You run NMAP on a server address on another network.</li>
+<li>You should be able to craft network packets which can exercise servers and the firewall. Test: Use hping to assess response.Run hping with various flags.</li>
+  
+<li>You should be able to setup basic IDS rules.Test:Use Snort to detect simple network events. Test: Run Snort for detection.</li>
 
   </ul>
 
 <h2>Lab setup</h2>
-Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation A.
+Our challenge is to perform a vulnerability analysis for MyCorpIncorp, where each of you will be allocated a network and hosts to configure and  get  on-line (Figure  1). For  this  you  will be  allocated  your  own  network which  you  can  access  from  the  vCenter  Cloud  infrastructure (vSoC.napier.ac.uk). Table 1 outlines your challenges and how you might achieve them. You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives.
 
 <img src="https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pf.png"/>
 <h2>Quick guide</h2>
