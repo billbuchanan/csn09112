@@ -23,7 +23,7 @@
 </ul>
 <h3>Tests</h3>
 <ul>
-    <li>Test (Symmetric Key Encryption): here</li>
+    <li>Test (Symmetric Key Encryption): <a href="https://asecuritysite.com/tests/tests?sortBy=cryptobook02" target="_blank">here</a></li>
 </ul>    
 
 <h3>Addendum</h3>
