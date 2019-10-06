@@ -1,3 +1,4 @@
+<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 <h1 id="logo">Unit 4: Ciphers and Fundamentals</h1>
 <h2>Objectives</h2>
 
