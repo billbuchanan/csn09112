@@ -1,7 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 <h1>CSN09112 - Test 1</h1>
 
-#Background
+# Background
 
     Ciphers and Fundamentals [Link]
     Symmetric Encryption [Link]
@@ -10,7 +10,7 @@
     Key Exchange [Link]
     Digital Certificates [Link]
 
-#Test 1 (Challenges)
+# Test 1 (Challenges)
 
     1. Hex Code Challenge [ Try].
     2. Pigpen [ Try].
@@ -19,21 +19,21 @@
     5. ADFGVX [ Try].
     6. Scrambled Alphabet [ Try]. Can you beat 5 minutes?
 
-#Test 1 (Examples)
+# Test 1 (Examples)
 
     Rail Code [ Try].
     Caeser. Test.
     Hex. Test.
     Binary to ASCII. Test. 
 
-#Test 1 (Some principles)
+# Test 1 (Some principles)
 
     1. Key Enthropy [ Try]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
     2. John the Ripper, Hashcat and Ophcrack: Here
     3. Using OpenSSL to salt passwords: Here
     The table you will use in the test is: Here and you can use a calculator.
 
-#Study Questions
+# Study Questions
 
 Try to review your knowledge by answering these questions:
 
@@ -47,7 +47,7 @@ Try to review your knowledge by answering these questions:
     Do you understand how public and private key encryption is used, along with the usage of digital certificates?
     Do you understand the conversion of passwords into hashed passwords, and use tools such as John The Ripper, Hashcat, Ophcrack and OpenSSL?
 
-#Tests
+# Tests
 
 Here are some sample tests:
 
@@ -56,13 +56,13 @@ Here are some sample tests:
     [Test 3 (Encryption)]
     [Test 4 (Cracking)]
 
-#Test details
+# Test details
 
 You will answer the questions with either fixed answers, short explainations or with multiple choice.
 
 Time for test: 1 hour 15 minutes
 
-#Possible study areas:
+# Possible study areas:
 
     Solve ASCII hexadecimal encoding.
     Solve ASCII binary encoding.
@@ -86,7 +86,7 @@ Time for test: 1 hour 15 minutes
 
 Tables given are ASCII table, Morse and Base 64.
 
-#What about I know from a practical point-of-view?
+# What about I know from a practical point-of-view?
 
 The two main labs you should know about are here:
 
