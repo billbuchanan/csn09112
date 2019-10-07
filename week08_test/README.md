@@ -3,49 +3,50 @@
 
 # Background
 
-    * Ciphers and Fundamentals [Link]
-    * Symmetric Encryption [Link]
-    * Hashing [Link]
-    * Public key [Link]
-    * Key Exchange [Link]
-    * Digital Certificates [Link]
+* Ciphers and Fundamentals [Link]
+* Symmetric Encryption [Link]
+* Hashing [Link]
+* Public key [Link]
+* Key Exchange [Link]
+* Digital Certificates [Link]
 
 # Test 1 (Challenges)
 
-    * 1. Hex Code Challenge [ Try].
-    * 2. Pigpen [ Try].
-    * 3. Polybius [ Try].
-    * 4. Morse [ Try].
-    * 5. ADFGVX [ Try].
-    * 6. Scrambled Alphabet [ Try]. Can you beat 5 minutes?
+* 1. Hex Code Challenge [ Try].
+* 2. Pigpen [ Try].
+* 3. Polybius [ Try].
+* 4. Morse [ Try].
+* 5. ADFGVX [ Try].
+* 6. Scrambled Alphabet [ Try]. Can you beat 5 minutes?
 
 # Test 1 (Examples)
 
-    Rail Code [ Try].
-    Caeser. Test.
-    Hex. Test.
-    Binary to ASCII. Test. 
+* Rail Code [ Try].
+* Caeser. Test.
+* Hex. Test.
+* Binary to ASCII. Test. 
 
 # Test 1 (Some principles)
 
-    1. Key Enthropy [ Try]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
-    2. John the Ripper, Hashcat and Ophcrack: Here
-    3. Using OpenSSL to salt passwords: Here
-    The table you will use in the test is: Here and you can use a calculator.
+* 1. Key Enthropy [ Try]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
+* 2. John the Ripper, Hashcat and Ophcrack: Here
+* 3. Using OpenSSL to salt passwords: Here
+
+The table you will use in the test is: Here and you can use a calculator.
 
 # Study Questions
 
 Try to review your knowledge by answering these questions:
 
-    Can you convert characters from one format to another, such as in binary, hex, ASCII and Base-64 (remember: hex uses four bits at a time, and Base-64 uses six bits at a time)?
-    Do you know the basic theory of converting a bit stream into Base-64 (remember 6 bits at a time and convert from table)?
-    Do you understand how to use some key ciphers, including shifted alphabet, scrambled alphabet, Vigenere, Pigpen and rail codes?
-    Can you do a simple Diffie-Hellman calculation and end up with the same shared key?
-    Do you understand how the number of keys relate to the security of the ciphers?
-    Can you work out key enthropy, so that if you have 2,048 phases, you can calculate that this is equivalent to 11 bits [log(2048)/log(2)]?
-    Would you know how long it would take to crack a code next year, if it takes 10 years now, and computing power doubles each year?
-    Do you understand how public and private key encryption is used, along with the usage of digital certificates?
-    Do you understand the conversion of passwords into hashed passwords, and use tools such as John The Ripper, Hashcat, Ophcrack and OpenSSL?
+* Can you convert characters from one format to another, such as in binary, hex, ASCII and Base-64 (remember: hex uses four bits at a time, and Base-64 uses six bits at a time)?
+* Do you know the basic theory of converting a bit stream into Base-64 (remember 6 bits at a time and convert from table)?
+* Do you understand how to use some key ciphers, including shifted alphabet, scrambled alphabet, Vigenere, Pigpen and rail codes?
+* Can you do a simple Diffie-Hellman calculation and end up with the same shared key?
+* Do you understand how the number of keys relate to the security of the ciphers?
+* Can you work out key enthropy, so that if you have 2,048 phases, you can calculate that this is equivalent to 11 bits [log(2048)/log(2)]?
+* Would you know how long it would take to crack a code next year, if it takes 10 years now, and computing power doubles each year?
+* Do you understand how public and private key encryption is used, along with the usage of digital certificates?
+* Do you understand the conversion of passwords into hashed passwords, and use tools such as John The Ripper, Hashcat, Ophcrack and OpenSSL?
 
 # Tests
 
