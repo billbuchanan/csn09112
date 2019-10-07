@@ -1,5 +1,8 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-The test is a closed book test, and  runs within the lab time.
+
+You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test, and  runs within the lab time.
+
+Time for test: 1 hour 15 minutes 
 
 # Background
 
@@ -56,12 +59,6 @@ Here are some sample tests:
 * [Test 2 (Fundamentals)]
 * [Test 3 (Encryption)]
 * [Test 4 (Cracking)]
-
-# Test details
-
-You will answer the questions with either fixed answers, short explainations or with multiple choice.
-
-Time for test: 1 hour 15 minutes
 
 # Possible study areas:
 
