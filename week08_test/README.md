@@ -1,23 +1,23 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1>CSN09112 - Test 1</h1>
+
 
 # Background
 
-    Ciphers and Fundamentals [Link]
-    Symmetric Encryption [Link]
-    Hashing [Link]
-    Public key [Link]
-    Key Exchange [Link]
-    Digital Certificates [Link]
+    * Ciphers and Fundamentals [Link]
+    * Symmetric Encryption [Link]
+    * Hashing [Link]
+    * Public key [Link]
+    * Key Exchange [Link]
+    * Digital Certificates [Link]
 
 # Test 1 (Challenges)
 
-    1. Hex Code Challenge [ Try].
-    2. Pigpen [ Try].
-    3. Polybius [ Try].
-    4. Morse [ Try].
-    5. ADFGVX [ Try].
-    6. Scrambled Alphabet [ Try]. Can you beat 5 minutes?
+    * 1. Hex Code Challenge [ Try].
+    * 2. Pigpen [ Try].
+    * 3. Polybius [ Try].
+    * 4. Morse [ Try].
+    * 5. ADFGVX [ Try].
+    * 6. Scrambled Alphabet [ Try]. Can you beat 5 minutes?
 
 # Test 1 (Examples)
 
