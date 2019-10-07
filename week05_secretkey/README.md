@@ -3,6 +3,6 @@
 <p>In this unit we will cover the basics of secret key and hashing.  Your tasks:</p>
 <ul>
   <li>Review lectures for secret (symmetric) key and hashing.</li>
-  <li>Try the tutorials related to the subjects</li>
+  <li>Try the tutorials related to the subjects.</li>
   <li>Implement the pfSense lab (Lab 4).</li>
   </ul>
