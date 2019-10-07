@@ -12,12 +12,12 @@ The test is a closed book test, and  runs within the lab time.
 
 # Test 1 (Challenges)
 
-* 1. Hex Code Challenge [ Try].
-* 2. Pigpen [ Try].
-* 3. Polybius [ Try].
-* 4. Morse [ Try].
-* 5. ADFGVX [ Try].
-* 6. Scrambled Alphabet [ Try]. Can you beat 5 minutes?
+* Hex Code Challenge [ Try].
+* Pigpen [ Try].
+* Polybius [ Try].
+* Morse [ Try].
+* ADFGVX [ Try].
+* Scrambled Alphabet [ Try]. Can you beat 5 minutes?
 
 # Test 1 (Examples)
 
@@ -28,9 +28,9 @@ The test is a closed book test, and  runs within the lab time.
 
 # Test 1 (Some principles)
 
-* 1. Key Enthropy [ Try]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
-* 2. John the Ripper, Hashcat and Ophcrack: Here
-* 3. Using OpenSSL to salt passwords: Here
+* Key Enthropy [ Try]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
+* John the Ripper, Hashcat and Ophcrack: Here
+* Using OpenSSL to salt passwords: Here
 
 The table you will use in the test is: Here and you can use a calculator.
 
