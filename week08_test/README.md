@@ -1,5 +1,5 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-
+The test is a closed book test, and  runs within the lab time.
 
 # Background
 
@@ -52,10 +52,10 @@ Try to review your knowledge by answering these questions:
 
 Here are some sample tests:
 
-    [Test 1 (Fundamentals)]
-    [Test 2 (Fundamentals)]
-    [Test 3 (Encryption)]
-    [Test 4 (Cracking)]
+* [Test 1 (Fundamentals)]
+* [Test 2 (Fundamentals)]
+* [Test 3 (Encryption)]
+* [Test 4 (Cracking)]
 
 # Test details
 
@@ -65,25 +65,25 @@ Time for test: 1 hour 15 minutes
 
 # Possible study areas:
 
-    Solve ASCII hexadecimal encoding.
-    Solve ASCII binary encoding.
-    Solve Morse encoding.
-    Solve the shifted alphabet code.
-    Create the Vigenere Code for a given plain text string and key.
-    Able to convert bit streams to hexadecimal.
-    Able to convert binary streams to Base 64.
-    Solve Playfair codes.
-    Solve Rail codes.
-    Solve scrambled alphabet code.
-    Calculate the entropy of passwords.
-    Calculate simple Diffie-Hellman.
-    Determine time to crack a code, on average, given time to test key.
-    Determine time to crack a code, for increasing computing power.
-    Understands how public key encrypts data.
-    Understands how public key is used to provide identity.
-    Understands the key elements of a digital certificate.
-    Understand the processing of salting a password and its usage in encryption.
-    Password hash cracking/salting (LMHASH/MD5).
+* Solve ASCII hexadecimal encoding.
+* Solve ASCII binary encoding.
+* Solve Morse encoding.
+* Solve the shifted alphabet code.
+* Create the Vigenere Code for a given plain text string and key.
+* Able to convert bit streams to hexadecimal.
+* Able to convert binary streams to Base 64.
+* Solve Playfair codes.
+* Solve Rail codes.
+* Solve scrambled alphabet code.
+* Calculate the entropy of passwords.
+* Calculate simple Diffie-Hellman.
+* Determine time to crack a code, on average, given time to test key.
+* Determine time to crack a code, for increasing computing power.
+* Understands how public key encrypts data.
+* Understands how public key is used to provide identity.
+* Understands the key elements of a digital certificate.
+* Understand the processing of salting a password and its usage in encryption.
+* Password hash cracking/salting (LMHASH/MD5).
 
 Tables given are ASCII table, Morse and Base 64.
 
@@ -91,6 +91,6 @@ Tables given are ASCII table, Morse and Base 64.
 
 The two main labs you should know about are here:
 
-    Lab 5: Ciphers and Fundamentals - [Lab 5]
-    Lab 6: Crypto - [Lab 6]
+* Lab 5: Ciphers and Fundamentals - [Lab 5]
+* Lab 6: Crypto - [Lab 6]
 
