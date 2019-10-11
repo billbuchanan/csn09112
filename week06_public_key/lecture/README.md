@@ -30,15 +30,9 @@
 <h2>Key Exchange</h2>
 <h3>What you should know at the end of unit?</h2>
 <ul>
-
+    <li>Understand the Diffie-Hellman method</li>
 </ul>
 <h3>Presentations</h3>
 <ul>
-    <li>Presentation (PDF) - Hashing: <a href="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/chapter03_hashing.pdf" target="_blank">link</a></li>
-    <li>Presentation (video) - Hashing: <a href="https://www.youtube.com/watch?v=3D11YGD4vFQ" target="_blank">hrere</a></li>
-    </ul>
-    
 
-<h2>Fun Test</h2>
-The fun test is <a href="https://www.mentimeter.com/s/6627a76d5f0d06865b1fdda5b4fe634b/3eb24007164d" target="_blank">here</a>.
 
