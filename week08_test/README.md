@@ -37,6 +37,12 @@ Time for test: 1 hour 15 minutes
 
 The table you will use in the test is: [here](https://asecuritysite.com/public/test_table.pdf) and you can use a calculator.
 
+Here are some sample tests:
+
+* [Test 1 (Fundamentals)](https://asecuritysite.com/tests/tests?sortBy=crypto01)
+* [Test 2 (Encryption)](https://asecuritysite.com/tests/tests?sortBy=crypto02)
+* [Test 3 (Cracking)](https://asecuritysite.com/tests/tests?sortBy=crypto03)
+
 # Study Questions
 
 Try to review your knowledge by answering these questions:
@@ -51,14 +57,6 @@ Try to review your knowledge by answering these questions:
 * Do you understand how public and private key encryption is used, along with the usage of digital certificates?
 * Do you understand the conversion of passwords into hashed passwords, and use tools such as John The Ripper, Hashcat, Ophcrack and OpenSSL?
 
-# Tests
-
-Here are some sample tests:
-
-* [Test 1 (Fundamentals)]
-* [Test 2 (Fundamentals)]
-* [Test 3 (Encryption)]
-* [Test 4 (Cracking)]
 
 # Possible study areas:
 
