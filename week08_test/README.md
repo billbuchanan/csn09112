@@ -32,10 +32,10 @@ Time for test: 1 hour 15 minutes
 # Test 1 (Some principles)
 
 * Key Enthropy [https://asecuritysite.com/encryption/en]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
-* John the Ripper, Hashcat and Ophcrack: Here
-* Using OpenSSL to salt passwords: Here
+* John the Ripper, Hashcat and Ophcrack: [http://youtu.be/Xvbk2nSzEPk?t=14m17s]
+* Using OpenSSL to salt passwords: [http://youtu.be/Xvbk2nSzEPk?t=4m58s]
 
-The table you will use in the test is: Here and you can use a calculator.
+The table you will use in the test is: [https://asecuritysite.com/public/test_table.pdf] and you can use a calculator.
 
 # Study Questions
 
