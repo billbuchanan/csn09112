@@ -6,12 +6,11 @@ Time for test: 1 hour 15 minutes
 
 # Background
 
-* Ciphers and Fundamentals [Link]
-* Symmetric Encryption [Link]
-* Hashing [Link]
-* Public key [Link]
-* Key Exchange [Link]
-* Digital Certificates [Link]
+* Ciphers and Fundamentals [Link](https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers).
+* Symmetric Encryption/Hashing [Link](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey)
+* Public key.
+* Key Exchange.
+* Digital Certificates.
 
 # Test 1 (Challenges)
 
