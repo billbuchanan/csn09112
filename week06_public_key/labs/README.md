@@ -1,3 +1,4 @@
+<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 # Diffie-Hellman, Public Key, Private Key and Hashing
 
 In this lab we will investigate key exchange (with DH), some public key encryption and some hash cracking.
