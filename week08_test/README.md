@@ -88,6 +88,6 @@ Tables given are ASCII table, Morse and Base 64.
 
 The two main labs you should know about are here:
 
-* Lab 5: Ciphers and Fundamentals - [Lab 5]
-* Lab 6: Crypto - [Lab 6]
+* Lab 5: Ciphers and Fundamentals - [Lab 5](https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/labs/csn09112_ciphers.pdf).
+* Lab 6: Crypto - [Lab 6](https://github.com/billbuchanan/csn09112/blob/master/week07_dig_cert/labs/csn09112_diffie.pdf).
 
