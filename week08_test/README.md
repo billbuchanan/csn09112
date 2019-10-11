@@ -31,7 +31,7 @@ Time for test: 1 hour 15 minutes
 
 # Test 1 (Some principles)
 
-* Key Enthropy [ Try]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
+* Key Enthropy [https://asecuritysite.com/encryption/en]. How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
 * John the Ripper, Hashcat and Ophcrack: Here
 * Using OpenSSL to salt passwords: Here
 
