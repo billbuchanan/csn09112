@@ -15,12 +15,12 @@ Time for test: 1 hour 15 minutes
 
 # Test 1 (Challenges)
 
-* Hex Code Challenge [ Try].
-* Pigpen [ Try].
-* Polybius [ Try].
-* Morse [ Try].
-* ADFGVX [ Try].
-* Scrambled Alphabet [ Try]. Can you beat 5 minutes?
+* Hex Code Challenge [Try](https://asecuritysite.com/Challenges/hex).
+* Pigpen [Try](https://asecuritysite.com/Challenges/pigpen).
+* Polybius [Try](https://asecuritysite.com/Challenges/polybius).
+* Morse [Try](https://asecuritysite.com/Challenges/morse).
+* ADFGVX [Try](https://asecuritysite.com/Challenges/dx).
+* Scrambled Alphabet [Try](https://asecuritysite.com/Challenges/scramb). Can you beat 5 minutes?
 
 # Test 1 (Examples)
 
