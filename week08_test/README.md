@@ -24,10 +24,10 @@ Time for test: 1 hour 15 minutes
 
 # Test 1 (Examples)
 
-* Rail Code [ Try].
-* Caeser. Test.
-* Hex. Test.
-* Binary to ASCII. Test. 
+* Rail Code [Try](https://asecuritysite.com/coding/rail).
+* Caeser. [Try](https://asecuritysite.com/tests/tests?sortBy=caesar).
+* Hex. [Try](https://asecuritysite.com/tests/tests?sortBy=hex01).
+* Binary to ASCII. [Try](https://asecuritysite.com/tests/tests?sortBy=ascii02). 
 
 # Test 1 (Some principles)
 
