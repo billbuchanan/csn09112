@@ -1,11 +1,11 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1 id="logo">Unit 5: Secret (Symmetric) Key and Hashing</h1>
+<h1 id="logo">Unit 6: Public Key and Key Exchange</h1>
 <h2>Objectives</h2>
 
 
 <p>The key concepts are: Understanding symmetric key encryption and hashing methods.</p>
 
-<h2>Symmetric key</h2>
+<h2>Public Key Encryption</h2>
 
 <h3>What you should know at the end of unit?</h3>
 <ul>
@@ -18,30 +18,19 @@
 <h3>Presentations</h3>
 
 <ul>
-    <li>Presentation (PDF) - Symmetric Key Encryption: <a href="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/chapter02_secret.pdf" target="_blank">here</a></li>
-    <li> Presentation (video) - Symmetric Key Encryption and Padding: <a href="https://www.youtube.com/watch?v=nLRV34K3xIo&feature=youtu.be" target="_blank">here</a> </li>
+    <li>Presentation (PDF) - Public Key Encryption: <a href="https://asecuritysite.com/public/chapter04_public_key.pdf" target="_blank">here</a></li>
+    <li> Presentation (video) - Public Key: <a href="https://www.youtube.com/watch?v=hlfFQlHJUyY" target="_blank">here</a> </li>
 </ul>
 <h3>Tests</h3>
 <ul>
-    <li>Test (Symmetric Key Encryption): <a href="https://asecuritysite.com/tests/tests?sortBy=cryptobook02" target="_blank">here</a></li>
+    <li>Test (Public Key Encryption): <a href="https://asecuritysite.com/tests/tests?sortBy=crypto02" target="_blank">here</a></li>
 </ul>    
 
-<h3>Addendum</h3>
 
-In the lecture, at the end of Unit 2 (Symmetric Key) the table should be:
-
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/unit02_update.png" width="500px"/>
-
-<h2>Hashing</h2>
+<h2>Key Exchange</h2>
 <h3>What you should know at the end of unit?</h2>
 <ul>
-    <li>How the lengths of the hashes vary with the number of bits in the hash.</li>
-    <li>HHow we can calculate the strengths on passwords.</li>
-    <li>HUnderstand how salt is applied to the hashing process.</li>
-    <li>HDefine how collisions can occur within hashing.</li>
-    <li>HImplement hash cracking methods (John the Ripper and Hashcat).</li>
-    <li>HDefines the usage of signed hashes (eg HMAC).</li>
-    <li>HOutlines the usage of OTP and Timed Passwords.</li>
+
 </ul>
 <h3>Presentations</h3>
 <ul>
