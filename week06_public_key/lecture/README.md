@@ -20,6 +20,8 @@
 <ul>
     <li>Presentation (PDF) - Public Key Encryption: <a href="https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/lecture/chapter04_public.pdf" target="_blank">here</a></li>
     <li> Presentation (video) - Public Key: <a href="https://www.youtube.com/watch?v=hlfFQlHJUyY" target="_blank">here</a> </li>
+    <li>Demo: <a href="https://www.youtube.com/watch?v=pHES8eNor6k" target="_blank">RSA</a></li>
+
 </ul>
 <h3>Tests</h3>
 <ul>
@@ -36,6 +38,7 @@
 <ul>
     <li>Presentation (PDF) - Public Key Encryption: <a href="https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/lecture/chapter05_key_exchange.pdf" target="_blank">here</a></li>
     <li> Presentation (video) - Public Key: <a href="https://www.youtube.com/watch?v=poC1Pc-KDSo" target="_blank">here</a> </li>
+    <li>Demo: <a href="https://www.youtube.com/watch?v=wyNPhNAsmJ0" target="_blank">Diffie Hellman</a></li>
 </ul>
 
 <h3>Tests</h3>
