@@ -34,5 +34,13 @@
 </ul>
 <h3>Presentations</h3>
 <ul>
+    <li>Presentation (PDF) - Public Key Encryption: <a href="https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/lecture/chapter05_key_exchange.pdf" target="_blank">here</a></li>
+    <li> Presentation (video) - Public Key: <a href="https://www.youtube.com/watch?v=poC1Pc-KDSo" target="_blank">here</a> </li>
+</ul>
+
+<h3>Tests</h3>
+<ul>
+    <li>Test (Key Exchange): <a href="https://asecuritysite.com/tests/tests?sortBy=crypto05" target="_blank">here</a></li>
+</ul>    
 
 
