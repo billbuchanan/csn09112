@@ -18,7 +18,7 @@
 <h3>Presentations</h3>
 
 <ul>
-    <li>Presentation (PDF) - Public Key Encryption: <a href="https://asecuritysite.com/public/chapter04_public_key.pdf" target="_blank">here</a></li>
+    <li>Presentation (PDF) - Public Key Encryption: <a href="https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/lecture/chapter04_public.pdf" target="_blank">here</a></li>
     <li> Presentation (video) - Public Key: <a href="https://www.youtube.com/watch?v=hlfFQlHJUyY" target="_blank">here</a> </li>
 </ul>
 <h3>Tests</h3>
