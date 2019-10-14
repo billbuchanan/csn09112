@@ -73,6 +73,65 @@ bert:501:C6E4266FEBEBD6A8AAD3B435B51404EE:0B9957E8BED733E0350C703AC1CDA822:::
 admin:502::333CB006680FAF0A417EAF50CFAC29C3:D2EDBC29463C40E76297119421D2A707:::
 </pre>
 
+<h2>Python code</h2>
+RSA code:
+<pre>
+from Crypto.Util.number import *
+from Crypto import Random
+import Crypto
+import gmpy2
+import sys
+
+bits=60
+msg="Hello"
+
+p = Crypto.Util.number.getPrime(bits, randfunc=Crypto.Random.get_random_bytes)
+q = Crypto.Util.number.getPrime(bits, randfunc=Crypto.Random.get_random_bytes)
+
+n = p*q
+PHI=(p-1)*(q-1)
+
+e=65537
+d=(gmpy2.invert(e, PHI))
+
+m=  bytes_to_long(msg.encode('utf-8'))
+
+c=pow(m,e, n)
+res=pow(c,d ,n)
+
+print "Message=%s\np=%s\nq=%s\nN=%s\ncipher=%s\ndecipher=%s" % (msg,p,q,n,c,(long_to_bytes(res)))
+</pre>
+
+And  Diffie-Hellman code:
+
+<pre>
+import random
+import base64
+import hashlib
+import sys
+g=11
+p=1001
+x=random.randint(5, 10)
+y=random.randint(10,20
+A=(g**x) % p
+B=(g**y) % 
+print 'g: ',g,' (a shared value), n: ',p, ' (a prime number)'
+print '\nAlice calculates:'
+print 'a (Alice random): ',x
+print 'Alice value (A): ',A,' (g^a) mod p'
+print '\nBob calculates:'
+print 'b (Bob random): ',y
+print 'Bob value (B): ',B,' (g^b) mod p'
+print '\nAlice calculates:'
+keyA=(B**x) % p
+print 'Key: ',keyA,' (B^a) mod p'
+print 'Key: ',hashlib.sha256(str(keyA)).hexdigest()
+print '\nBob calculates:'
+keyB=(A**y) % p
+print 'Key: ',keyB,' (A^b) mod p'
+print 'Key: ',hashlib.sha256(str(keyB)).hexdigest()
+</pre>
+
 
 
 
