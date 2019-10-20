@@ -30,6 +30,7 @@ The following are the tips related to digital certs:
 <li>Certificate with Public/Private key. [Cert](https://asecuritysite.com/encryption/createcert). This includes the creation of the digital certificate.</li>
   </ul>  
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/KmQQOtZw2GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=KmQQOtZw2GQ
+
 
 
