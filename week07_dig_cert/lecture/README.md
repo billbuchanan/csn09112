@@ -29,5 +29,7 @@ The following are the tips related to digital certs:
 <li>Digital Certificate (PFX) [Digital Cert](https://asecuritysite.com/encryption/digitalcert2).</li>
 <li>Certificate with Public/Private key. [Cert](https://asecuritysite.com/encryption/createcert). This includes the creation of the digital certificate.</li>
   </ul>  
+  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/KmQQOtZw2GQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
