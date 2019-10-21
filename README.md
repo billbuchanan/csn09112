@@ -52,7 +52,7 @@ git clone https://github.com/billbuchanan/csn09112
       <tr>
             <td bgcolor="#990000" class="table1"><strong>6</strong></td>
             <td bgcolor="#990000" class="table1"><strong>14 Oct 2019</strong></td>
-    <td bgcolor="#ffe6e6">7. Public Key [<a href="https://asecuritysite.com/cryptobook/crypto04">Link</a>]<br />8. Key Exchange [<a href="https://asecuritysite.com/cryptobook/crypto05">Link</a>]</td>
+    <td bgcolor="#ffe6e6">7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]</td>
  <td>Public/Private Key and Hashing</td>
       
   </tr>
