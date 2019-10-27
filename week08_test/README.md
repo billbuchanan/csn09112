@@ -8,9 +8,9 @@ Time for test: 1 hour 15 minutes
 
 * Ciphers and Fundamentals [Link](https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers).
 * Symmetric Encryption/Hashing [Link](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey)
-* Public key.
-* Key Exchange.
-* Digital Certificates.
+* Public key. [Link](https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture)
+* Key Exchange. [Link](https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture)
+* Digital Certificates. [Link](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/lecture)
 
 # Test 1 (Challenges)
 
