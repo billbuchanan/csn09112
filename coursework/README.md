@@ -16,8 +16,9 @@ Your network architecture similar to that shown in Figure 1 should be created wi
 
 Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then use this architecture to investigate and analyse the Botnet activity and design a simple Intrusion Detection System (IDS) which will detect the various bot activity. Then implement a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Create a basic perimeter firewall solution, based around the current topology to provide a public web server from the external network, and Internet access from the internal network.
 
-Figure 1
-Demo
+[Figure 1](https://asecuritysite.com/botnet.png)
+
+## Demo
 
 The following provides an overview of the task:
 
@@ -33,7 +34,7 @@ A sample rules file has been placed in the instance. A good method of analysis i
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 16 Decemember 2019. It will be marked as follows:
+The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 18 Decemember 2019. It will be marked as follows:
 
 * Requirements Analysis [20%]. This should show the analysis related to the main requirements, and an outline of the Web system, with the main design features. This should also include an analysis of the Bot, and how it can be detected.
 * Botnet Analysis [40%]. This should outline the results of the evaluation of the Botnet agent and the controller.
