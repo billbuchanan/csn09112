@@ -1,9 +1,9 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-## CSN09112 - Network Security and Cryptography
-### Outline
+
+# CSN09112 - Network Security and Cryptography
 This page provides an overview of the coursework [PDF][Download Bot]
 
-### Outline Requirements
+## Outline Requirements
 
 Botnets are a particular problem, where bot agents may infect machines inside an organisation’s network and connect back to a botnet controller out on the Internet, to receive commands and undertake malicious activities. The focus of this coursework is to create a virtualized testbed environment to analyse a particular botnet agent and the communications to its controller, to create and test a detection system to detect its activities, and then to mitigate its use in future with some firewall based defences.
 
