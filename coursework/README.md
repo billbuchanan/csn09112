@@ -16,7 +16,7 @@ Your network architecture similar to that shown in Figure 1 should be created wi
 
 Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then use this architecture to investigate and analyse the Botnet activity and design a simple Intrusion Detection System (IDS) which will detect the various bot activity. Then implement a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Create a basic perimeter firewall solution, based around the current topology to provide a public web server from the external network, and Internet access from the internal network.
 
-[Figure 1](https://asecuritysite.com/botnet.png)
+![Figure 1](https://asecuritysite.com/botnet.png)
 
 ## Demo
 
