@@ -1,7 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
 # CSN09112 - Network Security and Cryptography
-This page provides an overview of the coursework [PDF][Download Bot]
+This page provides an overview of the coursework. Note: The bot and controller will be released soon.
 
 ## Outline Requirements
 
@@ -20,9 +20,9 @@ Start by allowing all traffic from the internal network out to the external netw
 
 ## Demo
 
-The following provides an overview of the task:
+The following provides an overview of the task [here](https://www.youtube.com/watch?v=94iEY0XxPM8).
 
-Snort should be installed within Kali, and is run with:
+Snort should be installed within Ubuntu, and is run with:
 
 snort -c 1.rules -i eth0 -l log
 
