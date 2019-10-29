@@ -1,122 +1,43 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1>CSN09112 - Network Security and Cryptography</h1>
-<h2>Outline</h2>
-<p>Our main focus is to investigate secure infrastructures and some core principles around cryptography.  To download the source, use:</p>
-<pre>
-git clone https://github.com/billbuchanan/csn09112
-</pre>
+# CSN09112 - Network Security and Cryptography
+## Outline
+This page provides an overview of the coursework [PDF][Download Bot]
 
-<h2>Timetable</h2>
-<table width="100%" border="1" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="5%" bgcolor="#990000" class="table1"><strong>No</strong></td>
-    <td width="15%" bgcolor="#990000" class="table1"><strong>Week beginning</strong></td>
-    <td width="35%" bgcolor="#990000" class="table1"><strong>Subject</strong></td>
-    <td width="45%" bgcolor="#990000" class="table1"><strong>Lab</strong></td>
-  </tr>
-      
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>2</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>16 Sept 2019</strong></td>
-    <td>1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>]</td>
-  
-<td>Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab</a></td>
-   
-     
-  </tr>
-  <tr >
-    <td bgcolor="#990000" class="table1"><strong>3</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>23 Sept 2019</strong></td>
-    <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
-      <td>Vyatta and Snort. </td>
+## Outline Requirements
 
-   
-  </tr>
-  <tr >
-    <td bgcolor="#990000" class="table1"><strong>4</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>30 Sept 2019</strong></td>
-    <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>]</td>
-       <td>pfSense.  </td>
-    
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>5</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>7 Oct 2019</strong></td>
-    <td bgcolor="#ffe6e6">5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>]</td>
-           <td>Vulnerability Analysis and IDS</td>
-    
-    
-     
-   
-  </tr>
-      <tr>
-            <td bgcolor="#990000" class="table1"><strong>6</strong></td>
-            <td bgcolor="#990000" class="table1"><strong>14 Oct 2019</strong></td>
-    <td bgcolor="#ffe6e6">7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]</td>
- <td>Public/Private Key and Hashing</td>
-      
-  </tr>
-  <tr >
-    <td bgcolor="#990000" class="table1"><strong>7</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>21 Oct 2019</strong></td>
-    <td bgcolor="#ffe6e6">9. Digital Certificates </td>
-  
-      
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>8</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>28 Oct 2019</strong></td>
-    <td ><form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09112/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form></td>
-     <td bgcolor="#ffe6e6">Test 1    </td>
-  
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>9</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>4 Nov 2019</strong></td>
-      <td bgcolor="#e6ffee">10. Network Forensics  [<a href="http://www.asecuritysite.com/subjects/chapter09">Link</a>]</td>
-    <td>Network Forensics</td>
-  
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>10</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>11 Nov 2019</strong></td>
-       <td  bgcolor="#e6ffee">11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>]</td>
- <td>Tunnelling</td>
-  
-      
-  </tr>
+Botnets are a particular problem, where bot agents may infect machines inside an organisation’s network and connect back to a botnet controller out on the Internet, to receive commands and undertake malicious activities. The focus of this coursework is to create a virtualized testbed environment to analyse a particular botnet agent and the communications to its controller, to create and test a detection system to detect its activities, and then to mitigate its use in future with some firewall based defences.
 
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>11</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>18 Nov 2019</strong></td>
-          <td  bgcolor="#e6ffee">12. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
-       <td>Blockchain Lab</td>
-    
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>25 Nov 2019</strong></td>
-      <td  bgcolor="#e6ffee">13. Blockchain (Tokens) </td>
-       <td>Network Protocols and Python</td>
-   
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>13</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>2 Dec 2019</strong></td>
-    <td><form action="https://asecuritysite.com/csn09112/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details</button> </form></td>
-    <td bgcolor="#e6ffee">Test 2 (Network Forensics and Blockchain) </td>
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>14</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>9 Dec 2019</strong></td>
-    <td>Hand-in: 18 Dec 2018 [<a href="https://asecuritysite.com/csn09112/cw">Here</a>]</td>
-    <td>&nbsp;</td>
-  </tr>
+* Configure a working perimeter network topology with a firewall, DMZ, and host systems as a testbed for the coursework. Secure the VMs by changing login passwords.
+* Analyse the operation of the running Bot agent and Botnet controller, including any network scanning by the bot, activity on the host, network connections created, and any communications between the bot and controller.
+* Create and test a detection system for the Botnet agent and controller using an IDS sensor.
+* Create a closed perimeter, firewall policy configuration to prevent future communications for this particular botnet, but allow certain valid traffic, specified in next section.
 
-  <tr>
-    <td bgcolor="#990000" class="table1">&nbsp;</td>
-    <td bgcolor="#990000" class="table1"><strong>16 Dec 2019</strong></td>
-    <td></td>
-    <td>&nbsp;</td>
-  </tr>
-</table>
+Your network architecture similar to that shown in Figure 1 should be created with the VMs provided using two private address spaces, which you will be assigned on Moodle specifically for the coursework. The Bot agent should be run from the internal trusted Private network.
+
+Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then use this architecture to investigate and analyse the Botnet activity and design a simple Intrusion Detection System (IDS) which will detect the various bot activity. Then implement a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Create a basic perimeter firewall solution, based around the current topology to provide a public web server from the external network, and Internet access from the internal network.
+
+Figure 1
+Demo
+
+The following provides an overview of the task:
+
+Snort should be installed within Kali, and is run with:
+
+snort -c 1.rules -i eth0 -l log
+
+When you are running the botnet, first note the IP address of the controller, and then run it:
+
+mono bot.exe
+
+A sample rules file has been placed in the instance. A good method of analysis is to get the PCAP fo the communication and then use Snort in an offline mode.
+
+## Marking schedule
+
+The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on TBC. It will be marked as follows:
+
+* Requirements Analysis [20%]. This should show the analysis related to the main requirements, and an outline of the Web system, with the main design features. This should also include an analysis of the Bot, and how it can be detected.
+* Botnet Analysis [40%]. This should outline the results of the evaluation of the Botnet agent and the controller.
+* Outline implementation and Testing [30%]. This should define an outline implementation of the system which demonstrates the key implementation elements of the proposed system.
+* References/Presentation [10%]. All references must be defined in an APA/Harvard format, and should be integrated in the report.
+
+The report should use the APA/Harvard format for all of the references, and, if possible, should include EVERY reference to material sourced from other places. Also, the report should be up to 20 pages long (where appendices do not count in the page count number). 
