@@ -22,7 +22,7 @@ Test date: Monday 2 December 2018. This test is worth 25% of the overall mark on
 
 ## Test 2 (Challenges)
 
-* Network Forensics: [Examples](https://asecuritysite.com/forensics/pcap)[Notes][Slides]
+* Network Forensics: [Examples](https://asecuritysite.com/forensics/pcap)[Notes](https://asecuritysite.com/public/unit09.pdf)[Slides](https://asecuritysite.com/book_chap08.pdf)
 * Network Forensics (Test): [Examples] [Notes](https://asecuritysite.com/public/unit09.pdf)[Slides](https://asecuritysite.com/book_chap08.pdf)
 * Network Forensics lab: [here](https://asecuritysite.com/log/csn09112_lab08.pdf)
 
