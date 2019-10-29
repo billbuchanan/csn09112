@@ -18,12 +18,12 @@ Test date: Monday 2 December 2018. This test is worth 25% of the overall mark on
 * Network Forensics: HTTP and DNS [Video](https://www.youtube.com/watch?v=C1NCH3S8NAQ)
 * Network Forensics: ARP and ICMP [Video](https://www.youtube.com/watch?v=xVXa2jk7CxM)
 * Network Forensics: SMTP, POP-3, IMAP-4 [Video](https://www.youtube.com/watch?v=1L4lKRMTzFM)
-* Network Forensics: SSL and TLS [Video](https://asecuritysite.com/information/videos?sortBy=video%3Awww.youtube.com%2Fembed%2FwhPgoZpsu6Y)
+* Network Forensics: SSL and TLS [Video](https://www.youtube.com/watch?v=whPgoZpsu6Y)
 
 ## Test 2 (Challenges)
 
 * Network Forensics: [Examples](https://asecuritysite.com/forensics/pcap) [Notes](https://asecuritysite.com/public/unit09.pdf) [Slides](https://asecuritysite.com/book_chap08.pdf)
-* Network Forensics (Test): [Examples]() [Notes](https://asecuritysite.com/public/unit09.pdf)[Slides](https://asecuritysite.com/book_chap08.pdf)
+* Network Forensics (Test): [Examples](https://asecuritysite.com/forensics/pcap) [Notes](https://asecuritysite.com/public/unit09.pdf) [Slides](https://asecuritysite.com/book_chap08.pdf)
 * Network Forensics lab: [here](https://asecuritysite.com/log/csn09112_lab08.pdf)
 
 ## Study guide areas
