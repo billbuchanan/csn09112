@@ -14,9 +14,9 @@ Test date: Monday 2 December 2018. This test is worth 25% of the overall mark on
 
 ## Test 2 (Outline protocols)
 
-* Network Forensics: Ethernet, IP and TCP [Video](https://asecuritysite.com/information/videos?sortBy=video%3Awww.youtube.com%2Fembed%2FCGMtK4woT_I)
-* Network Forensics: HTTP and DNS [Video](https://asecuritysite.com/information/videos?sortBy=video%3Awww.youtube.com%2Fembed%2FC1NCH3S8NAQ)
-* Network Forensics: ARP and ICMP [Video](https://asecuritysite.com/information/videos?sortBy=video%3Awww.youtube.com%2Fembed%2FxVXa2jk7CxM)
+* Network Forensics: Ethernet, IP and TCP [Video](https://www.youtube.com/watch?v=CGMtK4woT_I)
+* Network Forensics: HTTP and DNS [Video](https://www.youtube.com/watch?v=FC1NCH3S8NAQ)
+* Network Forensics: ARP and ICMP [Video]((https://www.youtube.com/watch?v=xVXa2jk7CxM)
 * Network Forensics: SMTP, POP-3, IMAP-4 [Video](https://asecuritysite.com/information/videos?sortBy=video%3Awww.youtube.com%2Fembed%2F1L4lKRMTzFM)
 * Network Forensics: SSL and TLS [Video](https://asecuritysite.com/information/videos?sortBy=video%3Awww.youtube.com%2Fembed%2FwhPgoZpsu6Y)
 
