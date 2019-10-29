@@ -21,8 +21,8 @@ Test date:Friday, 7 December 2018. Book time slot [here].
 ## Test 2 (Challenges)
 
 * Network Forensics: [Examples](https://asecuritysite.com/forensics/pcap)[Notes][Slides]
-* Network Forensics (Test): [Examples] [Notes][Slides]
-* Network Forensics lab: here
+* Network Forensics (Test): [Examples] [Notes](https://asecuritysite.com/public/unit09.pdf)[Slides](https://asecuritysite.com/book_chap08.pdf)
+* Network Forensics lab: [here](https://asecuritysite.com/log/csn09112_lab08.pdf)
 
 ## Study guide areas
 
