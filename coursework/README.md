@@ -1,9 +1,9 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-# CSN09112 - Network Security and Cryptography
-## Outline
+## CSN09112 - Network Security and Cryptography
+### Outline
 This page provides an overview of the coursework [PDF][Download Bot]
 
-## Outline Requirements
+### Outline Requirements
 
 Botnets are a particular problem, where bot agents may infect machines inside an organisation’s network and connect back to a botnet controller out on the Internet, to receive commands and undertake malicious activities. The focus of this coursework is to create a virtualized testbed environment to analyse a particular botnet agent and the communications to its controller, to create and test a detection system to detect its activities, and then to mitigate its use in future with some firewall based defences.
 
@@ -33,7 +33,7 @@ A sample rules file has been placed in the instance. A good method of analysis i
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on TBC. It will be marked as follows:
+The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 16 Decemember 2019. It will be marked as follows:
 
 * Requirements Analysis [20%]. This should show the analysis related to the main requirements, and an outline of the Web system, with the main design features. This should also include an analysis of the Bot, and how it can be detected.
 * Botnet Analysis [40%]. This should outline the results of the evaluation of the Botnet agent and the controller.
