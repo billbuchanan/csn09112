@@ -1,7 +1,12 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
 # CSN09112 - Network Security and Cryptography
-This page provides an overview of the coursework. Note: The bot and controller will be released soon.
+You can download the Bot onto the Ubuntu machine using:
+
+<pre>
+wget 
+unzip Archive.zip
+</pre>
 
 ## Outline Requirements
 
