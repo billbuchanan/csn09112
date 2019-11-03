@@ -12,13 +12,13 @@ The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY):
 
 ## Test
 
-The test for this unit is [Test]()https://asecuritysite.com/tests/tests?sortBy=sfc09.
+The test for this unit is [Test](https://asecuritysite.com/tests/tests?sortBy=sfc09).
 
 ## Network Forensics
 The following are some examples of PCAPs:
 
-* Network Forensics - Ping
-* Network Forensics - Telnet
+* Network Forensics - [Ping](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Fping.txt)
+* Network Forensics - [Telnet](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Ftelnet.txt)
 * Network Forensics - DNS Lookup
 * Network Forensics - FTP
 * Network Forensics - NMAP
