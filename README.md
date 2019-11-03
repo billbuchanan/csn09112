@@ -73,7 +73,7 @@ git clone https://github.com/billbuchanan/csn09112
   <tr>
     <td bgcolor="#990000" class="table1"><strong>9</strong></td>
     <td bgcolor="#990000" class="table1"><strong>4 Nov 2019</strong></td>
-      <td bgcolor="#e6ffee">10. Network Forensics  [<a href="http://www.asecuritysite.com/subjects/chapter09">Link</a>]</td>
+      <td bgcolor="#e6ffee">10. Network Forensics  [<a href="hhttps://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics">Link</a>]</td>
     <td>Network Forensics</td>
   
   </tr>
