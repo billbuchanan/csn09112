@@ -21,7 +21,7 @@ The following uses the Wireshark display filter:
 * PDF Filter: http contains "%PDF". Trace with a PDF and PDF filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_pdf.pcap&rulesname=http%20contains%20%5C%22%25PDF%5C%22). [Pcap](https://asecuritysite.com/log/with_pdf.zip)
 * GIF Filter: http contains "GIF89a". Trace with a GIF and GIF filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_gif.pcap&rulesname=http%20contains%20%22GIF89a%22). [Pcap](https://asecuritysite.com/log/with_gif.zip).
 * ZIP Filter: http contains "\x50\x4B\x03\x04". Trace with a ZIP and ZIP filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_zip.pcap&rulesname=http%20contains%20%2250%3A4B%3A03%3A04%22). [Pcap](https://asecuritysite.com/log/with_zip.zip)
-* JPEG Filter: http contains "\xff\xd8". Trace with a JPEG and JPEG filter: Test. Pcap
+* JPEG Filter: http contains "\xff\xd8". Trace with a JPEG and JPEG filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_jpg.pcap&rulesname=http%20contains%20%22ff%3Ad8%22). [Pcap](https://asecuritysite.com/log/with_jpg.zip)
 * MP3 Filter: http contains "\x49\x44\x33". Trace with an MP3 and MP3 filter: Test. Pcap
 * RAR Filter: http contains "\x52\x61\x72\x21\x1A\x07\x00". Trace with a RAR and RAR filter: Test. Pcap
 * AVI Filter: http contains "\x52\x49\x46\x46". Trace with a AVI and AVI filter: Test. Pcap
