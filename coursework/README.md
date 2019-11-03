@@ -1,11 +1,19 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
 # CSN09112 - Network Security and Cryptography
+
+## Running the bot and controller
 You can download the Bot onto the Ubuntu machine using:
 
 <pre>
 wget https://github.com/billbuchanan/csn09112/blob/master/coursework/Archive.zip
 unzip Archive.zip
+</pre>
+
+<p>Go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Take a note of the IP address of the controller (W.X.Y.Z). Now got your Ubuntu machine, and run:</p>
+
+<pre>
+mono bot.exe W.X.Y.Z
 </pre>
 
 ## Outline Requirements
