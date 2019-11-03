@@ -1,6 +1,5 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 # Network Forensics
-## Objectives
 The key objectives of this chapter are:
 
 * Understand some of the methodologies used in network forensics.
