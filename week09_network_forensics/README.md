@@ -8,7 +8,7 @@ The key objectives of this chapter are:
 * Define a range of audit sources for network activity.
 
 ## Lecture
-The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY):
+The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY).
 
 ## Test
 
