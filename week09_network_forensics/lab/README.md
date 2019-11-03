@@ -1,5 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-## Ethernet, IP and TCP
+
+## Lab: Ethernet, IP and TCP
+
 ### Details
 Aim:		To provide a foundation in understanding Ethernet, IP and TCP.
 
