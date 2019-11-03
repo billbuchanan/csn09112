@@ -3,9 +3,9 @@
 ## Lab: Ethernet, IP and TCP
 
 ### Details
-Aim:		To provide a foundation in understanding Ethernet, IP and TCP.
+Aim: To provide a foundation in understanding Ethernet, IP and TCP.
 
-he demo of this lab is [here](https://youtu.be/FhVN-gZnQq0)
+The demo of this lab is [here](https://youtu.be/FhVN-gZnQq0)
 
 ### Activities
 Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/webpage.zip)
@@ -218,7 +218,7 @@ What does the filter ftp.response.code==227, identify in terms of the ports that
 Aim:		To provide a foundation in understanding ARP and ICMP.
 
 			The demo of this lab is at:  http://youtu.be/T_jrAwZfE74
-3	Activities
+### Activities
 L1.10	Download the following file, and open it up in Wireshark:
 
 http://asecuritysite.com/log/webpage.zip
@@ -318,11 +318,11 @@ Ping payload for Linux:
 
 
 ## Lab 7d: SMTP, POP-3 and IMAP
-1	Details
+### Details
 Aim:		To provide a foundation in understanding SNMP, POP-3 and IMAP.
 
 			The demo of this lab is at:  http://youtu.be/3RHrq3EehsE
-2	Activities
+### Activities
 L1.19	Download the following file, and open it up in Wireshark:
 
 http://asecuritysite.com/log/smtp.zip
@@ -442,11 +442,11 @@ L1.5	On the Windows 2003 virtual machine, go into the C:\inetpub\mailroot\queue 
 
 
 ## Lab 7e: SSL and TLS
-1	Details
+### Details
 Aim:		To provide a foundation in understanding SSL and TLS.
 
 			The demo of this lab is at:  http://youtu.be/jejjoSCn6Yg
-2	Activities
+### Activities
 L1.21	Download the following file, and open it up in Wireshark:
 
 http://asecuritysite.com/log/ssl.zip
