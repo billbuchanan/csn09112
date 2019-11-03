@@ -10,6 +10,8 @@ The key objectives of this chapter are:
 ## Lecture
 The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY).
 
+The slides for the chapter are [here](https://asecuritysite.com/book_chap08.pdf) and the notes are [here](https://asecuritysite.com/public/unit09.pdf).
+
 ## Test
 
 The test for this unit is [Test](https://asecuritysite.com/tests/tests?sortBy=sfc09).
@@ -71,6 +73,5 @@ Some related material:
 * Tripwire This shows an example of configuring Tripwire in Linux.
 * Network Forensics - PCAP analysis
 
-## Slides
 
-The slides for the chapter are [here](https://asecuritysite.com/book_chap08.pdf) and the notes are [here](https://asecuritysite.com/public/unit09.pdf).
+
