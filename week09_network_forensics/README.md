@@ -38,6 +38,8 @@ The following uses the Wireshark display filter:
 * Telnet Login Filter: tcp.port==23 && tcp.flags.syn==0 && tcp.flags.ack==0. Trace with Telnet Hydra and SYN/Port 23 filter: Test. Pcap
 * Hping DoS Filter: tcp.flags.syn==1 && tcp.flags.ack==0. Trace with Hping and SYN flag filter: Test. Pcap
 
+The filters are demo'd [here](https://asecuritysite.com/subjects/chapter20).
+
 ## Network Forensics
 The following are some examples of PCAPs:
 
@@ -66,12 +68,14 @@ The following are some examples of PCAPs:
 * Network Forensics - Hping traces: hydra_ftp
 * Network Forensics - Hping traces: hydra_telnet
 
+The traces are defined [here](https://asecuritysite.com/forensics/pcap).
+
 ## Related Material
 Some related material:
 
-* Network Forensics - TCPDump This shows an example of analysing simple network traces.
-* Tripwire This shows an example of configuring Tripwire in Linux.
-* Network Forensics - PCAP analysis
+* Network Forensics - TCPDump. This shows an example of analysing simple network traces.
+* Tripwire. This shows an example of configuring Tripwire in Linux.
+* Network Forensics - PCAP analysis.
 
 
 
