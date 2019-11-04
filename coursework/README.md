@@ -64,23 +64,22 @@ The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format,
 A brief literature review towards your botnet analysis method and IDS rule development, demonstrating an understanding of the topics and using research from a variety of quality sources (cited in the text). Try to include some critical analysis - for example strengths and weaknesses, justification, and highlighting findings which inform the later work - and possibly recent examples and how they were analysed.
 <p align="right">[20 marks]</p>
 
-**Botnet Analysis [40 marks]
+**Botnet Analysis [40 marks]**
 
 Configure a working perimeter network topology with a firewall, DMZ, and host systems as a testbed for the coursework. For example annotated network diagram, and some basic configuration/connectivity testing shown and discussed briefly.
 Discuss methods informed from the research, and aply these to analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, possible host activities on the victim, communications between the bot and controller, and anyother bot behaviour. For example screen shots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with brief discussion.
-
 - Dynamic analysis of bot and botnet controller could include identifying botnet network connections and traffic, filtering out unrelated traffic using appropriate tools, identify types of traffic generated, identify specific botnet commands and responses, decoing botnet traffic if necessary. Challenge: create your own bot traffic so individual command can be sent and analysed separately. 
 - Static Analysis Challenge: To verify your findings from the dynamic analysis of the botnet behavior, try to reverse engineer the bot agent code and statically analyse the code.
 <p align="right">[40 marks]</p>
 
-**Prototype Defenses Implementation and Testing [30 marks]
+**Prototype Defenses Implementation and Testing [30 marks]**
 
 Apply method from the research, which should define an outline prototype implementation of the defences.
 - From your botnet analysis, create and test a basic prototype detection system for the Botnet agent and controller using an IDS sensor. Create IDS rules/signatures to detect the bot activity and not excessive many false positives. This section could show the Snort rules with descriptions of how they work, and screen shots of the testing/outputs and discussion on this.
 - Create a closed perimeter firewall configuration to prevent/highlight future communications for this particular botnet, but allow certain valid traffic (specified in requirements spec’). Again show the configuration/rules and testing using screen shot snippets with brief explanation, and any discussion on the findings/outputs.
 <p align="right">[30 marks]</p>
 
-**References/Presentation [10 marks]
+**References/Presentation [10 marks]**
 
 The academic report should be written in a formal style, in 3rd person, and well presented.
 Full academic referencing of peer reviewed papers, technical papers, books, and web sites, using thorough the Harvard referencing format.
