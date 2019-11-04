@@ -60,8 +60,10 @@ A sample rules file has been placed in the instance. A good method of analysis i
 The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 18 Decemember 2019. It will be marked as follows:
 
 **Research [20 marks]**
+
 A brief literature review on botnets and IDS, defenses demonstrating an understanding of the topics using research from a variety of quality sources (cited in the text), and critical analysis (for example strengths and weaknesses, highlihgting findings which inform the later work), possibly recent examples and how they were analysed. Around half a page on each topic would be fine for this section.
-<p style="text-align: right;">[20 marks]</p>
+
+<p style="text-align:right;">[20 marks]</p>
 
 * Requirements Analysis [20%]. This should show the analysis related to the main requirements, and an outline of the Web system, with the main design features. This should also include an analysis of the Bot, and how it can be detected.
 * Botnet Analysis [40%]. This should outline the results of the evaluation of the Botnet agent and the controller.
