@@ -35,7 +35,9 @@ Botnets are a particular problem, where bot agents may infect machines inside an
 
 Your network architecture similar to that shown in Figure 1 should be created with the VMs provided using two private address spaces, which you will be assigned on Moodle specifically for the coursework. The Bot agent should be run from the internal trusted Private network.
 
-Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then use this architecture to investigate and analyse the Botnet activity and design a simple Intrusion Detection System (IDS) which will detect the various bot activity. Then implement a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Create a basic perimeter firewall solution, based around the current topology to provide a public web server from the external network, and Internet access from the internal network.
+Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then use this architecture as your testbed to thoroughly investigate and analyse the Botnet activity. Try to plan and be scientific in the experimental method you use and don’t simply run it once and report. Static analysis can then be used to compliment the dynamic analysis. 
+After this, design an Intrusion Detection System (IDS) which will detect the various bot activities, leading to an implementation of a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. If you have time investigate tuning the rules.
+Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Create a basic perimeter firewall solution, based around the current topology to provide a public web server from the external network, and Internet access from the internal network.
 
 ![Figure 1](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw01.png)
 
@@ -56,6 +58,10 @@ A sample rules file has been placed in the instance. A good method of analysis i
 ## Marking schedule
 
 The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 18 Decemember 2019. It will be marked as follows:
+
+**Research [20 marks]**
+A brief literature review on botnets and IDS, defenses demonstrating an understanding of the topics using research from a variety of quality sources (cited in the text), and critical analysis (for example strengths and weaknesses, highlihgting findings which inform the later work), possibly recent examples and how they were analysed. Around half a page on each topic would be fine for this section.
+<p style="text-align: right;">[20 marks]</p>
 
 * Requirements Analysis [20%]. This should show the analysis related to the main requirements, and an outline of the Web system, with the main design features. This should also include an analysis of the Bot, and how it can be detected.
 * Botnet Analysis [40%]. This should outline the results of the evaluation of the Botnet agent and the controller.
