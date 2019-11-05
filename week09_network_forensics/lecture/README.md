@@ -1,8 +1,13 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h2>Public Key and Key Exchange</h2>
-<p>In this unit we will cover the basics of secret key and hashing.  Your tasks:</p>
-<ul>
-  <li>Review lectures for public key and key exchange.</li>
-  <li>Try the tutorials related to the subjects.</li>
-  <li>Implement crypto lab (Lab 5).</li>
-  </ul>
+
+## Network Forensics
+The key objectives of this chapter are:
+
+* Understand some of the methodologies used in network forensics.
+* Provide an in-depth understanding of the key network protocols, including IP, TCP, ARP, ICMP, DNS, Application Layer protocols, and so on.
+* Define a range of audit sources for network activity.
+
+## Lecture
+The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY).
+
+The slides for the chapter are [here](https://asecuritysite.com/book_chap08.pdf) and the notes are [here](https://asecuritysite.com/public/unit09.pdf).
