@@ -109,14 +109,14 @@ git clone https://github.com/billbuchanan/csn09112
   <tr>
     <td bgcolor="#990000" class="table1"><strong>14</strong></td>
     <td bgcolor="#990000" class="table1"><strong>9 Dec 2019</strong></td>
-    <td>Hand-in: 18 Dec 2018 [<a href="https://asecuritysite.com/csn09112/cw">Here</a>]</td>
+    <td></td>
     <td>&nbsp;</td>
   </tr>
 
   <tr>
     <td bgcolor="#990000" class="table1">&nbsp;</td>
     <td bgcolor="#990000" class="table1"><strong>16 Dec 2019</strong></td>
-    <td></td>
+    <td>Hand-in: 18 Dec 2018 [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
     <td>&nbsp;</td>
   </tr>
 </table>
