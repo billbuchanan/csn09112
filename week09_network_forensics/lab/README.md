@@ -340,7 +340,7 @@ L1.19	Download the following file, and open it up in Wireshark:
 http://asecuritysite.com/log/smtp.zip
 
 Determine the following:
-
+<pre>
 The IP address and TCP port used by the host which is sending the email:
 
 The IP address and the TCP port used by the SMTP server:
@@ -356,7 +356,7 @@ When was the email client used to send the email:
 What was the message, and what was the subject of the email:
 
 With SMTP, which character sequence is used to end the message:
-
+</pre>
 
 L1.20	Download the following file, and open it up in Wireshark:
 
