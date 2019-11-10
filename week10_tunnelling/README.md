@@ -1,6 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+
 ## Tunnelling
- This provides an outline of tunnelling, including for SSL/TLS and IPSec:
+This provides an outline of tunnelling, including for SSL/TLS and IPSec:
 
 * Presentation (PDF): here
 * Presentation (Video): [here](https://youtu.be/JA9zfKtVwwE)
