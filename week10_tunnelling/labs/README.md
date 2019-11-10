@@ -112,7 +112,7 @@ By examining the certificate from the browser is the length of the encryption ke
 
 ## 3	OpenSSL
 
-### 1	Go to your Kali Linux instance, and make a connection to the www.live.com Web site:
+1	Go to your Kali Linux instance, and make a connection to the www.live.com Web site:
 <pre>
 openssl s_client -connect www.live.com:443
 </pre>
@@ -146,7 +146,7 @@ Who has signed the certificate:
 
 ## 4	Examining traces
 
-### 1	Download the following file, and examine the trace with Wireshark:
+1	Download the following file, and examine the trace with Wireshark:
 
 http://asecuritysite.com/log/ssl.zip
 	
@@ -165,7 +165,7 @@ What is the length of the encryption key:
 </pre>
 
 
-### 2	Download the following file, and examine the trace with Wireshark:
+2	Download the following file, and examine the trace with Wireshark:
 
 http://asecuritysite.com/log/https.zip
 <pre>
@@ -182,7 +182,7 @@ Which hash method is used for the tunnel:
 What is the length of the encryption key:
 </pre>
 
-### 3	Download the following file, and examine the trace with Wireshark:
+3	Download the following file, and examine the trace with Wireshark:
 
 http://asecuritysite.com/log/heart.zip	
 <pre>
@@ -201,7 +201,7 @@ What is the length of the encryption key:
 Can you spot the packet which identifies the Heartbleed vulnerability?
 </pre>
 
-### 4	Download the following file, and examine the trace with Wireshark:
+4	Download the following file, and examine the trace with Wireshark:
 
 http://asecuritysite.com/log/ipsec.zip 
 <pre>
