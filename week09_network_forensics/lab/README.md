@@ -90,6 +90,7 @@ http://asecuritysite.com/log/webpage.zip
 
 In this case a host connects to a Web server. Determine the following:
 
+<pre>
 Using the filter of http.request.method=="GET", identify the files that the host gets from the Web server:
 
 
@@ -107,7 +108,7 @@ Which Web browser is the client using?
 Which Web server technology is the server using?
 
 On which date were the pages accessed?
-
+</pre>
 
 L1.5	Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/googleWeb.zip)
 
@@ -286,11 +287,14 @@ From your ARP cache, what is the MAC address of the gateway:
 
 L1.15	Start capturing network packets on your main network adapter (such as your host in the DMZ). Next go to intel.com, and access the page. Stop the network capture, and then from your network traffic, determine:
 
+<pre>
 By examining the ARP request and reply. What is the IP and MAC address of the gateway for your host:
-
+</pre>
 
 L1.16	In Windows, using a command line console, and using the command tracert, determine the route to the following:
 
+
+<pre>
 Route to IBM.COM:
 
 
@@ -303,7 +307,7 @@ Route to INTEL.COM:
 
 Which parts of these routes are the same, and why?
 
-
+</pre>
 
 
 L1.17	Repeat the previous exercise, but this time capture the network traffic with Wireshark. Now determine the following:
@@ -336,7 +340,7 @@ L1.19	Download the following file, and open it up in Wireshark:
 http://asecuritysite.com/log/smtp.zip
 
 Determine the following:
-
+<pre>
 The IP address and TCP port used by the host which is sending the email:
 
 The IP address and the TCP port used by the SMTP server:
@@ -352,7 +356,7 @@ When was the email client used to send the email:
 What was the message, and what was the subject of the email:
 
 With SMTP, which character sequence is used to end the message:
-
+</pre>
 
 L1.20	Download the following file, and open it up in Wireshark:
 
@@ -360,6 +364,7 @@ http://asecuritysite.com/log/pop3.zip
 
 Determine the following:
 
+<pre>
 The IP address and TCP port used by the host which is sending the email:
 
 The IP address and the TCP port used by the POP-3 server:
@@ -384,7 +389,7 @@ For Message 3, who sent the message and what is the subject and outline the cont
 
 Which command does POP-3 use to get a specific message:
 
-
+</pre>
 
 L1.3	Download the following file, and open it up in Wireshark:
 
