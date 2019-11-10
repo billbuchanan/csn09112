@@ -1,81 +1,208 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-## Network Forensics
-The key objectives of this chapter are:
+In this lab we will investigate the usage of SSL/TLS and VPN tunnels.
 
-* Understand some of the methodologies used in network forensics.
-* Provide an in-depth understanding of the key network protocols, including IP, TCP, ARP, ICMP, DNS, Application Layer protocols, and so on.
-* Define a range of audit sources for network activity.
+## 1	Web cryptography assessment
+The ssllabs tool (https://ssllabs.com) can be used to assess the security of the cryptography used on a Web site. You will be given a range of Web sites to scan in the lab, and you should pick three sites from the list. Now perform a test on them, and determine:
 
-## Lecture
-The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY).
+Site	Site 1: 	Site 2:	Site 3:
+What grade does the site get?
+			
+The digital certificate key size and type?
+			
+Does the name of the site match the name on the server?			
+Who is the signer of the digital certificate?
+			
+The expiry date on the digital certificate?
+			
+What is the hashing method on the certificate?
+			
+If it uses RSA keys, what is the e value that is used in the encryption (Me mod N)?			
+Determine a weak cipher suite used and example why it might be weak?
+			
+What does TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 identify?			
+Is SSL v2 supported?
 
-The slides for the chapter are [here](https://asecuritysite.com/book_chap08.pdf) and the notes are [here](https://asecuritysite.com/public/unit09.pdf).
+			
+If SSL v2 was supported, what problems might there be with the site (this will require some research)?			
+Outline the usage of TLS 1.0/1.1 and 1.2, and identify a problem if one of these TLS versions were not supported?			
+Is the site vulnerable to Heartbleed?
+Is the site vulnerable to DROWN?
+Is the site vulnerable to BEAST?
+Is the site vulnerable to POODLE?			
 
-## Test
+Research questions:
 
-The test for this unit is [Test](https://asecuritysite.com/tests/tests?sortBy=sfc09).
-## Wireshark Filters
-The following uses the Wireshark display filter:
-* PNG Filter: http contains "\x89\x50\x4E\x47". Trace with a PNG and PNG filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_png.pcap&rulesname=http%20contains%20%2289%3A50%3A4E%3A47%22). [Pcap](https://asecuritysite.com/log/with_png.zip).
-* PDF Filter: http contains "%PDF". Trace with a PDF and PDF filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_pdf.pcap&rulesname=http%20contains%20%5C%22%25PDF%5C%22). [Pcap](https://asecuritysite.com/log/with_pdf.zip)
-* GIF Filter: http contains "GIF89a". Trace with a GIF and GIF filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_gif.pcap&rulesname=http%20contains%20%22GIF89a%22). [Pcap](https://asecuritysite.com/log/with_gif.zip).
-* ZIP Filter: http contains "\x50\x4B\x03\x04". Trace with a ZIP and ZIP filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_zip.pcap&rulesname=http%20contains%20%2250%3A4B%3A03%3A04%22). [Pcap](https://asecuritysite.com/log/with_zip.zip)
-* JPEG Filter: http contains "\xff\xd8". Trace with a JPEG and JPEG filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_jpg.pcap&rulesname=http%20contains%20%22ff%3Ad8%22). [Pcap](https://asecuritysite.com/log/with_jpg.zip)
-* MP3 Filter: http contains "\x49\x44\x33". Trace with an MP3 and MP3 filter: Test. Pcap
-* RAR Filter: http contains "\x52\x61\x72\x21\x1A\x07\x00". Trace with a RAR and RAR filter: Test. Pcap
-* AVI Filter: http contains "\x52\x49\x46\x46". Trace with a AVI and AVI filter: Test. Pcap
-* SWF Filter: http contains "\x46\x57\x53". Trace with a SWF and SWF filter: Test. Pcap
-* GZip Filter: http contains "\x1F\x8B\x08". Trace with a GZIP and GZIP filter: Test. Pcap
-* Email address Filter: smtp matches ""[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]"". Trace with an email and Email regex filter: Test. Pcap
-* IP address Filter: http matches ""[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}.[0-9]{1,3}"". Trace with HTTP traffic and IP address regex filter: Test. Pcap
-* Credit card details (Mastercard) Filter: smtp matches ""5\\d{3}(\\s|-)?\\d{4}(\\s|-)?\\d{4}(\\s|-)?\\d{4}"". Trace with an email and Mastercard regex filter: Test. Pcap
-* Credit card details (Visa) Filter: smtp matches ""4\\d{3}(\\s|-)?\\d{4}(\\s|-)?\\d{4}(\\s|-)?\\d{4}"". Trace with an email and Visa filter regex filter: Test. Pcap
-* Credit card details (Am Ex) Filter: smtp matches ""3\\d{3}(\\s|-)?\\d{6}(\\s|-)?\\d{5}"". Trace with an email and Am Ex regex filter: Test. Pcap
-* Domain name Filter: http matches ""[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU|UK)"". Trace with an email and Email regex filter: Test. Pcap
-* FTP User/Password Crack Filter: ftp contains \"530 User\". Trace with FTP Hydra and 530 filter: Test. Pcap
-* FTP Login Filter: tcp.port==21 && tcp.flags.syn==1 && tcp.flags.ack==1. Trace with FTP Hydra and SYN/Port 21 filter: Test. Pcap
-* Telnet Login Filter: tcp.port==23 && tcp.flags.syn==0 && tcp.flags.ack==0. Trace with Telnet Hydra and SYN/Port 23 filter: Test. Pcap
-* Hping DoS Filter: tcp.flags.syn==1 && tcp.flags.ack==0. Trace with Hping and SYN flag filter: Test. Pcap
+If a site gets a ‘T’ grade, what is the problem?
 
-The filters are demo'd [here](https://asecuritysite.com/subjects/chapter20).
 
-## Network Forensics
-The following are some examples of PCAPs:
 
-* Network Forensics - [Ping](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Fping.txt)
-* Network Forensics - [Telnet](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Ftelnet.txt)
-* Network Forensics - DNS Lookup
-* Network Forensics - FTP
-* Network Forensics - NMAP
-* Network Forensics - Tracert
-* Network Forensics - Web page
-* Network Forensics - SSL
-* Network Forensics - Spoof Address
-* Network Forensics - IPSec
-* Network Forensics - GoogleWeb
-* Network Forensics - IP Packet (Windows)
-* Network Forensics - IP Packet (Ubuntu)
-* Network Forensics - Hydra traces: FTP
-* Network Forensics - Hydra traces: Telnet
-* Network Forensics - Hping traces: hping_fin
-* Network Forensics - Hping traces: hping_ping_scan
-* Network Forensics - Hping traces: hping_port80
-* Network Forensics - Hping traces: hping_port80_fin
-* Network Forensics - Hping traces: hping_syn
-* Network Forensics - Hping traces: hping_udp_scan
-* Network Forensics - Hping traces: hping_udp_scan
-* Network Forensics - Hping traces: hydra_ftp
-* Network Forensics - Hping traces: hydra_telnet
+If the site was susceptible to Poodle, what is the vulnerability?
 
-The traces are defined [here](https://asecuritysite.com/forensics/pcap).
 
-## Related Material
-Some related material:
 
-* Network Forensics - TCPDump. This shows an example of analysing simple network traces.
-* Tripwire. This shows an example of configuring Tripwire in Linux.
-* Network Forensics - PCAP analysis.
+
+
+## 2	Viewing details
+No	Description	Result
+1	Go to your Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to www.napier.ac.uk.
+
+Stop Wireshark and identify some of your connection details:
+	
+Your IP address and TCP port:
+
+Napier’s Web server IP address and TCP port:
+
+Right-click on the GET HTTP request from the client, and follow the stream:
+
+What does the red and blue text identify?
+
+Can you read the HTTP requests that go from the client to the server? [Yes][No]
+
+3	Go to your Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to Google.com.
+
+Stop Wireshark and identify some of your connection details:
+	
+Your IP address and TCP port:
+
+Google’s Web server IP address and TCP port:
+
+Which SSL/TLS version is used:
+
+By examining the Wireshark trace, which encryption method is used for the tunnel:
+
+By examining the Wireshark trace, which hash method is used for the tunnel:
+
+By examining the Wireshark trace, what is the length of the encryption key:
+
+By examining the certificate from the browser which encryption method is used for the tunnel:
+
+By examining the certificate from the browser, which hash method is used for the tunnel:
+
+By examining the certificate from the browser is the length of the encryption key:
+
+
+
+4	Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to https://twitter.com.
+
+Stop Wireshark and identify some of your connection details:
+	
+Your IP address and TCP port:
+
+Twitter’s Web server IP address and TCP port:
+
+Which SSL/TLS version is used:
+
+By examining the Wireshark trace, which encryption method is used for the tunnel:
+
+By examining the Wireshark trace, which hash method is used for the tunnel:
+
+By examining the Wireshark trace, what is the length of the encryption key:
+
+By examining the certificate from the browser which encryption method is used for the tunnel:
+
+By examining the certificate from the browser, which hash method is used for the tunnel:
+
+By examining the certificate from the browser is the length of the encryption key:
+
+## 3	OpenSSL
+No	Description	Result
+1	Go to your Kali Linux instance, and make a connection to the www.live.com Web site:
+
+openssl s_client -connect www.live.com:443
+	
+Which SSL/TLS method has been used:
+
+Which method is used on the encryption key on the certificate, and what is the size of the public key?
+
+
+Which is the handshaking method that has been used to create the encryption key?
+
+
+Which TLS version is used for the tunnel?
+
+
+Which encryption method is used for the tunnel:
+
+
+Which hash method is used for the tunnel:
+
+
+What is the length of the encryption key:
+
+What is the serial number of the certificate:
+
+
+Who has signed the certificate:
+
+
+
+## 4	Examining traces
+No	Description	Result
+1	Download the following file, and examine the trace with Wireshark:
+
+http://asecuritysite.com/log/ssl.zip
+	
+Client IP address and TCP port:
+
+Web server IP address and TCP port:
+
+Which SSL/TLS method has been used:
+
+Which encryption method is used for the tunnel:
+
+Which hash method is used for the tunnel:
+
+What is the length of the encryption key:
+
+2	Download the following file, and examine the trace with Wireshark:
+
+http://asecuritysite.com/log/https.zip
+	Client IP address and TCP port:
+
+Web server IP address and TCP port:
+
+Which SSL/TLS method has been used:
+
+Which encryption method is used for the tunnel:
+
+Which hash method is used for the tunnel:
+
+What is the length of the encryption key:
+
+2	Download the following file, and examine the trace with Wireshark:
+
+http://asecuritysite.com/log/heart.zip	
+Client IP address and TCP port:
+
+Web server IP address and TCP port:
+
+Which SSL/TLS method has been used:
+
+Which encryption method is used for the tunnel:
+
+Which hash method is used for the tunnel:
+
+What is the length of the encryption key:
+
+Can you spot the packet which identifies the Heartbleed vulnerability?
+
+3	Download the following file, and examine the trace with Wireshark:
+
+http://asecuritysite.com/log/ipsec.zip 
+	Which is the IP address of the client and of the server:
+
+
+Which packet number identifies the start of the VPN connection (Hint: look for UDP Port 500):
+
+
+
+Determine one of the encryption and hashing methods that the client wants to use:
+
+
+
+Now determine the encryption and hashing methods that are agreed in the ISAKMP:
+
 
 
 
