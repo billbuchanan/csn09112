@@ -45,7 +45,7 @@ If the site was susceptible to Poodle, what is the vulnerability?
 
 ## 2	Viewing details
 
-### 1	Go to your Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to www.napier.ac.uk.
+1	Go to your Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to www.napier.ac.uk.
 
 <pre>
 Stop Wireshark and identify some of your connection details:
@@ -59,9 +59,9 @@ Right-click on the GET HTTP request from the client, and follow the stream:
 What does the red and blue text identify?
 
 Can you read the HTTP requests that go from the client to the server? [Yes][No]
-<pre>
+</pre>
 
-### 2	Go to your Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to Google.com.
+2	Go to your Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to Google.com.
 
 <pre>
 Stop Wireshark and identify some of your connection details:
@@ -86,7 +86,7 @@ By examining the certificate from the browser is the length of the encryption ke
 </pre>
 
 
-### 3	Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to https://twitter.com.
+3	Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to https://twitter.com.
 
 Stop Wireshark and identify some of your connection details:
 
