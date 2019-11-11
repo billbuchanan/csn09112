@@ -6,6 +6,8 @@
 git clone https://github.com/billbuchanan/csn09112
 </pre>
 
+The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/coursework)
+
 <h2>Timetable</h2>
 <table width="100%" border="1" cellpadding="0" cellspacing="0">
   <tr>
