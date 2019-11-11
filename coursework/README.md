@@ -10,7 +10,7 @@ You can download the Bot onto the Ubuntu machine using:
 wget https://github.com/billbuchanan/csn09112/raw/master/coursework/Archive.zip
 unzip Archive.zip
 </pre>
-
+<p>Note: Current version is 3.5a</p>
 <p>Go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
 
 <pre>
