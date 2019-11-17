@@ -5,7 +5,6 @@ This provides an outline of cryptocurrencies and blockchain:
 
 * Presentation (PDF): [here](https://asecuritysite.com/public/chapter10_blockchain.pdf)
 * Lecture [here](https://www.youtube.com/watch?v=zi9uCkcS72w&feature=emb_title)
-* Lab (PDF): [here](https://asecuritysite.com/public/blockchain_lab.pdf)
 
 ## Demo
 A few demos:
