@@ -30,6 +30,8 @@ Here is the custom.json:
 ## Bitcoin API code
 Here is the bit.py file (this is defined in Python 2.7. For Python 3.7, you need to modify the print statements with brackets):
 <pre>
+import httplib2
+
 resp, content = httplib2.Http().request("https://blockchain.info/q/latesthash")
 print "Latest hash: ",content
 
