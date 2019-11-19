@@ -48,7 +48,7 @@ resp, content = httplib2.Http().request("https://blockchain.info/q/probability")
 print ("Mining probability: ",content)
 
 resp, content = httplib2.Http().request("https://blockchain.info/q/interval")
-print "Average time between blocks (seconds): ",content
+print ("Average time between blocks (seconds): ",content)
 
 resp, content = httplib2.Http().request("https://blockchain.info/q/eta")
 print ("Time to next block (seconds): ",content)
