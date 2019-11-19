@@ -1,3 +1,5 @@
+import httplib2
+
 resp, content = httplib2.Http().request("https://blockchain.info/q/latesthash")
 print "Latest hash: ",content
 
