@@ -40,7 +40,7 @@ Start by allowing all traffic from the internal network out to the external netw
 After this, design an Intrusion Detection System (IDS) which will detect the various bot activities, leading to an implementation of a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. If you have time investigate tuning the rules.
 Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Create a basic perimeter firewall solution, based around the current topology to provide a public web server from the external network, and Internet access from the internal network.
 
-![Figure 1](hhttps://github.com/billbuchanan/csn09112/blob/master/coursework/cw01.png?raw=true)
+![Figure 1](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw01.png?raw=true)
 
 ## Demo
 
