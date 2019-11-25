@@ -91,7 +91,7 @@ Full academic referencing of peer reviewed papers, technical papers, books, and 
 The report should use the Harvard format for all of the references, and, if possible, should include EVERY reference to material sourced from other places. Also, the report should be up to 20 pages long (where appendices do not count in the page count number). 
 
 ## Network stetup
-You can use any two network address ranges for your network. If you known your group number, you can use the following:
+You can use any two network address ranges for your network. If you know your group number, you can use the following:
 
 ### Allocation A
 
