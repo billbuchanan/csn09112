@@ -17,41 +17,41 @@ http contains "\x89\x50\x4E\x47"
 [2](http://asecuritysite.com/log/with_pdf.zip)	Names of PDF files:
 
 
-3	http://asecuritysite.com/log/with_gif.zip
+[3](http://asecuritysite.com/log/with_gif.zip)
 Names of GIF files:
 
 
-4	http://asecuritysite.com/log/with_jpg.zip	Names of JPG files:
+[4](http://asecuritysite.com/log/with_jpg.zip)	Names of JPG files:
 
 
 
-5	http://asecuritysite.com/log/with_mp3.zip	Names of MP3 files:
+[5](http://asecuritysite.com/log/with_mp3.zip)	Names of MP3 files:
 
 
-6	http://asecuritysite.com/log/with_rar.zip	Names of RAR files:
+[6](http://asecuritysite.com/log/with_rar.zip)	Names of RAR files:
 
 
-7	http://asecuritysite.com/log/with_avi.zip	Names of AVI files:
+[7](http://asecuritysite.com/log/with_avi.zip)	Names of AVI files:
 
 
-8	http://asecuritysite.com/log/with_gz.zip	Names of GZ files:
+[8](http://asecuritysite.com/log/with_gz.zip)	Names of GZ files:
 
 
-9	http://asecuritysite.com/log/email_cc2.zip	Email addresses:
+[9](http://asecuritysite.com/log/email_cc2.zip)	Email addresses:
 
 
-10	http://asecuritysite.com/log/email_cc2.zip	Credit card details:
+[10](http://asecuritysite.com/log/email_cc2.zip)	Credit card details:
 
 
-11	http://asecuritysite.com/log/webpage.zip	IP address details:
+[11](http://asecuritysite.com/log/webpage.zip)	IP address details:
 
 
-12	http://asecuritysite.com/log/webpage.zip	Domain name details:
+[12](http://asecuritysite.com/log/webpage.zip)	Domain name details:
 
 
 
 Table 2: Examples of signatures
-
+<pre>
 PNG file	"\x89\x50\x4E\x47"
 PDF file	"%PDF"
 GIF file	"GIF89a"
@@ -68,6 +68,7 @@ Credit card details (Mastercard)	"5\d{3}(\s|-)?\d{4}(\s|-)?\d{4}(\s|-)?\d{4}"
 Credit card details (Visa):	"4\d{3}(\s|-)?\d{4}(\s|-)?\d{4}(\s|-)?\d{4}"
 Credit card details (Am Ex).	"3\d{3}(\s|-)?\d{6}(\s|-)?\d{5}"
 Domain name:	"[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU|UK)"
+</pre>
 
 ### Tshark
 We can also process the network traces using Tshark, which is a command line version of Wireshark. For example we can search for a ZIP file with:
