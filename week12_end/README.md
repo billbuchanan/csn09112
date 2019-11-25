@@ -81,26 +81,28 @@ and then view the list file.
 
 Now repeat some of the example from the first part, and determine some of the details:
 
-No	PCap file	Evidence
-[1](http://asecuritysite.com/log/with_png.zip)	Frame numbers with content:
 
-IP addresses involved in exchange:
+[1](http://asecuritysite.com/log/with_png.zip)	
 
-2	http://asecuritysite.com/log/with_pdf.pdf	Frame numbers with content:
-
-IP addresses involved in exchange:
-
-3	http://asecuritysite.com/log/with_gif.zip
 Frame numbers with content:
 
 IP addresses involved in exchange:
 
-4	http://asecuritysite.com/log/with_jpg.zip	Frame numbers with content:
+[2](http://asecuritysite.com/log/with_pdf.zip)	Frame numbers with content:
+
+IP addresses involved in exchange:
+
+[3](http://asecuritysite.com/log/with_gif.zip)
+Frame numbers with content:
+
+IP addresses involved in exchange:
+
+[4](http://asecuritysite.com/log/with_jpg.zip)	Frame numbers with content:
 
 IP addresses involved in exchange:
 
 
-C	NetWitness
+### NetWitness
 Now we will use NetWitness to gather the evidence from the following network traces. To do this, open NetWitness, and start a New Collection. Next select your collection, and Import Packets. After this you can view your evidence, and also perform a File Extract.
 
 Download link: https://asecuritysite.com/public/netwit.zip 
@@ -109,21 +111,17 @@ After you examine each one, identify all the IP addresses involved with traces 1
 
 
 
+[1](http://asecuritysite.com/log/with_png.zip)	What are the pictures in the trace:
 
 
-
-No	PCap file	Evidence
-1	http://asecuritysite.com/log/with_png.zip	What are the pictures in the trace:
+[2](http://asecuritysite.com/log/with_pdf.zip)	What does the PDF document contain:
 
 
-2	http://asecuritysite.com/log/with_pdf.pdf	What does the PDF document contain:
-
-
-3	http://asecuritysite.com/log/with_gif.zip
+[3](http://asecuritysite.com/log/with_gif.zip)
 What are the pictures in the trace:
 
 
-4	http://asecuritysite.com/log/with_jpg.zip	What are the pictures in the trace:
+[4](http://asecuritysite.com/log/with_jpg.zip)	What are the pictures in the trace:
 
 
 5	http://asecuritysite.com/log/with_mp3.zip	What are the music files:
@@ -142,7 +140,7 @@ What are the pictures in the trace:
 	What are the contents for the GZ files:
 
 
-D	Content identification
+### Content identification
 There are 30 files contained in this evidence bag:
 
 http://asecuritysite.com/evidence.zip
