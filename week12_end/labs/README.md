@@ -110,6 +110,10 @@ If the path is not setup, you can use:
 "c:\Program Files\wireshark\tshark.exe" -Y "http matches \"\x50\x4B\x03\x04\"" -r with_zip.pcap -x -V > list
 </pre>
 
+Here is a sample run:
+
+<img src="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week12_end/labs/wire01.png"/>
+
 Now repeat some of the example from the first part, and determine some of the details:
 
 
