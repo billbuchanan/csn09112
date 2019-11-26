@@ -98,8 +98,8 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   <tr>
     <td bgcolor="#990000" class="table1"><strong>12</strong></td>
     <td bgcolor="#990000" class="table1"><strong>25 Nov 2019</strong></td>
-      <td  bgcolor="#e6ffee">13. Blockchain (Tokens) </td>
-       <td>Network Protocols and Python</td>
+      <td  bgcolor="#e6ffee">Revision and overview </td>
+       <td>Network Protocols</td>
    
   </tr>
   <tr>
@@ -118,7 +118,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   <tr>
     <td bgcolor="#990000" class="table1">&nbsp;</td>
     <td bgcolor="#990000" class="table1"><strong>16 Dec 2019</strong></td>
-    <td>Hand-in: 18 Dec 2018 [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
+    <td>Hand-in: 20 Dec 2018 [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
     <td>&nbsp;</td>
   </tr>
 </table>
