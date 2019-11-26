@@ -93,6 +93,7 @@ Sample rules:
 * Telnet Login Filter: tcp.port==23 && tcp.flags.syn==0 && tcp.flags.ack==0
 * Hping DoS Filter: tcp.flags.syn==1 && tcp.flags.ack==0
 
+<img src="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week12_end/labs/wire01.png"/>
 
 ### Tshark
 We can also process the network traces using Tshark, which is a command line version of Wireshark. For example we can search for a ZIP file with:
@@ -106,52 +107,27 @@ and then view the list file.
 Now repeat some of the example from the first part, and determine some of the details:
 
 
-[1](http://asecuritysite.com/log/with_png.zip)	
+[File 1](http://asecuritysite.com/log/with_png.zip)	
 
 Frame numbers with content:
 
 IP addresses involved in exchange:
 
-[2](http://asecuritysite.com/log/with_pdf.zip)	Frame numbers with content:
+[File 2](http://asecuritysite.com/log/with_pdf.zip)	Frame numbers with content:
 
 IP addresses involved in exchange:
 
-[3](http://asecuritysite.com/log/with_gif.zip)
+[File 3](http://asecuritysite.com/log/with_gif.zip)
 Frame numbers with content:
 
 IP addresses involved in exchange:
 
-[4](http://asecuritysite.com/log/with_jpg.zip)	Frame numbers with content:
+[File 4](http://asecuritysite.com/log/with_jpg.zip)	Frame numbers with content:
 
 IP addresses involved in exchange:
 
 
-### NetWitness
-Now we will use NetWitness to gather the evidence from the following network traces. To do this, open NetWitness, and start a New Collection. Next select your collection, and Import Packets. After this you can view your evidence, and also perform a File Extract.
-
-Download link: https://asecuritysite.com/public/netwit.zip 
-
-After you examine each one, identify all the IP addresses involved with traces 1 to 8 and any other relevant information that you gain around the location of the host and server:
-
-[File 1](http://asecuritysite.com/log/with_png.zip)	What are the pictures in the trace:
-
-
-[File 2](http://asecuritysite.com/log/with_pdf.zip)	What does the PDF document contain:
-
-
-[File 3](http://asecuritysite.com/log/with_gif.zip) What are the pictures in the trace:
-
-[File 4](http://asecuritysite.com/log/with_jpg.zip)	What are the pictures in the trace:
-
-[File 5](http://asecuritysite.com/log/with_mp3.zip)	What are the music files:
-
-[File 6](http://asecuritysite.com/log/with_rar.zip)	What are the contents of the RAR files:
-
-[File 7](http://asecuritysite.com/log/with_avi.zip)	What are the contents of the AVI files:
-
-[File 8](http://asecuritysite.com/log/with_gz.zip) What are the contents for the GZ files:
-
-### Content identification
+## Content identification
 There are a number of files contained in this [evidence bag](http://asecuritysite.com/evidence.zip). Using a Hex Editor (such as HxD), see if you can match the magic number, and then change the file extension, and see if you can view them. There is a list of magic numbers [here](http://asecuritysite.com/forensics/magic).
 
 Additional 
@@ -243,4 +219,29 @@ get | regex _raw="[0-9]{2}\:22\:[0-9]{2}"
 How many GET requests where there at 22 minutes past the hour:
 
 How many GET requests were made at 14 seconds past the minute:
+
+### NetWitness
+Now we will use NetWitness to gather the evidence from the following network traces. To do this, open NetWitness, and start a New Collection. Next select your collection, and Import Packets. After this you can view your evidence, and also perform a File Extract.
+
+Download link: https://asecuritysite.com/public/netwit.zip 
+
+After you examine each one, identify all the IP addresses involved with traces 1 to 8 and any other relevant information that you gain around the location of the host and server:
+
+[File 1](http://asecuritysite.com/log/with_png.zip)	What are the pictures in the trace:
+
+
+[File 2](http://asecuritysite.com/log/with_pdf.zip)	What does the PDF document contain:
+
+
+[File 3](http://asecuritysite.com/log/with_gif.zip) What are the pictures in the trace:
+
+[File 4](http://asecuritysite.com/log/with_jpg.zip)	What are the pictures in the trace:
+
+[File 5](http://asecuritysite.com/log/with_mp3.zip)	What are the music files:
+
+[File 6](http://asecuritysite.com/log/with_rar.zip)	What are the contents of the RAR files:
+
+[File 7](http://asecuritysite.com/log/with_avi.zip)	What are the contents of the AVI files:
+
+[File 8](http://asecuritysite.com/log/with_gz.zip) What are the contents for the GZ files:
 
