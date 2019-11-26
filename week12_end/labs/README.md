@@ -138,7 +138,6 @@ IP addresses involved in exchange:
 ## Content identification
 There are a number of files contained in this [evidence bag](http://asecuritysite.com/evidence.zip). Using a Hex Editor (such as HxD), see if you can match the magic number, and then change the file extension, and see if you can view them. There is a list of magic numbers [here](http://asecuritysite.com/forensics/magic).
 
-Additional 
 ## RegEx
 Using [Reg101](https://regex101.com), enter the following code:
 <pre>
@@ -162,7 +161,45 @@ Now, using the Python code generator, create Python code to detect the following
 * MAC address.
 * Credit card details.
 
-Some hints are [here](https://asecuritysite.com/dlp/day1)
+Some hints are few hints:
+
+<pre>
+
+Email address: 		
+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]
+
+([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)	
+
+IP: 			
+[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}.[0-9]{1,3}
+
+Telephone: 		
+\d{3}[-.]?\d{3}[-.]?\d{4}
+
+UK Post code:		
+[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s[0-9][A-Z][A-Z]
+
+[A-Z]{1,2}[0-9]{1,2}[A-Z]?\s?[0-9][A-Z][A-Z]
+
+?(([BEGLMNSWbeglmnsw][0-9][0-9]?)|(([A-PR-UWYZa-pr-uwyz][A-HK-Ya-hk-y][0-9][0-9]?)|(([ENWenw][0-9][A-HJKSTUWa-hjkstuw])|([ENWenw][A-HK-Ya-hk-y][0-9][ABEHMNPRVWXYabehmnprvwxy])))) ?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}
+
+Credit card (Visa):	
+4\d{3}(\s|-)?\d{4}(\s|-)?\d{4}(\s|-)?\d{4}
+[45]\d{3}(\s|-)?\d{4}(\s|-)?\d{4}(\s|-)?\d{4}
+
+Domain name:
+[a-zA-Z\.]+\.(com|net|uk)
+[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU|UK)
+
+MAC 			
+([0-9a-fA-F][0-9a-fA-F]:){5}([0-9a-fA-F][0-9a-fA-F])
+
+([0-9a-fA-F][0-9a-fA-F][:.]){5}([0-9a-fA-F][0-9a-fA-F])
+
+Password:
+(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}
+</pre>
+
 ## Splunk
 Using Splunk at [http:// asecuritysite.com:8000](http:// asecuritysite.com:8000) determine the following. The user name is csn01, csn02, ... or csn50) and the password is "napier123". You will be allocated a login. We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use:
 
