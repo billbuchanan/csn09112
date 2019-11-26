@@ -112,7 +112,7 @@ If the path is not setup, you can use:
 
 Here is a sample run:
 
-<img src="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week12_end/labs/wire01.png"/>
+<img src="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week12_end/labs/tshark.png"/>
 
 Now repeat some of the example from the first part, and determine some of the details:
 
