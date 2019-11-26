@@ -47,12 +47,14 @@ Once the IDS has been tested, design and create firewall rules to close down the
 The following provides an overview of the task [here](https://www.youtube.com/watch?v=94iEY0XxPM8).
 
 Snort should be installed within Ubuntu, and is run with:
-
+<pre>
 snort -c 1.rules -i eth0 -l log
+</pre>
 
 When you are running the botnet, first note the IP address of the controller, and then run it:
-
+<pre>
 mono bot.exe
+</pre>
 
 A sample rules file has been placed in the instance. A good method of analysis is to get the PCAP fo the communication and then use Snort in an offline mode.
 
