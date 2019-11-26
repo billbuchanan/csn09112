@@ -114,7 +114,7 @@ Here is a sample run:
 
 <img src="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week12_end/labs/tshark.png"/>
 
-Now repeat some of the example from the first part, and determine some of the details:
+Now repeat some of the examples from the first part, and determine some of the details:
 
 
 [File 1: PNG Content](http://asecuritysite.com/log/with_png.zip)	Frame numbers with content:
