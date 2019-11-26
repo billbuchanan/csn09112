@@ -99,7 +99,7 @@ Sample rules:
 We can also process the network traces using Tshark, which is a command line version of Wireshark. For example we can search for a ZIP file with:
 
 <pre>
-tshark  -Y "http matches \"\x50\x4B\x03\x04\"" -r with_zip.pcap -x -V > list
+tshark  -Y "http matches \"\x50\x4B\x03\x04\"" -r with_zip.pcap -x -V > list.txt
 </pre>
 
 and then view the list file.
@@ -107,7 +107,7 @@ and then view the list file.
 If the path is not setup, you can use:
 
 <pre>
-"c:\Program Files\wireshark\tshark.exe" -Y "http matches \"\x50\x4B\x03\x04\"" -r with_zip.pcap -x -V > list
+"c:\Program Files\wireshark\tshark.exe" -Y "http matches \"\x50\x4B\x03\x04\"" -r with_zip.pcap -x -V > list.txt
 </pre>
 
 Here is a sample run:
@@ -164,7 +164,7 @@ Now, using the Python code generator, create Python code to detect the following
 
 Some hints are [here](https://asecuritysite.com/dlp/day1)
 ## Splunk
-Using Splunk at http:// asecuritysite.com:8000 determine the following. You will be allocated a login. We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use:
+Using Splunk at [http:// asecuritysite.com:8000](http:// asecuritysite.com:8000) determine the following. The user name is csn01, csn02, ... or csn50) and the password is "napier123". You will be allocated a login. We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use:
 
 <pre>
 get | regex _raw="182\.\d{1,3}\.\d{1,3}\.\d{1,3}"
