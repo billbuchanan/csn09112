@@ -11,42 +11,42 @@ http contains "\x89\x50\x4E\x47"
 </pre>
 
 
-[1](http://asecuritysite.com/log/with_png.zip)	Names of PNG files:
+[File 1](http://asecuritysite.com/log/with_png.zip)	Names of PNG files:
 
 
-[2](http://asecuritysite.com/log/with_pdf.zip)	Names of PDF files:
+[File 2](http://asecuritysite.com/log/with_pdf.zip)	Names of PDF files:
 
 
-[3](http://asecuritysite.com/log/with_gif.zip)
+[File 3](http://asecuritysite.com/log/with_gif.zip)
 Names of GIF files:
 
 
-[4](http://asecuritysite.com/log/with_jpg.zip)	Names of JPG files:
+[File 4](http://asecuritysite.com/log/with_jpg.zip)	Names of JPG files:
 
 
 
-[5](http://asecuritysite.com/log/with_mp3.zip)	Names of MP3 files:
+[File 5](http://asecuritysite.com/log/with_mp3.zip)	Names of MP3 files:
 
 
-[6](http://asecuritysite.com/log/with_rar.zip)	Names of RAR files:
+[File 6](http://asecuritysite.com/log/with_rar.zip)	Names of RAR files:
 
 
-[7](http://asecuritysite.com/log/with_avi.zip)	Names of AVI files:
+[File 7](http://asecuritysite.com/log/with_avi.zip)	Names of AVI files:
 
 
-[8](http://asecuritysite.com/log/with_gz.zip)	Names of GZ files:
+[File 8](http://asecuritysite.com/log/with_gz.zip)	Names of GZ files:
 
 
-[9](http://asecuritysite.com/log/email_cc2.zip)	Email addresses:
+[File 9](http://asecuritysite.com/log/email_cc2.zip)	Email addresses:
 
 
-[10](http://asecuritysite.com/log/email_cc2.zip)	Credit card details:
+[File 10](http://asecuritysite.com/log/email_cc2.zip)	Credit card details:
 
 
-[11](http://asecuritysite.com/log/webpage.zip)	IP address details:
+[File 11](http://asecuritysite.com/log/webpage.zip)	IP address details:
 
 
-[12](http://asecuritysite.com/log/webpage.zip)	Domain name details:
+[File 12](http://asecuritysite.com/log/webpage.zip)	Domain name details:
 
 
 
@@ -69,6 +69,30 @@ Credit card details (Visa):	"4\d{3}(\s|-)?\d{4}(\s|-)?\d{4}(\s|-)?\d{4}"
 Credit card details (Am Ex).	"3\d{3}(\s|-)?\d{6}(\s|-)?\d{5}"
 Domain name:	"[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU|UK)"
 </pre>
+
+Sample rules:
+
+* PNG Filter: http contains "\x89\x50\x4E\x47"
+* PDF Filter: http contains "%PDF"
+* GIF Filter: http contains "GIF89a" 
+* ZIP Filter: http contains "\x50\x4B\x03\x04".
+* JPEG Filter: http contains "\xff\xd8"
+* MP3 Filter: http contains "\x49\x44\x33"
+* RAR Filter: http contains "\x52\x61\x72\x21\x1A\x07\x00"
+* AVI Filter: http contains "\x52\x49\x46\x46"
+* SWF Filter: http contains "\x46\x57\x53"
+* GZip Filter: http contains "\x1F\x8B\x08"
+* Email address Filter: smtp matches ""[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]""
+* IP address Filter: http matches ""[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}.[0-9]{1,3}""
+* Credit card details (Mastercard) Filter: smtp matches ""5\\d{3}(\\s|-)?\\d{4}(\\s|-)?\\d{4}(\\s|-)?\\d{4}""
+* Credit card details (Visa) Filter: smtp matches ""4\\d{3}(\\s|-)?\\d{4}(\\s|-)?\\d{4}(\\s|-)?\\d{4}""
+* Credit card details (Am Ex) Filter: smtp matches ""3\\d{3}(\\s|-)?\\d{6}(\\s|-)?\\d{5}""
+* Domain name Filter: http matches ""[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU|UK)""
+* FTP User/Password Crack Filter: ftp contains \"530 User\"
+* FTP Login Filter: tcp.port==21 && tcp.flags.syn==1 && tcp.flags.ack==1
+* Telnet Login Filter: tcp.port==23 && tcp.flags.syn==0 && tcp.flags.ack==0
+* Hping DoS Filter: tcp.flags.syn==1 && tcp.flags.ack==0
+
 
 ### Tshark
 We can also process the network traces using Tshark, which is a command line version of Wireshark. For example we can search for a ZIP file with:
