@@ -133,136 +133,30 @@ Download link: https://asecuritysite.com/public/netwit.zip
 
 After you examine each one, identify all the IP addresses involved with traces 1 to 8 and any other relevant information that you gain around the location of the host and server:
 
+[File 1](http://asecuritysite.com/log/with_png.zip)	What are the pictures in the trace:
 
 
-[1](http://asecuritysite.com/log/with_png.zip)	What are the pictures in the trace:
+[File 2](http://asecuritysite.com/log/with_pdf.zip)	What does the PDF document contain:
 
 
-[2](http://asecuritysite.com/log/with_pdf.zip)	What does the PDF document contain:
+[File 3](http://asecuritysite.com/log/with_gif.zip) What are the pictures in the trace:
 
+[File 4](http://asecuritysite.com/log/with_jpg.zip)	What are the pictures in the trace:
 
-[3](http://asecuritysite.com/log/with_gif.zip)
-What are the pictures in the trace:
+[File 5](http://asecuritysite.com/log/with_mp3.zip)	What are the music files:
 
+[File 6](http://asecuritysite.com/log/with_rar.zip)	What are the contents of the RAR files:
 
-[4](http://asecuritysite.com/log/with_jpg.zip)	What are the pictures in the trace:
+[File 7](http://asecuritysite.com/log/with_avi.zip)	What are the contents of the AVI files:
 
-
-5	http://asecuritysite.com/log/with_mp3.zip	What are the music files:
-
-
-6	http://asecuritysite.com/log/with_rar.zip	What are the contents of the RAR files:
-
-
-7	http://asecuritysite.com/log/with_avi.zip	What are the contents of the AVI files:
-
-
-8	http://asecuritysite.com/log/with_gz.zip
-
-
-
-	What are the contents for the GZ files:
-
+[File 8](http://asecuritysite.com/log/with_gz.zip) What are the contents for the GZ files:
 
 ### Content identification
-There are 30 files contained in this evidence bag:
-
-http://asecuritysite.com/evidence.zip
-
-Using a Hex Editor, see if you can match the magic number, and then change the file extension, and see if you can view them.
-
-File	Type	What it contains …
-file01	
-	
-file02	
-	
-file03	
-	
-file04	
-	
-file05	
-	
-file06	
-	
-file07	
-	
-file08	
-	
-file09	
-	
-file10	
-	
-file11	
-	
-file12	
-	
-file13	
-	
-file14	
-	
-file15	
-	
-file16	
-	
-file17	
-	
-file18	
-	
-file19	
-	
-file20	
-	
-file21	
-	
-file22	
-	
-file23	
-	
-file24	
-	
-file25	
-	
-file26	
-	
-file27	
-	
-file28	
-	
-file29	
-	
-file30	
-	
-file32	
-	
-file33	
-	
-file34	
-	
-file35	
-	
-file36	
-	
-file37	
-	
-file38	
-	
-file39	
-	
-file40	
-	
-
-There is a list of magic numbers here: http://asecuritysite.com/forensics/magic
-
-
-
-
-
-
-
+There are a number of files contained in this [evidence bag](http://asecuritysite.com/evidence.zip). Using a Hex Editor (such as HxD), see if you can match the magic number, and then change the file extension, and see if you can view them. There is a list of magic numbers [here](http://asecuritysite.com/forensics/magic).
 
 Additional 
 ## RegEx
-Using regex101.com, enter the following code:
+Using [Reg101](https://regex101.com), enter the following code:
 <pre>
 There is not much we can do apart from contacting There is not much we can do apart from contacting f.smith@home.net to see if he would like to reboot the server at 192.168.0.1. If he can do this then I will call him on 444.3212.5431. My credit card details are 4321-4444-5412-2310 and 5430-5411-4333-5123 and my name on the card is Fred Smith. I really like the name domain fred@home. Overall our target areas are SW1 7AF and EH105DT. I tested the server last night, and I think the IP address is 10.0.0.1 and there are two MAC addresses which are  01:23:45:67:89:ab or it might be 00.11.22.33.44.55. 
 
@@ -280,11 +174,11 @@ EH14 1DJ
 
 Now, using the Python code generator, create Python code to detect the following:
 
-(i)	Email address.
-(ii)	MAC address.
-(iii)	Credit card details.
+* Email address.
+* MAC address.
+* Credit card details.
 
-Some hints are at: https://asecuritysite.com/dlp/day1
+Some hints are [here](https://asecuritysite.com/dlp/day1)
 ## Splunk
 Using Splunk at http:// asecuritysite.com:8000 determine the following. You will be allocated a login. We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use:
 
@@ -298,8 +192,9 @@ Determine the number of accesses for GET from any address which begins with 182:
 <img src="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week12_end/labs/splunk01.png"/>
 
 The security team search for an address that is ending with .22, and do a search with:
-
+<pre>
 get | regex _raw="\d{1,3}.\d{1,3}.\d{1,3}.22"
+</pre>
 
 But it picks up logs which do not include addresses with .22 at the end. What is the problem with the request, and how would you modify the request:
 
@@ -307,18 +202,23 @@ But it picks up logs which do not include addresses with .22 at the end. What is
 
 You are told that there’s accesses to a file which ends in “a.html”. Using a regular expression, such as:
 
+<pre>
 get | regex _raw="[a]+\.html"
+</pre>
 
 Outline three HTML files which end with the characters ‘a’, or an ‘e’, and have ‘.html’ as an extension:
 
 
 A simple domain name check is:
-
+<pre>
 get | regex _raw="[a-zA-Z\.]+\.(com|net|uk)"
+</pre>
 
 If we now try:
 
+<pre>
 get | regex _raw="[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU|UK)"
+</pre>
 
 we will return events with domain names:
 
@@ -327,14 +227,18 @@ Outline which ones have been added:
 
 We can search for email addresses with:
 
+<pre>
 get | regex _raw="(?<email>[\w\d\.\-]+\@[\w\d\.]+)"
+</pre>
 
 Which email addresses are present:
 
 
 We can search for times using regular expressions, such as:
 
+<pre>
 get | regex _raw="[0-9]{2}\:22\:[0-9]{2}"
+</pre>
 
 How many GET requests where there at 22 minutes past the hour:
 
