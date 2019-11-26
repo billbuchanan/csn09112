@@ -237,9 +237,9 @@ There is a list of magic numbers here: http://asecuritysite.com/forensics/magic
 
 
 Additional 
-E	RegEx
+## RegEx
 Using regex101.com, enter the following code:
-
+<pre>
 There is not much we can do apart from contacting There is not much we can do apart from contacting f.smith@home.net to see if he would like to reboot the server at 192.168.0.1. If he can do this then I will call him on 444.3212.5431. My credit card details are 4321-4444-5412-2310 and 5430-5411-4333-5123 and my name on the card is Fred Smith. I really like the name domain fred@home. Overall our target areas are SW1 7AF and EH105DT. I tested the server last night, and I think the IP address is 10.0.0.1 and there are two MAC addresses which are  01:23:45:67:89:ab or it might be 00.11.22.33.44.55. 
 
 The book we will use is “At Home” and it can be bought on amazon.com or google.com, if you search for 978-1-4302-1998-9. My password is: 
@@ -252,6 +252,7 @@ Bert.
 EH14 1DJ
 +44 (960) 000 00 00
 1/1/2009
+</pre>
 
 Now, using the Python code generator, create Python code to detect the following:
 
@@ -260,14 +261,17 @@ Now, using the Python code generator, create Python code to detect the following
 (iii)	Credit card details.
 
 Some hints are at: https://asecuritysite.com/dlp/day1
-E	Splunk
+## Splunk
 Using Splunk at http:// asecuritysite.com:8000 determine the following. You will be allocated a login. We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use:
 
+<pre>
 get | regex _raw="182\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+</pre>
 
 Determine the number of accesses for GET from any address which begins with 182:
 
 
+<img src="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week12_end/labs/splunk01.png"/>
 
 The security team search for an address that is ending with .22, and do a search with:
 
