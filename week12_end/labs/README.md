@@ -104,25 +104,29 @@ tshark  -Y "http matches \"\x50\x4B\x03\x04\"" -r with_zip.pcap -x -V > list
 
 and then view the list file.
 
+If the path is not setup, you can use:
+
+<pre>
+"c:\Program Files\wireshark\tshark.exe" -Y "http matches \"\x50\x4B\x03\x04\"" -r with_zip.pcap -x -V > list
+</pre>
+
 Now repeat some of the example from the first part, and determine some of the details:
 
 
-[File 1](http://asecuritysite.com/log/with_png.zip)	
+[File 1: PNG Content](http://asecuritysite.com/log/with_png.zip)	Frame numbers with content:
 
+IP addresses involved in exchange:
+
+[File 2: PDF Content](http://asecuritysite.com/log/with_pdf.zip)	Frame numbers with content:
+
+IP addresses involved in exchange:
+
+[File 3: GIF Content](http://asecuritysite.com/log/with_gif.zip)
 Frame numbers with content:
 
 IP addresses involved in exchange:
 
-[File 2](http://asecuritysite.com/log/with_pdf.zip)	Frame numbers with content:
-
-IP addresses involved in exchange:
-
-[File 3](http://asecuritysite.com/log/with_gif.zip)
-Frame numbers with content:
-
-IP addresses involved in exchange:
-
-[File 4](http://asecuritysite.com/log/with_jpg.zip)	Frame numbers with content:
+[File 4: JPG Content](http://asecuritysite.com/log/with_jpg.zip)	Frame numbers with content:
 
 IP addresses involved in exchange:
 
