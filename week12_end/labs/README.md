@@ -201,7 +201,7 @@ Password:
 </pre>
 
 ## Splunk
-Using Splunk at [http:// asecuritysite.com:8000](http:// asecuritysite.com:8000) determine the following. The user name is csn01, csn02, ... or csn50) and the password is "napier123". You will be allocated a login. We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use [here](https://youtu.be/hyD-xbNIkg8):
+Using Splunk [here](http://asecuritysite.com:8000), determine the following. The user name is csn01, csn02, ... or csn50) and the password is "napier123". You will be allocated a login. We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use [here](https://youtu.be/hyD-xbNIkg8):
 
 <pre>
 get | regex _raw="182\.\d{1,3}\.\d{1,3}\.\d{1,3}"
