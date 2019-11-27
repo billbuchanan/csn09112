@@ -4,7 +4,7 @@
 
 This page defines the contents of Test 2.
 
-Test date: Monday 2 December 2018. This test is worth 25% of the overall mark on the module.
+Test date: Monday 2 December 2019. This test is worth 25% of the overall mark on the module.
 
 ## Test 2 (lectures)
 
