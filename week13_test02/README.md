@@ -38,3 +38,5 @@ Test date: Monday 2 December 2019. This test is worth 25% of the overall mark on
 * Understands operation of the detection of magic numbers in files.
 * Understands how Bitcoin transactions work.
 
+If you want more traces, try [here](https://asecuritysite.com/forensics/pcap).
+
