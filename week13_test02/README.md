@@ -22,9 +22,15 @@ Test date: Monday 2 December 2019. This test is worth 25% of the overall mark on
 
 ## Test 2 (Challenges)
 
-* Network Forensics: [Examples](https://asecuritysite.com/forensics/pcap) [Notes](https://asecuritysite.com/public/unit09.pdf) [Slides](https://asecuritysite.com/book_chap08.pdf)
-* Network Forensics (Test): [Examples](https://asecuritysite.com/forensics/pcap) [Notes](https://asecuritysite.com/public/unit09.pdf) [Slides](https://asecuritysite.com/book_chap08.pdf)
-* Network Forensics lab: [here](https://asecuritysite.com/log/csn09112_lab08.pdf)
+* Network Forensics: [Test](https://asecuritysite.com/tests/tests?sortBy=d01_03).
+* FTP Hydra Crack [Trace](http://asecuritysite.com/log/hydra_ftp.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf01). 
+* Telnet Hydra Crack [Trace](http://asecuritysite.com/log/hydra_telnet.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf02).
+* Complex Network [Trace](http://asecuritysite.com/public/cw_capture.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf04). 
+
+## Labs 
+* Network Forensics Lab 1: [here](https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics/lab).
+* Network Forensics Lab 2: [here](https://github.com/billbuchanan/csn09112/tree/master/week12_end/labs).
+* Tunelling/SSL Forensics Lab: [here](https://github.com/billbuchanan/csn09112/tree/master/week10_tunnelling/labs).
 
 ## Study guide areas
 
@@ -40,10 +46,7 @@ Test date: Monday 2 December 2019. This test is worth 25% of the overall mark on
 
 If you want more traces, try [here](https://asecuritysite.com/forensics/pcap).
 
-## Additional
-If you have to training on some more complex traces:
 
-* FTP Hydra Crack [Trace](http://asecuritysite.com/log/hydra_ftp.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf01). 
-* Telnet Hydra Crack [Trace](http://asecuritysite.com/log/hydra_telnet.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf02).
-* Complex Network [Trace](http://asecuritysite.com/public/cw_capture.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf04). 
+
+
 
