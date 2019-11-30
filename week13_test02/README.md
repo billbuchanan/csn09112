@@ -40,3 +40,10 @@ Test date: Monday 2 December 2019. This test is worth 25% of the overall mark on
 
 If you want more traces, try [here](https://asecuritysite.com/forensics/pcap).
 
+## Additional
+If you have to training on some more complex traces:
+
+* FTP Hydra Crack [Trace](http://asecuritysite.com/log/hydra_ftp.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf01). 
+* Telnet Hydra Crack [Trace](http://asecuritysite.com/log/hydra_telnet.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf02).
+* Complex Network [Trace](http://asecuritysite.com/public/cw_capture.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf04). 
+
