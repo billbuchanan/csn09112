@@ -8,9 +8,9 @@ Test date: Monday 2 December 2019. This test is worth 25% of the overall mark on
 
 ## Test 2 (lectures)
 
-* Network Forensics [Link](http://www.asecuritysite.com/subjects/chapter09)
-* Tunelling [Link](https://www.asecuritysite.com/cryptobook/crypto07)
-* Blockchain and Cryptocurrencies [Link](http://www.asecuritysite.com/cryptobook/crypto10)
+* Network Forensics [Link](https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics)
+* Tunelling [Link](https://github.com/billbuchanan/csn09112/tree/master/week10_tunnelling)
+* Blockchain and Cryptocurrencies [Link](https://github.com/billbuchanan/csn09112/tree/master/week11_blockchain)
 
 ## Test 2 (Outline protocols)
 
