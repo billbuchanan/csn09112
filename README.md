@@ -60,7 +60,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   </tr>
   <tr >
     <td bgcolor="#990000" class="table1"><strong>7</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>21 Oct 2019</strong></td>
+    <td bgcolor="#990000" class="table1"><strong></strong></td>
     <td bgcolor="#ffe6e6">9. Digital Certificates </td>
   
       
