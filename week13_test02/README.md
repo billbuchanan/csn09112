@@ -4,13 +4,13 @@
 
 This page defines the contents of Test 2.
 
-Test date: Monday 2 December 2018. This test is worth 25% of the overall mark on the module.
+Test date: TBC. This test is worth 25% of the overall mark on the module. You can select the time for the test [here](https://moodle.napier.ac.uk/mod/choicegroup/view.php?id=1390450).
 
 ## Test 2 (lectures)
 
-* Network Forensics [Link](http://www.asecuritysite.com/subjects/chapter09)
-* Tunelling [Link](https://www.asecuritysite.com/cryptobook/crypto07)
-* Blockchain and Cryptocurrencies [Link](http://www.asecuritysite.com/cryptobook/crypto10)
+* Network Forensics [Link](https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics)
+* Tunelling [Link](https://github.com/billbuchanan/csn09112/tree/master/week10_tunnelling)
+* Blockchain and Cryptocurrencies [Link](https://github.com/billbuchanan/csn09112/tree/master/week11_blockchain)
 
 ## Test 2 (Outline protocols)
 
@@ -22,9 +22,14 @@ Test date: Monday 2 December 2018. This test is worth 25% of the overall mark on
 
 ## Test 2 (Challenges)
 
-* Network Forensics: [Examples](https://asecuritysite.com/forensics/pcap) [Notes](https://asecuritysite.com/public/unit09.pdf) [Slides](https://asecuritysite.com/book_chap08.pdf)
-* Network Forensics (Test): [Examples](https://asecuritysite.com/forensics/pcap) [Notes](https://asecuritysite.com/public/unit09.pdf) [Slides](https://asecuritysite.com/book_chap08.pdf)
-* Network Forensics lab: [here](https://asecuritysite.com/log/csn09112_lab08.pdf)
+* Network Forensics: [Test](https://asecuritysite.com/tests/tests?sortBy=d01_03).
+* FTP Hydra Crack [Trace](http://asecuritysite.com/log/hydra_ftp.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf01). 
+* Telnet Hydra Crack [Trace](http://asecuritysite.com/log/hydra_telnet.zip). [Test](https://asecuritysite.com/tests/tests?sortBy=advf02).
+
+## Labs 
+* Network Forensics Lab 1: [here](https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics/lab).
+* Network Forensics Lab 2: [here](https://github.com/billbuchanan/csn09112/tree/master/week12_end/labs).
+* Tunelling/SSL Forensics Lab: [here](https://github.com/billbuchanan/csn09112/tree/master/week10_tunnelling/labs).
 
 ## Study guide areas
 
@@ -37,4 +42,10 @@ Test date: Monday 2 December 2018. This test is worth 25% of the overall mark on
 * Understands operation of SSL and TLS.
 * Understands operation of the detection of magic numbers in files.
 * Understands how Bitcoin transactions work.
+
+If you want more traces, try [here](https://asecuritysite.com/forensics/pcap).
+
+
+
+
 
