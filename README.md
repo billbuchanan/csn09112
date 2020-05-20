@@ -68,7 +68,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   <tr>
     <td bgcolor="#990000" class="table1"><strong>7</strong></td>
     <td bgcolor="#990000" class="table1"><strong>29 June 2020</strong></td>
-    <td ><form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09112/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form></td>
+    <td ><form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09112/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details (TBC)</button> </form></td>
      <td bgcolor="#ffe6e6">Test 1  (To be confirmed)   </td>
   
   </tr>
@@ -105,7 +105,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   <tr>
     <td bgcolor="#990000" class="table1"><strong>12</strong></td>
     <td bgcolor="#990000" class="table1"><strong>3 Aug 2020</strong></td>
-    <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details</button> </form></td>
+    <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form></td>
     <td bgcolor="#e6ffee">Test 2 (To be confirmed) </td>
   </tr>
   <tr>
