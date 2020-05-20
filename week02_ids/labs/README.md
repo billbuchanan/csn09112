@@ -14,7 +14,7 @@ Complete Lab 1: Vyatta Firewall. The lab is [<a href="https://github.com/billbuc
 <h2>Learning activities</h2>
 At the end of this lab, you should understand:
 <ul>
-<li>How to access the vSoC Cloud, working with your ownfolder within CSN09112.</li>
+<li>How to access the vSoC Cloud, working with your ownfolder within CSN09412.</li>
 <li>How to launch virtual machines, such as your Ubuntu, Windows Server, and Vyatta ones.</li>
 <li>How to configure the network settings of the Ubuntu and Windows Server machines, as well as using some basic Linux and Windows commands.</li>
 <li>How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.</li>
