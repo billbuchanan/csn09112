@@ -1,5 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
+**To be confirmed**
+
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test, and  runs within the lab time.
 
 Time for test: 1 hour 15 minutes 
