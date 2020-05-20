@@ -1,5 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
+**To be confirmed**
+
 ## CSN09112 - Network Security and Cryptography
 
 This page defines the contents of Test 2.
