@@ -10,7 +10,7 @@ The key objectives of this unit are:</p>
 <h2>Lecture</h2>
 <p>The lecture is <a href="https://www.youtube.com/watch?v=IguN0dFZ23I" target="_blank">here</a></p>
 <h2>Lab</h2>
-<p>There are two labs to complete. The first is the main lab and the second is an additional one to build up your Python skills. These  are:</p>
+<p>The main lab for this session is:</p>
 <ul>
   <li>Lab: Vyatta Firewall. The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf">Lab</a>] and the demo for the lab is [<a href="https://youtu.be/ACldSA_uKM0">here</a>]</li>
 
