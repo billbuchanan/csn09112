@@ -39,6 +39,18 @@ Within resolve.conf add the line:
 name-server 10.200.3.354
 </pre>
 
+For vyatta:
+
+<pre>
+$ configure
+# set system host-name yourname
+# set system login user yourname authentication plaintext-password yourpass
+# set interfaces ethernet eth0 address dhcp
+# set interfaces ethernet eth1 address 10.10.x.254/24
+# set interfaces ethernet eth2 address 10.10.y.254/24
+# set system gateway 10.246.3.254
+</pre>
+
 <h2>IP Allocation</h2>
 
 <p>Allocation A</p>
