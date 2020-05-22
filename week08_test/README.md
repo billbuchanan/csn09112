@@ -1,12 +1,11 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-**To be confirmed**
-
+# Test 1
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test, and  runs within the lab time.
 
-Time for test: 1 hour 15 minutes 
+Time for test: Wednesday, 1 July, 3:30pm. Time: 90 mins.
 
-# Background
+## Background
 
 * Ciphers and Fundamentals [Link](https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers).
 * Symmetric Encryption/Hashing [Link](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey)
@@ -14,7 +13,7 @@ Time for test: 1 hour 15 minutes
 * Key Exchange. [Link](https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture)
 * Digital Certificates. [Link](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/lecture)
 
-# Test 1 (Challenges)
+## Test 1 (Challenges)
 
 * Hex Code Challenge [Try](https://asecuritysite.com/Challenges/hex).
 * Pigpen [Try](https://asecuritysite.com/Challenges/pigpen).
@@ -23,14 +22,14 @@ Time for test: 1 hour 15 minutes
 * ADFGVX [Try](https://asecuritysite.com/Challenges/dx).
 * Scrambled Alphabet [Try](https://asecuritysite.com/Challenges/scramb). Can you beat 5 minutes?
 
-# Test 1 (Examples)
+## Test 1 (Examples)
 
 * Rail Code [Try](https://asecuritysite.com/coding/rail).
 * Caeser. [Try](https://asecuritysite.com/tests/tests?sortBy=caesar).
 * Hex. [Try](https://asecuritysite.com/tests/tests?sortBy=hex01).
 * Binary to ASCII. [Try](https://asecuritysite.com/tests/tests?sortBy=ascii02). 
 
-# Test 1 (Some principles)
+## Test 1 (Some principles)
 
 * Key Enthropy [here](https://asecuritysite.com/encryption/en). How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
 * John the Ripper, Hashcat and Ophcrack: [here](http://youtu.be/Xvbk2nSzEPk?t=14m17s)
@@ -44,7 +43,7 @@ Here are some sample tests:
 * [Test 2 (Encryption)](https://asecuritysite.com/tests/tests?sortBy=crypto02)
 * [Test 3 (Cracking)](https://asecuritysite.com/tests/tests?sortBy=crypto03)
 
-# Study Questions
+## Study Questions
 
 Try to review your knowledge by answering these questions:
 
