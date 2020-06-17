@@ -8,7 +8,7 @@ Aim: To provide a foundation in understanding Ethernet, IP and TCP.
 The demo of this lab is [here](https://youtu.be/FhVN-gZnQq0)
 
 ### Activities
-Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/webpage.zip)
+Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/webpage.zip)
 
 In this case a host connects to a Web server. Determine the following:
 
@@ -39,7 +39,7 @@ What does the filter of tcp.flags.syn==1 && tcp.flags.ack==1 do?
 Which flags are set at the end of a connection?
 </pre>
 
-L1.2	Download the following file, and open it up in Wireshark [here](http://asecuritysite.com/log/googleWeb.zip)
+L1.2	Download the following file, and open it up in Wireshark [here](httpsfx://asecuritysite.com/log/googleWeb.zip)
 
 In this case a host connects to the Google Web server. Determine the following:
 
@@ -82,11 +82,11 @@ Apart from your network traffic, can you see other traffic from other hosts on t
 ### Details
 Aim:		To provide a foundation in understanding HTTP, DNS and FTP.
 
-The demo of this lab is [here](http://youtu.be/l0A4Xrfq5Tc)
+The demo of this lab is [here](https://youtu.be/l0A4Xrfq5Tc)
 ### Activities
 L1.4	Download the following file, and open it up in Wireshark:
 
-http://asecuritysite.com/log/webpage.zip
+https://asecuritysite.com/log/webpage.zip
 
 In this case a host connects to a Web server. Determine the following:
 
@@ -110,7 +110,7 @@ Which Web server technology is the server using?
 On which date were the pages accessed?
 </pre>
 
-L1.5	Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/googleWeb.zip)
+L1.5	Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/googleWeb.zip)
 
 In this case a host connects to the Google Web server. Determine the following:
 
@@ -157,7 +157,7 @@ Which Web server technology is the server using?
 </pre>
 
 
-L1.7	Download the following file, and open it up in Wireshark [here](http://asecuritysite.com/log/dnslookup.zip)
+L1.7	Download the following file, and open it up in Wireshark [here](https://asecuritysite.com/log/dnslookup.zip)
 
 For this trace, determine the following:
 <pre>
@@ -184,7 +184,7 @@ Using the filter of udp.port==53, and examining the AAAA class request, determin
 </pre>
 
 
-L1.9	Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/ftp2.zip)
+L1.9	Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/ftp2.zip)
 
 For this trace, determine the following:
 
@@ -221,10 +221,10 @@ What does the filter ftp.response.code==227, identify in terms of the ports that
 ### Details
 Aim:		To provide a foundation in understanding ARP and ICMP.
 
-The demo of this lab is at:  [here](http://youtu.be/T_jrAwZfE74)
+The demo of this lab is at:  [here](https://youtu.be/T_jrAwZfE74)
 
 ### Activities
-L1.10	Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/webpage.zip)
+L1.10	Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/webpage.zip)
 
 In this case a host connects to a Web server. Determine the following:
 
@@ -236,7 +236,7 @@ Why does the host not go through a gateway:
 
 
 
-L1.11	Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/googleWeb.zip)
+L1.11	Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/googleWeb.zip)
 
 In this case a host connects to the Google Web server. Determine the following:
 
@@ -247,7 +247,7 @@ Can we determine the MAC address of the Google Web server?
 </pre>
 
 
-L1.12	Download the following file, and open it up in Wireshark: [here](http://asecuritysite.com/log/arp_scan.zip)
+L1.12	Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/arp_scan.zip)
 
 Determine the following:
 
@@ -333,11 +333,11 @@ Ping payload for Linux:
 ### Details
 Aim:		To provide a foundation in understanding SNMP, POP-3 and IMAP.
 
-			The demo of this lab is at:  http://youtu.be/3RHrq3EehsE
+			The demo of this lab is at:  https://youtu.be/3RHrq3EehsE
 ### Activities
 L1.19	Download the following file, and open it up in Wireshark:
 
-http://asecuritysite.com/log/smtp.zip
+https://asecuritysite.com/log/smtp.zip
 
 Determine the following:
 <pre>
@@ -360,7 +360,7 @@ With SMTP, which character sequence is used to end the message:
 
 L1.20	Download the following file, and open it up in Wireshark:
 
-http://asecuritysite.com/log/pop3.zip
+https://asecuritysite.com/log/pop3.zip
 
 Determine the following:
 
@@ -393,7 +393,7 @@ Which command does POP-3 use to get a specific message:
 
 L1.3	Download the following file, and open it up in Wireshark:
 
-http://asecuritysite.com/log/imap.zip
+https://asecuritysite.com/log/imap.zip
 
 Determine the following:
 
@@ -458,11 +458,11 @@ L1.5	On the Windows 2003 virtual machine, go into the C:\inetpub\mailroot\queue 
 ### Details
 Aim:		To provide a foundation in understanding SSL and TLS.
 
-			The demo of this lab is at:  http://youtu.be/jejjoSCn6Yg
+			The demo of this lab is at:  https://youtu.be/jejjoSCn6Yg
 ### Activities
 L1.21	Download the following file, and open it up in Wireshark:
 
-http://asecuritysite.com/log/ssl.zip
+https://asecuritysite.com/log/ssl.zip
 
 Determine the following:
 
@@ -479,7 +479,7 @@ Can you determine which organised signed the digital certificate passed from the
 Can you read any of the encrypted data sent/received? Yes/No
 
 
-L1.22	Start Wireshark and capture your network traffic Next go to http://google.co.uk and 
+L1.22	Start Wireshark and capture your network traffic Next go to https://google.co.uk and 
 
 Determine the following:
 
@@ -537,5 +537,5 @@ http://skydrive.com
 ## Test
 Now take this test:
 
-http://asecuritysite.com/tests/tests?sortBy=d01_03
+https://asecuritysite.com/tests/tests?sortBy=d01_03
 
