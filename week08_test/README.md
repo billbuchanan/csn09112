@@ -1,7 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
 # Test 1
-You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test, and  runs within the lab time.
+You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is an open book test, and  runs within the lab time.
 
 Time for test: Wednesday, 1 July, 2:30-4pm. Time: 90 mins.
 
