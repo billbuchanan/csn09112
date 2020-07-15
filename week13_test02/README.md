@@ -4,7 +4,7 @@
 
 This page defines the contents of Test 2.
 
-Test date: 3 Aug 2020, 3:30pm. This test is worth 25% of the overall mark on the module. You can select the time for the test [here](https://moodle.napier.ac.uk/mod/choicegroup/view.php?id=1390450).
+Test date: 3 Aug 2020, 1:30pm. This test is worth 25% of the overall mark on the module. 
 
 ## Test 2 (lectures)
 
