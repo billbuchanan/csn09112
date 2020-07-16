@@ -106,7 +106,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
     <td bgcolor="#990000" class="table1"><strong>12</strong></td>
     <td bgcolor="#990000" class="table1"><strong>3 Aug 2020</strong></td>
     <td></td>
-    <td bgcolor="#e6ffee">Test 2 (To be confirmed) </td>
+    <td bgcolor="#e6ffee"></td>
   </tr>
   <tr>
     <td bgcolor="#990000" class="table1"><strong>13</strong></td>
