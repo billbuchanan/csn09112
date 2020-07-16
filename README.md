@@ -116,7 +116,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   </tr>
 
   <tr>
-    <td bgcolor="#990000" class="table1">&nbsp;</td>
+    <td bgcolor="#990000" class="table1"><strong>14</strong></td>
     <td bgcolor="#990000" class="table1"><strong>17 Aug 2020</strong></td>
     <td>Hand-in: 19 Aug [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
     <td>&nbsp;</td>
