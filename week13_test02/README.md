@@ -4,7 +4,7 @@
 
 This page defines the contents of Test 2.
 
-Test date: 3 Aug 2020, 1:30pm. This test is worth 25% of the overall mark on the module. 
+Test date: 12 Aug 2020, 3pm. This test is worth 25% of the overall mark on the module. 
 
 ## Test 2 (lectures)
 
