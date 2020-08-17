@@ -7,7 +7,7 @@
 You can download the Bot onto the Ubuntu machine using:
 
 <pre>
-wget https://github.com/billbuchanan/csn09112/raw/master/coursework/Archive.zip
+wget http://buchananweb.co.uk/Archive.zip
 unzip Archive.zip
 </pre>
 <p>Note: Current version is 3.5a</p>
