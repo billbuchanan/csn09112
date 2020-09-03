@@ -111,14 +111,14 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   <tr>
     <td bgcolor="#990000" class="table1"><strong>14</strong></td>
     <td bgcolor="#990000" class="table1"><strong>10 Dec 2020</strong></td>
-  <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (12 August 2020)</button> </form></td>
+  <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form></td>
     <td>[<a href="https://github.com/billbuchanan/csn09112/tree/master/week13_test02">Study guide here</a>]</td>
   </tr>
 
   <tr>
     <td bgcolor="#990000" class="table1"><strong>15</strong></td>
     <td bgcolor="#990000" class="table1"><strong>17 Dec 2020</strong></td>
-    <td>Hand-in: 19 Aug [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
+    <td>Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
     <td>&nbsp;</td>
   </tr>
 </table>
