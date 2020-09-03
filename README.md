@@ -18,8 +18,8 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   </tr>
       
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>1</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>18 May 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>2</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>17 Sept 2020</strong></td>
     <td>1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>]</td>
   
 <td>Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab</a></td>
@@ -27,23 +27,23 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
      
   </tr>
   <tr >
-    <td bgcolor="#990000" class="table1"><strong>2</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>25 May 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>3</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>24 Sept 2020</strong></td>
     <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
       <td>Vyatta and Snort. </td>
 
    
   </tr>
   <tr >
-    <td bgcolor="#990000" class="table1"><strong>3</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>1 June 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>4</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>1 Oct 2020</strong></td>
     <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>]</td>
        <td>pfSense.  </td>
     
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>4</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>8 June 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>5</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>8 Oct 2020</strong></td>
     <td bgcolor="#ffe6e6">5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>]</td>
            <td>Vulnerability Analysis and IDS</td>
     
@@ -52,36 +52,36 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
    
   </tr>
       <tr>
-            <td bgcolor="#990000" class="table1"><strong>5</strong></td>
-            <td bgcolor="#990000" class="table1"><strong>15 June 2020</strong></td>
+            <td bgcolor="#990000" class="table1"><strong>6</strong></td>
+            <td bgcolor="#990000" class="table1"><strong>15 Oct 2020</strong></td>
     <td bgcolor="#ffe6e6">7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]</td>
  <td>Public/Private Key and Hashing</td>
       
   </tr>
   <tr >
-    <td bgcolor="#990000" class="table1"><strong>6</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>22 June 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>7</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>22 Oct 2020</strong></td>
     <td bgcolor="#ffe6e6">9. Digital Certificates </td>
   
       
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>7</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>29 June 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>8</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>29 Oct 2020</strong></td>
     <td ><form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09412/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form></td>
      <td bgcolor="#ffe6e6">Test 1 [<a href="https://github.com/billbuchanan/csn09112/tree/master/week08_test">Link</a>]</td>
   
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>8</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>6 July 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>9</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>5 Nov 2020</strong></td>
       <td bgcolor="#e6ffee">10. Network Forensics  [<a href="https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics">Link</a>]</td>
     <td>Network Forensics</td>
   
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>9</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>13 July 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>10</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>12 Nov 2020</strong></td>
        <td  bgcolor="#e6ffee">11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>]</td>
  <td>Tunnelling</td>
   
@@ -89,35 +89,35 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   </tr>
 
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>10</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>20 July 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>11</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>19 Nov 2020</strong></td>
           <td  bgcolor="#e6ffee">12. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
        <td>Blockchain Lab</td>
     
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>11</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>27 July 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>26 Nov 2020</strong></td>
       <td  bgcolor="#e6ffee">Revision and overview </td>
        <td>Network Protocols</td>
    
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>3 Aug 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>13</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>3 Dec 2020</strong></td>
     <td></td>
     <td bgcolor="#e6ffee"></td>
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>13</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>10 Aug 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>14</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>10 Dec 2020</strong></td>
   <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (12 August 2020)</button> </form></td>
     <td>[<a href="https://github.com/billbuchanan/csn09112/tree/master/week13_test02">Study guide here</a>]</td>
   </tr>
 
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>14</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>17 Aug 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>15</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>17 Dec 2020</strong></td>
     <td>Hand-in: 19 Aug [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
     <td>&nbsp;</td>
   </tr>
