@@ -87,21 +87,23 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   
       
   </tr>
-
-  <tr>
+   <tr>
     <td bgcolor="#990000" class="table1"><strong>11</strong></td>
     <td bgcolor="#990000" class="table1"><strong>19 Nov 2020</strong></td>
+       <td  bgcolor="#e6ffee">12. Splunk</td>
+ <td>Splunk Lab</td>
+  
+      
+  </tr>
+
+  <tr>
+    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>26 Nov 2020</strong></td>
           <td  bgcolor="#e6ffee">12. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
        <td>Blockchain Lab</td>
     
   </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>26 Nov 2020</strong></td>
-      <td  bgcolor="#e6ffee">Revision and overview </td>
-       <td>Network Protocols</td>
-   
-  </tr>
+
   <tr>
     <td bgcolor="#990000" class="table1"><strong>13</strong></td>
     <td bgcolor="#990000" class="table1"><strong>3 Dec 2020</strong></td>
