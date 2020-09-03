@@ -12,7 +12,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 <table width="100%" border="1" cellpadding="0" cellspacing="0">
   <tr>
     <td width="5%" bgcolor="#990000" class="table1"><strong>No</strong></td>
-    <td width="15%" bgcolor="#990000" class="table1"><strong>Week beginning</strong></td>
+    <td width="15%" bgcolor="#990000" class="table1"><strong>Date</strong></td>
     <td width="35%" bgcolor="#990000" class="table1"><strong>Subject</strong></td>
     <td width="45%" bgcolor="#990000" class="table1"><strong>Lab</strong></td>
   </tr>
