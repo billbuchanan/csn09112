@@ -65,31 +65,41 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   
       
   </tr>
-  <tr>
+      <tr>
     <td bgcolor="#990000" class="table1"><strong>8</strong></td>
     <td bgcolor="#990000" class="table1"><strong>29 Oct 2020</strong></td>
+      <td bgcolor="#e6ffee">Study</td>
+    <td>Study</td>
+  
+  </tr>
+  
+  <tr>
+    <td bgcolor="#990000" class="table1"><strong>9</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>5 Nov 2020</strong></td>
     <td ><form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09412/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form></td>
      <td bgcolor="#ffe6e6">Test 1 [<a href="https://github.com/billbuchanan/csn09112/tree/master/week08_test">Link</a>]</td>
   
   </tr>
+
+  
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>9</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>5 Nov 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>10</strong></td>
+      <td bgcolor="#990000" class="table1"><strong>12 Nov 2020</strong></td>
       <td bgcolor="#e6ffee">10. Network Forensics  [<a href="https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics">Link</a>]</td>
     <td>Network Forensics</td>
   
   </tr>
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>10</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>12 Nov 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>11</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>19 Nov 2020</strong></td>
        <td  bgcolor="#e6ffee">11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>]</td>
  <td>Tunnelling</td>
   
       
   </tr>
    <tr>
-    <td bgcolor="#990000" class="table1"><strong>11</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>19 Nov 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>26 Nov 2020</strong></td>
        <td  bgcolor="#e6ffee">12. Splunk</td>
  <td>Splunk Lab</td>
   
@@ -97,30 +107,24 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
   </tr>
 
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>26 Nov 2020</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>13</strong></td>
+    <td bgcolor="#990000" class="table1"><strong>3 Dec 2020</strong></td>
           <td  bgcolor="#e6ffee">13. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
        <td>Blockchain Lab</td>
     
   </tr>
 
   <tr>
-    <td bgcolor="#990000" class="table1"><strong>13</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>3 Dec 2020</strong></td>
-    <td></td>
-    <td bgcolor="#e6ffee"></td>
-  </tr>
-  <tr>
     <td bgcolor="#990000" class="table1"><strong>14</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>10 Dec 2020</strong></td>
-  <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='/csn09112/test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form></td>
-    <td>[<a href="https://github.com/billbuchanan/csn09112/tree/master/week13_test02">Study guide here</a>]</td>
+   <td bgcolor="#990000" class="table1"><strong>10 Dec 2020</strong></td>
+  <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='https://github.com/billbuchanan/csn09112/tree/master/week13_test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form></td>
   </tr>
-
   <tr>
     <td bgcolor="#990000" class="table1"><strong>15</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>17 Dec 2020</strong></td>
-    <td>Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
+     <td bgcolor="#990000" class="table1"><strong>17 Dec 2020</strong></td>
+      <td>Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
     <td>&nbsp;</td>
   </tr>
+
+
 </table>
