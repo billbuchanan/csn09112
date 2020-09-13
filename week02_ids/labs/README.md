@@ -29,11 +29,12 @@ At the end of this lab, you should understand:
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
 ## Quick guide
 For Ubtuntu configuration:
-<pre>
+
+```Linux
 ip addr add 192.1.1.1 dev eth1
 route add default gw 192.168.1.254 eth0
 nano /etc/resolve.conf 
-</pre>
+```
 
 Within resolve.conf add the line:
 
