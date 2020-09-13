@@ -36,7 +36,7 @@ nano /etc/resolve.conf
 Within resolve.conf add the line:
 
 <pre>
-name-server 10.200.3.354
+name-server 10.221.3.354
 </pre>
 
 For vyatta:
@@ -48,7 +48,7 @@ $ configure
 # set interfaces ethernet eth0 address dhcp
 # set interfaces ethernet eth1 address 10.10.x.254/24
 # set interfaces ethernet eth2 address 10.10.y.254/24
-# set system gateway 10.246.3.254
+# set system gateway 10.221.3.254
 </pre>
 
 <h2>IP Allocation</h2>
