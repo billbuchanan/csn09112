@@ -1,15 +1,15 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1>Lab 1: Vyatta Firewalls</h2>
-<h2>Aim</h2>
+# Lab 1: Vyatta Firewalls
+## Aim
 The  aim  of  this  lab  is  to  introduce  the  vSoC  virtualisation  teaching  platform  and  VSphere client  access  to  your  own  virtual  machines  and  to  understand  how  to  configure  a  Vyatta firewall  for  NAT  and  firewall  rules, demonstrating  some  fundamentals  around  network security and device configuration. It is accessed from:
 
 <pre>vsoc.napier.ac.uk</pre>
 
 
-<h2>Time to Complete</h2>
+## Time to Complete
 4 hours (two supervise hours in the lab,and two additional unsupervised hours).
 
-<h2>Activities</h2>
+## Activities
 
 Complete Lab 1: Vyatta Firewall. The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf" target="_blank">here]. [<a href="https://www.youtube.com/watch?v=ACldSA_uKM0" target="_blank">Demo</a>]. </p>
 
@@ -23,10 +23,10 @@ At the end of this lab, you should understand:
 <li>How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services</li>
   </ul>
 
-<h2>Lab setup</h2>
+## Lab setup
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
-<h2>Quick guide</h2>
-<p>For Ubtuntu configuration:</p>
+## Quick guide
+For Ubtuntu configuration:
 <pre>
 ip addr add 192.1.1.1 dev eth1
 route add default gw 192.168.1.254 eth0
@@ -173,32 +173,25 @@ Group_103	10.10.205.7/24	10.10.206.7/24 DHCP	10.10.205.254/24	10.10.206.254/24
 </pre>
 
 
-Lab 1: Vyatta Firewalls - Overview
-Aim:
-The aim of this lab is to introduce the vSoC virtualisation teaching platform and VSphere client access to your own virtual machines and to understand how to configure a Vyatta firewall for NAT and firewall rules, demonstrating some fundamentals around network security and device configuration.
-Time to Complete:
-4 hours (two supervise hours in the lab, and two additional unsupervised hours).
-Activities:
-•	Complete Lab 1: Vyatta Firewall
 
-Learning activities:
+## Aim:
+
+
+## Learning activities:
 At the end of this lab, you should understand:
+
 •	How to access the vSoC Cloud, working with your own folder within CSN09112.
 •	How to launch virtual machines, such as your Ubuntu, Windows Server, and Vyatta ones.
 •	How to configure the network settings of the Ubuntu and Windows Server machines, as well as using some basic Linux and Windows commands.
 •	How to configure the Vyatta firewall, for basic routing, NAT, and filtering - to grant or block access to certain types of packets and protocols.
 •	How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services
-Reflective statements (end-of-exercise):
+## Reflective statements (end-of-exercise):
 •	What is the most important things when setting up a host, in order that it can connect with other networks?
-
-
-
 •	With the Vyatta firewall, how does the firewall protect against threats?
 
 
- 
-Lab 1: Vyatta Firewalls
-A	Setting up the network
+
+## A	Setting up the network
 Figure 1 outlines the setup of the lab for routing, where we will assign three network addresses. Interfaces which are connected to the Vyatta firewall will be able to route, but we have to use NAT to allow the DMZ and private networks to connect to the public network. 
 
 Our first task is to route through the Vyatta firewall to connect two networks. In the lab you will be assigned two networks in the form: 
@@ -206,23 +199,14 @@ Our first task is to route through the Vyatta firewall to connect two networks. 
 10.10.x.0/24		10.10.y.0/24   
 
 Part 1 Demo:  		https://youtu.be/ACldSA_uKM0
-
  
 
 Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)
 
 
-
-
-
-
-
-
-
 Log into vSphere (vsoc.napier.ac.uk) and locate the CSN09112 folder. Locate your matriculation number and you will be allocated a group number:
 
 Group Number: 
-
 
 
 Note: Sometimes the network names are different, such as Eth3, Eth4 and Eth5. Assume that the first network name is Public, the second is the Private network, and the third is the DMZ.
@@ -240,24 +224,26 @@ Kali:			User: root, password: toor
 Figure 2: Your network setup
 
 
-	Select your Ubuntu host (User: napier, Password: napier123) and configure for 10.10.x.7 with a default gateway of 10.10.x.254 and a subnet mask of 255.255.255.0.
+Select your Ubuntu host (User: napier, Password: napier123) and configure for 10.10.x.7 with a default gateway of 10.10.x.254 and a subnet mask of 255.255.255.0.
 
 Can you ping the 10.10.x.7 port from the host selected? Yes/No
 
- 	Select your Windows server (User: Administrator, Password: napier) and configure it at 10.10.y.7 with a default gateway of 10.10.y.254 and a subnet mask of 255.255.255.0.
+Select your Windows server (User: Administrator, Password: napier) and configure it at 10.10.y.7 with a default gateway of 10.10.y.254 and a subnet mask of 255.255.255.0.
 
 Can you ping the 10.10.y.7 port from the host selected? Yes/No
 
-	From each of your hosts, can you ping the other host? Yes/No
+From each of your hosts, can you ping the other host? Yes/No
 
 Why can’t you ping the other host?
 
 
 Note. For Linux uses the commands:
-
+<pre>
 sudo ifconfig eth11 10.10.x.7 netmask 255.255.255.0 up
 sudo route add default gw 10.10.x.254
-B	Routing between connected networks
+</pre>
+
+## Routing between connected networks
 Start up your Vyatta firewall. 
 Login to the firewall, with: (User: vyatta, Password: vyatta)
 
@@ -393,12 +379,14 @@ Now can you ping 8.8.8.8 from Windows 2003? Yes/No
 Now can you access Google.com from Ubuntu? Yes/No
 Now can you access Google.com from Windows 2003? Yes/No
 
-D	Setting up services on firewall
+## Setting up services on firewall
 Now save your configuration in edit mode with:
 
+<pre>
 # save
 # exit
 $ reboot
+</pre>
 
 You can now reboot the firewall (use the command reboot), and login with your new username and password.
 
@@ -443,7 +431,7 @@ Now setup the default gateway of your Kali host to be the IP address of your eth
 If so, why can you now ping them?
 
 
-E	Firewalling
+## Firewalling
 The Vyatta firewall uses zones to define security regions. In this case we can setup public, dmz and private. Then we apply firewall rules to define how the traffic between the zones is filtered. In this case we will only setup the traffic between the dmz and private, with two rules: dmz2private and private2dmz. Possible filtering is to allow connections on certain ports from private to dmz, but block all connections that are initiated in the dmz for the private region. Figure 3 outlines the setup.
 
  
@@ -534,7 +522,7 @@ From your Kali instance, Can you ping each of the interfaces on the firewall:  Y
 
 From your Kali instance, Can you ping each of the interfaces on the hosts:  Yes/No
 
-E	DoS Protection
+## DoS Protection
 A particularly difficult area to protect against is Denial of Service (DoS). The Vyatta firewall has protection for this, where it limits the number of connections over a given amount of time. Now let’s limit the number of Web connections to 5 in 10 seconds:
 
 set  firewall  name  private2dmz rule 5 action  drop
@@ -553,7 +541,7 @@ How many connections where accepted before it stopped?
 Note. To perform an hping on 10.1.1.7 on port 80:
 
 hping 10.1.1.7 -S -V -p 80
-F	Appendix
+## Appendix
 Now restart Wireshark on the Linux install. Next enable the DHCP server for the Linux host on the Vyatta firewall with:
 
 # set service dhcp-server shared-network-name ETH1 subnet 10.10.x.0/24 start 10.10.x.9 stop 10.10.x.100
@@ -578,99 +566,7 @@ What is the handshake that is used to gain the IP address from the DHCP server:
 
  
  
-Configuration Mode Commands
- Cisco	Vyatta
-SAVE	
-copy run tftp
-N/A 	save tftp://ip/name 
-save /mnt/floppy/config/config.boot 
-SHOW	
-show	show running-config
-SET SERVICE	
-ip server http
-line vty 0 4
-  password	set service http
-set service telnet
- 
-set service ssh
-	
 
-ip dhcp pool
-  network
-  default-router
- 
- 
-ip dhcp excluded-address 	set service dhcp-server name 
-edit service dhcp-server name 
-  set start ... stop 
-  set default-router
-  set network-mask
-  set interface
-  set exclude 
-SET SYSTEM	
-ip domain-name
-ip default-gateway
-hostname
-username …  password …
-ntp server
-ip name-server
-terminal monitor
-clock timezone 	set system domain-name
-set system gateway-address
-set system host-name
-set system login
-set system ntp-server
-set system name-server
-set system syslog console
-set system time-zone
-INTERFACES
-interface
-  set description 
-  ip address 
-  duplex
-  speed	
-edit interfaces 
-  set description 
-  set address ... prefix-length
-  set duplex
-  set speed
-STATIC
-ip route 	
-set protocols static route ...next-hop ... 
- 
-Operational Mode Commands
-
-Cisco command
-ping
-traceroute
-show arp
-show ip ospf neighbor
-show ip ospf database
-show ip route
-show ip route | include
-show ip interfaces
- 
-show clock
-show ntp associations
-show ip dhcp binding
-show ip dhcp server statistics
-show ip nat translations
-show ip nat statistics 		Vyatta command
-ping
-raceroute
-show arp
-show ospf4 neighbor
-show ospf4 database
-show route
-show route | match ...
-show interfaces ethernet ... physical
-show interfaces ethernet ... statistics
-show host date
-show ntp associations
-show dhcp lease
-show dhcp statistics
-show nat rules
-show nat statistics
 
 
 
