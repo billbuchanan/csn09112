@@ -57,15 +57,15 @@ Note: Sometimes the network names are different, such as Eth3, Eth4 and Eth5. As
 
 Use the network diagram in Figure 2, filling in the boxes with your addressing, the allocated networks, subnets, and IP addresses, and use as reference, as you complete the lab.
 
-User  Passwords for VMs
-Vyatta. 		User: vyatta, Password: vyatta
-Windows 2003: 	User: Administrator, Password: napier
-Ubuntu:		User: root, password: napier123
-Kali:			User: root, password: toor
+* Vyatta. 		User: vyatta, Password: vyatta
+* Windows 2003: 	User: Administrator, Password: napier
+* Ubuntu:		User: root, password: napier123
+* Kali:			User: root, password: toor
 
  
-
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview02.png)
 Figure 2: Your network setup
+
 
 
 Select your Ubuntu host (User: napier, Password: napier123) and configure for 10.10.x.7 with a default gateway of 10.10.x.254 and a subnet mask of 255.255.255.0.
