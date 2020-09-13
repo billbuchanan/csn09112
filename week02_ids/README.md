@@ -13,6 +13,7 @@ The key objectives of this unit are:</p>
 <p>The main lab for this session is:</p>
 <ul>
   <li>Lab: Vyatta Firewall. The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf">Lab</a>] and the demo for the lab is [<a href="https://youtu.be/ACldSA_uKM0">here</a>]</li>
+  
 
  </ul>
   
@@ -21,5 +22,6 @@ The key objectives of this unit are:</p>
 <p>There is a fun test at: <a href="https://asecuritysite.com/tests/fun?sortBy=sfc02">Test</a>.</p>
 <h2>Slides</h2>
 <p>The slides for the chapter are [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lecture/unit02_ids.pdf">here</a>]</p>
-
+<h2>Additional</h2>
+<p>Snort analyser: <a href="https://asecuritysite.com/forensics/snort2">here</a></p>
 
