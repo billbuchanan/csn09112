@@ -82,10 +82,11 @@ Why can’t you ping the other host?
 
 
 Note. For Linux uses the commands:
-<pre>
+
+```
 sudo ifconfig eth11 10.10.x.7 netmask 255.255.255.0 up
 sudo route add default gw 10.10.x.254
-</pre>
+```
 
 ## Routing between connected networks
 Start up your Vyatta firewall. 
@@ -93,29 +94,37 @@ Login to the firewall, with: (User: vyatta, Password: vyatta)
 
 View the current configuration with the command:
 
+```
 show configuration
+```
 
 Initially erase the configuration in the firewall, and reboot it, with:
 
+```
 cp /opt/vyatta/etc/config.boot.default /opt/vyatta/etc/config/config.boot
 
 reboot
+```
 
 Next perform the following:
 
- Setup a few simple things, such as the hostname, a username and password, and so on:
+Setup a few simple things, such as the hostname, a username and password, and so on:
 
+```
 $ configure
 # set system host-name yourname
 # set system login user yourname authentication plaintext-password yourpass
+```
 
- Configure the firewall using the following commands (changing the x and y for your net):
+Configure the firewall using the following commands (changing the x and y for your net):
 
+```
 $ configure
 # set interfaces ethernet eth0 address dhcp
 # set interfaces ethernet eth1 address 10.10.x.254/24
 # set interfaces ethernet eth2 address 10.10.y.254/24
 # set system gateway 10.221.3.254
+```
 
 Before you commit the configuration, can you ping the 10.10.y.7 port from the host on at 10.10.x.7? Yes/No
 
