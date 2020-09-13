@@ -5,7 +5,9 @@
 ## Aim
 The  aim  of  this  lab  is  to  introduce  the  vSoC  virtualisation  teaching  platform  and  VSphere client  access  to  your  own  virtual  machines  and  to  understand  how  to  configure  a  Vyatta firewall  for  NAT  and  firewall  rules, demonstrating  some  fundamentals  around  network security and device configuration. It is accessed from:
 
-<pre>vsoc.napier.ac.uk</pre>
+```
+vsoc.napier.ac.uk
+```
 
 
 ## Time to Complete
@@ -65,8 +67,6 @@ Use the network diagram in Figure 2, filling in the boxes with your addressing, 
  
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview02.png)
 Figure 2: Your network setup
-
-
 
 Select your Ubuntu host (User: napier, Password: napier123) and configure for 10.10.x.7 with a default gateway of 10.10.x.254 and a subnet mask of 255.255.255.0.
 
@@ -129,10 +129,15 @@ $ configure
 Before you commit the configuration, can you ping the 10.10.y.7 port from the host on at 10.10.x.7? Yes/No
 
 Now go ahead and commit the configuration with:
+```
 # commit
+```
 
 And exit the current configuration mode with:
+
+```
 # exit
+```
 
 Can you ping the 10.10.y.7 port from the host on 10.10.x.7? Yes/No
 
@@ -160,15 +165,15 @@ Now run Wireshark on your hosts, and repeat. Examine you network trace, and dete
 
 Note:
 
+```
 $ configure
 # delete interfaces ethernet eth1 address 10.10.x.254/24
 # commit
+```
 
 Now, reapply the IP address, and using the arp –a command, determine the MAC addresses of the gateway adapter, and check this against the configuration of the firewall.
 
 What are the MAC addresses of the firewall:
-
-
 
 
 Now with a browser on each host, access the Web server on the other network.
@@ -189,39 +194,50 @@ Reapply everything as before, and test that it still works.
 
 Startup Wireshark on each of your hosts, and capture traffic.
 
-	Run an nmap scan from the Windows host to the Linux one. What ports are open on the Linux host:
+Run an nmap scan from the Windows host to the Linux one. What ports are open on the Linux host:
 
-	Run an nmap scan from the Linux host to the Windows one. What ports are open on the Windows host:
+Run an nmap scan from the Linux host to the Windows one. What ports are open on the Windows host:
 
 
 Commands:
+```
 nmap –sS 10.1.1.0/24
-C	Setting up NAT
+```
+
+## Setting up NAT
 Now we need to setup NAT to map the addresses on the DMZ and the private network to an address taken from the public network. We are using NAT overloading (or NAT masquerade) which will map the private addresses to a public address (taken from eth0).
 
 To map the addresses from the private to the public network:
 
+```
 # set nat source rule 1 outbound-interface eth0
 # set nat source rule 1 source address 10.10.x.0/24
 # set nat source rule 1 translation address masquerade
 # commit
 # save
+```
 
 To map the addresses from the DMZ to the public network:
 
+```
 # set nat source rule 2 outbound-interface eth0
 # set nat source rule 2 source address 10.10.y.0/24
 # set nat source rule 2 translation address masquerade
 # commit
 # save
+```
 
 You should now have a network connection from the private and DMZ networks to the public network. On your Ubuntu host change name server to 10.221.3.254 with:
 
+```
 sudo nano /etc/resolv.conf
+```
 
 And change the nameserver to:
 
+```
 nameserver 10.246.3.254
+```
 
 Now can you ping 10.221.3.254 from Ubuntu? Yes/No
 Now can you ping 10.221.3.254 from Windows 2003? Yes/No
@@ -235,18 +251,20 @@ Now can you access Google.com from Windows 2003? Yes/No
 ## Setting up services on firewall
 Now save your configuration in edit mode with:
 
-<pre>
+```
 # save
 # exit
 $ reboot
-</pre>
+```
 
 You can now reboot the firewall (use the command reboot), and login with your new username and password.
 
 Now restart Wireshark on the Linux install. Next enable the Telnet server on the Vyatta firewall with:
 
+```
 # set service telnet
 # commit
+```
 
 Now telnet into the Vyatta firewall.
 
@@ -255,17 +273,20 @@ Was the login successful? Yes/No
 Using the TCP Stream trace on the Wireshark trace. What can you observe from the stream? Can you see the password for the login?
 
 
-Note:
-sudo wireshark
+Note: sudo wireshark
 
 Now restart Wireshark on the Linux install. Next enable the SSH server on the Vyatta firewall with:
 
+```
 # set service ssh
 # commit
+```
 
 Now ssh into the Vyatta firewall from the Linux host using:
 
+```
 ssh 10.10.y.254 –l username 
+```
 
 Was the login successful? Yes/No
 
@@ -292,34 +313,41 @@ Figure 3: Zone and firewall rule setup
 
 To enable firewalling we first define some zones (private, public, and dmz):
 
+```
 set  zone-policy  zone  private  description  "Inside”
 set  zone-¬policy  zone  public  description  "Outside”
-set  zone-¬policy  zone  dmz description  "DMZ”
+set  zone-¬policy  zone  dmz description  "DMZ"
+```
 
 These zones are then applied onto the interfaces:
 
+```
 set  zone-¬policy  zone  public  interface  eth0
 set  zone-¬policy  zone  private interface  eth1
 set  zone-¬policy  zone  dmz  interface  eth2
+```
 
 Now try to access services from the Windows instance to the Linux one:
 
 Can you access any of these services:
 
-Web Yes/No
-Telnet Yes/No
-FTP Yes/No
-SMTP Yes/No
+* Web Yes/No
+* Telnet Yes/No
+* FTP Yes/No
+* SMTP Yes/No
 
 Now we will allow only established connections from the DMZ to the private network:
 
+```
 set  firewall  name  dmz2private description  "DMZ to private"
 set  firewall  name  dmz2private rule  1  action  accept
 set  firewall  name  dmz2private rule  1  state  established  enable
 set  firewall  name  dmz2private rule  1  state  related enable
+```
 
 Then we will accept connections on port 80 and 443 from the private network to the DMZ:
 
+```
 set  firewall  name  private2dmz description  "private to DMZ"
 set  firewall  name  private2dmz rule  1  action  accept
 set  firewall  name  private2dmz rule  1  state  established  enable
@@ -327,27 +355,30 @@ set  firewall  name  private2dmz rule  1  state  related enable
 set  firewall  name  private2dmz rule  10  action  accept
 set  firewall  name  private2dmz rule  10  destination  port  80,443  
 set  firewall  name  private2dmz rule  10  protocol tcp
+```
 
 Now we have zones of public, dmz and private, and rules of dmz2private and private2dmz. To apply the rules to zones we complete with:
 
+```
 set  zone-¬policy  zone  private from  dmz firewall  name  dmz2private
 set  zone-¬policy  zone  dmz from  private firewall  name  private2dmz
+```
 
 Commit this, and try and connect from each of the networks to the other:
 
 From the Linux machine on the private network access the following services on the Windows server in the DMZ:
 
-Web Yes/No
-Telnet Yes/No
-FTP Yes/No
-SMTP Yes/No
+* Web Yes/No
+* Telnet Yes/No
+* FTP Yes/No
+* SMTP Yes/No
 
 From the Windows machine on the public network access the following services on the Linux server in the private network:
 
-Web Yes/No
-Telnet Yes/No
-FTP Yes/No
-SMTP Yes/No
+* Web Yes/No
+* Telnet Yes/No
+* FTP Yes/No
+* SMTP Yes/No
 
 Are the results as expected?
 
@@ -361,9 +392,13 @@ Enable Wireshark on the Linux host, and observe the trace when you nmap from the
 
 
 Note. You can test whether the port is open by using telnet on the given port number:
+
 Test FTP: telnet 10.10.x.7 21
+
 Test Telnet: telnet 10.10.x.7 23
+
 Test HTTP: telnet 10.10.x.7 80
+
 Test SMTP: telnet 10.10.x.7 25
 
 If you receive a response, the port is open, if not it is closed.
@@ -378,11 +413,13 @@ From your Kali instance, Can you ping each of the interfaces on the hosts:  Yes/
 ## DoS Protection
 A particularly difficult area to protect against is Denial of Service (DoS). The Vyatta firewall has protection for this, where it limits the number of connections over a given amount of time. Now let’s limit the number of Web connections to 5 in 10 seconds:
 
+```
 set  firewall  name  private2dmz rule 5 action  drop
 set  firewall  name  private2dmz rule 5 protocol tcp
 set  firewall  name  private2dmz rule 5 destination  port 21,23,25,80,443
 set  firewall  name  private2dmz rule 5 recent  count  5  
 set  firewall  name  private2dmz rule 5 recent time 10
+```
 
 Commit this.
 
@@ -393,7 +430,9 @@ How many connections where accepted before it stopped?
 
 Note. To perform an hping on 10.1.1.7 on port 80:
 
+```
 hping 10.1.1.7 -S -V -p 80
+```
 ## Appendix
 Now restart Wireshark on the Linux install. Next enable the DHCP server for the Linux host on the Vyatta firewall with:
 
@@ -423,7 +462,7 @@ What is the handshake that is used to gain the IP address from the DHCP server:
 # IP Allocation
 
 <p>IP Allocation</p>
-<pre style="font-size: 8px">
+```
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_001	10.10.1.7/24	10.10.2.7/24	DHCP	10.10.1.254/24	10.10.2.254/24
@@ -446,6 +485,7 @@ Group_017	10.10.33.7/24	10.10.34.7/24	DHCP	10.10.33.254/24	10.10.34.254/24
 Group_018	10.10.35.7/24	10.10.36.7/24	DHCP	10.10.35.254/24	10.10.36.254/24
 Group_019	10.10.37.7/24	10.10.38.7/24	DHCP	10.10.37.254/24	10.10.38.254/24
 Group_020	10.10.39.7/24	10.10.40.7/24	DHCP	10.10.39.254/24	10.10.40.254/24
+
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_021	10.10.41.7/24	10.10.42.7/24	DHCP	10.10.41.254/24	10.10.42.254/24
@@ -468,6 +508,7 @@ Group_037	10.10.73.7/24	10.10.74.7/24	DHCP	10.10.73.254/24	10.10.74.254/24
 Group_038	10.10.75.7/24	10.10.76.7/24	DHCP	10.10.75.254/24	10.10.76.254/24
 Group_039	10.10.77.7/24	10.10.78.7/24	DHCP	10.10.77.254/24	10.10.78.254/24
 Group_040	10.10.79.7/24	10.10.80.7/24	DHCP	10.10.79.254/24	10.10.80.254/24
+
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_041	10.10.81.7/24	10.10.82.7/24	DHCP	10.10.81.254/24	10.10.82.254/24
@@ -490,6 +531,7 @@ Group_057	10.10.113.7/24	10.10.114.7/24 DHCP	10.10.113.254/24	10.10.114.254/24
 Group_058	10.10.115.7/24	10.10.116.7/24 DHCP	10.10.115.254/24	10.10.116.254/24
 Group_059	10.10.117.7/24	10.10.118.7/24 DHCP	10.10.117.254/24	10.10.118.254/24
 Group_060	10.10.119.7/24	10.10.120.7/24 DHCP	10.10.119.254/24	10.10.120.254/24
+
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_061	10.10.121.7/24	10.10.122.7/24 DHCP	10.10.121.254/24	10.10.122.254/24
@@ -512,6 +554,7 @@ Group_077	10.10.153.7/24	10.10.154.7/24 DHCP	10.10.153.254/24	10.10.154.254/24
 Group_078	10.10.155.7/24	10.10.156.7/24 DHCP	10.10.155.254/24	10.10.156.254/24
 Group_079	10.10.157.7/24	10.10.158.7/24 DHCP	10.10.157.254/24	10.10.158.254/24
 Group_080	10.10.159.7/24	10.10.160.7/24 DHCP	10.10.159.254/24	10.10.160.254/24
+
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_081	10.10.161.7/24	10.10.162.7/24 DHCP	10.10.161.254/24	10.10.162.254/24
@@ -534,32 +577,32 @@ Group_097	10.10.193.7/24	10.10.194.7/24 DHCP	10.10.193.254/24	10.10.194.254/24
 Group_098	10.10.195.7/24	10.10.196.7/24 DHCP	10.10.195.254/24	10.10.196.254/24
 Group_099	10.10.197.7/24	10.10.198.7/24 DHCP	10.10.197.254/24	10.10.198.254/24
 Group_100	10.10.199.7/24	10.10.200.7/24 DHCP	10.10.199.254/24	10.10.200.254/24
+
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_101	10.10.201.7/24	10.10.202.7/24 DHCP	10.10.201.254/24	10.10.202.254/24
 Group_102	10.10.203.7/24	10.10.204.7/24 DHCP	10.10.203.254/24	10.10.204.254/24
 Group_103	10.10.205.7/24	10.10.206.7/24 DHCP	10.10.205.254/24	10.10.206.254/24
-</pre>
+```
 
 
 ## Quick guide
 For Ubtuntu configuration:
 
-<pre>
+```
 ip addr add 192.1.1.1 dev eth1
 route add default gw 192.168.1.254 eth0
 nano /etc/resolve.conf 
-</pre>
+```
 
 Within resolve.conf add the line:
 
-<pre>
+```
 name-server 10.221.3.354
-</pre>
+```
 
 For vyatta:
-
-<pre>
+```
 $ configure
 # set system host-name yourname
 # set system login user yourname authentication plaintext-password yourpass
@@ -567,7 +610,7 @@ $ configure
 # set interfaces ethernet eth1 address 10.10.x.254/24
 # set interfaces ethernet eth2 address 10.10.y.254/24
 # set system gateway 10.221.3.254
-</pre>
+```
 
 
 
