@@ -4,17 +4,18 @@
 ## Objectives
 The key objectives of this unit are:</p>
 
-* Provide  an overview of the requirement for Intrusion Detection Systems (IDSs), and  where they are used.</li>
-* Define  a practical implementation of IDS using Snort.</li>
-* Outline  some typical detection procedures, such as for ping sweeps.</li>
-
+* Provide an overview of the requirement for Intrusion Detection Systems (IDSs), and  where they are used.</li>
+* Define a practical implementation of IDS using Snort.</li>
+* Outline some typical detection procedures, such as for ping sweeps.</li>
 
 ## Lecture
-<p>The lecture is [here](https://www.youtube.com/watch?v=IguN0dFZ23I)
+The lecture is [here](https://www.youtube.com/watch?v=IguN0dFZ23I)
+
 ## Lab
 The main lab for this session is:</p>
 
-* Lab: Vyatta Firewall. The lab is [here](https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs_ and the demo for the lab is [here](https://youtu.be/ACldSA_uKM0)
+* Lab: Vyatta Firewall. The lab is [here](https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs).
+* Demo for the lab is [here](https://youtu.be/ACldSA_uKM0).
   
 
 ## Test
