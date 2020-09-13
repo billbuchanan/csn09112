@@ -307,22 +307,23 @@ If so, why can you now ping them?
 The Vyatta firewall uses zones to define security regions. In this case we can setup public, dmz and private. Then we apply firewall rules to define how the traffic between the zones is filtered. In this case we will only setup the traffic between the dmz and private, with two rules: dmz2private and private2dmz. Possible filtering is to allow connections on certain ports from private to dmz, but block all connections that are initiated in the dmz for the private region. Figure 3 outlines the setup.
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview03.png)
+
 Figure 3: Zone and firewall rule setup
  
 To enable firewalling we first define some zones (private, public, and dmz):
 
 ```
 set  zone-policy  zone  private  description  "Inside”
-set  zone-¬policy  zone  public  description  "Outside”
-set  zone-¬policy  zone  dmz description  "DMZ"
+set  zone-policy  zone  public  description  "Outside”
+set  zone-policy  zone  dmz description  "DMZ"
 ```
 
 These zones are then applied onto the interfaces:
 
 ```
-set  zone-¬policy  zone  public  interface  eth0
-set  zone-¬policy  zone  private interface  eth1
-set  zone-¬policy  zone  dmz  interface  eth2
+set  zone-policy  zone  public  interface  eth0
+set  zone-policy  zone  private interface  eth1
+set  zone-policy  zone  dmz  interface  eth2
 ```
 
 Now try to access services from the Windows instance to the Linux one:
