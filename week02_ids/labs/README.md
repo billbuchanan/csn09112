@@ -433,24 +433,30 @@ Note. To perform an hping on 10.1.1.7 on port 80:
 ```
 hping 10.1.1.7 -S -V -p 80
 ```
-## Appendix
+# Appendix
 Now restart Wireshark on the Linux install. Next enable the DHCP server for the Linux host on the Vyatta firewall with:
 
+```
 # set service dhcp-server shared-network-name ETH1 subnet 10.10.x.0/24 start 10.10.x.9 stop 10.10.x.100
 # set service dhcp-server shared-network-name ETH1 subnet 10.10.x.0/24 default-router 10.10.x.254
 # commit
+```
 
 Now renew the IP address on the Linux host with:
 
+```
 sudo dhclient –r
 sudo dhclient 
+```
 
 What is the IP address that was allocated to the Linux instance from the DHCP server:
 
 What is the data packet that is sent to release the IP address from the interface:
 
 IP addresses used: 
+
 UDP ports used:
+
 Bootstrap Message:
 
 What is the handshake that is used to gain the IP address from the DHCP server:
@@ -586,7 +592,7 @@ Group_103	10.10.205.7/24	10.10.206.7/24 DHCP	10.10.205.254/24	10.10.206.254/24
 ```
 
 
-## Quick guide
+# Quick guide
 For Ubtuntu configuration:
 
 ```
