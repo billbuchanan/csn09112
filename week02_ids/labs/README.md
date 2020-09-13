@@ -15,26 +15,27 @@ The  aim  of  this  lab  is  to  introduce  the  vSoC  virtualisation  teaching 
 
 Complete Lab 1: Vyatta Firewall. The lab is [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf" target="_blank">here]. [<a href="https://www.youtube.com/watch?v=ACldSA_uKM0" target="_blank">Demo</a>]. </p>
 
-<h2>Learning activities</h2>
+## Learning activities
 At the end of this lab, you should understand:
-<ul>
-<li>How to access the vSoC Cloud, working with your ownfolder within CSN09412.</li>
-<li>How to launch virtual machines, such as your Ubuntu, Windows Server, and Vyatta ones.</li>
-<li>How to configure the network settings of the Ubuntu and Windows Server machines, as well as using some basic Linux and Windows commands.</li>
-<li>How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.</li>
-<li>How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services</li>
+
+* How to access the vSoC Cloud, working with your ownfolder within CSN09412.</li>
+* How to launch virtual machines, such as your Ubuntu, Windows Server, and Vyatta ones.</li>
+* How to configure the network settings of the Ubuntu and Windows Server machines, as well as using some basic Linux and Windows commands.</li>
+* How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.</li>
+* How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services</li>
   </ul>
 
 ## Lab setup
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
+![GitHub Logo](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
+
 ## Quick guide
 For Ubtuntu configuration:
 
-```Linux
+<pre>
 ip addr add 192.1.1.1 dev eth1
 route add default gw 192.168.1.254 eth0
 nano /etc/resolve.conf 
-```
+</pre>
 
 Within resolve.conf add the line:
 
