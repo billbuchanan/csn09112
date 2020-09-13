@@ -4,7 +4,7 @@
 
 ## Aim
 The  aim  of  this  lab  is  to  introduce  the  vSoC  virtualisation  teaching  platform  and  VSphere client  access  to  your  own  virtual  machines  and  to  understand  how  to  configure  a  Vyatta firewall  for  NAT  and  firewall  rules, demonstrating  some  fundamentals  around  network security and device configuration. It is accessed from:
-x
+
 ```
 vsoc.napier.ac.uk
 ```
