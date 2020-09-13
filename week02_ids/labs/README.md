@@ -4,7 +4,7 @@
 
 ## Aim
 The  aim  of  this  lab  is  to  introduce  the  vSoC  virtualisation  teaching  platform  and  VSphere client  access  to  your  own  virtual  machines  and  to  understand  how  to  configure  a  Vyatta firewall  for  NAT  and  firewall  rules, demonstrating  some  fundamentals  around  network security and device configuration. It is accessed from:
-
+x
 ```
 vsoc.napier.ac.uk
 ```
@@ -22,7 +22,7 @@ Video: [Here](https://www.youtube.com/watch?v=ACldSA_uKM0)
 ## Learning activities
 At the end of this lab, you should understand:
 
-* How to access the vSoC Cloud, working with your ownfolder within CSN09412.</li>
+* How to access the vSoC Cloud, working with your ownfolder within CSN09112.</li>
 * How to launch virtual machines, such as your Ubuntu, Windows Server, and Vyatta ones.</li>
 * How to configure the network settings of the Ubuntu and Windows Server machines, as well as using some basic Linux and Windows commands.</li>
 * How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.</li>
