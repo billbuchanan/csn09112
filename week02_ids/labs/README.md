@@ -22,18 +22,16 @@ Video: [Here](https://www.youtube.com/watch?v=ACldSA_uKM0)
 ## Learning activities
 At the end of this lab, you should understand:
 
-* How to access the vSoC Cloud, working with your ownfolder within CSN09112.</li>
-* How to launch virtual machines, such as your Ubuntu, Windows Server, and Vyatta ones.</li>
-* How to configure the network settings of the Ubuntu and Windows Server machines, as well as using some basic Linux and Windows commands.</li>
-* How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.</li>
-* How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services</li>
-
-
+* How to access the vSoC Cloud, working with your ownfolder within CSN09112.
+* How to launch virtual machines, such as your Ubuntu, Windows Server, and Vyatta ones.
+* How to configure the network settings of the Ubuntu and Windows Server machines, as well as using some basic Linux and Windows commands.
+* How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.
+* How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services.
 
 
 ## Reflective statements (end-of-exercise):
-•	What is the most important things when setting up a host, in order that it can connect with other networks?
-•	With the Vyatta firewall, how does the firewall protect against threats?
+* What is the most important things when setting up a host, in order that it can connect with other networks?
+* With the Vyatta firewall, how does the firewall protect against threats?
 
 
 
