@@ -1,6 +1,6 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-# Lab 1: Vyatta Firewalls
+# Lab 1: Vyatta Firewall
 
 ## Aim
 The  aim  of  this  lab  is  to  introduce  the  vSoC  virtualisation  teaching  platform  and  VSphere client  access  to  your  own  virtual  machines  and  to  understand  how  to  configure  a  Vyatta firewall  for  NAT  and  firewall  rules, demonstrating  some  fundamentals  around  network security and device configuration. It is accessed from:
@@ -28,11 +28,9 @@ At the end of this lab, you should understand:
 * How  to  configure  the  Vyatta  firewall,  for  basic  routing,  NAT,  and  filtering -to  grant  or block access to certain types of packets and protocols.
 * How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services.
 
-
 ## Reflective statements (end-of-exercise):
 * What is the most important things when setting up a host, in order that it can connect with other networks?
 * With the Vyatta firewall, how does the firewall protect against threats?
-
 
 
 ## A	Setting up the network
