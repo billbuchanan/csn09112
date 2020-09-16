@@ -8,7 +8,7 @@ The key objectives of this unit are:
 
 ## Lecture
 
-[![Intro](http://img.youtube.com/vi/iHtJxxLJtdw/0.jpg)](https://www.youtube.com/watch?v=iHtJxxLJtdw "Introduction)
+[![Intro](http://img.youtube.com/vi/iHtJxxLJtdw/0.jpg)](https://www.youtube.com/watch?v=iHtJxxLJtdw "Introduction")
   
 ## Test
 The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=sfc01)
