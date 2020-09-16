@@ -38,4 +38,9 @@ Ubuntu: User: root, password: napier123
 Kali: User: root, password: toor
 </pre>
 
+Software:
+
+* VMWare Fusion or Workstation: https://softcentre.soc.napier.ac.uk/users.cgi
+* VPN: https://napier-sslvpn.napier.ac.uk/
+
 
