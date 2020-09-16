@@ -7,7 +7,8 @@ The key objectives of this unit are:
 * Provide a basic overview of some key terms.
 
 ## Lecture
-<p>The lecture is <a href="https://www.youtube.com/watch?v=iHtJxxLJtdw" target=_blank>here</a></p>
+
+[![Intro](http://img.youtube.com/vi/iHtJxxLJtdw/0.jpg)](https://www.youtube.com/watch?v=iHtJxxLJtdw "Introduction)
   
 ## Test
 The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=sfc01)
