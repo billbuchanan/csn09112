@@ -29,3 +29,13 @@ There is a fun test at: <a href="https://asecuritysite.com/tests/fun?sortBy=sfc0
 ## Additional
 Snort analyser: <a href="https://asecuritysite.com/forensics/snort2">here</a>
 
+Passwords:
+
+<pre>
+Vyatta. User: vyatta, Password: vyatta
+Windows 2003: User: Administrator, Password: napier
+Ubuntu: User: root, password: napier123
+Kali: User: root, password: toor
+</pre>
+
+
