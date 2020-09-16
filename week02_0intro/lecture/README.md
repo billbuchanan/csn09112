@@ -9,8 +9,8 @@ The key objectives of this unit are:</p>
 </ul>
 
 ## Lecture
-<p>The lecture is <a href="https://www.youtube.com/watch?v=iHtJxxLJtdw" target=_blank>here</a></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iHtJxxLJtdw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](http://img.youtube.com/vi/iHtJxxLJtdw/0.jpg)](http://www.youtube.com/watch?v=iHtJxxLJtdw "Introduction")
+
   
 ## Test
 <p>The test for this unit is <a href="https://asecuritysite.com/tests/tests?sortBy=sfc01">Test</a>.</p>
