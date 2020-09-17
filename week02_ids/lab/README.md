@@ -15,7 +15,7 @@ vsoc.napier.ac.uk
 
 ## Activities
 
-Vyatta Firewall lab. [Here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf")
+Vyatta Firewall lab. [Here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/labs/lab01_Vyatta.pdf)
 
 Video: [Here](https://www.youtube.com/watch?v=ACldSA_uKM0) 
 
