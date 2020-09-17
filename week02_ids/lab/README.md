@@ -290,7 +290,7 @@ Using the TCP Stream trace on the Wireshark trace. What can you observe from the
 
 
 
-Check to see if you have a Kali instance in your group folder. If so, complete the following:
+Check to see if you have a Kali instance on the public network. It should gain its IP address from DHCP. Now complete the following:
 
 From your Kali instance, can you ping each of the interfaces on the firewall:  Yes/No
 
