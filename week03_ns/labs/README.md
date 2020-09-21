@@ -221,7 +221,8 @@ set zone-policy	zone	public from	private firewall	name	private2public
 
 set firewall	name	public2private description	"public to private" 
 set firewall	name	public2private rule	1	action	accept
-set firewall	name	public2private rule	1	state	established	enable set firewall	name	public2private rule	1	state	related enable
+set firewall	name	public2private rule	1	state	established	enable 
+set firewall	name	public2private rule	1	state	related enable
 set zone-policy	zone	private from public firewall	name	public2private
 
 commit
@@ -348,8 +349,6 @@ ip addr add 192.1.1.1 dev eth1
 route add default gw 192.168.1.254 eth0
 nano /etc/resolve.conf and change "name-server 10.200.3.354"
 </pre>
-
-<h2>IP Allocation</h2>
 
 
 
