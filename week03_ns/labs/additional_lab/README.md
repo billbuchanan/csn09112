@@ -33,7 +33,8 @@ Now use it to complete the following table:
 
 The Repl.it site is [here](https://repl.it/@billbuchanan/csn0911201).
 
-## WinPCap
+
+# WinPCap
 We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://asecuritysite.com/winpcapy.zip">here</a></b>. Put this into the default Python folder (such as c:\python27). Next create the following script [<a href="https://asecuritysite.com/public/dump01.txt">code</a>]:
 
 ```Python
@@ -70,7 +71,7 @@ def get_ad():
 	inum= raw_input('--> ')
 	inum=int(inum)
 	d=alldevs
-	\#\# Get Selected adaptor
+	## Get Selected adaptor
 	for i in range(0,inum-1):
 		d=d.contents.next
 	return d.contents
