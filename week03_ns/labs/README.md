@@ -103,6 +103,11 @@ First download the following config:
 
 http://asecuritysite.com/vpart01.txt
 
+or use:
+```
+wget http://asecuritysite.com/vpart01.txt
+```
+
 Note you need to use the VMRC console for copy-and-paste to work. Now edit the ‘x’ (Private) and ‘y’ (DMZ) values for your network:
 
 ```
