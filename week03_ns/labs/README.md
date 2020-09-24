@@ -349,10 +349,10 @@ http://asecuritysite.com/vfinal.txt
 <h2>Lab setup</h2>
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
 <h2>Quick guide</h2>
-<p>For Ubtunta configuration:</p>
+<p>For Ubtuntu configuration:</p>
 <pre>
-ip addr add 192.1.1.1 dev eth1
-route add default gw 192.168.1.254 eth0
+ip addr add 10.10.10.7 dev eth1
+route add default gw 10.10.10.7 eth0
 </pre>
 Edit /etc/resolv.conf:
 <pre>
