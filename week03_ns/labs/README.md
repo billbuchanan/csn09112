@@ -10,7 +10,7 @@ Time to Complete:
 ## Activities:
 
 * Complete Lab 2: Vyatta Firewall and Snort. [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_vyatta_ids.pdf" target="_blank">here</a>]. [<a href="https://youtu.be/8siHSSs3RQc" target="_blank">Demo</a>]
-* Complete software lab.
+* Complete software lab. [here](https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs/additional_lab).
 
 ## Learning activities:
 At the end of this lab, you should understand:
