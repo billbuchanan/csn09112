@@ -297,7 +297,7 @@ configure
 set interfaces ethernet eth0 address dhcp
 set interfaces ethernet eth1 address 172.16.x.254/24 
 set interfaces ethernet eth2 address 172.16.y.254/24 
-set system gateway 10.246.3.254
+set system gateway 10.221.3.254
 
 set nat source rule 1 outbound-interface eth0
 set nat source rule 1 source address 172.16.x.0/24 
