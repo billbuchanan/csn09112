@@ -260,8 +260,8 @@ Can you connect your Windows host to the Google.com? [Yes][No]
 Snort is one of the most popular intrusion detection systems, where an agent is used to detect network threats. On the Windows and Ubuntu systems, create simple Snort rules files both called mysnort.rules, and add the following rules:
 
 ```
-alert tcp any any -> any any (sid:999;content:"napier"; msg:"Napier detected") 
-alert tcp any any -> any any (sid:1000;content:"fred"; msg:"Fred detected")
+alert tcp any any -> any any (sid:999;content:"napier"; nocase; msg:"Napier detected") 
+alert tcp any any -> any any (sid:1000;content:"fred"; nocase; msg:"Fred detected")
 ```
 
 The format of Snort Detection Rules are as follows:
