@@ -102,7 +102,7 @@ Run the script. What are the names of your interfaces?
 
 For the first 20 packets, what is the minimum and maximum packet size?
 
-## IP address capture<
+## IP address capture
 Next we will parse the packets for the IP addresses. First add the following to define the parsing of the packets [<a href="https://asecuritysite.com/public/dump02.txt">code</a>]:
 
 ```Python
