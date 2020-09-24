@@ -352,19 +352,20 @@ http://asecuritysite.com/vfinal.txt
 
 
 
-<h2>Lab setup</h2>
+## Lab setup
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
-<h2>Quick guide</h2>
-<p>For Ubtuntu configuration:</p>
-<pre>
+
+## Quick guide
+For Ubtuntu configuration:
+```
 ip addr add 10.10.10.7 dev eth1
-route add default gw 10.10.10.7 eth0
-</pre>
+route add default gw 10.10.10.254 eth11
+```
 Edit /etc/resolv.conf:
-<pre>
+```
 nameserver 8.8.8.8
 nameserver 10.221.3.254
-</pre>
+```
 
 
 
