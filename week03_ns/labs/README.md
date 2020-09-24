@@ -363,7 +363,7 @@ route add default gw 10.10.10.7 eth0
 Edit /etc/resolv.conf:
 <pre>
 nameserver 8.8.8.8
-nameserver 10.221.3.354
+nameserver 10.221.3.254
 </pre>
 
 
