@@ -67,8 +67,8 @@ def get_ad():
 			d=d.next.contents
 		else:
 			d=False
-	print ("Enter the interface number (1-%d):" % (i))
-	inum= raw_input('--> ')
+	inum=input("Enter the interface number (1-%d):" % (i))
+
 	inum=int(inum)
 	d=alldevs
 	## Get Selected adaptor
