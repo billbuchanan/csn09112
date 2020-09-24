@@ -58,8 +58,8 @@ We typically don’t use the console terminal of a firewall for configuration. I
 
 ```
 $ configure
-# set interfaces ethernet eth1 address 172.16.x.254/24
-# set system gateway 10.246.3.254
+# set interfaces ethernet eth1 address 10.10.x.254/24
+# set system gateway 10.220.3.254
 ```
 
 and then start the Telnet server on the Vyatta firewall:
