@@ -52,7 +52,7 @@ Group Number:
 Draw your own network diagram here, by filling-in the blank boxes, with the allocated networks, subnets, and IP addresses:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview02.png)
-Figure 2: Your network setup (Note: Gateway address is 10.220.3.254)
+Figure 2: Your network setup (Note: Gateway address is 10.221.3.254)
 
 # B	Configure Router/Firewall for Remote Administration
 We typically don’t use the console terminal of a firewall for configuration. In the following we will enable one port on the firewall, and then configure it through a remote connection. First configure your Vyatta firewall networking with the following:
@@ -60,7 +60,7 @@ We typically don’t use the console terminal of a firewall for configuration. I
 ```
 $ configure
 # set interfaces ethernet eth1 address 10.10.x.254/24
-# set system gateway 10.220.3.254
+# set system gateway 10.221.3.254
 ```
 
 and then start the Telnet server on the Vyatta firewall:
