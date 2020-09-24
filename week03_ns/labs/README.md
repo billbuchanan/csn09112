@@ -353,7 +353,11 @@ http://asecuritysite.com/vfinal.txt
 <pre>
 ip addr add 192.1.1.1 dev eth1
 route add default gw 192.168.1.254 eth0
-nano /etc/resolve.conf and change "name-server 10.200.3.354"
+</pre>
+Edit /etc/resolv.conf:
+<pre>
+nameserver 8.8.8.8
+nameserver 10.221.3.354
 </pre>
 
 
