@@ -1,5 +1,5 @@
-<h2>Config 1</h2>
-<pre>
+## Config 1
+```
 set interfaces ethernet eth0 address dhcp
 set interfaces ethernet eth1 address 172.16.x.254/24
 set interfaces ethernet eth2 address 172.16.y.254/24
@@ -12,9 +12,10 @@ set nat source rule 1 translation address masquerade
 set nat source rule 2 outbound-interface eth0
 set nat source rule 2 source address 172.16.y.0/24
 set nat source rule 2 translation address masquerade
-</pre>
-<h2>Config 2</h2>
-<pre>
+```
+
+## Config 2
+```
 set zone-policy  zone  private  description  "Inside"
 set zone-policy  zone  public  description  "Outside"
 set zone-policy  zone  dmz description  "DMZ"
@@ -36,9 +37,11 @@ set firewall  name  private2dmz rule  1  action  accept
 
 set  zone-policy  zone  private from  dmz firewall  name  dmz2private
 set  zone-policy  zone  dmz from  private firewall  name  private2dmz
-</pre>
-<h2>Config 3</h2>
-<pre>
+```
+
+## Config 3
+
+```
 set firewall  name  private2public description  "private to public"
 set firewall  name  private2public rule  1  action  accept
 set zone-policy  zone  public from  private firewall  name  private2public
@@ -48,10 +51,10 @@ set firewall  name  public2private rule  1  action  accept
 set firewall  name  public2private rule  1  state  established  enable
 set firewall  name  public2private rule  1  state  related enable
 set zone-policy  zone  private from  public firewall  name  public2private
-</pre>
-<h2>Config 4</p>
-<pre>
+```
+## Config 4
 
+```
 set firewall  name  private2public description  "private to public"
 set firewall  name  private2public rule  1  action  accept
 set zone-policy  zone  public from  private firewall  name  private2public
@@ -61,5 +64,6 @@ set firewall  name  public2private rule  1  action  accept
 set firewall  name  public2private rule  1  state  established  enable
 set firewall  name  public2private rule  1  state  related enable
 set zone-policy  zone  private from  public firewall  name  public2private
-</pre>
+
+```
 
