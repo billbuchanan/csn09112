@@ -13,7 +13,7 @@ The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=sf
 There is a fun test at [here](https://asecuritysite.com/tests/fun?sortBy=sfc06).
 
 ## Slides
-<p>The slides for the chapter are [here](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf).
+The slides for the chapter are [here](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf).
 
 ## Additional
 Snort analyser: <a href="https://asecuritysite.com/forensics/snort2">here</a>
