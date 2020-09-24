@@ -1,12 +1,11 @@
-           
 
-<table width="100%" border="1" cellpadding="0" cellspacing="0"> 
-<tr><td valign="top">
- <h1 id="logo">Network Security and Cryptography (Software Tut 1)</h1>
-<p>This is a basically an introduction to Python coding for network packet capture [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_additional.pdf">Lab</a>]. To do the lab you must have WinPCap install [<a href="http://www.winpcap.org/install/default.htm">Download</a>]. There is a demo of the lab [<a href="https://www.youtube.com/watch?v=raphJCH2SPE" target="_blank">here</a>].</p>
-    <h2>Number conversions</h2>
-    <p>Within cryptography we often have to present numbers in different formating, and typically have to convert from decimal into hexadecimal (based 16). Enter the following Python program:</p>
-    <pre>
+# Network Security and Cryptography (Software Tut 1)
+This is a basically an introduction to Python coding for network packet capture [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_additional.pdf">Lab</a>]. To do the lab you must have WinPCap install [<a href="http://www.winpcap.org/install/default.htm">Download</a>]. There is a demo of the lab [<a href="https://www.youtube.com/watch?v=raphJCH2SPE" target="_blank">here</a>].
+
+## Number conversions
+Within cryptography we often have to present numbers in different formating, and typically have to convert from decimal into hexadecimal (based 16). Enter the following Python program:
+
+```Python
 import sys
 val=10
 
@@ -17,8 +16,10 @@ print "Hex: ",hex(val)
 print "Decimal: ",val
 print "Octal: ",oct(val)
 print "Binary: ",bin(val)
-</pre>
-<p>Now use it to complete the following table:</p>
+```
+
+Now use it to complete the following table:
+
 <table width="100%">
 <tr><td width="25%">Decimal</td><td width="25%">Hex</td><td width="25%">Octal</td><td width="25%">Binary</td></tr>
 <tr><td>10</td><td></td><td></td><td></td></tr>
@@ -29,9 +30,10 @@ print "Binary: ",bin(val)
 
 </td></tr>
 </table>
-<h2>WinPCap</h2>
-<p>We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://asecuritysite.com/winpcapy.zip">here</a></b>. Put this into the default Python folder (such as c:\python27). Next create the following script [<a href="https://asecuritysite.com/public/dump01.txt">code</a>]:</p>
-<pre>
+## WinPCap
+We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://asecuritysite.com/winpcapy.zip">here</a></b>. Put this into the default Python folder (such as c:\python27). Next create the following script [<a href="https://asecuritysite.com/public/dump01.txt">code</a>]:
+
+```Python
 \#\# Based on code at https://code.google.com/p/winpcapy/downloads/detail?name=winpcapy.zip
 from ctypes import *
 from winpcapy import *
@@ -90,12 +92,16 @@ print("\nStarting to listen on %s...\n" % (d.description))
 \#\# Get 20 packets
 pcap_loop(adhandle, 20, packet_handler, None)
 pcap_close(adhandle)
-</pre>
-<p>Run the script. What are the names of your interfaces?</p>
-<p>For the first 20 packets, what is the minimum and maximum packet size?</p>
-<h2>IP address capture</h2>
-<p>Next we will parse the packets for the IP addresses. First add the following to define the parsing of the packets [<a href="https://asecuritysite.com/public/dump02.txt">code</a>]:</p>
-<pre>
+```
+
+Run the script. What are the names of your interfaces?
+
+For the first 20 packets, what is the minimum and maximum packet size?
+
+## IP address capture<
+Next we will parse the packets for the IP addresses. First add the following to define the parsing of the packets [<a href="https://asecuritysite.com/public/dump02.txt">code</a>]:
+
+```Python
 u_short = c_ushort
 u_char = c_ubyte
 u_int = c_int
@@ -118,9 +124,11 @@ class ip_header(BigEndianStructure):
                 ("saddr", ip_address),
                 ("daddr", ip_address),
                 ("op_pad", u_int)]
-</pre>
-<p>Next replace the call back function with:</p>
-<pre>
+```
+
+Next replace the call back function with:
+
+```Python
 \#\# Callback function which is called for every new packet
 def _packet_handler(param,header,pkt_data):
 
@@ -130,20 +138,24 @@ def _packet_handler(param,header,pkt_data):
 	pih = ctypes.cast(v_ip_header, ctypes.POINTER(ip_header))
 	ih = pih.contents
 	print("{}.{}.{}.{} -> {}.{}.{}.{}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4))
-</pre>
-<p>Run the code and find the IP address connections for the first five connections?</p>
+```
 
-<h2>Displaying connection details</h2>
-<p>Now we will read the TCP header, and which follows the IP address. In this case we will just display the TCP ports. First we add the format of the TCP packet (we have just used the first four fields) [<a href="https://asecuritysite.com/public/dump03.txt">code</a>]:</p>
-<pre>
+Run the code and find the IP address connections for the first five connections?
+
+## Displaying connection details
+Now we will read the TCP header, and which follows the IP address. In this case we will just display the TCP ports. First we add the format of the TCP packet (we have just used the first four fields) [<a href="https://asecuritysite.com/public/dump03.txt">code</a>]:
+
+```Python
 class tcp_header(BigEndianStructure):
     _fields_ = [("source_port", u_short),
                 ("destination_port", u_short),
 		("seq", u_int),
 		("ack", u_int)]
-</pre>
-<p>And we can replace the call back function:</p>
-<pre>
+```
+
+And we can replace the call back function:
+
+```Python
 def _packet_handler(param,header,pkt_data):
 
     # retrieve the position of the ip header
@@ -157,18 +169,22 @@ def _packet_handler(param,header,pkt_data):
                      ctypes.POINTER(tcp_header)).contents
 
 	print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port))
-</pre>
-<h2>Examining the Transport Layer protocol</h2>
-<p>The problem with the previous example is that there can be several transport layer protocols. So we must look at the Protocol field in the IP packet. Now modify your packet hander to add the IP Protocol field [<a href="https://asecuritysite.com/public/dump04.txt">Download</a>]:</p>
-<pre>
-	print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{} Protocol: {}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port,ih.proto))
-</pre>
-<p>Now run the Python program, and generate some traffic (such as loading a Web page. You will now see other protocols, such as 6- TCP and 17 - UDP. List the protocols that you see:</p>
+```
 
-<p>Run the code and find the IP address connections and TCP ports used for the first five packets?</p>
-<h2>Filtering for TCP</h2>
-<p>Now we can filter for just TCP traffic by examining the IP Protocol field. For this just replace your packet handler with [<a href="https://asecuritysite.com/public/dump05.txt">code</a>]:</p>
-<pre>
+## Examining the Transport Layer protocol
+The problem with the previous example is that there can be several transport layer protocols. So we must look at the Protocol field in the IP packet. Now modify your packet hander to add the IP Protocol field [<a href="https://asecuritysite.com/public/dump04.txt">Download</a>]:</p>
+```Python
+	print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{} Protocol: {}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port,ih.proto))
+```
+
+Now run the Python program, and generate some traffic (such as loading a Web page. You will now see other protocols, such as 6- TCP and 17 - UDP. List the protocols that you see:
+
+Run the code and find the IP address connections and TCP ports used for the first five packets?
+
+## Filtering for TCP
+Now we can filter for just TCP traffic by examining the IP Protocol field. For this just replace your packet handler with [<a href="https://asecuritysite.com/public/dump05.txt">code</a>]:
+
+```Python
 def _packet_handler(param,header,pkt_data):
     # retrieve the position of the ip header
 	v_pkt_data = ctypes.cast(pkt_data, ctypes.c_void_p)
@@ -180,21 +196,28 @@ def _packet_handler(param,header,pkt_data):
                      ctypes.POINTER(tcp_header)).contents
 	if (ih.proto==6):
 		print("{}.{}.{}.{}:{} -> {}.{}.{}.{}:{} Protocol: {}".format(ih.saddr.byte1, ih.saddr.byte2, ih.saddr.byte3, ih.saddr.byte4, th.source_port,ih.daddr.byte1, ih.daddr.byte2, ih.daddr.byte3, ih.daddr.byte4,th.destination_port,ih.proto))
-</pre>
-<p>Next generate some traffic by accessing a Web site (or refreshing the cache). Note the IP addresses and TCP ports of the Web connections:</p>
-<p>If you go to https://Google.com, and run your script, which server port is used?</p>
-<p>If you go to https://asecuritysite.com, and run your script, which server port is used?</p>
-<p>Why do the two sites differ in the server ports?</p>
-<h2>Tutorial</h2>
-<p>1. Most of the IP packets are IP Version 4. Read the IP Version number from the first four bits with:</p>
-<pre>
+```
+
+Next generate some traffic by accessing a Web site (or refreshing the cache). Note the IP addresses and TCP ports of the Web connections:
+
+If you go to https://Google.com, and run your script, which server port is used?
+
+If you go to https://asecuritysite.com, and run your script, which server port is used?
+
+
+
+## Tutorial
+1. Most of the IP packets are IP Version 4. Read the IP Version number from the first four bits with:
+```Python
 	ip_ver = (ih.ver_ihl & 0xf0) >> 4
 	print "IP Version: ",ip_ver
-</pre>
-<p>Run the Python program and capture some traffic. Which is the version number defined in the packets, and what does the "& 0xf0" and ">> 4" parts of the code do?</p>
+```
 
-<p>2. In the previous Python program, the TCP fields have not been fully defined. Figure 1 shows the Ethernet, IP and TCP fields. Using the TCP header definition, update the TCP class definition in your Python program to include all of the fields:</p>
-<pre>
+Run the Python program and capture some traffic. Which is the version number defined in the packets, and what does the "& 0xf0" and ">> 4" parts of the code do?</p>
+
+2. In the previous Python program, the TCP fields have not been fully defined. Figure 1 shows the Ethernet, IP and TCP fields. Using the TCP header definition, update the TCP class definition in your Python program to include all of the fields:
+
+```Python
 class tcp_header(BigEndianStructure):
     _fields_ = [("source_port", u_short),
                 ("destination_port", u_short),
@@ -205,33 +228,37 @@ class tcp_header(BigEndianStructure):
 		("checksum", u_short),
 		("urgent", u_short),
 		("options", u_int)]
-</pre>
-<p>Test the output.  Do the SEQ and ACK tie-up on a connection?</p>
+```
+
+Test the output.  Do the SEQ and ACK tie-up on a connection?
+
+
+2.1 	What values do you get for the Flags field?
 
 
 
-<p>2.1 	What values do you get for the Flags field?</p>
+2.2	Now mask off the flags with:
 
-
-
-<p>2.2	Now mask off the flags with:</p>
-<pre>
+```Python
 print " Flags: ",th.flags & 0x0ff,
-</pre>	
-<p>2.3	What values do you know get? Can you match them to the TCP flags?</p>
+```
+
+2.3	What values do you know get? Can you match them to the TCP flags?
 
 
 <p><img src="https://asecuritysite.com/public/iptcp.png" width="600px" /></p>
 
-<p>3.We will now put the program into an infinite loop and break when there is a keypress. For this we use the Pywin32 library [<a href="http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download">here</a>], which contains the pyHook class:</p>
-<p>Next replace:</p>
-<pre>
+3.We will now put the program into an infinite loop and break when there is a keypress. For this we use the Pywin32 library [<a href="http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download">here</a>], which contains the pyHook class:
+
+Next replace
+
+```Python
 ## Get 20 packets
 pcap_loop(adhandle, 20, packet_handler, None)
 pcap_close(adhandle)
-</pre>
-<p>with:</p>
-<pre>
+```
+with:
+```Python
 import pyHook,pythoncom
 
 def OnKeyboardEvent(event):
@@ -250,16 +277,19 @@ while True:
         	pythoncom.PumpWaitingMessages()
     except KeyboardInterrupt:
         exit()
-</pre>
-<p>You should now be able to capture until a key is pressed.</p>
-<p>The final solution is [<a href="https://asecuritysite.com/public/dump07.txt">Here</a>]</p>
-<h2>Demo</h2>
+```
+
+You should now be able to capture until a key is pressed.
+The final solution is [<a href="https://asecuritysite.com/public/dump07.txt">Here</a>]
+
+## Demo
 <p>There is a demo <a href="https://www.youtube.com/watch?v=raphJCH2SPE">here</a></p>
-<h2>Note</h2>
-<p>In the lecture I say the IP header is 16 bytes, but it is actually 4 times the value in the Header Len of the IP field (which is the first four bits after the IP Version field). So the code:</p>
-<pre>
+
+## Note
+In the lecture I say the IP header is 16 bytes, but it is actually 4 times the value in the Header Len of the IP field (which is the first four bits after the IP Version field). So the code:</p>
+```Python
 ip_len = (ih.ver_ihl & 0xf) * 4
-</pre>
-<p>masks off the lower four bits and multiplies by four to get the IP packet header length (and where TCP or UDP header will start).</p>
-        </div>
+```
+
+masks off the lower four bits and multiplies by four to get the IP packet header length (and where TCP or UDP header will start).
 
