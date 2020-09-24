@@ -109,6 +109,11 @@ or use:
 wget http://52.20.40.123/vpart01.txt
 ```
 
+or:
+```
+http://10.221.2.1/vpart01.txt
+```
+
 
 Note you need to use the VMRC console for copy-and-paste to work. Now edit the ‘x’ (Private) and ‘y’ (DMZ) values for your network:
 
