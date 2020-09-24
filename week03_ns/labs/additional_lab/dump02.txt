@@ -56,8 +56,8 @@ def get_ad():
 		else:
 			d=False
 
-	print ("Enter the interface number (1-%d):" % (i))
-	inum= raw_input('--> ')
+	inum=input ("Enter the interface number (1-%d):" % (i))
+
 
 	inum=int(inum)
 
