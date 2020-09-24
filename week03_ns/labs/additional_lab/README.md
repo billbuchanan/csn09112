@@ -12,10 +12,10 @@ val=10
 if (len(sys.argv)>1):
 	val=int(sys.argv[1])
 
-print "Hex: ",hex(val)
-print "Decimal: ",val
-print "Octal: ",oct(val)
-print "Binary: ",bin(val)
+print ("Hex: ",hex(val))
+print ("Decimal: ",val)
+print ("Octal: ",oct(val))
+print ("Binary: ",bin(val))
 ```
 
 Now use it to complete the following table:
@@ -30,6 +30,9 @@ Now use it to complete the following table:
 
 </td></tr>
 </table>
+
+The Repl.it site is [here](https://repl.it/@billbuchanan/csn0911201).
+
 ## WinPCap
 We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://asecuritysite.com/winpcapy.zip">here</a></b>. Put this into the default Python folder (such as c:\python27). Next create the following script [<a href="https://asecuritysite.com/public/dump01.txt">code</a>]:
 
