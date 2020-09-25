@@ -111,7 +111,7 @@ wget http://52.20.40.123/vpart01.txt
 
 or:
 ```
-http://10.221.2.1/vpart01.txt
+wget http://10.221.2.1/vpart01.txt
 ```
 
 
@@ -150,7 +150,7 @@ $ configure
 # commit
 ```
 
-Now setup your Windows host with 172.16.y.7 with a default gateway of 172.16.y.254.
+Now setup your Windows host with 10.10.y.7 with a default gateway of 10.10.y.254.
 
 From Ubuntu, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8? [Yes][No]
 
@@ -301,16 +301,16 @@ http://asecuritysite.com/csn09412/software01
 configure
 
 set interfaces ethernet eth0 address dhcp
-set interfaces ethernet eth1 address 172.16.x.254/24 
-set interfaces ethernet eth2 address 172.16.y.254/24 
+set interfaces ethernet eth1 address 10.10.x.254/24 
+set interfaces ethernet eth2 address 10.10.y.254/24 
 set system gateway 10.221.3.254
 
 set nat source rule 1 outbound-interface eth0
-set nat source rule 1 source address 172.16.x.0/24 
+set nat source rule 1 source address 10.10.x.0/24 
 set nat source rule 1 translation address masquerade
 
 set nat source rule 2 outbound-interface eth0
-set nat source rule 2 source address 172.16.y.0/24 
+set nat source rule 2 source address 10.10.y.0/24 
 set nat source rule 2 translation address masquerade
 
 set zone-policy zone private  description  "Inside" set zone-policy zone public  description  "Outside" set zone-policy  zone  dmz description "DMZ"
@@ -358,16 +358,13 @@ http://asecuritysite.com/vfinal.txt
 ## Quick guide
 For Ubtuntu configuration:
 ```
-ip addr add 10.10.10.7 dev eth1
-route add default gw 10.10.10.254 eth11
+ip addr add 10.10.x.7 dev eth1
+route add default gw 10.10.x.254 eth11
 ```
 Edit /etc/resolv.conf:
 ```
 nameserver 8.8.8.8
 nameserver 10.221.3.254
 ```
-
-
-
 
 
