@@ -38,11 +38,18 @@ Our first task is to route through the Vyatta firewall to connect two networks. 
 
 172.16.x.0/24	172.16.y.0/24
 
+or you can select:
+
+10.10.x.0/24	10.10.y.0/24
+
 Demo: http://youtu.be/8siHSSs3RQc
 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
-Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)
+Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
+
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview_172.png)
+Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ) with 172.16.z.z
 
 Log into vSphere and locate the CSN09412 folder. Locate your matriculation number and you will be allocated a group number:
 
