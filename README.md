@@ -30,7 +30,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
     <td bgcolor="#990000" class="table1"><strong>3</strong></td>
     <td bgcolor="#990000" class="table1"><strong>24 Sept 2020</strong></td>
     <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
-      <td>Vyatta and Snort. </td>
+      <td>Vyatta and Snort. [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs">Link</a>] </td>
 
    
   </tr>
