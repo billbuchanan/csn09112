@@ -17,8 +17,10 @@ def gcd(a, b):
 	return a;
 
 g = gcd(54,8)
-print g
+print (g)
 ```
+
+Link: [here](https://repl.it/@billbuchanan/cipher02)
 
 Now use it to complete determine the following:
 
