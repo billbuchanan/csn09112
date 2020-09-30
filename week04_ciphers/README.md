@@ -15,11 +15,7 @@ The key concepts are: Ciphers. Encoding methods (ASCII, UTF-16, Base64, Hex). Pr
 
 ## Tests
 
-* Take cipher code challenge: here
-* Five minute challenge: here
-* Test 1 (Caesar): here
-* Test 2 (Hex): here
-* Test 3 (Base64): here
-* Test 4 (Main): here
+* Take cipher code challenge: [here](https://asecuritysite.com/challenges/hex)
+* Five minute challenge: [here](https://asecuritysite.com/challenges/scramb)
 
 
