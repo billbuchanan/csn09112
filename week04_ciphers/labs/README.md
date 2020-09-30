@@ -38,14 +38,14 @@ nano /etc/resolve.conf and change "name-server 10.200.3.354"
 ## Your challenges
 The main challenges to be solved in this lab are:
 
-* The hosts on your network can connect to each other. How to test? Ping from the host in the Private network to the DMZ, and vice-versa. How will I do this? Setup the IP addresses on the hosts to be on the same network as the gateway. The firewall address that the host connects to must be on the same network.	
-* You are able to connect to the Internet from a host in the Private network. How to test? Open up Google.com from a browser from the host in the Private network. How will I do this? Get your network working, and make sure the domain name service is pointing to 10.221.3.254, and it should work. You may need to debug this. If you can connect to 8.8.8.8, but not the domain name, you have a DNS problem.
+* The hosts on your network can connect to each other. **How to test?** Ping from the host in the Private network to the DMZ, and vice-versa. How will I do this? Setup the IP addresses on the hosts to be on the same network as the gateway. The firewall address that the host connects to must be on the same network.	
+* You are able to connect to the Internet from a host in the Private network. How to test? Open up Google.com from a browser from the host in the Private network. **How will I do this?** Get your network working, and make sure the domain name service is pointing to 10.221.3.254, and it should work. You may need to debug this. If you can connect to 8.8.8.8, but not the domain name, you have a DNS problem.
 	
-* A host on the DMZ is contactable from outside your network. How to test? You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the TEST network to ping. How will I set this up: You setup 1:1 NAT on the host in your DMZ, and map it to an address on the 10.221.0.0/24 network.	
+* A host on the DMZ is contactable from outside your network. **How to test?** You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the TEST network to ping. **How will I do this?** You setup 1:1 NAT on the host in your DMZ, and map it to an address on the 10.221.0.0/24 network.	
 
-* You are able to discover the range of other firewalls which connect to the network. How to test? You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways. How will I set this up? You should run NMAP from one of the hosts in your network for the 10.221.0.0 network, and that it shows the nodes that are connected (host scan).	
+* You are able to discover the range of other firewalls which connect to the network. **How to test?** You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways. **How will I do this?** You should run NMAP from one of the hosts in your network for the 10.221.0.0 network, and that it shows the nodes that are connected (host scan).	
 
-* You are able to perform a scan of the services on a host from another network from your private network. How to test? You run NMAP on a server address on another network. How will I do this?	You should run NMAP to discover the services which are being run on the server in the DMZ on another network.	
+* You are able to perform a scan of the services on a host from another network from your private network. **How to test?** You run NMAP on a server address on another network. **How will I do this?** You should run NMAP to discover the services which are being run on the server in the DMZ on another network.	
 
 
 
