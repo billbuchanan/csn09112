@@ -66,7 +66,7 @@ Shifts	Back	Result
 19	[7]	EBIIL
 20	[6]	FCJJM
 21	[5]	GDKKN
-<b>22	[4]	HELLO</b>
+22	[4]	HELLO
 23	[3]	IFMMP
 24	[2]	JGNNQ
 25	[1]	KHOOR
@@ -97,7 +97,6 @@ a   b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
 ```
 TB L YLAAFQ KR L RFD JFMLJFI AHF DKQGJ HLI MHLBEFJ RQKY LB TBJPIAQTLG LEF TBAK LB TBRKQYLATKB LEF. TA TI KBF DHTMH, PBGTSF FLQGTFQ LEFI, FBMLWIPGLAFI VTQAPLGGX AHF DHKGF DKQGJ. TA TI LGIK KBF DHTMH LGGKDI AHF BFD TBJPIAQTFI AK OF OLIFJ TB LBX GKMLATKB DTAHKPA QFNPTQTBE LBX BLAPQLG QFIKPQMFI, KQ AK OF TB LBX LMAPLG WHXITMLG GKMLATKBI. AXWTMLGGX LGG AHLA TI QFNPTQFJ TI L QFGTLOGF BFADKQS MKBBFMATKB. KPQ DKQGJ TI MHLBETBE OX AHF JLX, LI AQLJTATKBLG RKQYI KR OPITBFII LQF OFTBE QFWGLMFJ, TB YLBX MLIFI, OX YKQF QFGTLOGF LBJ RLIAFQ DLXI KR KWFQLATBE. KPQ WKIALG IXIAFY, DHTGF IATGG PIFJ RKQ YLBX PIFRPG LWWGTMLATKBI, HLI OFFB GLQEFGX QFWGLMFJ OX FGFMAQKBTM YLTG. DTAH VKATBE, AHF IGKD LBJ MPYOFQIKYF ALIS KR YLQSTBE VKATBE WL-WFQI DTAH AHF WQFRFQQFJ MLBJTJLAF, TI BKD OFTBE QFWGLMFJ OX FGFMAQKBTM VKATBE. AHF AQLJTATKBLG IXIAFYI, AHKPEH, HLVF OFFB LQKPBJ RKQ HPBJQFJI TR BKA AHKPILBJI KR XFLQI, LBJ AXWTMLGGX PIF DFGG AQTFJ-LBJ-AFIAFJ YFMHLBTIYI. RKQ AHF YKIA WLQA, RKQ FCLYWGF, DF AQPIA L WLWFQ-OLIFJ VKATBE IXIAFY, FVFB AHKPEH TA TI DFGG SBKDB AHLA L MKPBA KR AHF VKAFI DTAHTB LB FGFMATKB DTGG KRAFB WQKJPMF JTRRFQFBA QFIPGAI FLMH ATYF AHLA AHF VKAF TI MKPBAFJ, LBJ AHFB QFMKPBAFJ. LB FGFMAQKBTM YFAHKJ DTGG, KB AHF KAHFQ HLBJ, YKIA GTSFGX HLVF L IPMMFII QLAF KR 100%.
 ```
-
 
 5. The Baudot code uses a 5-bit conversion from English characters. Based on the code below, write a Python program which converts plaintext into a cipher stream of bits:
 
@@ -175,7 +174,8 @@ Questions:
 2. If we change the a value to 22, what do you observe from the random values generated?
 
 3. If a developer uses this method to generate encryption keys, what what you expect to happen when the random numbers are generated?
-## Prime Numbers<
+
+## Prime Numbers
 
 A prime sieve creates all the prime numbers up to a given limit. It progressively removes composite numbers until it only has prime numbers left, and it is the most efficient way to generate a range of prime numbers. Implement the following code:
 
@@ -198,8 +198,9 @@ def sieve_for_primes_to(n):
             sieve[i+val::val] = [0]*tmp
     return [2] + [i*2+1 for i, v in enumerate(sieve) if v and i>0]
  
-print sieve_for_primes_to(test)
+print (sieve_for_primes_to(test))
 ```
+Link: [here](https://repl.it/@billbuchanan/cipher03)
 
 Questions:
 
