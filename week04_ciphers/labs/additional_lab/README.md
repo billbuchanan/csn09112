@@ -1,13 +1,14 @@
 
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1>Network Security and Cryptography (Software Tut 2)</h1>
 
-<p>This is an introduction to Python coding for ciphers.<p>
-<h2>GCD</h2>
+# Network Security and Cryptography (Software Tut 2)
+
+This is an introduction to Python coding for ciphers.
+## GCD
 
 Within cryptography we often have to present numbers in different formating, and typically have to convert from decimal into hexadecimal (based 16). Enter the following Python program:
 
-<pre>
+```Python
 def gcd(a, b):
 	while( b != 0 ):
 		Remainder = a % b;
@@ -17,28 +18,28 @@ def gcd(a, b):
 
 g = gcd(54,8)
 print g
-</pre>
+```
 
-<p>Now use it to complete determine the following:</p>
-<ul>
-<li>The GCD of 4032 and 76?</li>
-<li>The GCD of 9999 and 77?</li>
-<li>The GCD of 125 and 32?</li>
- </ul> 
+Now use it to complete determine the following:
 
-<h2>Ciphers</h2>
-<p>1. Morse code is a simple substitution cipher. Implement some Python code which allows the user to enter a word, and the program should convert it into Morse code. Some reference code can be found <a href="https://gist.github.com/guinslym/ebb4fefe0f7d63beab01a70a8fd630d7" target="_blank">here</a>. Using your program, decipher the following:
+* The GCD of 4032 and 76?
+* The GCD of 9999 and 77?
+* The GCD of 125 and 32?
+
+
+## Ciphers
+1. Morse code is a simple substitution cipher. Implement some Python code which allows the user to enter a word, and the program should convert it into Morse code. Some reference code can be found <a href="https://gist.github.com/guinslym/ebb4fefe0f7d63beab01a70a8fd630d7" target="_blank">here</a>. Using your program, decipher the following:
 	
-<pre>
+```
 (—···) (— — —) (—··—) (·) (···) 		
 (·—) (·—·) (·—·) (·—) (—·— —) 		
 (···) (·) (·—·) (···—) (·) (·—·) 		
 (—·—·) (·—··) (··) (·) (—·) (—) 
-</pre>
+```
 
 2. With the Caesar cipher we can shift the plaintext alphabet by one of 25 combinations. Create a Caesar cipher program which will shift a plaintext or a ciphertext word by each of the 25 shifts. A sample run is given below:
 
-<pre>
+```
 Shifts	Back	Result
 -------------------------
 0	[26]	LIPPS
@@ -67,13 +68,13 @@ Shifts	Back	Result
 23	[3]	IFMMP
 24	[2]	JGNNQ
 25	[1]	KHOOR
-</pre>
+```
 
 Using your program, can you find the plaintext for the Caesar cipher of "SQDYMZK"?
 
 3. The homomorphic substitution cipher tries to make each cipher code occur with the same frequency. Write a program which creates the homorphonic substitution cipher for the following cipher mapping:
 
-<pre>
+```
 a   b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
 07 11 17 10 25 08 44 19 02 18 41 42 40 00 16 01 15 04 06 05 13 22 45 12 55 47
 31 64 33 27 26 09 83 20 03       81 52 43 30 62    24 34 23 14    46    93
@@ -87,20 +88,18 @@ a   b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
             79                                                
             82 
             85
-
-</pre>
+```
 
 4. A standard method for cracking ciphers is to perform a frequency analysis of the ciphertext. Write a Python program which will analyse an input cipherstream from a scrambled alphabet output, and display the frequency of the letters. Use this to make a guess of the cipher character that maps to a plaintext 'e'. In the following, which plaintext character is likely to be an 'e':
 
-<div style="width:200px;overflow:auto">
-<pre>
+```
 TB L YLAAFQ KR L RFD JFMLJFI AHF DKQGJ HLI MHLBEFJ RQKY LB TBJPIAQTLG LEF TBAK LB TBRKQYLATKB LEF. TA TI KBF DHTMH, PBGTSF FLQGTFQ LEFI, FBMLWIPGLAFI VTQAPLGGX AHF DHKGF DKQGJ. TA TI LGIK KBF DHTMH LGGKDI AHF BFD TBJPIAQTFI AK OF OLIFJ TB LBX GKMLATKB DTAHKPA QFNPTQTBE LBX BLAPQLG QFIKPQMFI, KQ AK OF TB LBX LMAPLG WHXITMLG GKMLATKBI. AXWTMLGGX LGG AHLA TI QFNPTQFJ TI L QFGTLOGF BFADKQS MKBBFMATKB. KPQ DKQGJ TI MHLBETBE OX AHF JLX, LI AQLJTATKBLG RKQYI KR OPITBFII LQF OFTBE QFWGLMFJ, TB YLBX MLIFI, OX YKQF QFGTLOGF LBJ RLIAFQ DLXI KR KWFQLATBE. KPQ WKIALG IXIAFY, DHTGF IATGG PIFJ RKQ YLBX PIFRPG LWWGTMLATKBI, HLI OFFB GLQEFGX QFWGLMFJ OX FGFMAQKBTM YLTG. DTAH VKATBE, AHF IGKD LBJ MPYOFQIKYF ALIS KR YLQSTBE VKATBE WL-WFQI DTAH AHF WQFRFQQFJ MLBJTJLAF, TI BKD OFTBE QFWGLMFJ OX FGFMAQKBTM VKATBE. AHF AQLJTATKBLG IXIAFYI, AHKPEH, HLVF OFFB LQKPBJ RKQ HPBJQFJI TR BKA AHKPILBJI KR XFLQI, LBJ AXWTMLGGX PIF DFGG AQTFJ-LBJ-AFIAFJ YFMHLBTIYI. RKQ AHF YKIA WLQA, RKQ FCLYWGF, DF AQPIA L WLWFQ-OLIFJ VKATBE IXIAFY, FVFB AHKPEH TA TI DFGG SBKDB AHLA L MKPBA KR AHF VKAFI DTAHTB LB FGFMATKB DTGG KRAFB WQKJPMF JTRRFQFBA QFIPGAI FLMH ATYF AHLA AHF VKAF TI MKPBAFJ, LBJ AHFB QFMKPBAFJ. LB FGFMAQKBTM YFAHKJ DTGG, KB AHF KAHFQ HLBJ, YKIA GTSFGX HLVF L IPMMFII QLAF KR 100%.
-</pre>
-	</div>
+```
+
 
 5. The Baudot code uses a 5-bit conversion from English characters. Based on the code below, write a Python program which converts plaintext into a cipher stream of bits:
 
-<pre>
+```Python
         public string baud(string str)
         {
             string[] conversion = new string[] {"*", "E","%", "A", " ", "S", "I", "U","\r", "D",
@@ -122,22 +121,24 @@ TB L YLAAFQ KR L RFD JFMLJFI AHF DKQGJ HLI MHLBEFJ RQKY LB TBJPIAQTLG LEF TBAK L
             }
             return (result);
         }
-</pre>
+```
 
 <img src="https://asecuritysite.com/content/baud.jpg"/>
 
 
-<h2>Random Number Generator</h2>
+## Random Number Generator
 
 The Linear Congruential Random Number Generator is a popular method of creating random numbers. It is linear congruential as the values are related to each other in a linear way, modulo m. It uses the sequence generator of:
 
+```
 Xi =(a×Xi−1+c) (mod m)
+```
 
 and where X0 is the initial seed value of the series. Enter some values and the program should generate 200 random values:
 
 Implement the following code:
 
-<pre>
+```Python
 import math
 
 def gen_linear(a, seed,c, m):
@@ -153,27 +154,29 @@ X0=35
 c=31
 m=100  
 res=gen_linear(a,X0,c,m)
-print res
-</pre>
+print (res)
+```
 
-<p>Questions:</p>
+Questions:
 
 1. If we use a=21, seed=35, c=31, and m=100, prove that the generated numbers are:
 
+```
 66 17 88 79 90 21 72 43 34 45 76 27 98 89  0 31 82 53 44 55 86 
 37  8 99 10 41 92 63 54 65 96 47 18 9 20 51 2 73 64 75 6 57 28 
 19 30 61 12 83 74 85 16 67 38 29 40 71 22 93 84 95 26 77 48 39 
 50 81 32 3 94 5 36 87 58 49 60 91 42 13 4 15 46 97 68 59 70 1 
 52 23 14 25 56 7 78 69 80 11 62 33 24 35
+```
 
 2. If we change the a value to 22, what do you observe from the random values generated?
 
 3. If a developer uses this method to generate encryption keys, what what you expect to happen when the random numbers are generated?
-<h2>Prime Numbers</h2>
+## Prime Numbers<
 
 A prime sieve creates all the prime numbers up to a given limit. It progressively removes composite numbers until it only has prime numbers left, and it is the most efficient way to generate a range of prime numbers. Implement the following code:
 
-<pre>
+```Python
 import sys
 
 test=1000
@@ -193,7 +196,7 @@ def sieve_for_primes_to(n):
     return [2] + [i*2+1 for i, v in enumerate(sieve) if v and i>0]
  
 print sieve_for_primes_to(test)
-</pre>
+```
 
 Questions:
 
