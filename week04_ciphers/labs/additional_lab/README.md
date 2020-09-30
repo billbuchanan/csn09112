@@ -139,7 +139,6 @@ and where X0 is the initial seed value of the series. Enter some values and the 
 Implement the following code:
 
 ```Python
-import math
 
 def gen_linear(a, seed,c, m):
 	x=seed
@@ -156,6 +155,8 @@ m=100
 res=gen_linear(a,X0,c,m)
 print (res)
 ```
+
+Link: [here](https://repl.it/@billbuchanan/cipher01)
 
 Questions:
 
