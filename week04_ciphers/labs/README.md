@@ -51,6 +51,176 @@ The main challenges to be solved in this lab are:
 * You are able to perform a scan of the services on a host from another network from your private network. **How to test?** You run NMAP on a server address on another network. **How will I do this?** You should run NMAP to discover the services which are being run on the server in the DMZ on another network.	
 
 
+## Setting up the network
+In this lab we will connect multiple firewalls to the main gateway, and be able to complete the challenges in Table 1. You will be given two things:
+
+Group Number:
+
+Your networks will be: 10.10.x.0/24  192.168.y.0/24  
+
+Demo: https://youtu.be/d4a0bDhlyvI
+
+
+First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation A.
+  
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
+Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
+
+## Initial Firewall Creation
+Now go to your folder, and select the firewall for your network. Next configure the Linux server in the Private zone, and the Windows server in the DMZ.
+
+```
+Boot your firewall, and say no to setting up VLANs.
+
+Now setup the first three networks adapters with em0 (WAN), em1 (LAN) and em2 (OPT1).
+
+Check that you have been granted an IP address on the WAN (em0) port. What address is it:
+
+Can you ping the main gateway from the firewall (10.221.3.254) and your own WAN port?  Yes/No
+```
+
+Now we want to setup your private network gateway.
+
+Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 192.168.x.254/24. 
+
+Note the URL that you can configure your firewall. What is the URL:
+
+
+That’s it! You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
+
+## Host setup
+Now we will configure the hosts to sit on the Private and DMZ zones.
+
+
+Setup the Linux host to connect to 192.168.x.7/24 with a default gateway of your firewall port (192.168.x.254/24).
+
+```
+sudo ifconfig ethx 192.168.x.7 netmask 255.255.255.0 up
+sudo route add default gw 192.168.x.254
+```
+
+
+Next setup the nameserver on the Linux host by editing the /etc/resolv.config and adding a nameserver:
+
+```
+sudo nano /etc/resolv.conf
+```
+
+then add:
+```
+nameserver 10.221.3.254
+nameserver 8.8.8.8
+```
+
+On the Windows server modify the static address on the interface with:
+
+```
+IP: 192.168.y.7
+Subnet mask: 255.255.255.0
+Gateway: 192.168.y.254
+DNS: 10.221.3.254
+```
+
+
+Now we will finalise the configuration of the firewall:
+
+Log into the firewall from the Linux host on the Private zone with:
+
+http://10.10.x.254
+
+```
+Username: admin, Password: pfsense
+```
+
+| Perform |
+|-------------------------------|
+|Setup the required IP on the DMZ (192.168.y.254) and subnet mask.|
+| On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache: |
+| On the firewall, from Diagnostics, ping each of the 192.168.x.254 and 192.168.x.7 interfaces from the LAN network. Can you ping them? Yes/No |
+|-------------------------------| 
+
+On the Windows host, ping 192.168.y.254 and 192.168.y.7 interfaces. Can you ping them? Yes/No Why can’t you ping the 192.168.y.254 interface?
+
+On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.
+
+On the Windows host, ping 192.168.y.254 and 192.168.y.7 interfaces. You should now be able to ping them.
+
+On the Windows host, ping 192.168.x.254 and 192.168.x.7 interfaces. You should now be able to ping them.
+
+On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port.
+
+
+Now from the Windows host and the Linux host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.
+
+
+
+Now we will investigate NAT on the device.
+
+Run packet capture on the firewall, and then ping from both the Windows host and the Linux host. Stop the trace.
+
+Which IP address appears in the pings? 
+
+Why is it just a single address?
+
+
+
+
+Now we will investigate the routing table on the firewall.
+
+On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
+
+
+
+
+D	Device Audit
+Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
+
+On the firewall, capture traffic on the DMZ port, and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ). 
+Does the traffic have the IP address of the gateway on the LAN port? Tick [ ]
+
+On the firewall, capture traffic on the WAN port, and generate some traffic from the LAN and DMZ (such as accessing Google.com). 
+Does the traffic have the IP address of the WAN port? Tick [ ]
+
+On the firewall, examine the ARP table. Also on the hosts in the DMZ and the LAN, run arp –a, and determine all your MAC addresses. 
+Do all the MAC addresses tie-up? Tick [ ]
+E	NMAP
+Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows host, and from the Windows host to the Linux host.
+
+What IP addresses are used in the source addresses of the scan?
+
+Which services have been identified from the Linux host to the Windows host?
+
+
+Which services have been identified from the Windows host to the Linux host?
+
+Why are these different in their scope? Where is the blocking happening?
+
+
+
+Now enable http, https, and ftp from the Private network to the DMZ.
+
+Now enable https, https, and ftp from the DMZ to the Private network.
+
+Re-do NMAP. How are the scans different?
+
+Can you now access the Web server from the Linux host to the Windows host?
+
+Can you now access the Web server from the Windows host to the Linux host?
+
+
+
+Access Google.com from the Linux host.
+
+Can you access it? If not, on the firewall, enable UDP/TCP DNS (Port 53) from DMZ and also from the Private network. Add logging on the rule.
+
+Can you now access Google.com from the Linux host and the Windows host?
+
+On the firewall, examine the log and view the accesses for a DNS lookup on Google.com. Which addresses are present?
+
+
+
+
+
 
 
 
