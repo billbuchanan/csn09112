@@ -100,28 +100,49 @@ TB L YLAAFQ KR L RFD JFMLJFI AHF DKQGJ HLI MHLBEFJ RQKY LB TBJPIAQTLG LEF TBAK L
 
 5. The Baudot code uses a 5-bit conversion from English characters. Based on the code below, write a Python program which converts plaintext into a cipher stream of bits:
 
-```Python
-        public string baud(string str)
-        {
-            string[] conversion = new string[] {"*", "E","%", "A", " ", "S", "I", "U","\r", "D",
-            "R", "J", "N", "F", "C", "K", "T", "Z", "L", "W",
-            "H", "Y", "P", "Q", "O", "B", "G",  "", "M", "X",   
-           "V", ""};
-            if (str==null) return("");
-            string result = "";
-            str = str.ToUpper();
-            foreach (char ch in str)
-            {
-                string ch2 = ch.ToString();
-                int ptr = 0;
-                foreach (string ch1 in conversion)
-                {
-                    if (ch2 == ch1) result += "[" + ptr + "-"+GetBinaryString(ptr)+ "]";
-                    ptr++;
-                }
-            }
-            return (result);
-        }
+```
+0     1   2     3    4    5    6    7   8     9
+'*' 'E' '\n'  'A'  ' '  'S'  'I'  'U' '\r'   'D'
+
+10   11   12  13  14  15  16  17  18  19
+'R'  'J' 'N' 'F' 'C' 'K' 'T' 'Z' 'L'  'W'
+
+20   21  22   23   24   25   26   27   28   29
+'H' 'Y'  'P'  'Q'  'O'  'B'  'G'  ''  'M'  'X',
+
+Binary          Letter Figure
+00000 		Null   Null
+00001 		E 	   3
+00010 		LF 	   LF
+00011 		A 	   –
+00100 		' '    ' '
+00101 		S 	   Bell
+00110 		I 	   8
+00111 		U 	   7
+01000 		CR	   CR
+01001 		D 	
+01010 		R 	   4
+01011 		J 	   '
+01100 		N 	   ,
+01101 		F 	   !
+01110 		C 	   :
+01111 		K 	   (
+10000 		T 	   5
+10001 		Z 	   "
+10010 		L 	   )
+10011 		W 	   2
+10100 		H 	   #
+10101 		Y 	   6
+10110 		P 	   0
+10111 		Q 	   1
+11000 		O 	   9
+11001 		B 	   ?
+11010 		G 	   &
+11011 		Shift to figures 	
+11100 		M 	   .
+11101 		X 	   /
+11110 		V 	   ;
+11111 			   Shift to letters
 ```
 
 <img src="https://asecuritysite.com/content/baud.jpg"/>
