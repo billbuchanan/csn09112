@@ -196,6 +196,105 @@ Access Google.com from the Linux host.
 
 
 
+## F Identifying Services 
+Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
+
+| Perform and answer the following: |
+|-------------------------------|
+| From → To |	Command	| Observation |
+|DMZ	| On your Windows host, run the command:
+ netstat –a
+and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
+
+
+LAN	For the Ubuntu Virtual Machine, and run the command:
+ netstat –l.  	Outline some of the services which are running on your host (define the port number and the name of the service):
+
+DMZ	Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page:
+http://10.10.x.7	Is the service working: [Yes] [No]
+LAN	From Ubuntu, access the Web server at:
+http://10.10.y.7	Is the service working: [Yes] [No]
+LAN	Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following:
+telnet 10.10.y.7 80
+then enter:  GET /	Outline the message that is returned:
+DMZ	Repeat the previous example from the WINDOWS host:
+
+telnet 10.10.x.7 80	
+DMZ	There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server:
+telnet 10.10.x.7 21
+
+then enter:
+
+USER napier
+PASS napier123
+QUIT	Outline the messages that you received:
+
+
+What happens to each of these when you try with an incorrect username and password:
+LAN	From UBUNTU access the WINDOWS host with
+
+telnet 10.10.x.7 21
+
+then enter:
+
+USER Administrator
+PASS napier
+QUIT	Outline the messages that you received:
+
+
+What happens to each of these when you try with an incorrect username and password:
+DMZ	On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens.
+	What does this service do:
+DMZ	Next we will assess the SMTP service running on the WINDOWS virtual machine. From your UBUNTU machine console run a service to access SMTP:
+telnet 10.10.y.7 25
+
+Table 1 outlines the commands to use. 	On the WINDOWS virtual machine, go into the C:\inetpub\mailroot\queue folder, and view the queued email message. 
+
+Was the mail successfully queued? If not, which mail folder has the file in?
+
+Outline the format of the EML file?
+
+
+Table 1: SMTP commands
+
+220 napier Microsoft ESMTP MAIL Service, Version: 6.0.3790.3959 ready at  Sun, 2 Dec 2009 21:56:01 +0000
+help
+214-This server supports the following commands:
+214 HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH TURN ETRN BDAT VRFY
+helo me
+250 napier Hello [10.10.75.1]
+mail from: email@domain.com
+250 2.1.0 email@domain.com....Sender OK
+rcpt to: fred@mydomain.com
+250 2.1.5 fred@mydomain.com
+Data
+354 Start mail input; end with <CRLF>.<CRLF>
+From: Bob <bob@test.org>
+To: Alice <alice@test.org >
+Date: Sun, 20 Dec 2013
+Subject: Test message
+Hello Alice.
+This is an email to say hello
+.
+250 2.6.0 <NAPIERMp7lzvxrMVHFb00000001@napier> Queued mail for delivery
+G	Enumeration – Host scan 
+Nmap is one of the most popular network scanning tools. It is widely available, for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
+From → To	Command	Observation
+LAN to WAN	sudo nmap –sP –r 10.221.0.0/24	Which hosts are on-line:
+
+LAN to DMZ	sudo nmap –sP –r 10.10.y.0/24	Which hosts are on-line:
+
+DMZ to LAN	nmap –sP –r 10.10.x.0/24	Which hosts are on-line:
+LAN to DMZ	Run Wireshark on host in LAN, and run:
+sudo nmap –sP –r 10.10.y.0/24	Which transport layer protocol does NMAP use to discover the host:
+[ICMP] or [ARP]
+LAN to LAN	Run Wireshark on host in LAN, and run:
+sudo nmap –sP –r 10.10.x.0/24	Which transport layer protocol does NMAP use to discover the host:
+[ICMP] or [ARP]
+
+
+At the end of Part 1. You should have completed Challenge 1 and 2.
+
 
 
 
