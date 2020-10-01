@@ -1,26 +1,21 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1>Lab 3: Creating Secure Architectures</h2>
-<h2>Aim</h2>
-The  aim  of  this  lab  is  to  build a secure architecture.
+# Lab 3: Creating Secure Architectures
+## Aim
+The aim of this  lab is to build a secure architecture.
 
-<h2>Activities</h2>
+## Activities
 
 Complete Lab 3: The lab is [<a href="https://asecuritysite.com/log/csn09112_lab04.pdf" target="_blank">here</a>]. [<a href="https://www.youtube.com/watch?v=d4a0bDhlyvI" target="_blank">Demo</a>].</p>
 
 <h2>Learning activities</h2>
-At the end of this lab, you should be able to do the following:
-<ul>
-<li>The hosts on your network can connect to each other. Test: Ping from the host in the Private network to the DMZ, and vice-versa.</li>
+**At the end of this lab**, you should be able to do the following:
 
-<li>You are able to connect to the Internet from a host in the Private network. Test: Open up Google.com from a browser from the host in the Private network</li>
+* The hosts on your network can connect to each other. Test: Ping from the host in the Private network to the DMZ, and vice-versa.</li>
+* You are able to connect to the Internet from a host in the Private network. Test: Open up Google.com from a browser from the host in the Private network</li>
+* A host on the DMZ is contactable from outside your network. Test: You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the host on your public network to ping.</li>
+* You are able to discover the range of other firewalls which connect to the network. Test: You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways.</li>
+* You are able to perform a scan of the services on a host from another network from your private network. Test: You run NMAP on a server address on another network.</li>
 
-<li>A host on the DMZ is contactable from outside your network. Test: You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the host on your public network to ping.</li>
-
-<li>You are able to discover the range of other firewalls which connect to the network. Test: You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways.</li>
-
-<li>You are able to perform a scan of the services on a host from another network from your private network. Test: You run NMAP on a server address on another network.</li>
-
-  </ul>
 
 ## Lab setup
 Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation A.
@@ -69,7 +64,7 @@ Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.1
 ## Initial Firewall Creation
 Now go to your folder, and select the firewall for your network. Next configure the Linux server in the Private zone, and the Windows server in the DMZ.
 
-| Perform the following |
+| Perform the following: |
 |-------------------------------|
 | Boot your firewall, and say no to setting up VLANs.
 | Now setup the first three networks adapters with em0 (WAN), em1 (LAN) and em2 (OPT1).
@@ -78,7 +73,7 @@ Now go to your folder, and select the firewall for your network. Next configure 
 
 Now we want to setup your private network gateway.
 
-| Perform the following |
+| Perform the following: |
 |-------------------------------|
 | Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 192.168.x.254/24. 
 | Note the URL that you can configure your firewall. What is the URL:
@@ -129,7 +124,7 @@ http://10.10.x.254
 Username: admin, Password: pfsense
 ```
 
-| Perform the following |
+| Perform the following: |
 |-------------------------------|
 | Setup the required IP on the DMZ (192.168.y.254) and subnet mask.|
 | On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache: |
@@ -142,26 +137,23 @@ Username: admin, Password: pfsense
 | Now from the Windows host and the Linux host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.|
 
 
-
 Now we will investigate NAT on the device.
 
-Run packet capture on the firewall, and then ping from both the Windows host and the Linux host. Stop the trace.
-
-Which IP address appears in the pings? 
-
-Why is it just a single address?
-
-
-
+| Perform the following: |
+|-------------------------------|
+| Run packet capture on the firewall, and then ping from both the Windows host and the Linux host. Stop the trace.
+| Which IP address appears in the pings? 
+| Why is it just a single address?
 
 Now we will investigate the routing table on the firewall.
 
-On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
+| Perform the following: |
+|-------------------------------|
+| On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
 
 
 
-
-D	Device Audit
+## D	Device Audit
 Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
 
 On the firewall, capture traffic on the DMZ port, and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ). 
