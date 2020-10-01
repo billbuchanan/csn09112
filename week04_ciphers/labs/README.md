@@ -86,11 +86,11 @@ That’s it! You are all finished in doing the initial configuration on the fire
 Now we will configure the hosts to sit on the Private and DMZ zones.
 
 
-Setup the Linux host to connect to 192.168.x.7/24 with a default gateway of your firewall port (192.168.x.254/24).
+Setup the Linux host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
 
 ```
-sudo ifconfig ethx 192.168.x.7 netmask 255.255.255.0 up
-sudo route add default gw 192.168.x.254
+sudo ifconfig ethx 10.10.x.7 netmask 255.255.255.0 up
+sudo route add default gw 10.10.x.254
 ```
 
 
