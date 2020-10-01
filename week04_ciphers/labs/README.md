@@ -53,7 +53,7 @@ In this lab we will connect multiple firewalls to the main gateway, and be able 
 
 Group Number:
 
-Your networks will be: 10.10.x.0/24  192.168.y.0/24  
+Your networks will be: 10.10.x.0/24  10.10.y.0/24  
 
 Demo: https://youtu.be/d4a0bDhlyvI
 
@@ -77,7 +77,7 @@ Now we want to setup your private network gateway.
 
 | Perform the following: |
 |-------------------------------|
-| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 192.168.x.254/24. 
+| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 10.10.x.254/24. 
 | Note the URL that you can configure your firewall. What is the URL:
 
 That’s it! You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
@@ -109,9 +109,9 @@ nameserver 8.8.8.8
 On the Windows server modify the static address on the interface with:
 
 ```
-IP: 192.168.y.7
+IP: 10.10.y.7
 Subnet mask: 255.255.255.0
-Gateway: 192.168.y.254
+Gateway: 10.10.y.254
 DNS: 10.221.3.254
 ```
 
@@ -128,13 +128,13 @@ Username: admin, Password: pfsense
 
 | Perform the following: |
 |-------------------------------|
-| Setup the required IP on the DMZ (192.168.y.254) and subnet mask.|
+| Setup the required IP on the DMZ (10.10.y.254) and subnet mask.|
 | On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache: |
-| On the firewall, from Diagnostics, ping each of the 192.168.x.254 and 192.168.x.7 interfaces from the LAN network. Can you ping them? Yes/No |
-| On the Windows host, ping 192.168.y.254 and 192.168.y.7 interfaces. Can you ping them? Yes/No Why can’t you ping the 192.168.y.254 interface?|
+| On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. Can you ping them? Yes/No |
+| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. Can you ping them? Yes/No Why can’t you ping the 10.10.y.254 interface?|
 | On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.|
-| On the Windows host, ping 192.168.y.254 and 192.168.y.7 interfaces. You should now be able to ping them.|
-| On the Windows host, ping 192.168.x.254 and 192.168.x.7 interfaces. You should now be able to ping them.|
+| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. You should now be able to ping them.|
+| On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now be able to ping them.|
 | On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port.|
 | Now from the Windows host and the Linux host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.|
 
