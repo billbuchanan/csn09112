@@ -158,47 +158,41 @@ Now we will investigate the routing table on the firewall.
 ## D	Device Audit
 Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
 
-On the firewall, capture traffic on the DMZ port, and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ). 
-Does the traffic have the IP address of the gateway on the LAN port? Tick [ ]
+| Perform and answer the following: |
+|-------------------------------|
+| On the firewall, capture traffic on the DMZ port, and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ).  Does the traffic have the IP address of the gateway on the LAN port? Tick [ ]
+| On the firewall, capture traffic on the WAN port, and generate some traffic from the LAN and DMZ (such as accessing Google.com).  Does the traffic have the IP address of the WAN port? Tick [ ]
+| On the firewall, examine the ARP table. Also on the hosts in the DMZ and the LAN, run arp –a, and determine all your MAC addresses.  Do all the MAC addresses tie-up? Tick [ ]
 
-On the firewall, capture traffic on the WAN port, and generate some traffic from the LAN and DMZ (such as accessing Google.com). 
-Does the traffic have the IP address of the WAN port? Tick [ ]
-
-On the firewall, examine the ARP table. Also on the hosts in the DMZ and the LAN, run arp –a, and determine all your MAC addresses. 
-Do all the MAC addresses tie-up? Tick [ ]
-E	NMAP
+## E	NMAP
 Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows host, and from the Windows host to the Linux host.
 
-What IP addresses are used in the source addresses of the scan?
-
-Which services have been identified from the Linux host to the Windows host?
-
-
-Which services have been identified from the Windows host to the Linux host?
-
-Why are these different in their scope? Where is the blocking happening?
+| Perform and answer the following: |
+|-------------------------------|
+| What IP addresses are used in the source addresses of the scan?
+| Which services have been identified from the Linux host to the Windows host?
+| Which services have been identified from the Windows host to the Linux host?
+| Why are these different in their scope? Where is the blocking happening?
 
 
 
 Now enable http, https, and ftp from the Private network to the DMZ.
-
 Now enable https, https, and ftp from the DMZ to the Private network.
 
-Re-do NMAP. How are the scans different?
-
-Can you now access the Web server from the Linux host to the Windows host?
-
-Can you now access the Web server from the Windows host to the Linux host?
-
+| Perform and answer the following: |
+|-------------------------------|
+| Re-do NMAP. How are the scans different?
+| Can you now access the Web server from the Linux host to the Windows host?
+| Can you now access the Web server from the Windows host to the Linux host?
 
 
 Access Google.com from the Linux host.
 
-Can you access it? If not, on the firewall, enable UDP/TCP DNS (Port 53) from DMZ and also from the Private network. Add logging on the rule.
-
-Can you now access Google.com from the Linux host and the Windows host?
-
-On the firewall, examine the log and view the accesses for a DNS lookup on Google.com. Which addresses are present?
+| Perform and answer the following: |
+|-------------------------------|
+| Can you access it? If not, on the firewall, enable UDP/TCP DNS (Port 53) from DMZ and also from the Private network. Add logging on the rule.
+| Can you now access Google.com from the Linux host and the Windows host?
+| On the firewall, examine the log and view the accesses for a DNS lookup on Google.com. Which addresses are present?
 
 
 
