@@ -199,10 +199,9 @@ Access Google.com from the Linux host.
 ## F Identifying Services 
 Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
 
-| Perform and answer the following: |
-|-------------------------------|
 | From → To |	Command	| Observation |
-|DMZ	| On your Windows host, run the command:
+|------|------------|-------------|
+| DMZ	| On your Windows host, run the command:
  netstat –a
 and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
 
