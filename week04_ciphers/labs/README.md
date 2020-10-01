@@ -27,11 +27,11 @@ Our challenge is to setup MyBank Incorp, where each of you will be allocated a n
 Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
 
 ## Quick guide</h2>
-For Ubtunta configuration:
+For Ubtuntu configuration, for 10.10.111.7:
 
 ```
-ip addr add 192.1.1.1 dev eth1
-route add default gw 192.168.1.254 eth0
+ip addr add 10.10.111.7 dev eth1
+route add default gw 10.10.111.254 eth0
 nano /etc/resolve.conf and change "name-server 10.200.3.354"
 ```
 
