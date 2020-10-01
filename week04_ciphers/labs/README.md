@@ -69,22 +69,19 @@ Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.1
 ## Initial Firewall Creation
 Now go to your folder, and select the firewall for your network. Next configure the Linux server in the Private zone, and the Windows server in the DMZ.
 
-```
-Boot your firewall, and say no to setting up VLANs.
-
-Now setup the first three networks adapters with em0 (WAN), em1 (LAN) and em2 (OPT1).
-
-Check that you have been granted an IP address on the WAN (em0) port. What address is it:
-
-Can you ping the main gateway from the firewall (10.221.3.254) and your own WAN port?  Yes/No
-```
+| Perform the following |
+|-------------------------------|
+| Boot your firewall, and say no to setting up VLANs.
+| Now setup the first three networks adapters with em0 (WAN), em1 (LAN) and em2 (OPT1).
+| Check that you have been granted an IP address on the WAN (em0) port. What address is it:
+| Can you ping the main gateway from the firewall (10.221.3.254) and your own WAN port?  Yes/No
 
 Now we want to setup your private network gateway.
 
-Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 192.168.x.254/24. 
-
-Note the URL that you can configure your firewall. What is the URL:
-
+| Perform the following |
+|-------------------------------|
+| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 192.168.x.254/24. 
+| Note the URL that you can configure your firewall. What is the URL:
 
 That’s it! You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
 
