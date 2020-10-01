@@ -126,17 +126,17 @@ http://10.10.x.254
 Username: admin, Password: pfsense
 ```
 
-| Perform the following: |
-|-------------------------------|
+| Perform the following: | Observation |
+|-------------------------|------|
 | Setup the required IP on the DMZ (10.10.y.254) and subnet mask.|
-| On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache: |
-| On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. Can you ping them? Yes/No |
-| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. Can you ping them? Yes/No Why can’t you ping the 10.10.y.254 interface?|
+| On the firewall, from Diagnostics, view the ARP cache. | Which addresses are in the cache: |
+| On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. | Can you ping them? Yes/No |
+| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. | Can you ping them? Yes/No Why can’t you ping the 10.10.y.254 interface?|
 | On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.|
-| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. You should now be able to ping them.|
-| On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now be able to ping them.|
-| On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port.|
-| Now from the Windows host and the Linux host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.|
+| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. | You should now be able to ping them.|
+| On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. | You should now be able to ping them.|
+| On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. | From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port.|
+| Now from the Windows host and the Linux host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.| |
 
 
 Now we will investigate NAT on the device.
