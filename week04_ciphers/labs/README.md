@@ -30,8 +30,8 @@ Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.1
 For Ubtuntu configuration, for 10.10.111.7:
 
 ```
-ip addr add 10.10.111.7 dev eth1
-route add default gw 10.10.111.254 eth0
+sudo ifconfig eth11 10.10.x.7 netmask 255.255.255.0 up 
+sudo route add default gw 10.10.x.254
 nano /etc/resolve.conf and change "name-server 10.200.3.354"
 ```
 
