@@ -7,7 +7,7 @@ The aim of this  lab is to build a secure architecture.
 
 ## Activities
 
-Complete Lab 3: The lab is [<a href="https://asecuritysite.com/log/csn09112_lab04.pdf" target="_blank">here</a>]. [<a href="https://www.youtube.com/watch?v=d4a0bDhlyvI" target="_blank">Demo</a>].</p>
+Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf)[<a href="https://www.youtube.com/watch?v=d4a0bDhlyvI" target="_blank">Demo</a>].</p>
 
 ## Learning activities
 **At the end of this lab**, you should be able to do the following:
