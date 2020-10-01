@@ -20,7 +20,7 @@ Complete Lab 3: The lab is [<a href="https://asecuritysite.com/log/csn09112_lab0
 
 
 ## Lab setup
-Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation A.
+Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation C (10.10.z.z/24).
 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
@@ -204,52 +204,20 @@ Within a network infrastructure we have services which run on hosts. These servi
 | DMZ	| On your Windows host, run the command: netstat –a and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
 | LAN		| For the Ubuntu Virtual Machine, and run the command: netstat –l.  	| 	Outline some of the services which are running on your host (define the port number and the name of the service):	| 
 | DMZ		| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: http://10.10.x.7		|  Is the service working: [Yes] [No] 	| 
-
-LAN	From Ubuntu, access the Web server at:
-http://10.10.y.7	Is the service working: [Yes] [No]
-LAN	Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following:
-telnet 10.10.y.7 80
-then enter:  GET /	Outline the message that is returned:
-DMZ	Repeat the previous example from the WINDOWS host:
-
-telnet 10.10.x.7 80	
-DMZ	There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server:
-telnet 10.10.x.7 21
-
-then enter:
-
-USER napier
-PASS napier123
-QUIT	Outline the messages that you received:
-
-
-What happens to each of these when you try with an incorrect username and password:
-LAN	From UBUNTU access the WINDOWS host with
-
-telnet 10.10.x.7 21
-
-then enter:
-
-USER Administrator
-PASS napier
-QUIT	Outline the messages that you received:
-
-
-What happens to each of these when you try with an incorrect username and password:
-DMZ	On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens.
-	What does this service do:
-DMZ	Next we will assess the SMTP service running on the WINDOWS virtual machine. From your UBUNTU machine console run a service to access SMTP:
-telnet 10.10.y.7 25
-
-Table 1 outlines the commands to use. 	On the WINDOWS virtual machine, go into the C:\inetpub\mailroot\queue folder, and view the queued email message. 
-
-Was the mail successfully queued? If not, which mail folder has the file in?
-
-Outline the format of the EML file?
+|  LAN	|  From Ubuntu, access the Web server at: http://10.10.y.7	| Is the service working: [Yes] [No]| 
+| LAN	|  Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 10.10.y.7 80
+then enter:  GET / | 	Outline the message that is returned: | 
+| DMZ	|  Repeat the previous example from the WINDOWS host: telnet 10.10.x.7 80	|  
+| DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: telnet 10.10.x.7 21
+then enter: USER napier PASS napier123 QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
+| LAN | 	From UBUNTU access the WINDOWS host with telnet 10.10.x.7 21 then enter: USER Administrator PASS napier QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
+| DMZ	| On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens. |  What does this service do: | 
+|  DMZ	| Next we will assess the SMTP service running on the WINDOWS virtual machine. From your UBUNTU machine console run a service to access SMTP:
+telnet 10.10.y.7 25 Table 1 outlines the commands to use. 	On the WINDOWS virtual machine, go into the C:\inetpub\mailroot\queue folder, and view the queued email message.  | Was the mail successfully queued? If not, which mail folder has the file in? Outline the format of the EML file?
 
 
 Table 1: SMTP commands
-
+```
 220 napier Microsoft ESMTP MAIL Service, Version: 6.0.3790.3959 ready at  Sun, 2 Dec 2009 21:56:01 +0000
 help
 214-This server supports the following commands:
@@ -270,33 +238,17 @@ Hello Alice.
 This is an email to say hello
 .
 250 2.6.0 <NAPIERMp7lzvxrMVHFb00000001@napier> Queued mail for delivery
-G	Enumeration – Host scan 
-Nmap is one of the most popular network scanning tools. It is widely available, for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
-From → To	Command	Observation
-LAN to WAN	sudo nmap –sP –r 10.221.0.0/24	Which hosts are on-line:
+```
 
-LAN to DMZ	sudo nmap –sP –r 10.10.y.0/24	Which hosts are on-line:
-
-DMZ to LAN	nmap –sP –r 10.10.x.0/24	Which hosts are on-line:
-LAN to DMZ	Run Wireshark on host in LAN, and run:
-sudo nmap –sP –r 10.10.y.0/24	Which transport layer protocol does NMAP use to discover the host:
-[ICMP] or [ARP]
-LAN to LAN	Run Wireshark on host in LAN, and run:
-sudo nmap –sP –r 10.10.x.0/24	Which transport layer protocol does NMAP use to discover the host:
-[ICMP] or [ARP]
-
-
-At the end of Part 1. You should have completed Challenge 1 and 2.
-
-
-
+## G	Enumeration – Host scan 
+To be updated.
 
 
 
 ## IP Allocation
 
-<p>Allocation A</p>
-<pre style="font-size: 8px">
+### Allocation A
+```
 Allocated	Ubuntu	        	Windows	        Em0	    Em1 (Private)	    Em2 (DMZ)
 ----------------------------------------------------------------------------------------
 Group_001	192.168.1.7/24		192.168.2.7/24	DHCP	192.168.1.254/24	192.168.2.254/24
@@ -386,10 +338,10 @@ Group_084	192.168.167.7/24	192.168.168.7/24 DHCP	192.168.167.254/24	192.168.168.
 Group_085	192.168.169.7/24	192.168.170.7/24 DHCP	192.168.169.254/24	192.168.170.254/24
 Group_086	192.168.171.7/24	192.168.172.7/24 DHCP	192.168.171.254/24	192.168.172.254/24
 Group_087	192.168.173.7/24	192.168.174.7/24 DHCP	192.168.173.254/24	192.168.174.254/24
-</pre>
+```
 
-<p>Allocation B</p>
-<pre style="font-size: 8px">
+### Allocation B
+```
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	    Em2 (DMZ)
 ----------------------------------------------------------------------------------------
 Group_001	172.16.1.7/24		172.16.2.7/24	DHCP	172.16.1.254/24	172.16.2.254/24
@@ -479,10 +431,10 @@ Group_084	172.16.167.7/24	172.16.168.7/24 DHCP	172.16.167.254/24	172.16.168.254/
 Group_085	172.16.169.7/24	172.16.170.7/24 DHCP	172.16.169.254/24	172.16.170.254/24
 Group_086	172.16.171.7/24	172.16.172.7/24 DHCP	172.16.171.254/24	172.16.172.254/24
 Group_087	172.16.173.7/24	172.16.174.7/24 DHCP	172.16.173.254/24	172.16.174.254/24
-</pre>
+```
 
-<p>Allocation C</p>
-<pre style="font-size: 8px">
+### Allocation C
+```
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_001	10.10.1.7/24	10.10.2.7/24	DHCP	10.10.1.254/24	10.10.2.254/24
@@ -573,11 +525,9 @@ Group_085	10.10.169.7/24	10.10.170.7/24 DHCP	10.10.169.254/24	10.10.170.254/24
 Group_086	10.10.171.7/24	10.10.172.7/24 DHCP	10.10.171.254/24	10.10.172.254/24
 Group_087	10.10.173.7/24	10.10.174.7/24 DHCP	10.10.173.254/24	10.10.174.254/24
 Group_088	10.10.175.7/24	10.10.176.7/24 DHCP	10.10.175.254/24	10.10.176.254/24
-
 Group_089	10.10.210.7/24	10.10.211.7/24 DHCP	10.10.210.254/24	10.10.211.254/24
 Group_090	10.10.181.7/24	10.10.182.7/24 DHCP	10.10.181.254/24	10.10.182.254/24
 Group_091	10.10.179.7/24	10.10.180.7/24 DHCP	10.10.179.254/24	10.10.180.254/24
-
 Group_092	10.10.183.7/24	10.10.184.7/24 DHCP	10.10.183.254/24	10.10.184.254/24
 Group_093	10.10.185.7/24	10.10.186.7/24 DHCP	10.10.185.254/24	10.10.186.254/24
 Group_094	10.10.187.7/24	10.10.188.7/24 DHCP	10.10.187.254/24	10.10.188.254/24
@@ -590,4 +540,4 @@ Group_100	10.10.199.7/24	10.10.200.7/24 DHCP	10.10.199.254/24	10.10.200.254/24
 Group_101	10.10.201.7/24	10.10.202.7/24 DHCP	10.10.201.254/24	10.10.202.254/24
 Group_102	10.10.203.7/24	10.10.204.7/24 DHCP	10.10.203.254/24	10.10.204.254/24
 Group_103	10.10.205.7/24	10.10.206.7/24 DHCP	10.10.205.254/24	10.10.206.254/24
-</pre>
+```
