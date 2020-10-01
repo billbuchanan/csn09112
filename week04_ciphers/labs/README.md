@@ -9,7 +9,7 @@ The aim of this  lab is to build a secure architecture.
 
 Complete Lab 3: The lab is [<a href="https://asecuritysite.com/log/csn09112_lab04.pdf" target="_blank">here</a>]. [<a href="https://www.youtube.com/watch?v=d4a0bDhlyvI" target="_blank">Demo</a>].</p>
 
-<h2>Learning activities</h2>
+## Learning activities
 **At the end of this lab**, you should be able to do the following:
 
 * The hosts on your network can connect to each other. Test: Ping from the host in the Private network to the DMZ, and vice-versa.</li>
