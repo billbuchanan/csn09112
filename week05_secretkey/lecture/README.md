@@ -1,11 +1,12 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-<h1 id="logo">Unit 5: Secret (Symmetric) Key and Hashing</h1>
-<h2>Objectives</h2>
+# Unit 5: Secret (Symmetric) Key and Hashing
+
+## Objectives
 
 
-<p>The key concepts are: Understanding symmetric key encryption and hashing methods.</p>
+The key concepts are: Understanding symmetric key encryption and hashing methods.
 
-<h2>Symmetric key</h2>
+## Symmetric key
 
 <h3>What you should know at the end of unit?</h3>
 <ul>
@@ -36,12 +37,12 @@ In the lecture, at the end of Unit 2 (Symmetric Key) the table should be:
 <h3>What you should know at the end of unit?</h2>
 <ul>
     <li>How the lengths of the hashes vary with the number of bits in the hash.</li>
-    <li>HHow we can calculate the strengths on passwords.</li>
-    <li>HUnderstand how salt is applied to the hashing process.</li>
-    <li>HDefine how collisions can occur within hashing.</li>
-    <li>HImplement hash cracking methods (John the Ripper and Hashcat).</li>
-    <li>HDefines the usage of signed hashes (eg HMAC).</li>
-    <li>HOutlines the usage of OTP and Timed Passwords.</li>
+    <li>How we can calculate the strengths on passwords.</li>
+    <li>Understand how salt is applied to the hashing process.</li>
+    <li>Define how collisions can occur within hashing.</li>
+    <li>Implement hash cracking methods (John the Ripper and Hashcat).</li>
+    <li>Defines the usage of signed hashes (eg HMAC).</li>
+    <li>Outlines the usage of OTP and Timed Passwords.</li>
 </ul>
 <h3>Presentations</h3>
 <ul>
