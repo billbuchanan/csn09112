@@ -32,13 +32,15 @@ route add default gw 192.168.1.254 eth0
 nano /etc/resolve.conf and change "name-server 10.200.3.354"
 ```
 
-| Default Header | Left Align | Right Align | Center Align |
-| --- | :-- | --: | :-: |
+
 
 ## C Opening the firewall 
 We will be testing from the LAN network to the DMZ, and vice-versa. First setup your network, and open up TCP, UDP and ICMP from the DMZ to the LAN network. 
 
-| From to To | 	Command	Observation |
+| From to To | Command	Observation | 
+| --- | :-- | 
+
+
 | LAN to DMZ |	ping 192.168.y.7 ping 192.168.y.254 Try Web browser to 192.168.y.7	 | Do you have connectivity from LAN to DMZ: [Yes]  [No]
 | DMZ to LAN |	ping 192.168.x.7 ping 192.168.x.254 Try Web browser to 192.168.x.7 |Do you have connectivity from DMZ to LAN: [Yes]  [No] |
 
