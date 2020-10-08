@@ -56,7 +56,7 @@ DMZ	| On your Windows host, run the command: netstat –a and outline some of th
 | LAN |	From Ubuntu, access the Web server at: http://10.10.y.7 | Is the service working: [Yes] [No] |
 | LAN | Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 10.10.y.7 80 then enter:  GET /	Outline the message that is returned:| 
 | DMZ | Repeat the previous example from the WINDOWS host: telnet 10.10.x.7 80	
-DMZ	There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server:
+DMZ	| There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server:
 telnet 10.10.x.7 21 then enter: USER napier PASS napier123 QUIT | Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: |
 | LAN | From UBUNTU access the WINDOWS host with telnet 10.10.x.7 21 then enter: USER Administrator PASS napier QUIT	| Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: |
 | DMZ | On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens. | What does this service do: |
