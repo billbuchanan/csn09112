@@ -89,13 +89,20 @@ This is an email to say hello
 Nmap is one of the most popular network scanning tools. It is widely available, for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | LAN to WAN | sudo nmap -sP -r 10.221.0.0/24| Which hosts are on-line: |
-
+| LAN to DMZ | sudo nmap –sP –r 10.10.y.0/24 | Which hosts are on-line: |
+| DMZ to LAN | nmap –sP –r 10.10.x.0/24 | Which hosts are on-line: |
+| LAN to DMZ | Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.y.0/24 | Which transport layer protocol does NMAP use to discover the host:
+[ICMP] or [ARP] |
+| LAN to LAN | Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.x.0/24 | Which transport layer protocol does NMAP use to discover the host:
+[ICMP] or [ARP] |
 
 ## F	Enumeration - Operating System Fingerprinting
 Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | LAN to DMZ | Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: sudo nmap –O 10.10.y.0/24 | Which operating systems does it return:
 | DMZ to LAN | Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: nmap –O 10.10.x.0/24 | Which operating systems does it return:
 
@@ -103,6 +110,7 @@ Enumeration is the gathering of information about target hosts. After discoverin
 Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | LAN to DMZ | Perform an application and version scan for networked services: sudo nmap –sS 10.10.y.7/24 | Which services are running on the Windows host: |
 | DMZ to LAN | Perform an application and version scan for networked services: nmap –sS 10.10.x.7/24 | Which services are running on the Linux host: |
 | LAN to DMZ | Scan the Web server in the DMZ for its version: sudo nmap –sV 10.10.y.7/24 –p 80 | Which Web server type is being used:
@@ -111,6 +119,7 @@ Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs
 Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | DMZ to LAN | Connect to port 80, with: telnet 10.10.x.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
 | DMZ to LAN | Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 GET / HTTP/1.0 | What do you observe from using these HTTP requests: |
 
@@ -119,6 +128,7 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 Hping is used by an intruder to craft network packets which can look to exploit a system. For example, an intruder might send in a network packet which has all the TCP flags set in order to exploit a weakness in the system. For all of the following, within the UBUNTU virtual instance, open two Terminal windows and in one capture your data packets with.
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | LAN to DMZ | On UBUNTU capture packets with: sudo tcpdump -i eth11 Start Wireshark on the WINDOWS. Next go to your UBUNTU virtual machine, and run the command of: sudo hping 10.10.y.7 | Let it run for a few seconds, and the stop it with the Ctrl-C keystroke. Next go back to your WINDOWS instance and stop the trace. What can you observe from the trace:  Which TCP ports have been used: Why is there no reply? |
 | LAN to DMZ | Investigate the following: sudo hping –S 10.10.x.7 –p 80 | How might an intruder use this command: |
 | LAN to DMZ | Investigate the following: sudo hping – 10.10.x.7 –1 | How might an intruder use this command: |
@@ -128,6 +138,7 @@ Hping is used by an intruder to craft network packets which can look to exploit 
 Snort is one of the most popular intrusion detection systems, where an agent is used to detect network threats.
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | LAN	| From UBUNTU, run the Wireshark packet sniffer with the command: sudo wireshark & |
 | DMZ | Basic Host Discovery can be performed using ICMP or ARP traffic, typically with tools such as ping and arping. This type of active network scanning is easy to detect using an Intrusion Detection System (IDS), such as Snort. From WINDOWS2003, create a folder named MYSNORT and create a snort detection rules file in this folder named icmp.rules, and add the following snort variables, and detection rule: alert icmp any any -> any any (msg:"ICMP ping"; sid:999) |	
 | DMZ | Run Snort on WINDOWS with: snort -c c:\MYSNORT\icmp.rules -i 1 -p -l c:\MYSNORT -K ascii | |
@@ -143,6 +154,7 @@ Snort is one of the most popular intrusion detection systems, where an agent is 
 NOTE: Hydra should only be used on private networks. Do not use on any systems on the Internet.
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | LAN | Create a new user fred on the FTP server in UBUNTU, using (check by viewing the /etc/passwd file): sudo useradd fred -p fredpass -d /home/fred -s /bin/false –m sudo passwd fred | View the password file with: sudo cat /etc/shadow Can you locate the fred user: |
 
 
@@ -161,6 +173,7 @@ C:\hydra> hydra -L user.txt -P pass.txt 10.10.x.7 telnet
 What modifications were required to detect the user fred:
 
 | From to To | Command | Observation | 
+| -------|--------|---------|
 | DMZ to LAN | Go UBUNTU, and run Wireshark, and rescan with Hydra, and capture the trace. Now find the successful login from the trace. | Can you find the network packet at which Hydra cracked the TELNET password:|
 
 
