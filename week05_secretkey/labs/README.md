@@ -23,28 +23,22 @@ At the end of this lab, you should be able to do the following:
 Our challenge is to perform a vulnerability analysis for MyCorpIncorp, where each of you will be allocated a network and hosts to configure and  get  on-line (Figure  1). For  this  you  will be  allocated  your  own  network which  you  can  access  from  the  vCenter  Cloud  infrastructure (vSoC.napier.ac.uk). Table 1 outlines your challenges and how you might achieve them. You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives.
 
 <img src="https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pf.png"/>
-<h2>Quick guide</h2>
-<p>For Ubtunta configuration:</p>
-<pre>
+
+## Quick guide
+For Ubtunta configuration:
+```
 ip addr add 192.1.1.1 dev eth1
 route add default gw 192.168.1.254 eth0
 nano /etc/resolve.conf and change "name-server 10.200.3.354"
-</pre>
+```
 
 
 ## C Opening the firewall 
 We will be testing from the LAN network to the DMZ, and vice-versa. First setup your network, and open up TCP, UDP and ICMP from the DMZ to the LAN network. 
 
-From → To	Command	Observation
-LAN to DMZ	ping 192.168.y.7
-ping 192.168.y.254
-Try Web browser to 192.168.y.7	Do you have connectivity from LAN to DMZ: [Yes]  [No]
-
-
-
-DMZ to LAN	ping 192.168.x.7
-ping 192.168.x.254
-Try Web browser to 192.168.x.7	Do you have connectivity from DMZ to LAN: [Yes]  [No]
+| From → To | 	Command	Observation |
+| LAN to DMZ |	ping 192.168.y.7 ping 192.168.y.254 Try Web browser to 192.168.y.7	 | Do you have connectivity from LAN to DMZ: [Yes]  [No]
+| DMZ to LAN |	ping 192.168.x.7 ping 192.168.x.254 Try Web browser to 192.168.x.7 |Do you have connectivity from DMZ to LAN: [Yes]  [No]
 
 ## D	Identifying Services 
 Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
