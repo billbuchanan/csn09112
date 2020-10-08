@@ -89,7 +89,7 @@ This is an email to say hello
 Nmap is one of the most popular network scanning tools. It is widely available, for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
 
 | From to To | Command | Observation | 
-| LAN to WAN | sudo nmap -sP -r 10.221.0.0/24 | Which hosts are on-line: |
+| LAN to WAN | sudo nmap -sP -r 10.221.0.0/24| Which hosts are on-line: |
 
 
 ## F	Enumeration - Operating System Fingerprinting
