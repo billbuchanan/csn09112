@@ -13,11 +13,11 @@ Complete Lab 4: The lab is [<a href="https://github.com/billbuchanan/csn09112/bl
 At the end of this lab, you should be able to do the following:
 
 * Setup Pfsense and the hosts so that you can connect all the required hosts. Test: Successful pings.</li>
-* You should be able to discover the hosts on all your networks, and the services on hosts in your own network (DMZ and LAN). Test: List the hosts. Run NMAP with a range of options, including –sP (to perform a host scan), and -sS (to perform a service scan on a host). </li>
-* You should be able to discover the operating system of the hosts on your network (DMZ and LAN). Test: List the operating systems. Run NMAP with the –O flag.</li>
-* You should be able to discover the Web services that are running and their version. Test: List the Web services. Run NMAP with the –sV flag.</li>
-* You should be able to craft network packets which can exercise servers and the firewall. Test: Use hping to assess response. Run hping with various flags.</li>
-* You should be able to setup basic IDS rules.Test:Use Snort to detect simple network events. Test: Run Snort for detection.</li>
+* You should be able to discover the hosts on all your networks, and the services on hosts in your own network (DMZ and LAN). Test: List the hosts. Run NMAP with a range of options, including –sP (to perform a host scan), and -sS (to perform a service scan on a host.
+* You should be able to discover the operating system of the hosts on your network (DMZ and LAN). Test: List the operating systems. Run NMAP with the –O flag.
+* You should be able to discover the Web services that are running and their version. Test: List the Web services. Run NMAP with the –sV flag.
+* You should be able to craft network packets which can exercise servers and the firewall. Test: Use hping to assess response. Run hping with various flags.
+* You should be able to setup basic IDS rules.Test:Use Snort to detect simple network events. Test: Run Snort for detection.
 
 ## Lab setup
 Our challenge is to perform a vulnerability analysis for MyCorpIncorp, where each of you will be allocated a network and hosts to configure and  get  on-line (Figure  1). For  this  you  will be  allocated  your  own  network which  you  can  access  from  the  vCenter  Cloud  infrastructure (vSoC.napier.ac.uk). Table 1 outlines your challenges and how you might achieve them. You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives.
@@ -28,7 +28,7 @@ Our challenge is to perform a vulnerability analysis for MyCorpIncorp, where eac
 For Ubtunta configuration:
 ```
 ip addr add 192.1.1.1 dev eth1
-route add default gw 192.168.1.254 eth0
+route add default gw 10.10.1.254 eth0
 nano /etc/resolve.conf and change "name-server 10.200.3.354"
 ```
 
@@ -39,8 +39,8 @@ We will be testing from the LAN network to the DMZ, and vice-versa. First setup 
 
 | From to To | Command | Observation | 
 | -------|--------|---------|
-| LAN to DMZ | ping 192.168.y.7 ping 192.168.y.254 Try Web browser to 192.168.y.7 | Do you have connectivity from LAN to DMZ: [Yes]  [No] |
-| DMZ to LAN | ping 192.168.x.7 ping 192.168.x.254 Try Web browser to 192.168.x.7 | Do you have connectivity from DMZ to LAN: [Yes]  [No] |
+| LAN to DMZ | ping 10.10.y.7 ping 10.10.y.254 Try Web browser to 10.10.y.7 | Do you have connectivity from LAN to DMZ: [Yes]  [No] |
+| DMZ to LAN | ping 10.10.x.7 ping 10.10.x.254 Try Web browser to 10.10.x.7 | Do you have connectivity from DMZ to LAN: [Yes]  [No] |
 
 ## D	Identifying Services 
 Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
@@ -50,46 +50,15 @@ Within a network infrastructure we have services which run on hosts. These servi
 | -------|--------|---------|
 DMZ	| On your Windows host, run the command: netstat –a and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port). | Outline some of the services which are running on your host (define the port number and the name of the service): |
 | LAN	| For the Ubuntu Virtual Machine, and run the command: netstat –l.  | Outline some of the services which are running on your host (define the port number and the name of the service): |
-| DMZ	| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: http://192.168.x.7 | Is the service working: [Yes] [No] |
-| LAN |	From Ubuntu, access the Web server at: http://192.168.y.7 | Is the service working: [Yes] [No] |
-| LAN | Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 192.168.y.7 80 then enter:  GET /	Outline the message that is returned:| 
-
-
-DMZ	Repeat the previous example from the WINDOWS host:
-
-telnet 192.168.x.7 80	
+| DMZ	| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: http://10.10.x.7 | Is the service working: [Yes] [No] |
+| LAN |	From Ubuntu, access the Web server at: http://10.10.y.7 | Is the service working: [Yes] [No] |
+| LAN | Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 10.10.y.7 80 then enter:  GET /	Outline the message that is returned:| 
+| DMZ | Repeat the previous example from the WINDOWS host: telnet 10.10.x.7 80	
 DMZ	There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server:
-telnet 192.168.x.7 21
-
-then enter:
-
-USER napier
-PASS napier123
-QUIT	Outline the messages that you received:
-
-
-What happens to each of these when you try with an incorrect username and password:
-LAN	From UBUNTU access the WINDOWS host with
-
-telnet 192.168.x.7 21
-
-then enter:
-
-USER Administrator
-PASS napier
-QUIT	Outline the messages that you received:
-
-
-What happens to each of these when you try with an incorrect username and password:
-DMZ	On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens.	What does this service do:
-DMZ	Next we will assess the SMTP service running on the WINDOWS virtual machine. From your UBUNTU machine console run a service to access SMTP:
-telnet 192.168.y.7 25
-
-Table 1 outlines the commands to use. 	On the WINDOWS virtual machine, go into the C:\inetpub\mailroot\queue folder, and view the queued email message. 
-
-Was the mail successfully queued? If not, which mail folder has the file in?
-
-Outline the format of the EML file?
+telnet 10.10.x.7 21 then enter: USER napier PASS napier123 QUIT | Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: |
+| LAN | From UBUNTU access the WINDOWS host with telnet 10.10.x.7 21 then enter: USER Administrator PASS napier QUIT	| Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: |
+| DMZ | On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens. | What does this service do: |
+| DMZ | Next we will assess the SMTP service running on the WINDOWS virtual machine. From your UBUNTU machine console run a service to access SMTP: telnet 10.10.y.7 25 Table 1 outlines the commands to use. | On the WINDOWS virtual machine, go into the C:\inetpub\mailroot\queue folder, and view the queued email message.  Was the mail successfully queued? If not, which mail folder has the file in? Outline the format of the EML file?
 
 
 Table 1: SMTP commands
@@ -99,7 +68,7 @@ help
 214-This server supports the following commands:
 214 HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH TURN ETRN BDAT VRFY
 helo me
-250 napier Hello [192.168.75.1]
+250 napier Hello [10.10.75.1]
 mail from: email@domain.com
 250 2.1.0 email@domain.com....Sender OK
 rcpt to: fred@mydomain.com
@@ -118,187 +87,93 @@ This is an email to say hello
   
 ## E	Enumeration – Host scan 
 Nmap is one of the most popular network scanning tools. It is widely available, for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
-From → To	Command	Observation
-LAN to WAN	sudo nmap –sP –r 10.221.0.0/24	Which hosts are on-line:
 
-LAN to DMZ	sudo nmap –sP –r 192.168.y.0/24	Which hosts are on-line:
+| From to To | Command | Observation | 
+| LAN to WAN | sudo nmap –sP –r 10.221.0.0/24 | Which hosts are on-line: |
+| LAN to DMZ | sudo nmap –sP –r 10.10.y.0/24 | Which hosts are on-line: |
+| DMZ to LAN | nmap –sP –r 10.10.x.0/24 | Which hosts are on-line: |
+| LAN to DMZ | Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.y.0/24 | Which transport layer protocol does NMAP use to discover the host:
+[ICMP] or [ARP] |
+| LAN to LAN | Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.x.0/24 | Which transport layer protocol does NMAP use to discover the host:
+[ICMP] or [ARP] |
 
-
-DMZ to LAN	nmap –sP –r 192.168.x.0/24	Which hosts are on-line:
-
-
-LAN to DMZ	Run Wireshark on host in LAN, and run:
-sudo nmap –sP –r 192.168.y.0/24	Which transport layer protocol does NMAP use to discover the host:
-[ICMP] or [ARP]
-LAN to LAN	Run Wireshark on host in LAN, and run:
-sudo nmap –sP –r 192.168.x.0/24	Which transport layer protocol does NMAP use to discover the host:
-[ICMP] or [ARP]
-
-F	Enumeration - Operating System Fingerprinting
+## F	Enumeration - Operating System Fingerprinting
 Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
 
-From → To	Command	Observation
-LAN to DMZ	Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
-sudo nmap –O 192.168.y.0/24
-	Which operating systems does it return:
-DMZ to LAN	Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
-nmap –O 192.168.x.0/24	Which operating systems does it return:
-G	Enumeration – Application Fingerprinting
+| From to To | Command | Observation | 
+| LAN to DMZ | Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: sudo nmap –O 10.10.y.0/24 | Which operating systems does it return:
+| DMZ to LAN | Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: nmap –O 10.10.x.0/24 | Which operating systems does it return:
+
+## G	Enumeration – Application Fingerprinting
 Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
 
-From → To	Command	Observation
-LAN to DMZ	Perform an application and version scan for networked services:
-sudo nmap –sS 192.168.y.7/24
-	Which services are running on the Windows host:
-
-
-DMZ to LAN	Perform an application and version scan for networked services:
-nmap –sS 192.168.x.7/24
-	Which services are running on the Linux host:
-
-
-
-LAN to DMZ	Scan the Web server in the DMZ for its version:
-sudo nmap –sV 192.168.y.7/24 –p 80
-	Which Web server type is being used:
-
-
-
-DMZ to LAN	Scan the Web server in the LAN for its version:
-nmap –sV 192.168.x.7/24 –p 80
-	Which Web server type is being used:
-
-
-
+| From to To | Command | Observation | 
+| LAN to DMZ | Perform an application and version scan for networked services: sudo nmap –sS 10.10.y.7/24 | Which services are running on the Windows host: |
+| DMZ to LAN | Perform an application and version scan for networked services: nmap –sS 10.10.x.7/24 | Which services are running on the Linux host: |
+| LAN to DMZ | Scan the Web server in the DMZ for its version: sudo nmap –sV 10.10.y.7/24 –p 80 | Which Web server type is being used:
+| DMZ to LAN | Scan the Web server in the LAN for its version: nmap –sV 10.10.x.7/24 –p 80 | Which Web server type is being used:
 
 Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
 
-From → To	Command	Observation
-DMZ to LAN	Connect to port 80, with:
-
-telnet 192.168.x.7 80
-
-and then send the HTTP OPTIONS command to the web server:
-OPTIONS / HTTP/1.0
-	What is returned and how can this be used to fingerprint the WebServer?
-
-
-Which WebServer is running and which version?
-
-DMZ to LAN	Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe:
-
-HEAD / HTTP/1.0
-GET / HTTP/1.0	What do you observe from using these HTTP requests:
-
-
+| From to To | Command | Observation | 
+| DMZ to LAN | Connect to port 80, with: telnet 10.10.x.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
+| DMZ to LAN | Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 GET / HTTP/1.0 | What do you observe from using these HTTP requests: |
 
 
 ## H	Network Packet Crafting and DoS - Hping
 Hping is used by an intruder to craft network packets which can look to exploit a system. For example, an intruder might send in a network packet which has all the TCP flags set in order to exploit a weakness in the system. For all of the following, within the UBUNTU virtual instance, open two Terminal windows and in one capture your data packets with.
 
-From → To	Command	Observation
-LAN to DMZ	On UBUNTU capture packets with:
+| From to To | Command | Observation | 
+| LAN to DMZ | On UBUNTU capture packets with: sudo tcpdump -i eth11 Start Wireshark on the WINDOWS. Next go to your UBUNTU virtual machine, and run the command of: sudo hping 10.10.y.7 | Let it run for a few seconds, and the stop it with the Ctrl-C keystroke. Next go back to your WINDOWS instance and stop the trace. What can you observe from the trace:  Which TCP ports have been used: Why is there no reply? |
+| LAN to DMZ | Investigate the following: sudo hping –S 10.10.x.7 –p 80 | How might an intruder use this command: |
+| LAN to DMZ | Investigate the following: sudo hping – 10.10.x.7 –1 | How might an intruder use this command: |
+| LAN to DMZ | View the options for hping with hping –help, and create a scan with a spoof address of 10.0.0.1. | What can you identify on the scanned host: |
 
-sudo tcpdump -i eth11
-
-Start Wireshark on the WINDOWS.
-
-Next go to your UBUNTU virtual machine, and run the command of:
-
-sudo hping 192.168.y.7	Let it run for a few seconds, and the stop it with the Ctrl-C keystroke. Next go back to your WINDOWS instance and stop the trace. What can you observe from the trace:
-
-
-Which TCP ports have been used:
-
-Why is there no reply?
-
-LAN to DMZ	Investigate the following:
-
-sudo hping –S 192.168.x.7 –p 80
-	How might an intruder use this command:
-LAN to DMZ	Investigate the following:
-
-sudo hping – 192.168.x.7 –1
-	How might an intruder use this command:
-LAN to DMZ	View the options for hping with hping –help, and create a scan with a spoof address of 10.0.0.1.	What can you identify on the scanned host:
-
-I	Network Scanning Detection, using an IDS
+## I	Network Scanning Detection, using an IDS
 Snort is one of the most popular intrusion detection systems, where an agent is used to detect network threats.
 
-From → To	Command	Observation
-LAN	From UBUNTU, run the Wireshark packet sniffer with the command:
-
-sudo wireshark &
-	
-
-DMZ	Basic Host Discovery can be performed using ICMP or ARP traffic, typically with tools such as ping and arping. This type of active network scanning is easy to detect using an Intrusion Detection System (IDS), such as Snort.
-From WINDOWS2003, create a folder named MYSNORT and create a snort detection rules file in this folder named icmp.rules, and add the following snort variables, and detection rule:
-
-alert icmp any any -> any any (msg:"ICMP ping"; sid:999)	
-DMZ	Run Snort on WINDOWS with:
-
-	snort -c c:\MYSNORT\icmp.rules -i 1 -p -l c:\MYSNORT -K ascii
-	
-LAN to DMZ	From UBUNTU, ping the WINDOWS2003 VM.
-	Did Snort detect the pings from UBUNTU?
-LAN and DMZ	Create a rule on UBUNTU and also on WINDOWS2003 which will detect an initial Telnet connection and the end of it?	Did it detect the start and end of the connection?
-LAN to DMZ	Then from UBUNTU, perform an ICMP Host Scan against the WINDOWS2003 VM, using nmap with  
-nmap –PE 192.168.y.7	Did Snort detect the Host Scan from UBUNTU?
-DMZ	Scanning specific hosts to find the services they are running is another common technique. This can be detected network auditing systems, by collecting traffic streams together and analysing them for scanning packets.
-From WINDOWS2003, create a new IDS detection rules file call portscan.rules which will detect network scanning traffic, and add:
-preprocessor sfportscan: proto { all } scan_type { all } sense_level { high } logfile { portscan.log }	
-LAN to DMZ	Run Snort with the detection portscan rules on WINDOWS with:
-snort -c c:\mysnort\portscan.rules -i 1 -p -l c:\mysnort -K ascii
-
-and from UBUNTU, perform a Port Scan on WINDOWS using:
-nmap 192.168.y.7. 
-	Did Snort detect the port scan:
-
-What type of port scan has been performed (which protocol is being used):
+| From to To | Command | Observation | 
+| LAN	| From UBUNTU, run the Wireshark packet sniffer with the command: sudo wireshark & |
+| DMZ | Basic Host Discovery can be performed using ICMP or ARP traffic, typically with tools such as ping and arping. This type of active network scanning is easy to detect using an Intrusion Detection System (IDS), such as Snort. From WINDOWS2003, create a folder named MYSNORT and create a snort detection rules file in this folder named icmp.rules, and add the following snort variables, and detection rule: alert icmp any any -> any any (msg:"ICMP ping"; sid:999) |	
+| DMZ | Run Snort on WINDOWS with: snort -c c:\MYSNORT\icmp.rules -i 1 -p -l c:\MYSNORT -K ascii | |
+| LAN to DMZ | From UBUNTU, ping the WINDOWS2003 VM. | Did Snort detect the pings from UBUNTU? | |
+| LAN and DMZ | Create a rule on UBUNTU and also on WINDOWS2003 which will detect an initial Telnet connection and the end of it? | Did it detect the start and end of the connection? |
+| LAN to DMZ |  |Then from UBUNTU, perform an ICMP Host Scan against the WINDOWS2003 VM, using nmap with   nmap –PE 10.10.y.7 |	Did Snort detect the Host Scan from UBUNTU? |
+| DMZ | Scanning specific hosts to find the services they are running is another common technique. This can be detected network auditing systems, by collecting traffic streams together and analysing them for scanning packets. From WINDOWS2003, create a new IDS detection rules file call portscan.rules which will detect network scanning traffic, and add: preprocessor sfportscan: proto { all } scan_type { all } sense_level { high } logfile { portscan.log }| |
+| LAN to DMZ | Run Snort with the detection portscan rules on WINDOWS with: snort -c c:\mysnort\portscan.rules -i 1 -p -l c:\mysnort -K ascii and from UBUNTU, perform a Port Scan on WINDOWS using: nmap 10.10.y.7.  | Did Snort detect the port scan: What type of port scan has been performed (which protocol is being used): |
 
 
 
 ## J	Enumeration – Password Cracking with Hydra
 NOTE: Hydra should only be used on private networks. Do not use on any systems on the Internet.
 
-From → To	Command	Observation
-LAN	Create a new user fred on the FTP server in UBUNTU, using (check by viewing the /etc/passwd file):
-
-sudo useradd fred -p fredpass -d /home/fred -s /bin/false –m
-sudo passwd fred
-	View the password file with:
-
-sudo cat /etc/shadow
-
-Can you locate the fred user:
+| From to To | Command | Observation | 
+| LAN | Create a new user fred on the FTP server in UBUNTU, using (check by viewing the /etc/passwd file): sudo useradd fred -p fredpass -d /home/fred -s /bin/false –m sudo passwd fred | View the password file with: sudo cat /etc/shadow Can you locate the fred user: |
 
 
 DMZ to LAN	Next try go to WINDOWS and log into the TELNET server with the username and password that you have created.  Use:
 ```
-telnet 192.168.x.7 
+telnet 10.10.x.7 
 USER fred
 PASSWORD password
 ```
 
 Next try to crack the TELNET password by going to WINDOWS, and running hydra, such as:
 ```
-C:\hydra> hydra -L user.txt -P pass.txt 192.168.x.7 telnet
+C:\hydra> hydra -L user.txt -P pass.txt 10.10.x.7 telnet
 ```
 
 What modifications were required to detect the user fred:
 
-DMZ to LAN	Go UBUNTU, and run Wireshark, and rescan with Hydra, and capture the trace. Now find the successful login from the trace.
-	Can you find the network packet at which Hydra cracked the TELNET password:
+| From to To | Command | Observation | 
+| DMZ to LAN | Go UBUNTU, and run Wireshark, and rescan with Hydra, and capture the trace. Now find the successful login from the trace. | Can you find the network packet at which Hydra cracked the TELNET password:|
 
 
 
+## IP Allocation
 
-
-
-<h2>IP Allocation</h2>
-
-<p>Allocation A</p>
-<pre style="font-size: 8px">
+### Allocation A
+```
 Allocated	Ubuntu	        	Windows	        Em0	    Em1 (Private)	    Em2 (DMZ)
 ----------------------------------------------------------------------------------------
 Group_001	192.168.1.7/24		192.168.2.7/24	DHCP	192.168.1.254/24	192.168.2.254/24
@@ -388,10 +263,10 @@ Group_084	192.168.167.7/24	192.168.168.7/24 DHCP	192.168.167.254/24	192.168.168.
 Group_085	192.168.169.7/24	192.168.170.7/24 DHCP	192.168.169.254/24	192.168.170.254/24
 Group_086	192.168.171.7/24	192.168.172.7/24 DHCP	192.168.171.254/24	192.168.172.254/24
 Group_087	192.168.173.7/24	192.168.174.7/24 DHCP	192.168.173.254/24	192.168.174.254/24
-</pre>
+```
 
-<p>Allocation B</p>
-<pre style="font-size: 8px">
+### Allocation B
+```
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	    Em2 (DMZ)
 ----------------------------------------------------------------------------------------
 Group_001	172.16.1.7/24		172.16.2.7/24	DHCP	172.16.1.254/24	172.16.2.254/24
@@ -481,10 +356,10 @@ Group_084	172.16.167.7/24	172.16.168.7/24 DHCP	172.16.167.254/24	172.16.168.254/
 Group_085	172.16.169.7/24	172.16.170.7/24 DHCP	172.16.169.254/24	172.16.170.254/24
 Group_086	172.16.171.7/24	172.16.172.7/24 DHCP	172.16.171.254/24	172.16.172.254/24
 Group_087	172.16.173.7/24	172.16.174.7/24 DHCP	172.16.173.254/24	172.16.174.254/24
-</pre>
+```
 
-<p>Allocation C</p>
-<pre style="font-size: 8px">
+## Allocation C
+```
 Allocated	Ubuntu	        Windows	        Em0	    Em1 (Private)	Em2 (DMZ)
 -----------------------------------------------------------------------------------
 Group_001	10.10.1.7/24	10.10.2.7/24	DHCP	10.10.1.254/24	10.10.2.254/24
@@ -592,4 +467,4 @@ Group_100	10.10.199.7/24	10.10.200.7/24 DHCP	10.10.199.254/24	10.10.200.254/24
 Group_101	10.10.201.7/24	10.10.202.7/24 DHCP	10.10.201.254/24	10.10.202.254/24
 Group_102	10.10.203.7/24	10.10.204.7/24 DHCP	10.10.203.254/24	10.10.204.254/24
 Group_103	10.10.205.7/24	10.10.206.7/24 DHCP	10.10.205.254/24	10.10.206.254/24
-</pre>
+```
