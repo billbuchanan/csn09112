@@ -32,10 +32,8 @@ route add default gw 192.168.1.254 eth0
 nano /etc/resolve.conf and change "name-server 10.200.3.354"
 ```
 
-| Table | Table |
-| dfdf | dfsdf |
-| sdfsd  | sdfsd |
-
+| Default Header | Left Align | Right Align | Center Align |
+| --- | :-- | --: | :-: |
 
 ## C Opening the firewall 
 We will be testing from the LAN network to the DMZ, and vice-versa. First setup your network, and open up TCP, UDP and ICMP from the DMZ to the LAN network. 
