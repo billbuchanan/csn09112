@@ -90,12 +90,7 @@ Nmap is one of the most popular network scanning tools. It is widely available, 
 
 | From to To | Command | Observation | 
 | LAN to WAN | sudo nmap –sP –r 10.221.0.0/24 | Which hosts are on-line: |
-| LAN to DMZ | sudo nmap –sP –r 10.10.y.0/24 | Which hosts are on-line: |
-| DMZ to LAN | nmap –sP –r 10.10.x.0/24 | Which hosts are on-line: |
-| LAN to DMZ | Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.y.0/24 | Which transport layer protocol does NMAP use to discover the host:
-[ICMP] or [ARP] |
-| LAN to LAN | Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.x.0/24 | Which transport layer protocol does NMAP use to discover the host:
-[ICMP] or [ARP] |
+
 
 ## F	Enumeration - Operating System Fingerprinting
 Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
