@@ -22,7 +22,9 @@ At the end of this lab, you should be able to do the following:
 ## Lab setup
 Our challenge is to perform a vulnerability analysis for MyCorpIncorp, where each of you will be allocated a network and hosts to configure and  get  on-line (Figure  1). For  this  you  will be  allocated  your  own  network which  you  can  access  from  the  vCenter  Cloud  infrastructure (vSoC.napier.ac.uk). Table 1 outlines your challenges and how you might achieve them. You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives.
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pf.png"/>
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
+Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
+
 
 ## Quick guide
 For Ubtunta configuration:
