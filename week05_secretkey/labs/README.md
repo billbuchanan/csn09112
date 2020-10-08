@@ -46,24 +46,15 @@ We will be testing from the LAN network to the DMZ, and vice-versa. First setup 
 Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
 
 
-From → To	Command	Observation
-DMZ	On your Windows host, run the command:
- netstat –a
-and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	Outline some of the services which are running on your host (define the port number and the name of the service):
+| From to To | Command | Observation | 
+| -------|--------|---------|
+DMZ	| On your Windows host, run the command: netstat –a and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port). | Outline some of the services which are running on your host (define the port number and the name of the service): |
+| LAN	| For the Ubuntu Virtual Machine, and run the command: netstat –l.  | Outline some of the services which are running on your host (define the port number and the name of the service): |
+| DMZ	| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: http://192.168.x.7 | Is the service working: [Yes] [No] |
+| LAN |	From Ubuntu, access the Web server at: http://192.168.y.7 | Is the service working: [Yes] [No] |
+| LAN | Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 192.168.y.7 80 then enter:  GET /	Outline the message that is returned:| 
 
 
-LAN	For the Ubuntu Virtual Machine, and run the command:
- netstat –l.  	Outline some of the services which are running on your host (define the port number and the name of the service):
-
-DMZ	Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page:
-http://192.168.x.7
-Is the service working: [Yes] [No]
-LAN	From Ubuntu, access the Web server at:
-http://192.168.y.7
-Is the service working: [Yes] [No]
-LAN	Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following:
-telnet 192.168.y.7 80
-then enter:  GET /	Outline the message that is returned:
 DMZ	Repeat the previous example from the WINDOWS host:
 
 telnet 192.168.x.7 80	
