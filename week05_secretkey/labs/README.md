@@ -38,7 +38,7 @@ We will be testing from the LAN network to the DMZ, and vice-versa. First setup 
 
 | From → To | 	Command	Observation |
 | LAN to DMZ |	ping 192.168.y.7 ping 192.168.y.254 Try Web browser to 192.168.y.7	 | Do you have connectivity from LAN to DMZ: [Yes]  [No]
-| DMZ to LAN |	ping 192.168.x.7 ping 192.168.x.254 Try Web browser to 192.168.x.7 |Do you have connectivity from DMZ to LAN: [Yes]  [No]
+| DMZ to LAN |	ping 192.168.x.7 ping 192.168.x.254 Try Web browser to 192.168.x.7 |Do you have connectivity from DMZ to LAN: [Yes]  [No] |
 
 ## D	Identifying Services 
 Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
