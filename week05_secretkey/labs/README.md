@@ -31,7 +31,7 @@ For Ubtunta configuration:
 ```
 ip addr add 192.1.1.1 dev eth1
 route add default gw 10.10.1.254 eth0
-nano /etc/resolve.conf and change "name-server 10.200.3.354"
+nano /etc/resolve.conf and change "name-server 10.200.3.254"
 ```
 
 
