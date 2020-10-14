@@ -17,37 +17,8 @@ date -s "1 OCT 2015 18:00:00"
 | -------|--------|---------|
 | 1 |	On Kali, login and get an IP address using: sudo dhclient eth0 |	What is your IP address? |
 | 2	| Bob and Alice have agreed on the values: G=2879, N= 9929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): Bob’s A value (Gx mod N):	 Alice’s B value (GY mod N): |
-
-3	Now they exchange the values. Next calculate the shared key:
-
-
-	Bob’s value (Bx mod N):	
-	
-Alice’s value (AY mod N):
-
-Do they match? [Yes] [No]
-
-
-4	If you are in the lab, select someone to share a value with. Next agree on two numbers (G and N). 
-
-You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same.
-
-
-
-Next exchange values.
-
-
-	Numbers for G and N:
-
-Your x value:
-
-Your A value:
-
-The B value you received:
-
-Shared key:
-
-Do they match: [Yes] [No]
+| 3 | Now they exchange the values. Next calculate the shared key: | Bob’s value (Bx mod N):	Alice’s value (AY mod N): Do they match? [Yes] [No] |
+| 4 | If you are in the lab, select someone to share a value with. Next agree on two numbers (G and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for G and N: Your x value: Your A value: The B value you received: Shared key: Do they match: [Yes] [No] |
 2	Private Key
 
 No	Description	Result
