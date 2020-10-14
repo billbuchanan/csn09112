@@ -71,79 +71,62 @@ http://youtu.be/Xvbk2nSzEPk
 ## 6	Hashing Cracking (MD5)
 http://youtu.be/Xvbk2nSzEPk
 
-No	Description	Result
-1	On Kali, next create a words file (words) with the words of “napier”, “password” “Ankle123” and “inkwell”
+| No | Description | Result | 
+| -------|--------|---------|
+| 1 | On Kali, next create a words file (words) with the words of “napier”, “password” “Ankle123” and “inkwell” Using hashcat crack the following MD5 signatures (hash1): 232DD5D7274E0D662F36C575A3BD634C 5F4DCC3B5AA765D61D8327DEB882CF99 6D5875265D1979BDAD1C8A8F383C5FF5 04013F78ACCFEC9B673005FC6F20698D   Command used:  hashcat –m 0 hash1 words | 232DD...634C Is it [napier][password][Ankle123][inkwell]? 5F4DC...CF99 Is it [napier][password][Ankle123][inkwell]? 6D587...5FF5 Is it [napier][password][Ankle123][inkwell]? 04013...698D Is it [napier][password][Ankle123][inkwell]? |
+| 2	Using the method used in the first part of this tutorial, find crack the following for names of fruits (the fruits are all in lowercase):  FE01D67A002DFA0F3AC084298142ECCD 1F3870BE274F6C49B3E31A0C6728957F 72B302BF297A228A75730123EFEF7C41 8893DC16B1B2534BAB7B03727145A2BB 889560D93572D538078CE1578567B91A | FE01D: 1F387: 72B30: 8893D: 88956: |
 
-Using hashcat crack the following MD5 signatures (hash1):
-232DD5D7274E0D662F36C575A3BD634C
-5F4DCC3B5AA765D61D8327DEB882CF99
-6D5875265D1979BDAD1C8A8F383C5FF5
-04013F78ACCFEC9B673005FC6F20698D
-
-Command used:  hashcat –m 0 hash1 words
-	
-232DD...634C Is it [napier][password][Ankle123][inkwell]?
-
-5F4DC...CF99 Is it [napier][password][Ankle123][inkwell]?
-
-6D587...5FF5 Is it [napier][password][Ankle123][inkwell]?
-
-04013...698D Is it [napier][password][Ankle123][inkwell]?
-
-2	Using the method used in the first part of this tutorial, find crack the following for names of fruits (the fruits are all in lowercase):
-
-FE01D67A002DFA0F3AC084298142ECCD
-1F3870BE274F6C49B3E31A0C6728957F
-72B302BF297A228A75730123EFEF7C41
-8893DC16B1B2534BAB7B03727145A2BB
-889560D93572D538078CE1578567B91A
-	FE01D:
-
-1F387:
-
-72B30:
-
-8893D:
-
-88956:
-
-7	Hashing Cracking (LM Hash/Windows)
+## 7	Hashing Cracking (LM Hash/Windows)
 All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
 
 
-No	Description	Result
-1	On Kali, and using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
-
+1 On Kali, and using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
+```
 fred:500:E79E56A8E5C6F8FEAAD3B435B51404EE:5EBE7DFA074DA8EE8AEF1FAA2BBDE876:::
 bert:501:10EAF413723CBB15AAD3B435B51404EE:CA8E025E9893E8CE3D2CBF847FC56814:::
-	
-Fred:
-Bert:
+```
+
+Fred's password: 
+
+Bert's password:
+
 2	On Kali, and using John the Ripper, the following pwdump passwords (they are names of major Scottish cities/towns):
 
+```
 Admin:500:629E2BA1C0338CE0AAD3B435B51404EE:9408CB400B20ABA3DFEC054D2B6EE5A1:::
 fred:501:33E58ABB4D723E5EE72C57EF50F76A05:4DFC4E7AA65D71FD4E06D061871C05F2:::
 bert:502:BC2B6A869601E4D9AAD3B435B51404EE:2D8947D98F0B09A88DC9FCD6E546A711:::
-	Admin:
-Fred:
-Bert:
-3	On Kali, and using John the Ripper, crack the following pwdump passwords (they are the names of animals):
+```
 
+Admin:
+
+Fred:
+
+Bert:
+
+3	On Kali, and using John the Ripper, crack the following pwdump passwords (they are the names of animals):
+```
 fred:500:5A8BB08EFF0D416AAAD3B435B51404EE:85A2ED1CA59D0479B1E3406972AB1928:::
 bert:501:C6E4266FEBEBD6A8AAD3B435B51404EE:0B9957E8BED733E0350C703AC1CDA822:::
 admin:502:333CB006680FAF0A417EAF50CFAC29C3:D2EDBC29463C40E76297119421D2A707:::
-	Fred:
+```
+
+Fred:
+
 Bert:
+
 Admin:
 
 Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
-8	Python tutorial
+
+## 8	Python tutorial
 In this lab we will encrypt a string with a public key, and the decrypt with the private key.
 
- Web link (Cipher code): https://asecuritysite.com/encryption/rsa12
+Web link (Cipher code): https://asecuritysite.com/encryption/rsa12
 
 The code should be:
 
+```Python
 from Crypto.Util.number import *
 from Crypto import Random
 import Crypto
@@ -168,7 +151,7 @@ c=pow(m,e, n)
 res=pow(c,d ,n)
 
 print "Message=%s\np=%s\nq=%s\nN=%s\ncipher=%s\ndecipher=%s" % (msg,p,q,n,c,(long_to_bytes(res)))
-
+```
 
 
 Prove the operation of the code. Now, try with 128-bit prime numbers and 256-bit prime numbers. What can you observe from the increase in the prime number size?
@@ -182,6 +165,7 @@ Prime number size	Time to generate primes	Time to encrypt	Time to decrypt
 
 We can write a Python program to implement this key exchange. Enter and run the following program:
 
+```
 import random
 import base64
 import hashlib
@@ -220,15 +204,17 @@ print '\nBob calculates:'
 keyB=(A**y) % p
 print 'Key: ',keyB,' (A^b) mod p'
 print 'Key: ',hashlib.sha256(str(keyB)).hexdigest()
+```
 
 Pick three different values for g and p, and make sure that the Diffie Hellman key exchange works:
 
 g= 	p=
+
 g= 	p=
+
 g= 	p=
 
 Can you pick a value of g and p which will not work?
-
 
 
 
@@ -236,7 +222,7 @@ The code given below allows you to pick a value of g which will always work for 
 
 https://asecuritysite.com/encryption/pickg
 
-
+```Python
 def getG(p):
 
   for x in range (1,p):
@@ -253,6 +239,7 @@ def getG(p):
 		print rand
 
 print getG(p)
+```
 
 Using the prime number generates given in the RSA code, can you implement a Diffie-Hellman method which uses 256 bit prime numbers?
 
