@@ -234,7 +234,7 @@ The code should be:
 from Crypto.Util.number import *
 from Crypto import Random
 import Crypto
-import gmpy2
+import libnum
 import sys
 
 bits=60
@@ -247,29 +247,30 @@ n = p*q
 PHI=(p-1)*(q-1)
 
 e=65537
-d=(gmpy2.invert(e, PHI))
+d=(libnum.invmod(e, PHI))
 
 m=  bytes_to_long(msg.encode('utf-8'))
 
 c=pow(m,e, n)
 res=pow(c,d ,n)
 
-print "Message=%s\np=%s\nq=%s\nN=%s\ncipher=%s\ndecipher=%s" % (msg,p,q,n,c,(long_to_bytes(res)))
+print ("Message=%s\np=%s\nq=%s\nN=%s\ncipher=%s\ndecipher=%s" % (msg,p,q,n,c,(long_to_bytes(res))))
 ```
-
+Repl.it: [here](https://repl.it/@billbuchanan/csn09112rsa01)
 
 Prove the operation of the code. Now, try with 128-bit prime numbers and 256-bit prime numbers. What can you observe from the increase in the prime number size?
 
 Can you integrate a timer in your code, so that you can assess the time to encrypt and decrypt? Now complete the following table:
 
-Prime number size	Time to generate primes	Time to encrypt	Time to decrypt
-60			
-128			
-256			
+| Prime number size | Time to generate primes | Time to encrypt |  Time to decrypt |
+| -------|--------|---------|---------|
+| 60 ||||			
+| 128	||||		
+| 256	||||		
 
 We can write a Python program to implement this key exchange. Enter and run the following program:
 
-```
+```Python
 import random
 import base64
 import hashlib
@@ -286,29 +287,30 @@ A=(g**x) % p
 
 B=(g**y) % p
 
+print ('g: ',g,' (a shared value), n: ',p, ' (a prime number)')
 
-print 'g: ',g,' (a shared value), n: ',p, ' (a prime number)'
-
-print '\nAlice calculates:'
-print 'a (Alice random): ',x
-print 'Alice value (A): ',A,' (g^a) mod p'
-
-
-print '\nBob calculates:'
-print 'b (Bob random): ',y
-print 'Bob value (B): ',B,' (g^b) mod p'
+print ('\nAlice calculates:')
+print ('a (Alice random): ',x)
+print ('Alice value (A): ',A,' (g^a) mod p')
 
 
-print '\nAlice calculates:'
+print ('\nBob calculates:')
+print ('b (Bob random): ',y)
+print ('Bob value (B): ',B,' (g^b) mod p')
+
+
+print ('\nAlice calculates:')
 keyA=(B**x) % p
-print 'Key: ',keyA,' (B^a) mod p'
-print 'Key: ',hashlib.sha256(str(keyA)).hexdigest()
+print ('Key: ',keyA,' (B^a) mod p')
+print ('Key: ',hashlib.sha256(bytes(keyA)).digest())
 
-print '\nBob calculates:'
+print ('\nBob calculates:')
 keyB=(A**y) % p
-print 'Key: ',keyB,' (A^b) mod p'
-print 'Key: ',hashlib.sha256(str(keyB)).hexdigest()
+print ('Key: ',keyB,' (A^b) mod p')
+print ('Key: ',hashlib.sha256(bytes(keyB)).digest())
 ```
+
+Repl.it: https://repl.it/@billbuchanan/csn09112dh
 
 Pick three different values for g and p, and make sure that the Diffie Hellman key exchange works:
 
