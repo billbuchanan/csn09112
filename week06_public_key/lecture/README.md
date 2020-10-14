@@ -38,8 +38,8 @@ What you should know at the end of unit?
 
 ### Presentations
 
-* Presentation (PDF) - Public Key Encryption: <a href="https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/lecture/chapter05_key_exchange.pdf" target="_blank">here</a>
-* Presentation (video) - Public Key: <a href="https://www.youtube.com/watch?v=poC1Pc-KDSo" target="_blank">here</a> 
+* Presentation (PDF) - Key Exchange: <a href="https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/lecture/chapter05_key_exchange.pdf" target="_blank">here</a>
+* Presentation (video) -  Key Exchange: <a href="https://www.youtube.com/watch?v=poC1Pc-KDSo" target="_blank">here</a> 
 * Demo: <a href="https://www.youtube.com/watch?v=wyNPhNAsmJ0" target="_blank">Diffie Hellman</a>
 
 
