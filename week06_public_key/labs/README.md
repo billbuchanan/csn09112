@@ -55,10 +55,10 @@ We have stored our keys on a key ring file (PEM). Normally we would use a digita
 
  
 ## 5 Hashing
-http://youtu.be/Xvbk2nSzEPk
+Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 
-1 Using: http://asecuritysite.com/encryption/md5 Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 
+1 Using: [here](http://asecuritysite.com/encryption/md5) Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 
 ```
 03CF54D8CE19777B12732B8C50B3B66F  
 ```
@@ -78,7 +78,7 @@ EE19033300A54DF2FA41DB9881B4B723 | D5862:
 Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 
 
-2 Using: http://asecuritysite.com/encryption/md5 Determine the number of hex characters in the following hash signatures. 
+2 Using: [here](http://asecuritysite.com/encryption/md5) Determine the number of hex characters in the following hash signatures. 
 
 MD5 hex chars: 
 
@@ -88,12 +88,46 @@ SHA-256 hex chars:
 
 How does the number of hex characters relate to the length of the hash signature: |
 
+3  On Kali, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
+
+```
+bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 
+```
+Bill’s password: 
+```
+mike:$apr1$mKfrJquI$Kx0CL9krmqhCu0SHKqp5Q0 
+```
+Mike’s password: 
+```
+fred:$apr1$Jbe/hCIb$/k3A4kjpJyC06BUUaPRKs0 
+```
+Fred’s password: 
+```
+ian:$apr1$0GyPhsLi$jTTzW0HNS4Cl5ZEoyFLjB. 
+```
+Ian’s password: 
+```
+jane: $1$rqOIRBBN$R2pOQH9egTTVN1Nlst2U7. 
+```
+Jane’s password: 
+
+[Hint: openssl passwd -apr1 -salt ZaZS/8TF napier] 
 
 
-| 3 | Kali, for the following /etc/shadow file, determine the matching password: bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 mike:$apr1$mKfrJquI$Kx0CL9krmqhCu0SHKqp5Q0 fred:$apr1$Jbe/hCIb$/k3A4kjpJyC06BUUaPRKs0 ian:$apr1$0GyPhsLi$jTTzW0HNS4Cl5ZEoyFLjB. jane: $1$rqOIRBBN$R2pOQH9egTTVN1Nlst2U7. | The passwords are password, napier, inkwell and Ankle123. [Hint: openssl passwd -apr1 -salt ZaZS/8TF napier] Bill’s password: Mike’s password: Fred’s password: Ian’s password: Jane’s password: | 
-| 5 | On Kali, download the following: http://asecuritysite.com/files02.zip and the files should have the following MD5 signatures: MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 MD5(2.txt)= 69faab6268350295550de7d587bc323d MD5(3.txt)= fea0f1f6fede90bd0a925b4194deac11 MD5(4.txt)= d89b56f81cd7b82856231e662429bcf2 | Which file(s) have been modified: | 
-| 6 | From your Kali, download the following ZIP file: http://asecuritysite.com/letters.zip | View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? | 
+4 On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 signatures: 
 
+```
+MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 
+MD5(2.txt)= 69faab6268350295550de7d587bc323d 
+MD5(3.txt)= fea0f1f6fede90bd0a925b4194deac11 
+MD5(4.txt)= d89b56f81cd7b82856231e662429bcf2 
+```
+
+Which file(s) have been modified: 
+
+5 From Kali, download the following ZIP file: [here](http://asecuritysite.com/letters.zip )
+
+View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? 
 
 
 ## 6	Hashing Cracking (MD5)
