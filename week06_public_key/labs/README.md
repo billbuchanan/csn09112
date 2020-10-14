@@ -52,105 +52,25 @@ We have stored our keys on a key ring file (PEM). Normally we would use a digita
 
 | No | Description | Result | 
 | -------|--------|---------|
-1	Next create the crt file with the following:
-
-openssl req -new -key private.pem -out cert.csr 
-
-openssl x509 -req -in cert.csr -signkey private.pem -out server.crt
-
-	View the CRT file by double clicking on it from the File Explorer.
-
-What is the type of public key method used:
-
-View the certificate file and determine:
-
-The size of the public key:
-
-The encryption method:
+| 1 | Next create the crt file with the following: openssl req -new -key private.pem -out cert.csr  openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | View the CRT file by double clicking on it from the File Explorer. What is the type of public key method used: View the certificate file and determine: The size of the public key: The encryption method: |
 
  
-5	Hashing
+## 5 Hashing
 http://youtu.be/Xvbk2nSzEPk
 
-No	Description	Result
-1	Using:
 
-http://asecuritysite.com/encryption/md5
-
-Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”).
-
-03CF54D8CE19777B12732B8C50B3B66F
-D586293D554981ED611AB7B01316D2D5
-48E935332AADEC763F2C82CDB4601A25
-EE19033300A54DF2FA41DB9881B4B723
-
-
-	
-03CF5: Is it [Falkirk][Edinburgh][Glasgow][Stirling]?
-
-D5862: Is it [Falkirk][Edinburgh][Glasgow][Stirling]?
-
-48E93: Is it [Falkirk][Edinburgh][Glasgow][Stirling]?
-
-EE190: Is it [Falkirk][Edinburgh][Glasgow][Stirling]?
-
-2	Using:
-
-http://asecuritysite.com/encryption/md5
-
-Determine the number of hex characters in the following hash signatures.
-
-	MD5 hex chars:
-
-SHA-1	hex chars:
-
-SHA-256 hex chars:
-
-How does the number of hex characters relate to the length of the hash signature:
-
-
-3	Kali, for the following /etc/shadow file, determine the matching password:
-
-bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1
-mike:$apr1$mKfrJquI$Kx0CL9krmqhCu0SHKqp5Q0
-fred:$apr1$Jbe/hCIb$/k3A4kjpJyC06BUUaPRKs0
-ian:$apr1$0GyPhsLi$jTTzW0HNS4Cl5ZEoyFLjB.
-jane: $1$rqOIRBBN$R2pOQH9egTTVN1Nlst2U7.
-
-	The passwords are password, napier, inkwell and Ankle123.
-[Hint: openssl passwd -apr1 -salt ZaZS/8TF napier]
-
-Bill’s password:
-
-Mike’s password:
-
-Fred’s password:
-
-Ian’s password:
-
-Jane’s password:
-
-5	On Kali, download the following:
-
-http://asecuritysite.com/files02.zip
-
-and the files should have the following MD5 signatures:
-
-MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592
-MD5(2.txt)= 69faab6268350295550de7d587bc323d
-MD5(3.txt)= fea0f1f6fede90bd0a925b4194deac11
-MD5(4.txt)= d89b56f81cd7b82856231e662429bcf2
-	Which file(s) have been modified:
-6	From your Kali, download the following ZIP file:
-
-http://asecuritysite.com/letters.zip
-
-	View the letters. Are they different?
-Now determine the MD5 signature for them. What can you observe from the result?
+| No | Description | Result | 
+| -------|--------|---------|
+| 1 | Using: http://asecuritysite.com/encryption/md5 Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 03CF54D8CE19777B12732B8C50B3B66F D586293D554981ED611AB7B01316D2D5 48E935332AADEC763F2C82CDB4601A25 EE19033300A54DF2FA41DB9881B4B723 | 03CF5: Is it [Falkirk][Edinburgh][Glasgow][Stirling]? D5862: Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 48E93: Is it [Falkirk][Edinburgh][Glasgow][Stirling]? EE190: Is it [Falkirk][Edinburgh][Glasgow][Stirling]? | 
+| 2 | Using: http://asecuritysite.com/encryption/md5
+ Determine the number of hex characters in the following hash signatures. | MD5 hex chars: SHA-1	hex chars: SHA-256 hex chars: How does the number of hex characters relate to the length of the hash signature: | 
+| 3 | Kali, for the following /etc/shadow file, determine the matching password: bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 mike:$apr1$mKfrJquI$Kx0CL9krmqhCu0SHKqp5Q0 fred:$apr1$Jbe/hCIb$/k3A4kjpJyC06BUUaPRKs0 ian:$apr1$0GyPhsLi$jTTzW0HNS4Cl5ZEoyFLjB. jane: $1$rqOIRBBN$R2pOQH9egTTVN1Nlst2U7. | The passwords are password, napier, inkwell and Ankle123. [Hint: openssl passwd -apr1 -salt ZaZS/8TF napier] Bill’s password: Mike’s password: Fred’s password: Ian’s password: Jane’s password: | 
+| 5 | On Kali, download the following: http://asecuritysite.com/files02.zip and the files should have the following MD5 signatures: MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 MD5(2.txt)= 69faab6268350295550de7d587bc323d MD5(3.txt)= fea0f1f6fede90bd0a925b4194deac11 MD5(4.txt)= d89b56f81cd7b82856231e662429bcf2 | Which file(s) have been modified: | 
+| 6 | From your Kali, download the following ZIP file: http://asecuritysite.com/letters.zip | View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? | 
 
 
 
-6	Hashing Cracking (MD5)
+## 6	Hashing Cracking (MD5)
 http://youtu.be/Xvbk2nSzEPk
 
 No	Description	Result
