@@ -24,7 +24,8 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 11 | 19 Nov 2020 | 11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>] | Tunnelling |
 | 12 | 26 Nov 2020 | 12. Splunk | Splunk Lab |
 | 13 | 3 Dec 2020 | 13. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>] | Blockchain Lab| 
-| 14 | 10 Dec 2020 ||
-<!-- | 14 | 10 Dec 2020 | <form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='https://github.com/billbuchanan/csn09112/tree/master/week13_test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form>|| -->
+| 14 | 10 Dec 2020 |||
 | 15 | 17 Dec 2020 | Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]||
+  
+  <!-- | 14 | 10 Dec 2020 | <form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='https://github.com/billbuchanan/csn09112/tree/master/week13_test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form>|| -->
 
