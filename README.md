@@ -14,31 +14,9 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | -------|--------|---------|---------|
 | 2 | 17 Sept 2020 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab |
 | 3 | 24 Sept 2020 | 3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>] | Vyatta and Snort. [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs">Link</a>] |
-
-   
-  </tr>
-  <tr >
-    <td bgcolor="#990000" class="table1"><strong>4</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>1 Oct 2020</strong></td>
-    <td bgcolor="#ffe6e6">4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>]</td>
-       <td>pfSense.  </td>
-    
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>5</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>8 Oct 2020</strong></td>
-    <td bgcolor="#ffe6e6">5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>]</td>
-           <td>Vulnerability Analysis and IDS</td>
-    
-    
-     
-   
-  </tr>
-      <tr>
-            <td bgcolor="#990000" class="table1"><strong>6</strong></td>
-            <td bgcolor="#990000" class="table1"><strong>15 Oct 2020</strong></td>
-    <td bgcolor="#ffe6e6">7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]</td>
- <td>Public/Private Key and Hashing</td>
+| 4 | 1 Oct 2020 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | pfSense.  |
+| 5 | 8 Oct 2020 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | Vulnerability Analysis and IDS |
+| 6 | 15 Oct 2020 | 7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public/Private Key and Hashing | 
       
   </tr>
   <tr >
