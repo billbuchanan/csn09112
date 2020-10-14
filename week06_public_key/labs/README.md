@@ -131,12 +131,54 @@ View the letters. Are they different? Now determine the MD5 signature for them. 
 
 
 ## 6	Hashing Cracking (MD5)
-http://youtu.be/Xvbk2nSzEPk
+Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
-| No | Description | Result | 
-| -------|--------|---------|
-| 1 | On Kali, next create a words file (words) with the words of “napier”, “password” “Ankle123” and “inkwell” Using hashcat crack the following MD5 signatures (hash1): 232DD5D7274E0D662F36C575A3BD634C 5F4DCC3B5AA765D61D8327DEB882CF99 6D5875265D1979BDAD1C8A8F383C5FF5 04013F78ACCFEC9B673005FC6F20698D   Command used:  hashcat –m 0 hash1 words | 232DD...634C Is it [napier][password][Ankle123][inkwell]? 5F4DC...CF99 Is it [napier][password][Ankle123][inkwell]? 6D587...5FF5 Is it [napier][password][Ankle123][inkwell]? 04013...698D Is it [napier][password][Ankle123][inkwell]? |
-| 2	Using the method used in the first part of this tutorial, find crack the following for names of fruits (the fruits are all in lowercase):  FE01D67A002DFA0F3AC084298142ECCD 1F3870BE274F6C49B3E31A0C6728957F 72B302BF297A228A75730123EFEF7C41 8893DC16B1B2534BAB7B03727145A2BB 889560D93572D538078CE1578567B91A | FE01D: 1F387: 72B30: 8893D: 88956: |
+
+1 On Kali, next create a words file (words) with the words of "napier", "password", "Ankle123" and "inkwell". Using hashcat crack the following MD5 signatures (hash1): 
+```
+232DD5D7274E0D662F36C575A3BD634C 
+```
+232DD...634C Is it [napier][password][Ankle123][inkwell]?
+```
+5F4DCC3B5AA765D61D8327DEB882CF99 
+```
+5F4DC...CF99 Is it [napier][password][Ankle123][inkwell]?
+```
+6D5875265D1979BDAD1C8A8F383C5FF5 
+```
+6D587...5FF5 Is it [napier][password][Ankle123][inkwell]? 
+```
+04013F78ACCFEC9B673005FC6F20698D   
+```
+04013...698D Is it [napier][password][Ankle123][inkwell]? 
+
+Command used:  hashcat –m 0 hash1 words 
+
+
+
+
+
+2 Using the method used in the first part of this tutorial, find crack the following for names of fruits (the fruits are all in lowercase):  
+```
+FE01D67A002DFA0F3AC084298142ECCD 
+```
+Name of the fruit:
+```
+1F3870BE274F6C49B3E31A0C6728957F 
+```
+Name of the fruit:
+```
+72B302BF297A228A75730123EFEF7C41 
+```
+Name of the fruit:
+```
+8893DC16B1B2534BAB7B03727145A2BB 
+```
+Name of the fruit:
+```
+889560D93572D538078CE1578567B91A 
+```
+Name of the fruit:
 
 ## 7	Hashing Cracking (LM Hash/Windows)
 All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
@@ -145,11 +187,11 @@ All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzE
 1 On Kali, and using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
 ```
 fred:500:E79E56A8E5C6F8FEAAD3B435B51404EE:5EBE7DFA074DA8EE8AEF1FAA2BBDE876:::
+```
+Fred's password: 
+```
 bert:501:10EAF413723CBB15AAD3B435B51404EE:CA8E025E9893E8CE3D2CBF847FC56814:::
 ```
-
-Fred's password: 
-
 Bert's password:
 
 2	On Kali, and using John the Ripper, the following pwdump passwords (they are names of major Scottish cities/towns):
