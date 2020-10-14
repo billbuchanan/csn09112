@@ -19,7 +19,8 @@ date -s "1 OCT 2015 18:00:00"
 | 2	| Bob and Alice have agreed on the values: G=2879, N= 9929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): Bob’s A value (G<sup>x</sup> mod N):	 Alice’s B value (G<sup>y</sup> mod N): |
 | 3 | Now they exchange the values. Next calculate the shared key: | Bob’s value (B<sup>x</sup> mod N):	Alice’s value (A<sup>y</sup> mod N): Do they match? [Yes] [No] |
 | 4 | If you are in the lab, select someone to share a value with. Next agree on two numbers (G and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for G and N: Your x value: Your A value: The B value you received: Shared key: Do they match: [Yes] [No] |
-2	Private Key
+
+## 2	Private Key
 
 | No | Description | Result | 
 | -------|--------|---------|
@@ -28,105 +29,29 @@ date -s "1 OCT 2015 18:00:00"
 | 3 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc  openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
 | 4 | Now repeat the previous command and add the –base64 option. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
 | 5 | Now repeat the previous command and observe the encrypted output. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
+| 6 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
+| 7 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
+
+## 3	Public Key
+
+| No | Description | Result | 
+| -------|--------|---------|
+| 1 | First we need to generate a key pair with: openssl genrsa -out private.pem 1024	This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
+| 2 | Use following command to view the output file: cat private.pem | What can be observed at the start and end of the file: |
+| 3 | Next we view the RSA key pair: openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
+| 4 | Let’s now secure the encrypted key with 3-DES: openssl rsa -in private.pem -des3 -out key3des.pem | |
+| 5 | Next we will export the public key: openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
+
+| 6 | Now we will encrypt with our public key: openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | |
+| 7 | And then decrypt with our private key: openssl rsautl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
+| 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
 
 
-
-6	Now let’s decrypt the encrypted file with the correct format:
-
- 
-openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly?
-
-
-What happens when you use the wrong password?
-
-
-7	If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you. 
-
-To receive a file, you listen on a given port (such as Port 1234)
-
-nc -l -p 1234 > enc.bin
-And then send to a given IP address with:
-nc -w 3 [IP] 1234 < enc.bin
-
-	Did you manage to decrypt their message? [Yes][No]
-3	Public Key
-
-No	Description	Result
-1	First we need to generate a key pair with:
-
-openssl genrsa -out private.pem 1024	
-		
-
-
-This file contains both the public and the private key.
-
-
- 
-
-	What is the type of public key method used:
-
-
-How long is the default key:
-
-
-How long did it take to generate a 1,024 bit key?
-
-
-View the contents of the keys.
-
-
-2	Use following command to view the output file:
-
-Cat private.pem
-
-	What can be observed at the start and end of the file:
-
-
-3	Next we view the RSA key pair:
-
-openssl rsa -in private.pem -text -noout
-
-
-	Which are the attributes of the key shown:
-
-
-
-Which number format is used to display the information on the attributes:
-
-
-
-What does the –noout option do?
-
-
-4	Let’s now secure the encrypted key with 3-DES:
- 
-openssl rsa -in private.pem -des3 -out key3des.pem 
-	
-	
-
-
-5	Next we will export the public key:
-
-
-openssl rsa -in private.pem -out public.pem -outform PEM -pubout 
-	View the output key. What does the header and footer of the file identify?
-
-
-
-
-6	Now we will encrypt with our public key:
-
-openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin	
-7	And then decrypt with our private key:
-
-openssl rsautl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	What are the contents of decrypted.txt
-8	If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. 	Did you manage to decrypt their message? [Yes][No]
-
-
-4	Storing keys
+## 4	Storing keys
 We have stored our keys on a key ring file (PEM). Normally we would use a digital certificate to distribute our public key. In this part of the tutorial we will create a crt digital certificate file.
 
-No	Description	Result
+| No | Description | Result | 
+| -------|--------|---------|
 1	Next create the crt file with the following:
 
 openssl req -new -key private.pem -out cert.csr 
