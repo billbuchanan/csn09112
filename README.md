@@ -9,28 +9,11 @@ git clone https://github.com/billbuchanan/csn09112
 The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/coursework)
 
 <h2>Timetable</h2>
-<table width="100%" border="1" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="5%" bgcolor="#990000" class="table1"><strong>No</strong></td>
-    <td width="15%" bgcolor="#990000" class="table1"><strong>Date</strong></td>
-    <td width="35%" bgcolor="#990000" class="table1"><strong>Subject</strong></td>
-    <td width="45%" bgcolor="#990000" class="table1"><strong>Lab</strong></td>
-  </tr>
-      
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>2</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>17 Sept 2020</strong></td>
-    <td>1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>]</td>
-  
-<td>Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab</a></td>
-   
-     
-  </tr>
-  <tr >
-    <td bgcolor="#990000" class="table1"><strong>3</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>24 Sept 2020</strong></td>
-    <td>3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>]</td>
-      <td>Vyatta and Snort. [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs">Link</a>] </td>
+
+| No | Date | Subject |  Lab |
+| -------|--------|---------|---------|
+| 2 | 17 Sept 2020 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab |
+| 3 | 24 Sept 2020 | 3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>] | Vyatta and Snort. [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs">Link</a>] |
 
    
   </tr>
