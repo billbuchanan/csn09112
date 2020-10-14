@@ -16,60 +16,18 @@ date -s "1 OCT 2015 18:00:00"
 | No | Description | Result | 
 | -------|--------|---------|
 | 1 |	On Kali, login and get an IP address using: sudo dhclient eth0 |	What is your IP address? |
-| 2	| Bob and Alice have agreed on the values: G=2879, N= 9929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): Bob’s A value (Gx mod N):	 Alice’s B value (GY mod N): |
-| 3 | Now they exchange the values. Next calculate the shared key: | Bob’s value (Bx mod N):	Alice’s value (AY mod N): Do they match? [Yes] [No] |
+| 2	| Bob and Alice have agreed on the values: G=2879, N= 9929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): Bob’s A value (G<sup>x</sup> mod N):	 Alice’s B value (G<sup>y</sup> mod N): |
+| 3 | Now they exchange the values. Next calculate the shared key: | Bob’s value (B<sup>x</sup> mod N):	Alice’s value (A<sup>y</sup> mod N): Do they match? [Yes] [No] |
 | 4 | If you are in the lab, select someone to share a value with. Next agree on two numbers (G and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for G and N: Your x value: Your A value: The B value you received: Shared key: Do they match: [Yes] [No] |
 2	Private Key
 
-No	Description	Result
-1	Use:
-
-openssl list-cipher-commands
-
-
-openssl version
-
-	
-	Outline five encryption methods that are supported:
-
-
-
-Outline the version of OpenSSL: 
-2	Using openssl and the command in the form:
-
-openssl prime –hex 1111
-	Check if the following are prime numbers:
-
-42 [Yes][No]
-1421 [Yes][No]
-3	Now create a file named myfile.txt (either use Notepad or another editor).
-
-Next encrypt with aes-256-cbc 
-
-openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin
-
-and enter your password.
-	Use following command to view the output file:
-
-cat encrypted.bin
-
-Is it easy to write out or transmit the output: [Yes][No]
-4	Now repeat the previous command and add the –base64 option.
-
-openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64
-
-	Use following command to view the output file:
-
-cat encrypted.bin
-
-Is it easy to write out or transmit the output: [Yes][No]
-
-5	Now repeat the previous command and observe the encrypted output.
-
-openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64
-	Has the output changed? [Yes][No]
-
-Why has it changed?
+| No | Description | Result | 
+| -------|--------|---------|
+| 1 | Use: openssl list-cipher-commands openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
+| 2 | Using openssl and the command in the form: openssl prime –hex 1111 | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
+| 3 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc  openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
+| 4 | Now repeat the previous command and add the –base64 option. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
+| 5 | Now repeat the previous command and observe the encrypted output. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
 
 
 
