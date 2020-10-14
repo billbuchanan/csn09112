@@ -17,48 +17,13 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 4 | 1 Oct 2020 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | pfSense.  |
 | 5 | 8 Oct 2020 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | Vulnerability Analysis and IDS |
 | 6 | 15 Oct 2020 | 7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public/Private Key and Hashing | 
-| 7 | 22 Oct 2020 | 9. Digital Certificates | |
-| 8 | 29 Oct 2020| Study<| Study |
-| 9 | 5 Nov 2020 <form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09412/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form> | Test 1 [<a href="https://github.com/billbuchanan/csn09112/tree/master/week08_test">Link</a>] |
-| 10 | 12 Nov 2020| 10. Network Forensics  [<a href="https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics">Link</a>]| Network Forensics | 
-  
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>11</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>19 Nov 2020</strong></td>
-       <td  bgcolor="#e6ffee">11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>]</td>
- <td>Tunnelling</td>
-  
-      
-  </tr>
-   <tr>
-    <td bgcolor="#990000" class="table1"><strong>12</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>26 Nov 2020</strong></td>
-       <td  bgcolor="#e6ffee">12. Splunk</td>
- <td>Splunk Lab</td>
-  
-      
-  </tr>
+| 7 | 22 Oct 2020 | 9. Digital Certificates |  |
+| 8 | 29 Oct 2020 | Study | Study | |
+| 9 | 5 Nov 2020 | <form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09412/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form> | Test 1 [<a href="https://github.com/billbuchanan/csn09112/tree/master/week08_test">Link</a>] |
+| 10 | 12 Nov 2020 | 10. Network Forensics  [<a href="https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics">Link</a>]| Network Forensics | 
+| 11 | 19 Nov 2020 | 11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>] | Tunnelling |
+| 12 | 26 Nov 2020 | 12. Splunk | Splunk Lab |
+| 13 | 3 Dec 2020 | 13. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>] | Blockchain Lab| 
+| 14 | 10 Dec 2020 | <form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='https://github.com/billbuchanan/csn09112/tree/master/week13_test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form>||
+| 15 | 17 Dec 2020 | Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]||
 
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>13</strong></td>
-    <td bgcolor="#990000" class="table1"><strong>3 Dec 2020</strong></td>
-          <td  bgcolor="#e6ffee">13. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>]</td>
-       <td>Blockchain Lab</td>
-    
-  </tr>
-
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>14</strong></td>
-   <td bgcolor="#990000" class="table1"><strong>10 Dec 2020</strong></td>
-  <td><form action="https://asecuritysite.com/csn09412/test02" method="get"><button type="submit" onclick="location.href='https://github.com/billbuchanan/csn09112/tree/master/week13_test02" class="btn btn-success btn-xs"  data-container="body">Test 2 details (TBC)</button> </form></td>
-  </tr>
-  <tr>
-    <td bgcolor="#990000" class="table1"><strong>15</strong></td>
-     <td bgcolor="#990000" class="table1"><strong>17 Dec 2020</strong></td>
-      <td>Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]</td>
-    <td>&nbsp;</td>
-  </tr>
-
-
-</table>
