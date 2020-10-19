@@ -20,10 +20,10 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 7 | 22 Oct 2020 | 9. Digital Certificates | Certificates [here](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
 | 8 | 29 Oct 2020 | Guest lectures (Don Smith) | Catch-up  |
 | 9 | 5 Nov 2020 | <form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09412/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form> | Test 1 [<a href="https://github.com/billbuchanan/csn09112/tree/master/week08_test">Link</a>] |
-| 10 | 12 Nov 2020 | 10. Network Forensics  [<a href="https://github.com/billbuchanan/csn09112/tree/master/week09_network_forensics">Link</a>]| Network Forensics | 
-| 11 | 19 Nov 2020 | 11. Tunnelling [<a href="http://www.asecuritysite.com/subjects/chapter18">Link</a>] | Tunnelling |
+| 10 | 12 Nov 2020 | 10. Network Forensics  [here](https://github.com/billbuchanan/csn09112/tree/master/week10_network_forensics) | Network Forensics | 
+| 11 | 19 Nov 2020 | 11. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week11_tunnelling) | Tunnelling |
 | 12 | 26 Nov 2020 | 12. Splunk | Splunk Lab |
-| 13 | 3 Dec 2020 | 13. Blockchain and Cryptocurrencies [<a href="http://www.asecuritysite.com/cryptobook/crypto10">Link</a>] | Blockchain Lab| 
+| 13 | 3 Dec 2020 | 13. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab| 
 | 14 | 10 Dec 2020 |||
 | 15 | 17 Dec 2020 | Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]||
   
