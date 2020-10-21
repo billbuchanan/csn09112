@@ -10,10 +10,10 @@ The aim of this lab is to give an introduction to ciphers, basic encoding/decodi
 At the end of this lab, you should understand:
 
 * How to decode a range of ciphers.
-*	How to recognise certain encodings, such as Base-64, hex, and binary.
-*	How to write a Python script to crack PFX certificates. The PKCS#12 (PFX or P12) format is the binary format in which certificates are stored on a server. They are protected by a password and contain the public and private key (the key pair).
-*	How to perform bitwise calculations.
-*	How to perform frequency analysis.
+* How to recognise certain encodings, such as Base-64, hex, and binary.
+* How to write a Python script to crack PFX certificates. The PKCS#12 (PFX or P12) format is the binary format in which certificates are stored on a server. They are protected by a password and contain the public and private key (the key pair).
+* How to perform bitwise calculations.
+* How to perform frequency analysis.
 
 
 # Lab 6: Ciphers and Digital Certificates
@@ -42,8 +42,9 @@ Boot up your Kali VM on your public network, and download the following archive:
 http://asecuritysite.com/public/certs.zip
 
 Extract the certificates into the /root folder, and then move into that folder. Now use openssl to try a password:
-
+```
 openssl pkcs12 -nokeys -in bill01.pfx -passin pass:orange
+```
 
 Did you manage to run the script? 
 
@@ -51,6 +52,7 @@ What password is correct for bill01.pfx?
 
 Now implement the Python script given below:
 
+```Python
 from OpenSSL import crypto
 words=[]
 words.append("coconut")
@@ -66,20 +68,23 @@ words.append("battery")
 
 for passwd in words:
 
-	try:	
-		p12 = crypto.load_pkcs12(open("fredpfx.pfx", 'rb').read(), passwd)
+  try:
+    p12 = crypto.load_pkcs12(open("fredpfx.pfx", 'rb').read(), passwd)
+    certificate =p12.get_certificate()
+    
+    p12.get_privatekey()
+    print (certificate.get_serial_number())
+    print (certificate.get_issuer().get_components())
+    print (certificate.get_signature_algorithm())
+    print ("Success: "+passwd)
+  except Exception as ex:
+    print (".")
 
-		certificate =p12.get_certificate()
-		p12.get_privatekey()      
- 
-            print certificate.get_serial_number()
-            print certificate.get_issuer().get_components()
-            print certificate.get_signature_algorithm()
-            print ("Success: "+passwd)
-		
-	except Exception as ex:
-		print (".")
+```
 
+You need to install pyopenssl in pip.
+
+Repl.it: [here](https://repl.it/@billbuchanan/csn09112digcert01)
 
 Can adapt this script to crack some of the other certificates contained in the archive you have downloaded. Bill01.pdf to bill18.pdf are based on fruits (in lowercase), country01.pdf to country06.pdf are based on countries.
 
@@ -87,29 +92,26 @@ Outline the passwords of the certificates:
 
 
 
-Can you modify the code so that it shows other details from the certificate, such as its public key,  subject, version and “notBefore”, and “notAfter”.
-
-
-
+Can you modify the code so that it shows other details from the certificate, such as its public key,  subject, version and "notBefore", and "notAfter".
 
 Ref: https://pyopenssl.org/en/0.15.1/api/crypto.html#x509name-objects
-B	Frequency Analysis
-Now see if you can crack the five minute cracking challenge for: http://asecuritysite.com/challenges/scramb
-C	Character Mapping
+
+## B	Frequency Analysis
+Now see if you can crack the five minute cracking challenge for: [here](http://asecuritysite.com/challenges/scramb)
+
+## C	Character Mapping
 Complete the following table for each of the characters:
 
-Char	Decimal	Binary	Hex	Oct	HTML
-(Space)					
+| Char | Decimal | Binary | Hex	 | Oct | HTML |
+| -------|--------|---------|---------|---------|---------|
 
-a					
+| (Space) ||||||				
+a ||||||					
+}||||||					
+Ã ||||||					
+ÿ ||||||					
 
-}					
-
-Ã					
-
-ÿ					
-
-D	Test
+#$ D	Test
 1.	Crack some Caesar codes at: http://asecuritysite.com/tests/tests?sortBy=caesar
 2.	Determine some hex conversions at: http://asecuritysite.com/tests/tests?sortBy=hex01
 3.	Determine some Base64 conversions: http://asecuritysite.com/tests/tests?sortBy=ascii01
@@ -117,7 +119,8 @@ D	Test
 
 
 
-Shifted alphabet    
+## Shifted alphabet   
+```
 1	A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 2	B C D E F G H I J K L M N O P Q R S T U V W X Y Z A
 3	C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
@@ -144,8 +147,10 @@ Shifted alphabet
 24	X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
 25	Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
 26	Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+```
 
-ASCII table
+## ASCII table
+```
 Char  Dec  Oct  Hex | Char  Dec  Oct  Hex   | Char  Dec  Oct  Hex  | Char Dec Oct	Hex
 -------------------------------------------------------------------------------------
 (nul)	0	0000	0x00	|	(sp)	32	0040	0x20	|	@	64	0100	0x40	|	`	96	0140	0x60
@@ -180,14 +185,16 @@ Char  Dec  Oct  Hex | Char  Dec  Oct  Hex   | Char  Dec  Oct  Hex  | Char Dec Oc
 (gs)	29	0035	0x1d	|	=	61	0075	0x3d	|	]	93	0135	0x5d	|	}	125	0175	0x7d
 (rs)	30	0036	0x1e	|	>	62	0076	0x3e	|	^	94	0136	0x5e	|	~	126	0176	0x7e
 (us)	31	0037	0x1f	|	?	63	0077	0x3f	|	_	95	0137	0x5f	|	(del)	127	0177	0x7f
- 
-Base 64
+```
+
+## Base 64
 Example:
 
 “fred”			01100110  01110010  01100101  01100100 	
 Split into 6 bits:	011001   100111  001001  100101  011001  00
-Z	    n       J       l       Z       A  =  =
 
+Z	    n       J       l       Z       A  =  =
+```
 Val	Encoding	Val	Encoding	Val	Encoding	Val	Encoding
 0	A	16	Q	32	g	48	w
 1	B	17	R	33	h	49	x
@@ -205,86 +212,7 @@ Val	Encoding	Val	Encoding	Val	Encoding	Val	Encoding
 13	N	29	d	45	t	61	9
 14	O	30	e	46	u	62	+
 15	P	31	f	47	v	63	/
-
-
-
-
-
-
-
-
-
-
-## Activities
-Go to:
-
-http://asecuritysite.com/Challenges
-
-Click on the “Start Challenge” button, and see if you can score over 30 points.
-
-We can also create a short Python script to try to crack the same certificates.
-
-Boot up your Kali VM, and download the following archive: 
-
-http://asecuritysite.com/public/certs.zip
-
-Extract the certificates into the /root folder, and then move into that folder. Now use openssl to try a password:
-
-openssl pkcs12 -nokeys -in bill01.pfx -passin pass:orange
-
-Did you manage to run the script? 
-
-What password is correct for bill01.pfx?
-
-Now implement the Python script in Program 1.
-
-<pre>
-from OpenSSL import crypto
-words=[]
-words.append("coconut")
-words.append("mango")
-words.append("apples")
-words.append("apple")
-words.append("oranges")
-words.append("orange")
-words.append("ankle")
-words.append("password")
-words.append("bill")
-words.append("battery")
-
-for passwd in words:
-	try:	
-		p12 = crypto.load_pkcs12(open("fredpfx.pfx", 'rb').read(), passwd)
-		certificate =p12.get_certificate()
-		p12.get_privatekey()      
-            print certificate.get_serial_number()
-            print certificate.get_issuer().get_components()
-            print certificate.get_signature_algorithm()
-            print ("Success: "+passwd)
-	except Exception as ex:
-		print (".")
-    </pre>
-
-
-Can adapt this script to crack some of the other certificates contained in the archive you have downloaded. Bill01.pdf to bill18.pdf are based on fruits (in lowercase), country01.pdf to country06.pdf are based on countries.
-
-Outline the passwords of the certificates:
-
-
-
-
-
-
-
-Can you modify the code so that it shows other details from the certificate, such as its public key,  subject, version and “notBefore”, and “notAfter”.
-
-
-
-
-
-Ref: https://pyopenssl.org/en/0.15.1/api/crypto.html#x509name-objects
-
-
+```
 
 
 
