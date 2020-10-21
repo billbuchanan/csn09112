@@ -207,13 +207,6 @@ Val	Encoding	Val	Encoding	Val	Encoding	Val	Encoding
 11  L	        27	b	        43	r	        59	7
 12  M	        28	c	        44	s	        60	8
 13  N	        29	d	        45	t	        61	9
-14  O	30	e	46	u	62	+
-15  P	31	f	47	v	63	/
+14  O	        30	e	        46	u	62	+
+15  P	        31	f	        47	v	63	/
 ```
-
-
-
-
-
-
-

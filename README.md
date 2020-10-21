@@ -18,8 +18,8 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 5 | 8 Oct 2020 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | Vulnerability Analysis and IDS |
 | 6 | 15 Oct 2020 | 7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public/Private Key and Hashing | 
 | 7 | 22 Oct 2020 | 9. Digital Certificates | Certificates [here](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
-| 8 | 29 Oct 2020 | Guest lectures (Don Smith) | Catch-up  |
-| 9 | 5 Nov 2020 | <form action="https://asecuritysite.com/csn09112/test01" method="get"><button type="submit" onclick="location.href='/csn09412/test01" class="btn btn-danger btn-xs"  data-container="body">Test 1 details</button> </form> | Test 1 [<a href="https://github.com/billbuchanan/csn09112/tree/master/week08_test">Link</a>] |
+| 8 | 29 Oct 2020 | Guest lectures (Don Smith, Dave Stubley) | Catch-up  |
+| 9 | 5 Nov 2020 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  |
 | 10 | 12 Nov 2020 | 10. Network Forensics  [here](https://github.com/billbuchanan/csn09112/tree/master/week10_network_forensics) | Network Forensics | 
 | 11 | 19 Nov 2020 | 11. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week11_tunnelling) | Tunnelling |
 | 12 | 26 Nov 2020 | 12. Splunk | Splunk Lab |
