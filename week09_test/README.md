@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is an open book test, and  runs within the lab time.
 
-Time for test: Thursday 12 November 2020, 9:30am. Time: 90 mins. 
+Time for test: Thursday, 5 November 2020, 9:30am. Time: 90 mins. 
 
 Requirements: 
 
