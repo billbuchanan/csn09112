@@ -11,6 +11,7 @@ Requirements:
 * An active webcam and microphone.
 
 YouTube introduction to test: [here](http://www.youtube.com/watch?v=DAiqUot5Dao).
+[![](http://img.youtube.com/vi/DAiqUot5Dao/0.jpg)](http://www.youtube.com/watch?v=DAiqUot5Dao "CSN09112 Test 1")
 
 ## Background
 
