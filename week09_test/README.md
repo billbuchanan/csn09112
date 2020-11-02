@@ -10,7 +10,7 @@ Requirements:
 * An active Internet connection to access Moodle. 
 * An active webcam and microphone.
 
-[![Test 1](http://img.youtube.com/vi/DAiqUot5Dao/0.jpg)](https://www.youtube.com/watch?v=DAiqUot5Dao "Test1")
+[![](http://img.youtube.com/vi/DAiqUot5Dao/0.jpg)](http://www.youtube.com/watch?v=DAiqUot5Dao "CSN09112 Test 1")
 
 ## Background
 
