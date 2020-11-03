@@ -8,7 +8,7 @@ Time for test: **Thursday, 5 November 2020, 9:30am**. Time: 90 mins.
 Requirements: 
 
 * An active Internet connection to access Moodle. 
-* An active webcam and microphone.
+* An active webcam and microphone. You will be asked to enable your Webcam, but disable your microphone. If you have any questions, we will move you to a break-out room to discuss.
 
 YouTube introduction to test: [here](http://www.youtube.com/watch?v=DAiqUot5Dao).
 
