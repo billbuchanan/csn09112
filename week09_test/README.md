@@ -9,6 +9,7 @@ Requirements:
 
 * An active Internet connection to access Moodle. 
 * An active webcam and microphone. You will be asked to enable your Webcam, but disable your microphone. If you have any questions, we will move you to a break-out room to discuss.
+* If possible, spin-up your Kali instance for it to be ready to be used.
 
 YouTube introduction to test: [here](http://www.youtube.com/watch?v=DAiqUot5Dao).
 
