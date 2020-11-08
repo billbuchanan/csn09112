@@ -7,10 +7,10 @@
 You can download the Bot onto the Ubuntu machine using:
 
 <pre>
-wget http://networksims.com/Archive.zip
+wget -U firefox http://networksims.com/Archive.zip
 unzip Archive.zip
 </pre>
-<p>Note: Current version is 3.5a</p>
+<p>Note: The current version is just a draft and defined as Version 3.5a. We will update this to Verison 3.6, and annouce when ready. You can investigate the current one, in order to experiment at the current time.</p>
 <p>Go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
 
 <pre>
