@@ -45,11 +45,11 @@ The following are some examples of PCAPs:
 
 * Network Forensics - [Ping](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Fping.txt)
 * Network Forensics - [Telnet](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Ftelnet.txt)
-* Network Forensics - DNS Lookup
-* Network Forensics - FTP
-* Network Forensics - NMAP
-* Network Forensics - Tracert
-* Network Forensics - Web page
+* Network Forensics - [DNS Lookup](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Fdnslookup.txt)
+* Network Forensics - [FTP](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Fftp.txt)
+* Network Forensics - [NMAP](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Fnmap.txt)
+* Network Forensics - [Tracert](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Ftracert.txt)
+* Network Forensics - [Web page](https://asecuritysite.com/forensics/net?sortBy=video%3Aasecuritysite.com%2Flog%2Fwebpage.txt)
 * Network Forensics - SSL
 * Network Forensics - Spoof Address
 * Network Forensics - IPSec
@@ -73,9 +73,9 @@ The traces are defined [here](https://asecuritysite.com/forensics/pcap).
 ## Related Material
 Some related material:
 
-* Network Forensics - TCPDump. This shows an example of analysing simple network traces.
-* Tripwire. This shows an example of configuring Tripwire in Linux.
-* Network Forensics - PCAP analysis.
+* Network Forensics - [TCPDump. This shows an example of analysing simple network traces](https://asecuritysite.com/information/videos?sortBy=video%3Abuchananweb.co.uk%2Fadv_security_and_network_forensics%2Ftcpdump01%2Ftcpdump01.htm)
+* Tripwire. [This shows an example of configuring Tripwire in Linux](https://asecuritysite.com/information/videos?sortBy=video%3Awww.youtube.com%2Fembed%2FMvMnwDeXvZo%3Fhd%3D1%3Frel%3D0)
+* Network Forensics - [PCAP analysis](https://asecuritysite.com/forensics/pcap)
 
 
 
