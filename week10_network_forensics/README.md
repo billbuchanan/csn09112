@@ -16,7 +16,7 @@ The slides for the chapter are [here](https://asecuritysite.com/book_chap08.pdf)
 
 The test for this unit is [Test](https://asecuritysite.com/tests/tests?sortBy=sfc09).
 ## Wireshark Filters
-The following uses the Wireshark display filter:
+The following uses the Wireshark display filter [here](https://asecuritysite.com/subjects/chapter20):
 * PNG Filter: http contains "\x89\x50\x4E\x47". Trace with a PNG and PNG filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_png.pcap&rulesname=http%20contains%20%2289%3A50%3A4E%3A47%22). [Pcap](https://asecuritysite.com/log/with_png.zip).
 * PDF Filter: http contains "%PDF". Trace with a PDF and PDF filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_pdf.pcap&rulesname=http%20contains%20%5C%22%25PDF%5C%22). [Pcap](https://asecuritysite.com/log/with_pdf.zip)
 * GIF Filter: http contains "GIF89a". Trace with a GIF and GIF filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_gif.pcap&rulesname=http%20contains%20%22GIF89a%22). [Pcap](https://asecuritysite.com/log/with_gif.zip).
@@ -37,6 +37,8 @@ The following uses the Wireshark display filter:
 * FTP Login Filter: tcp.port==21 && tcp.flags.syn==1 && tcp.flags.ack==1. Trace with FTP Hydra and SYN/Port 21 filter: Test. Pcap
 * Telnet Login Filter: tcp.port==23 && tcp.flags.syn==0 && tcp.flags.ack==0. Trace with Telnet Hydra and SYN/Port 23 filter: Test. Pcap
 * Hping DoS Filter: tcp.flags.syn==1 && tcp.flags.ack==0. Trace with Hping and SYN flag filter: Test. Pcap
+
+
 
 The filters are demo'd [here](https://asecuritysite.com/subjects/chapter20).
 
