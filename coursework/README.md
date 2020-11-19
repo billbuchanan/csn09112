@@ -7,10 +7,10 @@
 You can download the Bot onto the Ubuntu machine using:
 
 <pre>
-wget http://buchananweb.co.uk/Archive.zip
+wget -U firefox http://networksims.com/Archive.zip
 unzip Archive.zip
 </pre>
-<p>Note: Current version is 3.5a</p>
+<p>Note: The current version is just a draft and defined as Version 3.5a. We will update this to Verison 3.6, and annouce when ready. You can investigate the current one, in order to experiment at the current time.</p>
 <p>Go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
 
 <pre>
@@ -60,7 +60,7 @@ A sample rules file has been placed in the instance. A good method of analysis i
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 18 Decemember 2019. It will be marked as follows:
+The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on **Thursday, 17 Decemember 2020**. It will be marked as follows:
 
 **Research [20 marks]**
 

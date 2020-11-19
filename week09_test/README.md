@@ -1,9 +1,17 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
 # Test 1
-You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is an open book test, and  runs within the lab time.
+You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is an open book test, and runs within the lecture time. Note there will be no lectures in Week 9.
 
-Time for test: Wednesday, 1 July, 2:30-4pm. Time: 90 mins.
+Time for test: **Thursday, 5 November 2020, 9:30am**. Time: 90 mins. 
+
+Requirements: 
+
+* An active Internet connection to access Moodle. 
+* An active webcam and microphone. You will be asked to enable your Webcam, but disable your microphone. If you have any questions, we will move you to a break-out room to discuss.
+* If possible, spin-up your Kali instance for it to be ready to be used.
+
+YouTube introduction to test: [here](http://www.youtube.com/watch?v=DAiqUot5Dao).
 
 ## Background
 
