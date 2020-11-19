@@ -144,7 +144,7 @@ Who has signed the certificate:
 
 </pre>
 
-## 4	Examining traces
+## 4 Examining traces
 
 1	Download the following file, and examine the trace with Wireshark:
 
@@ -165,7 +165,7 @@ What is the length of the encryption key:
 </pre>
 
 
-2	Download the following file, and examine the trace with Wireshark:
+2 Download the following file, and examine the trace with Wireshark:
 
 http://asecuritysite.com/log/https.zip
 <pre>
@@ -182,7 +182,7 @@ Which hash method is used for the tunnel:
 What is the length of the encryption key:
 </pre>
 
-3	Download the following file, and examine the trace with Wireshark:
+3. Download the following file, and examine the trace with Wireshark:
 
 http://asecuritysite.com/log/heart.zip	
 <pre>
@@ -201,7 +201,7 @@ What is the length of the encryption key:
 Can you spot the packet which identifies the Heartbleed vulnerability?
 </pre>
 
-4	Download the following file, and examine the trace with Wireshark:
+4. Download the following file, and examine the trace with Wireshark:
 
 http://asecuritysite.com/log/ipsec.zip 
 <pre>
@@ -218,6 +218,114 @@ Determine one of the encryption and hashing methods that the client wants to use
 
 Now determine the encryption and hashing methods that are agreed in the ISAKMP:
 </pre>
+
+
+## Q5	
+We will now create a Python program which calls up the SSLlabs assessment. First create a CSV file (sites.csv) with your sites in it. The format is Name of site, URL:
+
+<pre>
+web,site
+Cloudflare,www.cloudflare.com
+BBC,bbc.co.uk
+</pre>
+
+Next enter the following code and run it: 
+
+```python
+# Code from https://github.com/TrullJ/ssllabs/blob/master/ssllabsscanner.py
+import requests
+import time
+import sys
+import logging
+
+API = 'https://api.ssllabs.com/api/v2/'
+
+
+def requestAPI(path, payload={}):
+    '''This is a helper method that takes the path to the relevant
+        API call and the user-defined payload and requests the
+        data/server test from Qualys SSL Labs.
+        Returns JSON formatted data'''
+
+    url = API + path
+
+    try:
+        response = requests.get(url, params=payload)
+    except requests.exception.RequestException:
+        logging.exception('Request failed.')
+        sys.exit(1)
+
+    data = response.json()
+    return data
+
+
+def resultsFromCache(host, publish='off', startNew='off', fromCache='on', all='done'):
+    path = 'analyze'
+    payload = {
+                'host': host,
+                'publish': publish,
+                'startNew': startNew,
+                'fromCache': fromCache,
+                'all': all
+              }
+    data = requestAPI(path, payload)
+    return data
+
+
+def newScan(host, publish='off', startNew='on', all='done', ignoreMismatch='on'):
+    path = 'analyze'
+    payload = {
+                'host': host,
+                'publish': publish,
+                'startNew': startNew,
+                'all': all,
+                'ignoreMismatch': ignoreMismatch
+              }
+    results = requestAPI(path, payload)
+
+    payload.pop('startNew')
+
+    while results['status'] != 'READY' and results['status'] != 'ERROR':
+        time.sleep(30)
+        results = requestAPI(path, payload)
+
+    return results
+
+
+import csv
+with open('sites.csv') as csvfile:
+	reader = csv.DictReader(csvfile)
+	for row in reader:
+
+		url = row['site'].strip()
+
+		a = newScan(url)
+		with open("out3.txt", "a") as myfile:
+    			myfile.write(str(row['web'])+"\n"+str(a)+"\n\n\n")
+			print (row['web'])
+```      
+
+The repl.it site is [here](https://repl.it/@billbuchanan/ssllab#main.py).
+
+Now pick to domains to scan. Note that it will can take a **few minutes** to perform a single scan. By reading the out3.txt file, outline your findings:
+
+
+Site name:				
+
+Site rating:
+
+Other significant details:
+
+
+
+
+
+Site name:				
+
+Site rating:
+
+
+Other significant details:
 
 
 
