@@ -17,6 +17,8 @@ The core content is here:
 * Access Splunk [here](https://asecuritysite.com:8000/). Contact support@asecuritysite.com for a login.
 * Test [here](https://asecuritysite.com/tests/tests?sortby=siem).
 
+Interesting in learning more about Splunk? Click [here](https://asecuritysite.com/cyberdata/).
+
 ## Outline
 
 In this case, we will analyse the Buttercup dataset, and which involves the sale of on-line games. The structure of the site is as follows:
