@@ -33,7 +33,11 @@ Web server logs can provide a whole lots of security information, along with bus
 
 We can see that we can now timeline the transactions on a site and the links accessed. Also we have the information the HTTP response code, where at 200 defines that the HTTP request was successful, and a 404 means that the page was not found. Let’s now search for the GET HTTP request and view the number of transactions. The following figure shows the result, where for this example, we get 24,866 results:
 
+![Image](https://asecuritysite.com/public/sp01.png)
+
 If we use a smart mode, as shown in the following, we can automatically parse the log in order to mine the information in the fields from the GET request:
+
+![Image](https://asecuritysite.com/public/sp02.png)
 
 This view now allows us to mine the data associated with each of the fields. For example we can mine for the Client IP address to see the highest number of accesses:
 
@@ -71,6 +75,8 @@ So we can see that most of the responses give us a 200 (OK) response, but there 
 ```
 get status=404
 ```
+![Image](https://asecuritysite.com/public/sp03.png)
+
 
 So again we can mine for the Client IP address to see the hosts that are generating most of the requests for files not found:
 
@@ -173,6 +179,8 @@ SPORTS       10     2.967359
 
 and even visualise the sales with:
 
+![image](https://asecuritysite.com/public/sp04.png)
+
 Now our marketing department want to know which is the most popular Web browser, so we can use a search of:
 
 ```
@@ -204,6 +212,8 @@ count(eval(searchmatch("Chrome")))  AS Chrome, count(eval(searchmatch("Mozilla")
 ```
 
 and then we can chart types with:
+
+![image](https://asecuritysite.com/public/sp05.png)
 
 When we view a URI, we see is that the parameters used, and which can be mined:
 
@@ -237,15 +247,18 @@ CU-PG-G06     148     5.061560
 SF-BVS-G01     15     0.51
 ```
 
-We can also discover the mappings of the CategoryID to Product IDs, such as with [here]:
+We can also discover the mappings of the CategoryID to Product IDs, such as with [here](https://asecuritysite.com:8000/en-GB/app/search/search?q=search%20get%20cart.do%20productId%3D%22WC-SH-G04%22%20%7C%20top%20categoryId&display.page.search.mode=smart&dispatch.sample_ratio=1&earliest=0&latest=&display.page.search.tab=statistics&display.general.type=statistics&sid=1593552643.128):
 ```
 get cart.do productId="WC-SH-G04" | top categoryId
-```
 
-We can now see that WC-SH-G04 is a SHOOTER game [here]:
+```
+![image](https://asecuritysite.com/public/sp06.png)
+
+We can now see that WC-SH-G04 is a SHOOTER game [here](https://asecuritysite.com:8000/en-GB/app/search/search?q=search%20get%20cart.do%20categoryId%3D%22STRATEGY%22%20%7C%20top%20productId&display.page.search.mode=smart&dispatch.sample_ratio=1&earliest=0&latest=&display.page.search.tab=statistics&display.general.type=statistics&sid=1593552806.130):
 ```
 get cart.do categoryId="STRATEGY" | top productId
 ```
+![image](https://asecuritysite.com/public/sp06.png)
 
 We can see that DB-SG-G01, DC-SG-G02, FS-SG-G03 and PZ-SG-G05 are STRATEGY games.
 
