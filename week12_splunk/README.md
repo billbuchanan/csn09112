@@ -188,7 +188,7 @@ get
 | top limit=20 useragent
 ```
 
-and to give [here]:
+and to give [here](https://asecuritysite.com:8000/en-GB/app/search/search?q=search%20source%3D%22*access.log%22&display.page.search.mode=smart&dispatch.sample_ratio=1&earliest=0&latest=&sid=1593552439.124):
 ```
 Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.28) Gecko/20120306 YFF3 Firefox/3.6.28 ( .NET CLR 3.5.30729; .NET4.0C)     5282     21.241856%
 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.46 Safari/536.5     2383     9.583367
@@ -204,7 +204,7 @@ Opera/9.01 (Windows NT 5.1; U; en)     430     1.729269
 ```
     
 
-We can then see from this that Firefox running on Windows is our most popular browser, followed by Chrome running on Mac OS (AppheWebkit) and then Microsoft Internet Explorer Version 7. This type of information is obviously important for the design of a site, as it focuses the development on the browsers that will typically be used to access the site. Then, if we classify for Safari, Chrome and Mozilla we can chart with [here]:
+We can then see from this that Firefox running on Windows is our most popular browser, followed by Chrome running on Mac OS (AppheWebkit) and then Microsoft Internet Explorer Version 7. This type of information is obviously important for the design of a site, as it focuses the development on the browsers that will typically be used to access the site. Then, if we classify for Safari, Chrome and Mozilla we can chart with [here](https://asecuritysite.com:8000/en-GB/app/search/search?q=search%20sourcetype%3Daccess_*%20%7C%20chart%20%20count(eval(searchmatch(%22Safari%22)))%20%20AS%20Safari%2C%0Acount(eval(searchmatch(%22Chrome%22)))%20%20AS%20Chrome%2C%20count(eval(searchmatch(%22Mozilla%22)))%20AS%20Mozilla&display.page.search.mode=smart&dispatch.sample_ratio=1&earliest=0&latest=&sid=1593552513.125&display.page.search.tab=statistics&display.general.type=statistics):
 
 ```
 sourcetype=access_* | chart  count(eval(searchmatch("Safari")))  AS Safari,
@@ -227,7 +227,7 @@ For example we have action, productID and itemID as parameters which are set, an
 
 post action=purchase action=purchase productid
 
-To give [here]:
+To give [here](https://asecuritysite.com:8000/en-GB/app/search/search?q=search%20post%20action%3Dpurchase%20action%3Dpurchase%20productid&display.page.search.mode=smart&dispatch.sample_ratio=1&earliest=0&latest=&display.page.search.tab=events&display.general.type=events&sid=1593552607.127):
 ```
 productId     count     percent
 WC-SH-G04     275     9.404925
