@@ -89,7 +89,8 @@ get | regex _raw="(?<email>[\w\d\.\-]+\@[\w\d\.]+)""
 ```
 Which email addresses are present:
 
-### 8. We can search for times using regular expressions, such as [here]:
+### Question 8
+We can search for times using regular expressions, such as [here]:
 ```
 get | regex _raw="[0-9]{2}\:22\:[0-9]{2}"
 ```
@@ -97,7 +98,8 @@ How many GET requests where there at 22 minutes past the hour:
 
 How many GET requests were made at 14 seconds past the minute:
 
-### 9. The incident response team wants a report of unusual HTTP requests. Produce a report of the HTTP response codes, and what they identify. Which ones could be malicious?
+### Question 9
+The incident response team wants a report of unusual HTTP requests. Produce a report of the HTTP response codes, and what they identify. Which ones could be malicious?
 
 * The security team would like a report on the most popular user names that have failed on the security logs. What would you report?
 * The company are worried about the sales of some of their games. Which game category has the least amount of sales, and which is the best seller?

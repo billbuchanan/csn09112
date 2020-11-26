@@ -11,9 +11,10 @@ The key objectives of this unit are to:
 ## Content
 The core content is here:
 
+* Harry McLaren guest talk: [here](https://youtu.be/DwBg12JL--A) and [slides](https://www2.slideshare.net/HarryMcLaren/modern-security-operations-common-rolescompetencies).
 * YouTube presentation: [here](https://youtu.be/bOQmd6B8jGo).
-* Slides: [here](https://asecuritysite.com/public/ch12_splunk.pdf).
-* Tutorial: [here](https://asecuritysite.com/public/splunk01.pdf) and [here](https://asecuritysite.com/public/splunk02.pdf).
+* Lecture Slides: [here](https://asecuritysite.com/public/ch12_splunk.pdf).
+* Tutorial: [here](https://asecuritysite.com/public/splunk01.pdf) and [here](https://asecuritysite.com/public/splunk02.pdf). Version with hints and answers [here](https://asecuritysite.com/cyberdata/ch15_02).
 * Access Splunk [here](https://asecuritysite.com:8000/). Contact support@asecuritysite.com for a login.
 * Test [here](https://asecuritysite.com/tests/tests?sortby=siem).
 
