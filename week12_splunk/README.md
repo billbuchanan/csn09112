@@ -21,6 +21,8 @@ The core content is here:
 
 In this case, we will analyse the Buttercup dataset, and which involves the sale of on-line games. The structure of the site is as follows:
 
+![Buttercup](https://asecuritysite.com/public/sp10.png)
+
 Web server logs can provide a whole lots of security information, along with business information. If we look at a standard Apache Web log we can see the information that we can mine from the log (access.log):
 ```
 209.160.24.63 - - [19/Apr/2014:18:22:16] "GET /product.screen?productId=WC-SH-A02&JSESSIONID=SD0SL6FF7ADFF4953 HTTP 1.1" 200 3878 "http://www.google.com" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.46 Safari/536.5" 349
