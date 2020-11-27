@@ -6,7 +6,7 @@
 git clone https://github.com/billbuchanan/csn09112
 </pre>
 
-The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/coursework)
+The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/coursework) and is worth 50% of the marks in the module (and where Test 1 is also worth 50% of the marks in the module).
 
 <h2>Timetable</h2>
 
@@ -23,7 +23,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 10 | 12 Nov 2020 | 10. Network Forensics  [here](https://github.com/billbuchanan/csn09112/tree/master/week10_network_forensics) | Network Forensics | 
 | 11 | 19 Nov 2020 | 11. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week11_tunnelling) | Tunnelling |
 | 12 | 26 Nov 2020 | 12. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week12_splunk) | Splunk Lab |
-| 13 | 3 Dec 2020 | 13. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab| 
+| 13 | 3 Dec 2020 | 13. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Fun Mega, Mega, Mega Mentimeter challenge (not formally assessed in any way, and just a bit of fun. | 
 | 14 | 10 Dec 2020 |||
 | 15 | 17 Dec 2020 | Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]||
   
