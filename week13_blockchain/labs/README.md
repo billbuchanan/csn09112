@@ -6,7 +6,7 @@ This provides an outline of cryptocurrencies and blockchain:
 * Lab (PDF): [here](https://asecuritysite.com/public/blockchain_lab.pdf)
 
 ## Part A
-Using blockchain.info, find the details of the genesis block: 
+**Using blockchain.info, find the details of the genesis block: **
 
 Date created:
 
@@ -23,7 +23,7 @@ How many USD does the original miner have in the account they used for the first
 When did the genesis block creator stop trading?
 
 
-L1.2	Using blockchain.info, determine the following 
+**L1.2	Using blockchain.info, determine the following:**
 
 Total bitcoins in circulation:
 
@@ -50,7 +50,7 @@ Maximum block size:
 Balance for 1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to:
 
 
-L1.3 Download and created the Python file defined on this page:
+** L1.3 Download and created the Python file defined on this page:**
 
 https://asecuritysite.com/encryption/bit
 
@@ -76,7 +76,7 @@ Hash rate:
 
 
 
-## C	Ethereum
+## B	Ethereum
 Demo:	https://www.youtube.com/watch?v=Gl3Suylr-7E
 Outline:	https://asecuritysite.com/subjects/chapter91
 
