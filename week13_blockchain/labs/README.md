@@ -5,10 +5,9 @@ This provides an outline of cryptocurrencies and blockchain:
 
 * Lab (PDF): [here](https://asecuritysite.com/public/blockchain_lab.pdf)
 
+## Part A
+Using blockchain.info, find the details of the genesis block: 
 
-## Using blockchain.info, find the details of the genesis block: 
-
-```
 Date created:
 
 Reward:
@@ -22,11 +21,10 @@ Which account received the mining reward for the genesis block (last four digits
 How many USD does the original miner have in the account they used for the first genesis record:
 
 When did the genesis block creator stop trading?
-```
 
-## L1.2	Using blockchain.info, determine the following 
 
-```
+L1.2	Using blockchain.info, determine the following 
+
 Total bitcoins in circulation:
 
 Most recent hash block (last four hex digits):
@@ -50,15 +48,14 @@ Last successful miner:
 Maximum block size:
 
 Balance for 1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to:
-```
 
-### L1.3Down load and created the Python file defined on this page:
+
+L1.3 Download and created the Python file defined on this page:
 
 https://asecuritysite.com/encryption/bit
 
 Now run the Python file, and compare the results in L.1.2.
 
-```
 Total bitcoins in circulation:
 
 Most recent hash block (last four hex digits):
@@ -77,8 +74,7 @@ Market capitalisation (USD):
 
 Hash rate:
 
-Balance for 1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to:
-```
+
 
 ## C	Ethereum
 Demo:	https://www.youtube.com/watch?v=Gl3Suylr-7E
