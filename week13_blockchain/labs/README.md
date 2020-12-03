@@ -6,6 +6,7 @@ This provides an outline of cryptocurrencies and blockchain:
 * Lab (PDF): [here](https://asecuritysite.com/public/blockchain_lab.pdf)
 
 ## Part A
+
 **Using blockchain.info, find the details of the genesis block: **
 
 Date created:
@@ -50,7 +51,7 @@ Maximum block size:
 Balance for 1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to:
 
 
-** L1.3 Download and created the Python file defined on this page:**
+**L1.3 Download and created the Python file defined on this page:**
 
 https://asecuritysite.com/encryption/bit
 
