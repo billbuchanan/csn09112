@@ -9,13 +9,14 @@ This provides an outline of cryptocurrencies and blockchain:
 
 ## Demo
 A few demos:
+
 * Base58 (used in Bitcoins). Base58. [here](https://asecuritysite.com/encryption/base58)
-* Bitcoin keys. Bitcoin keys.
-* Bitcoin details. Bitcoin details.
-* Elliptic Curve (Keys). Elliptic Curve (Keys). Elliptic Curv is a public key method. This page outline the generation of ECC keys in Bitcoin.
-* Blockchain work. Work. Determine Blockchain work.
+* Bitcoin keys. [Bitcoin keys](https://asecuritysite.com/encryption/Bitcoin).
+* Bitcoin details (in Python). Bitcoin details [here](https://repl.it/@billbuchanan/bit).
+* Blockchain work. [here](https://asecuritysite.com/encryption/block).
 
 ## Real-life implementations
 A few real-life implementations:
+
 * Introduction to Blockchain. [here](https://www.youtube.com/watch?v=Gl3Suylr-7E)
 
