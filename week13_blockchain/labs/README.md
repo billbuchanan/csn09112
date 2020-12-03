@@ -7,7 +7,7 @@ This provides an outline of cryptocurrencies and blockchain:
 
 ## Part A
 
-**Using blockchain.info, find the details of the genesis block: **
+**Using blockchain.info, find the details of the genesis block:**
 
 Date created:
 
