@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is an open book test, and runs within the lecture time. Note there will be no lectures in Week 9.
 
-Time for test: **Thursday, 5 November 2020, 9:30am**. Time: 90 mins. 
+Time for test: **Thursday, 4 November 2020, 9:30am**. Time: 90 mins. 
 
 Requirements: 
 
