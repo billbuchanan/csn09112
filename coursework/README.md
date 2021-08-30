@@ -59,7 +59,7 @@ A sample rules file has been placed in the instance. A good method of analysis i
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on **Thursday, 17 Decemember 2020**. It will be marked as follows:
+The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on **TBC*. It will be marked as follows:
 
 **Research [20 marks]**
 
