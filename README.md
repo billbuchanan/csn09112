@@ -23,7 +23,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 10 | 11 Nov 2021 | 10. Network Forensics  [here](https://github.com/billbuchanan/csn09112/tree/master/week10_network_forensics) | Network Forensics | 
 | 11 | 18 Nov 2021 | 11. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week11_tunnelling) | Tunnelling |
 | 12 | 25 Nov 2021 | 12. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week12_splunk) | Splunk Lab |
-| 13 | 2 Dec 2021 | 13. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab. 4pm: Fun Mega, Mega, Mega Mentimeter challenge (not formally assessed in any way, and just a bit of fun. | 
+| 13 | 2 Dec 2021 | 13. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab.  | 
 | 14 | 9 Dec 2021 |||
 | 15 | 16 Dec 2021 | Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]||
   
