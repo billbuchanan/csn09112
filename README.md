@@ -21,7 +21,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 8 | 28 Oct 2021 | 10. Network Forensics | [here](https://github.com/billbuchanan/csn09112/tree/master/week10_network_forensics) | Network Forensics | 
 | 9 | 4 Nov 2021 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  |
 | 10 | 11 Nov 2021 | 12. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week12_splunk) | Splunk Lab |
-| 11 | 18 Nov 2021 | 13. Splunk and Machine Learning  | Splunk + ML Lab |
+| 11 | 18 Nov 2021 | 13. Splunk and Machine Learning  | Splunk and ML Lab |
 | 12 | 25 Nov 2021 |  11. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week11_tunnelling) | Tunnelling |
 | 13 | 2 Dec 2021 | 14. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab.  | 
 | 14 | 9 Dec 2021 |||
