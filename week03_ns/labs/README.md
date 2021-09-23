@@ -64,7 +64,7 @@ Figure 2: Your network setup (Note: Gateway address is 10.221.3.254)
 # B	Configure Router/Firewall for Remote Administration
 First reset your firewall by either reverting back to the original instance or using the command:
 ```
-load /opt/vyatta/etc/config.boot.default"
+load /opt/vyatta/etc/config.boot.default
 ```
 We typically don’t use the console terminal of a firewall for configuration. In the following we will enable one port on the firewall, and then configure it through a remote connection. First configure your Vyatta firewall networking with the following:
 
