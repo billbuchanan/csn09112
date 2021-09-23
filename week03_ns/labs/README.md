@@ -117,7 +117,7 @@ http://asecuritysite.com/vpart01.txt
 
 or use:
 ```
-wget http://52.20.40.123/vpart01.txt
+wget http://asecuritysite.com//vpart01.txt
 ```
 
 or:
