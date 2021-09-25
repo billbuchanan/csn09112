@@ -259,7 +259,7 @@ print " Flags: ",th.flags & 0x0ff,
 ![IPTCP](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/additional_lab/iptcp.png)
 
 
-3. We will now put the program into an infinite loop and break when there is a keypress. For this we use the Pywin32 library [<a href="http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download">here</a>], which contains the pyHook class:
+3. We will now put the program into an infinite loop and break when there is a keypress. Search for the install for PyHook, and see if you can get the following code to run.
 
 Next replace
 
