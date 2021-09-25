@@ -5,6 +5,17 @@ import time
 import sys
 import string
 
+class timeval(Structure):
+    _fields_ = [('tv_sec', c_long),
+                ('tv_usec', c_long)]
+
+class pcap_pkthdr(Structure):
+    _fields_ = [('ts', timeval),
+                ('caplen', bpf_u_int32),
+                ('len', bpf_u_int32)]
+
+
+
 # Packet capture function
 PHAND=CFUNCTYPE(None,POINTER(c_ubyte),POINTER(pcap_pkthdr),POINTER(c_ubyte))
 
