@@ -37,7 +37,7 @@ The Repl.it site is [here](https://repl.it/@billbuchanan/csn0911201).
 # WinPCap
 We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://www.winpcap.org/install/default.htm">here</a></b>. Download the following file [here](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/additional_lab/winpcapy.py).
 
-Next create the following script [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/additional_lab/dump01.txt">code</a>]:
+Next create the following script [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/additional_lab/lab01.py">code</a>]:
 
 ```Python
 ## Based on code at https://code.google.com/p/winpcapy/downloads/detail?name=winpcapy.zip
@@ -110,7 +110,7 @@ Run the script. What are the names of your interfaces?
 For the first 20 packets, what is the minimum and maximum packet size?
 
 ## IP address capture
-Next we will parse the packets for the IP addresses. First add the following to define the parsing of the packets [<a href="https://asecuritysite.com/public/dump02.txt">code</a>]:
+Next we will parse the packets for the IP addresses. First add the following to define the parsing of the packets [<a href="https://asecuritysite.com/public/lab02.py">code</a>]:
 
 ```Python
 u_short = c_ushort
@@ -154,7 +154,7 @@ def _packet_handler(param,header,pkt_data):
 Run the code and find the IP address connections for the first five connections?
 
 ## Displaying connection details
-Now we will read the TCP header, and which follows the IP address. In this case we will just display the TCP ports. First we add the format of the TCP packet (we have just used the first four fields) [<a href="https://asecuritysite.com/public/dump03.txt">code</a>]:
+Now we will read the TCP header, and which follows the IP address. In this case we will just display the TCP ports. First we add the format of the TCP packet (we have just used the first four fields) [<a href="https://asecuritysite.com/public/lab03.py">code</a>]:
 
 ```Python
 class tcp_header(BigEndianStructure):
@@ -193,7 +193,7 @@ Now run the Python program, and generate some traffic (such as loading a Web pag
 Run the code and find the IP address connections and TCP ports used for the first five packets?
 
 ## Filtering for TCP
-Now we can filter for just TCP traffic by examining the IP Protocol field. For this just replace your packet handler with [<a href="https://asecuritysite.com/public/dump05.txt">code</a>]:
+Now we can filter for just TCP traffic by examining the IP Protocol field. For this just replace your packet handler with [<a href="https://asecuritysite.com/public/lab05.py">code</a>]:
 
 ```Python
 def _packet_handler(param,header,pkt_data):
@@ -259,7 +259,7 @@ print " Flags: ",th.flags & 0x0ff,
 
 <p><img src="https://asecuritysite.com/public/iptcp.png" width="600px" /></p>
 
-3.We will now put the program into an infinite loop and break when there is a keypress. For this we use the Pywin32 library [<a href="http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download">here</a>], which contains the pyHook class:
+3. We will now put the program into an infinite loop and break when there is a keypress. For this we use the Pywin32 library [<a href="http://sourceforge.net/projects/pywin32/files/pywin32/Build%20219/pywin32-219.win32-py2.7.exe/download">here</a>], which contains the pyHook class:
 
 Next replace
 
@@ -291,7 +291,7 @@ while True:
 ```
 
 You should now be able to capture until a key is pressed.
-The final solution is [<a href="https://asecuritysite.com/public/dump07.txt">Here</a>]
+The final solution is [<a href="https://asecuritysite.com/public/lab06.py">Here</a>]
 
 ## Demo
 <p>There is a demo <a href="https://www.youtube.com/watch?v=raphJCH2SPE">here</a></p>
