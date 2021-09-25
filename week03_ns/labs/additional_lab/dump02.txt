@@ -56,8 +56,8 @@ def get_ad():
 		else:
 			d=False
 
-	inum=input ("Enter the interface number (1-%d):" % (i))
-
+	print ("Enter the interface number (1-%d):" % (i))
+	inum= input('--> ')
 
 	inum=int(inum)
 
@@ -88,3 +88,4 @@ print("\nStarting to listen on %s...\n" % (d.description))
 ## Get 20 packets
 pcap_loop(adhandle, 20, packet_handler, None)
 pcap_close(adhandle)
+
