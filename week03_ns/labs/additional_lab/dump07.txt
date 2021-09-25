@@ -53,7 +53,7 @@ def _packet_handler(param,header,pkt_data):
 	pih = ctypes.cast(v_ip_header, ctypes.POINTER(ip_header))
 	ih = pih.contents
 
- 	ip_len = (ih.ver_ihl & 0xf) * 4
+	ip_len = (ih.ver_ihl & 0xf) * 4
 	ip_ver = (ih.ver_ihl & 0xf0) >> 4
 
 	th = ctypes.cast(ctypes.cast(pih, ctypes.c_void_p).value + ip_len,
