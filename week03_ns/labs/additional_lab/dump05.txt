@@ -47,7 +47,7 @@ def _packet_handler(param,header,pkt_data):
 	pih = ctypes.cast(v_ip_header, ctypes.POINTER(ip_header))
 	ih = pih.contents
 
- 	ip_len = (ih.ver_ihl & 0xf) * 4
+	ip_len = (ih.ver_ihl & 0xf) * 4
 	th = ctypes.cast(ctypes.cast(pih, ctypes.c_void_p).value + ip_len,
                      ctypes.POINTER(tcp_header)).contents
 	if (ih.proto==6):
@@ -67,7 +67,7 @@ def get_ad():
 			d=False
 
 	print ("Enter the interface number (1-%d):" % (i))
-	inum= raw_input('--> ')
+	inum= input('--> ')
 
 	inum=int(inum)
 
