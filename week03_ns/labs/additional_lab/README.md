@@ -35,10 +35,7 @@ The Repl.it site is [here](https://repl.it/@billbuchanan/csn0911201).
 
 
 # WinPCap
-We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://www.winpcap.org/install/default.htm">here</a></b>. Put this into the default Python folder (such as c:\python3) and install Winpcapy:
-
-```
-pip3 install winpcapy
+We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://www.winpcap.org/install/default.htm">here</a></b>. Download the following file []().
 ```
 
 Next create the following script [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/additional_lab/dump01.txt">code</a>]:
@@ -67,6 +64,7 @@ def _packet_handler(param,header,pkt_data):
 def get_ad():
 	i=0
 	d=alldevs.contents
+
 	while d:
 		i=i+1
 		print("%d. %s" % (i, d.name))
@@ -75,10 +73,14 @@ def get_ad():
 			d=d.next.contents
 		else:
 			d=False
-	inum=input("Enter the interface number (1-%d):" % (i))
+
+	print ("Enter the interface number (1-%d):" % (i))
+	inum= input('--> ')
 
 	inum=int(inum)
+
 	d=alldevs
+
 	## Get Selected adaptor
 	for i in range(0,inum-1):
 		d=d.contents.next
