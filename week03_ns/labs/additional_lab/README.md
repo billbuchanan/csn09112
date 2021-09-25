@@ -35,12 +35,10 @@ The Repl.it site is [here](https://repl.it/@billbuchanan/csn0911201).
 
 
 # WinPCap
-We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://www.winpcap.org/install/default.htm">here</a></b>. Download the following file []().
+We will use WireShark fairly extensively through the module. <b>The download the WinCap Python script <a href="https://www.winpcap.org/install/default.htm">here</a></b>. Download the following file [here](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/additional_lab/winpcapy.py).
 ```
 
 Next create the following script [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/additional_lab/dump01.txt">code</a>]:
-
-
 
 ```Python
 ## Based on code at https://code.google.com/p/winpcapy/downloads/detail?name=winpcapy.zip
