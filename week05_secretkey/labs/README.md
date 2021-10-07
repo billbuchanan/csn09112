@@ -144,7 +144,7 @@ Snort is one of the most popular intrusion detection systems, where an agent is 
 | DMZ | Run Snort on WINDOWS with: snort -c c:\MYSNORT\icmp.rules -i 1 -p -l c:\MYSNORT -K ascii | |
 | LAN to DMZ | From UBUNTU, ping the WINDOWS2003 VM. | Did Snort detect the pings from UBUNTU? | |
 | LAN and DMZ | Create a rule on UBUNTU and also on WINDOWS2003 which will detect an initial Telnet connection and the end of it? | Did it detect the start and end of the connection? |
-| LAN to DMZ |  |Then from UBUNTU, perform an ICMP Host Scan against the WINDOWS2003 VM, using nmap with   nmap –PE 10.10.y.7 |	Did Snort detect the Host Scan from UBUNTU? |
+| LAN to DMZ |  Then from UBUNTU, perform an ICMP Host Scan against the WINDOWS2003 VM, using nmap with   nmap –PE 10.10.y.7 |	Did Snort detect the Host Scan from UBUNTU? |
 | DMZ | Scanning specific hosts to find the services they are running is another common technique. This can be detected network auditing systems, by collecting traffic streams together and analysing them for scanning packets. From WINDOWS2003, create a new IDS detection rules file call portscan.rules which will detect network scanning traffic, and add: preprocessor sfportscan: proto { all } scan_type { all } sense_level { high } logfile { portscan.log }| |
 | LAN to DMZ | Run Snort with the detection portscan rules on WINDOWS with: snort -c c:\mysnort\portscan.rules -i 1 -p -l c:\mysnort -K ascii and from UBUNTU, perform a Port Scan on WINDOWS using: nmap 10.10.y.7.  | Did Snort detect the port scan: What type of port scan has been performed (which protocol is being used): |
 
