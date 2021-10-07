@@ -37,7 +37,7 @@ or
 ```
 sudo ifconfig eth11 10.10.x.7 netmask 255.255.255.0 up 
 sudo route add default gw 10.10.x.254
-sudo nano /etc/resolve.conf and change "name-server 10.221.3.254"
+sudo nano /etc/resolve.conf and change "nameserver 10.221.3.254"
 ```
 
 
