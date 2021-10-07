@@ -27,13 +27,18 @@ Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.1
 
 
 ## Quick guide
-For Ubtunta configuration:
+For Ubtuntu configuration:
 ```
-ip addr add 192.1.1.1 dev eth1
-route add default gw 10.10.1.254 eth0
+ip addr add 10.10.1.7/24 dev eth11
+route add default gw 10.10.1.254 eth11
 nano /etc/resolve.conf and change "nameserver 10.221.3.254"
 ```
-
+or
+```
+ifconfig 10.10.1.7 netmask 255.255.255.0 dev eth11
+route add default gw 10.10.1.254 eth11
+nano /etc/resolve.conf and change "nameserver 10.221.3.254"
+```
 
 
 ## C Opening the firewall 
