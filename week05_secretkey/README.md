@@ -45,7 +45,7 @@ In the lecture, at the end of Symmetric Key lecture, the table should be:
 ### Presentations
 
 * Presentation (PDF) - Hashing: <a href="https://github.com/billbuchanan/csn09112/blob/master/week05_secretkey/lecture/chapter03_hashing.pdf" target="_blank">link</a>
-* Presentation (video) - Hashing: <a href="https://www.youtube.com/watch?v=3D11YGD4vFQ" target="_blank">hrere</a>
+* Presentation (video) - Hashing: <a href="https://www.youtube.com/watch?v=3D11YGD4vFQ" target="_blank">here</a>
 
     
 
