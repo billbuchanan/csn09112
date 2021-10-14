@@ -10,6 +10,7 @@ The hashcat version has a time-out, so enter the following command:
 date -s "1 OCT 2015 18:00:00"
 ```
 
+We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/).
 
 ## 1	Diffie-Hellman
 
