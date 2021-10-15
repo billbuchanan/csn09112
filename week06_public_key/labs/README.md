@@ -257,7 +257,14 @@ res=pow(c,d ,n)
 
 print ("Message=%s\np=%s\nq=%s\nN=%s\ncipher=%s\ndecipher=%s" % (msg,p,q,n,c,(long_to_bytes(res))))
 ```
-Repl.it: [here](https://repl.it/@billbuchanan/csn09112rsa01)
+
+You may need to use:
+
+```
+pip install pycryptodome
+```
+
+If this install doesn't work, you can use Repl.it to build your code. Repl.it: [here](https://repl.it/@billbuchanan/csn09112rsa01)
 
 Prove the operation of the code. Now, try with 128-bit prime numbers and 256-bit prime numbers. What can you observe from the increase in the prime number size?
 
