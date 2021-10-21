@@ -50,7 +50,7 @@ Did you manage to run the script?
 
 What password is correct for bill01.pfx?
 
-Now implement the Python script given below:
+Now implement the Python script given below (you can use the Repl.it link before for you code):
 
 ```Python
 from OpenSSL import crypto
