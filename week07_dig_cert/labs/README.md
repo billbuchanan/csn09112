@@ -69,7 +69,7 @@ words.append("battery")
 for passwd in words:
 
   try:
-    p12 = crypto.load_pkcs12(open("fredpfx.pfx", 'rb').read(), passwd)
+    p12 = crypto.load_pkcs12(open("fredpfx.pfx", 'rb').read(), passwd.encode())
     certificate =p12.get_certificate()
     
     p12.get_privatekey()
@@ -79,7 +79,6 @@ for passwd in words:
     print ("Success: "+passwd)
   except Exception as ex:
     print (".")
-
 ```
 
 You need to install pyopenssl in pip.
