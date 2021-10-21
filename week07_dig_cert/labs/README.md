@@ -25,7 +25,7 @@ Use your desktop computer to complete the following:
 | No | Description | Result | 
 | -------|--------|---------|
 | 1 | Go to: [here](http://asecuritysite.com/Challenges) Click on the “Start Challenge” button, and see if you can score over 30 points. |	Your score: |
-| 2 | Using: http://asecuritysite.com/Encryption/testprime Test for the following prime numbers:	91: [Yes] [No] <br />421: [Yes] [No] <br />1449: [Yes] [No] |
+| 2 | Using: http://asecuritysite.com/Encryption/testprime Test for the following prime numbers:	| 91: [Yes] [No] <br />421: [Yes] [No] <br />1449: [Yes] [No] |
 | 3 | Using: http://asecuritysite.com/Encryption/gcd Determine the GCD for the following: | 88, 46: <br/> 105, 35: |
 | 4 | Using: http://asecuritysite.com/coding/ascii Determine the Base 64 and Hex values for the following strings: | Hello: <br />hello: <br />HELLO: |
 | 5 | Using: http://asecuritysite.com/coding/ascii Determine the following ASCII strings for these encoded formats: | bGxveWRz <br />6E6170696572 <br />01000001 01101110 01101011 01101100 01100101 00110001 00110010 00110011 |
