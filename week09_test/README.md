@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test. Note there will be no lectures in Week 9.
 
-Time for test: **Thursday, 4 November 2020, 9:30am**. Time: 65 mins. 
+Time for test: **Thursday, 4 November 2021. Time slots defined on Moodle time slots*. Time: 65 mins. 
 
 Requirements: 
 
