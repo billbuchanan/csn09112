@@ -5,7 +5,7 @@ You will answer the questions with either fixed answers, short explainations or 
 
 Time for test: **Thursday, 4 November 2021 **. Time: 65 mins. 
 
-Time slots: 12:30pm-1:45pm (4 Nov 2021), 2pm-3:15pm (4 Nov 2021), and 3:30pm - 4:45pm (4 Nov 2021).
+Time slots: 12:30pm-1:45pm (4 Nov 2021), 2:15pm-3:30pm (4 Nov 2021), and 3:45pm - 5pm (4 Nov 2021).
 
 Requirements: 
 
