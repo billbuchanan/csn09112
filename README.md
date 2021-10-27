@@ -18,7 +18,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 5 | 7 Oct 2021 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | Vulnerability Analysis and IDS |
 | 6 | 14 Oct 2021 | 6. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public/Private Key and Hashing | 
 | 7 | 21 Oct 2021 | 7. Digital Certificates | Certificates [here](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
-| 8 | 28 Oct 2021 | 8 Network Forensics | [here](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics) | Network Forensics | 
+| 8 | 28 Oct 2021 | 8 Network Forensics [here](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics) | Network Forensics [lab](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics/lab) | 
 | 9 | 4 Nov 2021 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  |
 | 10 | 11 Nov 2021 | 10. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week12_splunk) | Splunk Lab |
 | 11 | 18 Nov 2021 | 11. Splunk and Machine Learning  | Splunk and ML Lab |
