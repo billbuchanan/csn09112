@@ -39,7 +39,7 @@ What does the filter of tcp.flags.syn==1 && tcp.flags.ack==1 do?
 Which flags are set at the end of a connection?
 </pre>
 
-L1.2	Download the following file, and open it up in Wireshark [here](httpsfx://asecuritysite.com/log/googleWeb.zip)
+L1.2	Download the following file, and open it up in Wireshark [here](https://asecuritysite.com/log/googleWeb.zip)
 
 In this case a host connects to the Google Web server. Determine the following:
 
