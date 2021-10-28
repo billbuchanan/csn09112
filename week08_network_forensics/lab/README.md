@@ -8,11 +8,11 @@ Aim: To provide a foundation in understanding Ethernet, IP and TCP.
 The demo of this lab is [here](https://youtu.be/FhVN-gZnQq0)
 
 ### Activities
-Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/webpage.zip)
+#### L1.1 Download the following file, and open it up in Wireshark: [here](https://asecuritysite.com/log/webpage.zip)
 
 In this case a host connects to a Web server. Determine the following:
 
-<pre>
+```
 Host src IP address (Hint: Examine the Source IP on Packet 3):
 
 Server src IP address  (Hint: Examine the Dest IP on Packet 3):
@@ -37,13 +37,13 @@ What does the filter of tcp.flags.syn==1 && tcp.flags.ack==0 do?
 What does the filter of tcp.flags.syn==1 && tcp.flags.ack==1 do?
 
 Which flags are set at the end of a connection?
-</pre>
+```
 
-L1.2	Download the following file, and open it up in Wireshark [here](https://asecuritysite.com/log/googleWeb.zip)
+#### L1.2 Download the following file, and open it up in Wireshark [here](https://asecuritysite.com/log/googleWeb.zip)
 
 In this case a host connects to the Google Web server. Determine the following:
 
-<pre>
+```
 Host src IP address:
 Server src IP address of the Web server:
 
@@ -61,11 +61,13 @@ What is the MAC address of the local gateway, and which is the manufacturer of t
 Identify the packets used for the SYN, SYN/ACK and ACK sequence. Which packets are these:
 
 By tracing the TCP stream, can you view the contents of the CSS file? Give an example of some of the text in it?
-</pre>
+```
 
-L1.3	Start capturing network packets on your main network adapter. Next go to intel.com, and access the page. Stop the network capture, and then from your network traffic, determine:
+#### L1.3 Start capturing network packets on your main network adapter. 
 
-<pre>
+Next go to intel.com, and access the page. Stop the network capture, and then from your network traffic, determine:
+
+```
 Your MAC address (and its manufacturer):
 Your IP address:
 
@@ -76,7 +78,7 @@ The source TCP port of your connection:
 The destination TCP port used by the server:
 
 Apart from your network traffic, can you see other traffic from other hosts on the network? If so, which type of network traffic do you see?
-</pre>
+```
 
 ## Lab 7b: HTTP, DNS and FTP
 ### Details
