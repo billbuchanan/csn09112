@@ -15,7 +15,7 @@ The core content is here:
 * YouTube presentation: [here](https://youtu.be/bOQmd6B8jGo).
 * Lecture Slides: [here](https://asecuritysite.com/public/ch12_splunk.pdf).
 * Tutorial: [here](https://asecuritysite.com/public/splunk01.pdf) and [here](https://asecuritysite.com/public/splunk02.pdf). Version with hints and answers [here](https://asecuritysite.com/cyberdata/ch15_02).
-* Access Splunk [here](https://asecuritysite.com:8000/). Contact support@asecuritysite.com for a login.
+* Access Splunk [here](https://asecuritysite.com:8443/). 
 * Test [here](https://asecuritysite.com/tests/tests?sortby=siem).
 
 Interesting in learning more about Splunk? Click [here](https://asecuritysite.com/cyberdata/).
