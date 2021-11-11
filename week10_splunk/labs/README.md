@@ -7,7 +7,7 @@
 
 If you want to see the answers, click [here](https://asecuritysite.com/cyberdata/ch15_02).
 
-Using Splunk at [link](https://asecuritysite.com:8000) determine the following [PDF](https://asecuritysite.com/public/splunk01.pdf). You will be allocated a login.
+Using Splunk at [link](https://asecuritysite.com:8443) determine the following [PDF](https://asecuritysite.com/public/splunk01.pdf). You will be allocated a login.
 
 * What is the start date of the log? 
 * How many log events are in *mailsv/secure.log  (Hint: Click the Search tab, and click on Data Summary, and select Data Sources)? 
