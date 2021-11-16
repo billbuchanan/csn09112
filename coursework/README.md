@@ -8,8 +8,10 @@ Author: Bill Buchanan
 You can download the Bot onto the Ubuntu machine using:
 
 <pre>
-wget https://github.com/billbuchanan/csn09112/blob/master/coursework/Archive.zip
-unzip Archive.zip
+wget https://github.com/billbuchanan/csn09112/blob/master/coursework/botnet.exe.gz
+gunzip botnet.exe.gz
+wget https://github.com/billbuchanan/csn09112/blob/master/coursework/controller.exe.gz
+gunzip controller.exe.gz
 </pre>
 
 <p>You can test the bot and controller to capture and test your traces or use vSoC. For vSoC, go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
