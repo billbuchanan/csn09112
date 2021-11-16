@@ -24,6 +24,13 @@ Take a note of the IP address of the controller (W.X.Y.Z). Now got your Ubuntu m
 mono bot.exe W.X.Y.Z
 </pre>
 
+
+```
+Bot Version 4.0 - 2021/2022
+Please run with bot w.x.y.z, where w.x.y.z is the address of your controller.
+Version 4.0
+```
+
 The bot and the controller should connect to each other.
 
 ## Outline Requirements
