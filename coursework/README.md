@@ -12,7 +12,7 @@ wget https://github.com/billbuchanan/csn09112/blob/master/coursework/Archive.zip
 unzip Archive.zip
 </pre>
 
-<p>Go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
+<p>You can test the bot and controller to capture and test your traces or use vSoC. For vSoC, go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
 
 <pre>
 mono controller.exe
@@ -41,12 +41,12 @@ The bot and the controller should connect to each other.
 
 ## Outline Requirements
 
-Botnets are a particular problem, where bot agents may infect machines inside an organisation’s network and connect back to a botnet controller out on the Internet, to receive commands and undertake malicious activities. The focus of this coursework is to create a virtualized testbed environment to analyse a particular botnet agent and the communications to its controller, to create and test a detection system to detect its activities, and then to mitigate its use in future with some firewall based defences.
+Botnets are a particular problem, and where bot agents may infect machines inside an organisation’s network and connect back to a botnet controller that can receive commands and undertake malicious activities. The focus of this coursework is to create a virtualized testbed environment to analyse a particular botnet agent and the communications to its controller, and then to create and test a detection system to detect its activities. Tasks include:
 
 * Configure a working perimeter network topology with a firewall, DMZ, and host systems as a testbed for the coursework. 
 * Analyse the operation of the running Bot agent and Botnet controller, including any network scanning by the bot, activity on the host, network connections created, and any communications between the bot and controller.
 * Create and test a detection system for the Botnet agent and controller using an IDS sensor.
-* Create a closed perimeter, firewall policy configuration to prevent future communications for this particular botnet, but allow certain valid traffic, specified in next section.
+* Create a closed perimeter, firewall policy configuration to prevent future communications for this particular botnet, but allow certain valid traffic.
 
 Your network architecture similar to that shown in Figure 1 should be created with the VMs provided using two private address spaces. The Bot agent should be run from the internal trusted Private network.
 
