@@ -18,6 +18,12 @@ unzip Archive.zip
 mono controller.exe
 </pre>
 
+The output should show the form of:
+
+```
+Bot Controller Version 4.0
+```
+
 Take a note of the IP address of the controller (W.X.Y.Z). Now got your Ubuntu machine, and run:</p>
 
 <pre>
