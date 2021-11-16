@@ -84,7 +84,7 @@ A brief literature review towards your botnet analysis method and IDS rule devel
 Configure a working perimeter network topology with a firewall, DMZ, and host systems as a testbed for the coursework. For example annotated network diagram, and some basic configuration/connectivity testing shown and discussed briefly.
 Discuss methods informed from the research, and aply these to analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, possible host activities on the victim, communications between the bot and controller, and anyother bot behaviour. For example screen shots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with brief discussion.
 - Dynamic analysis of bot and botnet controller could include identifying botnet network connections and traffic, filtering out unrelated traffic using appropriate tools, identify types of traffic generated, identify specific botnet commands and responses, decoing botnet traffic if necessary. Challenge: create your own bot traffic so individual command can be sent and analysed separately. 
-- Static Analysis Challenge: To verify your findings from the dynamic analysis of the botnet behavior, try to reverse engineer the bot agent code and statically analyse the code.
+
 <p align="right">[40 marks]</p>
 
 **Prototype Defenses Implementation and Testing [30 marks]**
