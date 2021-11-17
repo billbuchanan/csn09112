@@ -208,7 +208,7 @@ In this section we will analyse some of the models used to detect anomalies. The
 
 
 
-1. Select the Search tab, and in the search facility, enter the following [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20LocalOutlierFactor%20petal_length%20petal_width%20n_neighbors%3D10%20algorithm%3Dkd_tree%20metric%3Dminkowski%20p%3D1%20contamination%3D0.14%20leaf_size%3D10&sid=1593689150.93&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics">here</a>]:
+1. Select the Search tab, and in the search facility, enter the following [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20LocalOutlierFactor%20petal_length%20petal_width%20n_neighbors%3D10%20algorithm%3Dkd_tree%20metric%3Dminkowski%20p%3D1%20contamination%3D0.14%20leaf_size%3D10&sid=1593689150.93&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics">here</a>]:
 
 ```
 | inputlookup iris.csv
@@ -231,7 +231,7 @@ What is the value assigned for inliers:
 
 
 
-2. Next we will run a One Class SVM model for anomaly detection [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20OneClassSVM%20*%20kernel%3D%22poly%22%20nu%3D0.5%20coef0%3D0.5%20gamma%3D0.5%20tol%3D1%20degree%3D3%20shrinking%3Df%20into%20TESTMODEL_OneClassSVM&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689268.98)
+2. Next we will run a One Class SVM model for anomaly detection [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20OneClassSVM%20*%20kernel%3D%22poly%22%20nu%3D0.5%20coef0%3D0.5%20gamma%3D0.5%20tol%3D1%20degree%3D3%20shrinking%3Df%20into%20TESTMODEL_OneClassSVM&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689268.98)
 
 ```
 | inputlookup iris.csv
@@ -249,7 +249,7 @@ Using petal_length and petal_width for the identification of an anomaly, determi
 
 
 
-3. We now will use a new data setup (call_center.csv) and run the Density Function method [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20call_center.csv%0A%7C%20fit%20DensityFunction%20count%20by%20%22source%22%20into%20mymodel&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689305.99" target="_blank">here</a>]:
+3. We now will use a new data setup (call_center.csv) and run the Density Function method [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20call_center.csv%0A%7C%20fit%20DensityFunction%20count%20by%20%22source%22%20into%20mymodel&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689305.99)
 
 ```
 | inputlookup call_center.csv
@@ -270,7 +270,7 @@ Outline one possible anomaly:
 
 ### Prediction (Categories)
 
-4. We will go back to our Iris dataset, and run AutoPrediction [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20AutoPrediction%20random_state%3D42%20petal_length%20from%20*%20max_features%3D0.1%20into%20auto_classify_model%20test_split_ratio%3D0.3%20random_state%3D42&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689367.100" target="_blank">here</a>]:
+4. We will go back to our Iris dataset, and run AutoPrediction [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20AutoPrediction%20random_state%3D42%20petal_length%20from%20*%20max_features%3D0.1%20into%20auto_classify_model%20test_split_ratio%3D0.3%20random_state%3D42&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689367.100)
 
 ```
 | inputlookup iris.csv
@@ -282,7 +282,7 @@ Can you now train for sepal_length using sepal_width and petal_length. Outline o
 
 
 
-5. Now apply the BernoulliNB prediction model [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20BernoulliNB%20petal_length%20from%20*%20into%20TESTMODEL_BernoulliNB%20alpha%3D0.5%20binarize%3D0%20fit_prior%3Df&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689413.101" target="_blank">here</a>]:
+5. Now apply the BernoulliNB prediction model [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20BernoulliNB%20petal_length%20from%20*%20into%20TESTMODEL_BernoulliNB%20alpha%3D0.5%20binarize%3D0%20fit_prior%3Df&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689413.101)
 
 ```
 | inputlookup iris.csv
@@ -295,7 +295,7 @@ Can you now train for petal_length using sepal_width and species. Outline one pr
 
 
 
-6. Now apply the DecisionTreeClassifier prediction model [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20DecisionTreeClassifier%20petal_length%20from%20*%20into%20sla_%20MOD&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689514.102" target="_blank">here</a>]:
+6. Now apply the DecisionTreeClassifier prediction model [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20DecisionTreeClassifier%20petal_length%20from%20*%20into%20sla_%20MOD&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689514.102)
 
 ```
 | inputlookup iris.csv
@@ -307,7 +307,7 @@ Can you now train for petal_length using petal_width and species. Outline one pr
 <br /><br />
 
 
-7. Now apply the GaussianNB [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20GaussianNB%20petal_length%20from%20*%20into%20MOD&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689555.103" target="_blank">here</a>]:
+7. Now apply the GaussianNB [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20GaussianNB%20petal_length%20from%20*%20into%20MOD&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689555.103)
 
 ```
 | inputlookup iris.csv
@@ -319,7 +319,7 @@ Can you now train for petal_length using petal_width and species. Outline one pr
 
 
 
-8. Now apply the GradientBoostingClassifier [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20GradientBoostingClassifier%20petal_length%20from%20*%20into%20MOD&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689603.104" target="_blank">here</a>]:
+8. Now apply the GradientBoostingClassifier [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20GradientBoostingClassifier%20petal_length%20from%20*%20into%20MOD&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689603.104)
 
 ```
 | inputlookup iris.csv
@@ -333,7 +333,7 @@ Can you now train for petal_length using petal_width and species. Outline one pr
 
 ### Prediction (Numeric)
 
-9. In the following we will use the track_day.csv data source. Perform an AutoPrediction model on batteryVoltage using longitudeGForce, speed and verticalGForce [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20AutoPrediction%20batteryVoltage%20target_type%3Dnumeric%20test_split_ratio%3D0.7%20from%20*%20into%20PM&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689674.105" target="_blank">here</a>]:
+9. In the following we will use the track_day.csv data source. Perform an AutoPrediction model on batteryVoltage using longitudeGForce, speed and verticalGForce [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20AutoPrediction%20batteryVoltage%20target_type%3Dnumeric%20test_split_ratio%3D0.7%20from%20*%20into%20PM&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689674.105)
 
 ```
 | inputlookup track_day.csv
@@ -347,7 +347,7 @@ Outline one prediction for batteryVoltage (and the error from the actual value):
 
 
 
-10. Perform an DecisionTreeRegressor model on batteryVoltage using longitudeGForce, speed and verticalGForce [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20DecisionTreeRegressor%20batteryVoltage%20from%20*%20into%20PM&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689726.106" target="_blank">here</a>]:
+10. Perform an DecisionTreeRegressor model on batteryVoltage using longitudeGForce, speed and verticalGForce [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20DecisionTreeRegressor%20batteryVoltage%20from%20*%20into%20PM&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689726.106)
 
 ```
 | inputlookup track_day.csv
@@ -359,7 +359,7 @@ Outline one prediction for batteryVoltage (and the error from the actual value):
 
 
 
-11. Perform an ElasticNet model on batteryVoltage using longitudeGForce, speed and verticalGForce [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20ElasticNet%20batteryVoltage%20from%20*%20into%20EN&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689766.107" target="_blank">here</a>]:
+11. Perform an ElasticNet model on batteryVoltage using longitudeGForce, speed and verticalGForce [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20ElasticNet%20batteryVoltage%20from%20*%20into%20EN&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689766.107)
 
 ```
 | inputlookup track_day_missing.csv
@@ -371,7 +371,7 @@ Outline one prediction for batteryVoltage (and the error from the actual value):
 
 
 
-12. Perform an GradientBoostingRegressor model on batteryVoltage using longitudeGForce, speed and verticalGForce [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20GradientBoostingRegressor%20batteryVoltage%20from%20*%20into%20GB&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689818.108" target="_blank">here</a>]:
+12. Perform an GradientBoostingRegressor model on batteryVoltage using longitudeGForce, speed and verticalGForce [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20GradientBoostingRegressor%20batteryVoltage%20from%20*%20into%20GB&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689818.108)
 
 ```
 | inputlookup track_day_missing.csv
@@ -385,7 +385,7 @@ Outline one prediction for batteryVoltage (and the error from the actual value):
 
 ### Clustering
 
-13. In the following we will use the iris.csv data source. Perform Birch clustering model on petal_length for three clusters [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20Birch%20petal_length%20k%3D3%20partial_fit%3Dtrue%20into%20MOD2&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689910.110" target="_blank">here</a>]:
+13. In the following we will use the iris.csv data source. Perform Birch clustering model on petal_length for three clusters [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20Birch%20petal_length%20k%3D3%20partial_fit%3Dtrue%20into%20MOD2&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593689910.110)
 
 ```
 | inputlookup iris.csv
@@ -398,7 +398,7 @@ Outline one value from each cluster:
 
 
 
-14. In the following we will use the iris.csv data source. Perform DBSCAN clustering model on petal_length for three clusters [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20DBSCAN%20petal_length%20min_samples%3D4&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690004.112" target="_blank">here</a>]:
+14. In the following we will use the iris.csv data source. Perform DBSCAN clustering model on petal_length for three clusters [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20DBSCAN%20petal_length%20min_samples%3D4&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690004.112)
 
 ```
 | inputlookup iris.csv
@@ -413,7 +413,7 @@ Now train on species, how many clusters are created, and how is the clustering s
 
 
 
-15. In the following we will use the iris.csv data source. Perform GMeans clustering model on petal_length for three clusters [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20GMeans%20petal_length%20random_state%3D42%20into%20MOD3&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690050.113" target="_blank">here</a>]:
+15. In the following we will use the iris.csv data source. Perform GMeans clustering model on petal_length for three clusters [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20GMeans%20petal_length%20random_state%3D42%20into%20MOD3&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690050.113)
 
 ```
 | inputlookup iris.csv
@@ -425,7 +425,7 @@ How many clusters have been created:
 
 
 
-16. In the following we will use the iris.csv data source. Perform GMeans clustering model on petal_length for three clusters [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20KMeans%20%20petal_length%20k%3D3%20into%20MOD4&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690100.114" target="_blank">here</a>]:
+16. In the following we will use the iris.csv data source. Perform GMeans clustering model on petal_length for three clusters [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20KMeans%20%20petal_length%20k%3D3%20into%20MOD4&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690100.114)
 
 ```| inputlookup iris.csv
 | fit KMeans  petal_length k=3 into MOD4
@@ -437,7 +437,7 @@ How many clusters have been created:
 
 
 ### Feature Extraction
-17. In the following we will use the FieldSelector method to determine the best feature selector for batteryVoltage given engineCoolantTemperature, engineSpeed, lateralGForce,longitudeGForce, speed [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20FieldSelector%20batteryVoltage%20from%20engineCoolantTemperature%2C%20engineSpeed%2C%20lateralGForce%2ClongitudeGForce%2C%20speed%20type%3Dnumeric&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690196.116" target="_blank">here</a>]:
+17. In the following we will use the FieldSelector method to determine the best feature selector for batteryVoltage given engineCoolantTemperature, engineSpeed, lateralGForce,longitudeGForce, speed [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20FieldSelector%20batteryVoltage%20from%20engineCoolantTemperature%2C%20engineSpeed%2C%20lateralGForce%2ClongitudeGForce%2C%20speed%20type%3Dnumeric&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690196.116)
 
 ```
 | inputlookup track_day.csv
@@ -450,7 +450,7 @@ Best feature:
 
 
 
-18. Now we find the best feature for batteryVoltage for engineSpeed, lateralGForce and longitudeGForce [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20FieldSelector%20batteryVoltage%20from%20engineSpeed%2C%20lateralGForce%2ClongitudeGForce%2C%20speed%20type%3Dnumeric&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690304.117" target="_blank">here</a>]:
+18. Now we find the best feature for batteryVoltage for engineSpeed, lateralGForce and longitudeGForce [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20FieldSelector%20batteryVoltage%20from%20engineSpeed%2C%20lateralGForce%2ClongitudeGForce%2C%20speed%20type%3Dnumeric&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690304.117)
 
 ```
 | inputlookup track_day.csv
@@ -463,7 +463,7 @@ Best feature:
 
 
 
-19. Now for vechicleType (and which is a category), determine its best match for engineCoolantTemperature, engineSpeed, lateralGForce,longitudeGForce, and speed [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20FieldSelector%20vehicleType%20from%20engineCoolantTemperature%2C%20engineSpeed%2C%20lateralGForce%2ClongitudeGForce%2C%20speed%20type%3Dcategorical&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690348.118" target="_blank">here</a>]:
+19. Now for vechicleType (and which is a category), determine its best match for engineCoolantTemperature, engineSpeed, lateralGForce,longitudeGForce, and speed [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20FieldSelector%20vehicleType%20from%20engineCoolantTemperature%2C%20engineSpeed%2C%20lateralGForce%2ClongitudeGForce%2C%20speed%20type%3Dcategorical&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690348.118)
 
 ```
 | inputlookup track_day.csv
@@ -476,7 +476,7 @@ Best feature:
 
 
 
-20. Within the best feature, we can use the HashingVectorization to analyse the difference between strings (using N-grams). Run the following search [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20passwords.csv%0A%7C%20fit%20HashingVectorizer%20Passwords%20ngram_range%3D1-2%20k%3D10&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690411.119" target="_blank">here</a>]:
+20. Within the best feature, we can use the HashingVectorization to analyse the difference between strings (using N-grams). Run the following search [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20passwords.csv%0A%7C%20fit%20HashingVectorizer%20Passwords%20ngram_range%3D1-2%20k%3D10&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690411.119)
 
 ```
 | inputlookup passwords.csv
@@ -490,7 +490,7 @@ For the tokens tried, which ones have been successful in finding password matche
 
 
 
-21. The ICA (Independent component analysis) method is used to reduce the number of dimensions in the data. Run the following search [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20ICA%20batteryVoltage%2C%20engineSpeed%2C%20engineCoolantTemperature%09%20n_components%3D2%20as%20IC&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690452.120" target="_blank">here</a>]:
+21. The ICA (Independent component analysis) method is used to reduce the number of dimensions in the data. Run the following search [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20ICA%20batteryVoltage%2C%20engineSpeed%2C%20engineCoolantTemperature%09%20n_components%3D2%20as%20IC&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690452.120)
 
 ```
 | inputlookup track_day.csv
@@ -504,7 +504,7 @@ What happens when you change n_components to 1:
 
 
 
-22.  We can do the same reduction with PCA. Run the following search [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20KernelPCA%20batteryVoltage%2C%20engineSpeed%2C%20engineCoolantTemperature%20k%3D2%20gamma%3D0.001%20as%20PCA&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690503.121" target="_blank">here</a>]:
+22.  We can do the same reduction with PCA. Run the following search [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20KernelPCA%20batteryVoltage%2C%20engineSpeed%2C%20engineCoolantTemperature%20k%3D2%20gamma%3D0.001%20as%20PCA&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690503.121)
 
 
 ```
@@ -518,7 +518,7 @@ What do you observe from the output:
 What happens when you change the k to 1:
 
 
-23. NPR (Normalized Perlich Ratio) is useful in converting categorical fields into numeric values [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20NPR%20vehicleType%20%20from%20engineSpeed%20%20as%20npr01&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690576.122" target="_blank">here</a>]:
+23. NPR (Normalized Perlich Ratio) is useful in converting categorical fields into numeric values [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20NPR%20vehicleType%20%20from%20engineSpeed%20%20as%20npr01&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690576.122)
 
 ```
 | inputlookup track_day.csv
@@ -530,7 +530,7 @@ What do you observe from the output:
 
 
 
-24. Principal Component Analysis (PCA) reduce the number of fields in the data. Run the following search [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20PCA%20engineCoolantTemperature%2C%20engineSpeed%2C%20lateralGForce%2Cspeed%20k%3D2%20as%20pca01&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690710.123" target="_blank">here</a>]:
+24. Principal Component Analysis (PCA) reduce the number of fields in the data. Run the following search [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20PCA%20engineCoolantTemperature%2C%20engineSpeed%2C%20lateralGForce%2Cspeed%20k%3D2%20as%20pca01&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690710.123)
 
 ```
 | inputlookup track_day.csv
@@ -542,7 +542,7 @@ What do you observe from the output:
 
 
 
-25. TF-IDF (Term Frequency-Inverse Document Frequency) converts raw text data into a matrix, and can be used to find words within documents. Run the following search [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20TFIDF%20vehicleType%20ngram_range%3D1-2%20max_df%3D0.6%20min_df%3D0.2%20stop_words%3Denglish%20as%20tf01&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690755.124" target="_blank">here</a>]:
+25. TF-IDF (Term Frequency-Inverse Document Frequency) converts raw text data into a matrix, and can be used to find words within documents. Run the following search [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day.csv%0A%7C%20fit%20TFIDF%20vehicleType%20ngram_range%3D1-2%20max_df%3D0.6%20min_df%3D0.2%20stop_words%3Denglish%20as%20tf01&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690755.124)
 
 ```| inputlookup track_day.csv
 | fit TFIDF vehicleType ngram_range=1-2 max_df=0.6 min_df=0.2 stop_words=english as tf01
@@ -554,7 +554,7 @@ What do you observe from the output:
 
 
 ### Feature Extraction
-25. We can Imputer to replace data that is missing. Enter the following search [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20Imputer%20batteryVoltage&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690795.125" target="_blank">here</a>]:
+25. We can Imputer to replace data that is missing. Enter the following search [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20Imputer%20batteryVoltage&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690795.125)
 
 ```
 | inputlookup track_day_missing.csv
@@ -580,7 +580,7 @@ Outline the result:
 
 
 
-27. Now try the ScandardScalar [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20RobustScaler%20*&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690835.126" target="_blank">here</a>]:
+27. Now try the ScandardScalar [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20track_day_missing.csv%0A%7C%20fit%20RobustScaler%20*&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690835.126)
 
 ```
 | inputlookup track_day_missing.csv
@@ -590,7 +590,7 @@ Outline the result:
 
 
 ### Forecasting
-28. A common method we have is to forecast over time. The StateSpaceForecast method is based on Kalman filters. Run the following query [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20app_usage.csv%0A%7C%20fit%20StateSpaceForecast%20CRM%20ERP%20Expenses%20holdback%3D12%20into%20SF&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690880.127" target="_blank">here</a>]:
+28. A common method we have is to forecast over time. The StateSpaceForecast method is based on Kalman filters. Run the following query [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20app_usage.csv%0A%7C%20fit%20StateSpaceForecast%20CRM%20ERP%20Expenses%20holdback%3D12%20into%20SF&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690880.127)
 
 ```| inputlookup app_usage.csv
 | fit StateSpaceForecast CRM ERP Expenses holdback=12 into SF
@@ -601,9 +601,10 @@ Outline the result:
 
 
 
-29. Finally, we can use the ARIMA model for forecasting. Perform the following search [link]("https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20logins.csv%0A%7C%20fit%20ARIMA%20_time%20logins%20holdback%3D0%20conf_interval%3D95%20order%3D0-0-0%20forecast_k%3D5%20as%20AR&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690918.128" target="_blank">here</a>]:
+29. Finally, we can use the ARIMA model for forecasting. Perform the following search [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20logins.csv%0A%7C%20fit%20ARIMA%20_time%20logins%20holdback%3D0%20conf_interval%3D95%20order%3D0-0-0%20forecast_k%3D5%20as%20AR&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics&sid=1593690918.128)
 
-```| inputlookup logins.csv
+```
+| inputlookup logins.csv
 | fit ARIMA _time logins holdback=0 conf_interval=95 order=0-0-0 forecast_k=5 as AR
 ```
 
