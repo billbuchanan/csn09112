@@ -208,7 +208,7 @@ In this section we will analyse some of the models used to detect anomalies. The
 
 
 
-1. Select the Search tab, and in the search facility, enter the following [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20LocalOutlierFactor%20petal_length%20petal_width%20n_neighbors%3D10%20algorithm%3Dkd_tree%20metric%3Dminkowski%20p%3D1%20contamination%3D0.14%20leaf_size%3D10&sid=1593689150.93&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics">here</a>]:
+1. Select the Search tab, and in the search facility, enter the following [link](https://asecuritysite.com:8443/en-GB/app/Splunk_ML_Toolkit/search?q=%7C%20inputlookup%20iris.csv%0A%7C%20fit%20LocalOutlierFactor%20petal_length%20petal_width%20n_neighbors%3D10%20algorithm%3Dkd_tree%20metric%3Dminkowski%20p%3D1%20contamination%3D0.14%20leaf_size%3D10&sid=1593689150.93&display.page.search.mode=smart&dispatch.sample_ratio=1&workload_pool=&earliest=-24h%40h&latest=now&display.page.search.tab=statistics&display.general.type=statistics"):
 
 ```
 | inputlookup iris.csv
