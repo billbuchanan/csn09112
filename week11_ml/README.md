@@ -2,11 +2,13 @@
 
 # Splunk
 
-## Objectives
-The key objectives of this unit are to:
+## Content
+The core content is here:
 
-* Understand how to perform a search with SPL (Search Processing Language) in Splunk.
-* Understand how to perform key searches within a data set.
+* YouTube presentation: [here](https://youtu.be/MYg1dhp1rzo).
+* Slides: [here](https://asecuritysite.com/public/ch13_splunk_ml.ppsx). Data set [here](https://repl.it/@billbuchanan/deleteme#main.py).
+* Step-by-step: [here](https://asecuritysite.com/public/ml.pdf) and [here](https://asecuritysite.com/public/ch13_tut01.pdf).
+* Access Splunk [here](https://asecuritysite.com:8443/). Contact support@asecuritysite.com for a login.
 
 
 
