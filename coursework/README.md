@@ -7,18 +7,28 @@ Author: Bill Buchanan
 ## Running the bot and controller
 You can download the Bot onto the Ubuntu machine using:
 
-<pre>
+```
 wget https://github.com/billbuchanan/csn09112/blob/master/coursework/botnet.exe.gz
 gunzip botnet.exe.gz
 wget https://github.com/billbuchanan/csn09112/blob/master/coursework/controller.exe.gz
 gunzip controller.exe.gz
-</pre>
+```
 
-<p>You can test the bot and controller to capture and test your traces or use vSoC. For vSoC, go to your Windows machine on the DMZ, and download the ZIP file (Archive.zip). Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
+or:
 
-<pre>
+```
+wget https://asecuritysite.com/coursework_b.gz
+gunzip coursework_b.gz
+wget https://asecuritysite.com/coursework_c.gz
+gunzip coursework_c.gz
+```
+
+
+You can test the bot and controller to capture and test your traces on your computer or use vSoC. For vSoC, go to your Windows machine on the DMZ, and download the ZIP file . Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
+
+```
 mono controller.exe
-</pre>
+```
 
 The output should show the form of:
 
