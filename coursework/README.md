@@ -45,14 +45,13 @@ The bot and the controller should connect to each other.
 
 Botnets are a particular problem, and where bot agents may infect machines inside an organisation’s network and connect back to a botnet controller that can receive commands and undertake malicious activities. The focus of this coursework is to create a virtualized testbed environment to analyse a particular botnet agent and the communications to its controller, and then to create and test a detection system to detect its activities. Tasks include:
 
-* Configure a working perimeter network topology with a firewall, DMZ, and host systems as a testbed for the coursework. 
 * Analyse the operation of the running Bot agent and Botnet controller, including any network scanning by the bot, activity on the host, network connections created, and any communications between the bot and controller.
 * Create and test a detection system for the Botnet agent and controller using an IDS sensor.
-* Create a closed perimeter, firewall policy configuration to prevent future communications for this particular botnet, but allow certain valid traffic.
+* Configure a working perimeter network topology with a firewall, DMZ, and host systems as a testbed for the coursework.  
 
 Your network architecture similar to that shown in Figure 1 should be created with the VMs provided using two private address spaces. The Bot agent should be run from the internal trusted Private network.
 
-Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then use this architecture as your testbed to thoroughly investigate and analyse the Botnet activity. Try to plan and be scientific in the experimental method you use and don’t simply run it once and report. Static analysis can then be used to compliment the dynamic analysis. After this, design an Intrusion Detection System (IDS) which will detect the various bot activities, leading to an implementation of a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. If you have time investigate tuning the rules. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Create a basic perimeter firewall solution, based around the current topology to provide a public web server from the external network, and Internet access from the internal network.
+Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then use this architecture as your testbed to thoroughly investigate and analyse the Botnet activity. Try to plan and be scientific in the experimental method you use and don’t simply run it once and report. Static analysis can then be used to compliment the dynamic analysis. After this, design an Intrusion Detection System (IDS) which will detect the various bot activities, leading to an implementation of a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. If you have time investigate tuning the rules. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Finally, the botnet can be tested within the vSoC environment.
 
 ![Figure 1](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw01.png)
 
@@ -86,7 +85,7 @@ A brief literature review towards your botnet analysis method and IDS rule devel
 **Botnet Analysis [40 marks]**
 
 Configure a working perimeter network topology with a firewall, DMZ, and host systems as a testbed for the coursework. For example annotated network diagram, and some basic configuration/connectivity testing shown and discussed briefly.
-Discuss methods informed from the research, and aply these to analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, possible host activities on the victim, communications between the bot and controller, and anyother bot behaviour. For example screen shots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with brief discussion.
+Discuss methods informed from the research, and apply these to analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, possible host activities on the victim, communications between the bot and controller, and other bot behaviour. For example, screen shots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with brief discussion.
 - Dynamic analysis of bot and botnet controller could include identifying botnet network connections and traffic, filtering out unrelated traffic using appropriate tools, identify types of traffic generated, identify specific botnet commands and responses, decoing botnet traffic if necessary. Challenge: create your own bot traffic so individual command can be sent and analysed separately. 
 
 <p align="right">[40 marks]</p>
@@ -94,7 +93,7 @@ Discuss methods informed from the research, and aply these to analyse the operat
 **Prototype Defenses Implementation and Testing [30 marks]**
 
 Apply method from the research, which should define an outline prototype implementation of the defences.
-- From your botnet analysis, create and test a basic prototype detection system for the Botnet agent and controller using an IDS sensor. Create IDS rules/signatures to detect the bot activity and not excessive many false positives. This section could show the Snort rules with descriptions of how they work, and screen shots of the testing/outputs and discussion on this.
+- From your botnet analysis, create and test a basic prototype detection system for the Botnet agent and controller using an IDS sensor. Create IDS rules/signatures to detect the bot activity and not excessively many false positives. This section could show the Snort rules with descriptions of how they work, and screen shots of the testing/outputs and discussion on this.
 - Create a closed perimeter firewall configuration to prevent/highlight future communications for this particular botnet, but allow certain valid traffic (specified in requirements spec’). Again show the configuration/rules and testing using screen shot snippets with brief explanation, and any discussion on the findings/outputs.
 <p align="right">[30 marks]</p>
 
