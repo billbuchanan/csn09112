@@ -3,9 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test. Note there will be no lectures in Week 9.
 
-Time for test: Thursday, 4 November 2021. Time: 65 mins. 
-
-Time slots: 29 July 2022 (Time to be arranged).
+Time for test: Friday, 29 July 2022
 
 Requirements: 
 
