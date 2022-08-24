@@ -8,7 +8,7 @@ The key objectives of this unit are:</p>
 * Provide an introduction to key network security devices including proxy servers, and firewalls.
 
 ## Lecture
-The test for this unit is [here](https://www.youtube.com/watch?v=US2yqycKQik).
+The lecture for this unit is [here](https://www.youtube.com/watch?v=US2yqycKQik).
 
 ## Test
 The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=sfc06).
