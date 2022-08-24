@@ -9,7 +9,7 @@ The key objectives of this unit are:</p>
 * Outline some typical detection procedures, such as for ping sweeps.</li>
 
 ## Lecture
-The lecture is [here](https://www.youtube.com/watch?v=IguN0dFZ23I)
+The lecture is [here](https://www.youtube.com/watch?v=lDTBKWtrChc&feature=emb_title)
 
 ## Lab
 The main lab for this session is:</p>
@@ -29,18 +29,17 @@ There is a fun test at: <a href="https://asecuritysite.com/tests/fun?sortBy=sfc0
 ## Additional
 Snort analyser: <a href="https://asecuritysite.com/forensics/snort2">here</a>
 
-Passwords:
+## Passwords:
 
-<pre>
+```
 Vyatta. User: vyatta, Password: vyatta
 Windows 2003: User: Administrator, Password: napier
 Ubuntu: User: root, password: napier123
 Kali: User: root, password: toor
-</pre>
+```
 
 Software:
 
 * VMWare Fusion or Workstation: https://softcentre.soc.napier.ac.uk/users.cgi
 * VPN: https://napier-sslvpn.napier.ac.uk/
-
 
