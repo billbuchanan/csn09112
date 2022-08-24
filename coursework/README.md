@@ -4,6 +4,8 @@
 # CSN09112 - Network Security and Cryptography
 Author: Bill Buchanan
 
+This coursework page will be updated soon.
+
 ## Running the bot and controller
 You can download the Bot onto the Ubuntu machine using:
 
