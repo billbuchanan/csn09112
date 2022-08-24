@@ -7,6 +7,9 @@ The key objectives of this unit are:</p>
 * Provide an overview of security devices and infrastructures.
 * Provide an introduction to key network security devices including proxy servers, and firewalls.
 
+## Lecture
+The test for this unit is [here](https://www.youtube.com/watch?v=US2yqycKQik).
+
 ## Test
 The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=sfc06).
 
@@ -18,22 +21,7 @@ The slides for the chapter are [here](https://github.com/billbuchanan/csn09112/b
 ## Additional
 Snort analyser: <a href="https://asecuritysite.com/forensics/snort2">here</a>
 
-VMRC 11.x can be forced to run in legacy mode, which should work with current IS firewall configuration. I’d say this is probably the best workaround to suggest:
-Configure VMware Remote Console 11.x to use the legacy connection mode. To do so, open the VMware preferences file on the host machine and add the following parameters:
-
-```
-pref.preferWebMKS = "FALSE"
-pref.preferWebRemoteDevice = "FALSE"
-```
-
-The preferences file can be found in the following location:
-
-* Windows: %APPDATA%\VMware\preferences.ini
-* macOS (standard install): ~/Library/Preferences/VMware Remote Console/preferences
-* macOS (App Store install):~/Library/Containers/com.vmware.vmrc/Data/Library/Preferences/VMware Remote Console/preferences
-* Linux: ~/.vmware/preferences
-
-Passwords:
+## Passwords:
 
 ```
 Vyatta. User: vyatta, Password: vyatta
