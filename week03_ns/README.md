@@ -11,9 +11,9 @@ The key objectives of this unit are:</p>
 The lecture for this unit is [here](https://www.youtube.com/watch?v=US2yqycKQik).
 
 ## Test
-The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=sfc06).
+The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cyberdata02).
 
-There is a fun test at [here](https://asecuritysite.com/tests/fun?sortBy=sfc06).
+There is a fun test at [here](https://asecuritysite.com/tests/fun?sortBy=cyberdata02).
 
 ## Slides
 The slides for the chapter are [here](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf).
@@ -30,7 +30,7 @@ Ubuntu: User: root, password: napier123
 Kali: User: root, password: toor
 ```
 
-Software:
+## Software:
 
 * VMWare Fusion or Workstation: https://softcentre.soc.napier.ac.uk/users.cgi
 * VPN: https://napier-sslvpn.napier.ac.uk/
