@@ -6,7 +6,7 @@
 The  aim  of  this  lab  is  to  introduce  the  vSoC  virtualisation  teaching  platform  and  VSphere client  access  to  your  own  virtual  machines  and  to  understand  how  to  configure  a  Vyatta firewall  for  NAT  and  firewall  rules, demonstrating  some  fundamentals  around  network security and device configuration. It is accessed from:
 
 ```
-vsoc.napier.ac.uk
+vsoc2.napier.ac.uk
 ```
 
 
@@ -40,7 +40,7 @@ Our first task is to route through the Vyatta firewall to connect two networks. 
 
 10.10.x.0/24		10.10.y.0/24   
 
-Part 1 Demo:  [here](https://youtu.be/ACldSA_uKM0)
+Part 1 Demo:  [here](https://youtu.be/LBTRGbuSUDg)
  
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
 Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)
@@ -56,7 +56,7 @@ Note: Sometimes the network names are different, such as Eth3, Eth4 and Eth5. As
 Use the network diagram in Figure 2, filling in the boxes with your addressing, the allocated networks, subnets, and IP addresses, and use as reference, as you complete the lab.
 
 * Vyatta. 		User: vyatta, Password: vyatta
-* Windows 2003: 	User: Administrator, Password: napier
+* Windows 2003: 	User: Administrator, Password: napier123
 * Ubuntu:		User: root, password: napier123
 * Kali:			User: root, password: toor
 
