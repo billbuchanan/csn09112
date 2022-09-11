@@ -18,11 +18,11 @@ Fundamental areas covered:
 
   
 ## Test
-The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cyberdata04)
-There is a fun test at: [here](https://asecuritysite.com/tests/fun?sortBy=cyberdata04)
+The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cyberdata04).
+There is a fun test at: [here](https://asecuritysite.com/tests/fun?sortBy=cyberdata04).
 
 ## Slides
-The slides for the chapter are [here](https://asecuritysite.com/public/ch04_what_is_data.ppsx)
+The slides for the unit is [here](https://asecuritysite.com/public/ch04_what_is_data.ppsx).
 
 ## Additional
 
