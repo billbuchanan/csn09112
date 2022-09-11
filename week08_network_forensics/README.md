@@ -8,13 +8,14 @@ The key objectives of this chapter are:
 * Define a range of audit sources for network activity.
 
 ## Lecture
-The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY).
+The main lecture is [here](https://www.youtube.com/watch?v=pEfejwf_M80).
 
-The slides for the chapter are [here](https://asecuritysite.com/book_chap08.pdf) and the notes are [here](https://asecuritysite.com/public/unit09.pdf).
+The slides for the chapter are [here](https://asecuritysite.com/public/ch06_networks.ppsx).
 
 ## Test
 
-The test for this unit is [Test](https://asecuritysite.com/tests/tests?sortBy=sfc09).
+The test for this unit is [Test](https://asecuritysite.com/tests/tests?sortBy=cyberdata06).
+
 ## Wireshark Filters
 The following uses the Wireshark display filter [here](https://asecuritysite.com/subjects/chapter20):
 * PNG Filter: http contains "\x89\x50\x4E\x47". Trace with a PNG and PNG filter: [Test](https://asecuritysite.com/forensics/tshark?fname=with_png.pcap&rulesname=http%20contains%20%2289%3A50%3A4E%3A47%22). [Pcap](https://asecuritysite.com/log/with_png.zip).
