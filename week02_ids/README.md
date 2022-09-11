@@ -9,7 +9,7 @@ The key objectives of this unit are:</p>
 * Outline some typical detection procedures, such as for ping sweeps.</li>
 
 ## Lecture
-The lecture is [here](https://www.youtube.com/watch?v=lDTBKWtrChc&feature=emb_title)
+[![Intro](http://img.youtube.com/vi/lDTBKWtrChc/0.jpg)](https://www.youtube.com/watch?v=lDTBKWtrChc "Introduction")
 
 ## Lab
 The main lab for this session is:</p>
