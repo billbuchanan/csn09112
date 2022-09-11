@@ -16,14 +16,14 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 3 | 22 Sept 2022 | 3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>] | Vyatta and Snort. [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs">Link</a>] |
 | 4 | 29 Sept 2022 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | pfSense.  |
 | 5 | 6 Oct 2022 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | Vulnerability Analysis and IDS |
-| 6 | 13 Oct 2022 | 6. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public/Private Key and Hashing | 
-| 7 | 20 Oct 2022 | 7. Digital Certificates | Certificates [here](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
-| 8 | 27 Oct 2022 | 8 Network Forensics [here](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics) | Network Forensics [lab](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics/lab) | 
+| 6 | 13 Oct 2022 | 7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public/Private Key and Hashing | 
+| 7 | 20 Oct 2022 | 9. Digital Certificates | Certificates [here](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
+| 8 | 27 Oct 2022 | 10 Network Forensics [here](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics) | Network Forensics [lab](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics/lab) | 
 | 9 | 3 Nov 2022 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  |
-| 10 | 10 Nov 2022 | 10. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week12_splunk) | Splunk Lab |
-| 11 | 17 Nov 2022 | 11. Splunk and Machine Learning  | Splunk and ML Lab |
-| 12 | 24 Nov 2022 |  12. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week12_tunnelling) | Tunnelling |
-| 13 | 1 Dec 2022 | 13. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab.  | 
+| 10 | 10 Nov 2022 | 11. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week12_splunk) | Splunk Lab |
+| 11 | 17 Nov 2022 | 12. Splunk and Machine Learning  | Splunk and ML Lab |
+| 12 | 24 Nov 2022 |  13. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week12_tunnelling) | Tunnelling |
+| 13 | 1 Dec 2022 | 14. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab.  | 
 | 14 | 8 Dec 2022 |||
 | 15 | 15 Dec 2022 | Hand-in: TBC [<a href="https://github.com/billbuchanan/csn09112/tree/master/coursework">Here</a>]||
 
