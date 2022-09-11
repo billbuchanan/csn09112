@@ -1,6 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-# Unit: 2
+# Unit 2: Introduction Detection Systems
+
 ## Topic Areas
 
 Topic areas include:
