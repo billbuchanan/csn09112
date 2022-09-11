@@ -1,4 +1,5 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+
 # Unit: 3 (Network Security)
 
 ## Topics
@@ -25,10 +26,6 @@ The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cy
 The slides for the chapter are [here](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf)
   
   
-## Additional
 
-* Forensic Analysis: [Here]
-* Binary and hex: [Here]
-* Magic Numbers: [Here]
 
   
