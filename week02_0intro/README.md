@@ -8,14 +8,14 @@ The key objectives of this unit are:
 
 ## Lecture
 
-[![Intro](http://img.youtube.com/vi/iHtJxxLJtdw/0.jpg)](https://www.youtube.com/watch?v=iHtJxxLJtdw "Introduction")
+[![Intro](http://img.youtube.com/vi/V_gStFDBlBA/0.jpg)](https://www.youtube.com/watch?v=V_gStFDBlBA "Introduction")
   
 ## Test
-The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=sfc01)
+The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cyberdata04)
 
-There is a fun test is [here](https://asecuritysite.com/tests/fun?sortBy=sfc01)
+There is a fun test is [here](https://asecuritysite.com/tests/fun?sortBy=cyberdata04)
 
 ## Slides
-The slides for the chapter are [<a href="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lecture/unit02_ids.pdf">here</a>]</p>
+The slides for the chapter are [<a href="https://asecuritysite.com/public/ch04_what_is_data.pdf">here</a>]</p>
 
 
