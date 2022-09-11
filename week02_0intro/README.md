@@ -1,10 +1,16 @@
 ![Logo](https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png)
 
 # Unit 1: Introduction
-## Objectives
-The key objectives of this unit are:
 
-* Provide a basic overview of some key terms.
+## Subjects
+Fundamental areas covered:
+* Data Formats.
+* Unstructured, semi-structured and structured data.
+* Splunk parsing.
+* Bits, bytes, numbers and characters.
+* Encoding and Compression.
+* Magic Numbers.
+
 
 ## Lecture
 
