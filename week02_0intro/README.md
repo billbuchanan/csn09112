@@ -22,6 +22,6 @@ The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cy
 There is a fun test is [here](https://asecuritysite.com/tests/fun?sortBy=cyberdata04)
 
 ## Slides
-The slides for the chapter are [<a href="https://asecuritysite.com/public/ch04_what_is_data.pdf">here</a>]</p>
+The slides for the chapter are [here](https://asecuritysite.com/public/ch04_what_is_data.pdf).
 
 
