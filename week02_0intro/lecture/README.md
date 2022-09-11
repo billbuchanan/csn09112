@@ -18,12 +18,16 @@ Fundamental areas covered:
 
   
 ## Test
-<p>The test for this unit is <a href="https://asecuritysite.com/tests/tests?sortBy=cyberdata04">Test</a>.</p>
-<p>There is a fun test at: <a href="https://asecuritysite.com/tests/fun?sortBy=cyberdata04">Test</a>.</p>
+The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cyberdata04)
+There is a fun test at: [here](https://asecuritysite.com/tests/fun?sortBy=cyberdata04)
 
 ## Slides
 The slides for the chapter are [here](https://asecuritysite.com/public/ch04_what_is_data.ppsx)
 
+## Additional
 
+* Forensic Analysis: [Here](https://asecuritysite.com/tests/tests?sortBy=forensics01)
+* Binary and hex: [Here](https://asecuritysite.com/tests/fun?sortBy=hex01)
+* Magic Numbers: [Here](https://asecuritysite.com/forensics/magic)
 
 
