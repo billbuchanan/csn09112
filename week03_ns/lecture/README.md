@@ -1,27 +1,34 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 # Unit: 3 (Network Security)
 
-## Objectives
-The key objectives of this unit are:
-<ul>
+## Topics
+The key topic areas include:
 
-<li>Provide an overview of security devices and infrastructures.</li>
-<li>Provide an introduction to key network security devices including proxy servers, and firewalls.</li>
+* Data, Information, Knowledge and Wisdom.
+* Information Security and Forensic Computing.
+* Impact and Harm.
+* Risks, Costs and Benefits.
+* Kill Chain Models.
+* Defence Mechanisms.
+* Defence-in-Depth.
 
-</ul>
 
 ## Lecture
 
-<p>The lecture is [<a href="https://www.youtube.com/watch?v=X5_OFQGywWE">here</a>].</p>
+The lecture is [here](https://www.youtube.com/watch?v=X5_OFQGywWE).
 
 ## Test
 
-<p>The test for this unit is [<a href="https://www.asecuritysite.com/tests/tests?sortBy=sfc06">here</a>].</p>
-
+The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cyberdata02)
 
 ## Slides
-<p>The slides for the chapter are [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf">here</a>]
+The slides for the chapter are [here](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/lecture/unit03_nets.pdf)
   
   
+## Additional
+
+* Forensic Analysis: [Here]
+* Binary and hex: [Here]
+* Magic Numbers: [Here]
 
   
