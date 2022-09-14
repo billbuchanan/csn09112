@@ -12,7 +12,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 
 | No | Date | Subject |  Lab |
 | -------|--------|---------|---------|
-| 2 | 15 Sept 2022 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/labs" target="_blank">Lab |
+| 2 | 15 Sept 2022 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/lab" target="_blank">Lab |
 | 3 | 22 Sept 2022 | 3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>] | Vyatta and Snort. [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs">Link</a>] |
 | 4 | 29 Sept 2022 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | pfSense.  |
 | 5 | 6 Oct 2022 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | Vulnerability Analysis and IDS |
