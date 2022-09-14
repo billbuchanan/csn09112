@@ -17,7 +17,7 @@ vsoc2.napier.ac.uk
 
 Vyatta Firewall lab. [Here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/lab01_Vyatta.pdf)
 
-Video: [Here](https://www.youtube.com/watch?v=ACldSA_uKM0) 
+Video: [Here](https://www.youtube.com/watch?v=LBTRGbuSUDg) 
 
 ## Learning activities
 At the end of this lab, you should understand:
@@ -55,8 +55,8 @@ Note: Sometimes the network names are different, such as Eth3, Eth4 and Eth5. As
 
 Use the network diagram in Figure 2, filling in the boxes with your addressing, the allocated networks, subnets, and IP addresses, and use as reference, as you complete the lab.
 
-* Vyatta. 		User: vyatta, Password: vyatta
-* Windows 2003: 	User: Administrator, Password: napier123
+* Vyatta:	 		User: vyos, Password: vyos
+* Windows 7: 	User: Administrator, Password: napier123
 * Ubuntu:		User: root, password: napier123
 * Kali:			User: root, password: toor
 
@@ -80,8 +80,8 @@ Why can’t you ping the other host?
 Note. For Linux uses the commands:
 
 ```
-sudo ifconfig eth11 10.10.x.7 netmask 255.255.255.0 up
-sudo route add default gw 10.10.x.254
+sudo ip addr add 10.10.x.7/24 dev ens32
+sudo ip route add default via 10.10.x.254 dev ens32
 ```
 
 ## Routing between connected networks
