@@ -119,7 +119,7 @@ $ configure
 # set interfaces ethernet eth0 address dhcp
 # set interfaces ethernet eth1 address 10.10.x.254/24
 # set interfaces ethernet eth2 address 10.10.y.254/24
-# set system gateway 10.221.3.254
+# set protocols static route 0.0.0.0/0 next-hop 10.221.3.254
 ```
 
 Before you commit the configuration, can you ping the 10.10.y.7 port from the host on at 10.10.x.7? Yes/No
