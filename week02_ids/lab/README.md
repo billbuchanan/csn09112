@@ -80,6 +80,7 @@ Why can’t you ping the other host?
 Note. For Linux uses the commands:
 
 ```
+sudo ip link set ens32 up
 sudo ip addr add 10.10.x.7/24 dev ens32
 sudo ip route add default via 10.10.x.254 dev ens32
 ```
