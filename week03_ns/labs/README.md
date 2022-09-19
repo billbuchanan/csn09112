@@ -19,7 +19,6 @@ At the end of this lab, you should understand:
 * How to use your own credentials to access the vSoC Cloud.
 * How to remotely configure a Vyatta firewall for zones, and set up the firewalling.
 * Set-up Snort IDS system on a host and create useful rules to detect potential attacks.
-* How to use Wireshark to capture network packets for deep analysis, highlighting certain details such as the difference between the Telnet and SSH services
 
 ## Reflective statements (end-of-exercise):
 What is the most important things when setting up a host, in order that it can connect with other networks?
@@ -28,22 +27,15 @@ What is the most important things when setting up a host, in order that it can c
 Reflect on which types of attacks the firewall rules can mitigate, and which the IDS system can help highlight:
 
 
-Reflect on the amount of work involved in keeping IDS rules up-to-date. Compare with an IPS.
-
 
 # A	Setting up the network
 Figure 1 outlines the setup of the lab for routing, where we will assign three network addresses. Again, Interfaces which are connected to the Vyatta firewall will be able to route, but we have to use NAT to allow the DMZ and private networks to connect to the public network.
 
 Our first task is to route through the Vyatta firewall to connect two networks. In the lab you will be assigned two networks in the form:
 
-172.16.x.0/24	172.16.y.0/24
-
-or you can select:
-
 10.10.x.0/24	10.10.y.0/24
 
-Demo: http://youtu.be/8siHSSs3RQc
-
+Demo: [here](https://youtu.be/SJwlt55f_UU)
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
 Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
@@ -51,12 +43,7 @@ Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.1
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview_172.png)
 Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ) with 172.16.z.z
 
-Log into vSphere and locate the CSN09412 folder. Locate your matriculation number and you will be allocated a group number:
-
-Group Number: 
-
-
-Draw your own network diagram here, by filling-in the blank boxes, with the allocated networks, subnets, and IP addresses:
+Log into vSphere and locate the CSN09412 folder. Locate your matriculation number and you will be allocated two network addresses (for Private and DMZ). Draw your own network diagram here, by filling-in the blank boxes, with the allocated networks, subnets, and IP addresses:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview02.png)
 Figure 2: Your network setup (Note: Gateway address is 10.221.3.254)
@@ -70,20 +57,20 @@ We typically don’t use the console terminal of a firewall for configuration. I
 
 ```
 $ configure
-# set interfaces ethernet eth1 address 172.16.x.254/24
-# set system gateway 10.221.3.254
+# set interfaces ethernet eth2 address 10.10.y.254/24
+# set protocols static route 0.0.0.0/0 next-hop 10.221.3.254
 ```
 
-and then start the Telnet server on the Vyatta firewall:
+and then start the SSH server on the Vyatta firewall:
 
 ```
-# set service telnet
+# set service ssh
 ```
 
 Check the configuration using:
 
 ```
-# show config
+# show 
 # show interfaces
 # show service
 ```
@@ -97,18 +84,18 @@ If everything is correct commit the changes, and review the configuration:
 
  
 
-Now setup your Ubuntu host for networking on the same private network, and so it will be able to connect to the Vyatta firewall using remote admin with the Telnet service:
+Now setup your Kali host on the DMZ for networking, and so it will be able to connect to the Vyatta firewall using remote admin with the Telnet service:
 
 ```
-sudo ifconfig eth11 172.16.x.7 netmask 255.255.255.0 up 
-sudo route add default gw 172.16.x.254
+sudo ifconfig eth0 10.10.x.8 netmask 255.255.255.0 up 
+sudo ip route add default via 10.10.y.254 dev eth0
 ```
 
-Now from Ubuntu, check the connectivity using ping to your local connection and the gateway:
+Now from Kali, check the connectivity using ping to your local connection and the gateway:
 
 Can you ping them: [Yes] [No]
 
-C	Configuring the firewall from Ubuntu
+# C	Configuring the firewall from Ubuntu
 Now we will configure the firewall by creating a file, and copying-and-pasting the config from the file to the firewall via a remote admin session with Telnet.
 
 First download the following config: 
@@ -130,24 +117,23 @@ Note you need to use the VMRC console for copy-and-paste to work. Now edit the �
 
 ```
 set interfaces ethernet eth0 address dhcp
-set interfaces ethernet eth1 address 172.16.x.254/24 
-set interfaces ethernet eth2 address 172.16.y.254/24 
-set system gateway 10.221.3.254
-
+set interfaces ethernet eth1 address 10.10.x.254/24 
+set interfaces ethernet eth2 address 10.10.y.254/24 
+set protocols static route 0.0.0.0/0 next-hop 10.221.3.254
 
 set nat source rule 1 outbound-interface eth0
-set nat source rule 1 source address 172.16.x.0/24 
+set nat source rule 1 source address 10.10.x.0/24 
 set nat source rule 1 translation address masquerade
 
 set nat source rule 2 outbound-interface eth0
-set nat source rule 2 source address 172.16.y.0/24 
-set nat source rule 2 translation address masquerade
+set nat source rule 2 source address 10.10.y.0/24 
+set nat source rule 2 translation address masquerade 
 ```
 
-Now, from Ubuntu, create a Telnet connection to the default gateway on the firewall (172.16.x.254):
+Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254):
 
 ```
-telnet 172.16.x.254
+ssh 10.10.x.254 -l vyos
 ```
 
  
@@ -161,22 +147,25 @@ $ configure
 # commit
 ```
 
-Now setup your Windows host with 172.16.y.7 with a default gateway of 172.16.y.254.
+Now setup your Ubuntu host with 10.10.x.7 with a default gateway of 10.10.x.254, and the Windows 7 host with 10.10.y.7 with a default gateway of 10.10.y.254. Note, on Kali and Ubuntu, you need to edit /etc/resolv.conf and add a nameserver of 10.221.3.254.
 
-From Ubuntu, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8? [Yes][No]
+From Kali, can you ping the local host, the Ubuntu host, the Windows host, the firewall ports, 8.8.8.8 and google.com? [Yes][No]
 
-From Windows, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8? [Yes][No]
+From Windows, can you ping the local host, the Ubuntu host, the Kali host, the Windows host, the firewall ports, 8.8.8.8 and google.com? [Yes][No]
 
-From Ubuntu and Windows, can you access Google.com from a browser [Yes][No]
+From Ubuntu, Kali and Windows, can you access google.com from a browser [Yes][No]
 
 Is everything working on your network? [Yes][No]
 
 
 Now nmap from the Ubuntu host to the Windows host. Which ports are accessible:
 
+[ftp, ssh, http, https] 
 
 
 Now nmap from the Windows host to the Ubuntu host. Which ports are accessible:
+
+[ftp, ssh, http, https, rpcbind, vnc]
 
 
 
@@ -184,7 +173,8 @@ Now nmap from the Windows host to the Ubuntu host. Which ports are accessible:
 Now we will setup firewall rules between zones (networks) connected to the firewall. In this case we will enable all the connections from the private network to the DMZ, but only allow TCP ports 80 and 443 to go through from the DMZ to the private network. All other connections will be disallowed. If we allow the connections from the private and the DMZ, we must remember the connection to allow it back from the DMZ to the private network, thus we define that we accepted established connections.
 Now we will configure the next part of the firewall by copying-and-pasting the config to the firewall. First download the following config:
 
-http://asecuritysite.com/vpart02.txt
+
+https://asecuritysite.com/vpart02.txt
 
 ```
 set zone-policy zone private  description  "Inside" 
@@ -199,7 +189,7 @@ set firewall	name	dmz2private description	"DMZ to private"
 set firewall	name	dmz2private rule	1	action	accept
 set firewall	name	dmz2private rule	1	state	established	enable 
 set firewall	name	dmz2private rule	1	state	related enable
-set firewall    	name  dmz2private rule  10  action accept
+set firewall name  dmz2private rule  10  action accept
 set firewall	name	dmz2private rule	10	destination	port	80,443 
 set firewall	name	dmz2private rule	10	protocol tcp
 
@@ -211,23 +201,29 @@ set	zone-policy	zone	dmz from	private firewall	name	private2dmz
 
 and paste it into your firewall, check the config, and then commit.
 
-From Ubuntu, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8? Outline what you can access:
+From Ubuntu, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8.  Can you now ping?
 
+[Yes/No] 
 
+From Ubuntu, can you access the Web server on Windows from a browser [Yes/No] 
 
-From Windows, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8? Outline what you can access:
+From Windows, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8. Can you now ping?
 
+[Yes/No] 
 
-From Ubuntu and Windows, can you access Google.com from a browser [Yes][No] Now nmap from the Ubuntu host to the Windows host. Which ports are accessible:
+From Windows, can you access the Web server on Ubuntu from a browser [Yes/No]
 
+From Ubuntu and Windows, can you access Google.com from a browser [Yes/No] 
+
+Now nmap from the Ubuntu host to the Windows host. Which ports are accessible:
+
+[http, https]
 
 Now nmap from the Windows host to the Ubuntu host. Which ports are accessible:
 
-
-
+[]
 
 Explain the operation of the network with the new network settings:
-
 
 
 
@@ -251,18 +247,36 @@ set zone-policy	zone	private from public firewall	name	public2private
 commit
 ```
 
-Now create your own config, and allow the DMZ to communicate with the public network.
+You should now be able to connect from the private network to the public one. 
+
+From Ubuntu, can you access 8.8.8.8 with ping? [Yes/No]
+From Ubuntu, can you access google.com with ping? [Yes/No]
+From Ubuntu, can you access google.com from a browser? [Yes/No]
+
+From Windows, can you access 8.8.8.8 with ping? [Yes/No]
+From Windows, can you access google.com with ping? [Yes/No]
+From Windows, can you access google.com from a browser? [Yes/No]
+
+
+Now create your own config and allow the DMZ to communicate with the public network.
 
 You should now be able to connect from the private network to the public one. 
 
+From Ubuntu, can you access 8.8.8.8 with ping? [Yes/No]
+From Ubuntu, can you access google.com with ping? [Yes/No]
+From Ubuntu, can you access google.com from a browser? [Yes/No]
+
+From Windows, can you access 8.8.8.8 with ping? [Yes/No]
+From Windows, can you access google.com with ping? [Yes/No]
+From Windows, can you access google.com from a browser? [Yes/No]
 
 Which configuration commands have you used:
 
 
 
 
-
 Can you connect your Windows host to the Google.com? [Yes][No]
+Can you connect your Ubuntu host to the Google.com? [Yes][No]
 
 
 
