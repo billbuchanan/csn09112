@@ -96,21 +96,16 @@ Now from Kali, check the connectivity using ping to your local connection and th
 
 Can you ping them: [Yes] [No]
 
-# C	Configuring the firewall from Ubuntu
-Now we will configure the firewall by creating a file, and copying-and-pasting the config from the file to the firewall via a remote admin session with Telnet.
+# C	Configuring the firewall from Kali (DMZ)
+Now we will configure the firewall by creating a file, and copying-and-pasting the config from the file to the firewall via a remote admin session with SSH.
 
-First download the following config: 
+First create an empty file named `` vpart01.txt `` and paste the following config from: 
 
-http://asecuritysite.com/vpart01.txt
+https://asecuritysite.com/vpart01.txt
 
 or use:
 ```
-wget http://asecuritysite.com//vpart01.txt
-```
-
-or:
-```
-http://10.221.2.1/vpart01.txt
+wget https://asecuritysite.com/vpart01.txt
 ```
 
 
