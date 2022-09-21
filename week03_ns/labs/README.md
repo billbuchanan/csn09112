@@ -99,7 +99,7 @@ Can you ping them: [Yes] [No]
 # C	Configuring the firewall from Kali (DMZ)
 Now we will configure the firewall by creating a file, and copying-and-pasting the config from the file to the firewall via a remote admin session with SSH.
 
-First create an empty file named `` vpart01.txt `` and paste the following config from: 
+First create an empty file named ``vpart01.txt`` and paste the following config from: 
 
 https://asecuritysite.com/vpart01.txt
 
