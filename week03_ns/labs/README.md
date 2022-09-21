@@ -49,7 +49,7 @@ Log into vSphere and locate the CSN09412 folder. Locate your matriculation numbe
 Figure 2: Your network setup (Note: Gateway address is 10.221.3.254)
 
 # B	Configure Router/Firewall for Remote Administration
-First reset your firewall by either reverting back to the original instance or using the command:
+First reset your firewall by either ``Reverting back to the original instance`` or using the command:
 ```
 load /opt/vyatta/etc/config.boot.default
 ```
