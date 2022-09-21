@@ -99,9 +99,11 @@ Can you ping them: [Yes] [No]
 # C	Configuring the firewall from Kali (DMZ)
 Now we will configure the firewall by creating a file, and copying-and-pasting the config from the file to the firewall via a remote admin session with SSH.
 
-First create an empty file named ``vpart01.txt`` and paste the following config from: 
+Firstly, copy the following configuration from: 
 
 https://asecuritysite.com/vpart01.txt
+
+and paste it to an empty file called ``vpart01.txt``.
 
 or use:
 ```
@@ -109,7 +111,7 @@ wget https://asecuritysite.com/vpart01.txt
 ```
 
 
-Note you need to use the VMRC console for copy-and-paste to work. Now edit the ‘x’ (Private) and ‘y’ (DMZ) values for your network:
+Now edit the ‘x’ (Private) and ‘y’ (DMZ) values for your network. Note you need to use the VMRC console for copy-and-paste to work. If you are using the web console, please execute the commands manually:
 
 ```
 set interfaces ethernet eth0 address dhcp
@@ -126,22 +128,23 @@ set nat source rule 2 source address 10.10.y.0/24
 set nat source rule 2 translation address masquerade 
 ```
 
-Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254):
+Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254) using the ``vyos`` user:
 
 ```
 ssh 10.10.x.254 -l vyos
 ```
 
  
-Now log into the firewall, and go into configuration mode and copy-and-paste the config  from your config file, check the config, and then commit the changes if they are correct:
+Now you are connected to the firewall, you need to log in, go into configuration mode and copy-and-paste the config from your config file, check the config, and then commit the changes if they are correct. If you are using the web console you need to execute the commands above manually:
 
 ```
 Login:
 Password: ******
 $ configure
-# <paste-config>
+# <paste-config> or <execute-the-commands-manually>
 # commit
 ```
+
 
 Now setup your Ubuntu host with 10.10.x.7 with a default gateway of 10.10.x.254, and the Windows 7 host with 10.10.y.7 with a default gateway of 10.10.y.254. Note, on Kali and Ubuntu, you need to edit /etc/resolv.conf and add a nameserver of 10.221.3.254.
 
