@@ -41,12 +41,12 @@ Demo: [here](https://youtu.be/SJwlt55f_UU)
 Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview_172.png)
-Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ) with 172.16.z.z
+Figure 2: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ) with 172.16.z.z
 
 Log into vSphere and locate the CSN09412 folder. Locate your matriculation number and you will be allocated two network addresses (for Private and DMZ). Draw your own network diagram here, by filling-in the blank boxes, with the allocated networks, subnets, and IP addresses:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview02.png)
-Figure 2: Your network setup (Note: Gateway address is 10.221.3.254)
+Figure 3: Your network setup (Note: Gateway address is 10.221.3.254)
 
 # B	Configure Router/Firewall for Remote Administration
 First reset your firewall by either ``Reverting back to the original instance`` or using the command:
@@ -128,7 +128,7 @@ set nat source rule 2 source address 10.10.y.0/24
 set nat source rule 2 translation address masquerade 
 ```
 
-Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254 in the Fig. 2 above) using the ``vyos`` user:
+Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254 in the Figure 2 above) using the ``vyos`` user:
 
 ```
 ssh 10.10.x.254 -l vyos
