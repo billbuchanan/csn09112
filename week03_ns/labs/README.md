@@ -128,7 +128,7 @@ set nat source rule 2 source address 10.10.y.0/24
 set nat source rule 2 translation address masquerade 
 ```
 
-Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254 in the Fig.1 above) using the ``vyos`` user:
+Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254 in the Fig. 2 above) using the ``vyos`` user:
 
 ```
 ssh 10.10.x.254 -l vyos
