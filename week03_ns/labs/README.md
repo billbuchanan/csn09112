@@ -87,7 +87,8 @@ If everything is correct commit the changes, and review the configuration:
 Now setup your Kali host on the DMZ for networking, and so it will be able to connect to the Vyatta firewall using remote admin with the Telnet service:
 
 ```
-sudo ifconfig eth0 10.10.x.8 netmask 255.255.255.0 up 
+sudo ip link set eth0 up
+sudo ip addr add 10.10.y.8/24 dev eth0
 sudo ip route add default via 10.10.y.254 dev eth0
 ```
 
