@@ -281,39 +281,173 @@ Can you connect your Ubuntu host to the Google.com? [Yes][No]
 
 
 # F	Snort IDS
-Snort is one of the most popular intrusion detection systems, where an agent is used to detect network threats. On the Windows and Ubuntu systems, create simple Snort rules files both called mysnort.rules, and add the following rules:
+If this part, you will need open up your firewall. If you want to quickly do this, you can run:
 
 ```
-alert tcp any any -> any any (sid:999;content:"napier"; nocase; msg:"Napier detected") 
-alert tcp any any -> any any (sid:1000;content:"fred"; nocase; msg:"Fred detected")
+$ configuration
+# delete zone-policy
+# commit
 ```
+Make sure you Ubuntu and Windows hosts can connect to each other, and to the Internet. 
 
+## F.1 Snort on Ubuntu
+On Ubuntu, create simple Snort rules files both called mysnort.rules, and add the following rules:
+```
+alert tcp any any -> any 443 (sid:999; msg:"Port 443") 
+alert tcp any any -> any 80 (sid:1000; msg:"Port 80")
+```
 The format of Snort Detection Rules are as follows:
 
 ```
 action protocol src-ip src-port > dest-ip dest-port (packet-payload-params output-msg) 
+
 [pass|log|alert] [ip|icmp|tcp|udp] [any|IP] [any|port] > [any|IP] [any|port] ([content:“searchstring”;], [nocase;], [msg:”alert message”;] sid:ruleid;)
 ```
 
-This should detect outgoing traffic which has the word “napier” or “fred” in the payload. From the Windows system check the Snort options:
+From the Ubuntu, run Snort (used ifconfig to see your interfaces – and you will need to create a folder named log):
 
 ```
-snort -?
+snort -c mysnort.rules -i ens32 -p -l log -K ascii -k none
 ```
 
-Next run Snort using the required network interface: (Use the –W flag to check your available interfaces)
+From Ubuntu, start Snort with the rules to detect access to Port 443 and Port 80. Now access www.google.com, and then stop Snort and examine the log.
+
+Did Snort detect the connection? [Yes/No]
+
+What information is contained in the Snort log:
+
+
+From Windows, start Snort with the rules to detect access to Port 443 and Port 80. Now access www.google.com, and then stop Snort and examine the log.
+
+Did Snort detect the connection? [Yes/No]
+
+What information is contained in the Snort log:
+
+
+
+
+Now we will detect the word “bbc” in the traffic for DNS access. In the Snort rules file, add another rule of:
 
 ```
-snort -c mysnort.rules -i 1 -p -l log -K ascii
+alert udp any any -> any 53 (sid:1001; content”bbc”; nocase; msg:"DNS call for bbc") 
 ```
 
-From the Linux system run Snort (used ifconfig to see your interfaces):
+Now run Wireshark on Ubuntu and capture traffic. Then run Snort.
+
+
+Access bbc.com from the browser on Ubuntu.
+
+Perform a DNS looking using “nslookup bbc.co.uk”.
+
+Now stop Snort and Wireshark. Now examine the alert file. 
+
+Did it detect each of the accesses? [Yes/No] 
+
+Now examine the Wireshark trace.
+
+Can you find the network packages related to the DNS access? [Yes/No]  (you may have to filter with “udp.port==53”)
+
+
+
+
+## F.2 Snort on Windows
+
+Now go to Windows, and run Snort from the required network interface: 
 
 ```
-snort -c mysnort.rules -i eth11 -p -l log -K ascii
+snort -c mysnort.rules -i 2 -p -l log -K ascii -k none
 ```
 
-Snort should now be running using the rules file to match against packets on the specified network interface, and write alerts and log information on any matches to the log folder.
+Now access www.google.com, and then stop Snort and examine the log.
+
+Did Snort detect the connection? [Yes/No]
+
+What information is contained in the Snort log:
+
+
+From Windows, start Snort with the rules to detect access to Port 443 and Port 80. Now access www.google.com, and then stop Snort and examine the log.
+
+Did Snort detect the connection? [Yes/No]
+
+What information is contained in the Snort log:
+
+
+
+Now we will detect the word “bbc” in the traffic for DNS access. In the Snort rules file, add another rule of:
+
+```
+alert udp any any -> any 80 (sid:1001; content”bbc”; nocase; msg:"DNS call for bbc") 
+```
+
+Now run Wireshark on Ubuntu and capture traffic. Then run Snort.
+
+
+Access bbc.com from the browser on Windows.
+
+Perform a DNS looking using “nslookup bbc.co.uk”.
+
+Now stop Snort and Wireshark. Now examine the alert file. 
+
+Did it detect each of the accesses? [Yes/No] 
+
+Now examine the Wireshark trace.
+
+Did it detect each of the accesses? [Yes/No]  (you may have to filter with “udp.port==53”)
+
+
+
+##  F3 Detecting a word in a network packet
+
+On Windows, go to the c:\inetpub\wwwroot folder, and then edit the iisstart.htm file, and add the HTML code of:
+
+```
+<h1>Computer Security and Cryptography</h2>
+<p>This is our home page of the Napier module on IIS</p>
+```
+
+Save the file, and then access the page from Ubuntu. Now, create a rule on Ubuntu to detect the word “module” within a network connection.
+
+Did Snort detect the word “module”? [Yes/No]  
+
+Which Snort rule did you use:
+
+
+
+On Ubuntu, go to the \var\www\html folder, and then edit the index.html file, and add the HTML code of:
+
+```
+<h1>Computer Security and Cryptography</h2>
+<p>This is our home page of the Napier module on Apache</p>
+```
+
+Save the file, and then access the page from Windows. Now, create a rule on Windows to detect the word “module” within a network connection.
+
+Did Snort detect the word “module”? [Yes/No]  
+
+Which Snort rule did you use:
+
+
+
+## F4 Detecting HTTPs
+On Ubuntu, now add a rule to detect the word “google” in an HTTPs connection:
+
+```
+alert tcp any any -> any 443 (sid:1002; msg: content: "google"; "Port 443")
+```
+
+Now test the rule.
+
+Did Snort detect the word “google”? [Yes/No]  
+
+Assuming that the word “google” was in the data packets, why was it unable to find the word?
+
+
+
+
+
+
+
+
 
 # G	Software Tutorial
 Complete the software tutorial at: 
