@@ -53,6 +53,12 @@ First reset your firewall by either ``Reverting back to the original instance`` 
 ```
 load /opt/vyatta/etc/config.boot.default
 ```
+or you can use:
+
+```
+cp /opt/vyatta/etc/config.boot.default /opt/vyatta/etc/config/config.boot
+reboot
+```
 We typically don’t use the console terminal of a firewall for configuration. In the following we will enable one port on the firewall, and then configure it through a remote connection. First configure your Vyatta firewall networking with the following:
 
 ```
@@ -521,7 +527,6 @@ route add default gw 172.16.10.254 eth11
 ```
 Edit /etc/resolv.conf:
 ```
-nameserver 8.8.8.8
 nameserver 10.221.3.254
 ```
 
