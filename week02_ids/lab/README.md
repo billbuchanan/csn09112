@@ -358,8 +358,8 @@ set  firewall  name  private2dmz rule  10  protocol tcp
 Now we have zones of public, dmz and private, and rules of dmz2private and private2dmz. To apply the rules to zones we complete with:
 
 ```
-set  zone-¬policy  zone  private from  dmz firewall  name  dmz2private
-set  zone-¬policy  zone  dmz from  private firewall  name  private2dmz
+set  zone-policy  zone  private from  dmz firewall  name  dmz2private
+set  zone-policy  zone  dmz from  private firewall  name  private2dmz
 ```
 
 Commit this, and try and connect from each of the networks to the other:
