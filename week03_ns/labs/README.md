@@ -332,10 +332,10 @@ What information is contained in the Snort log:
 
 
 
-Now we will detect the word “bbc” in the traffic for DNS access. In the Snort rules file, add another rule of:
+Now we will detect the word "bbc" in the traffic for DNS access. In the Snort rules file, add another rule of:
 
 ```
-alert udp any any -> any 53 (sid:1001; content”bbc”; nocase; msg:"DNS call for bbc") 
+alert udp any any -> any 53 (sid:1001; content:"bbc"; nocase; msg:"DNS call for BBC") 
 ```
 
 Now run Wireshark on Ubuntu and capture traffic. Then run Snort.
@@ -343,7 +343,7 @@ Now run Wireshark on Ubuntu and capture traffic. Then run Snort.
 
 Access bbc.com from the browser on Ubuntu.
 
-Perform a DNS looking using “nslookup bbc.co.uk”.
+Perform a DNS looking using "nslookup bbc.co.uk".
 
 Now stop Snort and Wireshark. Now examine the alert file. 
 
@@ -351,7 +351,7 @@ Did it detect each of the accesses? [Yes/No]
 
 Now examine the Wireshark trace.
 
-Can you find the network packages related to the DNS access? [Yes/No]  (you may have to filter with “udp.port==53”)
+Can you find the network packages related to the DNS access? [Yes/No]  (you may have to filter with "udp.port==53")
 
 
 
@@ -379,10 +379,10 @@ What information is contained in the Snort log:
 
 
 
-Now we will detect the word “bbc” in the traffic for DNS access. In the Snort rules file, add another rule of:
+Now we will detect the word "bbc" in the traffic for DNS access. In the Snort rules file, add another rule of:
 
 ```
-alert udp any any -> any 80 (sid:1001; content”bbc”; nocase; msg:"DNS call for bbc") 
+alert udp any any -> any 80 (sid:1001; content:"bbc"; nocase; msg:"DNS call for bbc") 
 ```
 
 Now run Wireshark on Ubuntu and capture traffic. Then run Snort.
