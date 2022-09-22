@@ -24,8 +24,8 @@ Snort analyser: <a href="https://asecuritysite.com/forensics/snort2">here</a>
 ## Passwords:
 
 ```
-Vyatta. User: vyatta, Password: vyatta
-Windows 2003: User: Administrator, Password: napier
+Vyatta. User: vyos, Password: vyos
+Windows 7: User: Administrator, Password: napier123
 Ubuntu: User: root, password: napier123
 Kali: User: root, password: toor
 ```
