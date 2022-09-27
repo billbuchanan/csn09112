@@ -23,7 +23,7 @@ Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/
 Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation C (10.10.z.z/24).
 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/lab/pfsense1.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense01.png)
 Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z.z
 
 ## Quick guide</h2>
