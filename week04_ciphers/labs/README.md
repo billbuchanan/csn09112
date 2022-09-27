@@ -7,7 +7,7 @@ The aim of this  lab is to build a secure architecture.
 
 ## Activities
 
-Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf)[<a href="https://www.youtube.com/watch?v=d4a0bDhlyvI" target="_blank">Demo</a>].</p>
+Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf)[<a href="https://www.youtube.com/watch?v=g7dzDM4aU0k" target="_blank">Demo</a>].</p>
 
 ## Learning activities
 **At the end of this lab**, you should be able to do the following:
@@ -30,8 +30,8 @@ Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z
 For Ubtuntu configuration, for 10.10.111.7:
 
 ```
-sudo ifconfig eth11 10.10.x.7 netmask 255.255.255.0 up 
-sudo route add default gw 10.10.x.254
+sudo ip addr add 10.10.x.7/24 dev eth32
+sudo ip route add default via 10.10.x.254 dev ens32
 nano /etc/resolve.conf and change "nameserver 10.221.3.254"
 ```
 
