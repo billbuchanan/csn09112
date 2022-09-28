@@ -11,7 +11,7 @@ The key concepts are: Ciphers. Encoding methods (ASCII, UTF-16, Base64, Hex). Pr
 * Presentation (video): [here](https://youtu.be/zqmjUpJNcJA)
 
 ## Lab
-* Lab: [here](https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers/lecture) [demo](https://www.youtube.com/watch?v=d4a0bDhlyvI)
+* Lab: [here](https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers/lecture) [demo](https://www.youtube.com/watch?v=g7dzDM4aU0k)
 
 ## Tests
 
