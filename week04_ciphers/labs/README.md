@@ -9,18 +9,11 @@ The aim of this  lab is to build a secure architecture.
 
 Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf)[Demo](https://www.youtube.com/watch?v=g7dzDM4aU0k).</p>
 
-## Learning activities
-**At the end of this lab**, you should be able to do the following:
 
-* The hosts on your network can connect to each other. Test: Ping from the host in the Private network to the DMZ, and vice-versa.</li>
-* You are able to connect to the Internet from a host in the Private network. Test: Open up Google.com from a browser from the host in the Private network</li>
-* A host on the DMZ is contactable from outside your network. Test: You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the host on your public network to ping.</li>
-* You are able to discover the range of other firewalls which connect to the network. Test: You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways.</li>
-* You are able to perform a scan of the services on a host from another network from your private network. Test: You run NMAP on a server address on another network.</li>
 
 
 ## Lab setup
-Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). For this you will be allocated your own network (NET01, NET02, and so on) which you can access from the vSoC Cloud infrastructure (vsoc.napier.ac.uk). You have a pfSense firewall, a Linux host, and a Windows host to achieve your objectives. First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation C (10.10.z.z/24).
+Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host and a Kali (DMZ) host to achieve your objectives. 
 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)
@@ -35,17 +28,6 @@ sudo ip route add default via 10.10.x.254 dev ens32
 nano /etc/resolve.conf and change "nameserver 10.221.3.254"
 ```
 
-## Your challenges
-The main challenges to be solved in this lab are:
-
-* The hosts on your network can connect to each other. **How to test?** Ping from the host in the Private network to the DMZ, and vice-versa. How will I do this? Setup the IP addresses on the hosts to be on the same network as the gateway. The firewall address that the host connects to must be on the same network.	
-* You are able to connect to the Internet from a host in the Private network. How to test? Open up Google.com from a browser from the host in the Private network. **How will I do this?** Get your network working, and make sure the domain name service is pointing to 10.221.3.254, and it should work. You may need to debug this. If you can connect to 8.8.8.8, but not the domain name, you have a DNS problem.
-	
-* A host on the DMZ is contactable from outside your network. **How to test?** You either ask someone from another network to ping your host, or you ping from the Public port of the firewall, or you use the TEST network to ping. **How will I do this?** You setup 1:1 NAT on the host in your DMZ, and map it to an address on the 10.221.0.0/24 network.	
-
-* You are able to discover the range of other firewalls which connect to the network. **How to test?** You use NMAP to scan the 10.221.0.0/24 network, and discover the gateways. **How will I do this?** You should run NMAP from one of the hosts in your network for the 10.221.0.0 network, and that it shows the nodes that are connected (host scan).	
-
-* You are able to perform a scan of the services on a host from another network from your private network. **How to test?** You run NMAP on a server address on another network. **How will I do this?** You should run NMAP to discover the services which are being run on the server in the DMZ on another network.	
 
 
 ## Setting up the network
@@ -55,15 +37,10 @@ Group Number:
 
 Your networks will be: 10.10.x.0/24  10.10.y.0/24  
 
-Demo: https://youtu.be/d4a0bDhlyvI
+Demo: [here](https://youtu.be/g7dzDM4aU0k)
 
 
-First log into vSoC (vsoc.napier.ac.uk), and then select your network infrastructure. In this lab we will use Allocation A.
-  
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
-Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
-
-## Initial Firewall Creation
+## B Initial Firewall Creation
 Now go to your folder, and select the firewall for your network. Next configure the Linux server in the Private zone, and the Windows server in the DMZ.
 
 | Perform the following: |
@@ -80,30 +57,51 @@ Now we want to setup your private network gateway.
 | Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 10.10.x.254/24. 
 | Note the URL that you can configure your firewall. What is the URL:
 
-That’s it! You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
+You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
 
-## Host setup
-Now we will configure the hosts to sit on the Private and DMZ zones.
+## C Host setup
+Now we will configure the hosts to sit on the Private and DMZ networks.
 
-
-Setup the Linux host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
+Setup the Ubuntu host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
 
 ```
-sudo ifconfig ethx 10.10.x.7 netmask 255.255.255.0 up
-sudo route add default gw 10.10.x.254
+sudo ip link set ens32 up
+sudo ip addr add 10.10.x.7/24 dev ens32
+sudo ip route add default via 10.10.x.254 dev ens32
 ```
 
-
-Next setup the nameserver on the Linux host by editing the /etc/resolv.config and adding a nameserver:
-
+Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver:
 ```
 sudo nano /etc/resolv.conf
 ```
-
 then add:
 ```
 nameserver 10.221.3.254
-nameserver 8.8.8.8
+```
+Do the same for your host on the Kali host on the DMZ:
+
+Setup the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
+
+```
+sudo ip link set eth0 up
+sudo ip addr add 10.10.y.8/24 dev eth0
+sudo ip route add default via 10.10.y.254 dev eth0
+```
+
+Next setup the nameserver on the Kali host by editing the /etc/resolv.config and adding a nameserver:
+```
+sudo nano /etc/resolv.conf
+```
+then add:
+```
+nameserver 10.221.3.254
+```
+Next setup your Metasploitable host on the DMZ (User: msfadmin, Password: napier123):
+
+Setup the Metasploitable host to connect to 10.10.y.9/24 with a default gateway of your firewall port (10.10.y.254/24).
+```
+sudo ip addr add 10.10.y.9/24 dev eth0
+sudo ip route add default via 10.10.y.254 dev eth0
 ```
 
 On the Windows server modify the static address on the interface with:
@@ -115,43 +113,111 @@ Gateway: 10.10.y.254
 DNS: 10.221.3.254
 ```
 
+Now, we will finalise the configuration of the firewall:
 
-Now we will finalise the configuration of the firewall:
-
-Log into the firewall from the Linux host on the Private zone with:
-
-http://10.10.x.254
+Log into the firewall from the Ubuntu host on the Private zone with:
 
 ```
+http://10.10.y.254
+```
+
 Username: admin, Password: pfsense
-```
 
-| Perform the following: | Observation |
-|-------------------------|------|
-| Setup the required IP on the DMZ (10.10.y.254) and subnet mask.|
-| On the firewall, from Diagnostics, view the ARP cache. | Which addresses are in the cache: |
-| On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. | Can you ping them? Yes/No |
-| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. | Can you ping them? Yes/No Why can’t you ping the 10.10.y.254 interface?|
-| On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.|
-| On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. | You should now be able to ping them.|
-| On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. | You should now be able to ping them.|
-| On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. | From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port.|
-| Now from the Windows host and the Linux host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.| |
+Setup the required IP on the DMZ (10.10.y.254) and subnet mask.
+
+On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache:
+
+
+On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. Can you ping them? [Yes/No]
+
+ 
+On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. Can you ping them? 
+
+[Yes/No] Why can’t you ping the 10.10.y.254 interface?
+
+
+
+On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.
+
+On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. You should now be able to ping them.
+
+On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now be able to ping them.
+
+On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port.
+
+Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.
+
 
 
 Now we will investigate NAT on the device.
 
-| Perform the following: |
-|-------------------------------|
-| Run packet capture on the firewall, and then ping from both the Windows host and the Linux host. Stop the trace.
-| Which IP address appears in the pings? 
-| Why is it just a single address?
+Run packet capture on the firewall, and then ping from both the Windows host and the Ubuntu host. Stop the trace.
+
+Which IP address appears in the pings? 
+
+Why is it just a single address?
+
+
+
 
 Now we will investigate the routing table on the firewall.
 
-| Perform the following: |
-|-------------------------------|
-| On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
+On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
+
+
+
+
+
+Now we will investigate the Metasploitable host.
+
+Run NMAP from Windows to Metasploit. Which services are enabled:
+
+[ftp][ssh][telnet][smtp][domain][http][vnc]
+
+Run NMAP from Ubuntu to Metasploit. Which services are enabled:
+
+[ftp][ssh][telnet][smtp][domain][http][vnc]
+
+Now we will investigate the Metasploitable host for Telnet:
+
+From Windows run Wireshark and capture packets. Now log into Metasploitable using telnet:
+
+telnet 10.10.y.9
+
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
+
+From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using telnet:
+
+telnet 10.10.y.9
+
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
+
+Note: login for Telnet in Metasploitable is User: msfadmin, Password: napier123
+
+Now we will investigate the Metasploitable host for Telnet:
+
+From Windows, run Wireshark and capture packets. Now log into Metasploitable using SSH:
+
+ssh 10.10.y.9 -l msfadmin
+
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark, and examine the data packets. Can you find the Telnet login, and can you discover the password used? [Yes/No]
+
+From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using SSH:
+
+ssh 10.10.y.9 -l msfadmin
+
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? [Yes/No]
+
+Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.prt==22 as a filter for SSH.
+
 
 
 
