@@ -70,6 +70,7 @@ sudo ip addr add 10.10.x.7/24 dev ens32
 sudo ip route add default via 10.10.x.254 dev ens32
 ```
 
+### Ubuntu host setup
 Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver:
 ```
 sudo nano /etc/resolv.conf
@@ -78,9 +79,9 @@ then add:
 ```
 nameserver 10.221.3.254
 ```
-Do the same for your host on the Kali host on the DMZ:
 
-Setup the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
+### Kali host setup
+Do the same for your host on the Kali host on the DMZ. Setup the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
 
 ```
 sudo ip link set eth0 up
@@ -96,14 +97,14 @@ then add:
 ```
 nameserver 10.221.3.254
 ```
-Next setup your Metasploitable host on the DMZ (User: msfadmin, Password: napier123):
-
-Setup the Metasploitable host to connect to 10.10.y.9/24 with a default gateway of your firewall port (10.10.y.254/24).
+### Metasploitable host setup
+Next setup your Metasploitable host on the DMZ (User: msfadmin, Password: napier123). Setup the Metasploitable host to connect to 10.10.y.9/24 with a default gateway of your firewall port (10.10.y.254/24).
 ```
 sudo ip addr add 10.10.y.9/24 dev eth0
 sudo ip route add default via 10.10.y.254 dev eth0
 ```
 
+### Windows host setup
 On the Windows server modify the static address on the interface with:
 
 ```
@@ -113,27 +114,24 @@ Gateway: 10.10.y.254
 DNS: 10.221.3.254
 ```
 
-Now, we will finalise the configuration of the firewall:
-
-Log into the firewall from the Ubuntu host on the Private zone with:
+### Firewall  setup
+Now, we will finalise the configuration of the firewall. Log into the firewall from the Ubuntu host on the Private zone with:
 
 ```
-http://10.10.y.254
+http://10.10.x.254
 ```
 
 Username: admin, Password: pfsense
 
 Setup the required IP on the DMZ (10.10.y.254) and subnet mask.
 
-On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache:
+On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
 
 
 On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. Can you ping them? [Yes/No]
 
  
-On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. Can you ping them? 
-
-[Yes/No] Why can’t you ping the 10.10.y.254 interface?
+On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. Can you ping them? [Yes/No] Why can’t you ping the 10.10.y.254 interface?
 
 
 
@@ -143,12 +141,12 @@ On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. You should now b
 
 On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now be able to ping them.
 
-On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port.
+On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port?
 
 Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.
 
 
-
+## NAT
 Now we will investigate NAT on the device.
 
 Run packet capture on the firewall, and then ping from both the Windows host and the Ubuntu host. Stop the trace.
