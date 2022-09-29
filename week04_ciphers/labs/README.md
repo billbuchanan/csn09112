@@ -146,7 +146,7 @@ On the firewall, create a rule which allows the Public network to ping both the 
 Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.
 
 
-## NAT
+### NAT
 Now we will investigate NAT on the device.
 
 Run packet capture on the firewall, and then ping from both the Windows host and the Ubuntu host. Stop the trace.
@@ -157,7 +157,7 @@ Why is it just a single address?
 
 
 
-
+### Routing table
 Now we will investigate the routing table on the firewall.
 
 On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
@@ -179,17 +179,17 @@ Run NMAP from Ubuntu to Metasploit. Which services are enabled:
 Now we will investigate the Metasploitable host for Telnet:
 
 From Windows run Wireshark and capture packets. Now log into Metasploitable using telnet:
-
+```
 telnet 10.10.y.9
-
+```
 Can you log into each into Metasploit: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
 
 From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using telnet:
-
+```
 telnet 10.10.y.9
-
+```
 Can you log into each into Metasploit: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
@@ -199,17 +199,17 @@ Note: login for Telnet in Metasploitable is User: msfadmin, Password: napier123
 Now we will investigate the Metasploitable host for Telnet:
 
 From Windows, run Wireshark and capture packets. Now log into Metasploitable using SSH:
-
+```
 ssh 10.10.y.9 -l msfadmin
-
+```
 Can you log into each into Metasploit: [Yes/No]
 
 Stop Wireshark, and examine the data packets. Can you find the Telnet login, and can you discover the password used? [Yes/No]
 
 From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using SSH:
-
+```
 ssh 10.10.y.9 -l msfadmin
-
+```
 Can you log into each into Metasploit: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? [Yes/No]
@@ -276,33 +276,10 @@ then enter:  GET / | 	Outline the message that is returned: |
 then enter: USER napier PASS napier123 QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
 | LAN | 	From UBUNTU access the WINDOWS host with telnet 10.10.x.7 21 then enter: USER Administrator PASS napier QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
 | DMZ	| On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens. |  What does this service do: | 
-|  DMZ	| Next we will assess the SMTP service running on the WINDOWS virtual machine. From your UBUNTU machine console run a service to access SMTP:
-telnet 10.10.y.7 25 Table 1 outlines the commands to use. 	On the WINDOWS virtual machine, go into the C:\inetpub\mailroot\queue folder, and view the queued email message.  | Was the mail successfully queued? If not, which mail folder has the file in? Outline the format of the EML file?
 
 
-Table 1: SMTP commands
-```
-220 napier Microsoft ESMTP MAIL Service, Version: 6.0.3790.3959 ready at  Sun, 2 Dec 2009 21:56:01 +0000
-help
-214-This server supports the following commands:
-214 HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH TURN ETRN BDAT VRFY
-helo me
-250 napier Hello [10.10.75.1]
-mail from: email@domain.com
-250 2.1.0 email@domain.com....Sender OK
-rcpt to: fred@mydomain.com
-250 2.1.5 fred@mydomain.com
-Data
-354 Start mail input; end with <CRLF>.<CRLF>
-From: Bob <bob@test.org>
-To: Alice <alice@test.org >
-Date: Sun, 20 Dec 2013
-Subject: Test message
-Hello Alice.
-This is an email to say hello
-.
-250 2.6.0 <NAPIERMp7lzvxrMVHFb00000001@napier> Queued mail for delivery
-```
+
+
 
 ## G	Enumeration – Host scan 
 
@@ -316,8 +293,166 @@ Nmap is one of the most popular network scanning tools. It is widely available, 
 | LAN to DMZ|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.y.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
 | LAN to LAN|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.x.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
 
+## H	Enumeration - Operating System Fingerprinting
+Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
+
+From → To	Command	Observation
+LAN to DMZ	Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
+```
+sudo nmap –O 10.10.y.0/24
+```
+
+Which operating systems does it return:
+DMZ to LAN	Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
+
+```
+nmap –O 10.10.x.0/24	Which operating systems does it return:
+```
+## I	Enumeration – Application Fingerprinting
+Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
+
+From → To	Command	Observation
+LAN to DMZ	Perform an application and version scan for networked services:
+
+```
+sudo nmap –sS 10.10.y.7/24
+```
+Which services are running on the Windows host:
+
+
+DMZ to LAN	Perform an application and version scan for networked services:
+```
+nmap –sS 10.10.x.7/24
+```
+
+Which services are running on the Linux host:
 
 
 
-## IP Allocation
+LAN to DMZ	Scan the Web server in the DMZ for its version:
+```
+sudo nmap –sV 10.10.y.7/24 –p 80	
+```
+
+Which Web server type is being used:
+
+
+
+DMZ to LAN	Scan the Web server in the LAN for its version:
+```
+nmap –sV 10.10.x.7/24 –p 80
+```
+Which Web server type is being used:
+
+
+
+
+Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
+
+From → To	Command	Observation
+DMZ to LAN	Connect to port 80, with:
+
+telnet 10.10.x.7 80
+
+and then send the HTTP OPTIONS command to the web server:
+
+```
+OPTIONS / HTTP/1.0
+```
+
+What is returned and how can this be used to fingerprint the WebServer?
+
+
+Which WebServer is running and which version?
+
+DMZ to LAN	Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe:
+
+```
+HEAD / HTTP/1.0
+GET / HTTP/1.0	What do you observe from using these HTTP requests:
+```
+
+
+## J	Brute Force
+For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will Hydra on Kali (DMZ), where you create a user file and password file with the following lists:
+
+list_user: 
+administrator
+admin
+root
+msfadmin
+guest
+
+list_password:
+adminpass
+password
+Password
+123456
+Napier123
+pa$$word
+
+Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
+
+```
+# hydra -L list_user -P list_password 10.10.y.9 21
+```
+
+From this determine one of the usernames and passwords.
+
+
+Stop Wireshark and find the hydra trace. What do you observe from the trace:
+
+
+What is the FTP status code for an incorrect login:
+
+
+What is the FTP status code for a correct login:
+
+
+Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint, you need to detect “530” in the Port 21 connection.
+
+Which rule have you used:
+
+
+Rerun Hydra and start Snort to detect incorrect logins. Did it detect the scan? [Yes/No]
+
+
+Next, run Hydra and crack the username and the password for the Web server. With these usernames and passwords we will target the DVWA site. First access the Web server from:
+```
+http://20.20.21.9/dvwa/login.php
+```
+Next, start Wireshark on Kali (DMZ), and then run Hydra to try a range of logins:
+
+```
+# hydra -L list_user -P list_password 10.10.y.9 http-post-form ‘/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed’
+```
+From this determine one of the usernames and passwords.
+
+
+Stop Wireshark and find the hydra trace. What do you observe from the trace:
+
+
+What is the FTP status code for an incorrect login:
+
+
+What is the FTP status code for a correct login:
+
+
+Now access the Mutillidae site on Metasploit:
+```
+http://10.10.y.9/mutillidae
+```
+Now we will attack the Mutillidae site:
+```
+# hydra -L list_user -P list_password 10.10.y.9 http-post-form 
+'/mutillidae/index.php?page=login.php:username=^USER^&password=^PASS^&login-php-submit-button=Login:Not Logged In'
+```
+From this determine one of the usernames and passwords.
+
+
+
+
+
+
+
 
