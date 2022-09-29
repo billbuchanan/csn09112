@@ -7,7 +7,7 @@ The aim of this  lab is to build a secure architecture.
 
 ## Activities
 
-Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf)[Demo](https://www.youtube.com/watch?v=g7dzDM4aU0k).</p>
+Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=g7dzDM4aU0k).</p>
 
 
 
@@ -20,7 +20,7 @@ Our challenge is to setup MyBank Incorp, where each of you will be allocated a n
 Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z.z
 
 ## Quick guide</h2>
-For Ubtuntu configuration, for 10.10.111.7:
+For Ubtuntu configuration, for 10.10.x.7:
 
 ```
 sudo ip addr add 10.10.x.7/24 dev eth32
