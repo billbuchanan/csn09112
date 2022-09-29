@@ -23,6 +23,7 @@ Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z
 For Ubtuntu configuration, for 10.10.x.7:
 
 ```
+sudo ip link set ens32 up
 sudo ip addr add 10.10.x.7/24 dev ens32
 sudo ip route add default via 10.10.x.254 dev ens32
 nano /etc/resolve.conf and change "nameserver 10.221.3.254"
