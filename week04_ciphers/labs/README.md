@@ -296,18 +296,20 @@ Nmap is one of the most popular network scanning tools. It is widely available, 
 ## H	Enumeration - Operating System Fingerprinting
 Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
 
-From → To	Command	Observation
-LAN to DMZ	Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+|LAN to DMZ	| Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
 ```
-sudo nmap –O 10.10.y.0/24
-```
+sudo nmap –O 10.10.y.0/24 
+```| 
 
-Which operating systems does it return:
-DMZ to LAN	Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
+Which operating systems does it return: |
+|DMZ to LAN	|Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as:
 
 ```
-nmap –O 10.10.x.0/24	Which operating systems does it return:
-```
+nmap –O 10.10.x.0/24	
+```| Which operating systems does it return: |
+
 ## I	Enumeration – Application Fingerprinting
 Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
 
