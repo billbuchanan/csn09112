@@ -16,14 +16,15 @@ Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/
 Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host and a Kali (DMZ) host to achieve your objectives. 
 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)  
 Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z.z
 
 ## Quick guide</h2>
 For Ubtuntu configuration, for 10.10.x.7:
 
 ```
-sudo ip addr add 10.10.x.7/24 dev eth32
+sudo ip link set ens32 up
+sudo ip addr add 10.10.x.7/24 dev ens32
 sudo ip route add default via 10.10.x.254 dev ens32
 nano /etc/resolve.conf and change "nameserver 10.221.3.254"
 ```
@@ -41,20 +42,20 @@ Demo: [here](https://youtu.be/g7dzDM4aU0k)
 
 
 ## B Initial Firewall Creation
-Now go to your folder, and select the firewall for your network. Next configure the Linux server in the Private zone, and the Windows server in the DMZ.
+Now go to your folder, and select the firewall for your network. Next configure the Ubuntu server in the Private zone, and the Windows server in the DMZ.
 
 | Perform the following: |
 |-------------------------------|
 | Boot your firewall, and say no to setting up VLANs.
-| Now setup the first three networks adapters with em0 (WAN), em1 (LAN) and em2 (OPT1).
-| Check that you have been granted an IP address on the WAN (em0) port. What address is it:
+| Now setup the first three networks adapters with le0 (WAN), le1 (LAN) and le2 (OPT1).
+| Check that you have been granted an IP address on the WAN (le0) port. What address is it:
 | Can you ping the main gateway from the firewall (10.221.3.254) and your own WAN port?  Yes/No
 
 Now we want to setup your private network gateway.
 
 | Perform the following: |
 |-------------------------------|
-| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the em1 interface to 10.10.x.254/24. 
+| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the le1 interface to 10.10.x.254/24. 
 | Note the URL that you can configure your firewall. What is the URL:
 
 You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
@@ -240,8 +241,7 @@ Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows hos
 
 
 
-Now enable http, https, and ftp from the Private network to the DMZ.
-Now enable https, https, and ftp from the DMZ to the Private network.
+Now enable http (Port 80), https (Port 443), and ftp (Port 21) from the Private network to the DMZ.
 
 | Perform and answer the following: |
 |-------------------------------|
@@ -250,7 +250,7 @@ Now enable https, https, and ftp from the DMZ to the Private network.
 | Can you now access the Web server from the Windows host to the Linux host?
 
 
-Access Google.com from the Linux host.
+Access Google.com from the Ubuntu host and also the Windows host.
 
 | Perform and answer the following: |
 |-------------------------------|
@@ -335,7 +335,7 @@ list_password:
 * password
 * Password
 * 123456
-* Napier123
+* napier123
 * pa$$word
 
 Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
@@ -396,10 +396,65 @@ Now we will attack the Mutillidae site:
 ```
 From this determine one of the usernames and passwords.
 
+## K	NAT and 1:1 mappings
+
+No other group can access any of your hosts, as you are behind NAT. Now we need to setup a 1:1 mapping and a virtual IP address (with Proxy ARP) to map an internal address to an external one. First, we need to find an IP address from the 10.221.0.0/22 network which is not being used, and then we will use this to allow other group’s access to the hosts in the DMZ (Figure 2).
+
+Demo: https://youtu.be/1wn2io8EWvs 
 
 
+![image](https://user-images.githubusercontent.com/43025646/192982617-71737c2c-b425-443a-a3b7-bedecfb8c57f.png)
+
+Figure 2: Setup 1:1 NAT for mapping of servers 
+
+Run NMAP from the Private network with: nmap –sP 10.221.0.0/24
+
+Which hosts are on-line?
 
 
+Now pick an address which is (where GROUP ID is your ID number):
+10.221.2.[GROUP ID]
 
+Now, on the firewall, setup a 1:1 mapping of the External IP address that you have selected and the Internal IP address on the DMZ (Figure 3).
+
+Next, setup a Virtual IP address (with Proxy ARP) for the external address you have selected, which will advertise the IP address (Figure 4).
+
+Now from the WAN interface, ping the host in the DMZ. Can you ping it?
+
+Finally ask, someone in another group to ping your host in the DMZ. Can they ping it?
+
+Now get them to access the Web server on your host.
+
+Finally get them to NMAP your host? What can you observe from the NMAP?
+
+![image](https://user-images.githubusercontent.com/43025646/192982833-73e61956-9516-4418-9449-64d4f2eb5516.png)
+Figure 3: 1:1 NAT settings
+
+![image](https://user-images.githubusercontent.com/43025646/192982896-d6ce86fa-3651-4df0-8b69-9ae2215189c8.png)
+Figure 4: Virtual IP addresses
+
+# Connecting to another network
+Now, wait for other teams to finish (or use the Test setup). You should have ready:
+
+-	A forward-facing Web and FTP site ready to connect from outside your network.
+
+NMAP their server, and then make sure you can connect to the service. Now get them to block your specific source (just one address), and recheck that you cannot connect. Finally change your IP address, and re-do the NMAP, and make sure you can connect.
+
+Please note some of the information related to their server. What information can you determine? Can you determine the MAC address of their server?
+
+# Software Tutorial
+Complete the software tutorial at: 
+
+http://asecuritysite.com/csn09112/software02
+
+
+# Appendix
+User logins: 
+
+Ubuntu:- User: napier, Password: napier123  
+Kali:-  User: root, Password: toor  
+Windows:-		User: Administrator, Password: napier123  
+pfsense:- User: admin, Password: pfsense  
+Metasploitable:- User: msfadmin, Password: napier123  
 
 
