@@ -378,10 +378,10 @@ From this determine one of the usernames and passwords.
 Stop Wireshark and find the hydra trace. What do you observe from the trace:
 
 
-What is the FTP status code for an incorrect login:
+What is the HTTP status code for an incorrect login:
 
 
-What is the FTP status code for a correct login:
+What is the HTTP status code for a correct login:
 
 
 Now access the Mutillidae site on Metasploit:
