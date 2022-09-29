@@ -335,7 +335,7 @@ list_password:
 * password
 * Password
 * 123456
-* Napier123
+* napier123
 * pa$$word
 
 Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
