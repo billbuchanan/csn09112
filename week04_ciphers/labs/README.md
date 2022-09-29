@@ -26,7 +26,7 @@ For Ubtuntu configuration, for 10.10.x.7:
 sudo ip link set ens32 up
 sudo ip addr add 10.10.x.7/24 dev ens32
 sudo ip route add default via 10.10.x.254 dev ens32
-nano /etc/resolve.conf and change "nameserver 10.221.3.254"
+nano /etc/resolv.conf and change "nameserver 10.221.3.254"
 ```
 
 
@@ -241,7 +241,7 @@ Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows hos
 
 
 
-Now enable http (Port 80), https (Port 443), and ftp (Port 21) from the Private network to the DMZ.
+Now enable http (Port 80), https (Port 443), and ftp (Port) from the Private network to the DMZ.
 
 | Perform and answer the following: |
 |-------------------------------|
@@ -320,7 +320,7 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 
 
 ## J	Brute Force
-For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will Hydra on Kali (DMZ), where you create a user file and password file with the following lists:
+For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will on Kali (DMZ), where you create a user file and password file with the following lists:
 
 list_user: 
 * administrator
@@ -341,13 +341,13 @@ list_password:
 Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
 
 ```
-# hydra -L list_user -P list_password 10.10.y.9 21
+# hydra -L list_user -P list_password 10.10.y.9 ftp
 ```
 
 From this determine one of the usernames and passwords.
 
 
-Stop Wireshark and find the hydra trace. What do you observe from the trace:
+Stop Wireshark and find the Hydra trace. What do you observe from the trace:
 
 
 What is the FTP status code for an incorrect login:
