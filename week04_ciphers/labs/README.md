@@ -273,7 +273,7 @@ Within a network infrastructure we have services which run on hosts. These servi
 | DMZ	|  Repeat the previous example from the WINDOWS host: telnet 10.10.x.7 80	|  
 | DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: telnet 10.10.x.7 21 then enter: USER napier PASS napier123 QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
 | LAN | 	From UBUNTU access the WINDOWS host with telnet 10.10.x.7 21 then enter: USER Administrator PASS napier QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
-| DMZ	| On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens. |  What does this service do: | 
+| DMZ	| On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
 
 
 
@@ -315,7 +315,6 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 | From → To |	Command	| Observation |
 |------|------------|-------------|
 | DMZ to LAN	| Connect to port 80, with: telnet 10.10.x.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
-
 | DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
 
 
