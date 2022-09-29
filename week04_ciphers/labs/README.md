@@ -323,19 +323,20 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will Hydra on Kali (DMZ), where you create a user file and password file with the following lists:
 
 list_user: 
-administrator
-admin
-root
-msfadmin
-guest
+* administrator
+* admin
+* root
+* msfadmin
+* guest
 
 list_password:
-adminpass
-password
-Password
-123456
-Napier123
-pa$$word
+
+* adminpass
+* password
+* Password
+* 123456
+* Napier123
+* pa$$word
 
 Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
 
