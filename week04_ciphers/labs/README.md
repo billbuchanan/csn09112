@@ -16,8 +16,7 @@ Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/
 Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host and a Kali (DMZ) host to achieve your objectives. 
 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)
-![image](https://user-images.githubusercontent.com/43025646/192983272-810c19b2-6696-4595-b9e3-808bd5fe86a6.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)  
 Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z.z
 
 ## Quick guide</h2>
