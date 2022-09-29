@@ -315,7 +315,6 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 | From → To |	Command	| Observation |
 |------|------------|-------------|
 | DMZ to LAN	| Connect to port 80, with: telnet 10.10.x.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
-
 | DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
 
 
