@@ -304,66 +304,21 @@ Enumeration is the gathering of information about target hosts. After discoverin
 ## I	Enumeration – Application Fingerprinting
 Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
 
-From → To	Command	Observation
-LAN to DMZ	Perform an application and version scan for networked services:
-
-```
-sudo nmap –sS 10.10.y.7/24
-```
-Which services are running on the Windows host:
-
-
-DMZ to LAN	Perform an application and version scan for networked services:
-```
-nmap –sS 10.10.x.7/24
-```
-
-Which services are running on the Linux host:
-
-
-
-LAN to DMZ	Scan the Web server in the DMZ for its version:
-```
-sudo nmap –sV 10.10.y.7/24 –p 80	
-```
-
-Which Web server type is being used:
-
-
-
-DMZ to LAN	Scan the Web server in the LAN for its version:
-```
-nmap –sV 10.10.x.7/24 –p 80
-```
-Which Web server type is being used:
-
-
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+|LAN to DMZ	| Perform an application and version scan for networked services: sudo nmap –sS 10.10.y.7/24 | Which services are running on the Windows host:|
+|DMZ to LAN	Perform an application and version scan for networked services: nmap –sS 10.10.x.7/24 | Which services are running on the Linux host:|
+|LAN to DMZ	|Scan the Web server in the DMZ for its version:  sudo nmap –sV 10.10.y.7/24 –p 80	| Which Web server type is being used:|
+| DMZ to LAN	| Scan the Web server in the LAN for its version: nmap –sV 10.10.x.7/24 –p 80 | Which Web server type is being used:|
 
 
 Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
 
-From → To	Command	Observation
-DMZ to LAN	Connect to port 80, with:
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+| DMZ to LAN	| Connect to port 80, with: telnet 10.10.x.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
 
-telnet 10.10.x.7 80
-
-and then send the HTTP OPTIONS command to the web server:
-
-```
-OPTIONS / HTTP/1.0
-```
-
-What is returned and how can this be used to fingerprint the WebServer?
-
-
-Which WebServer is running and which version?
-
-DMZ to LAN	Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe:
-
-```
-HEAD / HTTP/1.0
-GET / HTTP/1.0	What do you observe from using these HTTP requests:
-```
+| DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
 
 
 ## J	Brute Force
