@@ -288,9 +288,9 @@ Now we will add the new user to the login. For this, we use:
 
 ```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
-   Add line of (see Figure 13):
+   Add line of (see Figure 15):
 AllowUsers ec2-user napier
-   Change the following to “yes” (see Figure 14):
+   Change the following to “yes” (see Figure 16):
 PasswordAuthentication yes
 ```
 
@@ -308,19 +308,19 @@ Can you connect with the new user? [Yes/No]
 
 ![AWS](https://asecuritysite.com/public/awsfig13.png "Accessing instances")  
 
-Figure 13: Accessing instances
+Figure 14: Accessing instances
 
 
 ![AWS](https://asecuritysite.com/public/awsfig14.png "Accessing instances")  
 
-Figure 14: Accessing instances
+Figure 15: Accessing instances
 
 ![AWS](https://asecuritysite.com/public/awsfig15.png "Accessing instances")  
 
-Figure 15: Accessing instances
+Figure 16: Accessing instances
 
 ### C.8	Accessing from AWS prompt
-We can also access our instance from the AWS terminal prompt. For this return to your AWS Academy console, and enter the command (Figure 15):
+We can also access our instance from the AWS terminal prompt. For this return to your AWS Academy console, and enter the command (Figure 17):
 
 ```
 $ aws ec2 describe-instances
@@ -338,9 +338,9 @@ State:
 
 ![AWS](https://asecuritysite.com/public/awsfig16.png "Stopping an instance")   
 
-Figure 16: Describe instances
+Figure 17: Describe instances
 
-Now try we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 17):
+Now try we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 18):
 ```
 aws ec2 stop-instances --instance-ids [My-instance-ID]
 ```
@@ -349,7 +349,7 @@ From the AWS Management Console, has your instance stopped? [Yes/No]
 
 ![AWS](https://asecuritysite.com/public/awsfig17.png "Stopping an instance")   
 
-Figure 17: Stopping an instance
+Figure 18: Stopping an instance
 
 
 Now we will restart the instance, with:
@@ -381,11 +381,11 @@ By observing the script, and investigate what t3.micro and t3.small are, can you
 Now, revert the instance back to t3.micro, and suspend the instance.
 
 ## D	Creating and Securing a Windows 2022 Server
-In this part of the lab we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 17).
+In this part of the lab we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
 
 ![AWS](https://asecuritysite.com/public/awsfig18.png "Creating Windows 2022 instance")  
 
-Figure 18: Creating Windows 2022 instance
+Figure 19: Creating Windows 2022 instance
 
 Now select t2.micro for the instance type.
 
@@ -427,7 +427,7 @@ What is the maximum storage size for a free tier storage of the AMI instance we 
 ### D.1	Creating the instance
 Go ahead and create the instance. Go back to the Management Console and find your instance. Wait for it to set its state to running. Now we will connect to it. For this we need to create an RDP connection, and use the private key we have generated to generate the initial password. 
 
-Now, we will examine the details of our instance (Figure 18). On the instance summary, determine the following:
+Now, we will examine the details of our instance (Figure 20). On the instance summary, determine the following:
 
 The public IP address:
 
@@ -457,7 +457,7 @@ What does 0.0.0.0/0 represent?
 
 
 
-Now go ahead and add an ICMP rule for all hosts (Figure 19). 
+Now go ahead and add an ICMP rule for all hosts (Figure 121). 
 
 Can you now successfully ping your instance? [Yes/No]
 
@@ -467,26 +467,26 @@ We will not be able to ping the instance yet, as the firewall on Windows is disa
  
 ![AWS](https://asecuritysite.com/public/awsfig19.png "Details of instance")  
 
-Figure 19: Details of instance
+Figure 20: Details of instance
 
  
 ![AWS](https://asecuritysite.com/public/awsfig20.png "Enable ICMP")  
 
-Figure 20: Enable ICMP
+Figure 21: Enable ICMP
 
 ### D.3	Accessing your instance
-Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 20). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 21).
+Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 22). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 23).
 
 ![AWS](https://asecuritysite.com/public/awsfig21_1.png "Connect to instance")  
 
-Figure 21: Connect to instance
+Figure 22: Connect to instance
 
 ![AWS](https://asecuritysite.com/public/awsfig21.png "Reveal password")  
 
-Figure 22: Reveal password
+Figure 23: Reveal password
 
 
-Have you managed to connect? [Yes/No] (Figure 22)
+Have you managed to connect? [Yes/No] (Figure 24)
 
 
 By using “ipconfig” in your instance, what is the private IP address of it?
@@ -496,17 +496,17 @@ Can you ping 8.8.8.8 from your instance? [Yes/No]
 
 ![AWS](https://asecuritysite.com/public/awsgif22.png "Windows 2022")  
 
-Figure 23: Windows 2022
+Figure 24: Windows 2022
 
 
 
 
 ### D.4	Enable ICMP on instance
-We have enabled the AWS firewall for ICMP. Now we will open-up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 23.
+We have enabled the AWS firewall for ICMP. Now we will open-up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 25.
 
 ![AWS](https://asecuritysite.com/public/awsgif23.png "Enable ICMP")  
  
-Figure 24: Enable ICMP
+Figure 25: Enable ICMP
 
 
 Can you successfully ping the instance from your instance? [Yes/No]
@@ -523,14 +523,14 @@ Which of the main services are running:
 
 
 ### D.6	Enable Web server 
-Now select Server Manage, and “Add a Role” for  Web Server (IIS) (Figure 24). 
+Now select Server Manage, and “Add a Role” for  Web Server (IIS) (Figure 26). 
 
 
 
 
 ![AWS](https://asecuritysite.com/public/awsgif24.png "Enable ICMP")  
  
-Figure 25: Enable ICMP
+Figure 26: Enable ICMP
 
 Now open a browser on the instance, and access http://localhost
 
@@ -538,26 +538,26 @@ Can you connect to the IIS Web server? [Yes/No] (see Figure 25)
 
 
 
-Now open up your AWS firewall for Port 80 (Figure 25).
+Now open up your AWS firewall for Port 80 (Figure 27).
 
 ![AWS](https://asecuritysite.com/public/awsgif25.png "Enable HTTP")  
 
-Figure 26: Enable HTTP
+Figure 27: Enable HTTP
 
 Now open a browser on the instance, and access http://[IP of AWS]
 
-Can you connect to the IIS Web server? [Yes/No] (Figure 27)
+Can you connect to the IIS Web server? [Yes/No] (Figure 29)
 
 
 
 
 ![AWS](https://asecuritysite.com/public/awsgif26.png "Local host")  
 
-Figure 27: Local host
+Figure 28: Local host
 
 ![AWS](https://asecuritysite.com/public/awsgif27.png "Remote access")   
 
-Figure 28: Remote access 
+Figure 29: Remote access 
 
 Now go into the /inetpub/www folder, and create a file named “iisstart.html”, and add:
 ```
