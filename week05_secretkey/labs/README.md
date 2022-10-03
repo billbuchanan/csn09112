@@ -45,7 +45,7 @@ We will now create a Linux Server, and which should be accessible from the Inter
 
 Figure 5: Creating Amazon Linux instance
 
-  
+```  
 Now select t2.micro for the instance type.
 
 How many vCPUs will the instance have?
@@ -80,7 +80,7 @@ What do you think is the advantage of using SSD?
 For disk storage, what is the default size of the disk that you will create?
 
 What is the maximum storage size for a free tier storage of the AMI instance we are creating?
-
+```
 
 
 ### C.1	Creating the instance
@@ -89,7 +89,7 @@ Go ahead and create the instance. Then go back to the AWS Management Console, an
 Now we will connect to it. For this we need to create an SSH connection and use the private key we have generated. The public key will be stored on the instance and will authenticate our access. We do not need a username or password to access the instance, as this is often insecure. Our PEM file will give us access (or you can use Putty for the connection).
 
 Now, we will examine the details of our instance (Figure 6). On the instance summary, determine the following:
-
+```
 The public IP address:
 
 The private IP address:
@@ -103,21 +103,22 @@ From your local host, can you ping the public IP address? [Yes/No]
 Why can’t you successfully ping your instance?
 
 Which region of the world is your instance running in?
-
+```
 
 ### C.2	Enabling ICMP on firewall
 Now, we will enable ICMP on the instance. First click on the Security tab of the instance summary, and then on the security group.
 
+```
 What is the firewall rule that is applied to the instance?
 
 [SSH/Telnet/FTP/HTTP/HTTPs] for [0.0.0.0/0 or 0.0.0.0/8 or 0.0.0.0/16 or 0.0.0.0/32]
 
 What does 0.0.0.0/0 represent?
-
+```
 
 
 Now go ahead and add an ICMP rule for all hosts (Figure 7). 
-
+```
 Can you now successfully ping your instance? [Yes/No]
 
 Now, lock your ICMP rule down to just your IP address (you need to use a /32 address for this). Can you still successfully ping the instance? [Yes/No]
@@ -125,7 +126,7 @@ Now, lock your ICMP rule down to just your IP address (you need to use a /32 add
 Ask you neighhour or one of the lab tutors to ping your instance. Can they successfully ping it? [Yes/No]
 
 What is the advantage of applying the firewall in AWS, rather than in the instance?
-
+```
 
  
 ![AWS](https://asecuritysite.com/public/awsfig06.png "Details of instance")  
@@ -176,6 +177,8 @@ Last login: Fri Sep 30 17:07:00 2022 from ec2-18-206-107-27.compute-1.amazonaws.
 https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-172-31-16-186 ~]$
 ```
+
+```
 Have you managed to connect? [Yes/No]
 
 By using “ip addr show” or “ifconfig” in your instance, what is the private IP address of it?
@@ -192,7 +195,7 @@ Now create a folder in the top level named “mytestfolder”, and put a new fil
 Now go to the EC2 Instance Connect (Figure 9), and press on the Connect button. You should now get a console terminal in the browser. 
 
 From your console (Figure 10), verify that your file has been created. Has it been created in the instance? [Yes/No]
-
+```
 
 ![AWS](https://asecuritysite.com/public/awsfig09.png "Connect to instance")  
 
