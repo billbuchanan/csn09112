@@ -474,11 +474,11 @@ Figure 20: Enable ICMP
 ### D.3	Accessing your instance
 Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 20). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 21).
 
-![AWS](https://asecuritysite.com/public/awsfig21.png "Connect to instance")  
+![AWS](https://asecuritysite.com/public/awsfig21_1.png "Connect to instance")  
 
 Figure 21: Connect to instance
 
-![AWS](https://asecuritysite.com/public/awsgif22.png "Reveal password")  
+![AWS](https://asecuritysite.com/public/awsgif21.png "Reveal password")  
 
 Figure 22: Reveal password
 
@@ -491,7 +491,7 @@ By using “ipconfig” in your instance, what is the private IP address of it?
 Can you ping 8.8.8.8 from your instance? [Yes/No]
 
 
-![AWS](https://asecuritysite.com/public/awsgif23.png "Windows 2022")  
+![AWS](https://asecuritysite.com/public/awsgif22.png "Windows 2022")  
 
 Figure 23: Windows 2022
 
@@ -501,7 +501,7 @@ Figure 23: Windows 2022
 ### D.4	Enable ICMP on instance
 We have enabled the AWS firewall for ICMP. Now we will open-up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 23.
 
-![AWS](https://asecuritysite.com/public/awsgif24.png "Enable ICMP")  
+![AWS](https://asecuritysite.com/public/awsgif23.png "Enable ICMP")  
  
 Figure 24: Enable ICMP
 
@@ -525,7 +525,7 @@ Now select Server Manage, and “Add a Role” for  Web Server (IIS) (Figure 24)
 
 
 
-![AWS](https://asecuritysite.com/public/awsgif25.png "Enable ICMP")  
+![AWS](https://asecuritysite.com/public/awsgif24.png "Enable ICMP")  
  
 Figure 25: Enable ICMP
 
@@ -537,7 +537,7 @@ Can you connect to the IIS Web server? [Yes/No] (see Figure 25)
 
 Now open up your AWS firewall for Port 80 (Figure 25).
 
-![AWS](https://asecuritysite.com/public/awsgif26.png "Enable HTTP")  
+![AWS](https://asecuritysite.com/public/awsgif25.png "Enable HTTP")  
 
 Figure 26: Enable HTTP
 
@@ -548,11 +548,11 @@ Can you connect to the IIS Web server? [Yes/No] (Figure 27)
 
 
 
-![AWS](https://asecuritysite.com/public/awsgif27.png "Local host")  
+![AWS](https://asecuritysite.com/public/awsgif26.png "Local host")  
 
 Figure 27: Local host
 
-![AWS](https://asecuritysite.com/public/awsgif28.png "Remote access")   
+![AWS](https://asecuritysite.com/public/awsgif27.png "Remote access")   
 
 Figure 28: Remote access 
 
