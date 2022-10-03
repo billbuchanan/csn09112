@@ -194,11 +194,11 @@ Now go to the EC2 Instance Connect (Figure 9), and press on the Connect button. 
 From your console (Figure 10), verify that your file has been created. Has it been created in the instance? [Yes/No]
 
 
-![AWS](https://asecuritysite.com/public/awsfig08.png "Connect to instance")  
+![AWS](https://asecuritysite.com/public/awsfig09.png "Connect to instance")  
 
 Figure 9: EC2 Instance Connect
 
-![AWS](https://asecuritysite.com/public/awsfig09.png "EC2 Instance Connect terminal")  
+![AWS](https://asecuritysite.com/public/awsfig09_1.png "EC2 Instance Connect terminal")  
 
 Figure 10: EC2 Instance Connect terminal
 
