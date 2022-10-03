@@ -344,9 +344,9 @@ aws ec2 stop-instances --instance-ids [My-instance-ID]
 From the AWS Management Console, has your instance stopped? [Yes/No]
 
 
-![AWS](https://asecuritysite.com/public/awsfig16.png "Stopping an instance")   
+![AWS](https://asecuritysite.com/public/awsfig17.png "Stopping an instance")   
 
-Figure 16: Stopping an instance
+Figure 17: Stopping an instance
 
 
 Now we will restart the instance, with:
