@@ -380,9 +380,9 @@ Now, revert the instance back to t3.micro, and suspend the instance.
 ## D	Creating and Securing a Windows 2022 Server
 In this part of the lab we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 17).
 
-![AWS](https://asecuritysite.com/public/awsfig17.png "Creating Windows 2022 instance")  
+![AWS](https://asecuritysite.com/public/awsfig18.png "Creating Windows 2022 instance")  
 
-Figure 17: Creating Windows 2022 instance
+Figure 18: Creating Windows 2022 instance
 
 Now select t2.micro for the instance type.
 
@@ -462,25 +462,25 @@ We will not be able to ping the instance yet, as the firewall on Windows is disa
 
 
  
-![AWS](https://asecuritysite.com/public/awsfig18.png "Details of instance")  
+![AWS](https://asecuritysite.com/public/awsfig19.png "Details of instance")  
 
-Figure 18: Details of instance
+Figure 19: Details of instance
 
  
-![AWS](https://asecuritysite.com/public/awsfig19.png "Enable ICMP")  
+![AWS](https://asecuritysite.com/public/awsfig20.png "Enable ICMP")  
 
-Figure 19: Enable ICMP
+Figure 20: Enable ICMP
 
 ### D.3	Accessing your instance
 Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 20). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 21).
 
-![AWS](https://asecuritysite.com/public/awsfig20.png "Connect to instance")  
+![AWS](https://asecuritysite.com/public/awsfig21.png "Connect to instance")  
 
-Figure 20: Connect to instance
+Figure 21: Connect to instance
 
-![AWS](https://asecuritysite.com/public/awsfig21.png "Reveal password")  
+![AWS](https://asecuritysite.com/public/awsfig22.png "Reveal password")  
 
-Figure 21: Reveal password
+Figure 22: Reveal password
 
 
 Have you managed to connect? [Yes/No] (Figure 22)
@@ -491,9 +491,9 @@ By using “ipconfig” in your instance, what is the private IP address of it?
 Can you ping 8.8.8.8 from your instance? [Yes/No]
 
 
-![AWS](https://asecuritysite.com/public/awsfig22.png "Windows 2022")  
+![AWS](https://asecuritysite.com/public/awsfig23.png "Windows 2022")  
 
-Figure 22: Windows 2022
+Figure 23: Windows 2022
 
 
 
@@ -501,9 +501,9 @@ Figure 22: Windows 2022
 ### D.4	Enable ICMP on instance
 We have enabled the AWS firewall for ICMP. Now we will open-up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 23.
 
-![AWS](https://asecuritysite.com/public/awsfig23.png "Enable ICMP")  
+![AWS](https://asecuritysite.com/public/awsfig24.png "Enable ICMP")  
  
-Figure 23: Enable ICMP
+Figure 24: Enable ICMP
 
 
 Can you successfully ping the instance from your instance? [Yes/No]
@@ -525,9 +525,9 @@ Now select Server Manage, and “Add a Role” for  Web Server (IIS) (Figure 24)
 
 
 
-![AWS](https://asecuritysite.com/public/awsfig24.png "Enable ICMP")  
+![AWS](https://asecuritysite.com/public/awsfig25.png "Enable ICMP")  
  
-Figure 24: Enable ICMP
+Figure 25: Enable ICMP
 
 Now open a browser on the instance, and access http://localhost
 
@@ -537,9 +537,9 @@ Can you connect to the IIS Web server? [Yes/No] (see Figure 25)
 
 Now open up your AWS firewall for Port 80 (Figure 25).
 
-![AWS](https://asecuritysite.com/public/awsfig25.png "Enable HTTP")  
+![AWS](https://asecuritysite.com/public/awsfig26.png "Enable HTTP")  
 
-Figure 25: Enable HTTP
+Figure 26: Enable HTTP
 
 Now open a browser on the instance, and access http://[IP of AWS]
 
@@ -548,13 +548,13 @@ Can you connect to the IIS Web server? [Yes/No] (Figure 27)
 
 
 
-![AWS](https://asecuritysite.com/public/awsfig26.png "Local host")  
+![AWS](https://asecuritysite.com/public/awsfig27.png "Local host")  
 
-Figure 26: Local host
+Figure 27: Local host
 
-![AWS](https://asecuritysite.com/public/awsfig27.png "Remote access")   
+![AWS](https://asecuritysite.com/public/awsfig28.png "Remote access")   
 
-Figure 27: Remote access 
+Figure 28: Remote access 
 
 Now go into the /inetpub/www folder, and create a file named “iisstart.html”, and add:
 ```
