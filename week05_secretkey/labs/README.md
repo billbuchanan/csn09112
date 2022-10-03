@@ -474,7 +474,7 @@ Figure 20: Enable ICMP
 ### D.3	Accessing your instance
 Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 20). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 21).
 
-![AWS](https://asecuritysite.com/public/awsgif21.png "Connect to instance")  
+![AWS](https://asecuritysite.com/public/awsfig21.png "Connect to instance")  
 
 Figure 21: Connect to instance
 
