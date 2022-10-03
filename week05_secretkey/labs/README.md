@@ -13,7 +13,7 @@ A demo of the setup of the lab is [here](https://youtu.be/GaMd8MaqBXA)
 ## Outline
 In previous labs we have set up a range of architectures with VMWare vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, and which reduces the cost in the investment in data centre costs, while providing the opportunity to quickly scale our server, network and data infrastructure. It is generally as pay-as-you-go model, and where we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
 
- 
+![AWS](url "https://asecuritysite.com/public/awsfig01.png") 
 Figure 1: AWS Services
 
 ## Enabling your lab
