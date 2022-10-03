@@ -13,30 +13,31 @@ A demo of the setup of the lab is [here](https://youtu.be/GaMd8MaqBXA)
 ## Outline
 In previous labs we have set up a range of architectures with VMWare vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, and which reduces the cost in the investment in data centre costs, while providing the opportunity to quickly scale our server, network and data infrastructure. It is generally as pay-as-you-go model, and where we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
 
-![Employee data](https://asecuritysite.com/public/awsfig01.png "Employee Data title")
+![AWS](https://asecuritysite.com/public/awsfig01.png "AWS Services")
 Figure 1: AWS Services
 
 ## Enabling your lab
 You should have an AWS Academy login, so go to: https://awsacademy.instructure.com/ and log into the system and select AWS Academy Learner Lab (Figure 2).
 
- 
+![AWS](https://asecuritysite.com/public/awsfig02.png "AWS Academy Learner Lab") 
 Figure 2: AWS Academy Learner Lab	
+
 Next, select “Modules”, and then “Learner Lab - Foundational Services”, and should have the lab environment (Figure 3). 
 
- 
+![AWS](https://asecuritysite.com/public/awsfig03.png "AWS Academy Learner Lab environment")  
 Figure 3: AWS Academy Learner Lab environment
 
 In the console you can interact with your AWS though the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
 
  
-
+![AWS](https://asecuritysite.com/public/awsfig04.png "AWS Management Console (EC2)")  
 Figure 4: AWS Management Console (EC2)
 
 ## Creating and Securing a Linux Server
 We will now create a Linux Server, and which should be accessible from the Internet. For this select “Launch Instance”, and then give it a name (such as “My Linux Server”) and select the Amazon Linux instance for the AMI (Amazon Machine Instance) – as shown in Figure 5.
 
  
-
+![AWS](https://asecuritysite.com/public/awsfig05.png "Creating Amazon Linux instance")  
 Figure 5: Creating Amazon Linux instance
 
   
@@ -122,11 +123,11 @@ What is the advantage of applying the firewall in AWS, rather than in the instan
 
 
  
-
+![AWS](https://asecuritysite.com/public/awsfig06.png "Details of instance")  
 Figure 6: Details of instance
 
  
-
+![AWS](https://asecuritysite.com/public/awsfig07.png "Enable ICMP")  
 Figure 7: Enable ICMP
 
 ### C.3	Accessing your instance
