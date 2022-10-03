@@ -20,17 +20,20 @@ Figure 1: AWS Services
 You should have an AWS Academy login, so go to: https://awsacademy.instructure.com/ and log into the system and select AWS Academy Learner Lab (Figure 2).
 
 ![AWS](https://asecuritysite.com/public/awsfig02.png "AWS Academy Learner Lab") 
+
 Figure 2: AWS Academy Learner Lab	
 
 Next, select “Modules”, and then “Learner Lab - Foundational Services”, and should have the lab environment (Figure 3). 
 
 ![AWS](https://asecuritysite.com/public/awsfig03.png "AWS Academy Learner Lab environment")  
+
 Figure 3: AWS Academy Learner Lab environment
 
 In the console you can interact with your AWS though the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
 
  
 ![AWS](https://asecuritysite.com/public/awsfig04.png "AWS Management Console (EC2)")  
+
 Figure 4: AWS Management Console (EC2)
 
 ## Creating and Securing a Linux Server
@@ -38,6 +41,7 @@ We will now create a Linux Server, and which should be accessible from the Inter
 
  
 ![AWS](https://asecuritysite.com/public/awsfig05.png "Creating Amazon Linux instance")  
+
 Figure 5: Creating Amazon Linux instance
 
   
@@ -124,16 +128,19 @@ What is the advantage of applying the firewall in AWS, rather than in the instan
 
  
 ![AWS](https://asecuritysite.com/public/awsfig06.png "Details of instance")  
+
 Figure 6: Details of instance
 
  
 ![AWS](https://asecuritysite.com/public/awsfig07.png "Enable ICMP")  
+
 Figure 7: Enable ICMP
 
 ### C.3	Accessing your instance
 Now we will connect to our instance. For this you need SSH (such as provided by OpenSSH). This may be installed on the host you are using (such as in vSoC 2), or from Apps Anywhere. Once you have SSH, press Connect on the summary page, and you should then have tabs for Connect to instance (Figure 8). Next select the SSH client tab, and you will see the details of connecting to your instance with SSH. 
 
- 
+![AWS](https://asecuritysite.com/public/awsfig08.png "Connect to instance")  
+
 Figure 8: Connect to instance
 
 Now find your PEM file on your local machine (from the command line), and protect it with:
@@ -186,9 +193,8 @@ Now go to the EC2 Instance Connect (Figure 8), and press on the Connect button. 
 From your console (Figure 9), verify that your file has been created. Has it been created in the instance? [Yes/No]
 
 
-
+![AWS](https://asecuritysite.com/public/awsfig08.png "EC2 Instance Connect")  
  
-
 Figure 8: EC2 Instance Connect
 
  
