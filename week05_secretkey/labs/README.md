@@ -225,10 +225,11 @@ sudo systemctl enable httpd.service
 ```
 Next open up a browser on your computer and access your instance for Web access.
 
+```
 Can you connect to it? [Yes/No]
 
 Why can’t you connect to it? 
-
+```
 
 Now enable a firewall rule on Port 80 and Port 443 and allow access for Web traffic (see Figure 11).
 
@@ -237,8 +238,9 @@ Now enable a firewall rule on Port 80 and Port 443 and allow access for Web traf
 
 Figure 11: Enable HTTP and HTTPs rules
 
+```
 Can you now connect to your Web site? [Yes/No] (see Figure 12)
-
+```
 
 ![AWS](https://asecuritysite.com/public/awsfig12.png "Sample access to Web site")  
 
@@ -251,12 +253,14 @@ Now go into the /var/www folder, and create a file named “index.html”, and a
 ```
 And then save the file.
 
+```
 Has it changed the welcome? [Yes/No]
-
+```
 
 ### C.6	Auditing
 The main logging output is in the /var/log folder. Go into this folder and observe some of the files in there. Identify the contents of the following files:
 
+```
 What are the likely contents of the “secure” file?
 
 What are the likely contents of the “boot.log” file?
@@ -268,7 +272,7 @@ Now try with another browser type  (such as Firefox or Chrome) and re-examine th
 
 
 Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file. What is the status code returned for the access?
-
+```
 
 
 ![AWS](https://asecuritysite.com/public/awsfig13.png "Sample list of log/httpd/access_log")  
@@ -301,13 +305,15 @@ Now restart the SSH service with:
 ```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo systemctl restart sshd
 ```
-
+```
 Can you now connect to your instance with the new user and password (but change for the IP address of your instance):
+```
 ```
 ssh   napier@54.209.145.85
 ```
+```
 Can you connect with the new user? [Yes/No]
-
+```
 
 ![AWS](https://asecuritysite.com/public/awsfig13.png "Accessing instances")  
 
