@@ -481,7 +481,7 @@ Now we will connect to our instance. For this you need RDP. Next Connect to inst
 
 Figure 21: Connect to instance
 
-![AWS](https://asecuritysite.com/public/awsgif21.png "Reveal password")  
+![AWS](https://asecuritysite.com/public/awsfig21.png "Reveal password")  
 
 Figure 22: Reveal password
 
