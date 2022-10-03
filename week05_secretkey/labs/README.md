@@ -315,7 +315,9 @@ Figure 13: Accessing instances
 
 Figure 14: Accessing instances
 
+![AWS](https://asecuritysite.com/public/awsfig15.png "Accessing instances")  
 
+Figure 15: Accessing instances
 
 ### C.8	Accessing from AWS prompt
 We can also access our instance from the AWS terminal prompt. For this return to your AWS Academy console, and enter the command (Figure 15):
@@ -334,10 +336,9 @@ Private IP address:
 
 State: 
 
+![AWS](https://asecuritysite.com/public/awsfig16.png "Stopping an instance")   
 
-![AWS](https://asecuritysite.com/public/awsfig15.png "Accessing instances")  
-
-Figure 15: Accessing instances
+Figure 16: Describe instances
 
 Now try we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 17):
 ```
