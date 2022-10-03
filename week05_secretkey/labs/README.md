@@ -14,6 +14,7 @@ A demo of the setup of the lab is [here](https://youtu.be/GaMd8MaqBXA)
 In previous labs we have set up a range of architectures with VMWare vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, and which reduces the cost in the investment in data centre costs, while providing the opportunity to quickly scale our server, network and data infrastructure. It is generally as pay-as-you-go model, and where we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
 
 ![AWS](https://asecuritysite.com/public/awsfig01.png "AWS Services")
+
 Figure 1: AWS Services
 
 ## Enabling your lab
@@ -188,17 +189,18 @@ What do you think is the purpose of the file contained in .ssh?
 
 Now create a folder in the top level named “mytestfolder”, and put a new file in there named “mytext.txt” (and put some text in this file).
 
-Now go to the EC2 Instance Connect (Figure 8), and press on the Connect button. You should now get a console terminal in the browser. 
+Now go to the EC2 Instance Connect (Figure 9), and press on the Connect button. You should now get a console terminal in the browser. 
 
-From your console (Figure 9), verify that your file has been created. Has it been created in the instance? [Yes/No]
+From your console (Figure 10), verify that your file has been created. Has it been created in the instance? [Yes/No]
 
 
-![AWS](https://asecuritysite.com/public/awsfig08.png "EC2 Instance Connect")  
- 
-Figure 8: EC2 Instance Connect
+![AWS](https://asecuritysite.com/public/awsfig08.png "Connect to instance")  
 
- 
-Figure 9: EC2 Instance Connect terminal
+Figure 9: EC2 Instance Connect
+
+![AWS](https://asecuritysite.com/public/awsfig09.png "EC2 Instance Connect terminal")  
+
+Figure 10: EC2 Instance Connect terminal
 
 Now examine the running services on the instance with:
 ```
@@ -225,16 +227,19 @@ Can you connect to it? [Yes/No]
 Why can’t you connect to it? 
 
 
-Now enable a firewall rule on Port 80 and Port 443 and allow access for Web traffic (see Figure 10).
-
- 
-Figure 10: Enable HTTP and HTTPs rules
-
-Can you now connect to your Web site? [Yes/No] (see Figure 11)
+Now enable a firewall rule on Port 80 and Port 443 and allow access for Web traffic (see Figure 11).
 
 
- 
-Figure 11: Sample access to Web site
+![AWS](https://asecuritysite.com/public/awsfig11.png "Enable HTTP and HTTPs rules")  
+
+Figure 11: Enable HTTP and HTTPs rules
+
+Can you now connect to your Web site? [Yes/No] (see Figure 12)
+
+
+![AWS](https://asecuritysite.com/public/awsfig12.png "Sample access to Web site")  
+
+Figure 12: Sample access to Web site
 
 Now go into the /var/www folder, and create a file named “index.html”, and add:
 ```
@@ -253,7 +258,7 @@ What are the likely contents of the “secure” file?
 
 What are the likely contents of the “boot.log” file?
 
-List the log/httpd/access_log file. What are its contents? Can you identity your browser access? (see Figure 12). Which browser type accessed your Web server?
+List the log/httpd/access_log file. What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
 
 
 Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file. Did it detect the new browser type?
@@ -263,8 +268,9 @@ Now access a file that does not exist in your site (such as http://AWSIP/test.ht
 
 
 
- 
-Figure 12: Sample list of log/httpd/access_log
+![AWS](https://asecuritysite.com/public/awsfig13.png "Sample list of log/httpd/access_log")  
+
+Figure 13: Sample list of log/httpd/access_log
 
 ### C.7	Adding a new user
 The ec2_user can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this we use adduser and passwd on the Linux instance:
