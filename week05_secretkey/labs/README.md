@@ -137,19 +137,20 @@ Figure 8: Connect to instance
 
 Now find your PEM file on your local machine (from the command line), and protect it with:
 
+```
 chmod 400 myfile.pem
-
+```
 What protection does this put on your private key?
 
 Next, use the SSH connection with the name of your PEM file and with the DNS (or IP address) for your instance. For example, in the case in Figure 8, we have:
-
+```
 ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
-
+```
 What is the name of the user that logs in?
 
 
 An example of connecting is:
-
+```
 % ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
 The authenticity of host 'ec2-52-90-3-121.compute-1.amazonaws.com (52.90.3.121)' can't be established.
 ED25519 key fingerprint is SHA256:/c5UOK6gprKL19XCptNQ1brb9MpYR5wEeqhD/6t+/Wk.
@@ -165,7 +166,7 @@ Last login: Fri Sep 30 17:07:00 2022 from ec2-18-206-107-27.compute-1.amazonaws.
 
 https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-172-31-16-186 ~]$
-
+```
 Have you managed to connect? [Yes/No]
 
 By using “ip addr show” or “ifconfig” in your instance, what is the private IP address of it?
@@ -193,10 +194,10 @@ Figure 8: EC2 Instance Connect
 Figure 9: EC2 Instance Connect terminal
 
 Now examine the running services on the instance with:
-
+```
 $ netstat -i | grep tcp
 $ netstat -i | grep udp
-
+```
 Which of the main services are running:
 
 
@@ -204,12 +205,12 @@ Which of the main services are running:
 
 ## C.4	Installing a Web server
 Now we will install a Web server on the instance with:
-
+```
 sudo yum update -y
 sudo yum install -y httpd.x86_64
 sudo systemctl start httpd.service
 sudo systemctl enable httpd.service
-
+```
 Next open up a browser on your computer and access your instance for Web access.
 
 Can you connect to it? [Yes/No]
@@ -229,10 +230,10 @@ Can you now connect to your Web site? [Yes/No] (see Figure 11)
 Figure 11: Sample access to Web site
 
 Now go into the /var/www folder, and create a file named “index.html”, and add:
-
+```
 <h1>Main Web site</h1>
 <p>Hello to you</p>
-
+```
 And then save the file.
 
 Has it changed the welcome? [Yes/No]
@@ -261,29 +262,34 @@ Figure 12: Sample list of log/httpd/access_log
 ### C.7	Adding a new user
 The ec2_user can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this we use adduser and passwd on the Linux instance:
 
+```
 [ec2-user@ip-172-31-16-186 ~]$ sudo adduser napier
 [ec2-user@ip-172-31-16-186 ~]$ sudo passwd napier
 Changing password for user napier.
 New password:  <yourpass>
 Retype new password:  <yourpass>
 passwd: all authentication tokens updated successfully.
+```
 
 Now we will add the new user to the login. For this, we use:
 
+```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
-Add line of (see Figure 13):
-Allow Users ec2-user napier
-Change the following to “yes” (see Figure 14):
+   Add line of (see Figure 13):
+AllowUsers ec2-user napier
+   Change the following to “yes” (see Figure 14):
 PasswordAuthentication yes
+```
 
 Now restart the SSH service with:
-
+```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo systemctl restart sshd
+```
 
-Can you now connect to your instance with the new user and password:
-
+Can you now connect to your instance with the new user and password (but change for the IP address of your instance):
+```
 ssh   napier@54.209.145.85
-
+```
 Can you connect with the new user? [Yes/No]
 
 
@@ -297,7 +303,9 @@ Figure 14: Accessing instances
 ### C.8	Accessing from AWS prompt
 We can also access our instance from the AWS terminal prompt. For this return to your AWS Academy console, and enter the command (Figure 15):
 
+```
 $ aws ec2 describe-instances
+```
 
 From the results, can you identify the following.
 
@@ -326,17 +334,20 @@ Figure 16: Stopping an instance
 
 Now we will restart the instance, with:
 
+```
 aws ec2 start-instances --instance-ids [My-instance-ID]
+```
 
 Has the instance re-started? [Yes/No]
 
 
 Now we will change the instance type from t3.micro to t3.small. To do this, run the following commands:
-
+```
 aws ec2 stop-instances --instance-ids [My-instance-ID]
 aws ec2 wait instance-stopped --instance-ids [My-instance-ID]
 aws ec2 modify-instance-attribute --instance-id [My-instance-ID] --instance-type "{\"Value\": \"t3.small\"}"
 aws ec2 start-instances --instance-ids [My-instance-ID]
+```
 
 Did it change the instance type? [Yes/No]
 
@@ -354,6 +365,7 @@ In this part of the lab we will create a Windows 2022 server instance with t3.mi
 
  
 Figure 17: Creating Windows 2022 instance
+
 Now select t2.micro for the instance type.
 
 How many vCPUs will the instance have?
@@ -519,9 +531,10 @@ Figure 26: Local host
 Figure 27: Remote access 
 
 Now go into the /inetpub/www folder, and create a file named “iisstart.html”, and add:
-
+```
 <h1>Main Web site</h1>
 <p>Hello to you</p>
+```
 
 And then save the file.
 
@@ -543,9 +556,9 @@ Now access a file that does not exist in your site (such as http://AWSIP/test.ht
 
 ### D.8	Changing Administrator password
 We can change the Administrator password, with something like:
-
+```
 net user administrator mynewpassword$$7k1
-
+```
 
 
 
