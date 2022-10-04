@@ -598,6 +598,99 @@ We can change the Administrator password, with something like:
 net user administrator mynewpassword$$7k1
 ```
 
+## E Python Access
+Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been setup with the details already setup for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
+
+```
+ddd_v1_w_W3n_1455598@runweb63277:~$ ls -al
+drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache               6144 Oct  2 10:13 .
+drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 10:32 ..
+dr-xr-xr-x 2 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 12:08 .aws
+-rw-rw-r-- 1 ddd_v1_w_W3n_1455598 apache                 51 Sep 29 10:32 .gitconfig
+drwxr-x--- 2 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 12:08 .ssh
+-rw-r--r-- 1 root                 root                 3851 Oct  4 02:44 .termrc
+dr-xr-xr-x 2 root                 root                 6144 Sep 29 10:32 .voc
+ddd_v1_w_W3n_1455598@runweb63277:~$ cd .aws
+ddd_v1_w_W3n_1455598@runweb63277:~/.aws$ ls -al
+dr-xr-xr-x 2 ddd_v1_w_W3n_1455598 apache 6144 Sep 29 12:08 .
+drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache 6144 Oct  2 10:13 ..
+-r--r--r-- 1 ddd_v1_w_W3n_1455598 apache   29 Oct  4 00:19 config
+-r--r--r-- 1 ddd_v1_w_W3n_1455598 apache  501 Oct  4 00:19 credentials
+ddd_v1_w_W3n_1455598@runweb63277:~/.aws$ cat credentials
+```
+
+List the contents of the credentials file, and verify that it contains the same credentials as from the AWS details button.
+
+```
+Are they the same? [Yes/No]
+```
+
+Now create a Python file which will show your instances in the terminal window (such as 1.py):
+
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+ec2.describe_instances()
+```
+ 
+Figure 28: Python file creation
+
+Save the file, and then run the file with Python3 and prove that it shows your instances (see Figure 29).
+
+ 
+Figure 29: Running the Python3 file
+
+```
+Does the Python3 program show your instances? [Yes/No]
+```
+
+Now we will stop one of our instances. For this, get an instance name, and add it to the following file:
+
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+ec2.stop_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+```
+
+Now run the Python file, and prove that it has stopped your instance.
+```
+Does the Python3 program stop your instance? [Yes/No]
+```
+Now we will restart one of our instances. For this, get an instance name, and add it to the following file:
+
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+ec2.start_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+```
+
+Now run the Python file, and prove that it has stopped your instance.
+
+```
+Does the Python3 program start your instance? [Yes/No]
+```
+
+Finally, write a Python3 program which will start both of your instances, and another one to stop them both.
+```
+Do you Python3 programs work? [Yes/No]
+```
+
+You can also use the AWS prompt. Now try to start and stop your instances with:
+```
+aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx
+```
+
+and
+```
+aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx
+```
+```
+Do these command line programs work? [Yes/No]
+```
+
+
+
+
 
 
 
