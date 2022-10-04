@@ -632,12 +632,14 @@ import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
 ec2.describe_instances()
 ```
-![AWS](https://asecuritysite.com/public/awsfig28.png "Python file creation")
+![AWS](https://asecuritysite.com/public/awsgif28.png "Python file creation")
+
 Figure 28: Python file creation
 
 Save the file, and then run the file with Python3 and prove that it shows your instances (see Figure 29).
 
-![AWS](https://asecuritysite.com/public/awsfig01.png "Running the Python3 file") 
+![AWS](https://asecuritysite.com/public/awsgif01.png "Running the Python3 file") 
+
 Figure 29: Running the Python3 file
 
 ```
