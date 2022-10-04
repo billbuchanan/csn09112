@@ -7,7 +7,7 @@ The  aim  of  this  lab  is  setup AWS server instances and understand the setup
 
 ## Activities
 
-A demo of the setup of the lab is [here](https://youtu.be/GaMd8MaqBXA)
+A demo of the setup of the lab is [here](https://youtu.be/rhf4_1E_wAU)
 
 
 ## Outline
