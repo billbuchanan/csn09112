@@ -674,7 +674,7 @@ Does the Python3 program start your instance? [Yes/No]
 
 Finally, write a Python3 program which will start both of your instances, and another one to stop them both.
 ```
-Do you Python3 programs work? [Yes/No]
+Do your Python3 programs work? [Yes/No]
 ```
 
 You can also use the AWS prompt. Now try to start and stop your instances with:
