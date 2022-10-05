@@ -1,0 +1,14 @@
+Two ways to change permissions of the file in Windows. 
+
+1) Using file properties (by right clicking on the file) and 2) In command prompt of Windows
+
+# Source: https://stackoverflow.com/a/43317244
+
+In windows command prompt, "Chmod" has an alternative "icacls" (the updated version of cacls) command to change permissions
+
+# Reset to remove explict permissions
+icacls.exe $path /reset
+# Give current user explicit read-permission
+icacls.exe $path /GRANT:R "$($env:USERNAME):(R)"
+# Disable inheritance and remove inherited permissions
+icacls.exe $path /inheritance:r
