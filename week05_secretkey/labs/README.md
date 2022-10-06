@@ -690,6 +690,52 @@ aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx
 Do these command line programs work? [Yes/No]
 ```
 
+Now we will create a keypair with Python, and then create a new Linux instance. First create the keypair with the Python file of:
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+outfile = open('mykeypair.pem','w')
+
+key_pair = ec2.create_key_pair(KeyName='mykeypair2')
+MyKeyPair = key_pair["KeyMaterial"]
+
+print(MyKeyPair)
+```
+```
+What is the name of your key pair? Can you find it in your AWS Management console? [Yes/No]
+```
+
+
+Now we will create a Linux instance. Take a note of the AMI for your Linux instance, and check that it is the same as the instance below Now create create.py, and save the file:
+
+```
+import boto3
+ec2 = boto3.resource('ec2')
+
+# create a new EC2 instance
+instances = ec2.create_instances(
+     ImageId='ami-026b57f3c383c2eec',
+     MinCount=1,
+     MaxCount=2,
+     InstanceType='t2.micro',
+     KeyName='mykeypair2'
+ )
+ ```
+```
+Finally run the instance. Has it created the instance? [Yes/No]
+
+If it has created it, now terminate it. Has it been terminated? [Yes/No]
+```
+
+ 
+
+
+
+**NOW TERMINATE YOUR NEWLY CREATED INSTANCE (and any others you have created with Python)!**
+
+At the end of the lab, you should only have two instances. Please either terminate these, or stop them.
+
+
 
 
 
