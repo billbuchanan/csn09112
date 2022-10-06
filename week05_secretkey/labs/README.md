@@ -246,7 +246,7 @@ Can you now connect to your Web site? [Yes/No] (see Figure 12)
 
 Figure 12: Sample access to Web site
 
-Now go into the /var/www folder, and create a file named “index.html”, and add:
+Now go into the /var/www/html folder, and create a file named “index.html”, and add:
 ```
 <h1>Main Web site</h1>
 <p>Hello to you</p>
