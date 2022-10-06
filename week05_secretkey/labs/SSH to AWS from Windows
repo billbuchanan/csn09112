@@ -4,11 +4,8 @@ Two ways to change permissions of the file in Windows.
 
 # Source: https://stackoverflow.com/a/43317244
 
-In windows command prompt, "Chmod" has an alternative "icacls" (the updated version of cacls) command to change permissions
+In windows command prompt, "Chmod" has an alternative "icacls" (the updated version of cacls) command to change permissions (for your_key_name.pem):
 
-# Reset to remove explict permissions
-icacls.exe $path /reset
-# Give current user explicit read-permission
-icacls.exe $path /GRANT:R "$($env:USERNAME):(R)"
-# Disable inheritance and remove inherited permissions
-icacls.exe $path /inheritance:r
+icacls.exe your_key_name.pem /reset
+icacls.exe your_key_name.pem /grant:r "$($env:username):(r)"
+icacls.exe your_key_name.pem /inheritance:r
