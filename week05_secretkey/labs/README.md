@@ -568,7 +568,7 @@ Figure 28: Local host
 
 Figure 29: Remote access 
 
-Now go into the /inetpub/www folder, and create a file named “iisstart.html”, and add:
+Now go into the c:\inetpub\wwwroot folder, and create a file named “iisstart.html”, and add:
 ```
 <h1>Main Web site</h1>
 <p>Hello to you</p>
