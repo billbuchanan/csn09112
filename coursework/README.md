@@ -10,19 +10,7 @@ This coursework page will be updated soon.
 You can download the Bot onto the Ubuntu machine using:
 
 ```
-wget https://github.com/billbuchanan/csn09112/blob/master/coursework/botnet.exe.gz
-gunzip botnet.exe.gz
-wget https://github.com/billbuchanan/csn09112/blob/master/coursework/controller.exe.gz
-gunzip controller.exe.gz
-```
-
-or:
-
-```
-wget https://asecuritysite.com/coursework_b.gz
-gunzip coursework_b.gz
-wget https://asecuritysite.com/coursework_c.gz
-gunzip coursework_c.gz
+wget https://github.com/billbuchanan/csn09112/raw/master/coursework/Archive.zip
 ```
 
 
