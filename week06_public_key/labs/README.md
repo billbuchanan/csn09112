@@ -9,23 +9,35 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 ## 1	Diffie-Hellman
 
 | No | Description | Result | 
-| -------|--------|---------|
-| 1 |	On Kali, login and get an IP address using: sudo dhclient eth11 |	What is your IP address? |
-| 2	| Bob and Alice have agreed on the values: <br/>G=2879, N= 9929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): <br/>Bob’s A value (G<sup>x</sup> mod N): <br/>Alice’s B value (G<sup>y</sup> mod N): |
+
+| 2	| Bob and Alice have agreed on the values: <br/>G=2,879, N= 9,929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): <br/>Bob’s A value (G<sup>x</sup> mod N): <br/>Alice’s B value (G<sup>y</sup> mod N): |
 | 3 | Now they exchange the values. Next calculate the shared key: | Bob’s value (B<sup>x</sup> mod N):	Alice’s value (A<sup>y</sup> mod N): Do they match? [Yes] [No] |
 | 4 | If you are in the lab, select someone to share a value with. Next agree on two numbers (G and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for G and N: <br/>Your x value: <br/>Your A value:  <br/>The B value you received: <br/>Shared key: <br/>Do they match: [Yes] [No] |
 
-## 2	Private Key
+## 2	Symmetric Key
 
 | No | Description | Result | 
 | -------|--------|---------|
-| 1 | Use: openssl list-cipher-commands openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
-| 2 | Using openssl and the command in the form: openssl prime –hex 1111 | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
-| 3 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc  openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
-| 4 | Now repeat the previous command and add the –base64 option. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
-| 5 | Now repeat the previous command and observe the encrypted output. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
-| 6 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
-| 7 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
+| 1 | Log into vSoC 2, and select your Kali host on the DMZ or public network. | What is your IP address? |
+| 2 | Use: openssl list -cipher-commands and openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
+| 2 | Use: openssl list -cipher-commands | Outline five encryption methods that are supported:   |
+| 2 | Use: openssl version | Outline the version of OpenSSL:    |
+| 3 | Using openssl and the command in the form: openssl prime –hex 1111 | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
+| 4 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc  openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
+| 5 | Now repeat the previous command and add the –base64 option. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
+| 6 | Now repeat the previous command and observe the encrypted output. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
+| 7 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
+| 8 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
+| 8 | With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:
+<br/>
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
+Ulq+o+vs5mvAc3GUIKt8hA==
+
+echo Ulq+o+vs5mvAc3GUIKt8hA== | openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341
+Hello | [qwerty]
+<br/> | [inkwell][london][paris][cake] |
+| 8 | For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “PxonB24+a9f3U/KmlB+/KA==”: | |
+
 
 ## 3	Public Key
 
