@@ -333,9 +333,9 @@ Now determine the cipher text for the following (the first example has already b
 | Message |	Key | CMS Cipher |  
 | -------|------|------|
 | “hello” |	“hello123” |	0a7ec77951291795bac6690c9e7f4c0d |
-“inkwell”|	“orange”	| |
-“security”|	“qwerty”	||
-“Africa”	“changeme”	||
+| “inkwell”|	“orange”	| |
+| “security”|	“qwerty”	||
+| “Africa” |	“changeme”	||
 
 Finally, change the program so that it does 256-bit AES with CBC mode.
 
