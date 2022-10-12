@@ -62,6 +62,21 @@ We have stored our keys on a key ring file (PEM). Normally we would use a digita
 ## 5 Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
+The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
+
+Download: [here](https://hashcat.net/files/hashcat-6.0.0.7z)
+
+Next unzip it into your home folder. Then from your home folder, setup a link to Hashcat 6.0.0:
+
+```
+# ln -s hashcat hashcat-6.0.0/hashcat.bin
+```
+and then run Hashcat put “./” in from of the program name, such as:
+```
+# ./hashcat –version
+v6.0.0
+```
+
 
 1 Using: [here](http://asecuritysite.com/encryption/md5) Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 
 ```
