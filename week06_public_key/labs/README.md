@@ -9,14 +9,15 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 ## 1	Diffie-Hellman
 
 | No | Description | Result | 
-| 1	| Bob and Alice have agreed on the values: <br/>G=2,879, N= 9,929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): <br/>Bob’s A value (G<sup>x</sup> mod N): <br/>Alice’s B value (G<sup>y</sup> mod N): |
+| -------|--------|---------|
+| 1 | Bob and Alice have agreed on the values: <br/>G=2,879, N= 9,929 Bob Select x=6, Alice selects y=9 | Now calculate (using the Kali calculator): <br/>Bob’s A value (G<sup>x</sup> mod N): <br/>Alice’s B value (G<sup>y</sup> mod N): |
 | 2 | Now they exchange the values. Next calculate the shared key: | Bob’s value (B<sup>x</sup> mod N):	Alice’s value (A<sup>y</sup> mod N): Do they match? [Yes] [No] |
 | 3 | If you are in the lab, select someone to share a value with. Next agree on two numbers (G and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for G and N: <br/>Your x value: <br/>Your A value:  <br/>The B value you received: <br/>Shared key: <br/>Do they match: [Yes] [No] |
 
 ## 2	Symmetric Key
 
 | No | Description | Result | 
-| -------|--------|---------|
+|-------|--------|---------|
 | 1 | Log into vSoC 2, and select your Kali host on the DMZ or public network. | What is your IP address? |
 | 2 | Use: openssl list -cipher-commands and openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
 | 2 | Use: openssl list -cipher-commands | Outline five encryption methods that are supported:   |
