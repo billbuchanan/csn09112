@@ -29,13 +29,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 7 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
 | 8 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
 | 8 | With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:
-<br/>
-echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
-Ulq+o+vs5mvAc3GUIKt8hA==
-
-echo Ulq+o+vs5mvAc3GUIKt8hA== | openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341
-Hello | [qwerty]
-<br/> | [inkwell][london][paris][cake] |
+<br/>echo -n "Hello" <br/> openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>Ulq+o+vs5mvAc3GUIKt8hA==<br/>echo Ulq+o+vs5mvAc3GUIKt8hA== <br/> openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341<br/>Hello | [qwerty][inkwell][london][paris][cake] |
 | 8 | For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “PxonB24+a9f3U/KmlB+/KA==”: | |
 
 
@@ -48,7 +42,7 @@ Hello | [qwerty]
 | 3 | Next we view the RSA key pair: openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
 | 4 | Let’s now secure the encrypted key with 3-DES: openssl rsa -in private.pem -des3 -out key3des.pem | |
 | 5 | Next we will export the public key: openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
-| 6 | Now we will encrypt with our public key: openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | |
+| 6 | Now we will encrypt with our public key: openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
 | 7 | And then decrypt with our private key: openssl rsautl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
 | 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
 
