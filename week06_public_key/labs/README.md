@@ -244,138 +244,101 @@ Admin:
 Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
 
 ## 8	Python tutorial
-In this lab we will encrypt a string with a public key, and the decrypt with the private key.
+In Python, we can use the Hazmat (Hazardous Materials) library to implement symmetric key encryption. 
 
-Web link (Cipher code): https://asecuritysite.com/encryption/rsa12
+Web link (Cipher code): [here](http://asecuritysite.com/cipher01.zip)
 
 The code should be:
 
-```Python
-from Crypto.Util.number import *
-from Crypto import Random
-import Crypto
-import libnum
-import sys
-
-bits=60
-msg="Hello"
-
-p = Crypto.Util.number.getPrime(bits, randfunc=Crypto.Random.get_random_bytes)
-q = Crypto.Util.number.getPrime(bits, randfunc=Crypto.Random.get_random_bytes)
-
-n = p*q
-PHI=(p-1)*(q-1)
-
-e=65537
-d=(libnum.invmod(e, PHI))
-
-m=  bytes_to_long(msg.encode('utf-8'))
-
-c=pow(m,e, n)
-res=pow(c,d ,n)
-
-print ("Message=%s\np=%s\nq=%s\nN=%s\ncipher=%s\ndecipher=%s" % (msg,p,q,n,c,(long_to_bytes(res))))
 ```
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes 
+from cryptography.hazmat.primitives import padding
+from cryptography.hazmat.backends import default_backend
 
-You may need to use:
-
-```
-pip install pycryptodome
-```
-
-If this install doesn't work, you can use Repl.it to build your code. Repl.it: [here](https://repl.it/@billbuchanan/csn09112rsa01)
-
-Prove the operation of the code. Now, try with 128-bit prime numbers and 256-bit prime numbers. What can you observe from the increase in the prime number size?
-
-Can you integrate a timer in your code, so that you can assess the time to encrypt and decrypt? Now complete the following table:
-
-| Prime number size | Time to generate primes | Time to encrypt |  Time to decrypt |
-| -------|--------|---------|---------|
-| 60 ||||			
-| 128	||||		
-| 256	||||		
-
-We can write a Python program to implement this key exchange. Enter and run the following program:
-
-```Python
-import random
-import base64
 import hashlib
 import sys
+import binascii
 
-g=11
-p=1001
+val='hello'
+password='hello123'
 
-x=random.randint(5, 10)
+plaintext=val
 
-y=random.randint(10,20)
+def encrypt(plaintext,key, mode):
+    method=algorithms.AES(key)
+    cipher = Cipher(method,mode, default_backend())
+    encryptor = cipher.encryptor()
+    ct = encryptor.update(plaintext) + encryptor.finalize()
+    return(ct)
 
-A=(g**x) % p
+def decrypt(ciphertext,key, mode):
+    method=algorithms.AES(key)
+    cipher = Cipher(method, mode, default_backend())
+    decryptor = cipher.decryptor()
+    pl = decryptor.update(ciphertext) + decryptor.finalize()
+    return(pl)
 
-B=(g**y) % p
+def pad(data,size=128):
+    padder = padding.PKCS7(size).padder()
+    padded_data = padder.update(data)
+    padded_data += padder.finalize()
+    return(padded_data)
 
-print ('g: ',g,' (a shared value), n: ',p, ' (a prime number)')
+def unpad(data,size=128):
+    padder = padding.PKCS7(size).unpadder()
+    unpadded_data = padder.update(data)
+    unpadded_data += padder.finalize()
+    return(unpadded_data)
 
-print ('\nAlice calculates:')
-print ('a (Alice random): ',x)
-print ('Alice value (A): ',A,' (g^a) mod p')
+key = hashlib.sha256(password.encode()).digest()
 
+print("Before padding: ",plaintext)
 
-print ('\nBob calculates:')
-print ('b (Bob random): ',y)
-print ('Bob value (B): ',B,' (g^b) mod p')
+plaintext=pad(plaintext.encode())
 
+print("After padding (CMS): ",binascii.hexlify(bytearray(plaintext)))
 
-print ('\nAlice calculates:')
-keyA=(B**x) % p
-print ('Key: ',keyA,' (B^a) mod p')
-print ('Key: ',hashlib.sha256(bytes(keyA)).digest())
+ciphertext = encrypt(plaintext,key,modes.ECB())
+print("Cipher (ECB): ",binascii.hexlify(bytearray(ciphertext)))
 
-print ('\nBob calculates:')
-keyB=(A**y) % p
-print ('Key: ',keyB,' (A^b) mod p')
-print ('Key: ',hashlib.sha256(bytes(keyB)).digest())
+plaintext = decrypt(ciphertext,key,modes.ECB())
+
+plaintext = unpad(plaintext)
+print("  decrypt: ",plaintext.decode())
 ```
 
-Repl.it: https://repl.it/@billbuchanan/csn09112dh
+How is the encryption key generate?
 
-Pick three different values for g and p, and make sure that the Diffie Hellman key exchange works:
+Which is the size of the key used? [128-bit][256-bit]
 
-g= 	p=
+Which is the encryption mode used? [ECB][CBC][OFB]
 
-g= 	p=
-
-g= 	p=
-
-Can you pick a value of g and p which will not work?
-
-
-
-The code given below allows you to pick a value of g which will always work for a given value of p. Can you integrate the code and prove that it works?
-
-https://asecuritysite.com/encryption/pickg
-
-```Python
-def getG(p):
-
-  for x in range (1,p):
-	rand = x
-	exp=1
-	next = rand % p
-
-	while (next <> 1 ):
-		next = (next*rand) % p
-		exp = exp+1
-		
-
-	if (exp==p-1):
-		print rand
-
-print getG(p)
+Now update the code so that you can enter a string and the program will show the cipher text. The format will be something like:
 ```
-Repl.it: https://repl.it/@billbuchanan/csn09112g#main.py
+python cipher01.py hello mykey
+```
+where “hello” is the plain text, and “mykey” is the key. A possible integration is:
+```
+import sys
 
-Using the prime number generator given in the RSA code, can you implement a Diffie-Hellman method which uses 256 bit prime numbers?
+if (len(sys.argv)>1):
+	val=sys.argv[1]
+
+if (len(sys.argv)>2):
+	password=sys.argv[2]
+```
+
+Now determine the cipher text for the following (the first example has already been completed):
+
+| Message |	Key | CMS Cipher |  
+| -------|------|------|
+	
+| “hello” |	“hello123” |	0a7ec77951291795bac6690c9e7f4c0d |
+“inkwell”|	“orange”	| |
+“security”|	“qwerty”	||
+“Africa”	“changeme”	||
+
+Finally, change the program so that it does 256-bit AES with CBC mode.
 
 
 
