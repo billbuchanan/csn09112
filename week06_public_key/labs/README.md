@@ -178,7 +178,7 @@ hashcat –m 0 hash1 words
 
 
 
-2 UUsing the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
+2 Using the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
 
 ```
 FE01D67A002DFA0F3AC084298142ECCD
