@@ -28,9 +28,9 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 6 | Now repeat the previous command and observe the encrypted output. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
 | 7 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
 | 8 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
-| 9 | With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:<br/>echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>Ulq+o+vs5mvAc3GUIKt8hA==<br/>echo Ulq+o+vs5mvAc3GUIKt8hA== \| openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341<br/>Hello  <br/><br/> For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “PxonB24+a9f3U/KmlB+/KA==”: |  [qwerty][inkwell][london][paris][cake]
-|10 | Now, use the decryption method to prove that you can decrypt the ciphertext.<br/>echo PxonB24+a9f3U/KmlB+/KA== \| openssl enc -aes-256-cbc -pass pass:"password" -d  -base64 -S 241fa86763b85341 | Did you confirm the right password? [Yes/No] |
-| 11 | Investigate the following commands by running them several times:<br/>echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt | What do you observe? Why do you think causes this (ask your tutor if you want some detail)? |
+| 9 | With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:<br/>echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>Ulq+o+vs5mvAc3GUIKt8hA==<br/>echo Ulq+o+vs5mvAc3GUIKt8hA== \| openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341<br/>Hello  <br/><br/> For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “U2FsdGVkX18kH6hnY7hTQT8aJwduPmvX91PyppQfvyg=”: |  [qwerty][inkwell][london][paris][cake]
+|10 | Now, use the decryption method to prove that you can decrypt the ciphertext.<br/>echo U2FsdGVkX18kH6hnY7hTQT8aJwduPmvX91PyppQfvyg= \| openssl enc -aes-256-cbc -pass pass:"password" -d  -base64 -S 241fa86763b85341 | Did you confirm the right password? [Yes/No] |
+| 11 | Investigate the following commands by running them several times:<br/>echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt | What do you observe? Why do you think causes this (ask your tutor if you want some detail)? |
 
 
 
@@ -69,7 +69,7 @@ Download: [here](https://hashcat.net/files/hashcat-6.0.0.7z)
 Next unzip it into your home folder. Then from your home folder, setup a link to Hashcat 6.0.0:
 
 ```
-# ln -s hashcat hashcat-6.0.0/hashcat.bin
+# ln -s hashcat-6.0.0/hashcat.bin  hashcat
 ```
 and then run Hashcat put “./” in from of the program name, such as:
 ```
