@@ -134,7 +134,7 @@ Jane’s password:
 [Hint: openssl passwd -apr1 -salt ZaZS/8TF napier] 
 
 
-4 On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 signatures: 
+4 On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 hashes : 
 
 ```
 MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 
@@ -144,6 +144,8 @@ MD5(4.txt)= d89b56f81cd7b82856231e662429bcf2
 ```
 
 Which file(s) have been modified: 
+
+Note: Use can use md5sum to compute MD5 hashes.
 
 5 From Kali, download the following ZIP file: [here](http://asecuritysite.com/letters.zip )
 
