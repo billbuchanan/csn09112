@@ -69,7 +69,7 @@ Download: [here](https://hashcat.net/files/hashcat-6.0.0.7z)
 Next unzip it into your home folder. Then from your home folder, setup a link to Hashcat 6.0.0:
 
 ```
-# ln -s hashcat hashcat-6.0.0/hashcat.bin
+# ln -s hashcat-6.0.0/hashcat.bin  hashcat
 ```
 and then run Hashcat put “./” in from of the program name, such as:
 ```
