@@ -7,10 +7,12 @@ Author: Bill Buchanan
 This coursework page will be updated soon.
 
 ## Running the bot and controller
-You can download the Bot onto the Ubuntu machine using:
+You can download the Bot onto the Linux machine using:
 
 ```
-wget https://github.com/billbuchanan/csn09112/raw/master/coursework/Archive.zip
+wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/c.zip?raw=true'
+mv c.zip?raw=true c.zip
+unzip c.zip
 ```
 
 
