@@ -34,9 +34,9 @@ bot.exe W.X.Y.Z
 
 
 ```
-Bot Version 4.0 - 2021/2022
+Bot Version 5.0 - 2022/2023
 Please run with bot w.x.y.z, where w.x.y.z is the address of your controller.
-Version 4.0
+Version 5.0
 ```
 
 The bot and the controller should connect to each other.
