@@ -4,8 +4,6 @@
 # CSN09112 - Network Security and Cryptography
 Author: Bill Buchanan
 
-This coursework page will be updated soon.
-
 ## Running the bot and controller
 You can download the Bot onto the Linux machine using:
 
@@ -16,7 +14,7 @@ unzip c.zip
 ```
 
 
-You can test the bot and controller to capture and test your traces on your computer or use vSoC. For vSoC, go to your Windows machine on the DMZ, and download the ZIP file . Otherwise download the controller to the Kali machine on the DMZ, and run:</p>
+Setup the controller to run on Linux, and the botnet to run on Windows. go to your Windows machine on the DMZ, and download the ZIP file. You can run the controller on our Linux machine with:</p>
 
 ```
 mono controller.exe
@@ -25,14 +23,14 @@ mono controller.exe
 The output should show the form of:
 
 ```
-Bot Controller Version 4.0
+Bot Controller Version 5.0
 ```
 
-Take a note of the IP address of the controller (W.X.Y.Z). Now got your Ubuntu machine, and run:</p>
+Take a note of the IP address of the controller (W.X.Y.Z). Now go your Windows machine, and run:</p>
 
-<pre>
-mono bot.exe W.X.Y.Z
-</pre>
+```
+bot.exe W.X.Y.Z
+```
 
 
 ```
