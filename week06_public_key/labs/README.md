@@ -10,7 +10,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 | No | Description | Result | 
 | -------|--------|---------|
-| 1 | Bob and Alice have agreed on the values: <br/>g=2,879, N= 9,929 Bob Select b=6, Alice selects a=9 | Now calculate (using the Kali calculator): <br/>Bob’s B value (g<sup>x</sup> mod N): <br/>Alice’s A value (g<sup>y</sup> mod N): |
+| 1 | Bob and Alice have agreed on the values: <br/>g=2,879, N= 9,929 Bob Select b=6, Alice selects a=9 | Now calculate (using the Kali calculator): <br/>Bob’s B value (g<sup>b</sup> mod N): <br/>Alice’s A value (g<sup>a</sup> mod N): |
 | 2 | Now they exchange the values. Next calculate the shared key: | Bob’s value (A<sup>a</sup> mod N):	Alice’s value (B<sup>a</sup> mod N): Do they match? [Yes] [No] |
 | 3 | If you are in the lab, select someone to share a value with. Next agree on two numbers (g and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for g and N: <br/>Your b value: <br/>Your B value:  <br/>The A value you received: <br/>Shared key: <br/>Do they match: [Yes] [No] |
 
@@ -23,9 +23,9 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 2 | Use: openssl list -cipher-commands | Outline five encryption methods that are supported:   |
 | 2 | Use: openssl version | Outline the version of OpenSSL:    |
 | 3 | Using openssl and the command in the form: openssl prime –hex 1111 | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
-| 4 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc  openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
-| 5 | Now repeat the previous command and add the –base64 option. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
-| 6 | Now repeat the previous command and observe the encrypted output. openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
+| 4 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc <br/> openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
+| 5 | Now repeat the previous command and add the –base64 option. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
+| 6 | Now repeat the previous command and observe the encrypted output. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
 | 7 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
 | 8 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
 | 9 | With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:<br/>echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>Ulq+o+vs5mvAc3GUIKt8hA==<br/>echo Ulq+o+vs5mvAc3GUIKt8hA== \| openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341<br/>Hello  <br/><br/> For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “U2FsdGVkX18kH6hnY7hTQT8aJwduPmvX91PyppQfvyg=”: |  [qwerty][inkwell][london][paris][cake]
@@ -134,7 +134,7 @@ Jane’s password:
 [Hint: openssl passwd -apr1 -salt ZaZS/8TF napier] 
 
 
-4 On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 signatures: 
+4 On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 hashes : 
 
 ```
 MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 
@@ -145,6 +145,8 @@ MD5(4.txt)= d89b56f81cd7b82856231e662429bcf2
 
 Which file(s) have been modified: 
 
+Note: Use can use md5sum to compute MD5 hashes.
+
 5 From Kali, download the following ZIP file: [here](http://asecuritysite.com/letters.zip )
 
 View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? 
@@ -154,51 +156,49 @@ View the letters. Are they different? Now determine the MD5 signature for them. 
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 
-1 On Kali, next create a words file (words) with the words of "napier", "password", "Ankle123" and "inkwell". Using hashcat crack the following MD5 signatures (hash1): 
+1 On Kali, next create a word file (words) with the words of “napier”, “password” “Ankle123” and “inkwell”
+
+Using hashcat crack the following MD5 signatures (hash1):
 ```
-232DD5D7274E0D662F36C575A3BD634C 
+232DD5D7274E0D662F36C575A3BD634C
+5F4DCC3B5AA765D61D8327DEB882CF99
+6D5875265D1979BDAD1C8A8F383C5FF5
+04013F78ACCFEC9B673005FC6F20698D
+```
+Command used:
+```
+hashcat –m 0 hash1 words
 ```
 232DD...634C Is it [napier][password][Ankle123][inkwell]?
-```
-5F4DCC3B5AA765D61D8327DEB882CF99 
-```
+
 5F4DC...CF99 Is it [napier][password][Ankle123][inkwell]?
-```
-6D5875265D1979BDAD1C8A8F383C5FF5 
-```
-6D587...5FF5 Is it [napier][password][Ankle123][inkwell]? 
-```
-04013F78ACCFEC9B673005FC6F20698D   
-```
-04013...698D Is it [napier][password][Ankle123][inkwell]? 
 
-Command used:  hashcat –m 0 hash1 words 
+6D587...5FF5 Is it [napier][password][Ankle123][inkwell]?
+
+04013...698D Is it [napier][password][Ankle123][inkwell]?
 
 
 
 
+2 Using the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
 
-2 Using the method used in the first part of this tutorial, find crack the following for names of fruits (the fruits are all in lowercase):  
 ```
-FE01D67A002DFA0F3AC084298142ECCD 
+FE01D67A002DFA0F3AC084298142ECCD
+1F3870BE274F6C49B3E31A0C6728957F
+72B302BF297A228A75730123EFEF7C41
+8893DC16B1B2534BAB7B03727145A2BB
+889560D93572D538078CE1578567B91A
 ```
-Name of the fruit:
-```
-1F3870BE274F6C49B3E31A0C6728957F 
-```
-Name of the fruit:
-```
-72B302BF297A228A75730123EFEF7C41 
-```
-Name of the fruit:
-```
-8893DC16B1B2534BAB7B03727145A2BB 
-```
-Name of the fruit:
-```
-889560D93572D538078CE1578567B91A 
-```
-Name of the fruit:
+
+FE01D:
+
+1F387:
+
+72B30:
+
+8893D:
+
+88956:
 
 ## 7	Hashing Cracking (LM Hash/Windows)
 All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
