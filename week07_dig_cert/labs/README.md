@@ -25,23 +25,26 @@ Use your desktop computer to complete the following:
 | No | Description | Result | 
 | -------|--------|---------|
 | 1 | Go to: [here](http://asecuritysite.com/Challenges) Click on the “Start Challenge” button, and see if you can score over 30 points. |	Your score: |
-| 2 | Using: http://asecuritysite.com/Encryption/testprime Test for the following prime numbers:	| 91: [Yes] [No] <br />421: [Yes] [No] <br />1449: [Yes] [No] |
-| 3 | Using: http://asecuritysite.com/Encryption/gcd Determine the GCD for the following: | 88, 46: <br/> 105, 35: |
-| 4 | Using: http://asecuritysite.com/coding/ascii Determine the Base 64 and Hex values for the following strings: | Hello: <br />hello: <br />HELLO: |
-| 5 | Using: http://asecuritysite.com/coding/ascii Determine the following ASCII strings for these encoded formats: | bGxveWRz <br />6E6170696572 <br />01000001 01101110 01101011 01101100 01100101 00110001 00110010 00110011 |
-| 6 | Using: http://asecuritysite.com/Coding/exor Determine the EX-OR of “hello” ex-ORed with the letter ‘t’	| Hex: <br />Base 64: <br />Is the result printable in ASCII? [Yes][No] | 
-| 7 | What is the result of 53,431 mod 453?	 ||
-| 8 | Generate a random hex number from: http://asecuritysite.com/Encryption/js01 | How many hex characters does the result have? |
-| 9 | Try and crack some certificates from: http://asecuritysite.com/Encryption/certcrack What are the passwords for ‘bill09.pfx’, ‘bill18.pfx’, and ‘country04.pfx’? | bill09.pfx: bill18.pfx: country04.pfx: |
+| 2 | Now see if you can crack the five minute cracking challenge for: [here](http://asecuritysite.com/challenges/scramb)| Your fastest time? |
 
 
-10. We can also create a short Python script to try to crack the same certificates.
+##  Digital Certificates
+1. We can also create a short Python script to try to crack the same certificates.
 
-Boot up your Kali VM on your public network, and download the following archive: 
+Boot up your Linux VM, and download the following archive: 
 
-http://asecuritysite.com/public/certs.zip
+```
+# wget https://github.com/billbuchanan/csn09112/blob/master/week07_dig_cert/labs/certs.zip?raw=true
+# mv certs.zip?raw=true certs.zip
+# unzip cert.zip
+```
 
-Extract the certificates into the /root folder, and then move into that folder. Now use openssl to try a password:
+Next install pyopenssl with:
+```
+pip3 install pyopenssl
+```
+
+Extract the certificates into the home folder, and then move into that folder. Now use openssl to try a password:
 ```
 openssl pkcs12 -nokeys -in bill01.pfx -passin pass:orange
 ```
@@ -95,21 +98,161 @@ Can you modify the code so that it shows other details from the certificate, suc
 
 Ref: https://pyopenssl.org/en/0.15.1/api/crypto.html#x509name-objects
 
-## B	Frequency Analysis
-Now see if you can crack the five minute cracking challenge for: [here](http://asecuritysite.com/challenges/scramb)
+## D Coursework
+The coursework specification is at: [here](https://github.com/billbuchanan/csn09112/tree/master/coursework)
 
-## C	Character Mapping
-Complete the following table for each of the characters:
+Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, the pass secret messages to each other. You first task is to analyse the messages they send, and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the presence of the bot.
 
-| Char | Decimal | Binary | Hex	 | Oct | HTML |
-| -------|--------|---------|---------|---------|---------|
-| (Space) ||||||				
-a ||||||					
-}||||||					
-Ã ||||||					
-ÿ ||||||					
+ 
+Figure 1: Coursework setup
 
-## D	Test
+## D	Coursework setup (AWS)
+You can complete your coursework either on vSoC or within AWS.  This section will setup your environment for Snort and the Botnet for Linux and Windows 2022.
+
+### D.1	Setup Windows
+Setup your Windows 2022 for a remote desktop connection (see a previous lab). The steps are then:
+
+* Install .NET 2.0 and .NET 3.0. For this select Server Manager, and then add “.NET Framework 3.5 Features” (as shown in Figure 2). 
+* Install WinPCap from https://www.winpcap.org/.
+* Install Wireshark from https://www.wireshark.org/download.html.
+* Install Snort 2.9.9.0 from https://www.snort.org/downloads/archive/snort/Snort_2_9_9_0_Installer.exe 
+* Download Botnet.exe and Controller.exe from https://github.com/billbuchanan/csn09112/blob/master/coursework/c.zip
+* Extract Botnet.exe and Controller.exe to the c:\botnet folder.
+* Navigate to c:\botnet from the command line, and test that Botnet.exe will run.
+
+ 
+Figure 2: Installing .NET 3.5 Features
+
+### D.2	Setup Linux
+Setup your Linux AWS instance for a remote SSH connection. The steps are then:
+```
+# wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/c.zip?raw=true'
+# mv c.zip?raw=true c.zip
+# unzip c.zip
+```
+
+This should extract the files of botnet.exe and controller.exe. The controller will wait for a connection from the botnet.  The ports used for the connection will range from 5,000 to 5,100, so open up the firewall on your Linux AWS instance (Figure 3).
+
+ 
+Figure 3: Opening up Ports 5,000 to 5,100 on Linux
+
+
+Next run controller.exe (Figure 4) with:
+```
+# mono controller.exe
+```
+ 
+Figure 4: Running the controller.exe 
+
+There will be no network connections shown yet, as we now need to run the Botnet from the Windows instance.
+
+### D.3	Running the bot
+Now we will run the bot, and make a connection. For this determine the public IP address of the Linux instance, and then run the bot with this address as an argument. For example, if the IP address of your Linux instance is 54.205.20.103, the bot can be run with:
+```
+C:\> botnet 54.205.20.103
+```
+Make sure that you have made a connection with the controller (as see in Figure 4 and Figure 5). 
+
+
+ 
+Figure 5: Running the botnet on Windows 2022
+
+Now, stop the bot (with Ctrl-C), and will we now run Wireshark and capture the traffic. Restart our Bot, and make sure you are capturing traffic. After it has finished, stop Wireshark and view the Wireshark trace (see Figure 5).  You can use the ip.addr filter to focus on the traffic that relates to your Botnet connection. 
+
+
+
+From the traffic generated on Wireshark, determine the following:
+
+Which TCP server port has been used for the connection:
+
+Which TCP client port has been used for the connection:
+
+By clicking on a network packet, and selecting “Follow stream” (Figure 6). What are the messages that the bot sends to the controller:
+
+
+
+ 
+Figure 5: Capturing network traffic from Bot
+
+ 
+Figure 6: Analysing traffic flow from bot and controller
+
+
+### D.4	Running Snort
+Quit the bot, and now we will run Snort on Windows 2022. You can also run it on Linux, if you want. Run create a Snort file (such as with the name 1.snort):
+```
+alert tcp any any -> any 5000 ( msg:"Sample alert";  sid:1000; rev:1; )
+alert tcp any any -> any 5001 ( msg:"Sample alert";  sid:1001; rev:1; )
+alert tcp any any -> any 5002 ( msg:"Sample alert";  sid:1002; rev:1; )
+alert tcp any any -> any 5003 ( msg:"Sample alert";  sid:1003; rev:1; )
+alert tcp any any -> any 5004 ( msg:"Sample alert";  sid:1004; rev:1; )
+alert tcp any any -> any 5005 ( msg:"Sample alert";  sid:1005; rev:1; )
+alert tcp any any -> any 5006 ( msg:"Sample alert";  sid:1006; rev:1; )
+alert tcp any any -> any 5007 ( msg:"Sample alert";  sid:1007; rev:1; )
+alert tcp any any -> any 5008 ( msg:"Sample alert";  sid:1008; rev:1; )
+alert tcp any any -> any 5009 ( msg:"Sample alert";  sid:1009; rev:1; )
+
+# Some additional pre-processor things
+preprocessor stream5_global: track_tcp yes, \
+track_udp yes, \
+track_icmp no, \
+max_tcp 262144, \
+max_udp 131072, \
+max_active_responses 2, \
+min_response_seconds 5
+preprocessor stream5_tcp: policy windows, detect_anomalies, require_3whs 180, \
+overlap_limit 10, small_segments 3 bytes 150, timeout 180, \
+ports client 21 22 23 25 42 53 70 79 109 110 111 113 119 135 136 137 139 143 \
+161 445 513 514 587 593 691 1433 1521 1741 2100 3306 6070 6665 6666 6667 6668 6669 \
+7000 8181 32770 32771 32772 32773 32774 32775 32776 32777 32778 32779, \
+ports both 80 81 82 83 84 85 86 87 88 89 90 110 311 383 443 465 563 591 593 631 636 901 989 992 993 994 995 1220 1414 1830 2301 2381 2809 3037 3057 3128 3443 3702 4343 4848 5250 6080 6988 7907 7000 7001 7144 7145 7510 7802 7777 7779 \
+7801 7900 7901 7902 7903 7904 7905 7906 7908 7909 7910 7911 7912 7913 7914 7915 7916 \
+7917 7918 7919 7920 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180 8222 8243 8280 8300 8500 8800 8888 8899 9000 9060 9080 9090 9091 9443 9999 10000 11371 34443 34444 41080 50000 50002 55555
+preprocessor stream5_udp: timeout 180
+```
+
+You save your file, and then run Snort from the command line with (make sure you have created a log folder in the place below where you are running Snort):
+```
+C:\> c:\snort\bin\snort -i 1 -c 1.snort -k none -K ascii -l log
+```
+A sample run in shown in Figure 7. Now make the connection between the Bot and the Controller, and wait for data to be transferred. Then stop Snort, and examine the alert.ids file contained in the log folder. A sample run should show the form of:
+```
+[**] [1:1000:1] Sample alert [**]
+[Priority: 0] 
+10/18-06:02:11.621177 172.31.92.80:49735 -> 54.211.227.176:5000
+TCP TTL:128 TOS:0x2 ID:30750 IpLen:20 DgmLen:52 DF
+12****S* Seq: 0xD6CEAD40  Ack: 0x0  Win: 0xF507  TcpLen: 32
+TCP Options (6) => MSS: 8961 NOP WS: 8 NOP NOP SackOK 
+
+[**] [1:1000:1] Sample alert [**]
+[Priority: 0] 
+10/18-06:02:12.122246 172.31.92.80:49735 -> 54.211.227.176:5000
+TCP TTL:128 TOS:0x0 ID:30751 IpLen:20 DgmLen:52 DF
+******S* Seq: 0xD6CEAD40  Ack: 0x0  Win: 0xF507  TcpLen: 32
+TCP Options (6) => MSS: 8961 NOP WS: 8 NOP NOP SackOK 
+
+[**] [1:1000:1] Sample alert [**]
+[Priority: 0] 
+10/18-06:02:12.637905 172.31.92.80:49735 -> 54.211.227.176:5000
+TCP TTL:128 TOS:0x0 ID:30752 IpLen:20 DgmLen:52 DF
+******S* Seq: 0xD6CEAD40  Ack: 0x0  Win: 0xF507  TcpLen: 32
+TCP Options (6) => MSS: 8961 NOP WS: 8 NOP NOP SackOK 
+
+[**] [1:1000:1] Sample alert [**]
+[Priority: 0] 
+10/18-06:02:13.153531 172.31.92.80:49735 -> 54.211.227.176:5000
+TCP TTL:128 TOS:0x0 ID:30753 IpLen:20 DgmLen:52 DF
+******S* Seq: 0xD6CEAD40  Ack: 0x0  Win: 0xF507  TcpLen: 32
+TCP Options (6) => MSS: 8961 NOP WS: 8 NOP NOP SackOK
+```
+ 
+Figure 7: Running Snort
+
+
+
+
+
+## E	Test
 1.	Crack some Caesar codes at: http://asecuritysite.com/tests/tests?sortBy=caesar
 2.	Determine some hex conversions at: http://asecuritysite.com/tests/tests?sortBy=hex01
 3.	Determine some Base64 conversions: http://asecuritysite.com/tests/tests?sortBy=ascii01
