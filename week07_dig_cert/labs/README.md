@@ -248,7 +248,7 @@ TCP Options (6) => MSS: 8961 NOP WS: 8 NOP NOP SackOK
 ```
  
  
-![Figure 8: Running Snort(https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework08.png)  
+![Figure 8: Running Snort](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework08.png)  
 
 
 
