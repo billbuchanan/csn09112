@@ -121,8 +121,8 @@ Setup your Windows 2022 for a remote desktop connection (see a previous lab). Th
 * Extract Botnet.exe and Controller.exe to the c:\botnet folder.
 * Navigate to c:\botnet from the command line, and test that Botnet.exe will run.
 
- 
-Figure 2: Installing .NET 3.5 Features
+![Figure 2: Installing .NET 3.5 Features](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework02.png)  
+
 
 ### D.2	Setup Linux
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
@@ -134,16 +134,14 @@ Setup your Linux AWS instance for a remote SSH connection. The steps are then:
 
 This should extract the files of botnet.exe and controller.exe. The controller will wait for a connection from the botnet.  The ports used for the connection will range from 5,000 to 5,100, so open up the firewall on your Linux AWS instance (Figure 3).
 
- 
-Figure 3: Opening up Ports 5,000 to 5,100 on Linux
-
+![Figure 3: Opening up Ports 5,000 to 5,100 on Linux](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework03.png)   
 
 Next run controller.exe (Figure 4) with:
 ```
 # mono controller.exe
 ```
  
-Figure 4: Running the controller.exe 
+![Figure 4: Running the controller.exe ](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework04.png)    
 
 There will be no network connections shown yet, as we now need to run the Botnet from the Windows instance.
 
@@ -155,8 +153,8 @@ C:\> botnet 54.205.20.103
 Make sure that you have made a connection with the controller (as see in Figure 4 and Figure 5). 
 
 
- 
-Figure 5: Running the botnet on Windows 2022
+![Figure 5: Running the botnet on Windows 2022](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework05.png)  
+
 
 Now, stop the bot (with Ctrl-C), and will we now run Wireshark and capture the traffic. Restart our Bot, and make sure you are capturing traffic. After it has finished, stop Wireshark and view the Wireshark trace (see Figure 5).  You can use the ip.addr filter to focus on the traffic that relates to your Botnet connection. 
 
@@ -171,12 +169,12 @@ Which TCP client port has been used for the connection:
 By clicking on a network packet, and selecting “Follow stream” (Figure 6). What are the messages that the bot sends to the controller:
 
 
-
+![Figure 6: Capturing network traffic from Bot](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework06.png)  
  
-Figure 5: Capturing network traffic from Bot
 
+![Figure 7: Analysing traffic flow from bot and controller](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework07.png)  
  
-Figure 6: Analysing traffic flow from bot and controller
+
 
 
 ### D.4	Running Snort
@@ -247,7 +245,9 @@ TCP TTL:128 TOS:0x0 ID:30753 IpLen:20 DgmLen:52 DF
 TCP Options (6) => MSS: 8961 NOP WS: 8 NOP NOP SackOK
 ```
  
-Figure 7: Running Snort
+ 
+![Figure 8: Running Snort(https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework08.png)  
+
 
 
 
