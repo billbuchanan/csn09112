@@ -15,14 +15,6 @@ The key concepts are: Understanding digital certificates.
 
 
 
-## Additional
-The following are the tips related to digital certs:
-
-* Digital Certificate [Digital Cert](https://asecuritysite.com/encryption/digitalcert).
-* Digital Certificate (PFX) [Digital Cert](https://asecuritysite.com/encryption/digitalcert2).
-* Certificate with Public/Private key. [Cert](https://asecuritysite.com/encryption/createcert). This includes the creation of the digital certificate.
-* Digital Certificates illustrated [here](https://www.youtube.com/watch?v=KmQQOtZw2GQ)
-
   
 
 
