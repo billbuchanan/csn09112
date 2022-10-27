@@ -5,7 +5,6 @@ The key objectives of this chapter are:
 
 * Understand some of the methodologies used in network forensics.
 * Provide an in-depth understanding of the key network protocols, including IP, TCP, ARP, ICMP, DNS, Application Layer protocols, and so on.
-* Define a range of audit sources for network activity.
 
 ## Lecture
 The main lecture is [here](https://youtu.be/pEfejwf_M80).
