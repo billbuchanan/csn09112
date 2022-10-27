@@ -8,9 +8,9 @@ The key objectives of this chapter are:
 * Define a range of audit sources for network activity.
 
 ## Lecture
-The main lecture is [here](https://www.youtube.com/watch?v=9_u1eriQtSY).
+The main lecture is [here](https://youtu.be/pEfejwf_M80).
 
-The slides for the chapter are [here](https://asecuritysite.com/book_chap08.pdf) and the notes are [here](https://asecuritysite.com/public/unit09.pdf).
+The slides for the chapter are [here](https://asecuritysite.com/public/ch06_networks.ppsx).
 
 ## Test
 
