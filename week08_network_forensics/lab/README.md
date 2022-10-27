@@ -420,40 +420,6 @@ Outline the details of email which are in the Inbox:
 
 
 
-L1.4	Start the Windows 2003 virtual machine. From the console on your host enter the command:
-		telnet w.x.y.z 25
-
- Next enter the commands in bold:
-220 napier Microsoft ESMTP MAIL Service, Version: 6.0.3790.3959 ready at  Sun,
-0 Dec 2009 21:56:01 +0000
-help
-214-This server supports the following commands:
-214 HELO EHLO STARTTLS RCPT DATA RSET MAIL QUIT HELP AUTH TURN ETRN BDAT VRFY
-helo me
-250 napier Hello [192.168.75.1]
-mail from: email@domain.com
-250 2.1.0 email@domain.com....Sender OK
-rcpt to: fred@mydomain.com
-250 2.1.5 fred@mydomain.com
-Data
-354 Start mail input; end with <CRLF>.<CRLF>
-From: Bob <bob@test.org>
-To: Alice <alice@ test.org >
-Date: Sun, 20 Dec 2009
-Subject: Test message
-
-Hello Alice.
-This is an email to say hello
-.
-250 2.6.0 <NAPIERMp7lzvxrMVHFb00000001@napier> Queued mail for delivery
-
-L1.5	On the Windows 2003 virtual machine, go into the C:\inetpub\mailroot\queue folder, and view the queued email message. 
-	Was the mail successfully queued? If not, which mail folder has the file in?
-
-	Outline the format of the EML file?
-
-
-
 
 
 ## Lab 7e: SSL and TLS
@@ -536,8 +502,128 @@ http://outlook.com
 http://skydrive.com
 
 
+## Tshark and Snort
+Tshark can be used to run a command-line version of Wireshark. First locate Tshark on your system. Next, download this file:
+
+```
+https://asecuritysite.com/log/with_png.zip
+```
+
+and run the command of:
+```
+tshark.exe  -Y "http contains "89:50:4E:47"" -r with_png.pcap
+```
+
+```
+What packet number contains the packet with the PNG file?
+```
+
+
+We can also use Snort to analyse network traces by using an off-line filtering system. First, download this Pcap file:
+
+```
+https://asecuritysite.com/log/newtrace.zip
+```
+
+Next you can run Snort with a rules file and with a trace:
+```
+snort -c 1.rules -l log -r newtrace.pcap
+```
+You can then look in the log filter for the log file and alert.ids. Some rules you can use are given in Appendix A.
+
+Now test Snort to see if it can detect the same content that you found before:
+```
+Number of Bad FTP logins:
+
+Number of Successful FTP logins:
+
+Number of GIF files in the trace:
+
+Number of PNG files in the trace:
+
+Can you detect the port scan on a host:
+```
+
 ## Test
 Now take this test:
 
 https://asecuritysite.com/tests/tests?sortBy=d01_03
+
+## Appendix
+
+Bad logins: 
+```
+alert tcp any 21 -> any any (msg:"FTP Bad login"; content:"530 User "; nocase; flow:from_server,established; sid:491; rev:5;)
+```
+Detecting email addresses:
+
+```
+alert tcp any any <> any 25 (pcre:"/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]/"; \
+msg:"Email in message";sid:9000000;rev:1;)
+
+```
+Detect DNS:
+
+```
+alert udp any any -> any 53 (msg: “DNS"; sid:10000;)
+```
+
+File types:
+
+```
+alert tcp any any -> any any (content:"GIF89a"; msg:"GIF";sid:10000)
+alert tcp any any -> any any (content:"%PDF"; msg:"PDF";sid:10001)
+alert tcp any any -> any any (content:"|89 50 4E 47|"; msg:"PNG";sid:10002)
+alert tcp any any -> any any (content:"|50 4B 03 04|"; msg:"ZIP";sid:10003)
+```
+Telnet login:
+
+```
+alert tcp any any <> any 23 (flags:S; msg:"Telnet Login";sid:9000005;rev:1;)
+
+```
+Port scan:
+
+```
+preprocessor sfportscan:\
+        proto { all } \
+        scan_type { all } \
+        sense_level { high } \	
+    	logfile { portscan.log }
+
+```
+DoS on Web server:
+
+```
+alert tcp any any -> any 80 (msg:"DOS flood denial of service attempt";flow:to_server; \
+detection_filter:track by_dst,  count 60, seconds 60; \
+sid:25101; rev:1;)
+
+```
+Stealth scans:
+
+```
+alert tcp any any -> any any (msg:"SYN FIN Scan"; flags: SF;sid:9000000;)
+alert tcp any any -> any any (msg:"FIN Scan"; flags: F;sid:9000001;)
+alert tcp any any -> any any (msg:"NULL Scan"; flags: 0;sid:9000002;)
+alert tcp any any -> any any (msg:"XMAS Scan"; flags: FPU;sid:9000003;)
+alert tcp any any -> any any (msg:"Full XMAS Scan"; flags: SRAFPU;sid:9000004;)
+alert tcp any any -> any any (msg:"URG Scan"; flags: U;sid:9000005;)
+alert tcp any any -> any any (msg:"URG FIN Scan"; flags: FU;sid:9000006;)
+alert tcp any any -> any any (msg:"PUSH FIN Scan"; flags: FP;sid:9000007;)
+alert tcp any any -> any any (msg:"URG PUSH Scan"; flags: PU;sid:9000008;)
+alert tcp any any -> any any (flags: A; ack: 0; msg:"NMAP TCP ping!";sid:9000009;)
+
+```
+ping sweep:	
+
+```
+alert icmp any any -> any any (msg:"ICMP Packet found";sid:9000000;)
+alert icmp any any -> any any (itype: 0; msg: "ICMP Echo Reply";sid:9000001;)
+alert icmp any any -> any any (itype: 3; msg: "ICMP Destination Unreachable";sid:9000002;)
+alert icmp any any -> any any (itype: 4; msg: "ICMP Source Quench Message received";sid:9000003;)
+alert icmp any any -> any any (itype: 5; msg: "ICMP Redirect message";sid:9000004;)
+alert icmp any any -> any any (itype: 8; msg: "ICMP Echo Request";sid:9000005;)
+alert icmp any any -> any any (itype: 11; msg: "ICMP Time Exceeded";sid:9000006;)
+```
 
