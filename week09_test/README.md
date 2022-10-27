@@ -20,7 +20,7 @@ Time for test: Thursday, 3 November 2022 (Times: As defined on Moodle)
 * Polybius [Try](https://asecuritysite.com/Challenges/polybius).
 * Morse [Try](https://asecuritysite.com/Challenges/morse).
 * ADFGVX [Try](https://asecuritysite.com/Challenges/dx).
-* Scrambled Alphabet [Try](https://asecuritysite.com/cipher/scramble). Can you beat 5 minutes?
+* Scrambled Alphabet [Try](https://asecuritysite.com/cipher/scramb). Can you beat 5 minutes?
 
 ## Test 1 (Examples)
 
