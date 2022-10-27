@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test. Note there will be no lectures in Week 9.
 
-Time for test: Thursday, 3 November 2022 (Times: 9-10:30, 11-12:30pm)
+Time for test: Thursday, 3 November 2022 (Times: As defined on Moodle)
 
 ## Background
 
