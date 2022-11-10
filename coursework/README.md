@@ -71,7 +71,7 @@ It can be run on Linux using mono or on Windows using .NET.
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on XX Decemember 2022. It will be marked as follows:
+The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 16 Decemember 2022. It will be marked as follows:
 
 **Research [20 marks]**
 

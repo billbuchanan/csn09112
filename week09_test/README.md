@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explainations or with multiple choice. The test is a closed book test. Note there will be no lectures in Week 9.
 
-Time for test: Thursday, 3 November 2022 (Times: 9-10:30, 11-12:30pm)
+Time for test: Thursday, 3 November 2022 (Times: As defined on Moodle)
 
 ## Background
 
@@ -20,7 +20,7 @@ Time for test: Thursday, 3 November 2022 (Times: 9-10:30, 11-12:30pm)
 * Polybius [Try](https://asecuritysite.com/Challenges/polybius).
 * Morse [Try](https://asecuritysite.com/Challenges/morse).
 * ADFGVX [Try](https://asecuritysite.com/Challenges/dx).
-* Scrambled Alphabet [Try](https://asecuritysite.com/Challenges/scramb). Can you beat 5 minutes?
+* Scrambled Alphabet [Try](https://asecuritysite.com/cipher/scramb). Can you beat 5 minutes?
 
 ## Test 1 (Examples)
 
@@ -49,7 +49,7 @@ Try to review your knowledge by answering these questions:
 
 * Can you convert characters from one format to another, such as in binary, hex, ASCII and Base-64 (remember: hex uses four bits at a time, and Base-64 uses six bits at a time)?
 * Do you know the basic theory of converting a bit stream into Base-64 (remember 6 bits at a time and convert from table)?
-* Do you understand how to use some key ciphers, including shifted alphabet, scrambled alphabet, Vigenere, Pigpen and rail codes?
+* Do you understand how to use some key ciphers, including shifted alphabet, led alphabet, Vigenere, Pigpen and rail codes?
 * Can you do a simple Diffie-Hellman calculation and end up with the same shared key?
 * Do you understand how the number of keys relate to the security of the ciphers?
 * Can you work out key enthropy, so that if you have 2,048 phases, you can calculate that this is equivalent to 11 bits [log(2048)/log(2)]?
@@ -69,7 +69,7 @@ Try to review your knowledge by answering these questions:
 * Able to convert binary streams to Base 64.
 * Solve Playfair codes.
 * Solve Rail codes.
-* Solve scrambled alphabet code.
+* Solve scrambled alphabet code. Some samples are [here](https://asecuritysite.com/challenges/scramb?coding=1) [here](https://asecuritysite.com/challenges/scramb?coding=2) [here](https://asecuritysite.com/challenges/scramb?coding=3).
 * Calculate the entropy of passwords.
 * Calculate simple Diffie-Hellman.
 * Determine time to crack a code, on average, given time to test key.
