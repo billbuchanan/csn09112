@@ -2,7 +2,7 @@
 
 
 # Step-by-step
-A demo is [here](https://www.youtube.com/embed/u7qsIfCXZng)
+A demo is [here](https://youtu.be/u7qsIfCXZng)
 
 From the Apps interface, select Splunk Machine Learning (Figure 1).
 
