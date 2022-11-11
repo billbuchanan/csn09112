@@ -20,8 +20,8 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 7 | 20 Oct 2022 | 9. Digital Certificates | Certificates [here](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
 | 8 | 27 Oct 2022 | 10 Network Forensics [here](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics) | Network Forensics [lab](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics/lab) | 
 | 9 | 3 Nov 2022 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  |
-| 10 | 10 Nov 2022 | 11. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week12_splunk) | Splunk Lab |
-| 11 | 17 Nov 2022 | 12. Splunk and Machine Learning  | Splunk and ML Lab |
+| 10 | 10 Nov 2022 | 11. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week10_splunk) | Splunk Lab [here](https://github.com/billbuchanan/csn09112/tree/master/week10_splunk/labs) |
+| 11 | 17 Nov 2022 | 12. Splunk and Machine Learning [here](https://github.com/billbuchanan/csn09112/tree/master/week11_ml)  | Splunk and ML Lab [here](https://github.com/billbuchanan/csn09112/tree/master/week11_ml/labs) |
 | 12 | 24 Nov 2022 |  13. Tunnelling [here](https://github.com/billbuchanan/csn09112/tree/master/week12_tunnelling) | Tunnelling |
 | 13 | 1 Dec 2022 | 14. Blockchain and Cryptocurrencies [here](https://github.com/billbuchanan/csn09112/tree/master/week13_blockchain) | Blockchain Lab.  | 
 | 14 | 8 Dec 2022 |||
