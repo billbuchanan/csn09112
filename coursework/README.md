@@ -29,7 +29,7 @@ Bot Controller Version 5.0
 Take a note of the IP address of the controller (W.X.Y.Z). Now go your Windows machine, and run:</p>
 
 ```
-bot.exe W.X.Y.Z
+botnet.exe W.X.Y.Z
 ```
 
 
