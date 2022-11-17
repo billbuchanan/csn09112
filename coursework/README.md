@@ -58,17 +58,6 @@ Start by allowing all traffic from the internal network out to the external netw
 
 The controller and the bot should be placed on different hosts, and then enabled to communication. It is then your task to capture and analyse the traffic generated and try and build up an understanding of the requests and replies that are used by the bot and controller. Once you understand the requests and replies, then create a Snort-based IDS detector to detect the presence of the Bot and Controller.
 
-## Botnet Bot and Controller 
-The bot and controller are available for download here: 
-```
-# wget https://github.com/billbuchanan/csn09112/blob/master/week07_dig_cert/labs/certs.zip?raw=true
-# mv certs.zip?raw=true certs.zip
-# unzip cert.zip
-```
-
-It can be run on Linux using mono or on Windows using .NET.
-
-
 ## Marking schedule
 
 The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is 11:55pm on 16 Decemember 2022. It will be marked as follows:
