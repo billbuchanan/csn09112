@@ -78,315 +78,22 @@ Hash rate:
 
 
 ## B	Ethereum
-Demo:	https://www.youtube.com/watch?v=Gl3Suylr-7E
-Outline:	https://asecuritysite.com/subjects/chapter91
+## Setting up your Ethereum wallet on Ropsten
+The Ropsten network allows a user to test an Ethereum application, and using free Ether. Initially setup your MetaMask wallet. A document to outline how you set this up is [here](https://github.com/billbuchanan/appliedcrypto/blob/main/unit08_blockchain/lab/Metamask.pdf). Once you have set it up, answer the following:
 
-On your desktop computer, download Geth, and install it. 
+* What is your public ID (just define the first four hex values)?
+* Find out someone else's public ID, and send them 0.001 Ether. If you are doing the lab on your own, send it to Bill (ID: 0xbB15B38e4ef6aF154b89A2E57E03Cd5cbD752233).
+* Can you see the transaction on the Ethereum network? An example of a wallet is [here](https://sepolia.etherscan.io/address/0xbb15b38e4ef6af154b89a2e57e03cd5cbd752233).
+* Can you see your transaction on the Ethereum network for the person you send it to?
+* What was the transaction fee for the transfer? If you were using the main Ethereum network, how much would the transaction cost in Dollars?
+* Ask someone to send you 0.001 Ether. Did you receive it? If you are doing the lab on your own, ask your lab tutor to send you 0.001 Ether.
 
-https://geth.ethereum.org/downloads/
+## Creating a Smart Contract in Ethereum
+So, let’s write a bit of code that does some simple maths. In the following we will implement sqrt(), sqr(), mul(), sub(), and add():
 
-Open a terminal on your Windows desktop and run as an Administrator. Next go to “c:\program files\geth” folder.
-
-We are going to create the blockchain in the c:\eth6 folder. First create three new accounts:
-
-```
-C:\program files\geth> geth --datadir=c:\eth6 account new
-
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Passphrase: Qwerty1
-Repeat passphrase: Qwerty1
-Address: {5cba4752a6fe25ffbd7710a67900d3517d7be4db}
-```
-Open custom.json, and copy and paste the following details for your genesis block, but replace the hex IDs with the three accounts that you have created:
-```	
-{
-    "config": {
-        "chainId": 15,
-        "homesteadBlock": 0,
-        "eip150Block": 0,
-        "eip155Block": 0,
-        "eip158Block": 0
-    },
-    "difficulty": "20000000",
-    "gasLimit": "0x3d0900",
-    "alloc": {
-        "228041751ddb7365cc4bc75c4985d14d5db2432f": { "balance": "30000000" },
-        "cdfc92d1b5dd1c9ee1c9e2368abc86a193ae35a5": { "balance": "40000000" },
-        "c9c425ae15a0e66500ecf5b7a1c10c6ed35600b9": { "balance": "0x400000000000000" }
-
-    }
-}
-```
-Next run geth and create the genesis block details:
-```
-c:\Program Files\Geth> geth --datadir=c:\eth6 init customg.json
-INFO [06-26|21:42:43] Allocated cache and file handles         database=d:\\eth6
-\\geth\\chaindata cache=16 handles=16
-INFO [06-26|21:42:43] Writing custom genesis block
-INFO [06-26|21:42:43] Successfully wrote genesis state         database=chaindat
-a                 hash=10367b.67437b
-INFO [06-26|21:42:43] Allocated cache and file handles         database=d:\\eth6
-\\geth\\lightchaindata cache=16 handles=16
-Fatal: Failed to write genesis block: database already contains an incompatible
-genesis block (have 0c5f429f24f7078a, new 10367b56f68be716)
-```
-Examine the c:\eth6 folder.
-
-```
-What are the contents of this folder:
-```
-
-
-Next we will start our blockchain:
-```
-C:\Program Files\Geth> geth --datadir=c:\eth6
-```
-
-Next we will connect to the geth and create a new account:
-
-```
-C:\Program Files\Geth> geth attach ipc:\\.\pipe\geth.ipc
-Welcome to the Geth JavaScript console!
-
-instance: Geth/v1.6.6-stable-10a45cb5/windows-amd64/go1.8.3
-coinbase: 0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9
-at block: 0 (Thu, 01 Jan 1970 00:00:00 GMT)
- datadir: d:\eth6
- modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txp
-ool:1.0 web3:1.0
-
-> personal.newAccount("Qwerty1")
-"0xce1373ddfa2232dc9ca82d98420be7a2e11962b5"
-
-> web3.eth.accounts
-["0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9", "0xbb4fcfac2efd3dbc35117dc979ce5c
-43ca5c615b", "0xce1373ddfa2232dc9ca82d98420be7a2e11962b5"]
-```
-
-Take a note of your new account ID:
-
-
-
-
-We can look at the initial balances in the accounts (use the hex values contained in the accounts). For the following view of all the account balances (replace the hex IDs with the ones on your system):
-```
-> eth.getBalance("0xce1373ddfa2232dc9ca82d98420be7a2e11962b5")
-0
-> eth.getBalance("0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9")
-288230376151711744
-```
-
-What are the balances:
-
-
-
-
-Next unlock the account with the most Ether:
-
-```
->personal.unlockAccount('0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9','Qwerty')
-true
-
-Next we can transfer some currency from one account to another (transfer from the account with the most Ether into your account). For this, transfer Ether from the account with most funds to your newly created account, and then view the transaction:
-
-> eth.sendTransaction({from: '0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9', to: '0xce1373ddfa2232dc9ca82d98420be7a2e11962b5',value:1000})
-"0x4029e82ac13fd2a56078c2747f2ff55b42db12c8fa40dbde8c6350b128476243"
->
-> eth.getTransaction('0x4029e82ac13fd2a56078c2747f2ff55b42db12c8fa40dbde8c6350b128476243')
-{
-  blockHash: "0x0000000000000000000000000000000000000000000000000000000000000000
-",
-  blockNumber: null,
-  from: "0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9",
-  gas: 90000,
-  gasPrice: 18000000000,
-  hash: "0x4029e82ac13fd2a56078c2747f2ff55b42db12c8fa40dbde8c6350b128476243",
-  input: "0x",
-  nonce: 0,
-  r: "0xedbbbe21778eab7a3b3f82198854e6354abff4348dc9668ec337a786749a4d3a",
-  s: "0x27228d637ac06acf1ffdcd93ff5a2dbd59f23353d196b97ff2ee7e2a14527595",
-  to: "0xce1373ddfa2232dc9ca82d98420be7a2e11962b5",
-  transactionIndex: 0,
-  v: "0x41",
-  value: 1000
-}
-```
-
-If we look at the balances there has not been any transfers:
-
-```
-> eth.getBalance("0xce1373ddfa2232dc9ca82d98420be7a2e11962b5")
-0
-> eth.getBalance("0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9")
-288230376151711744
-```
-
-We can now start the miner and view the balances:
-
-```
-> miner.start()
-null
-> eth.getBalance("0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9")
-288230376151711744
-> eth.getBalance("0xce1373ddfa2232dc9ca82d98420be7a2e11962b5")
-0
-```
-
-We can transfer again:
-
-```
-> eth.sendTransaction({from: '0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9', to: '0xce1373ddfa2232dc9ca82d98420be7a2e11962b5',value:100000})
-"0x2e25093e25cbf511c2892cb38b45a5c9f6f9b2785774cd5830cf5bd978839165"
-> eth.getBalance("0xce1373ddfa2232dc9ca82d98420be7a2e11962b5")
-0
-> eth.getBalance("0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9")
-288230376151711744
-```
-
-The mining process adds some credits to the initial account:
-
-```
-> eth.getBalance("0xc9c425ae15a0e66500ecf5b7a1c10c6ed35600b9")
-5288230376151711744
-
-> eth.getBalance("0xce1373ddfa2232dc9ca82d98420be7a2e11962b5")
-0
-```
-
-the mining process we see:
-
-```
-> eth.getBalance("0xce1373ddfa2232dc9ca82d98420be7a2e11962b5")
-200000
-```
-
-If we look at the blockchain we see there are two records:
-
-```
-> eth.blockNumber
-2
-```
-
-What are the balances in the accounts:
-
-
-
-## D	Creating a contract
-Now let’s create a contract. First open up:
-
-http://remix.ethereum.org  (and use previous version of online compiler)
-
-and paste the following code:
-```
-pragma solidity ^0.4.0;
-contract test2{
-   uint a ;
-   function test2() {
-       a = 1;
-   }
-   function val() returns(uint){
-       return a;
-   }  
-}
-contract test3 is test2{ 
-    uint b = a++;
-    function show() returns(uint){
-        return b; 
-    }
-}
-```
-
-Now we copy from Web Deploy and place in a JavaScript file, and then load it:
-
-```
->loadScript(‘sayhello2.js’)
-```
-
-and next define the account to run the script (replace with one of your IDs):  
-
-```
-> web3.eth.defaultAccount = '0x821eacc2a570c1aeb9b5aa64b5b915d4c1e1f3ee'
-```
-
-We can now start our miners:
-```
-> miner.start()
-null
-> null [object Object]
-Contract mined! address: 0x8d487f4a719b5a1cf47c61cc83e757b8d269f877 transactionH
-ash: 0xf4bb0fa6ddc1d9e1921a55d576d68acf5b715d00cd89cc7268ece3653c50de50
-null [object Object]
-Contract mined! address: 0xf3872dc9ced78283ad3a511e970891807dd38590 transactionH
-ash: 0xab90aa5169f4ebfcbc139874208cabb29416feb3f12c296c93466d7d8090f805
-null [object Object]
-Contract mined! address: 0x7a74b5da4168f0a06a752301a3711c8991acaf88 transactionH
-ash: 0x6ce2a63c59d124d5ecd4681a368243ba7de8aeacc735d41583f834789cba0b16
- ```   
- 
-Finally we can view:
-
-```
-> test_sol_test2
-{
-  abi: [{
-      constant: false,
-      inputs: [],
-      name: "val",
-      outputs: [{...}],
-      payable: false,
-      type: "function"
-  }, {
-      inputs: [],
-      payable: false,
-      type: "constructor"
-  }],
-  address: "0x7a74b5da4168f0a06a752301a3711c8991acaf88",
-  transactionHash: "0x6ce2a63c59d124d5ecd4681a368243ba7de8aeacc735d41583f834789c
-ba0b16",
-  allEvents: function(),
-  val: function()
-}
-> test_sol_test3
-{
-  abi: [{
-      constant: false,
-      inputs: [],
-      name: "val",
-      outputs: [{...}],
-      payable: false,
-      type: "function"
-  }, {
-      constant: false,
-      inputs: [],
-      name: "show",
-      outputs: [{...}],
-      payable: false,
-      type: "function"
-  }],
-  address: "0xbd570c2f87b8af945146177377276901fd82b12d",
-  transactionHash: "0xc028384b4d8ea0e283c9cd3a6a747ab3efff859bb591d55f710ca20b09
-665808",
-  allEvents: function(),
-  show: function(),
-  val: function()
-}
-```
-    
-And then test:
-
-```
-> test_sol_test2.val()
-"0xd69b536cd4055a45e209f3274d9b9370f33c88b474c0dca294b665efa2ac5d2d"
-> test_sol_test3.val()
-"0x4a5fa248e8f6c2223082518106c3e784d54e4ff70793c9d4f65c9ef931cd667c"
-```
-## E	A bit of maths
-Now we will create a contract to do a bit of maths. Let's say we want to calculate the square root of a value:
-```
-pragma solidity ^0.4.0;
-
-contract mymath {
-   function sqrt(uint x) constant returns (uint y) {
+```solidity
+pragma solidity ^0.8.0;
+contract mymath {function sqrt(uint x) public view returns (uint y) {
     uint z = (x + 1) / 2;
     y = x;
     while (z < y) {
@@ -394,103 +101,408 @@ contract mymath {
         z = (x / z + z) / 2;
     }
 }
-}
-```
+function sqr(uint a) public view returns (uint) {
+    uint c = a * a;
+    return c;
+  }
+function mul(uint a, uint b) public view returns (uint) {
+    uint c = a * b;
+    return c;
+  }
+function sub(uint a, uint b) public view returns (uint) {
+    return a - b;
+  }
+function add(uint a, uint b) public view returns (uint) {
+    uint c = a + b;
+    return c;
+}}
+ ``` 
 
-When we create the JavaScript for the compiled version, and we load and run we get:
+In this case, the "public" part makes sure we can see the output of the function, and the "view" part allows it to be stateless (and where we just have to receiver the value without the smart contact remember the state). On Ethereum we normally use the Solidity language to create a smart contract and then compile it into the byte code required for the ledger. First, can we start by entering the Solidity code into Remix [<a href="https://remix.ethereum.org/" target="_blank">here</a>]:
 
-```
-> personal.unlockAccount('0xc7552f45deb093cafb47286a0bc9415845ca3735','Qwerty')
-true
-> loadScript('mycontract.js')
-null [object Object]
-true
-Contract mined! address: 0xc706a04b759a32dbec85702dd3864584e737aa77 transactionH
-ash: 0xece670dcb578a78dec4d2338755ecade084a517310daacf37fd46fe336341563
-null [object Object]
-Contract mined! address: 0xfafb5f4d0db2c545592ac9134292162b03088295 transactionH
-ash: 0x46204af57db69df078e1ae637b50fa76d8415ee1c1e3bd7e1c2990f328dc85ce
-null [object Object]
-Contract mined! address: 0x83e0bbb8abe2f0976fde9cf5db05333de067b0df transactionH
-ash: 0xabea9606989bcc1bf93513213d298c84d47c7e8e1b397eaf536ebffb793d9304
+![here](https://asecuritysite.com/public/eth001.png)
 
-> test_sol_mymath.sqrt(9)
-3
-> test_sol_mymath.sqrt(12)
-3
-> test_sol_mymath.sqrt(81)
-9
-```
+Once entered, we can then compile it with the Solidity compiler. It is important to take a note of the compiler version at this stage, as we will need this later:
 
 
+![here](https://asecuritysite.com/public/eth002.png)
+   
+Once compiled we can then deploy the smart contract to a test network (Ropsten). For this , we need to connect our Metamask wallet:
+   
+![here](https://asecuritysite.com/public/eth003.png)   
 
 
+Once it has been deployed, we can see our wallet identifies the deployed contract:
+    
+ ![here](https://asecuritysite.com/public/eth004.png)     
+
+And clicking through gives us the address of the contract, and then viewing it on the explorer, we can see the transaction:
+    
+![here](https://asecuritysite.com/public/eth005.png)     
 
 
-# Genesis Block Code
-Here is the custom.json:
-<pre>
-{
-    "config": {
-        "chainId": 15,
-        "homesteadBlock": 0,
-        "eip150Block": 0,
-        "eip155Block": 0,
-        "eip158Block": 0
-    },
-    "difficulty": "20000000",
-    "gasLimit": "0x3d0900",
-    "alloc": {
-        "228041751ddb7365cc4bc75c4985d14d5db2432f": { "balance": "30000000" },
-        "cdfc92d1b5dd1c9ee1c9e2368abc86a193ae35a5": { "balance": "40000000" },
-        "c9c425ae15a0e66500ecf5b7a1c10c6ed35600b9": { "balance": "0x400000000000000" }
+The address here is “0x0895..”, so we can view the smart contract from: [here](https://ropsten.etherscan.io/address/0x0895a540cff8e7829284f1d9c55daf624d6e2df9).  We now need to verify and publish the contact, with click on “Verify and Publish”:
+    
+![here](https://asecuritysite.com/public/eth006.png)   
 
+
+After this, we can define the Compiler Version and the licence
+    
+ ![here](https://asecuritysite.com/public/eth007.png)   
+
+We then need to add your code for it to be checked:
+    
+ ![here](https://asecuritysite.com/public/eth008.png)       
+
+ It takes around 30 seconds, but, eventually, we should have our code accepted:
+    
+ ![here](https://asecuritysite.com/public/eth009.png)        
+
+
+We now have the contract published to the Ropsten test network:
+    
+![here](https://asecuritysite.com/public/eth010.png)       
+
+
+Next, by selected the Contract tab, and can view the read parameters. The exposed functions are add(), mul(), sqr(), sqrt() and sub():
+    
+![here](https://asecuritysite.com/public/eth011.png)       
+ 
+To test, we can just enter the variables for a given function, and get a result:
+    
+![here](https://asecuritysite.com/public/eth012.png)       
+ 
+Note:You can get Ether for our wallet [here](https://faucet.metamask.io/)
+
+
+## Creating ERC-20 tokens
+Within the Ethereum blockchain, we can record transactions and run smart contracts. These things allow us to run DApps (decentralized applications) and which can support the running of the infrastructure in return for some payment (Ether). A DApp can also create tokens for new currencies, shares in a company or to prove the ownership of an asset. ERC-20 is a standard format for a Fungible Token and which can support the sharing, transfer and storage of tokens. These tokens are supported by the whole of the Ethereum infrastructure and can be easily traded. They support a number of mandatory functions:
+
+
+* totalSupply. This function is the total number of ERC-20 tokens that have been created.
+* balanceOf. This function identifies the number of tokens that a given address has in its account.
+* transfer. This function supports the transfer of tokens to a defined user address.
+* transferFrom. This function supports a user to transfer tokens to another user.
+* approve. This function checks that a transaction is valid, based on the supply of token.
+* allowance. This function checks if a user has enough funds in their account for a transaction.
+ 
+There are also a number of options:
+
+* Token Name. This is the name that the token will be defined as.
+* Symbol. This is the symbol that the token will use.
+* Decimal. This is the number of decimal places to be used for any transactions.
+
+Now we you create your own token. If you are Bob Smith, then call your token "BobSmithToken", and your currency will be "BobSmith". 
+
+So, let's create a token named "ENUToken" (change the name to your name), and use the tutorial sample from [here](https://github.com/bitfwdcommunity/Issue-your-own-ERC20-token/blob/master/contracts/erc20_tutorial.sol). First, we open up [https://remix.ethereum.org/](https://remix.ethereum.org/), and enter the following Solidy contract:
+
+
+```solidity
+pragma solidity ^0.4.24;
+
+// ----------------------------------------------------------------------------
+// 'ENU Token' token contract
+//
+// Deployed to : 0xbB15B38e4ef6aF154b89A2E57E03Cd5cbD752233
+// Symbol      : ENUToken
+// Name        : ENU Token
+// Total supply: 100000000
+// Decimals    : 18
+
+// Based on https://github.com/bitfwdcommunity/Issue-your-own-ERC20-token/tree/master/contracts
+
+
+// ----------------------------------------------------------------------------
+// Safe maths
+// ----------------------------------------------------------------------------
+contract SafeMath {
+    function safeAdd(uint a, uint b) public pure returns (uint c) {
+        c = a + b;
+        require(c >= a);
+    }
+    function safeSub(uint a, uint b) public pure returns (uint c) {
+        require(b <= a);
+        c = a - b;
+    }
+    function safeMul(uint a, uint b) public pure returns (uint c) {
+        c = a * b;
+        require(a == 0 || c / a == b);
+    }
+    function safeDiv(uint a, uint b) public pure returns (uint c) {
+        require(b > 0);
+        c = a / b;
     }
 }
-</pre>
-
-## Bitcoin API code
-Here is the bit.py file. This is defined in Python 3.7. For Python 2.7, you can remove the brackets in the print statements):
-<pre>
-import httplib2
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/latesthash")
-print ("Latest hash: ",content)
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/bcperblock")
-print ("Block reward per block: ",int(content)/100000000.0)
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/getblockcount")
-print ("Longest block: ",content)
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/getdifficulty")
-print ("Difficulty: ",content)
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/probability")
-print ("Mining probability: ",content)
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/interval")
-print ("Average time between blocks (seconds): ",content)
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/eta")
-print ("Time to next block (seconds): ",content)
-
-resp, content = httplib2.Http().request("https://blockchain.info/q/marketcap")
-print ("Market capitalisation (Million USD): ",float(content)/1000000)
 
 
-resp, content = httplib2.Http().request("https://blockchain.info/q/24hrprice")
-print ("24hr price (USD): ",content)
+// ----------------------------------------------------------------------------
+// ERC Token Standard #20 Interface
+// https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
+// ----------------------------------------------------------------------------
+contract ERC20Interface {
+    function totalSupply() public constant returns (uint);
+    function balanceOf(address tokenOwner) public constant returns (uint balance);
+    function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
+    function transfer(address to, uint tokens) public returns (bool success);
+    function approve(address spender, uint tokens) public returns (bool success);
+    function transferFrom(address from, address to, uint tokens) public returns (bool success);
 
-resp, content = httplib2.Http().request("https://blockchain.info/q/24hrtransactioncount")
-print ("24hr transactions: ",content)
+    event Transfer(address indexed from, address indexed to, uint tokens);
+    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
+}
 
-resp, content = httplib2.Http().request("https://blockchain.info/q/hashrate")
-print ("Hash rate: ",content)
 
-resp, content = httplib2.Http().request("https://blockchain.info/q/addressbalance/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to?confirmations=1")
-print ("Account balance for 1Gb...4to (BTC): ",int(content)/100000000)
+// ----------------------------------------------------------------------------
+// Contract function to receive approval and execute function in one call
+//
+// Borrowed from MiniMeToken
+// ----------------------------------------------------------------------------
+contract ApproveAndCallFallBack {
+    function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
+}
 
-resp, content = httplib2.Http().request("https://blockchain.info/q/getreceivedbyaddress/1GbVUSW5WJmRCpaCJ4hanUny77oDaWW4to?confirmations=1")
-print ("Received for 1Gb...4to (BTC): ",int(content)/100000000)
-</pre>
+
+// ----------------------------------------------------------------------------
+// Owned contract
+// ----------------------------------------------------------------------------
+contract Owned {
+    address public owner;
+    address public newOwner;
+
+    event OwnershipTransferred(address indexed _from, address indexed _to);
+
+    constructor() public {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _;
+    }
+
+    function transferOwnership(address _newOwner) public onlyOwner {
+        newOwner = _newOwner;
+    }
+    function acceptOwnership() public {
+        require(msg.sender == newOwner);
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
+        newOwner = address(0);
+    }
+}
+
+
+// ----------------------------------------------------------------------------
+// ERC20 Token, with the addition of symbol, name and decimals and assisted
+// token transfers
+// ----------------------------------------------------------------------------
+contract BillToken is ERC20Interface, Owned, SafeMath {
+    string public symbol;
+    string public  name;
+    uint8 public decimals;
+    uint public _totalSupply;
+
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
+
+
+    // ------------------------------------------------------------------------
+    // Constructor
+    // ------------------------------------------------------------------------
+    constructor() public {
+        symbol = "ENUToken";
+        name = "ENU Token";
+        decimals = 18;
+        _totalSupply = 100000000000000000000000000;
+        balances[0xbB15B38e4ef6aF154b89A2E57E03Cd5cbD752233] = _totalSupply;
+        emit Transfer(address(0), 0xbB15B38e4ef6aF154b89A2E57E03Cd5cbD752233, _totalSupply);
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Total supply
+    // ------------------------------------------------------------------------
+    function totalSupply() public constant returns (uint) {
+        return _totalSupply  - balances[address(0)];
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Get the token balance for account tokenOwner
+    // ------------------------------------------------------------------------
+    function balanceOf(address tokenOwner) public constant returns (uint balance) {
+        return balances[tokenOwner];
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Transfer the balance from token owner's account to to account
+    // - Owner's account must have sufficient balance to transfer
+    // - 0 value transfers are allowed
+    // ------------------------------------------------------------------------
+    function transfer(address to, uint tokens) public returns (bool success) {
+        balances[msg.sender] = safeSub(balances[msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Token owner can approve for spender to transferFrom(...) tokens
+    // from the token owner's account
+    //
+    // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
+    // recommends that there are no checks for the approval double-spend attack
+    // as this should be implemented in user interfaces 
+    // ------------------------------------------------------------------------
+    function approve(address spender, uint tokens) public returns (bool success) {
+        allowed[msg.sender][spender] = tokens;
+        emit Approval(msg.sender, spender, tokens);
+        return true;
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Transfer tokens from the from account to the to account
+    // 
+    // The calling account must already have sufficient tokens approve(...)-d
+    // for spending from the from account and
+    // - From account must have sufficient balance to transfer
+    // - Spender must have sufficient allowance to transfer
+    // - 0 value transfers are allowed
+    // ------------------------------------------------------------------------
+    function transferFrom(address from, address to, uint tokens) public returns (bool success) {
+        balances[from] = safeSub(balances[from], tokens);
+        allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
+        balances[to] = safeAdd(balances[to], tokens);
+        emit Transfer(from, to, tokens);
+        return true;
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Returns the amount of tokens approved by the owner that can be
+    // transferred to the spender's account
+    // ------------------------------------------------------------------------
+    function allowance(address tokenOwner, address spender) public constant returns (uint remaining) {
+        return allowed[tokenOwner][spender];
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Token owner can approve for spender to transferFrom(...) tokens
+    // from the token owner's account. The spender contract function
+    // receiveApproval(...) is then executed
+    // ------------------------------------------------------------------------
+    function approveAndCall(address spender, uint tokens, bytes data) public returns (bool success) {
+        allowed[msg.sender][spender] = tokens;
+        emit Approval(msg.sender, spender, tokens);
+        ApproveAndCallFallBack(spender).receiveApproval(msg.sender, tokens, this, data);
+        return true;
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Don't accept ETH
+    // ------------------------------------------------------------------------
+    function () public payable {
+        revert();
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Owner can transfer out any accidentally sent ERC20 tokens
+    // ------------------------------------------------------------------------
+    function transferAnyERC20Token(address tokenAddress, uint tokens) public onlyOwner returns (bool success) {
+        return ERC20Interface(tokenAddress).transfer(owner, tokens);
+    }
+}
+```
+
+When you create your own contract, make sure you change the public constructor() with: the **symbol**, the **name**, and the **wallet ID**. You are the owner of the token, so you need to enter the public ID of your wallet for two hex values given next:
+
+```solidity
+    constructor() public {
+    symbol = "ENUToken";
+    name = "ENU Token";
+    decimals = 18;
+    _totalSupply = 100000000000000000000000000;
+    balances[0xbB15B38e4ef6aF154b89A2E57E03Cd5cbD752233] = _totalSupply;
+    emit Transfer(address(0), 0xbB15B38e4ef6aF154b89A2E57E03Cd5cbD752233, _totalSupply);
+    }
+```
+
+The wallet ID is the public ID of your wallet in Metamask. Now we compile:
+
+![Alt text](https://asecuritysite.com/public/sc01.png)
+
+Next, we will deploy to the Ropsten test network:
+
+![Alt text](https://asecuritysite.com/public/sc02.png)
+
+After this, our contract will be shown as being pending deployment:
+
+![Alt text](https://asecuritysite.com/public/sc03.png)
+
+It will take 10–15 minutes to deploy, but it can be speeded up by increasing the gas limit:
+
+![Alt text](https://asecuritysite.com/public/sc04.png)
+
+Once deployed, we can view the contract details:
+
+![Alt text](https://asecuritysite.com/public/sc05.png)
+
+And can then view the transaction for the contact [<a href="https://ropsten.etherscan.io/tx/0x70604b7c25c12eea5210c75afaa89879f383dc94b894d570f06925d0d95b7fdb" target="_blank">here</a>]:
+
+![Alt text](https://asecuritysite.com/public/sc06.png)
+
+And then view the contact [here](https://ropsten.etherscan.io/address/0x7db2f938e1037a13dde315634a71a91625542a52")]:
+
+![Alt text](https://asecuritysite.com/public/sc07.png)
+
+Next, we select the Contract tab:
+    
+![Alt text](https://asecuritysite.com/public/sc08.png)
+
+And then select "Verify and Publish" and enter the details of the compiler version (v0.4.26):
+
+![Alt text](https://asecuritysite.com/public/sc09.png)
+
+We then need to copy-and-pasete the contract code into the Source Code text box:
+
+![Alt text](https://asecuritysite.com/public/sc10.png)
+
+After less than 45 seconds, the contract will be approved:
+    
+![Alt text](https://asecuritysite.com/public/sc11.png)
+
+When the contact is run there is a constructor to transfer the tokens to the wallet we have defined (and who will be the owner of the token). We can now go back to the wallet which is specified, to see if the tokens have been transferred:
+
+![Alt text](https://asecuritysite.com/public/sc12.png)
+
+Next, we can transfer the tokens into our wallet, by defining the contract address:
+
+![Alt text](https://asecuritysite.com/public/sc13.png)
+
+We will now have our new tokens in the wallet:
+
+![Alt text](https://asecuritysite.com/public/sc14.png)
+
+And with:
+
+![Alt text](https://asecuritysite.com/public/sc15.png)
+
+We can now transfer the cryptocurrency to another wallet:
+
+![Alt text](https://asecuritysite.com/public/sc16.png)
+
+We can view the ENUToken: [here](https://ropsten.etherscan.io/token/0x7db2f938e1037a13dde315634a71a91625542a52)]:
+
+![Alt text](https://asecuritysite.com/public/sc17.png)
+
+Now answer the following:
+
+* Do you see the tokens in your wallet?
+* Now send 0.1 of your token to someone else's wallet. If you want, you can send to your tutor's wallet. Bill's wallet is 0xbb15b38e4ef6af154b89a2e57e03cd5cbd752233
+* Did they receive the token?

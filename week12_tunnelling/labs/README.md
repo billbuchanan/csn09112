@@ -45,7 +45,7 @@ If the site was susceptible to Poodle, what is the vulnerability?
 
 ## 2	Viewing details
 
-1	Go to your Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to www.napier.ac.uk.
+1	Go to your public Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to www.napier.ac.uk.
 
 <pre>
 Stop Wireshark and identify some of your connection details:
@@ -113,11 +113,11 @@ By examining the certificate from the browser is the length of the encryption ke
 ## 3	OpenSSL
 
 1	Go to your Kali Linux instance, and make a connection to the www.live.com Web site:
-<pre>
+```
 openssl s_client -connect www.live.com:443
-</pre>
+```
 
-<pre>
+```
 Which SSL/TLS method has been used:
 
 Which method is used on the encryption key on the certificate, and what is the size of the public key?
@@ -142,7 +142,7 @@ What is the serial number of the certificate:
 
 Who has signed the certificate:
 
-</pre>
+```
 
 ## 4 Examining traces
 
@@ -150,7 +150,7 @@ Who has signed the certificate:
 
 http://asecuritysite.com/log/ssl.zip
 	
-<pre>
+```
 Client IP address and TCP port:
 
 Web server IP address and TCP port:
@@ -162,7 +162,7 @@ Which encryption method is used for the tunnel:
 Which hash method is used for the tunnel:
 
 What is the length of the encryption key:
-</pre>
+```
 
 
 2 Download the following file, and examine the trace with Wireshark:
