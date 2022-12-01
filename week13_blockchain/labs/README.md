@@ -78,8 +78,8 @@ Hash rate:
 
 
 ## B	Ethereum
-## Setting up your Ethereum wallet on Ropsten
-The Ropsten network allows a user to test an Ethereum application, and using free Ether. Initially setup your MetaMask wallet. A document to outline how you set this up is [here](https://github.com/billbuchanan/appliedcrypto/blob/main/unit08_blockchain/lab/Metamask.pdf). Once you have set it up, answer the following:
+## Setting up your Ethereum wallet on Sepolia
+The Sepolia network allows a user to test an Ethereum application, and using free Ether. Initially setup your MetaMask wallet. A document to outline how you set this up is [here](https://github.com/billbuchanan/appliedcrypto/blob/main/unit08_blockchain/lab/Metamask.pdf). Once you have set it up, answer the following:
 
 * What is your public ID (just define the first four hex values)?
 * Find out someone else's public ID, and send them 0.001 Ether. If you are doing the lab on your own, send it to Bill (ID: 0xbB15B38e4ef6aF154b89A2E57E03Cd5cbD752233).
@@ -127,7 +127,7 @@ Once entered, we can then compile it with the Solidity compiler. It is important
 
 ![here](https://asecuritysite.com/public/eth002.png)
    
-Once compiled we can then deploy the smart contract to a test network (Ropsten). For this , we need to connect our Metamask wallet:
+Once compiled we can then deploy the smart contract to a test network (Sepolia). For this , we need to connect our Metamask wallet:
    
 ![here](https://asecuritysite.com/public/eth003.png)   
 
@@ -141,7 +141,13 @@ And clicking through gives us the address of the contract, and then viewing it o
 ![here](https://asecuritysite.com/public/eth005.png)     
 
 
-The address here is “0x0895..”, so we can view the smart contract from: [here](https://ropsten.etherscan.io/address/0x0895a540cff8e7829284f1d9c55daf624d6e2df9).  We now need to verify and publish the contact, with click on “Verify and Publish”:
+The address in the screenshot above is “0x0895..”, so you can click on your own address and view the smart contract in Etherscan. 
+
+In another example: 
+
+![image](https://user-images.githubusercontent.com/44439128/205040755-0796dba5-c8ab-4f6e-ad74-5e023e32d4fb.png)
+
+The address of the contract is "0x3a40..", so you can visit it from from: [here](https://sepolia.etherscan.io/address/0x3a407068a13bfef0db1e319c364c153391b158cf). We now need to verify and publish the contact, with click on “Verify and Publish”:
     
 ![here](https://asecuritysite.com/public/eth006.png)   
 
@@ -159,7 +165,7 @@ We then need to add your code for it to be checked:
  ![here](https://asecuritysite.com/public/eth009.png)        
 
 
-We now have the contract published to the Ropsten test network:
+We now have the contract published to the Sepolia test network:
     
 ![here](https://asecuritysite.com/public/eth010.png)       
 
@@ -437,7 +443,7 @@ The wallet ID is the public ID of your wallet in Metamask. Now we compile:
 
 ![Alt text](https://asecuritysite.com/public/sc01.png)
 
-Next, we will deploy to the Ropsten test network:
+Next, we will deploy to the Sepolia test network:
 
 ![Alt text](https://asecuritysite.com/public/sc02.png)
 
