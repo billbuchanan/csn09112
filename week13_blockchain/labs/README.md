@@ -89,7 +89,7 @@ The Ropsten network allows a user to test an Ethereum application, and using fre
 * Ask someone to send you 0.001 Ether. Did you receive it? If you are doing the lab on your own, ask your lab tutor to send you 0.001 Ether.
 
 ## Creating a Smart Contract in Ethereum
-So, let’s write a bit of code that does some simple maths. In the following we will implement sqrt(), sqr(), mul(), sub(), and add():
+So, let’s write a bit of code that does some simple maths. In the following we will implement sqrt(), sqr(), mul(), sub(), and add(). First, we open up https://remix.ethereum.org/. and enter the following Solidy contract:
 
 ```solidity
 pragma solidity ^0.8.0;
