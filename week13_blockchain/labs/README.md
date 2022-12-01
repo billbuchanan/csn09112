@@ -459,11 +459,13 @@ Once deployed, we can view the contract details:
 
 ![Alt text](https://asecuritysite.com/public/sc05.png)
 
-And can then view the transaction for the contact [<a href="https://ropsten.etherscan.io/tx/0x70604b7c25c12eea5210c75afaa89879f383dc94b894d570f06925d0d95b7fdb" target="_blank">here</a>]:
+And can then view the transaction for the contract: 
+<!-- [<a href="https://ropsten.etherscan.io/tx/0x70604b7c25c12eea5210c75afaa89879f383dc94b894d570f06925d0d95b7fdb" target="_blank">here</a>] -->
 
 ![Alt text](https://asecuritysite.com/public/sc06.png)
 
-And then view the contact [here](https://ropsten.etherscan.io/address/0x7db2f938e1037a13dde315634a71a91625542a52")]:
+And then view the contact: 
+<!-- [here](https://ropsten.etherscan.io/address/0x7db2f938e1037a13dde315634a71a91625542a52")] -->
 
 ![Alt text](https://asecuritysite.com/public/sc07.png)
 
@@ -503,7 +505,8 @@ We can now transfer the cryptocurrency to another wallet:
 
 ![Alt text](https://asecuritysite.com/public/sc16.png)
 
-We can view the ENUToken: [here](https://ropsten.etherscan.io/token/0x7db2f938e1037a13dde315634a71a91625542a52)]:
+We can view the ENUToken:
+<!-- [here](https://ropsten.etherscan.io/token/0x7db2f938e1037a13dde315634a71a91625542a52)] -->
 
 ![Alt text](https://asecuritysite.com/public/sc17.png)
 
