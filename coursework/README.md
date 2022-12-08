@@ -72,11 +72,13 @@ A brief literature review towards your botnet analysis method and IDS rule devel
 Analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, host activities on the victim, any communications between the bot and controller, and any network scanning by the bot. For example screen shots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with brief discussion.  
 
 *	Dynamic analysis of bot and botnet controller
+
 **	Identifying botnet network connections and traffic, filtering out unrelated traffic using appropriate tools such as Wireshark
 **	Identify types of traffic, reconnaissance/command and control traffic
 **	Identify specific botnet commands and responses
 **	Decode botnet traffic if necessary – some may be encoded/encrypted! Crack the messages for extra marks
 **	Challenge: create your own bot traffic so individual command can be sent and analysed separately
+
 *	Challenge: To verify your findings from the dynamic analysis of the botnet behaviour, try to reverse engineer the bot agent code and statically analyse the code.
 
 
