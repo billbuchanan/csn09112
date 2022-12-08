@@ -80,7 +80,7 @@ Analyse the operation of the running Bot agent and Botnet controller, including 
 *	Challenge: To verify your findings from the dynamic analysis of the botnet behaviour, try to reverse engineer the bot agent code and statically analyse the code.
 
 
-IDS Detector [30 marks]
+** IDS Detector [30 marks]**
 From your botnet analysis, create and test a basic prototype detection system for the Botnet agent and controller using an IDS sensor.  Create IDS rules/signatures to detect the bot activity and not excessive many false positives. This section could show the Snort rules with descriptions of how they work, and screen shots of the testing/outputs and discussion on this. 
 
 
