@@ -234,7 +234,7 @@ sudo nano /etc/resolv.conf
 And change the nameserver to:
 
 ```
-nameserver 10.246.3.254
+nameserver 10.221.3.254
 ```
 
 Now can you ping 10.221.3.254 from Ubuntu? Yes/No
