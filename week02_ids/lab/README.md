@@ -42,7 +42,8 @@ Our first task is to route through the Vyatta firewall to connect two networks. 
 
 Part 1 Demo:  [here](https://youtu.be/LBTRGbuSUDg)
  
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
+![csn09112_graphics - Page 4](https://github.com/billbuchanan/csn09112/assets/43025646/17c8c0ab-2725-4907-86a2-1574180bf6dd)
+
 Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)
 
 
