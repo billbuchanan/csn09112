@@ -16,8 +16,8 @@ The key topic areas include:
 
 ## Lecture
 
-The lecture is [here](https://www.youtube.com/watch?v=X5_OFQGywWE).
-
+ Defence Systems, Policies and Risk: [here](https://www.youtube.com/watch?v=US2yqycKQik).
+ 
 ## Test
 
 The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cyberdata02)
