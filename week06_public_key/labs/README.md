@@ -315,7 +315,7 @@ plaintext = unpad(plaintext)
 print("  decrypt: ",plaintext.decode())
 ```
 
-How is the encryption key generate?
+How is the encryption key generated?
 
 Which is the size of the key used? [128-bit][256-bit]
 
