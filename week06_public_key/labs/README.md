@@ -64,9 +64,17 @@ Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
 
-Download: [here](https://hashcat.net/files/hashcat-6.0.0.7z)
+```
+wget https://hashcat.net/files/hashcat-6.0.0.7z
+```
 
-Next unzip it into your home folder. Then from your home folder, setup a link to Hashcat 6.0.0:
+Next unzip it into your home folder:
+
+```
+pzip -d hashcat-6.0.0.7z
+```
+
+Then from your home folder, setup a link to Hashcat 6.0.0:
 
 ```
 # ln -s hashcat-6.0.0/hashcat.bin  hashcat
