@@ -71,7 +71,7 @@ wget https://hashcat.net/files/hashcat-6.0.0.7z
 Next unzip it into your home folder:
 
 ```
-pzip -d hashcat-6.0.0.7z
+p7zip -d hashcat-6.0.0.7z
 ```
 
 Then from your home folder, setup a link to Hashcat 6.0.0:
