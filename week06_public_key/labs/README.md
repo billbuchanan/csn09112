@@ -252,6 +252,12 @@ Admin:
 Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
 
 ## 8	Python tutorial
+For this part of the lab, install:
+
+```
+pip install pycryptodome
+```
+
 In Python, we can use the Hazmat (Hazardous Materials) library to implement symmetric key encryption. 
 
 Web link (Cipher code): [here](http://asecuritysite.com/cipher01.zip)
