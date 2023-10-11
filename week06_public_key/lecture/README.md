@@ -6,16 +6,15 @@
 
 The key concepts are: 
 
-* Understanding symmetric key encryption and hashing methods.
+* Understanding public key encryption and key exchange.
 
 ## Public Key Encryption
 
 What you should know at the end of unit?
 
-* The differences between a stream cipher and a block cipher.
-* How salting is used to change the cipher blocks.
-* Use openssl to perform practical operations.
-* Understand the encoding formats used for cipher text and keys.
+* How public key encryption can perform a key exchange, encryption and a digital signature, and the keys used.
+* The simple steps of the RSA method.
+* How the Diffie-Hellman method works.
 
 
 ### Presentations
