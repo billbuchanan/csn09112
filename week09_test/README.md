@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be no lectures in Week 9.
 
-Time for test: Thursday, 1 November 2023 (9am-11am, JKCC)
+Time for test: Wednesday, 1 November 2023 (9am-11am, JKCC)
 
 ## Background
 
