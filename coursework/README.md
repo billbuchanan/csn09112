@@ -81,16 +81,31 @@ Analyse the operation of the running Bot agent and Botnet controller, including 
 
 
 ### IDS Detector [30 marks]
-From your botnet analysis, create and test a basic prototype detection system for the Botnet agent and controller using an IDS sensor.  Create IDS rules/signatures to detect the bot activity and not excessive many false positives. This section could show the Snort rules with descriptions of how they work, and screen shots of the testing/outputs and discussion on this. 
+From your botnet analysis, create and test a basic prototype detection system for the Botnet agent and controller using an IDS sensor.  Create IDS rules/signatures to detect the bot activity and not excessive many false positives. This section could show the Snort rules with descriptions of how they work, and screenshots of the testing/outputs and discussion on this. 
 
 
 ### References/Presentation [10 marks]
 
 The academic report should be written in a formal style, in 3rd person, and well presented.
-Full academic referencing of peer-reviewed papers, technical papers, books, and web sites, using thorough the Harvard referencing format.
+Full academic referencing of peer-reviewed papers, technical papers, books, and web sites, using the IEEE referencing format.
 - Reference all materials used, citing every reference in the body of the report.
-- All references cited should be listed at the end of the report, using Harvard referencing format.
+- All references cited should be listed at the end of the report, using IEEE referencing format.
 
 
-The report should use the Harvard format for all of the references, and, if possible, should include EVERY reference to material sourced from other places. Also, the report should be up to 20 pages long (where appendices do not count in the page count number). 
+The report should use the Harvard format for all of the references and, if possible, should include EVERY reference to material sourced from other places. Also, the report should be up to 20 pages long (where appendices do not count in the page count number). 
+
+# Usage of AI tools
+The use of AI tools is not recommended for any part of this coursework. Any use of them **Must** be referenced within the coursework - and for all instances of their usage. The coursework should contain a statement at the start of the course which defines whether AI tools have been used, such as:
+
+```
+This coursework does not contain any usage of AI tools, and is the sole work of the author
+```
+
+or:
+
+```
+This coursework contains the usage of AI tools with Section X.X and Section X.Y. These have been used because [give justification].
+```
+
+
 
