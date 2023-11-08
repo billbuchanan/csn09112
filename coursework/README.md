@@ -69,14 +69,14 @@ A brief literature review towards your botnet analysis method and IDS rule devel
 
 ### Botnet Analysis [40 marks]
 
-Analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, host activities on the victim, any communications between the bot and controller, and any network scanning by the bot. For example, screen shots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with brief discussion.  
+Analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, host activities on the victim, any communications between the bot and controller, and any network scanning by the bot. For example, screenshots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with a brief discussion.  
 
 *	Dynamic analysis of bot and botnet controller
 1. Identifying botnet network connections and traffic, filtering out unrelated traffic using appropriate tools such as Wireshark
 2. Identify types of traffic, reconnaissance/command and control traffic
 3. Identify specific botnet commands and responses
 4. Decode botnet traffic if necessary – some may be encoded/encrypted! Crack the messages for extra marks
-5. Challenge: create your own bot traffic so individual command can be sent and analysed separately
+5. Challenge: create your own bot traffic so individual commands can be sent and analysed separately
 *	Challenge: To verify your findings from the dynamic analysis of the botnet behaviour, try to reverse engineer the bot agent code and statically analyse the code.
 
 
@@ -87,7 +87,7 @@ From your botnet analysis, create and test a basic prototype detection system fo
 ### References/Presentation [10 marks]
 
 The academic report should be written in a formal style, in 3rd person, and well presented.
-Full academic referencing of peer-reviewed papers, technical papers, books, and web sites, using the IEEE referencing format.
+Full academic referencing of peer-reviewed papers, technical papers, books, and websites, using the IEEE referencing format.
 - Reference all materials used, citing every reference in the body of the report.
 - All references cited should be listed at the end of the report, using IEEE referencing format.
 
@@ -95,10 +95,10 @@ Full academic referencing of peer-reviewed papers, technical papers, books, and 
 The report should use the Harvard format for all of the references and, if possible, should include EVERY reference to material sourced from other places. Also, the report should be up to 20 pages long (where appendices do not count in the page count number). 
 
 # Usage of AI tools
-The use of AI tools is not recommended for any part of this coursework. Any use of them **Must** be referenced within the coursework - and for all instances of their usage. The coursework should contain a statement at the start of the course which defines whether AI tools have been used, such as:
+The use of AI tools is not recommended for any part of this coursework. Any use of them **must** be referenced within the coursework - and for all instances of their usage. The coursework should also contain a statement at the start of the coursework which defines whether AI tools have been used or not and a justification for their usage, such as:
 
 ```
-This coursework does not contain any usage of AI tools, and is the sole work of the author
+This coursework does not contain any usage of AI tools and is the sole work of the author
 ```
 
 or:
