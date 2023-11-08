@@ -50,7 +50,7 @@ Botnets are a particular problem and where bot agents may infect machines inside
 *	Create and test a detection system for the Botnet agent and controller using an IDS sensor. 
 
 
-Your network architecture should be similar to that shown in Figure 1 should be created with the VMs provided using two private address spaces. The Bot agent should be run from the internal trusted Private network.
+Your network architecture should be similar to that shown in Figure 1 and should be created with the VMs provided using two private address spaces. The Bot agent should be run from the internal trusted Private network.
 
 Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then, use this architecture as your testbed to thoroughly investigate and analyse the Botnet activity. Try to plan and be scientific in the experimental method you use and don’t simply run it once and report. Static analysis can then be used to complement the dynamic analysis. After this, design an Intrusion Detection System (IDS) which will detect the various bot activities, leading to an implementation of a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. If you have time investigate tuning the rules. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Finally, the botnet can be tested within the vSoC environment.
 
@@ -60,7 +60,7 @@ The controller and the bot should be placed on different hosts, and then enabled
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk), in a PDF format, if possible. The hand-in date is TBC. It will be marked as follows:
+The coursework should be submitted via Turnitin (submit.ac.uk) in a PDF format, if possible. The hand-in date is Friday, 15 December 2023 (11:55pm). It will be marked as follows:
 
 ### Research [20 marks]
 
