@@ -19,11 +19,11 @@ Our challenge is to setup MyBank Incorp, where each of you will be allocated a n
 Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z.z
 
 ## Quick guide</h2>
-For Ubtuntu configuration, for 10.10.x.7:
+For Ubuntu configuration, for 10.10.x.7:
 
 ```
 sudo ip link set ens160 up
-sudo ip addr add 10.10.x.7/24 dev ens32
+sudo ip addr add 10.10.x.7/24 dev ens160
 sudo ip route add default via 10.10.x.254 dev ens32
 nano /etc/resolv.conf and change "nameserver 146.176.1.5"
 ```
@@ -31,53 +31,44 @@ nano /etc/resolv.conf and change "nameserver 146.176.1.5"
 
 
 ## Setting up the network
-In this lab we will connect multiple firewalls to the main gateway, and be able to complete the challenges in Table 1. You will be given two things:
+In this lab, we will connect multiple firewalls to the main gateway and be able to complete the challenges in Table 1. You will be given two things:
 
 Group Number:
 
 Your networks will be: 10.10.x.0/24  10.10.y.0/24  
 
-Demo: [here](https://youtu.be/g7dzDM4aU0k)
+Demo: [here](https://www.youtube.com/watch?v=qIA3LnKTI6k))
 
 
 ## B Initial Firewall Creation
-Now go to your folder, and select the firewall for your network. Next configure the Ubuntu server in the Private zone, and the Windows server in the DMZ.
+Power up your Pfsense firewall. Do not setup VLANs, and enable the interfaces of:
 
-| Perform the following: |
-|-------------------------------|
-| Boot your firewall, and say no to setting up VLANs.
-| Now setup the first three networks adapters with le0 (WAN), le1 (LAN) and le2 (OPT1).
-| Check that you have been granted an IP address on the WAN (le0) port. What address is it:
-| Can you ping the main gateway from the firewall (10.221.3.254) and your own WAN port?  Yes/No
+* vmx0. WAM.
+* vmx1. Private.
+* vmx2. DMZ
 
-Now, we want to set up your private network gateway.
+Let the firewall boot up, and then select (2) Setup IP Interface(s), and set the LAN interface to have an IP address of 10.10.x.254/24. 
 
-| Perform the following: |
-|-------------------------------|
-| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the le1 interface to 10.10.x.254/24. 
-| Note the URL that you can configure your firewall. What is the URL:
-
-You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
-
-## C Host setup
 Now we will configure the hosts to sit on the Private and DMZ networks.
 
-Setup the Ubuntu host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
+## C Ubuntu setup
+Set up the Ubuntu host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
 
 ```
-sudo ip link set ens32 up
-sudo ip addr add 10.10.x.7/24 dev ens32
-sudo ip route add default via 10.10.x.254 dev ens32
+sudo ip link set ens160 up
+sudo ip addr add 10.10.x.7/24 dev ens160
+sudo ip route add default via 10.10.x.254 dev ens160
 ```
+Can you ping the default gateway?
 
-### Ubuntu host setup
 Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver:
+
 ```
 sudo nano /etc/resolv.conf
 ```
 then add:
 ```
-nameserver 10.221.3.254
+nameserver 146.176.1.5
 ```
 
 ### Kali host setup
@@ -105,13 +96,13 @@ sudo ip route add default via 10.10.y.254 dev eth0
 ```
 
 ### Windows host setup
-On the Windows server modify the static address on the interface with:
+On the Windows server, modify the static address on the interface with:
 
 ```
 IP: 10.10.y.7
 Subnet mask: 255.255.255.0
 Gateway: 10.10.y.254
-DNS: 10.221.3.254
+DNS: 146.176.1.5
 ```
 
 ### Firewall  setup
