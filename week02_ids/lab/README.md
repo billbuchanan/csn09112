@@ -41,7 +41,7 @@ Demo: [here](https://www.youtube.com/watch?v=qIA3LnKTI6k))
 
 
 ## B Initial Firewall Creation
-Power up your Pfsense firewall. **Do not set VLANs**, and enable the interfaces of:
+Power up your Pfsense firewall and the rest of the hosts (do not power up the Vyatta firewall). Select the Pfsense firewall terminal **Do not set VLANs**, and enable the interfaces of:
 
 * vmx0. WAN.
 * vmx1. Private.
@@ -52,16 +52,15 @@ Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set
 Now we will configure the hosts to sit on the Private and DMZ networks.
 
 ## C Ubuntu setup
-Set up the Ubuntu host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
+Set up the Ubuntu host to have an IP address of 10.10.x.7/24 (for the ens160 network adaptor) with a default gateway of your firewall port (10.10.x.254/24).
 
 ```
 sudo ip link set ens160 up
 sudo ip addr add 10.10.x.7/24 dev ens160
 sudo ip route add default via 10.10.x.254 dev ens160
 ```
-Can you ping the default gateway?
 
-Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver:
+Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver of 146.176.1.6:
 
 ```
 sudo nano /etc/resolv.conf
@@ -71,8 +70,18 @@ then add:
 nameserver 146.176.1.5
 ```
 
+| | |
+|-|-|
+| Can you ping the default gateway? | Yes/No |
+| Can you ping the main gateway (10.221.3.254)? | Yes/No |
+| Can you ping the 8.8.8.8? | Yes/No |
+| Can you ping the google.com? | Yes/No |
+|-|-|
+
+If any of these is No, you need to debug your network, and find the problem. By default, all traffic is allowed to flow from the Private network to the other network, so we do not have to enable any firewall rules.
+
 ### Kali host setup
-Do the same for your host on the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
+Now we will setup the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
 
 ```
 sudo ip link set eth0 up
