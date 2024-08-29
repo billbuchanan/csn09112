@@ -4,7 +4,7 @@
 <p>Our main focus is to investigate secure infrastructures and some core principles around cryptography.  To download the source, use:</p>
 <pre>
 git clone https://github.com/billbuchanan/csn09112
-9/pre>
+</pre>
 
 The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/coursework) and is worth 50% of the marks in the module (and where Test 1 is also worth 50% of the marks in the module).
 
