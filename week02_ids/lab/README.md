@@ -37,7 +37,7 @@ Group Number:
 
 Your networks will be: 10.10.x.0/24  10.10.y.0/24  
 
-Demo: [here](https://www.youtube.com/watch?v=qIA3LnKTI6k))
+Demo: [here](https://www.youtube.com/watch?v=qIA3LnKTI6k)
 
 
 ## B Initial Firewall Creation
