@@ -72,13 +72,13 @@ nameserver 146.176.1.5
 
 | | |
 |-|-|
-| Can you ping the default gateway? | Yes/No |
-| Can you ping the main gateway (10.221.3.254)? | Yes/No |
-| Can you ping the 8.8.8.8? | Yes/No |
-| Can you ping the google.com? | Yes/No |
-|-|-|
+| 1. Can you ping the default gateway? | Yes/No |
+| 2. Can you ping the main gateway (10.221.3.254)? | Yes/No |
+| 3. Can you ping the 8.8.8.8? | Yes/No |
+| 4. Can you ping the google.com? | Yes/No |
+| 5. Run "nslookup google.com". What IP address does it give? |  |
 
-If any of these is No, you need to debug your network, and find the problem. By default, all traffic is allowed to flow from the Private network to the other network, so we do not have to enable any firewall rules.
+If any of these answers is No, you need to debug your network and find the problem. By default, all traffic is allowed to flow from the Private network to the other network, so we do not have to enable any firewall rules. If (1) does not ping, you have a basic connectivity problem and need to check your network adaptor on Ubuntu for its IP address and subnet mask. If (2) doesn't work, you have a problem with your default gateway on Ubuntu, so check that the default gateway of Ubuntu is set of the LAN port of the firewall. If (3) doesn't work, you have a general problem with your firewall, so check the details on the pfSense firewall. If  (4) doesn't work, but (3) does, you have a problem with your DNS service, so check the DNS details on the Ubuntu host. 
 
 ### Kali host setup
 Now we will setup the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
