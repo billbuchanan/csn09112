@@ -7,7 +7,7 @@ The aim of this lab is to build a network of hosts and get the firewall to allow
 
 ## Activities
 
-Complete Lab 1: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=qIA3LnKTI6k).</p>
+Complete Lab 1: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/csn09112_lab01.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=qIA3LnKTI6k).</p>
 
 
 
