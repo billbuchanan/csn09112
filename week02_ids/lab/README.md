@@ -12,7 +12,7 @@ Complete Lab 1: The lab is [here](https://github.com/billbuchanan/csn09112/blob/
 
 
 ## Lab setup
-Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host and a Kali (DMZ) host to achieve your objectives. 
+Our challenge is to set up MyBank Incorp, where each of you will be allocated a network and hosts to configure and get online (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host and a Kali (Public) host to achieve your objectives. 
 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)  
@@ -31,7 +31,7 @@ nano /etc/resolv.conf and change "nameserver 146.176.1.5"
 
 
 ## Setting up the network
-In this lab, we will connect multiple firewalls to the main gateway and be able to complete the challenges in Table 1. You will be given two things:
+In this lab, we will connect our firewall to the main gateway and be able to complete the challenges in Table 1. You will be given two things:
 
 Group Number:
 
@@ -41,13 +41,13 @@ Demo: [here](https://www.youtube.com/watch?v=qIA3LnKTI6k))
 
 
 ## B Initial Firewall Creation
-Power up your Pfsense firewall. Do not set VLANs, and enable the interfaces of:
+Power up your Pfsense firewall. **Do not set VLANs**, and enable the interfaces of:
 
-* vmx0. WAM.
+* vmx0. WAN.
 * vmx1. Private.
 * vmx2. DMZ
 
-Let the firewall boot up, and then select (2) Setup IP Interface(s), and set the LAN interface to have an IP address of 10.10.x.254/24. 
+Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 10.10.x.254/24. 
 
 Now we will configure the hosts to sit on the Private and DMZ networks.
 
