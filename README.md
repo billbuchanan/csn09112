@@ -12,9 +12,9 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 
 | No | Date | Subject |  Lab |
 | -------|--------|---------|---------|
-| 2 | 13 Sept 2024 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Introduction to Vyatta <a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids/lab" target="_blank">Lab |
-| 3 | 26 Sept 2024 | 3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>] | Vyatta and Snort. [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs">Link</a>] |
-| 4 | 3 Oct 2024 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | pfSense.  |
+| 2 | 13 Sept 2024 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Network Security Lab 1 |
+| 3 | 26 Sept 2024 | 3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>] | Network Security Lab 2  |
+| 4 | 3 Oct 2024 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | Network Security Lab 3  |
 | 5 | 10 Oct 2024 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | AWS Security and Server Infrastructures |
 | 6 | 17 Oct 2024 | 7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public/Private Key and Hashing | 
 | 7 | 24 Oct 2024 | Reading week | Reading week |
