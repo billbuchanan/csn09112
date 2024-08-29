@@ -12,7 +12,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 
 | No | Date | Subject |  Lab |
 | -------|--------|---------|---------|
-| 2 | 13 Sept 2024 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Network Security Lab 1 |
+| 2 | 13 Sept 2024 | 1. Introduction [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_0intro">Link</a>]<br />2. Intrusion Detection Systems [<a href="https://github.com/billbuchanan/csn09112/tree/master/week02_ids">Link</a>] | Network Security [Lab 1](https://github.com/billbuchanan/csn09112/tree/master/week02_ids/lab) |
 | 3 | 26 Sept 2024 | 3. Network Security [<a href="https://github.com/billbuchanan/csn09112/tree/master/week03_ns">Link</a>] | Network Security Lab 2  |
 | 4 | 3 Oct 2024 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | Network Security Lab 3  |
 | 5 | 10 Oct 2024 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | AWS Security and Server Infrastructures |
