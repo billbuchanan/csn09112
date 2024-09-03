@@ -1,745 +1,357 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-# Lab 4: AWS Security and Server Infrastructure
+# Lab 4: Symmetric Key and Hashing
 
-## Aim
-The  aim  of  this  lab  is  setup AWS server instances and understand the setup of key security aspects.
+Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
-## Activities
+We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/).
 
-A demo of the setup of the lab is [here](https://youtu.be/rhf4_1E_wAU)
+## 1	Diffie-Hellman
 
+| No | Description | Result | 
+| -------|--------|---------|
+| 1 | Bob and Alice have agreed on the values: <br/>g=2,879, N= 9,929 Bob Select b=6, Alice selects a=9 | Now calculate (using the Kali calculator): <br/>Bob’s B value (g<sup>b</sup> mod N): <br/>Alice’s A value (g<sup>a</sup> mod N): |
+| 2 | Now they exchange the values. Next calculate the shared key: | Bob’s value (A<sup>a</sup> mod N):	Alice’s value (B<sup>a</sup> mod N): Do they match? [Yes] [No] |
+| 3 | If you are in the lab, select someone to share a value with. Next agree on two numbers (g and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for g and N: <br/>Your b value: <br/>Your B value:  <br/>The A value you received: <br/>Shared key: <br/>Do they match: [Yes] [No] |
 
-## Outline
-In previous labs we have set up a range of architectures with VMWare vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, and which reduces the cost in the investment in data centre costs, while providing the opportunity to quickly scale our server, network and data infrastructure. It is generally as pay-as-you-go model, and where we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
+## 2	Symmetric Key
 
-![AWS](https://asecuritysite.com/public/awsfig01.png "AWS Services")
+| No | Description | Result | 
+|-------|--------|---------|
+| 1 | Log into vSoC 2, and select your Kali host on the DMZ or public network. | What is your IP address? |
+| 2 | Use: openssl list -cipher-commands and openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
+| 2 | Use: openssl list -cipher-commands | Outline five encryption methods that are supported:   |
+| 2 | Use: openssl version | Outline the version of OpenSSL:    |
+| 3 | Using openssl and the command in the form: openssl prime –hex 1111 | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
+| 4 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc <br/> openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
+| 5 | Now repeat the previous command and add the –base64 option. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
+| 6 | Now repeat the previous command and observe the encrypted output. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
+| 7 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
+| 8 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
+| 9 | With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:<br/>echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>in OpenSSL 1.x (or YtJDE7WO9pOPrCQQaNZd1A== in OpenSSL 3.x)<br/>echo Ulq+o+vs5mvAc3GUIKt8hA== \| openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341<br/>Hello  <br/><br/> For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “PxonB24+a9f3U/KmlB+/KA==”  |  [qwerty][inkwell][london][paris][cake]
+|10 | Now, use the decryption method to prove that you can decrypt the ciphertext.<br/>echo V60XNkEyAAF40k5rFSbrZw== \| openssl enc -aes-256-cbc -pass pass:"password" -d  -base64 -S 241fa86763b85341 | Did you confirm the right password? [Yes/No] |
+| 11 | Investigate the following commands by running them several times:<br/>echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt | What do you observe? Why do you think causes this (ask your tutor if you want some detail)? |
 
-Figure 1: AWS Services
 
-## Enabling your lab
-You should have an AWS Academy login, so go to: https://awsacademy.instructure.com/ and log into the system and select AWS Academy Learner Lab (Figure 2).
 
-![AWS](https://asecuritysite.com/public/awsfig02.png "AWS Academy Learner Lab") 
 
-Figure 2: AWS Academy Learner Lab	
+## 3	Public Key
 
-Next, select “Modules”, and then “Learner Lab - Foundational Services”, and should have the lab environment (Figure 3). 
+| No | Description | Result | 
+| -------|--------|---------|
+| 1 | First we need to generate a key pair with: openssl genrsa -out private.pem 1024	This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
+| 2 | Use following command to view the output file: cat private.pem | What can be observed at the start and end of the file: |
+| 3 | Next we view the RSA key pair: openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
+| 4 | Let’s now secure the encrypted key with 3-DES: openssl rsa -in private.pem -des3 -out key3des.pem | |
+| 5 | Next we will export the public key: openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
+| 6 | Now we will encrypt with our public key: openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
+| 7 | And then decrypt with our private key: openssl rsautl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
+| 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
 
-![AWS](https://asecuritysite.com/public/awsfig03.png "AWS Academy Learner Lab environment")  
 
-Figure 3: AWS Academy Learner Lab environment
+## 4	Storing keys
+We have stored our keys on a key ring file (PEM). Normally we would use a digital certificate to distribute our public key. In this part of the tutorial we will create a crt digital certificate file.
 
-In the console you can interact with your AWS though the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
-
- 
-![AWS](https://asecuritysite.com/public/awsfig04.png "AWS Management Console (EC2)")  
-
-Figure 4: AWS Management Console (EC2)
-
-## Creating and Securing a Linux Server
-We will now create a Linux Server, and which should be accessible from the Internet. For this select “Launch Instance”, and then give it a name (such as “My Linux Server”) and select the Amazon Linux instance for the AMI (Amazon Machine Instance) – as shown in Figure 5.
-
- 
-![AWS](https://asecuritysite.com/public/awsfig05.png "Creating Amazon Linux instance")  
-
-Figure 5: Creating Amazon Linux instance
-
-```  
-Now select t2.micro for the instance type.
-
-How many vCPUs will the instance have?
-
-How much memory will it have?
-
-How much will it cost per day to run?
-
-If you selected, t2.medium, how much would it cost per day?
-
-If you selected, t2.large, how much would it cost per day?
-
-
-Now create a new key pair and save it to your local drive. This file contains your private key, and which you will need to connect to your instance. Accept all the other defaults.
-
-Observe the firewall group that will be applied.
-
-Which firewall ports are open on the instance?
-
-What do you think is the main issue with this firewall setting?
-
-How would you change it, once you have created the instance?
-
-
-
-Observe the disk storage setting for the instance.
-
-What type of disk will be used? [HDD/SSD]
-
-What do you think is the advantage of using SSD?
-
-For disk storage, what is the default size of the disk that you will create?
-
-What is the maximum storage size for a free tier storage of the AMI instance we are creating?
-```
-
-
-### C.1	Creating the instance
-Go ahead and create the instance. Then go back to the AWS Management Console, and find your instance. Wait for it to set its state to running. 
-
-Now we will connect to it. For this we need to create an SSH connection and use the private key we have generated. The public key will be stored on the instance and will authenticate our access. We do not need a username or password to access the instance, as this is often insecure. Our PEM file will give us access (or you can use Putty for the connection).
-
-Now, we will examine the details of our instance (Figure 6). On the instance summary, determine the following:
-```
-The public IP address:
-
-The private IP address:
-
-The instance type:
-
-The public IPv4 DNS:
-
-From your local host, can you ping the public IP address? [Yes/No]	
-
-Why can’t you successfully ping your instance?
-
-Which region of the world is your instance running in?
-```
-
-### C.2	Enabling ICMP on firewall
-Now, we will enable ICMP on the instance. First click on the Security tab of the instance summary, and then on the security group.
-
-```
-What is the firewall rule that is applied to the instance?
-
-[SSH/Telnet/FTP/HTTP/HTTPs] for [0.0.0.0/0 or 0.0.0.0/8 or 0.0.0.0/16 or 0.0.0.0/32]
-
-What does 0.0.0.0/0 represent?
-```
-
-
-Now go ahead and add an ICMP rule for all hosts (Figure 7). 
-```
-Can you now successfully ping your instance? [Yes/No]
-
-Now, lock your ICMP rule down to just your IP address (you need to use a /32 address for this). Can you still successfully ping the instance? [Yes/No]
-
-Ask you neighhour or one of the lab tutors to ping your instance. Can they successfully ping it? [Yes/No]
-
-What is the advantage of applying the firewall in AWS, rather than in the instance?
-```
-
- 
-![AWS](https://asecuritysite.com/public/awsfig06.png "Details of instance")  
-
-Figure 6: Details of instance
-
- 
-![AWS](https://asecuritysite.com/public/awsfig07.png "Enable ICMP")  
-
-Figure 7: Enable ICMP
-
-### C.3	Accessing your instance
-Now we will connect to our instance. For this you need SSH (such as provided by OpenSSH). This may be installed on the host you are using (such as in vSoC 2), or from Apps Anywhere. Once you have SSH, press Connect on the summary page, and you should then have tabs for Connect to instance (Figure 8). Next select the SSH client tab, and you will see the details of connecting to your instance with SSH. 
-
-![AWS](https://asecuritysite.com/public/awsfig08.png "Connect to instance")  
-
-Figure 8: Connect to instance
-
-Now find your PEM file on your local machine (from the command line), and protect it with:
-
-```
-chmod 400 myfile.pem
-```
-What protection does this put on your private key?
-
-Next, use the SSH connection with the name of your PEM file and with the DNS (or IP address) for your instance. For example, in the case in Figure 8, we have:
-```
-ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
-```
-What is the name of the user that logs in?
-
-
-An example of connecting is:
-```
-% ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
-The authenticity of host 'ec2-52-90-3-121.compute-1.amazonaws.com (52.90.3.121)' can't be established.
-ED25519 key fingerprint is SHA256:/c5UOK6gprKL19XCptNQ1brb9MpYR5wEeqhD/6t+/Wk.
-This host key is known by the following other names/addresses:
-    ~/.ssh/known_hosts:48: ec2-3-90-189-201.compute-1.amazonaws.com
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added 'ec2-52-90-3-121.compute-1.amazonaws.com' (ED25519) to the list of known hosts.
-Last login: Fri Sep 30 17:07:00 2022 from ec2-18-206-107-27.compute-1.amazonaws.com
-
-       __|  __|_  )
-       _|  (     /   Amazon Linux 2 AMI
-      ___|\___|___|
-
-https://aws.amazon.com/amazon-linux-2/
-[ec2-user@ip-172-31-16-186 ~]$
-```
-
-```
-Have you managed to connect? [Yes/No]
-
-By using “ip addr show” or “ifconfig” in your instance, what is the private IP address of it?
-
-Can you ping 8.8.8.8 from your instance? [Yes/No]
-
-Is there a folder named .ssh? [Yes/No]
-
-What do you think is the purpose of the file contained in .ssh? 
-
-
-Now create a folder in the top level named “mytestfolder”, and put a new file in there named “mytext.txt” (and put some text in this file).
-
-Now go to the EC2 Instance Connect (Figure 9), and press on the Connect button. You should now get a console terminal in the browser. 
-
-From your console (Figure 10), verify that your file has been created. Has it been created in the instance? [Yes/No]
-```
-
-![AWS](https://asecuritysite.com/public/awsfig09.png "Connect to instance")  
-
-Figure 9: EC2 Instance Connect
-
-![AWS](https://asecuritysite.com/public/awsfig09_1.png "EC2 Instance Connect terminal")  
-
-Figure 10: EC2 Instance Connect terminal
-
-Now examine the running services on the instance with:
-```
-$ netstat -i | grep tcp
-$ netstat -i | grep udp
-```
-Which of the main services are running:
-
-
-
-
-## C.4	Installing a Web server
-Now we will install a Web server on the instance with:
-```
-sudo yum update -y
-sudo yum install -y httpd.x86_64
-sudo systemctl start httpd.service
-sudo systemctl enable httpd.service
-```
-Next open up a browser on your computer and access your instance for Web access.
-
-```
-Can you connect to it? [Yes/No]
-
-Why can’t you connect to it? 
-```
-
-Now enable a firewall rule on Port 80 and Port 443 and allow access for Web traffic (see Figure 11).
-
-
-![AWS](https://asecuritysite.com/public/awsfig11.png "Enable HTTP and HTTPs rules")  
-
-Figure 11: Enable HTTP and HTTPs rules
-
-```
-Can you now connect to your Web site? [Yes/No] (see Figure 12)
-```
-
-![AWS](https://asecuritysite.com/public/awsfig12.png "Sample access to Web site")  
-
-Figure 12: Sample access to Web site
-
-Now go into the /var/www/html folder, and create a file named “index.html”, and add:
-```
-<h1>Main Web site</h1>
-<p>Hello to you</p>
-```
-And then save the file.
-
-```
-Has it changed the welcome? [Yes/No]
-```
-
-### C.6	Auditing
-The main logging output is in the /var/log folder. Go into this folder and observe some of the files in there. Identify the contents of the following files:
-
-```
-What are the likely contents of the “secure” file?
-
-What are the likely contents of the “boot.log” file?
-
-List the log/httpd/access_log file. What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
-
-
-Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file. Did it detect the new browser type?
-
-
-Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file. What is the status code returned for the access?
-```
-
-
-![AWS](https://asecuritysite.com/public/awsfig13.png "Sample list of log/httpd/access_log")  
-
-Figure 13: Sample list of log/httpd/access_log
-
-### C.7	Adding a new user
-The ec2_user can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this we use adduser and passwd on the Linux instance:
-
-```
-[ec2-user@ip-172-31-16-186 ~]$ sudo adduser napier
-[ec2-user@ip-172-31-16-186 ~]$ sudo passwd napier
-Changing password for user napier.
-New password:  <yourpass>
-Retype new password:  <yourpass>
-passwd: all authentication tokens updated successfully.
-```
-
-Now we will add the new user to the login. For this, we use:
-
-```
-[ec2-user@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
-   Add line of (see Figure 15):
-AllowUsers ec2-user napier
-   Change the following to “yes” (see Figure 16):
-PasswordAuthentication yes
-```
-
-Now restart the SSH service with:
-```
-[ec2-user@ip-172-31-16-186 .ssh]$ sudo systemctl restart sshd
-```
-```
-Can you now connect to your instance with the new user and password (but change for the IP address of your instance):
-```
-```
-ssh   napier@54.209.145.85
-```
-```
-Can you connect with the new user? [Yes/No]
-```
-
-![AWS](https://asecuritysite.com/public/awsfig13.png "Accessing instances")  
-
-Figure 14: Accessing instances
-
-
-![AWS](https://asecuritysite.com/public/awsfig14.png "Accessing instances")  
-
-Figure 15: Accessing instances
-
-![AWS](https://asecuritysite.com/public/awsfig15.png "Accessing instances")  
-
-Figure 16: Accessing instances
-
-### C.8	Accessing from AWS prompt
-We can also access our instance from the AWS terminal prompt. For this return to your AWS Academy console, and enter the command (Figure 17):
-
-```
-$ aws ec2 describe-instances
-```
-
-From the results, can you identify the following.
-
-Instance type: 
-
-Public IP address:
-
-Private IP address:
-
-State: 
-
-![AWS](https://asecuritysite.com/public/awsfig16.png "Stopping an instance")   
-
-Figure 17: Describe instances
-
-Now try we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 18):
-```
-aws ec2 stop-instances --instance-ids [My-instance-ID]
-```
-From the AWS Management Console, has your instance stopped? [Yes/No]
-
-
-![AWS](https://asecuritysite.com/public/awsfig17.png "Stopping an instance")   
-
-Figure 18: Stopping an instance
-
-
-Now we will restart the instance, with:
-
-```
-aws ec2 start-instances --instance-ids [My-instance-ID]
-```
-
-Has the instance re-started? [Yes/No]
-
-
-Now we will change the instance type from t3.micro to t3.small. To do this, run the following commands:
-```
-aws ec2 stop-instances --instance-ids [My-instance-ID]
-aws ec2 wait instance-stopped --instance-ids [My-instance-ID]
-aws ec2 modify-instance-attribute --instance-id [My-instance-ID] --instance-type "{\"Value\": \"t3.small\"}"
-aws ec2 start-instances --instance-ids [My-instance-ID]
-```
-
-Did it change the instance type? [Yes/No]
-
-Can you still get access to your instance?
-
-By observing the script, and investigate what t3.micro and t3.small are, can you determine what has changed about your instance?
-
-
-
-
-Now, revert the instance back to t3.micro, and suspend the instance.
-
-## D	Creating and Securing a Windows 2022 Server
-In this part of the lab we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
-
-![AWS](https://asecuritysite.com/public/awsfig18.png "Creating Windows 2022 instance")  
-
-Figure 19: Creating Windows 2022 instance
-
-Now select t2.micro for the instance type.
-
-How many vCPUs will the instance have?
-
-How much memory will it have?
-
-How much will it cost per day to run?
-
-If you selected, t2.medium, how much would it cost per day?
-
-If you selected, t2.large, how much would it cost per day?
-
-
-Now create a new key pair and save it to your local drive. This file contains your private key, and which you will need to connect to your instance. Accept all the other defaults.
-
-Observe the firewall group that will be applied.
-
-Which firewall ports are open on the instance?
-
-What is the main issue with this firewall setting?
-
-How would you change it, once you have created the instance?
-
-
-
-Observe the disk storage setting for the instance.
-
-What type of disk will be used? [HDD/SSD]
-
-What is the advantage of using SSD?
-
-For disk storage, what is the size of the disk that you will create?
-
-What is the maximum storage size for a free tier storage of the AMI instance we are creating?
-
-
-
-### D.1	Creating the instance
-Go ahead and create the instance. Go back to the Management Console and find your instance. Wait for it to set its state to running. Now we will connect to it. For this we need to create an RDP connection, and use the private key we have generated to generate the initial password. 
-
-Now, we will examine the details of our instance (Figure 20). On the instance summary, determine the following:
-
-The public IP address:
-
-The private IP address:
-
-The instance type:
-
-The public IPv4 DNS:
-
-From your local host, can you ping the public IP address? [Yes/No]	
-
-Why can’t you successfully ping your instance?
-
-Which region of the world is your instance running in?
-
-
-### D.2	Enabling ICMP on firewall
-Now we will enable ICMP on the instance. First click on the Security tab of the instance summary, and then on the security group.
-
-
-What is the firewall rule that is applied to the instance?
-
-[SSH/RDP/Telnet/FTP/HTTP/HTTPs] for [0.0.0.0/0 or 0.0.0.0/8 or 0.0.0.0/16 or 0.0.0.0/32]
-
-What does 0.0.0.0/0 represent?
-
-
-
-
-Now go ahead and add an ICMP rule for all hosts (Figure 121). 
-
-Can you now successfully ping your instance? [Yes/No]
-
-We will not be able to ping the instance yet, as the firewall on Windows is disabling it.
+| No | Description | Result | 
+| -------|--------|---------|
+| 1 | Next create the crt file with the following: openssl req -new -key private.pem -out cert.csr  openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | View the CRT file by double clicking on it from the File Explorer. What is the type of public key method used: View the certificate file and determine: The size of the public key: The encryption method: |
+| 2 | We can now take the code signing request, and create a certificate. For this we sign the certificate with a private key, in order to validate it:<br/>openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | From the File System, click on the newly created certificate file (server.crt) and determine:<br/>The size of the public key (in bits): [512][1024][2048]<br/>The public key encryption method:<br/>Which is the hashing method that has been signed to sign the certificate: [MD5][SHA-1][SHA-256] |
 
 
  
-![AWS](https://asecuritysite.com/public/awsfig19.png "Details of instance")  
+## 5 Hashing
+Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
-Figure 20: Details of instance
-
- 
-![AWS](https://asecuritysite.com/public/awsfig20.png "Enable ICMP")  
-
-Figure 21: Enable ICMP
-
-### D.3	Accessing your instance
-Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 22). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 23).
-
-![AWS](https://asecuritysite.com/public/awsfig21_1.png "Connect to instance")  
-
-Figure 22: Connect to instance
-
-![AWS](https://asecuritysite.com/public/awsfig21.png "Reveal password")  
-
-Figure 23: Reveal password
-
-
-Have you managed to connect? [Yes/No] (Figure 24)
-
-
-By using “ipconfig” in your instance, what is the private IP address of it?
-
-Can you ping 8.8.8.8 from your instance? [Yes/No]
-
-
-![AWS](https://asecuritysite.com/public/awsgif22.png "Windows 2022")  
-
-Figure 24: Windows 2022
-
-
-
-
-### D.4	Enable ICMP on instance
-We have enabled the AWS firewall for ICMP. Now we will open-up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 25.
-
-![AWS](https://asecuritysite.com/public/awsgif23.png "Enable ICMP")  
- 
-Figure 25: Enable ICMP
-
-
-Can you successfully ping the instance from your instance? [Yes/No]
-
-### D.5	Show running services
-Now examine the running services on the instance with:
-
-$ netstat -i | grep tcp
-$ netstat -i | grep udp
-
-Which of the main services are running:
-
-
-
-
-### D.6	Enable Web server 
-Now select Server Manage, and “Add a Role” for  Web Server (IIS) (Figure 26). 
-
-
-
-
-![AWS](https://asecuritysite.com/public/awsgif24.png "Enable ICMP")  
- 
-Figure 26: Enable ICMP
-
-Now open a browser on the instance, and access http://localhost
-
-Can you connect to the IIS Web server? [Yes/No] (see Figure 25)
-
-
-
-Now open up your AWS firewall for Port 80 (Figure 27).
-
-![AWS](https://asecuritysite.com/public/awsgif25.png "Enable HTTP")  
-
-Figure 27: Enable HTTP
-
-Now open a browser on the instance, and access http://[IP of AWS]
-
-Can you connect to the IIS Web server? [Yes/No] (Figure 29)
-
-
-
-
-![AWS](https://asecuritysite.com/public/awsgif26.png "Local host")  
-
-Figure 28: Local host
-
-![AWS](https://asecuritysite.com/public/awsgif27.png "Remote access")   
-
-Figure 29: Remote access 
-
-Now go into the c:\inetpub\wwwroot folder, and create a file named “iisstart.html”, and add:
-```
-<h1>Main Web site</h1>
-<p>Hello to you</p>
-```
-
-And then save the file.
-
-Has it changed the welcome? [Yes/No]
-
-
-### D.7	Auditing
-The main logging output is in the “C:\inetpub\logs\LogFiles\W3SVC1” folder. Identify the contents of the following files:
-
-
-Go into the “C:\inetpub\logs\LogFiles\W3SVC1” folder, and list the file in there.  What are its contents? Can you identity your browser access? Which browser type accessed your Web server?
-
-
-Now try with another browser type, and re-examine the log/httpd/access_log file. Did it detect the new browser type?
-
-
-Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the file. What is the status code returned for the access?
-
-
-### D.8	Changing Administrator password
-We can change the Administrator password, with something like:
-```
-net user administrator mynewpassword$$7k1
-```
-
-## E Python Access
-Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been setup with the details already setup for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
+The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
 
 ```
-ddd_v1_w_W3n_1455598@runweb63277:~$ ls -al
-drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache               6144 Oct  2 10:13 .
-drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 10:32 ..
-dr-xr-xr-x 2 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 12:08 .aws
--rw-rw-r-- 1 ddd_v1_w_W3n_1455598 apache                 51 Sep 29 10:32 .gitconfig
-drwxr-x--- 2 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 12:08 .ssh
--rw-r--r-- 1 root                 root                 3851 Oct  4 02:44 .termrc
-dr-xr-xr-x 2 root                 root                 6144 Sep 29 10:32 .voc
-ddd_v1_w_W3n_1455598@runweb63277:~$ cd .aws
-ddd_v1_w_W3n_1455598@runweb63277:~/.aws$ ls -al
-dr-xr-xr-x 2 ddd_v1_w_W3n_1455598 apache 6144 Sep 29 12:08 .
-drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache 6144 Oct  2 10:13 ..
--r--r--r-- 1 ddd_v1_w_W3n_1455598 apache   29 Oct  4 00:19 config
--r--r--r-- 1 ddd_v1_w_W3n_1455598 apache  501 Oct  4 00:19 credentials
-ddd_v1_w_W3n_1455598@runweb63277:~/.aws$ cat credentials
+wget https://hashcat.net/files/hashcat-6.0.0.7z
 ```
 
-List the contents of the credentials file, and verify that it contains the same credentials as from the AWS details button.
+Next unzip it into your home folder:
 
 ```
-Are they the same? [Yes/No]
+p7zip -d hashcat-6.0.0.7z
 ```
 
-Now create a Python file which will show your instances in the terminal window (such as 1.py):
+Then from your home folder, setup a link to Hashcat 6.0.0:
 
 ```
-import boto3
-ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.describe_instances()
+# ln -s hashcat-6.0.0/hashcat.bin  hashcat
 ```
-![AWS](https://asecuritysite.com/public/awsgif28.png "Python file creation")
-
-Figure 28: Python file creation
-
-Save the file, and then run the file with Python3 and prove that it shows your instances (see Figure 29).
-
-![AWS](https://asecuritysite.com/public/awsgif01.png "Running the Python3 file") 
-
-Figure 29: Running the Python3 file
-
+and then run Hashcat put “./” in from of the program name, such as:
 ```
-Does the Python3 program show your instances? [Yes/No]
-```
-
-Now we will stop one of our instances. For this, get an instance name, and add it to the following file:
-
-```
-import boto3
-ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.stop_instances(InstanceIds=["i-07b0512e24xxxxxx"])
-```
-
-Now run the Python file, and prove that it has stopped your instance.
-```
-Does the Python3 program stop your instance? [Yes/No]
-```
-Now we will restart one of our instances. For this, get an instance name, and add it to the following file:
-
-```
-import boto3
-ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.start_instances(InstanceIds=["i-07b0512e24xxxxxx"])
-```
-
-Now run the Python file, and prove that it has stopped your instance.
-
-```
-Does the Python3 program start your instance? [Yes/No]
-```
-
-Finally, write a Python3 program which will start both of your instances, and another one to stop them both.
-```
-Do your Python3 programs work? [Yes/No]
-```
-
-You can also use the AWS prompt. Now try to start and stop your instances with:
-```
-aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx
-```
-
-and
-```
-aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx
-```
-```
-Do these command line programs work? [Yes/No]
-```
-
-Now we will create a keypair with Python, and then create a new Linux instance. First create the keypair with the Python file of:
-```
-import boto3
-ec2 = boto3.client('ec2', region_name='us-east-1')  
-outfile = open('mykeypair.pem','w')
-
-key_pair = ec2.create_key_pair(KeyName='mykeypair2')
-MyKeyPair = key_pair["KeyMaterial"]
-
-print(MyKeyPair)
-```
-```
-What is the name of your key pair? Can you find it in your AWS Management console? [Yes/No]
+# ./hashcat –version
+v6.0.0
 ```
 
 
-Now we will create a Linux instance. Take a note of the AMI for your Linux instance, and check that it is the same as the instance below Now create create.py, and save the file:
+1 Using: [here](http://asecuritysite.com/encryption/md5) Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 
+```
+03CF54D8CE19777B12732B8C50B3B66F  
+```
+Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 
 ```
-import boto3
-ec2 = boto3.resource('ec2')
-
-# create a new EC2 instance
-instances = ec2.create_instances(
-     ImageId='ami-026b57f3c383c2eec',
-     MinCount=1,
-     MaxCount=2,
-     InstanceType='t2.micro',
-     KeyName='mykeypair2'
- )
- ```
+D586293D554981ED611AB7B01316D2D5 
 ```
-Finally run the instance. Has it created the instance? [Yes/No]
+Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
+```
+48E935332AADEC763F2C82CDB4601A25 
+```
+Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
+```
+EE19033300A54DF2FA41DB9881B4B723 | D5862: 
+```
+Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 
-If it has created it, now terminate it. Has it been terminated? [Yes/No]
+
+2 Using: [here](http://asecuritysite.com/encryption/md5) Determine the number of hex characters in the following hash signatures. 
+
+MD5 hex chars: 
+
+SHA-1 hex chars:
+
+SHA-256 hex chars: 
+
+How does the number of hex characters relate to the length of the hash signature: |
+
+3  On Kali, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
+
+```
+bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 
+```
+Bill’s password: 
+```
+mike:$apr1$mKfrJquI$Kx0CL9krmqhCu0SHKqp5Q0 
+```
+Mike’s password: 
+```
+fred:$apr1$Jbe/hCIb$/k3A4kjpJyC06BUUaPRKs0 
+```
+Fred’s password: 
+```
+ian:$apr1$0GyPhsLi$jTTzW0HNS4Cl5ZEoyFLjB. 
+```
+Ian’s password: 
+```
+jane: $1$rqOIRBBN$R2pOQH9egTTVN1Nlst2U7. 
+```
+Jane’s password: 
+
+[Hint: openssl passwd -apr1 -salt ZaZS/8TF napier] 
+
+
+4 On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 hashes : 
+
+```
+MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 
+MD5(2.txt)= 69faab6268350295550de7d587bc323d 
+MD5(3.txt)= fea0f1f6fede90bd0a925b4194deac11 
+MD5(4.txt)= d89b56f81cd7b82856231e662429bcf2 
 ```
 
- 
+Which file(s) have been modified: 
+
+Note: Use can use md5sum to compute MD5 hashes.
+
+5 From Kali, download the following ZIP file: [here](http://asecuritysite.com/letters.zip )
+
+View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? 
+
+
+## 6	Hashing Cracking (MD5)
+Video: [here](http://youtu.be/Xvbk2nSzEPk)
+
+
+1 On Kali, next create a word file (words) with the words of “napier”, “password” “Ankle123” and “inkwell”
+
+Using hashcat crack the following MD5 signatures (hash1):
+```
+232DD5D7274E0D662F36C575A3BD634C
+5F4DCC3B5AA765D61D8327DEB882CF99
+6D5875265D1979BDAD1C8A8F383C5FF5
+04013F78ACCFEC9B673005FC6F20698D
+```
+Command used:
+```
+hashcat –m 0 hash1 words
+```
+232DD...634C Is it [napier][password][Ankle123][inkwell]?
+
+5F4DC...CF99 Is it [napier][password][Ankle123][inkwell]?
+
+6D587...5FF5 Is it [napier][password][Ankle123][inkwell]?
+
+04013...698D Is it [napier][password][Ankle123][inkwell]?
 
 
 
-**NOW TERMINATE YOUR NEWLY CREATED INSTANCE (and any others you have created with Python)!**
 
-At the end of the lab, you should only have two instances. Please either terminate these, or stop them.
+2 Using the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
+
+```
+FE01D67A002DFA0F3AC084298142ECCD
+1F3870BE274F6C49B3E31A0C6728957F
+72B302BF297A228A75730123EFEF7C41
+8893DC16B1B2534BAB7B03727145A2BB
+889560D93572D538078CE1578567B91A
+```
+
+FE01D:
+
+1F387:
+
+72B30:
+
+8893D:
+
+88956:
+
+## 7	Hashing Cracking (LM Hash/Windows)
+All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
 
 
+1 On Kali, and using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
+```
+fred:500:E79E56A8E5C6F8FEAAD3B435B51404EE:5EBE7DFA074DA8EE8AEF1FAA2BBDE876:::
+```
+Fred's password: 
+```
+bert:501:10EAF413723CBB15AAD3B435B51404EE:CA8E025E9893E8CE3D2CBF847FC56814:::
+```
+Bert's password:
 
+2	On Kali, and using John the Ripper, the following pwdump passwords (they are names of major Scottish cities/towns):
 
+```
+Admin:500:629E2BA1C0338CE0AAD3B435B51404EE:9408CB400B20ABA3DFEC054D2B6EE5A1:::
+fred:501:33E58ABB4D723E5EE72C57EF50F76A05:4DFC4E7AA65D71FD4E06D061871C05F2:::
+bert:502:BC2B6A869601E4D9AAD3B435B51404EE:2D8947D98F0B09A88DC9FCD6E546A711:::
+```
 
+Admin:
 
+Fred:
+
+Bert:
+
+3	On Kali, and using John the Ripper, crack the following pwdump passwords (they are the names of animals):
+```
+fred:500:5A8BB08EFF0D416AAAD3B435B51404EE:85A2ED1CA59D0479B1E3406972AB1928:::
+bert:501:C6E4266FEBEBD6A8AAD3B435B51404EE:0B9957E8BED733E0350C703AC1CDA822:::
+admin:502:333CB006680FAF0A417EAF50CFAC29C3:D2EDBC29463C40E76297119421D2A707:::
+```
+
+Fred:
+
+Bert:
+
+Admin:
+
+Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
+
+## 8	Python tutorial
+For this part of the lab, install:
+
+```
+pip install pycryptodome
+```
+
+In Python, we can use the Hazmat (Hazardous Materials) library to implement symmetric key encryption. 
+
+Web link (Cipher code): [here](http://asecuritysite.com/cipher01.zip)
+
+The code should be:
+
+```
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes 
+from cryptography.hazmat.primitives import padding
+from cryptography.hazmat.backends import default_backend
+
+import hashlib
+import sys
+import binascii
+
+val='hello'
+password='hello123'
+
+plaintext=val
+
+def encrypt(plaintext,key, mode):
+    method=algorithms.AES(key)
+    cipher = Cipher(method,mode, default_backend())
+    encryptor = cipher.encryptor()
+    ct = encryptor.update(plaintext) + encryptor.finalize()
+    return(ct)
+
+def decrypt(ciphertext,key, mode):
+    method=algorithms.AES(key)
+    cipher = Cipher(method, mode, default_backend())
+    decryptor = cipher.decryptor()
+    pl = decryptor.update(ciphertext) + decryptor.finalize()
+    return(pl)
+
+def pad(data,size=128):
+    padder = padding.PKCS7(size).padder()
+    padded_data = padder.update(data)
+    padded_data += padder.finalize()
+    return(padded_data)
+
+def unpad(data,size=128):
+    padder = padding.PKCS7(size).unpadder()
+    unpadded_data = padder.update(data)
+    unpadded_data += padder.finalize()
+    return(unpadded_data)
+
+key = hashlib.sha256(password.encode()).digest()
+
+print("Before padding: ",plaintext)
+
+plaintext=pad(plaintext.encode())
+
+print("After padding (CMS): ",binascii.hexlify(bytearray(plaintext)))
+
+ciphertext = encrypt(plaintext,key,modes.ECB())
+print("Cipher (ECB): ",binascii.hexlify(bytearray(ciphertext)))
+
+plaintext = decrypt(ciphertext,key,modes.ECB())
+
+plaintext = unpad(plaintext)
+print("  decrypt: ",plaintext.decode())
+```
+
+How is the encryption key generated?
+
+Which is the size of the key used? [128-bit][256-bit]
+
+Which is the encryption mode used? [ECB][CBC][OFB]
+
+Now update the code so that you can enter a string and the program will show the cipher text. The format will be something like:
+```
+python cipher01.py hello mykey
+```
+where “hello” is the plain text, and “mykey” is the key. A possible integration is:
+```
+import sys
+
+if (len(sys.argv)>1):
+	val=sys.argv[1]
+
+if (len(sys.argv)>2):
+	password=sys.argv[2]
+```
+
+Now determine the cipher text for the following (the first example has already been completed):
+
+| Message |	Key | CMS Cipher |  
+| -------|------|------|
+| “hello” |	“hello123” |	0a7ec77951291795bac6690c9e7f4c0d |
+| “inkwell”|	“orange”	| |
+| “security”|	“qwerty”	||
+| “Africa” |	“changeme”	||
+
+Finally, change the program so that it does 256-bit AES with CBC mode.
 
 
 
