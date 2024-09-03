@@ -1,6 +1,6 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-# Lab 3: Creating Secure Architectures
+# Lab 2: Creating Secure Architectures
 
 ## Aim
 The aim of this  lab is to build a secure architecture.
