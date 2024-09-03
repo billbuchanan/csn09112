@@ -1,6 +1,6 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-# Lab 5: Diffie-Hellma and Public Key
+# Lab 5: Diffie-Hellman and Public Key
 
 Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
