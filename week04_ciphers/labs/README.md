@@ -1,459 +1,751 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-# Lab 3: Creating Secure Architectures
+# Lab 3: AWS Security and Server Infrastructure
 
 ## Aim
-The aim of this  lab is to build a secure architecture.
+The  aim  of  this  lab  is  setup AWS server instances and understand the setup of key security aspects.
 
 ## Activities
 
-Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=g7dzDM4aU0k).</p>
+A demo of the setup of the lab is [here](https://youtu.be/rhf4_1E_wAU)
 
 
+## Outline
+In previous labs we have set up a range of architectures with VMWare vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, and which reduces the cost in the investment in data centre costs, while providing the opportunity to quickly scale our server, network and data infrastructure. It is generally as pay-as-you-go model, and where we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
 
+![AWS](https://asecuritysite.com/public/awsfig01.png "AWS Services")
 
-## Lab setup
-Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host and a Kali (DMZ) host to achieve your objectives. 
+Figure 1: AWS Services
 
+## Enabling your lab
+You should have an AWS Academy login, so go to: https://awsacademy.instructure.com/ and log into the system and select AWS Academy Learner Lab (Figure 2).
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)  
-Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z.z
+![AWS](https://asecuritysite.com/public/awsfig02.png "AWS Academy Learner Lab") 
 
-## Quick guide</h2>
-For Ubtuntu configuration, for 10.10.x.7:
+Figure 2: AWS Academy Learner Lab	
 
-```
-sudo ip link set ens32 up
-sudo ip addr add 10.10.x.7/24 dev ens32
-sudo ip route add default via 10.10.x.254 dev ens32
-nano /etc/resolv.conf and change "nameserver 146.176.1.5"
-```
+Next, select “Modules”, and then “Learner Lab - Foundational Services”, and should have the lab environment (Figure 3). 
 
+![AWS](https://asecuritysite.com/public/awsfig03.png "AWS Academy Learner Lab environment")  
 
+Figure 3: AWS Academy Learner Lab environment
 
-## Setting up the network
-In this lab we will connect multiple firewalls to the main gateway, and be able to complete the challenges in Table 1. You will be given two things:
-
-Group Number:
-
-Your networks will be: 10.10.x.0/24  10.10.y.0/24  
-
-Demo: [here](https://youtu.be/g7dzDM4aU0k)
-
-
-## B Initial Firewall Creation
-Now go to your folder, and select the firewall for your network. Next configure the Ubuntu server in the Private zone, and the Windows server in the DMZ.
-
-| Perform the following: |
-|-------------------------------|
-| Boot your firewall, and say no to setting up VLANs.
-| Now setup the first three networks adapters with le0 (WAN), le1 (LAN) and le2 (OPT1).
-| Check that you have been granted an IP address on the WAN (le0) port. What address is it:
-| Can you ping the main gateway from the firewall (10.221.3.254) and your own WAN port?  Yes/No
-
-Now we want to setup your private network gateway.
-
-| Perform the following: |
-|-------------------------------|
-| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the le1 interface to 10.10.x.254/24. 
-| Note the URL that you can configure your firewall. What is the URL:
-
-You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
-
-## C Host setup
-Now we will configure the hosts to sit on the Private and DMZ networks.
-
-Setup the Ubuntu host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
-
-```
-sudo ip link set ens32 up
-sudo ip addr add 10.10.x.7/24 dev ens32
-sudo ip route add default via 10.10.x.254 dev ens32
-```
-
-### Ubuntu host setup
-Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver:
-```
-sudo nano /etc/resolv.conf
-```
-then add:
-```
-nameserver 10.221.3.254
-```
-
-### Kali host setup
-Do the same for your host on the Kali host on the DMZ. Setup the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
-
-```
-sudo ip link set eth0 up
-sudo ip addr add 10.10.y.8/24 dev eth0
-sudo ip route add default via 10.10.y.254 dev eth0
-```
-
-Next setup the nameserver on the Kali host by editing the /etc/resolv.config and adding a nameserver:
-```
-sudo nano /etc/resolv.conf
-```
-then add:
-```
-nameserver 10.221.3.254
-```
-### Metasploitable host setup
-Next setup your Metasploitable host on the DMZ (User: msfadmin, Password: napier123). Setup the Metasploitable host to connect to 10.10.y.9/24 with a default gateway of your firewall port (10.10.y.254/24).
-```
-sudo ip addr add 10.10.y.9/24 dev eth0
-sudo ip route add default via 10.10.y.254 dev eth0
-```
-
-### Windows host setup
-On the Windows server modify the static address on the interface with:
-
-```
-IP: 10.10.y.7
-Subnet mask: 255.255.255.0
-Gateway: 10.10.y.254
-DNS: 10.221.3.254
-```
-
-### Firewall  setup
-Now, we will finalise the configuration of the firewall. Log into the firewall from the Ubuntu host on the Private zone with:
-
-```
-http://10.10.x.254
-```
-
-Username: admin, Password: pfsense
-
-Setup the required IP on the DMZ (10.10.y.254) and subnet mask.
-
-On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
-
-
-On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. Can you ping them? [Yes/No]
+In the console you can interact with your AWS though the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
 
  
-On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. Can you ping them? [Yes/No] Why can’t you ping the 10.10.y.254 interface?
+![AWS](https://asecuritysite.com/public/awsfig04.png "AWS Management Console (EC2)")  
 
+Figure 4: AWS Management Console (EC2)
 
+## Creating and Securing a Linux Server
+We will now create a Linux Server, and which should be accessible from the Internet. For this select “Launch Instance”, and then give it a name (such as “My Linux Server”) and select the Amazon Linux instance for the AMI (Amazon Machine Instance) – as shown in Figure 5.
 
-On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.
+ 
+![AWS](https://asecuritysite.com/public/awsfig05.png "Creating Amazon Linux instance")  
 
-On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. You should now be able to ping them.
+Figure 5: Creating Amazon Linux instance
 
-On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now be able to ping them.
+```  
+Now select t2.micro for the instance type.
 
-On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port?
+How many vCPUs will the instance have?
 
-Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.
+How much memory will it have?
 
+How much will it cost per day to run?
 
-### NAT
-Now we will investigate NAT on the device.
+If you selected, t2.medium, how much would it cost per day?
 
-Run packet capture on the firewall, and then ping from both the Windows host and the Ubuntu host. Stop the trace.
+If you selected, t2.large, how much would it cost per day?
 
-Which IP address appears in the pings? 
 
-Why is it just a single address?
+Now create a new key pair and save it to your local drive. This file contains your private key, and which you will need to connect to your instance. Accept all the other defaults.
 
+Observe the firewall group that will be applied.
 
+Which firewall ports are open on the instance?
 
-### Routing table
-Now we will investigate the routing table on the firewall.
+What do you think is the main issue with this firewall setting?
 
-On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
+How would you change it, once you have created the instance?
 
 
 
+Observe the disk storage setting for the instance.
 
+What type of disk will be used? [HDD/SSD]
 
-Now we will investigate the Metasploitable host.
+What do you think is the advantage of using SSD?
 
-Run NMAP from Windows to Metasploit. Which services are enabled:
+For disk storage, what is the default size of the disk that you will create?
 
-[ftp][ssh][telnet][smtp][domain][http][vnc]
-
-Run NMAP from Ubuntu to Metasploit. Which services are enabled:
-
-[ftp][ssh][telnet][smtp][domain][http][vnc]
-
-Now we will investigate the Metasploitable host for Telnet:
-
-From Windows run Wireshark and capture packets. Now log into Metasploitable using telnet:
-```
-telnet 10.10.y.9
-```
-Can you log into each into Metasploit: [Yes/No]
-
-Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
-
-From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using telnet:
-```
-telnet 10.10.y.9
-```
-Can you log into each into Metasploit: [Yes/No]
-
-Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
-
-Note: login for Telnet in Metasploitable is User: msfadmin, Password: napier123
-
-Now we will investigate the Metasploitable host for Telnet:
-
-From Windows, run Wireshark and capture packets. Now log into Metasploitable using SSH:
-```
-ssh 10.10.y.9 -l msfadmin
-```
-Can you log into each into Metasploit: [Yes/No]
-
-Stop Wireshark, and examine the data packets. Can you find the Telnet login, and can you discover the password used? [Yes/No]
-
-From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using SSH:
-```
-ssh 10.10.y.9 -l msfadmin
-```
-Can you log into each into Metasploit: [Yes/No]
-
-Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? [Yes/No]
-
-Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.prt==22 as a filter for SSH.
-
-
-
-
-## D	Device Audit
-Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
-
-| Perform and answer the following: |
-|-------------------------------|
-| On the firewall, capture traffic on the DMZ port, and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ).  Does the traffic have the IP address of the gateway on the LAN port? Tick [ ]
-| On the firewall, capture traffic on the WAN port, and generate some traffic from the LAN and DMZ (such as accessing Google.com).  Does the traffic have the IP address of the WAN port? Tick [ ]
-| On the firewall, examine the ARP table. Also on the hosts in the DMZ and the LAN, run arp –a, and determine all your MAC addresses.  Do all the MAC addresses tie-up? Tick [ ]
-
-## E	NMAP
-Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows host, and from the Windows host to the Linux host.
-
-| Perform and answer the following: |
-|-------------------------------|
-| What IP addresses are used in the source addresses of the scan?
-| Which services have been identified from the Linux host to the Windows host?
-| Which services have been identified from the Windows host to the Linux host?
-| Why are these different in their scope? Where is the blocking happening?
-
-
-
-Now enable http (Port 80), https (Port 443), and ftp (Port) from the Private network to the DMZ.
-
-| Perform and answer the following: |
-|-------------------------------|
-| Re-do NMAP. How are the scans different?
-| Can you now access the Web server from the Linux host to the Windows host?
-| Can you now access the Web server from the Windows host to the Linux host?
-
-
-Access Google.com from the Ubuntu host and also the Windows host.
-
-| Perform and answer the following: |
-|-------------------------------|
-| Can you access it? If not, on the firewall, enable UDP/TCP DNS (Port 53) from DMZ and also from the Private network. Add logging on the rule.
-| Can you now access Google.com from the Linux host and the Windows host?
-| On the firewall, examine the log and view the accesses for a DNS lookup on Google.com. Which addresses are present?
-
-
-
-## F Identifying Services 
-Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
-
-| From → To |	Command	| Observation |
-|------|------------|-------------|
-| DMZ	| On your Windows host, run the command: netstat –a and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
-| LAN		| For the Ubuntu Virtual Machine, and run the command: netstat –l.  	| 	Outline some of the services which are running on your host (define the port number and the name of the service):	| 
-| DMZ		| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: http://10.10.x.7		|  Is the service working: [Yes] [No] 	| 
-|  LAN	|  From Ubuntu, access the Web server at: http://10.10.y.7	| Is the service working: [Yes] [No]| 
-| LAN	|  Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 10.10.y.7 80 then enter:  GET / | 	Outline the message that is returned: | 
-| DMZ	|  Repeat the previous example from the WINDOWS host: telnet 10.10.x.7 80	|  
-| DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: telnet 10.10.x.7 21 then enter: USER napier PASS napier123 QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
-| LAN | 	From UBUNTU access the WINDOWS host with telnet 10.10.x.7 21 then enter: USER Administrator PASS napier QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
-| DMZ	| On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
-
-
-
-
-
-## G	Enumeration – Host scan 
-
-Nmap is one of the most popular network scanning tools. It is widely available, for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
-
-| From → To |	Command	| Observation |
-|------|------------|-------------|
-| LAN to WAN|	sudo nmap –sP –r 10.221.0.0/24	|Which hosts are on-line:| 
-| LAN to DMZ|	sudo nmap –sP –r 10.10.y.0/24|	Which hosts are on-line:| 
-| DMZ to LAN	|nmap –sP –r 10.10.x.0/24|	Which hosts are on-line:| 
-| LAN to DMZ|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.y.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
-| LAN to LAN|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.x.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
-
-## H	Enumeration - Operating System Fingerprinting
-Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
-
-| From → To |	Command	| Observation |
-|------|------------|-------------|
-|LAN to DMZ	| Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: sudo nmap –O 10.10.y.0/24 |  Which operating systems does it return: |
-|DMZ to LAN	|Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: nmap –O 10.10.x.0/24	| Which operating systems does it return: |
-
-## I	Enumeration – Application Fingerprinting
-Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
-
-| From → To |	Command	| Observation |
-|------|------------|-------------|
-|LAN to DMZ	| Perform an application and version scan for networked services: sudo nmap –sS 10.10.y.7/24 | Which services are running on the Windows host:|
-|DMZ to LAN	Perform an application and version scan for networked services: nmap –sS 10.10.x.7/24 | Which services are running on the Linux host:|
-|LAN to DMZ	|Scan the Web server in the DMZ for its version:  sudo nmap –sV 10.10.y.7/24 –p 80	| Which Web server type is being used:|
-| DMZ to LAN	| Scan the Web server in the LAN for its version: nmap –sV 10.10.x.7/24 –p 80 | Which Web server type is being used:|
-
-
-Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
-
-| From → To |	Command	| Observation |
-|------|------------|-------------|
-| DMZ to LAN	| Connect to port 80, with: telnet 10.10.x.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
-| DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
-
-
-## J	Brute Force
-For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will on Kali (DMZ), where you create a user file and password file with the following lists:
-
-list_user: 
-* administrator
-* admin
-* root
-* msfadmin
-* guest
-
-list_password:
-
-* adminpass
-* password
-* Password
-* 123456
-* napier123
-* pa$$word
-
-Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
-
-```
-# hydra -L list_user -P list_password 10.10.y.9 ftp
+What is the maximum storage size for a free tier storage of the AMI instance we are creating?
 ```
 
-From this determine one of the usernames and passwords.
 
+### C.1	Creating the instance
+Go ahead and create the instance. Then go back to the AWS Management Console, and find your instance. Wait for it to set its state to running. 
 
-Stop Wireshark and find the Hydra trace. What do you observe from the trace:
+Now we will connect to it. For this we need to create an SSH connection and use the private key we have generated. The public key will be stored on the instance and will authenticate our access. We do not need a username or password to access the instance, as this is often insecure. Our PEM file will give us access (or you can use Putty for the connection).
 
-
-What is the FTP status code for an incorrect login:
-
-
-What is the FTP status code for a correct login:
-
-
-Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint, you need to detect “530” in the Port 21 connection.
-
-Which rule have you used:
-
-
-Rerun Hydra and start Snort to detect incorrect logins. Did it detect the scan? [Yes/No]
-
-
-Next, run Hydra and crack the username and the password for the Web server. With these usernames and passwords we will target the DVWA site. First access the Web server from:
+Now, we will examine the details of our instance (Figure 6). On the instance summary, determine the following:
 ```
-http://20.20.21.9/dvwa/login.php
+The public IP address:
+
+The private IP address:
+
+The instance type:
+
+The public IPv4 DNS:
+
+From your local host, can you ping the public IP address? [Yes/No]	
+
+Why can’t you successfully ping your instance?
+
+Which region of the world is your instance running in?
 ```
-Next, start Wireshark on Kali (DMZ), and then run Hydra to try a range of logins:
+
+### C.2	Enabling ICMP on firewall
+Now, we will enable ICMP on the instance. First click on the Security tab of the instance summary, and then on the security group.
 
 ```
-# hydra -L list_user -P list_password 10.10.y.9 http-post-form ‘/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed’
+What is the firewall rule that is applied to the instance?
+
+[SSH/Telnet/FTP/HTTP/HTTPs] for [0.0.0.0/0 or 0.0.0.0/8 or 0.0.0.0/16 or 0.0.0.0/32]
+
+What does 0.0.0.0/0 represent?
 ```
-From this determine one of the usernames and passwords.
 
 
-Stop Wireshark and find the hydra trace. What do you observe from the trace:
-
-
-What is the HTTP status code for an incorrect login:
-
-
-What is the HTTP status code for a correct login:
-
-
-Now access the Mutillidae site on Metasploit:
+Now go ahead and add an ICMP rule for all hosts (Figure 7). 
 ```
-http://10.10.y.9/mutillidae
+Can you now successfully ping your instance? [Yes/No]
+
+Now, lock your ICMP rule down to just your IP address (you need to use a /32 address for this). Can you still successfully ping the instance? [Yes/No]
+
+Ask you neighhour or one of the lab tutors to ping your instance. Can they successfully ping it? [Yes/No]
+
+What is the advantage of applying the firewall in AWS, rather than in the instance?
 ```
-Now we will attack the Mutillidae site:
+
+ 
+![AWS](https://asecuritysite.com/public/awsfig06.png "Details of instance")  
+
+Figure 6: Details of instance
+
+ 
+![AWS](https://asecuritysite.com/public/awsfig07.png "Enable ICMP")  
+
+Figure 7: Enable ICMP
+
+### C.3	Accessing your instance
+Now we will connect to our instance. For this you need SSH (such as provided by OpenSSH). This may be installed on the host you are using (such as in vSoC 2), or from Apps Anywhere. Once you have SSH, press Connect on the summary page, and you should then have tabs for Connect to instance (Figure 8). Next select the SSH client tab, and you will see the details of connecting to your instance with SSH. 
+
+![AWS](https://asecuritysite.com/public/awsfig08.png "Connect to instance")  
+
+Figure 8: Connect to instance
+
+Now find your PEM file on your local machine (from the command line), and protect it with:
+
 ```
-# hydra -L list_user -P list_password 10.10.y.9 http-post-form 
-'/mutillidae/index.php?page=login.php:username=^USER^&password=^PASS^&login-php-submit-button=Login:Not Logged In'
+chmod 400 myfile.pem
 ```
-From this determine one of the usernames and passwords.
+What protection does this put on your private key?
 
-## K	NAT and 1:1 mappings
-
-No other group can access any of your hosts, as you are behind NAT. Now we need to setup a 1:1 mapping and a virtual IP address (with Proxy ARP) to map an internal address to an external one. First, we need to find an IP address from the 10.221.0.0/22 network which is not being used, and then we will use this to allow other group’s access to the hosts in the DMZ (Figure 2).
-
-Demo: https://youtu.be/1wn2io8EWvs 
-
-
-![image](https://user-images.githubusercontent.com/43025646/192982617-71737c2c-b425-443a-a3b7-bedecfb8c57f.png)
-
-Figure 2: Setup 1:1 NAT for mapping of servers 
-
-Run NMAP from the Private network with: nmap –sP 10.221.0.0/24
-
-Which hosts are on-line?
+Next, use the SSH connection with the name of your PEM file and with the DNS (or IP address) for your instance. For example, in the case in Figure 8, we have:
+```
+ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
+```
+What is the name of the user that logs in?
 
 
-Now pick an address which is (where GROUP ID is your ID number):
-10.221.2.[GROUP ID]
+An example of connecting is:
+```
+% ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
+The authenticity of host 'ec2-52-90-3-121.compute-1.amazonaws.com (52.90.3.121)' can't be established.
+ED25519 key fingerprint is SHA256:/c5UOK6gprKL19XCptNQ1brb9MpYR5wEeqhD/6t+/Wk.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:48: ec2-3-90-189-201.compute-1.amazonaws.com
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-52-90-3-121.compute-1.amazonaws.com' (ED25519) to the list of known hosts.
+Last login: Fri Sep 30 17:07:00 2022 from ec2-18-206-107-27.compute-1.amazonaws.com
 
-Now, on the firewall, setup a 1:1 mapping of the External IP address that you have selected and the Internal IP address on the DMZ (Figure 3).
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
 
-Next, setup a Virtual IP address (with Proxy ARP) for the external address you have selected, which will advertise the IP address (Figure 4).
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-16-186 ~]$
+```
 
-Now from the WAN interface, ping the host in the DMZ. Can you ping it?
+```
+Have you managed to connect? [Yes/No]
 
-Finally ask, someone in another group to ping your host in the DMZ. Can they ping it?
+By using “ip addr show” or “ifconfig” in your instance, what is the private IP address of it?
 
-Now get them to access the Web server on your host.
+Can you ping 8.8.8.8 from your instance? [Yes/No]
 
-Finally get them to NMAP your host? What can you observe from the NMAP?
+Is there a folder named .ssh? [Yes/No]
 
-![image](https://user-images.githubusercontent.com/43025646/192982833-73e61956-9516-4418-9449-64d4f2eb5516.png)
-Figure 3: 1:1 NAT settings
-
-![image](https://user-images.githubusercontent.com/43025646/192982896-d6ce86fa-3651-4df0-8b69-9ae2215189c8.png)
-Figure 4: Virtual IP addresses
-
-# Connecting to another network
-Now, wait for other teams to finish (or use the Test setup). You should have ready:
-
--	A forward-facing Web and FTP site ready to connect from outside your network.
-
-NMAP their server, and then make sure you can connect to the service. Now get them to block your specific source (just one address), and recheck that you cannot connect. Finally change your IP address, and re-do the NMAP, and make sure you can connect.
-
-Please note some of the information related to their server. What information can you determine? Can you determine the MAC address of their server?
-
-# Software Tutorial
-Complete the software tutorial at: 
-
-http://asecuritysite.com/csn09112/software02
+What do you think is the purpose of the file contained in .ssh? 
 
 
-# Appendix
-User logins: 
+Now create a folder in the top level named “mytestfolder”, and put a new file in there named “mytext.txt” (and put some text in this file).
 
-Ubuntu:- User: napier, Password: napier123  
-Kali:-  User: root, Password: toor  
-Windows:-		User: Administrator, Password: napier123  
-pfsense:- User: admin, Password: pfsense  
-Metasploitable:- User: msfadmin, Password: napier123  
+Now go to the EC2 Instance Connect (Figure 9), and press on the Connect button. You should now get a console terminal in the browser. 
+
+From your console (Figure 10), verify that your file has been created. Has it been created in the instance? [Yes/No]
+```
+
+![AWS](https://asecuritysite.com/public/awsfig09.png "Connect to instance")  
+
+Figure 9: EC2 Instance Connect
+
+![AWS](https://asecuritysite.com/public/awsfig09_1.png "EC2 Instance Connect terminal")  
+
+Figure 10: EC2 Instance Connect terminal
+
+Now examine the running services on the instance with:
+```
+$ netstat -i | grep tcp
+$ netstat -i | grep udp
+```
+Which of the main services are running:
+
+
+
+
+## C.4	Installing a Web server
+Now we will install a Web server on the instance with:
+```
+sudo yum update -y
+sudo yum install -y httpd.x86_64
+sudo systemctl start httpd.service
+sudo systemctl enable httpd.service
+```
+Next open up a browser on your computer and access your instance for Web access.
+
+```
+Can you connect to it? [Yes/No]
+
+Why can’t you connect to it? 
+```
+
+Now enable a firewall rule on Port 80 and Port 443 and allow access for Web traffic (see Figure 11).
+
+
+![AWS](https://asecuritysite.com/public/awsfig11.png "Enable HTTP and HTTPs rules")  
+
+Figure 11: Enable HTTP and HTTPs rules
+
+```
+Can you now connect to your Web site? [Yes/No] (see Figure 12)
+```
+
+![AWS](https://asecuritysite.com/public/awsfig12.png "Sample access to Web site")  
+
+Figure 12: Sample access to Web site
+
+Now go into the /var/www/html folder, and create a file named “index.html”, and add:
+```
+<h1>Main Web site</h1>
+<p>Hello to you</p>
+```
+And then save the file.
+
+```
+Has it changed the welcome? [Yes/No]
+```
+
+### C.6	Auditing
+The main logging output is in the /var/log folder. Go into this folder and observe some of the files in there. Identify the contents of the following files:
+
+```
+What are the likely contents of the “secure” file?
+
+What are the likely contents of the “boot.log” file?
+
+List the log/httpd/access_log file. What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
+
+
+Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file. Did it detect the new browser type?
+
+
+Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file. What is the status code returned for the access?
+```
+
+
+![AWS](https://asecuritysite.com/public/awsfig13.png "Sample list of log/httpd/access_log")  
+
+Figure 13: Sample list of log/httpd/access_log
+
+### C.7	Adding a new user
+The ec2_user can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this we use adduser and passwd on the Linux instance:
+
+```
+[ec2-user@ip-172-31-16-186 ~]$ sudo adduser napier
+[ec2-user@ip-172-31-16-186 ~]$ sudo passwd napier
+Changing password for user napier.
+New password:  <yourpass>
+Retype new password:  <yourpass>
+passwd: all authentication tokens updated successfully.
+```
+
+Now we will add the new user to the login. For this, we use:
+
+```
+[ec2-user@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
+   Add line of (see Figure 15):
+AllowUsers ec2-user napier
+   Change the following to “yes” (see Figure 16):
+PasswordAuthentication yes
+```
+
+Now restart the SSH service with:
+```
+[ec2-user@ip-172-31-16-186 .ssh]$ sudo systemctl restart sshd
+```
+```
+Can you now connect to your instance with the new user and password (but change for the IP address of your instance):
+```
+```
+ssh   napier@54.209.145.85
+```
+```
+Can you connect with the new user? [Yes/No]
+```
+
+![AWS](https://asecuritysite.com/public/awsfig13.png "Accessing instances")  
+
+Figure 14: Accessing instances
+
+
+![AWS](https://asecuritysite.com/public/awsfig14.png "Accessing instances")  
+
+Figure 15: Accessing instances
+
+![AWS](https://asecuritysite.com/public/awsfig15.png "Accessing instances")  
+
+Figure 16: Accessing instances
+
+### C.8	Accessing from AWS prompt
+We can also access our instance from the AWS terminal prompt. For this return to your AWS Academy console, and enter the command (Figure 17):
+
+```
+$ aws ec2 describe-instances
+```
+
+From the results, can you identify the following.
+
+Instance type: 
+
+Public IP address:
+
+Private IP address:
+
+State: 
+
+![AWS](https://asecuritysite.com/public/awsfig16.png "Stopping an instance")   
+
+Figure 17: Describe instances
+
+Now try we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 18):
+```
+aws ec2 stop-instances --instance-ids [My-instance-ID]
+```
+From the AWS Management Console, has your instance stopped? [Yes/No]
+
+
+![AWS](https://asecuritysite.com/public/awsfig17.png "Stopping an instance")   
+
+Figure 18: Stopping an instance
+
+
+Now we will restart the instance, with:
+
+```
+aws ec2 start-instances --instance-ids [My-instance-ID]
+```
+
+Has the instance re-started? [Yes/No]
+
+
+Now we will change the instance type from t3.micro to t3.small. To do this, run the following commands:
+```
+aws ec2 stop-instances --instance-ids [My-instance-ID]
+aws ec2 wait instance-stopped --instance-ids [My-instance-ID]
+aws ec2 modify-instance-attribute --instance-id [My-instance-ID] --instance-type "{\"Value\": \"t3.small\"}"
+aws ec2 start-instances --instance-ids [My-instance-ID]
+```
+
+Did it change the instance type? [Yes/No]
+
+Can you still get access to your instance?
+
+By observing the script, and investigate what t3.micro and t3.small are, can you determine what has changed about your instance?
+
+
+
+
+Now, revert the instance back to t3.micro, and suspend the instance.
+
+## D	Creating and Securing a Windows 2022 Server
+In this part of the lab we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
+
+![AWS](https://asecuritysite.com/public/awsfig18.png "Creating Windows 2022 instance")  
+
+Figure 19: Creating Windows 2022 instance
+
+Now select t2.micro for the instance type.
+
+How many vCPUs will the instance have?
+
+How much memory will it have?
+
+How much will it cost per day to run?
+
+If you selected, t2.medium, how much would it cost per day?
+
+If you selected, t2.large, how much would it cost per day?
+
+
+Now create a new key pair and save it to your local drive. This file contains your private key, and which you will need to connect to your instance. Accept all the other defaults.
+
+Observe the firewall group that will be applied.
+
+Which firewall ports are open on the instance?
+
+What is the main issue with this firewall setting?
+
+How would you change it, once you have created the instance?
+
+
+
+Observe the disk storage setting for the instance.
+
+What type of disk will be used? [HDD/SSD]
+
+What is the advantage of using SSD?
+
+For disk storage, what is the size of the disk that you will create?
+
+What is the maximum storage size for a free tier storage of the AMI instance we are creating?
+
+
+
+### D.1	Creating the instance
+Go ahead and create the instance. Go back to the Management Console and find your instance. Wait for it to set its state to running. Now we will connect to it. For this we need to create an RDP connection, and use the private key we have generated to generate the initial password. 
+
+Now, we will examine the details of our instance (Figure 20). On the instance summary, determine the following:
+
+The public IP address:
+
+The private IP address:
+
+The instance type:
+
+The public IPv4 DNS:
+
+From your local host, can you ping the public IP address? [Yes/No]	
+
+Why can’t you successfully ping your instance?
+
+Which region of the world is your instance running in?
+
+
+### D.2	Enabling ICMP on firewall
+Now we will enable ICMP on the instance. First click on the Security tab of the instance summary, and then on the security group.
+
+
+What is the firewall rule that is applied to the instance?
+
+[SSH/RDP/Telnet/FTP/HTTP/HTTPs] for [0.0.0.0/0 or 0.0.0.0/8 or 0.0.0.0/16 or 0.0.0.0/32]
+
+What does 0.0.0.0/0 represent?
+
+
+
+
+Now go ahead and add an ICMP rule for all hosts (Figure 121). 
+
+Can you now successfully ping your instance? [Yes/No]
+
+We will not be able to ping the instance yet, as the firewall on Windows is disabling it.
+
+
+ 
+![AWS](https://asecuritysite.com/public/awsfig19.png "Details of instance")  
+
+Figure 20: Details of instance
+
+ 
+![AWS](https://asecuritysite.com/public/awsfig20.png "Enable ICMP")  
+
+Figure 21: Enable ICMP
+
+### D.3	Accessing your instance
+Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 22). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 23).
+
+![AWS](https://asecuritysite.com/public/awsfig21_1.png "Connect to instance")  
+
+Figure 22: Connect to instance
+
+![AWS](https://asecuritysite.com/public/awsfig21.png "Reveal password")  
+
+Figure 23: Reveal password
+
+
+Have you managed to connect? [Yes/No] (Figure 24)
+
+
+By using “ipconfig” in your instance, what is the private IP address of it?
+
+Can you ping 8.8.8.8 from your instance? [Yes/No]
+
+
+![AWS](https://asecuritysite.com/public/awsgif22.png "Windows 2022")  
+
+Figure 24: Windows 2022
+
+
+
+
+### D.4	Enable ICMP on instance
+We have enabled the AWS firewall for ICMP. Now we will open-up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 25.
+
+![AWS](https://asecuritysite.com/public/awsgif23.png "Enable ICMP")  
+ 
+Figure 25: Enable ICMP
+
+
+Can you successfully ping the instance from your instance? [Yes/No]
+
+### D.5	Show running services
+Now examine the running services on the instance with:
+
+$ netstat -i | grep tcp
+$ netstat -i | grep udp
+
+Which of the main services are running:
+
+
+
+
+### D.6	Enable Web server 
+Now select Server Manage, and “Add a Role” for  Web Server (IIS) (Figure 26). 
+
+
+
+
+![AWS](https://asecuritysite.com/public/awsgif24.png "Enable ICMP")  
+ 
+Figure 26: Enable ICMP
+
+Now open a browser on the instance, and access http://localhost
+
+Can you connect to the IIS Web server? [Yes/No] (see Figure 25)
+
+
+
+Now open up your AWS firewall for Port 80 (Figure 27).
+
+![AWS](https://asecuritysite.com/public/awsgif25.png "Enable HTTP")  
+
+Figure 27: Enable HTTP
+
+Now open a browser on the instance, and access http://[IP of AWS]
+
+Can you connect to the IIS Web server? [Yes/No] (Figure 29)
+
+
+
+
+![AWS](https://asecuritysite.com/public/awsgif26.png "Local host")  
+
+Figure 28: Local host
+
+![AWS](https://asecuritysite.com/public/awsgif27.png "Remote access")   
+
+Figure 29: Remote access 
+
+Now go into the c:\inetpub\wwwroot folder, and create a file named “iisstart.html”, and add:
+```
+<h1>Main Web site</h1>
+<p>Hello to you</p>
+```
+
+And then save the file.
+
+Has it changed the welcome? [Yes/No]
+
+
+### D.7	Auditing
+The main logging output is in the “C:\inetpub\logs\LogFiles\W3SVC1” folder. Identify the contents of the following files:
+
+
+Go into the “C:\inetpub\logs\LogFiles\W3SVC1” folder, and list the file in there.  What are its contents? Can you identity your browser access? Which browser type accessed your Web server?
+
+
+Now try with another browser type, and re-examine the log/httpd/access_log file. Did it detect the new browser type?
+
+
+Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the file. What is the status code returned for the access?
+
+
+### D.8	Changing Administrator password
+We can change the Administrator password, with something like:
+```
+net user administrator mynewpassword$$7k1
+```
+
+## E Python Access
+Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been setup with the details already setup for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
+
+```
+ddd_v1_w_W3n_1455598@runweb63277:~$ ls -al
+drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache               6144 Oct  2 10:13 .
+drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 10:32 ..
+dr-xr-xr-x 2 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 12:08 .aws
+-rw-rw-r-- 1 ddd_v1_w_W3n_1455598 apache                 51 Sep 29 10:32 .gitconfig
+drwxr-x--- 2 ddd_v1_w_W3n_1455598 apache               6144 Sep 29 12:08 .ssh
+-rw-r--r-- 1 root                 root                 3851 Oct  4 02:44 .termrc
+dr-xr-xr-x 2 root                 root                 6144 Sep 29 10:32 .voc
+ddd_v1_w_W3n_1455598@runweb63277:~$ cd .aws
+ddd_v1_w_W3n_1455598@runweb63277:~/.aws$ ls -al
+dr-xr-xr-x 2 ddd_v1_w_W3n_1455598 apache 6144 Sep 29 12:08 .
+drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache 6144 Oct  2 10:13 ..
+-r--r--r-- 1 ddd_v1_w_W3n_1455598 apache   29 Oct  4 00:19 config
+-r--r--r-- 1 ddd_v1_w_W3n_1455598 apache  501 Oct  4 00:19 credentials
+ddd_v1_w_W3n_1455598@runweb63277:~/.aws$ cat credentials
+```
+
+List the contents of the credentials file, and verify that it contains the same credentials as from the AWS details button.
+
+```
+Are they the same? [Yes/No]
+```
+
+Now create a Python file which will show your instances in the terminal window (such as 1.py):
+
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+ec2.describe_instances()
+```
+![AWS](https://asecuritysite.com/public/awsgif28.png "Python file creation")
+
+Figure 28: Python file creation
+
+Save the file, and then run the file with Python3 and prove that it shows your instances (see Figure 29).
+
+![AWS](https://asecuritysite.com/public/awsgif01.png "Running the Python3 file") 
+
+Figure 29: Running the Python3 file
+
+```
+Does the Python3 program show your instances? [Yes/No]
+```
+
+Now we will stop one of our instances. For this, get an instance name, and add it to the following file:
+
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+ec2.stop_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+```
+
+Now run the Python file, and prove that it has stopped your instance.
+```
+Does the Python3 program stop your instance? [Yes/No]
+```
+Now we will restart one of our instances. For this, get an instance name, and add it to the following file:
+
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+ec2.start_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+```
+
+Now run the Python file, and prove that it has stopped your instance.
+
+```
+Does the Python3 program start your instance? [Yes/No]
+```
+
+Finally, write a Python3 program which will start both of your instances, and another one to stop them both.
+```
+Do your Python3 programs work? [Yes/No]
+```
+
+You can also use the AWS prompt. Now try to start and stop your instances with:
+```
+aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx
+```
+
+and
+```
+aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx
+```
+```
+Do these command line programs work? [Yes/No]
+```
+
+Now we will create a keypair with Python, and then create a new Linux instance. First create the keypair with the Python file of:
+```
+import boto3
+ec2 = boto3.client('ec2', region_name='us-east-1')  
+outfile = open('mykeypair.pem','w')
+
+key_pair = ec2.create_key_pair(KeyName='mykeypair2')
+MyKeyPair = key_pair["KeyMaterial"]
+
+print(MyKeyPair)
+```
+```
+What is the name of your key pair? Can you find it in your AWS Management console? [Yes/No]
+```
+
+
+Now we will create a Linux instance. Take a note of the AMI for your Linux instance, and check that it is the same as the instance below Now create create.py, and save the file:
+
+```
+import boto3
+ec2 = boto3.resource('ec2')
+
+# create a new EC2 instance
+instances = ec2.create_instances(
+     ImageId='ami-026b57f3c383c2eec',
+     MinCount=1,
+     MaxCount=2,
+     InstanceType='t2.micro',
+     KeyName='mykeypair2'
+ )
+ ```
+```
+Finally run the instance. Has it created the instance? [Yes/No]
+
+If it has created it, now terminate it. Has it been terminated? [Yes/No]
+```
+
+ 
+
+
+
+**NOW TERMINATE YOUR NEWLY CREATED INSTANCE (and any others you have created with Python)!**
+
+At the end of the lab, you should only have two instances. Please either terminate these, or stop them.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
