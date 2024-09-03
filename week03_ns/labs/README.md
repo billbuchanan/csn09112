@@ -1,96 +1,88 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-# Lab 2: Vyatta and Snort
+# Lab 3: Creating Secure Architectures
 
 ## Aim
-The aim of this lab is to build on the basic Vyatta firewall configuration, adding firewalling, IDS, and other hardening capabilities.
+The aim of this  lab is to build a secure architecture.
 
-Time to Complete:
-4 hours (two supervise hours in the lab, and two additional unsupervised hours).
+## Activities
 
-## Activities:
-
-* Complete Lab 2: Vyatta Firewall and Snort. [<a href="https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab02_vyatta_ids.pdf" target="_blank">here</a>]. [<a href="https://youtu.be/SJwlt55f_UU" target="_blank">Demo</a>]
-* Complete software lab. [here](https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs/additional_lab).
-
-## Learning activities:
-At the end of this lab, you should understand:
-
-* How to use your own credentials to access the vSoC Cloud.
-* How to remotely configure a Vyatta firewall for zones, and set up the firewalling.
-* Set-up Snort IDS system on a host and create useful rules to detect potential attacks.
-
-## Reflective statements (end-of-exercise):
-What is the most important things when setting up a host, in order that it can connect with other networks?
-
-
-Reflect on which types of attacks the firewall rules can mitigate, and which the IDS system can help highlight:
+Complete Lab 3: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/csn09112_lab03.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=g7dzDM4aU0k).</p>
 
 
 
-# A	Setting up the network
-Figure 1 outlines the setup of the lab for routing, where we will assign three network addresses. Again, Interfaces which are connected to the Vyatta firewall will be able to route, but we have to use NAT to allow the DMZ and private networks to connect to the public network.
 
-Our first task is to route through the Vyatta firewall to connect two networks. In the lab you will be assigned two networks in the form:
+## Lab setup
+Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host and a Kali (DMZ) host to achieve your objectives. 
 
-10.10.x.0/24	10.10.y.0/24
 
-Demo: [here](https://youtu.be/SJwlt55f_UU)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week04_ciphers/labs/pfsense1.png)  
+Figure 1: Lab setup (le0 – Public, le1 – Private, le2 – DMZ)  with 10.10.z.z
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png)
-Figure 1: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ)  with 10.10.z.z
-
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview_172.png)
-Figure 2: Lab setup (eth0 – Public, eth1 – Private, eth2 – DMZ) with 172.16.z.z
-
-Log into vSphere and locate the CSN09412 folder. Locate your matriculation number and you will be allocated two network addresses (for Private and DMZ). Draw your own network diagram here, by filling-in the blank boxes, with the allocated networks, subnets, and IP addresses:
-
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview02.png)
-Figure 3: Your network setup (Note: Gateway address is 10.221.3.254)
-
-# B	Configure Router/Firewall for Remote Administration
-First reset your firewall by either ``Reverting back to the original instance`` or using the command:
-```
-load /opt/vyatta/etc/config.boot.default
-```
-or you can use:
+## Quick guide</h2>
+For Ubtuntu configuration, for 10.10.x.7:
 
 ```
-cp /opt/vyatta/etc/config.boot.default /opt/vyatta/etc/config/config.boot
-reboot
-```
-We typically don’t use the console terminal of a firewall for configuration. In the following we will enable one port on the firewall, and then configure it through a remote connection. First configure your Vyatta firewall networking with the following:
-
-```
-$ configure
-# set interfaces ethernet eth2 address 10.10.y.254/24
-# set protocols static route 0.0.0.0/0 next-hop 10.221.3.254
+sudo ip link set ens32 up
+sudo ip addr add 10.10.x.7/24 dev ens32
+sudo ip route add default via 10.10.x.254 dev ens32
+nano /etc/resolv.conf and change "nameserver 146.176.1.5"
 ```
 
-and then start the SSH server on the Vyatta firewall:
+
+
+## Setting up the network
+In this lab we will connect multiple firewalls to the main gateway, and be able to complete the challenges in Table 1. You will be given two things:
+
+Group Number:
+
+Your networks will be: 10.10.x.0/24  10.10.y.0/24  
+
+Demo: [here](https://youtu.be/g7dzDM4aU0k)
+
+
+## B Initial Firewall Creation
+Now go to your folder, and select the firewall for your network. Next configure the Ubuntu server in the Private zone, and the Windows server in the DMZ.
+
+| Perform the following: |
+|-------------------------------|
+| Boot your firewall, and say no to setting up VLANs.
+| Now setup the first three networks adapters with le0 (WAN), le1 (LAN) and le2 (OPT1).
+| Check that you have been granted an IP address on the WAN (le0) port. What address is it:
+| Can you ping the main gateway from the firewall (10.221.3.254) and your own WAN port?  Yes/No
+
+Now we want to setup your private network gateway.
+
+| Perform the following: |
+|-------------------------------|
+| Select the (2) option to change the IP addresses on the interfaces. Setup the IP address for the le1 interface to 10.10.x.254/24. 
+| Note the URL that you can configure your firewall. What is the URL:
+
+You are all finished in doing the initial configuration on the firewall. We will now go ahead and configure the hosts and gain access to the firewall from a Web browser.
+
+## C Host setup
+Now we will configure the hosts to sit on the Private and DMZ networks.
+
+Setup the Ubuntu host to connect to 10.10.x.7/24 with a default gateway of your firewall port (10.10.x.254/24).
 
 ```
-# set service ssh
+sudo ip link set ens32 up
+sudo ip addr add 10.10.x.7/24 dev ens32
+sudo ip route add default via 10.10.x.254 dev ens32
 ```
 
-Check the configuration using:
-
+### Ubuntu host setup
+Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver:
 ```
-# show 
-# show interfaces
-# show service
+sudo nano /etc/resolv.conf
 ```
-
-If everything is correct commit the changes, and review the configuration:
-
+then add:
 ```
-# commit
-# show config
+nameserver 10.221.3.254
 ```
 
- 
-
-Now setup your Kali host on the DMZ for networking, and so it will be able to connect to the Vyatta firewall using remote admin with the Telnet service:
+### Kali host setup
+Do the same for your host on the Kali host on the DMZ. Setup the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
 
 ```
 sudo ip link set eth0 up
@@ -98,439 +90,370 @@ sudo ip addr add 10.10.y.8/24 dev eth0
 sudo ip route add default via 10.10.y.254 dev eth0
 ```
 
-Now from Kali, check the connectivity using ping to your local connection and the gateway:
-
-Can you ping them: [Yes] [No]
-
-# C	Configuring the firewall from Kali (DMZ)
-Now we will configure the firewall by creating a file, and copying-and-pasting the config from the file to the firewall via a remote admin session with SSH.
-
-Firstly, copy the following configuration from: 
-
-https://asecuritysite.com/vpart01.txt
-
-and paste it to an empty file called ``vpart01.txt``.
-
-or use:
+Next setup the nameserver on the Kali host by editing the /etc/resolv.config and adding a nameserver:
 ```
-wget https://asecuritysite.com/vpart01.txt
+sudo nano /etc/resolv.conf
 ```
-
-
-Now edit the ‘x’ (Private) and ‘y’ (DMZ) values for your network. Note you need to use the VMRC console for copy-and-paste to work. If you are using the web console, please execute the commands manually:
-
-```
-set interfaces ethernet eth0 address dhcp
-set interfaces ethernet eth1 address 10.10.x.254/24 
-set interfaces ethernet eth2 address 10.10.y.254/24 
-set protocols static route 0.0.0.0/0 next-hop 10.221.3.254
-
-set nat source rule 1 outbound-interface eth0
-set nat source rule 1 source address 10.10.x.0/24 
-set nat source rule 1 translation address masquerade
-
-set nat source rule 2 outbound-interface eth0
-set nat source rule 2 source address 10.10.y.0/24 
-set nat source rule 2 translation address masquerade 
-```
-
-Now, from Kali, create an SSH connection to the default gateway on the firewall (172.16.x.254 in the Figure 2 above) using the ``vyos`` user:
-
-```
-ssh 10.10.y.254 -l vyos
-```
-
- 
-Now you are connected to the firewall, you need to log in, go into configuration mode and copy-and-paste the config from your config file, check the config, and then commit the changes if they are correct. If you are using the web console you need to execute the commands above manually:
-
-```
-Login:
-Password: ******
-$ configure
-# <paste-config> or <execute-the-commands-manually>
-# commit
-```
-
-
-Now setup your Ubuntu host with 10.10.x.7 with a default gateway of 10.10.x.254, and the Windows 7 host with 10.10.y.7 with a default gateway of 10.10.y.254. Note, on Kali and Ubuntu, you need to edit /etc/resolv.conf and add a nameserver of 10.221.3.254.
-
-From Kali, can you ping the local host, the Ubuntu host, the Windows host, the firewall ports, 8.8.8.8 and google.com? [Yes][No]
-
-From Windows, can you ping the local host, the Ubuntu host, the Kali host, the Windows host, the firewall ports, 8.8.8.8 and google.com? [Yes][No]
-
-From Ubuntu, Kali and Windows, can you access google.com from a browser [Yes][No]
-
-Is everything working on your network? [Yes][No]
-
-
-Now nmap from the Ubuntu host to the Windows host. Which ports are accessible:
-
-[ftp, ssh, http, https] 
-
-
-Now nmap from the Windows host to the Ubuntu host. Which ports are accessible:
-
-[ftp, ssh, http, https, rpcbind, vnc]
-
-
-
-# D	Setting up Firewall Rules
-Now we will setup firewall rules between zones (networks) connected to the firewall. In this case we will enable all the connections from the private network to the DMZ, but only allow TCP ports 80 and 443 to go through from the DMZ to the private network. All other connections will be disallowed. If we allow the connections from the private and the DMZ, we must remember the connection to allow it back from the DMZ to the private network, thus we define that we accepted established connections.
-Now we will configure the next part of the firewall by copying-and-pasting the config to the firewall. First download the following config:
-
-
-https://asecuritysite.com/vpart02.txt
-
-```
-set zone-policy zone private  description  "Inside" 
-set zone-policy zone public  description  "Outside" 
-set zone-policy  zone  dmz description "DMZ"
-
-set zone-policy zone public  interface  eth0 
-set zone-policy zone private interface  eth1 
-set zone-policy  zone  dmz  interface eth2
-
-set firewall	name	dmz2private description	"DMZ to private" 
-set firewall	name	dmz2private rule	1	action	accept
-set firewall	name	dmz2private rule	1	state	established	enable 
-set firewall	name	dmz2private rule	1	state	related enable
-set firewall name  dmz2private rule  10  action accept
-set firewall	name	dmz2private rule	10	destination	port	80,443 
-set firewall	name	dmz2private rule	10	protocol tcp
-
-set	firewall	name	private2dmz	description	"private to DMZ"
-set	firewall	name	private2dmz	rule	1	action	accept
-set	zone-policy	zone	private from	dmz firewall	name	dmz2private
-set	zone-policy	zone	dmz from	private firewall	name	private2dmz
-```
-
-and paste it into your firewall, check the config, and then commit.
-
-From Ubuntu, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8.  Can you now ping?
-
-[Yes/No] 
-
-From Ubuntu, can you access the Web server on Windows from a browser [Yes/No] 
-
-From Windows, can you ping the local network, the Windows host, the firewall ports and 8.8.8.8. Can you now ping?
-
-[Yes/No] 
-
-From Windows, can you access the Web server on Ubuntu from a browser [Yes/No]
-
-From Ubuntu and Windows, can you access Google.com from a browser [Yes/No] 
-
-Now nmap from the Ubuntu host to the Windows host. Which ports are accessible:
-
-[http, https]
-
-Now nmap from the Windows host to the Ubuntu host. Which ports are accessible:
-
-[]
-
-Explain the operation of the network with the new network settings:
-
-
-
-
-# E	Allowing access to the public network
-You should not currently be able to connect from the private network to the public one. Now setup this connection:
-
-http://asecuritysite.com/vpart03.txt
-
-```
-set firewall	name	private2public description	"private to public" 
-set firewall	name	private2public rule	1	action	accept
-set zone-policy	zone	public from	private firewall	name	private2public
-
-set firewall	name	public2private description	"public to private" 
-set firewall	name	public2private rule	1	action	accept
-set firewall	name	public2private rule	1	state	established	enable 
-set firewall	name	public2private rule	1	state	related enable
-set zone-policy	zone	private from public firewall	name	public2private
-
-commit
-```
-
-You should now be able to connect from the private network to the public one. 
-
-From Ubuntu, can you access 8.8.8.8 with ping? [Yes/No]
-From Ubuntu, can you access google.com with ping? [Yes/No]
-From Ubuntu, can you access google.com from a browser? [Yes/No]
-
-From Windows, can you access 8.8.8.8 with ping? [Yes/No]
-From Windows, can you access google.com with ping? [Yes/No]
-From Windows, can you access google.com from a browser? [Yes/No]
-
-
-Now create your own config and allow the DMZ to communicate with the public network.
-
-You should now be able to connect from the private network to the public one. 
-
-From Ubuntu, can you access 8.8.8.8 with ping? [Yes/No]
-From Ubuntu, can you access google.com with ping? [Yes/No]
-From Ubuntu, can you access google.com from a browser? [Yes/No]
-
-From Windows, can you access 8.8.8.8 with ping? [Yes/No]
-From Windows, can you access google.com with ping? [Yes/No]
-From Windows, can you access google.com from a browser? [Yes/No]
-
-Which configuration commands have you used:
-
-
-
-
-Can you connect your Windows host to the Google.com? [Yes][No]
-Can you connect your Ubuntu host to the Google.com? [Yes][No]
-
-
-
-
-# F	Snort IDS
-If this part, you will need open up your firewall. If you want to quickly do this, you can run:
-
-```
-$ configuration
-# delete zone-policy
-# commit
-```
-Make sure you Ubuntu and Windows hosts can connect to each other, and to the Internet. 
-
-## F.1 Snort on Ubuntu
-On Ubuntu, create simple Snort rules files both called mysnort.rules, and add the following rules:
-```
-alert tcp any any -> any 443 (sid:999; msg:"Port 443") 
-alert tcp any any -> any 80 (sid:1000; msg:"Port 80")
-```
-The format of Snort Detection Rules are as follows:
-
-```
-action protocol src-ip src-port > dest-ip dest-port (packet-payload-params output-msg) 
-
-[pass|log|alert] [ip|icmp|tcp|udp] [any|IP] [any|port] > [any|IP] [any|port] ([content:“searchstring”;], [nocase;], [msg:”alert message”;] sid:ruleid;)
-```
-
-From the Ubuntu, run Snort (used ifconfig to see your interfaces – and you will need to create a folder named log):
-
-```
-snort -c mysnort.rules -i ens32 -p -l log -K ascii -k none
-```
-
-From Ubuntu, start Snort with the rules to detect access to Port 443 and Port 80. Now access www.google.com, and then stop Snort and examine the log.
-
-Did Snort detect the connection? [Yes/No]
-
-What information is contained in the Snort log:
-
-
-From Windows, start Snort with the rules to detect access to Port 443 and Port 80. Now access www.google.com, and then stop Snort and examine the log.
-
-Did Snort detect the connection? [Yes/No]
-
-What information is contained in the Snort log:
-
-
-
-
-Now we will detect the word "bbc" in the traffic for DNS access. In the Snort rules file, add another rule of:
-
-```
-alert udp any any -> any 53 (sid:1001; content:"bbc"; nocase; msg:"DNS call for BBC") 
-```
-
-Now run Wireshark on Ubuntu and capture traffic. Then run Snort.
-
-
-Access bbc.com from the browser on Ubuntu.
-
-Perform a DNS looking using "nslookup bbc.co.uk".
-
-Now stop Snort and Wireshark. Now examine the alert file. 
-
-Did it detect each of the accesses? [Yes/No] 
-
-Now examine the Wireshark trace.
-
-Can you find the network packages related to the DNS access? [Yes/No]  (you may have to filter with "udp.port==53")
-
-
-
-
-## F.2 Snort on Windows
-
-Now go to Windows, and run Snort from the required network interface: 
-
-```
-snort -c mysnort.rules -i 2 -p -l log -K ascii -k none
-```
-
-Now access www.google.com, and then stop Snort and examine the log.
-
-Did Snort detect the connection? [Yes/No]
-
-What information is contained in the Snort log:
-
-
-From Windows, start Snort with the rules to detect access to Port 443 and Port 80. Now access www.google.com, and then stop Snort and examine the log.
-
-Did Snort detect the connection? [Yes/No]
-
-What information is contained in the Snort log:
-
-
-
-Now we will detect the word "bbc" in the traffic for DNS access. In the Snort rules file, add another rule of:
-
-```
-alert udp any any -> any 80 (sid:1001; content:"bbc"; nocase; msg:"DNS call for bbc") 
-```
-
-Now run Wireshark on Ubuntu and capture traffic. Then run Snort.
-
-
-Access bbc.com from the browser on Windows.
-
-Perform a DNS looking using “nslookup bbc.co.uk”.
-
-Now stop Snort and Wireshark. Now examine the alert file. 
-
-Did it detect each of the accesses? [Yes/No] 
-
-Now examine the Wireshark trace.
-
-Did it detect each of the accesses? [Yes/No]  (you may have to filter with “udp.port==53”)
-
-
-
-##  F3 Detecting a word in a network packet
-
-On Windows, go to the c:\inetpub\wwwroot folder, and then edit the iisstart.htm file, and add the HTML code of:
-
-```
-<h1>Computer Security and Cryptography</h2>
-<p>This is our home page of the Napier module on IIS</p>
-```
-
-Save the file, and then access the page from Ubuntu. Now, create a rule on Ubuntu to detect the word “module” within a network connection.
-
-Did Snort detect the word “module”? [Yes/No]  
-
-Which Snort rule did you use:
-
-
-
-On Ubuntu, go to the \var\www\html folder, and then edit the index.html file, and add the HTML code of:
-
-```
-<h1>Computer Security and Cryptography</h2>
-<p>This is our home page of the Napier module on Apache</p>
-```
-
-Save the file, and then access the page from Windows. Now, create a rule on Windows to detect the word “module” within a network connection.
-
-Did Snort detect the word “module”? [Yes/No]  
-
-Which Snort rule did you use:
-
-
-
-## F4 Detecting HTTPs
-On Ubuntu, now add a rule to detect the word “google” in an HTTPs connection:
-
-```
-alert tcp any any -> any 443 (sid:1002; msg: content: "google"; "Port 443")
-```
-
-Now test the rule.
-
-Did Snort detect the word “google”? [Yes/No]  
-
-Assuming that the word “google” was in the data packets, why was it unable to find the word?
-
-
-
-
-
-
-
-
-
-# G	Software Tutorial
-Complete the software tutorial at: 
-
-http://asecuritysite.com/csn09412/software01
-
-# Appendix
-```
-configure
-
-set interfaces ethernet eth0 address dhcp
-set interfaces ethernet eth1 address 172.16.x.254/24 
-set interfaces ethernet eth2 address 172.16.y.254/24 
-set system gateway 10.221.3.254
-
-set nat source rule 1 outbound-interface eth0
-set nat source rule 1 source address 172.16.x.0/24 
-set nat source rule 1 translation address masquerade
-
-set nat source rule 2 outbound-interface eth0
-set nat source rule 2 source address 172.16.y.0/24 
-set nat source rule 2 translation address masquerade
-
-set zone-policy zone private  description  "Inside" set zone-policy zone public  description  "Outside" set zone-policy  zone  dmz description "DMZ"
-
-set zone-policy zone public  interface  eth0 
-set zone-policy zone private interface  eth1 
-set zone-policy  zone  dmz  interface eth2
-
-set firewall	name	dmz2private description	"DMZ to private" 
-set firewall	name	dmz2private rule	1	action	accept
-set firewall	name	dmz2private rule	1	state	established	enable 
-set firewall	name	dmz2private rule	1	state	related enable
-set firewall  	name  dmz2private rule  10  	action accept
-set firewall	name	dmz2private rule	10	destination	port	80,443 
-set firewall	name	dmz2private rule	10	protocol tcp
-
-set firewall	name	private2dmz description	"private to DMZ" 
-set firewall	name	private2dmz rule	1	action	accept
-
-set zone-policy	zone	private from	dmz firewall	name	dmz2private
-set zone-policy	zone	dmz from	private firewall	name	private2dmz
-
-
-set firewall	name	private2public description	"private to public" 
-set firewall	name	private2public rule	1	action	accept
-set zone-policy  	zone  public from  private firewall  name private2public
-
-set firewall	name	public2private description	"public to private" 
-set firewall	name	public2private rule	1	action	accept
-set firewall	name	public2private rule	1	state	established	enable set firewall	name	public2private rule	1	state	related enable
-set zone-policy  	zone  private from  public firewall  name public2private
-```
-
-http://asecuritysite.com/vfinal.txt
-
-
-
-
-
-
-
-## Lab setup
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/overview.png"/>
-
-## Quick guide
-For Ubtuntu configuration:
-```
-ip addr add 172.16.10.7 dev eth1
-route add default gw 172.16.10.254 eth11
-```
-Edit /etc/resolv.conf:
+then add:
 ```
 nameserver 10.221.3.254
 ```
+### Metasploitable host setup
+Next setup your Metasploitable host on the DMZ (User: msfadmin, Password: napier123). Setup the Metasploitable host to connect to 10.10.y.9/24 with a default gateway of your firewall port (10.10.y.254/24).
+```
+sudo ip addr add 10.10.y.9/24 dev eth0
+sudo ip route add default via 10.10.y.254 dev eth0
+```
+
+### Windows host setup
+On the Windows server modify the static address on the interface with:
+
+```
+IP: 10.10.y.7
+Subnet mask: 255.255.255.0
+Gateway: 10.10.y.254
+DNS: 10.221.3.254
+```
+
+### Firewall  setup
+Now, we will finalise the configuration of the firewall. Log into the firewall from the Ubuntu host on the Private zone with:
+
+```
+http://10.10.x.254
+```
+
+Username: admin, Password: pfsense
+
+Setup the required IP on the DMZ (10.10.y.254) and subnet mask.
+
+On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
+
+
+On the firewall, from Diagnostics, ping each of the 10.10.x.254 and 10.10.x.7 interfaces from the LAN network. Can you ping them? [Yes/No]
+
+ 
+On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. Can you ping them? [Yes/No] Why can’t you ping the 10.10.y.254 interface?
 
 
 
+On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.
+
+On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. You should now be able to ping them.
+
+On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now be able to ping them.
+
+On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port?
+
+Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.
+
+
+### NAT
+Now we will investigate NAT on the device.
+
+Run packet capture on the firewall, and then ping from both the Windows host and the Ubuntu host. Stop the trace.
+
+Which IP address appears in the pings? 
+
+Why is it just a single address?
+
+
+
+### Routing table
+Now we will investigate the routing table on the firewall.
+
+On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
+
+
+
+
+
+Now we will investigate the Metasploitable host.
+
+Run NMAP from Windows to Metasploit. Which services are enabled:
+
+[ftp][ssh][telnet][smtp][domain][http][vnc]
+
+Run NMAP from Ubuntu to Metasploit. Which services are enabled:
+
+[ftp][ssh][telnet][smtp][domain][http][vnc]
+
+Now we will investigate the Metasploitable host for Telnet:
+
+From Windows run Wireshark and capture packets. Now log into Metasploitable using telnet:
+```
+telnet 10.10.y.9
+```
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
+
+From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using telnet:
+```
+telnet 10.10.y.9
+```
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
+
+Note: login for Telnet in Metasploitable is User: msfadmin, Password: napier123
+
+Now we will investigate the Metasploitable host for Telnet:
+
+From Windows, run Wireshark and capture packets. Now log into Metasploitable using SSH:
+```
+ssh 10.10.y.9 -l msfadmin
+```
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark, and examine the data packets. Can you find the Telnet login, and can you discover the password used? [Yes/No]
+
+From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using SSH:
+```
+ssh 10.10.y.9 -l msfadmin
+```
+Can you log into each into Metasploit: [Yes/No]
+
+Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? [Yes/No]
+
+Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.prt==22 as a filter for SSH.
+
+
+
+
+## D	Device Audit
+Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
+
+| Perform and answer the following: |
+|-------------------------------|
+| On the firewall, capture traffic on the DMZ port, and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ).  Does the traffic have the IP address of the gateway on the LAN port? Tick [ ]
+| On the firewall, capture traffic on the WAN port, and generate some traffic from the LAN and DMZ (such as accessing Google.com).  Does the traffic have the IP address of the WAN port? Tick [ ]
+| On the firewall, examine the ARP table. Also on the hosts in the DMZ and the LAN, run arp –a, and determine all your MAC addresses.  Do all the MAC addresses tie-up? Tick [ ]
+
+## E	NMAP
+Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows host, and from the Windows host to the Linux host.
+
+| Perform and answer the following: |
+|-------------------------------|
+| What IP addresses are used in the source addresses of the scan?
+| Which services have been identified from the Linux host to the Windows host?
+| Which services have been identified from the Windows host to the Linux host?
+| Why are these different in their scope? Where is the blocking happening?
+
+
+
+Now enable http (Port 80), https (Port 443), and ftp (Port) from the Private network to the DMZ.
+
+| Perform and answer the following: |
+|-------------------------------|
+| Re-do NMAP. How are the scans different?
+| Can you now access the Web server from the Linux host to the Windows host?
+| Can you now access the Web server from the Windows host to the Linux host?
+
+
+Access Google.com from the Ubuntu host and also the Windows host.
+
+| Perform and answer the following: |
+|-------------------------------|
+| Can you access it? If not, on the firewall, enable UDP/TCP DNS (Port 53) from DMZ and also from the Private network. Add logging on the rule.
+| Can you now access Google.com from the Linux host and the Windows host?
+| On the firewall, examine the log and view the accesses for a DNS lookup on Google.com. Which addresses are present?
+
+
+
+## F Identifying Services 
+Within a network infrastructure we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
+
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+| DMZ	| On your Windows host, run the command: netstat –a and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
+| LAN		| For the Ubuntu Virtual Machine, and run the command: netstat –l.  	| 	Outline some of the services which are running on your host (define the port number and the name of the service):	| 
+| DMZ		| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: http://10.10.x.7		|  Is the service working: [Yes] [No] 	| 
+|  LAN	|  From Ubuntu, access the Web server at: http://10.10.y.7	| Is the service working: [Yes] [No]| 
+| LAN	|  Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 10.10.y.7 80 then enter:  GET / | 	Outline the message that is returned: | 
+| DMZ	|  Repeat the previous example from the WINDOWS host: telnet 10.10.x.7 80	|  
+| DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: telnet 10.10.x.7 21 then enter: USER napier PASS napier123 QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
+| LAN | 	From UBUNTU access the WINDOWS host with telnet 10.10.x.7 21 then enter: USER Administrator PASS napier QUIT | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
+| DMZ	| On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
+
+
+
+
+
+## G	Enumeration – Host scan 
+
+Nmap is one of the most popular network scanning tools. It is widely available, for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
+
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+| LAN to WAN|	sudo nmap –sP –r 10.221.0.0/24	|Which hosts are on-line:| 
+| LAN to DMZ|	sudo nmap –sP –r 10.10.y.0/24|	Which hosts are on-line:| 
+| DMZ to LAN	|nmap –sP –r 10.10.x.0/24|	Which hosts are on-line:| 
+| LAN to DMZ|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.y.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
+| LAN to LAN|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 10.10.x.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
+
+## H	Enumeration - Operating System Fingerprinting
+Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
+
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+|LAN to DMZ	| Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: sudo nmap –O 10.10.y.0/24 |  Which operating systems does it return: |
+|DMZ to LAN	|Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: nmap –O 10.10.x.0/24	| Which operating systems does it return: |
+
+## I	Enumeration – Application Fingerprinting
+Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
+
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+|LAN to DMZ	| Perform an application and version scan for networked services: sudo nmap –sS 10.10.y.7/24 | Which services are running on the Windows host:|
+|DMZ to LAN	Perform an application and version scan for networked services: nmap –sS 10.10.x.7/24 | Which services are running on the Linux host:|
+|LAN to DMZ	|Scan the Web server in the DMZ for its version:  sudo nmap –sV 10.10.y.7/24 –p 80	| Which Web server type is being used:|
+| DMZ to LAN	| Scan the Web server in the LAN for its version: nmap –sV 10.10.x.7/24 –p 80 | Which Web server type is being used:|
+
+
+Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
+
+| From → To |	Command	| Observation |
+|------|------------|-------------|
+| DMZ to LAN	| Connect to port 80, with: telnet 10.10.x.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
+| DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
+
+
+## J	Brute Force
+For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will on Kali (DMZ), where you create a user file and password file with the following lists:
+
+list_user: 
+* administrator
+* admin
+* root
+* msfadmin
+* guest
+
+list_password:
+
+* adminpass
+* password
+* Password
+* 123456
+* napier123
+* pa$$word
+
+Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
+
+```
+# hydra -L list_user -P list_password 10.10.y.9 ftp
+```
+
+From this determine one of the usernames and passwords.
+
+
+Stop Wireshark and find the Hydra trace. What do you observe from the trace:
+
+
+What is the FTP status code for an incorrect login:
+
+
+What is the FTP status code for a correct login:
+
+
+Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint, you need to detect “530” in the Port 21 connection.
+
+Which rule have you used:
+
+
+Rerun Hydra and start Snort to detect incorrect logins. Did it detect the scan? [Yes/No]
+
+
+Next, run Hydra and crack the username and the password for the Web server. With these usernames and passwords we will target the DVWA site. First access the Web server from:
+```
+http://20.20.21.9/dvwa/login.php
+```
+Next, start Wireshark on Kali (DMZ), and then run Hydra to try a range of logins:
+
+```
+# hydra -L list_user -P list_password 10.10.y.9 http-post-form ‘/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed’
+```
+From this determine one of the usernames and passwords.
+
+
+Stop Wireshark and find the hydra trace. What do you observe from the trace:
+
+
+What is the HTTP status code for an incorrect login:
+
+
+What is the HTTP status code for a correct login:
+
+
+Now access the Mutillidae site on Metasploit:
+```
+http://10.10.y.9/mutillidae
+```
+Now we will attack the Mutillidae site:
+```
+# hydra -L list_user -P list_password 10.10.y.9 http-post-form 
+'/mutillidae/index.php?page=login.php:username=^USER^&password=^PASS^&login-php-submit-button=Login:Not Logged In'
+```
+From this determine one of the usernames and passwords.
+
+## K	NAT and 1:1 mappings
+
+No other group can access any of your hosts, as you are behind NAT. Now we need to setup a 1:1 mapping and a virtual IP address (with Proxy ARP) to map an internal address to an external one. First, we need to find an IP address from the 10.221.0.0/22 network which is not being used, and then we will use this to allow other group’s access to the hosts in the DMZ (Figure 2).
+
+Demo: https://youtu.be/1wn2io8EWvs 
+
+
+![image](https://user-images.githubusercontent.com/43025646/192982617-71737c2c-b425-443a-a3b7-bedecfb8c57f.png)
+
+Figure 2: Setup 1:1 NAT for mapping of servers 
+
+Run NMAP from the Private network with: nmap –sP 10.221.0.0/24
+
+Which hosts are on-line?
+
+
+Now pick an address which is (where GROUP ID is your ID number):
+10.221.2.[GROUP ID]
+
+Now, on the firewall, setup a 1:1 mapping of the External IP address that you have selected and the Internal IP address on the DMZ (Figure 3).
+
+Next, setup a Virtual IP address (with Proxy ARP) for the external address you have selected, which will advertise the IP address (Figure 4).
+
+Now from the WAN interface, ping the host in the DMZ. Can you ping it?
+
+Finally ask, someone in another group to ping your host in the DMZ. Can they ping it?
+
+Now get them to access the Web server on your host.
+
+Finally get them to NMAP your host? What can you observe from the NMAP?
+
+![image](https://user-images.githubusercontent.com/43025646/192982833-73e61956-9516-4418-9449-64d4f2eb5516.png)
+Figure 3: 1:1 NAT settings
+
+![image](https://user-images.githubusercontent.com/43025646/192982896-d6ce86fa-3651-4df0-8b69-9ae2215189c8.png)
+Figure 4: Virtual IP addresses
+
+# Connecting to another network
+Now, wait for other teams to finish (or use the Test setup). You should have ready:
+
+-	A forward-facing Web and FTP site ready to connect from outside your network.
+
+NMAP their server, and then make sure you can connect to the service. Now get them to block your specific source (just one address), and recheck that you cannot connect. Finally change your IP address, and re-do the NMAP, and make sure you can connect.
+
+Please note some of the information related to their server. What information can you determine? Can you determine the MAC address of their server?
+
+# Software Tutorial
+Complete the software tutorial at: 
+
+http://asecuritysite.com/csn09112/software02
+
+
+# Appendix
+User logins: 
+
+Ubuntu:- User: napier, Password: napier123  
+Kali:-  User: root, Password: toor  
+Windows:-		User: Administrator, Password: napier123  
+pfsense:- User: admin, Password: pfsense  
+Metasploitable:- User: msfadmin, Password: napier123  
 
 
