@@ -14,8 +14,8 @@ The key objectives of this unit are:</p>
 ## Lab
 The main lab for this session is:</p>
 
-* Lab: Vyatta Firewall. The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/lab01_Vyatta.pdf).
-* Demo for the lab is [here](https://youtu.be/ACldSA_uKM0).
+* Lab: Virtualised Infrastructures. The lab is [here](https://github.com/billbuchanan/csn09112/tree/master/week02_ids/lab).
+* Demo for the lab is [here](https://www.youtube.com/watch?v=qIA3LnKTI6k).
   
 
 ## Test
