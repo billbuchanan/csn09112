@@ -47,7 +47,7 @@ Power up your Pfsense firewall and the rest of the hosts (do not power up the Vy
 * vmx1. Private.
 * vmx2. DMZ
 
-Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 10.10.x.254/24. 
+Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 10.10.x.254/24. **Answer no through the rest of the prompts**
 
 Now we will configure the hosts to sit on the Private and DMZ networks.
 
