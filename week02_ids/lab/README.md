@@ -164,7 +164,7 @@ sudo nano /etc/resolv.conf
 ```
 then add:
 ```
-nameserver 10.221.3.254
+nameserver 146.176.1.5
 ```
 
 | | |
