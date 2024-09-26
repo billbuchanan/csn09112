@@ -144,7 +144,7 @@ On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now b
 
 On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port?
 
-Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254 and 10.200.0.2.
+Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254.
 
 
 ### NAT
@@ -354,6 +354,8 @@ What is the FTP status code for an incorrect login:
 
 What is the FTP status code for a correct login:
 
+Ensure you have snort installed by running `snort -h`. 
+If you have installation issues, run a `sudo apt-get update` first.
 
 Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint, you need to detect “530” in the Port 21 connection.
 
@@ -365,7 +367,7 @@ Rerun Hydra and start Snort to detect incorrect logins. Did it detect the scan? 
 
 Next, run Hydra and crack the username and the password for the Web server. With these usernames and passwords we will target the DVWA site. First access the Web server from:
 ```
-http://20.20.21.9/dvwa/login.php
+http://10.10.y.9/dvwa/login.php
 ```
 Next, start Wireshark on Kali (DMZ), and then run Hydra to try a range of logins:
 
