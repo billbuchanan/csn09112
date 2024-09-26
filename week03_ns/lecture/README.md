@@ -5,18 +5,17 @@
 ## Topics
 The key topic areas include:
 
-* Data, Information, Knowledge and Wisdom.
-* Information Security and Forensic Computing.
-* Impact and Harm.
-* Risks, Costs and Benefits.
-* Kill Chain Models.
-* Defence Mechanisms.
-* Defence-in-Depth.
-
+* Basics: Security Policy, Risk and Benefits.
+* Kill Chain Model, MITRE ATT&CK and EMB3D.
+* Basic Terms: Defence in Depth, IDS.
+* Cryptography Basics.
+* Secure Infrastructures.
+* Secure Enclaves.
+* Network Security: NAT, Stateful Firewalls.
 
 ## Lecture
 
- Defence Systems, Policies and Risk: [here](https://www.youtube.com/watch?v=MH0ELbKMI9Q).
+Defence Systems, Policies and Risk: [here](https://www.youtube.com/watch?v=MH0ELbKMI9Q).
  
 ## Test
 
