@@ -354,8 +354,8 @@ What is the FTP status code for an incorrect login:
 
 What is the FTP status code for a correct login:
 
-Ensure you have snort installed by running "snort -h". 
-If you have installation issues, run a "sudo apt-get update" first.
+Ensure you have snort installed by running `snort -h`. 
+If you have installation issues, run a `sudo apt-get update` first.
 
 Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint, you need to detect “530” in the Port 21 connection.
 
