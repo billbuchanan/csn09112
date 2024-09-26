@@ -78,7 +78,7 @@ sudo nano /etc/resolv.conf
 ```
 then add:
 ```
-nameserver 10.221.3.254
+nameserver 146.176.1.5
 ```
 
 ### Kali host setup
@@ -96,7 +96,7 @@ sudo nano /etc/resolv.conf
 ```
 then add:
 ```
-nameserver 10.221.3.254
+nameserver 146.176.1.5
 ```
 ### Metasploitable host setup
 Next setup your Metasploitable host on the DMZ (User: msfadmin, Password: napier123). Setup the Metasploitable host to connect to 10.10.y.9/24 with a default gateway of your firewall port (10.10.y.254/24).
@@ -112,7 +112,7 @@ On the Windows server modify the static address on the interface with:
 IP: 10.10.y.7
 Subnet mask: 255.255.255.0
 Gateway: 10.10.y.254
-DNS: 10.221.3.254
+DNS: 146.176.1.5
 ```
 
 ### Firewall  setup
