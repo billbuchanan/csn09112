@@ -16,7 +16,7 @@ The key topic areas include:
 
 ## Lecture
 
- Defence Systems, Policies and Risk: [here](https://www.youtube.com/watch?v=US2yqycKQik).
+ Defence Systems, Policies and Risk: [here](https://www.youtube.com/watch?v=MH0ELbKMI9Q).
  
 ## Test
 
