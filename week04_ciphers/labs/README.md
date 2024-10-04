@@ -638,7 +638,7 @@ Figure 28: Python file creation
 
 Save the file, and then run the file with Python3 and prove that it shows your instances (see Figure 29).
 
-![AWS](https://asecuritysite.com/public/awsgif01.png "Running the Python3 file") 
+![AWS](https://asecuritysite.com/public/awsgif29.png "Running the Python3 file") 
 
 Figure 29: Running the Python3 file
 
@@ -648,7 +648,7 @@ Figure 29: Running the Python3 file
 Does the Python3 program show your instances? [Yes/No]
 ```
 
-Note, Boto3 was been depreciated for Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+Note, Boto3 was been depreciated for Pythofn 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
 
 ```
 python3 -W ignore 1.py
