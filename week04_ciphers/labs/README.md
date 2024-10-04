@@ -713,6 +713,8 @@ print(MyKeyPair)
 What is the name of your key pair? Can you find it in your AWS Management console? [Yes/No]
 ```
 
+![AWS](https://asecuritysite.com/public/aws31.png "Running the Python3 file") 
+Figure 30: 
 
 Now we will create a Linux instance. Take a note of the AMI for your Linux instance, and check that it is the same as the instance below Now create create.py, and save the file:
 
