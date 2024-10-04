@@ -642,15 +642,16 @@ Save the file, and then run the file with Python3 and prove that it shows your i
 
 Figure 29: Running the Python3 file
 
-Note, Boto3 was been depreciated in Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
-
-```
-python3 -W ignore 1.py
-```
 
 
 ```
 Does the Python3 program show your instances? [Yes/No]
+```
+
+Note, Boto3 was been depreciated for Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+
+```
+python3 -W ignore 1.py
 ```
 
 Now we will stop one of our instances. For this, get an instance name, and add it to the following file:
