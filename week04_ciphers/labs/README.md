@@ -150,6 +150,9 @@ Now find your PEM file on your local machine (from the command line), and protec
 ```
 chmod 400 myfile.pem
 ```
+
+If you are using a Windows console, please see the note in Appendix A.
+
 What protection does this put on your private key?
 
 Next, use the SSH connection with the name of your PEM file and with the DNS (or IP address) for your instance. For example, in the case in Figure 8, we have:
@@ -745,6 +748,18 @@ If it has created it, now terminate it. Has it been terminated? [Yes/No]
 
 At the end of the lab, you should only have two instances. Please either terminate these, or stop them.
 
+
+# Appendix A
+
+Note, if you are using a Microsoft Windows system, you will have to use icacls to make the file read-only. If you are using a domain (such as with NAPIER-MAIL, you would defined your domain name with your matriculation number, such as:
+
+```
+> icacls.exe mykey.pem /reset
+> icacls.exe mykey.pem /grant:r NAPIER-MAIL\xxxxxxxx:(r)
+> icacls.exe mykey.pem /inheritance:r
+```
+
+If you are on a laptop, you run "whoami" to determine your usename.
 
 
 
