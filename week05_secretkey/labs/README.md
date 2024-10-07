@@ -219,107 +219,308 @@ Admin:
 
 Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
 
-## Python tutorial
-For this part of the lab, install:
+## AWS Cryptography
+We are generally moving our security into the public cloud, and thus many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
+
+### Symmetric key
+
+With symmetric key, Bob and Alice use the same encryption key to encrypt and decrypt:
+
+![image](https://asecuritysite.com/public/kms_30.png)
+
+Normally we use AES encryption for this. Initially in KMS, we create a new key within our Customer managed keys:
+
+![image](https://asecuritysite.com/public/kms01.png)
+
+and then create the key:
+
+![image](https://asecuritysite.com/public/kms02.png)
+
+Next, we give it a name:
+
+![image](https://asecuritysite.com/public/kms03.png)
+
+And then define the adminstrative permission (those who can delete it):
+
+![image](https://asecuritysite.com/public/kms04.png)
+
+
+And the usage:
+
+
+![image](https://asecuritysite.com/public/kms05.png)
+
+
+
+The policy is then:
+```
+{
+    "Id": "key-consolepolicy-3",
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Enable IAM User Permissions",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::22222222:root"
+            },
+            "Action": "kms:*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "Allow access for Key Administrators",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::22222222:role/LabRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+                    "arn:aws:iam::22222222:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents",
+                    "arn:aws:iam::22222222:role/EMR_EC2_DefaultRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
+                    "arn:aws:iam::22222222:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+                    "arn:aws:iam::22222222:role/EMR_DefaultRole",
+                    "arn:aws:iam::22222222:role/EMR_AutoScaling_DefaultRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/cloud9.amazonaws.com/AWSServiceRoleForAWSCloud9",
+                    "arn:aws:iam::22222222:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport"
+                ]
+            },
+            "Action": [
+                "kms:Create*",
+                "kms:Describe*",
+                "kms:Enable*",
+                "kms:List*",
+                "kms:Put*",
+                "kms:Update*",
+                "kms:Revoke*",
+                "kms:Disable*",
+                "kms:Get*",
+                "kms:Delete*",
+                "kms:TagResource",
+                "kms:UntagResource",
+                "kms:ScheduleKeyDeletion",
+                "kms:CancelKeyDeletion"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "Allow use of the key",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::22222222:role/LabRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+                    "arn:aws:iam::22222222:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents",
+                    "arn:aws:iam::22222222:role/EMR_EC2_DefaultRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
+                    "arn:aws:iam::22222222:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+                    "arn:aws:iam::22222222:role/EMR_DefaultRole",
+                    "arn:aws:iam::22222222:role/EMR_AutoScaling_DefaultRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/cloud9.amazonaws.com/AWSServiceRoleForAWSCloud9",
+                    "arn:aws:iam::22222222:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport"
+                ]
+            },
+            "Action": [
+                "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*",
+                "kms:DescribeKey"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "Allow attachment of persistent resources",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::22222222:role/LabRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+                    "arn:aws:iam::22222222:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents",
+                    "arn:aws:iam::22222222:role/EMR_EC2_DefaultRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
+                    "arn:aws:iam::22222222:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+                    "arn:aws:iam::22222222:role/EMR_DefaultRole",
+                    "arn:aws:iam::22222222:role/EMR_AutoScaling_DefaultRole",
+                    "arn:aws:iam::22222222:role/aws-service-role/cloud9.amazonaws.com/AWSServiceRoleForAWSCloud9",
+                    "arn:aws:iam::22222222:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport"
+                ]
+            },
+            "Action": [
+                "kms:CreateGrant",
+                "kms:ListGrants",
+                "kms:RevokeGrant"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "Bool": {
+                    "kms:GrantIsForAWSResource": "true"
+                }
+            }
+        }
+    ]
+}
+```
+
+### AWS and Symmetric Key
+
+With symmetric key encryption, Bob and Alice use the same encryption key to encrypt and decrypt. In the following case, Bob and Alice share the same encryption key, and where Bob encrypts plaintext to produce ciphertext. Alice then decrypts with the same key, in order to recover the plaintext:
+
+![image](https://asecuritysite.com/public/kms_30.png)
+
+
+Now we can create a file named 1.txt, and enter some text:
+
+![image](https://asecuritysite.com/public/kms_06.png)
+
+Once we have this, we can then encrypt the file using the “aws kms encrypt” command, and then use “fileb://1.txt” to refer to the file:
+```
+aws kms encrypt  --key-id alias/MySymKey   --plaintext fileb://1.txt   --query CiphertextBlob --output text > 1.out
+cat 1.out
+```
+
+This produces a ciphertext blob, and which is in Base64 format:
+```
+AQICAHgTBDpVTrBTrduWKdNnvMoMMUWjObqp+GqbghUx7qa6JwEQ7F2Fzubd+pcz3I06bFuLAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMgl3vWRVPyL7KK3klAgEQgDP+dQ4KsqT94hiARF8zlybFAtXJJBIucc8M952KHmkJzBGQQP4f8YQQ70DELV97ZXizzME=
+```
+
+We could transmit this in Base64 format, but we need to convert it into a binary format for us to now decrypt it. For this we use the “Base64 -d” command:
+```
+$ base64 -i 1.out  --decode > 1.enc
+$ cat 1.enc
+```
+
+The result is a binary output:
 
 ```
-pip install pycryptodome
+$ cat 1.enc
+x:UNSۖ)g
+00e0`  1`He.0']3܍:l[v0t *H
+]YOȾ+y%3u
+D_3&$.q
+i        @-_{exddd_v1_w_W3n_145559
+```
+Now we can decrypt this with our key, and using the command of:
+```
+$ aws kms decrypt --key-id alias/BillsNewKey --output text --query Plaintext --ciphertext-blob fileb://1.enc > 2.out
+$ cat 2.out
 ```
 
-In Python, we can use the Hazmat (Hazardous Materials) library to implement symmetric key encryption. 
-
-Web link (Cipher code): [here](http://asecuritysite.com/cipher01.zip)
-
-The code should be:
+The output of this is our secret message in Base64 format:
 
 ```
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes 
-from cryptography.hazmat.primitives import padding
-from cryptography.hazmat.backends import default_backend
+VGhpcyBpcyBteSBzZWNyZXQgZmlsZS4K
+```
 
-import hashlib
-import sys
+and now we can decode this into plaintext:
+
+```
+$ base64 -i 2.out  --decode
+This is my secret file.
+```
+
+The commands we have used are:
+```
+aws kms encrypt  --key-id alias/BillsNewKey   --plaintext fileb://1.txt  --query CiphertextBlob --output text > 1.out
+echo "== Ciphertext (Base64)"
+cat 1.out
+echo "== Ciphertext (Binary)"
+base64 -i 1.out  --decode > 1.enc
+cat 1.enc
+aws kms decrypt --key-id alias/BillsNewKey --output text --query Plaintext --ciphertext-blob fileb://1.enc > 2.out
+echo "== Plaintext (Base64)"
+cat 2.out
+echo "== Plaintext"
+base64 -i 2.out  --decode
+```
+
+and the result of this is:
+```
+== Ciphertext (Base64)
+AQICAHgTBDpVTrBTrduWKdNnvMoMMUWjObqp+GqbghUx7qa6JwEfz+s9z3e0Mw0tOzuB5LuYAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMqqwXsxB5QlQGVqZWAgEQgDOyBv6KYg4wN2bU/ZKSJ+5opJXMrjQj9GGvuuD2/Jeto9Er5yS91/iCb896CzCSeqUYJeo=
+
+== Ciphertext (Binary)
+x:UNSۖ)g
+00e0`v0t`He.0'=w*H
+yBTVV3b07f'ḫ4#a+$oz
+0z%
+
+== Plaintext (Base64)
+VGhpcyBpcyBteSBzZWNyZXQgZmlsZS4K
+
+== Plaintext
+This is my secret file.
+```
+
+Here’s a sample run in an AWS Foundation Lab environment:
+
+![image](https://asecuritysite.com/public/kms_07.png)
+
+
+### Using Python
+
+Along with using the CLI, we can create the encryption using Python. In the following we use the boto3 library, and have a key ID of “98a90e1f-2cb5–4564-a3aa-d0c060cdcf0a” and which is in the US-East-1 region:
+```
+import base64
 import binascii
+import boto3
 
-val='hello'
-password='hello123'
+AWS_REGION = 'us-east-1'
 
-plaintext=val
+def enable_kms_key(key_ID):
+    try:
+        response = kms_client.enable_key(KeyId=key_ID)
 
-def encrypt(plaintext,key, mode):
-    method=algorithms.AES(key)
-    cipher = Cipher(method,mode, default_backend())
-    encryptor = cipher.encryptor()
-    ct = encryptor.update(plaintext) + encryptor.finalize()
-    return(ct)
+    except ClientError:
+        print('KMS Key not working')
+        raise
+    else:
+        return response
 
-def decrypt(ciphertext,key, mode):
-    method=algorithms.AES(key)
-    cipher = Cipher(method, mode, default_backend())
-    decryptor = cipher.decryptor()
-    pl = decryptor.update(ciphertext) + decryptor.finalize()
-    return(pl)
 
-def pad(data,size=128):
-    padder = padding.PKCS7(size).padder()
-    padded_data = padder.update(data)
-    padded_data += padder.finalize()
-    return(padded_data)
+def encrypt(secret, alias):
+    try:
+        ciphertext = kms_client.encrypt(KeyId=alias,Plaintext=bytes(secret, encoding='utf8'),
+        )
+    except ClientError:
+        print('Problem with encryption.')
+        raise
+    else:
+        return base64.b64encode(ciphertext["CiphertextBlob"])
 
-def unpad(data,size=128):
-    padder = padding.PKCS7(size).unpadder()
-    unpadded_data = padder.update(data)
-    unpadded_data += padder.finalize()
-    return(unpadded_data)
 
-key = hashlib.sha256(password.encode()).digest()
+def decrypt(ciphertext, alias):
+    try:
+        plain_text = kms_client.decrypt(KeyId=alias,CiphertextBlob=bytes(base64.b64decode(ciphertext)))
+    except ClientError:
+        print('Problem with decryption.')
+        raise
+    else:
+        return plain_text['Plaintext']
 
-print("Before padding: ",plaintext)
+kms_client = boto3.client("kms", region_name=AWS_REGION)
 
-plaintext=pad(plaintext.encode())
+KEY_ID = '98a90e1f-2cb5-4564-a3aa-d0c060cdcf0a'
+kms = enable_kms_key(KEY_ID)
+print(f'KMS key ID {KEY_ID} ')
+msg='Hello'
+print(f"Plaintext: {msg}")
 
-print("After padding (CMS): ",binascii.hexlify(bytearray(plaintext)))
+cipher=encrypt(msg,KEY_ID)
+print(f"Cipher {cipher}")
+plaintext=decrypt(cipher,KEY_ID)
+print(f"Plain: {plaintext.decode()}")
+```
+    
 
-ciphertext = encrypt(plaintext,key,modes.ECB())
-print("Cipher (ECB): ",binascii.hexlify(bytearray(ciphertext)))
+Each of the steps is similar to our CLI approach. A sample run gives:
 
-plaintext = decrypt(ciphertext,key,modes.ECB())
-
-plaintext = unpad(plaintext)
-print("  decrypt: ",plaintext.decode())
+```
+KMS key ID 98a90e1f-2cb5-4564-a3aa-d0c060cdcf0a 
+Plaintext: Hello
+Cipher b'AQICAHgTBDpVTrBTrduWKdNnvMoMMUWjObqp+GqbghUx7qa6JwHH797e/TF4csEBEFNmjvD5AAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJf0xVfikbMLfLI6jAgEQgCDYBm2NvB/I2NMxGgSw8wuWA/p6c6Jjm19/wK4eVrLXUw=='
+Plain: Hello
 ```
 
-How is the encryption key generated?
-
-Which is the size of the key used? [128-bit][256-bit]
-
-Which is the encryption mode used? [ECB][CBC][OFB]
-
-Now update the code so that you can enter a string and the program will show the cipher text. The format will be something like:
-```
-python cipher01.py hello mykey
-```
-where “hello” is the plain text, and “mykey” is the key. A possible integration is:
-```
-import sys
-
-if (len(sys.argv)>1):
-	val=sys.argv[1]
-
-if (len(sys.argv)>2):
-	password=sys.argv[2]
-```
-
-Now determine the cipher text for the following (the first example has already been completed):
-
-| Message |	Key | CMS Cipher |  
-| -------|------|------|
-| “hello” |	“hello123” |	0a7ec77951291795bac6690c9e7f4c0d |
-| “inkwell”|	“orange”	| |
-| “security”|	“qwerty”	||
-| “Africa” |	“changeme”	||
-
-Finally, change the program so that it does 256-bit AES with CBC mode.
 
 
 
