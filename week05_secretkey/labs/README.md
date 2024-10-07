@@ -6,15 +6,8 @@ Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
 We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/).
 
-## 1	Diffie-Hellman
 
-| No | Description | Result | 
-| -------|--------|---------|
-| 1 | Bob and Alice have agreed on the values: <br/>g=2,879, N= 9,929 Bob Select b=6, Alice selects a=9 | Now calculate (using the Kali calculator): <br/>Bob’s B value (g<sup>b</sup> mod N): <br/>Alice’s A value (g<sup>a</sup> mod N): |
-| 2 | Now they exchange the values. Next calculate the shared key: | Bob’s value (A<sup>a</sup> mod N):	Alice’s value (B<sup>a</sup> mod N): Do they match? [Yes] [No] |
-| 3 | If you are in the lab, select someone to share a value with. Next agree on two numbers (g and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for g and N: <br/>Your b value: <br/>Your B value:  <br/>The A value you received: <br/>Shared key: <br/>Do they match: [Yes] [No] |
-
-## 2	Symmetric Key
+## Symmetric Key
 
 | No | Description | Result | 
 |-------|--------|---------|
@@ -33,33 +26,8 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 11 | Investigate the following commands by running them several times:<br/>echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341<br/>echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt | What do you observe? Why do you think causes this (ask your tutor if you want some detail)? |
 
 
-
-
-## 3	Public Key
-
-| No | Description | Result | 
-| -------|--------|---------|
-| 1 | First we need to generate a key pair with: openssl genrsa -out private.pem 1024	This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
-| 2 | Use following command to view the output file: cat private.pem | What can be observed at the start and end of the file: |
-| 3 | Next we view the RSA key pair: openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
-| 4 | Let’s now secure the encrypted key with 3-DES: openssl rsa -in private.pem -des3 -out key3des.pem | |
-| 5 | Next we will export the public key: openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
-| 6 | Now we will encrypt with our public key: openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
-| 7 | And then decrypt with our private key: openssl rsautl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
-| 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
-
-
-## 4	Storing keys
-We have stored our keys on a key ring file (PEM). Normally we would use a digital certificate to distribute our public key. In this part of the tutorial we will create a crt digital certificate file.
-
-| No | Description | Result | 
-| -------|--------|---------|
-| 1 | Next create the crt file with the following: openssl req -new -key private.pem -out cert.csr  openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | View the CRT file by double clicking on it from the File Explorer. What is the type of public key method used: View the certificate file and determine: The size of the public key: The encryption method: |
-| 2 | We can now take the code signing request, and create a certificate. For this we sign the certificate with a private key, in order to validate it:<br/>openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | From the File System, click on the newly created certificate file (server.crt) and determine:<br/>The size of the public key (in bits): [512][1024][2048]<br/>The public key encryption method:<br/>Which is the hashing method that has been signed to sign the certificate: [MD5][SHA-1][SHA-256] |
-
-
  
-## 5 Hashing
+## Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
@@ -160,7 +128,7 @@ Note: Use can use md5sum to compute MD5 hashes.
 View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? 
 
 
-## 6	Hashing Cracking (MD5)
+## Hashing Cracking (MD5)
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 
@@ -208,7 +176,7 @@ FE01D:
 
 88956:
 
-## 7	Hashing Cracking (LM Hash/Windows)
+## Hashing Cracking (LM Hash/Windows)
 All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
 
 
@@ -251,7 +219,7 @@ Admin:
 
 Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
 
-## 8	Python tutorial
+## Python tutorial
 For this part of the lab, install:
 
 ```
