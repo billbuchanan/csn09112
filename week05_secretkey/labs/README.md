@@ -11,7 +11,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 | No | Description | Result | 
 |-------|--------|---------|
-| 1 | Log into vSoC 2, and select your Kali host on the DMZ or public network. | What is your IP address? |
+| 1 | Log into vSoC 2, and select your Kali host on the DMZ on public network. | What is your IP address? |
 | 2 | Use: openssl list -cipher-commands and openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
 | 2 | Use: openssl list -cipher-commands | Outline five encryption methods that are supported:   |
 | 2 | Use: openssl version | Outline the version of OpenSSL:    |
