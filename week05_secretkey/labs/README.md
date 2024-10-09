@@ -177,7 +177,7 @@ hashcat –m 0 hash1 words
 04013...698D Is it [napier][password][Ankle123][inkwell]?
 
 
-
+Note: use the --show option to show the results of the cracking.
 
 2 Using the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
 
