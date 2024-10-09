@@ -26,9 +26,9 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 9  With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:
 
 ```
-echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
 Ulq+o+vs5mvAc3GUIKt8hA==
-echo Ulq+o+vs5mvAc3GUIKt8hA== \| openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341
+echo Ulq+o+vs5mvAc3GUIKt8hA== | openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341
 Hello
 ```  
 
@@ -38,15 +38,15 @@ For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt v
 10 Now, use the decryption method to prove that you can decrypt the ciphertext.
 
 ```
-echo V60XNkEyAAF40k5rFSbrZw== \| openssl enc -aes-256-cbc -pass pass:"password" -d  -base64 -S 241fa86763b85341 
+echo V60XNkEyAAF40k5rFSbrZw== | openssl enc -aes-256-cbc -pass pass:"password" -d  -base64 -S 241fa86763b85341 
 ```
 
 Did you confirm the right password? [Yes/No] 
 
 11  Investigate the following commands by running them several times:
 ```
-echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
-echo -n "Hello" \| openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt 
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt 
 ```
 What do you observe? Why do you think causes the changes? 
  
