@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be no lectures or labs in Week 9. The table you will be given is [here](https://asecuritysite.com/public/table.pdf).
 
-Time for test: Wednesday, 1 November 2023 (9am-11am, JKCC)
+Time for test: Thursday, 7 November 2023 (6-8pm, JKCC)
 
 ## Background
 
@@ -15,16 +15,16 @@ Time for test: Wednesday, 1 November 2023 (9am-11am, JKCC)
 
 ## Test 1 (Challenges)
 
-* Hex Code Challenge [Try](https://asecuritysite.com/Challenges/hex).
-* Pigpen [Try](https://asecuritysite.com/Challenges/pigpen).
-* Polybius [Try](https://asecuritysite.com/Challenges/polybius).
-* Morse [Try](https://asecuritysite.com/Challenges/morse).
-* ADFGVX [Try](https://asecuritysite.com/Challenges/dx).
+* Hex Code Challenge [Try](https://asecuritysite.com/challenges/chall_001_hex).
+* Pigpen [Try](https://asecuritysite.com/challenges/chall_002_pigpen).
+* Polybius [Try](https://asecuritysite.com/challenges/chall_014_polybius).
+* Morse [Try](https://asecuritysite.com/challenges/chall_024_morse).
+* ADFGVX [Try](https://asecuritysite.com/challenges/chall_011_ADFGVX).
 * Scrambled Alphabet [Try](https://asecuritysite.com/cipher/scramb). Can you beat 5 minutes?
 
 ## Test 1 (Examples)
 
-* Rail Code [Try](https://asecuritysite.com/coding/rail).
+* Rail Code [Try](https://asecuritysite.com/challenges/chall_023_rail).
 * Caeser. [Try](https://asecuritysite.com/tests/tests?sortBy=caesar).
 * Hex. [Try](https://asecuritysite.com/tests/tests?sortBy=hex01).
 * Binary to ASCII. [Try](https://asecuritysite.com/tests/tests?sortBy=ascii02). 
