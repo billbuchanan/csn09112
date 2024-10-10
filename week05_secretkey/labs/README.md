@@ -393,7 +393,7 @@ With symmetric key encryption, Bob and Alice use the same encryption key to encr
 
 Now we can create a file named 1.txt, and enter some text:
 
-![image](https://asecuritysite.com/public/kms_06.png)
+![image](https://asecuritysite.com/public/kms06.png)
 
 Once we have this, we can then encrypt the file using the “aws kms encrypt” command, and then use “fileb://1.txt” to refer to the file:
 ```
