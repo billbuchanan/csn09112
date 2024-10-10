@@ -476,7 +476,7 @@ This is my secret file.
 
 Here’s a sample run in an AWS Foundation Lab environment:
 
-![image](https://asecuritysite.com/public/kms_07.png)
+![image](https://asecuritysite.com/public/kms07.png)
 
 
 ### Using Python
