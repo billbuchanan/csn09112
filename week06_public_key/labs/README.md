@@ -297,7 +297,7 @@ One thing to watch is that the usage of the keys needs to be locked down to cert
 
 With digital signing we often use RSA. With this, Alices uses her private key (d,N) to encrypt the message and produce a signature (sig). This is then passed to Bob and who takes the signature and Bob's public key (e,N), and then decrypts to determine the message. If the message decrypted is the same of the original message, the signature is valid. Overall we create a public key (e,N) and a private key (d,N). N is known as the public modulus, and has, for security reasons, at least, 2048 bits. e is the public exponent (and typically a value of 65,537) and d is the private exponent. In the following, we create a 2K RSA key pair with:
 
-<img src="/public/rsa_sig.png" width="750px" />
+<img src="https://asecuritysite.com/public/rsa_sig.png" width="750px" />
 
 ### Creating an RSA key pair
 In AWS, we use  the KMS (Key Management Service) and which integrate a HSM (Hardware Security Module) to create and process with our keys. Within the KMS, we can create and delete keys, along with encrypting and digital signing. It supports both ECDSA and RSA signing. For padding, KMS supports PKCS1 or PSS, and for hashing within the RSA signature, we can either have SHA-256, SHA-384 or SHA-512.  In AWS, we can create a key pair with the "aws kms create-key" command:
