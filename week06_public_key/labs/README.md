@@ -39,14 +39,14 @@ We have stored our keys on a key ring file (PEM). Normally we would use a digita
 | 1 | Next create the crt file with the following: openssl req -new -key private.pem -out cert.csr  openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | View the CRT file by double clicking on it from the File Explorer. What is the type of public key method used: View the certificate file and determine: The size of the public key: The encryption method: |
 | 2 | We can now take the code signing request, and create a certificate. For this we sign the certificate with a private key, in order to validate it:<br/>openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | From the File System, click on the newly created certificate file (server.crt) and determine:<br/>The size of the public key (in bits): [512][1024][2048]<br/>The public key encryption method:<br/>Which is the hashing method that has been signed to sign the certificate: [MD5][SHA-1][SHA-256] |
 
-# AWS: Public Key Encryption
+## AWS: Public Key Encryption
 In the following figure, Bob uses Alice’s public key to encrypt data, and which creates ciphertext. Alice then decrypts this ciphertext with her private key:
 
 <p><img src="https://asecuritysite.com/public/kms_10.png" width="750px" />
 	
  <p>If we use asymmetric keys, we typically just have the choice of using RSA to encrypt and decrypt data. This is because elliptic curve cryptography does not naturally support encryption and decryption, and we must use hybrid methods (such as with ECIES).
 
-## Creating an RSA key pair in AWS
+### Creating an RSA key pair in AWS
 
 Now, let’s create an RSA key pair for encrypting a file. Our keys are contained in the KMS:
 
@@ -165,7 +165,7 @@ We can download this from the console, or from the command prompt:
 }
 ```
 
-## Encrypting with the public key
+### Encrypting with the public key
 
 We can now create a file (1.txt):
 
@@ -198,7 +198,7 @@ M
 ̠Mrqѷ5^t,]mO82cO.3jKόT %#GJ6w[hZA$AƎw3Ҽe]ƀ>jb1zͷV5i.*og>
 5
 ```
-## Decrypting with the private key
+### Decrypting with the private key
 
 Now to decrypt the file (1.enc) with the associated private key. For this, we use:
 ```
@@ -219,7 +219,7 @@ And, that’s it. Note that the two main encryption methods we can use (with pad
 <img src="https://asecuritysite.com/public/kms_18.png" width="750px" />
 
 
-# Using Python
+### Using Python
 We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption:
 
 ```
@@ -282,7 +282,7 @@ Plain: Hello
 ```
 
 
-# Conclusions
+### Conclusions
 
 And, that’s it. RSA can be used to encrypt and decrypt data, and where we encrypt with the public key and decrypt with the private key. Thus, anyone who has our public key can encrypt data for us, and for us to decrypt it with our private key. Normally RSA is not used when we have large amounts of data, and a typical use case is to encrypt a symmetric key.
 
@@ -290,7 +290,7 @@ One thing to watch is that the usage of the keys needs to be locked down to cert
 <img src="https://asecuritysite.com/public/kms_19.png" width="750px" />
 
 
-# 5	Python tutorial
+# 5 Python tutorial
 For this part of the lab, install:
 
 ```
