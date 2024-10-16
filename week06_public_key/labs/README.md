@@ -287,6 +287,7 @@ Plain: Hello
 And, that’s it. RSA can be used to encrypt and decrypt data, and where we encrypt with the public key and decrypt with the private key. Thus, anyone who has our public key can encrypt data for us, and for us to decrypt it with our private key. Normally RSA is not used when we have large amounts of data, and a typical use case is to encrypt a symmetric key.
 
 One thing to watch is that the usage of the keys needs to be locked down to certain users and that the owner of the keys needs to be carefully controlled, as, if someone deletes your keys, you will possibly not be able to decrypt files that have been encrypted with those keys. Luckily, there is a 7–30 day time window for a key to be deleted — just in case you have deleted it by mistake, or if someone has maliciously deleted it:
+
 <img src="https://asecuritysite.com/public/kms_19.png" width="750px" />
 
 
