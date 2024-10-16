@@ -31,7 +31,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
 
 
-## 4	Storing keys
+## 3	Storing keys
 We have stored our keys on a key ring file (PEM). Normally we would use a digital certificate to distribute our public key. In this part of the tutorial we will create a crt digital certificate file.
 
 | No | Description | Result | 
@@ -39,7 +39,7 @@ We have stored our keys on a key ring file (PEM). Normally we would use a digita
 | 1 | Next create the crt file with the following: openssl req -new -key private.pem -out cert.csr  openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | View the CRT file by double clicking on it from the File Explorer. What is the type of public key method used: View the certificate file and determine: The size of the public key: The encryption method: |
 | 2 | We can now take the code signing request, and create a certificate. For this we sign the certificate with a private key, in order to validate it:<br/>openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | From the File System, click on the newly created certificate file (server.crt) and determine:<br/>The size of the public key (in bits): [512][1024][2048]<br/>The public key encryption method:<br/>Which is the hashing method that has been signed to sign the certificate: [MD5][SHA-1][SHA-256] |
 
-## AWS: Public Key Encryption
+## 4 AWS: Public Key Encryption
 In the following figure, Bob uses Alice’s public key to encrypt data, and which creates ciphertext. Alice then decrypts this ciphertext with her private key:
 
 <p><img src="https://asecuritysite.com/public/kms_10.png" width="750px" />
