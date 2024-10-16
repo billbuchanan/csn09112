@@ -291,6 +291,106 @@ One thing to watch is that the usage of the keys needs to be locked down to cert
 <img src="https://asecuritysite.com/public/kms_19.png" width="750px" />
 
 
+## AWS Digital Signing
+
+### Generating the signing key pair
+
+With digital signing we often use RSA. With this, Alices uses her private key (d,N) to encrypt the message and produce a signature (sig). This is then passed to Bob and who takes the signature and Bob's public key (e,N), and then decrypts to determine the message. If the message decrypted is the same of the original message, the signature is valid. Overall we create a public key (e,N) and a private key (d,N). N is known as the public modulus, and has, for security reasons, at least, 2048 bits. e is the public exponent (and typically a value of 65,537) and d is the private exponent. In the following, we create a 2K RSA key pair with:
+
+<img src="/public/rsa_sig.png" width="750px" />
+
+### Creating an RSA key pair
+In AWS, we use  the KMS (Key Management Service) and which integrate a HSM (Hardware Security Module) to create and process with our keys. Within the KMS, we can create and delete keys, along with encrypting and digital signing. It supports both ECDSA and RSA signing. For padding, KMS supports PKCS1 or PSS, and for hashing within the RSA signature, we can either have SHA-256, SHA-384 or SHA-512.  In AWS, we can create a key pair with the "aws kms create-key" command:
+            
+```
+$ aws kms create-key --customer-master-key-spec RSA_2048 --key-usage SIGN_VERIFY --description "My RSA Key Pair"
+{
+    "KeyMetadata": {
+        "AWSAccountId": "960372818084",
+        "KeyId": "6545fae6-74d5-40ad-a5a7-cc65a885353d",
+        "Arn": "arn:aws:kms:us-east-1:960372818084:key/6545fae6-74d5-40ad-a5a7-cc65a885353d",
+        "CreationDate": "2022-12-02T20:55:10.420000-08:00",
+        "Enabled": true,
+        "Description": "My RSA Key Pair",
+        "KeyUsage": "SIGN_VERIFY",
+        "KeyState": "Enabled",
+        "Origin": "AWS_KMS",
+        "KeyManager": "CUSTOMER",
+        "CustomerMasterKeySpec": "RSA_2048",
+        "SigningAlgorithms": [
+            "RSASSA_PKCS1_V1_5_SHA_256",
+            "RSASSA_PKCS1_V1_5_SHA_384",
+            "RSASSA_PKCS1_V1_5_SHA_512",
+            "RSASSA_PSS_SHA_256",
+            "RSASSA_PSS_SHA_384",
+            "RSASSA_PSS_SHA_512"
+        ]
+    }
+}
+
+```
+
+### Creating a signature with AWS
+In AWS, we use the HSM (Hardware Security Module) to create and process with our keys. It supports both ECDSA and RSA signing. For padding it supports PKCS1 or PSS, and for hashing we have either SHA-256, SHA-384 or SHA-512. In AWS, we can create a key pair with the "aws kms create-key" command. In the following, we create a 2K key pair with:
+
+```
+$ aws kms sign  --key-id 6545fae6-74d5-40ad-a5a7-cc65a885353d --message fileb://1.txt --signing-algorithm RSASSA_PKCS1_V1_5_SHA_256  --query Signature  --output text  > 1.out
+$ base64 -i 1.out -d > 1.sig
+```
+
+The file 1.sig is a binary file, but we can view the 1.out file (as it has a Base64 format):
+
+```
+$ cat 1.out
+CG8vukZHOMvtzXas4jAiKCMgNSZHWbT2+HiLB++S2E9cxtmFH8E/jhy34NtQy/2y/ScehrcxcaVFaEyKyqUBsQiFk7QUTi04qm13sCnS0mtEBzpXMUVWaS41XOM7pAa3j37swzKy+rWOYVgvvUvWL6Zyip6cR4tdvPvW8Bk/CUfq1jds6yLadpRndte+ilVZM6syyvP5d/U1rwpiAWu3BWLLaOZwzWeEd9f40s1uv1Ag0hYZ3SxVYPQ8OCcqpgV9fjRwKg60uc1tPEPLwjlYSCQrh340E2SxKrMRWP4kbX0vaTKzFGK3fIOonwY8smQB89Fy2wEZhywQ2SCtpU1deA==
+```
+
+### Verifying the signature with AWS
+First we can verify the signature with AWS and using the "aws kms verify" command:
+```
+$ aws kms verify  --key-id 6545fae6-74d5-40ad-a5a7-cc65a885353d --message fileb://1.txt --signature fileb://1.sig --signing-algorithm RSASSA_PKCS1_V1_5_SHA_256
+            {
+            "KeyId": "arn:aws:kms:us-east-1:960372818084:key/6545fae6-74d5-40ad-a5a7-cc65a885353d",
+            "SignatureValid": true,
+            "SigningAlgorithm": "RSASSA_PKCS1_V1_5_SHA_256"
+            }
+```
+
+### Getting the public key
+Next we can export the public key from AWS with:
+```
+$ aws kms get-public-key  --key-id 6545fae6-74d5-40ad-a5a7-cc65a885353d --output text --query PublicKey | base64 --decode > mycert.der
+```
+
+This exports into a binary format for the public key file. In OpenSSL, we can then take this binary file with the public key, and convert it into Base64:
+
+```         
+$ openssl rsa -pubin -inform DER  -outform PEM -in mycert.der -pubout -out mycert.pem
+writing RSA key
+```
+We can view the public key now with:
+
+```
+$ cat mycert.pem
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw8BB3xtJPBgB4jrXCHdE
+YhkZWG6nyYVT86C0sGZGSlUtkAgW7hlDN27foXgxLK9A1HlKUkhWaudYaVL42uEc
+HihlmK0SnLZlk9j22/N82tGfUwpK9k9F3U/Cf4GoEz99lp97oDTnNTeWtUs0FvfB
+iD31FHWhXiHzRU6XFwxh93SQEYBxe4B0j/XaUb5TW1OIhbFwwk/bCZpNvQfozyYP
+kj6Yz6qRiNm0KsyBm5/TdWn7yj0D9YZ3kAhV8DtRZZIT4cvJ9yU741PZFiKM5y/5
+UB8t89nO4c6yt6sweejQZANCTIhBqSmFtYvXnijofK7WcrW7Liudtvz9N58P6T5q
+ZQIDAQAB
+-----END PUBLIC KEY-----
+```
+
+### Checking the signature with OpenSSL
+Now, we can check the signature with OpenSSL:
+```
+$ openssl dgst -sha256  -verify mycert.pem -signature 1.sig 1.txt
+Verified OK
+```
+
+
 # 5 Python tutorial
 For this part of the lab, install:
 
