@@ -146,25 +146,35 @@ Finally, change the program so that it does 256-bit AES with CBC mode.
 
 
 # AWS: Public Key Encryption
+In the following figure, Bob uses Alice’s public key to encrypt data, and which creates ciphertext. Alice then decrypts this ciphertext with her private key:
 
-
-In the following figure, Bob uses Alice’s public key to encrypt data, and which creates ciphertext. Alice then decrypts this ciphertext with her private key:</p>
-<p><img src="https://asecuritysite.com/public/kms_10.png" width="750px" /></p>
- <p>If we use asymmetric keys, we typically just have the choice of using RSA to encrypt and decrypt data. This is because elliptic curve cryptography does not naturally support encryption and decryption, and we must use hybrid methods (such as with ECIES).</p>
+<p><img src="https://asecuritysite.com/public/kms_10.png" width="750px" />
+	
+ <p>If we use asymmetric keys, we typically just have the choice of using RSA to encrypt and decrypt data. This is because elliptic curve cryptography does not naturally support encryption and decryption, and we must use hybrid methods (such as with ECIES).
 
 # Creating an RSA key pair in AWS
 
-            <p>Now, let’s create an RSA key pair for encrypting a file. Our keys are contained in the KMS:</p>
-            <p><img src="https://asecuritysite.com/public/kms_11.png" width="750px" /></p>
-            <p>Initially, we can create a Customer-managed key pair with:</p>
-            <p><img src="https://asecuritysite.com/public/kms_12.png" width="750px" /></p>
-            <p>The options are 2K, 3K or 4K RSA key pairs. Next, we can give the key an alias:</p>
-            <p><img src="https://asecuritysite.com/public/kms_13.png" width="750px" /></p>
-            <p>Then define the ownership of the keys:</p>
-            <p><img src="https://asecuritysite.com/public/kms_14.png" width="750px" /></p>
-            <p>And finally the permissions:</p>
-            <p><img src="https://asecuritysite.com/public/kms_15.png" width="750px" /></p>
-            <p>The policy is then:</p>
+Now, let’s create an RSA key pair for encrypting a file. Our keys are contained in the KMS:
+
+<img src="https://asecuritysite.com/public/kms_11.png" width="750px" />
+
+Initially, we can create a Customer-managed key pair with:
+
+<img src="https://asecuritysite.com/public/kms_12.png" width="750px" />
+
+The options are 2K, 3K or 4K RSA key pairs. Next, we can give the key an alias:
+
+<img src="https://asecuritysite.com/public/kms_13.png" width="750px" />
+
+Then define the ownership of the keys:
+
+<img src="https://asecuritysite.com/public/kms_14.png" width="750px" />
+
+And finally the permissions:
+
+<img src="https://asecuritysite.com/public/kms_15.png" width="750px" />
+
+The policy is then:
 ```
 {
     "Id": "key-consolepolicy-3",
@@ -239,9 +249,9 @@ In the following figure, Bob uses Alice’s public key to encrypt data, and whic
     ]
 }
 ```
-            <p>Once created, we cannot access the private key, but will be able to view the public key:</p>
-            <p><img src="https://asecuritysite.com/public/kms_16.png" width="750px" /></p>
-            <p>We can download this from the console, or from the command prompt:</p>
+Once created, we cannot access the private key, but will be able to view the public key:
+<img src="https://asecuritysite.com/public/kms_16.png" width="750px" />
+We can download this from the console, or from the command prompt:
             ```
 % aws kms get-public-key --key-id alias/PublicKeyForDemo
 {
@@ -259,25 +269,25 @@ In the following figure, Bob uses Alice’s public key to encrypt data, and whic
 
 # Encrypting with the public key
 
-            <p>We can now create a file (1.txt):</p>
-            <p><img src="https://asecuritysite.com/public/kms_17.png" width="750px" /></p>
-            <p>And now encrypt using RSA with OAEP padding (RSAES_OAEP_SHA_1):</p>
+We can now create a file (1.txt):
+<img src="https://asecuritysite.com/public/kms_17.png" width="750px" />
+And now encrypt using RSA with OAEP padding (RSAES_OAEP_SHA_1):
             ```
 $ aws kms encrypt  --key-id alias/PublicKeyForDemo   --plaintext fileb://1.txt  --query CiphertextBlob --output text --encryption-algorithm RSAES_OAEP_SHA_1 > 1.out 
 ```
-            <p>This will create a Base64 output of the encrypted file (1.out). We can list the file with:</p>
+This will create a Base64 output of the encrypted file (1.out). We can list the file with:
 
 ```
 % cat 1.out
 nORNC8PQotPOpf7R1XlCaz8pQKEn5k6r3VOvLZk9ipzl7mGwV25HVqDc/ocK58eV/3u8IQVZDK81UPxk7D1BSc5LN5lvtxnIx8G7TfePxTDuu2+EM5zavvU2S/2ZS+DOV2yHthHfNRKSDLB8a9oMzKBNcsfZBLGZEeZxEs/Rt5T7NdwWXnQsXbrgBJnvbfnNTzgyY4lPLjNqS4DPjA4UVI/3ICUjsEdKNvOv3XebBFvRaJ1a3flBJM5Bxo73gJSidwEZgTPSvGVdA5KOxoDuFh6gPmr/ztRirrrmkjF6zbdWlRfaNb9pLipvZz4KyDUkkKH0v2iYb+zAWzemuZ47sw==
 ```
 
-            <p>This can be transmitted or stored. But, if we want to decrypt this, we need to convert the Base64 encoded data into binary:</p>
+This can be transmitted or stored. But, if we want to decrypt this, we need to convert the Base64 encoded data into binary:
 ```
 $ base64 -i 1.out  --decode > 1.enc
 ```
 
-            <p>Now, if we list 1.enc we see that it has binary data:</p>
+Now, if we list 1.enc we see that it has binary data:
 ```
 $ cat 1.enc
 M
@@ -290,27 +300,27 @@ M
 ```
 # Decrypting with the private key
 
-            <p>Now to decrypt the file (1.enc) with the associated private key. For this, we use:</p>
+Now to decrypt the file (1.enc) with the associated private key. For this, we use:
 ```
 $ aws kms decrypt --key-id alias/PublicKeyForDemo --output text --query Plaintext --ciphertext-blob fileb://1.enc --encryption-algorithm RSAES_OAEP_SHA_1 > 2.out
 ```
 
-            <p>This produces an output file of 2.out. Again, this is in a Base64 format:</p>
+This produces an output file of 2.out. Again, this is in a Base64 format:
 ```
 $ cat 2.out
 VGhpcyBpcyBteSBzZWNyZXQgZmlsZS4K
 ```
-            <p>so we need to decode this with:</p>
+so we need to decode this with:
 ```
 $ base64 -i 2.out  --decode
 This is my secret file.
 ```
-            <p>And, that’s it. Note that the two main encryption methods we can use (with padding) are OEAP SHA-1 and OAEP SHA-256:</p>
-            <p><img src="https://asecuritysite.com/public/kms_18.png" width="750px" /></p>
+And, that’s it. Note that the two main encryption methods we can use (with padding) are OEAP SHA-1 and OAEP SHA-256:
+<img src="https://asecuritysite.com/public/kms_18.png" width="750px" />
 
 
 # Using Python
-            <p>We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption:</p>
+We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption:
 
             ```
 import base64
@@ -363,7 +373,7 @@ print(f"Cipher {cipher}")
 plaintext=decrypt(cipher,KEY_ID)
 print(f"Plain: {plaintext.decode()}")
 ```
-            <p>A sample run gives:</p>
+A sample run gives:
 ```
 KMS key ID 68ded69b-6c19-4b34-9f91-f8c2628ee612
 Plaintext: Hello
@@ -374,10 +384,10 @@ Plain: Hello
 
 # Conclusions
 
-            <p>And, that’s it. RSA can be used to encrypt and decrypt data, and where we encrypt with the public key and decrypt with the private key. Thus, anyone who has our public key can encrypt data for us, and for us to decrypt it with our private key. Normally RSA is not used when we have large amounts of data, and a typical use case is to encrypt a symmetric key.</p>
+And, that’s it. RSA can be used to encrypt and decrypt data, and where we encrypt with the public key and decrypt with the private key. Thus, anyone who has our public key can encrypt data for us, and for us to decrypt it with our private key. Normally RSA is not used when we have large amounts of data, and a typical use case is to encrypt a symmetric key.
 
-            <p>One thing to watch is that the usage of the keys needs to be locked down to certain users and that the owner of the keys needs to be carefully controlled, as, if someone deletes your keys, you will possibly not be able to decrypt files that have been encrypted with those keys. Luckily, there is a 7–30 day time window for a key to be deleted — just in case you have deleted it by mistake, or if someone has maliciously deleted it:</p>
-            <p><img src="https://asecuritysite.com/public/kms_19.png" width="750px" /></p>
+One thing to watch is that the usage of the keys needs to be locked down to certain users and that the owner of the keys needs to be carefully controlled, as, if someone deletes your keys, you will possibly not be able to decrypt files that have been encrypted with those keys. Luckily, there is a 7–30 day time window for a key to be deleted — just in case you have deleted it by mistake, or if someone has maliciously deleted it:
+<img src="https://asecuritysite.com/public/kms_19.png" width="750px" />
 
 
 
