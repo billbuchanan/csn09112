@@ -21,13 +21,13 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 | No | Description | Result | 
 | -------|--------|---------|
-| 1 | First we need to generate a key pair with: openssl genrsa -out private.pem 1024	This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
-| 2 | Use following command to view the output file: cat private.pem | What can be observed at the start and end of the file: |
-| 3 | Next we view the RSA key pair: openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
-| 4 | Let’s now secure the encrypted key with 3-DES: openssl rsa -in private.pem -des3 -out key3des.pem | |
-| 5 | Next we will export the public key: openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
-| 6 | Now we will encrypt with our public key: openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
-| 7 | And then decrypt with our private key: openssl rsautl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
+| 1 | First we need to generate a key pair with: <br/>openssl genrsa -out private.pem 1024	<br/>This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
+| 2 | Use following command to view the output file: <br/>cat private.pem | What can be observed at the start and end of the file: |
+| 3 | Next we view the RSA key pair: <br/>openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
+| 4 | Let’s now secure the encrypted key with 3-DES: <BR/>openssl rsa -in private.pem -des3 -out key3des.pem | |
+| 5 | Next we will export the public key: <BR/>openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
+| 6 | Now we will encrypt with our public key: <br/>openssl pkeyutl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
+| 7 | And then decrypt with our private key: <br/>openssl pkeyutl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
 | 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
 
 
@@ -220,7 +220,13 @@ And, that’s it. Note that the two main encryption methods we can use (with pad
 
 
 ### Using Python
-We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption:
+We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption. Note, Boto3 was been depreciated for Pythofn 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+
+```
+python3 -W ignore 1.py
+```
+
+The code is:
 
 ```
 import base64
