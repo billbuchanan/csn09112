@@ -220,7 +220,13 @@ And, that’s it. Note that the two main encryption methods we can use (with pad
 
 
 ### Using Python
-We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption:
+We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption. Note, Boto3 was been depreciated for Pythofn 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+
+```
+python3 -W ignore 1.py
+```
+
+The code is:
 
 ```
 import base64
