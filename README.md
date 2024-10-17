@@ -17,7 +17,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 4 | 3 Oct 2024 | 4. Ciphers and Fundamentals [<a href="https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers">Link</a>] | AWS Security and Server Infrastructure [Lab 3](https://github.com/billbuchanan/csn09112/tree/master/week04_ciphers/labs)  |
 | 5 | 10 Oct 2024 | 5. Secret Key <br />6. Hashing [<a href="https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey">Link</a>] | Symmetric Key and Hashing [Lab 4](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs) |
 | 6 | 17 Oct 2024 | 7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public Key and Key Exchange [Lab 5](https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/labs) | 
-| 7 | 24 Oct 2024 | Reading week | Reading week |
+| 7 | 24 Oct 2024 | Reading week/Revision session | Reading week/Cipher Challenge |
 | 8 | 31 Oct 2024 | 9. Digital Certificates | Certificates [Lab 6](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
 | 9 | 7 Nov 2024 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  |
 | 10 | 14 Nov 2024 | 10 Network Forensics [here](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics) | Network Forensics [Lab 7](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics/lab) | 
