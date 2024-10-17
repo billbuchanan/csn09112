@@ -301,7 +301,7 @@ One thing to watch is that the usage of the keys needs to be locked down to cert
 
 ### Generating the signing key pair
 
-With digital signing we often use RSA. With this, Alices uses her private key (d,N) to encrypt the message and produce a signature (sig). This is then passed to Bob and who takes the signature and Bob's public key (e,N), and then decrypts to determine the message. If the message decrypted is the same of the original message, the signature is valid. Overall we create a public key (e,N) and a private key (d,N). N is known as the public modulus, and has, for security reasons, at least, 2048 bits. e is the public exponent (and typically a value of 65,537) and d is the private exponent. In the following, we create a 2K RSA key pair with:
+With digital signing we often use RSA. With this, Alices uses her private key (d,N) to encrypt the message and produce a signature (sig). This is then passed to Bob and who takes the signature and Alice's public key (e,N), and then decrypts to determine the message. If the message decrypted is the same of the original message, the signature is valid. Overall we create a public key (e,N) and a private key (d,N). N is known as the public modulus, and has, for security reasons, at least, 2048 bits. e is the public exponent (and typically a value of 65,537) and d is the private exponent. In the following, we create a 2K RSA key pair with:
 
 <img src="https://asecuritysite.com/public/rsa_sig.png" width="750px" />
 
