@@ -26,8 +26,8 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 3 | Next we view the RSA key pair: <br/>openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
 | 4 | Let’s now secure the encrypted key with 3-DES: <BR/>openssl rsa -in private.pem -des3 -out key3des.pem | |
 | 5 | Next we will export the public key: <BR/>openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
-| 6 | Now we will encrypt with our public key: <br/>openssl rsautl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
-| 7 | And then decrypt with our private key: <br/>openssl rsautl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
+| 6 | Now we will encrypt with our public key: <br/>openssl pkeyutl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
+| 7 | And then decrypt with our private key: <br/>openssl pkeyutl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
 | 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
 
 
