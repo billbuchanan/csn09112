@@ -226,7 +226,7 @@ We can use the same type of approach with Python. In the following case we use b
 python3 -W ignore 1.py
 ```
 
-The code is:
+The code is (remember to change the key ID to your own key):
 
 ```
 import base64
@@ -268,7 +268,7 @@ def decrypt(ciphertext, alias):
 
 kms_client = boto3.client("kms", region_name=AWS_REGION)
 
-KEY_ID = '68ded69b-6c19-4b34-9f91-f8c2628ee612'
+**KEY_ID = '68ded69b-6c19-4b34-9f91-f8c2628ee612'**
 kms = enable_kms_key(KEY_ID)
 print(f'Public Key KMS ID {KEY_ID} ')
 msg='Hello'
