@@ -28,7 +28,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 5 | Next we will export the public key: <BR/>openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
 | 6 | Now we will encrypt with our public key: <br/>openssl pkeyutl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
 | 7 | And then decrypt with our private key: <br/>openssl pkeyutl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
-| 8 | If you are working in the lab, now give your password to your neighbour, and get them to encrypt a secret message for you. | Did you manage to decrypt their message? [Yes][No] |
+| 8 | If you are working in the lab, give your public key to your neighbour to encrypt a message for them and send it back to you to decrypt it with your private key. [Yes][No] |
 
 
 ## 3	Storing keys
