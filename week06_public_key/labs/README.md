@@ -268,7 +268,7 @@ def decrypt(ciphertext, alias):
 
 kms_client = boto3.client("kms", region_name=AWS_REGION)
 
-**KEY_ID = '68ded69b-6c19-4b34-9f91-f8c2628ee612'**
+KEY_ID = '<ADD YOUR KEY ID HERE>'
 kms = enable_kms_key(KEY_ID)
 print(f'Public Key KMS ID {KEY_ID} ')
 msg='Hello'
