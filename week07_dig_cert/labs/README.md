@@ -6,7 +6,7 @@ The aim of this lab is to give an introduction to ciphers, basic encoding/decodi
 
 4 hours (two supervised hours in the lab, and two additional unsupervised hours).
 
-The lab is [here](https://youtu.be/Z6rDrdwsr8Y)
+The lab is [here](https://youtu.be/Z6rDrdwsr8Y) and a demo is [here](https://www.youtube.com/watch?v=Z6rDrdwsr8Y).
 
 ## Learning activities:
 At the end of this lab, you should understand:
