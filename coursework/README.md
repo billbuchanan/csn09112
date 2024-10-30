@@ -8,9 +8,9 @@ Author: Bill Buchanan
 You can download the Bot onto the Linux machine using:
 
 ```
-wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw2023_2024.zip?raw=true'
-mv cw2023_2024.zip?raw=true cw2023_2024.zip
-unzip cw2023_2024.zip
+wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw2024_2025.zip?raw=true'
+mv cw2024_2025.zip?raw=true cw2025_2025.zip
+unzip cw2024_2025.zip
 ```
 
 
@@ -23,20 +23,20 @@ mono c.exe
 The output should show the form of:
 
 ```
-Bot Controller Version 5.0
+Bot Controller Version 7.0
 ```
 
 Take a note of the IP address of the controller (W.X.Y.Z). Now go to your Windows machine, and run:</p>
 
 ```
-b.exe W.X.Y.Z
+b.exe W.X.Y.Z MATRIC
 ```
-
+and where MATRIC is your Matriculation Number.
 
 ```
-Bot Version 6.0 - 2023/2024
+Bot Version 7.0 - 2024/2025
 Please run with bot w.x.y.z, where w.x.y.z is the address of your controller.
-Version 6.0
+Hello 111111
 ```
 
 The bot and the controller should connect to each other.
