@@ -129,9 +129,9 @@ Setup your Windows 2022 for a remote desktop connection (see a previous lab). Th
 ### D.2	Setup Linux
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
 ```
-# wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/c.zip?raw=true'
-# mv c.zip?raw=true c.zip
-# unzip c.zip
+# wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw2024_2025.zip?raw=true'
+# mv cw2024_2025.zip?raw=true cw2025_2025.zip
+# unzip cw2024_2025.zip
 ```
 
 This should extract the files of botnet.exe and controller.exe. The controller will wait for a connection from the botnet.  The ports used for the connection will range from 5,000 to 5,100, so open up the firewall on your Linux AWS instance (Figure 3).
@@ -140,7 +140,7 @@ This should extract the files of botnet.exe and controller.exe. The controller w
 
 Next run controller.exe (Figure 4) with:
 ```
-# mono controller.exe
+# mono c.exe
 ```
  
 ![Figure 4: Running the controller.exe ](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework04.png)    
@@ -150,7 +150,7 @@ There will be no network connections shown yet, as we now need to run the Botnet
 ### D.3	Running the bot
 Now we will run the bot, and make a connection. For this determine the public IP address of the Linux instance, and then run the bot with this address as an argument. For example, if the IP address of your Linux instance is 54.205.20.103, the bot can be run with:
 ```
-C:\> botnet 54.205.20.103
+C:\> b 54.205.20.103
 ```
 Make sure that you have made a connection with the controller (as see in Figure 4 and Figure 5). 
 
