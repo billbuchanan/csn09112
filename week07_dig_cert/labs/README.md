@@ -43,7 +43,7 @@ Boot up your Linux VM, and download the following archive:
 
 Next install pyopenssl with:
 ```
-pip3 install pyopenssl
+pip3 install pyopenssl==23
 ```
 
 Extract the certificates into the home folder, and then move into that folder. Now use openssl to try a password:
