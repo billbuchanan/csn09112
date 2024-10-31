@@ -130,8 +130,8 @@ Set up your Windows 2022 for a remote desktop connection (see a previous lab). T
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
 ```
 # wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2024_2025.zip?raw=true'
-# mv cw2024_2025.zip?raw=true cw2025_2025.zip
-# unzip cw2024_2025.zip
+# mv cw_2024_2025.zip?raw=true cw_2024_2025.zip
+# unzip cw_2024_2025.zip
 ```
 
 This should extract the files of botnet.exe and controller.exe. The controller will wait for a connection from the botnet.  The ports used for the connection will range from 5,000 to 5,100, so open up the firewall on your Linux AWS instance (Figure 3).
