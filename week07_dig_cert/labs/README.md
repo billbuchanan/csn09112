@@ -129,7 +129,7 @@ Set up your Windows 2022 for a remote desktop connection (see a previous lab). T
 ### D.2	Setup Linux
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
 ```
-# wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw2024_2025.zip?raw=true'
+# wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2024_2025.zip?raw=true'
 # mv cw2024_2025.zip?raw=true cw2025_2025.zip
 # unzip cw2024_2025.zip
 ```
