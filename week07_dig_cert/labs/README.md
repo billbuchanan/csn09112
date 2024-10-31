@@ -138,6 +138,8 @@ This should extract the files of botnet.exe and controller.exe. The controller w
 
 ![Figure 3: Opening up Ports 5,000 to 5,100 on Linux](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework03.png)   
 
+You now need to install mono on your AWS Linux instance. Details are [here](https://blog.kloud.com.au/2016/05/30/installing-mono-into-amazon-linux/).
+
 Next run controller.exe (Figure 4) with:
 ```
 # mono c.exe
