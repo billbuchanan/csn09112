@@ -103,7 +103,7 @@ Ref: https://pyopenssl.org/en/0.15.1/api/crypto.html#x509name-objects
 ## D Coursework
 The coursework specification is at: [here](https://github.com/billbuchanan/csn09112/tree/master/coursework)
 
-Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, the pass secret messages to each other. You first task is to analyse the messages they send, and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the presence of the bot.
+Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, the pass secret messages to each other. Your first task is to analyse the messages they send and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the presence of the bot.
 
  
 ![Figure 1: Coursework setup](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework01.png) 
@@ -113,9 +113,9 @@ Overall, you must analyse the operation of a bot and a controller, and where the
 You can complete your coursework either on vSoC or within AWS.  This section will setup your environment for Snort and the Botnet for Linux and Windows 2022.
 
 ### D.1	Setup Windows
-Setup your Windows 2022 for a remote desktop connection (see a previous lab). The steps are then:
+Set up your Windows 2022 for a remote desktop connection (see a previous lab). The steps are then:
 
-* Install .NET 2.0 and .NET 3.0. For this select Server Manager, and then add “.NET Framework 3.5 Features” (as shown in Figure 2). 
+* Install .NET 2.0 and .NET 3.0. For this, select Server Manager, and then add “.NET Framework 3.5 Features” (as shown in Figure 2). 
 * Install WinPCap from https://www.winpcap.org/.
 * Install Wireshark from https://www.wireshark.org/download.html.
 * Install Snort 2.9.9.0 from https://www.snort.org/downloads/archive/snort/Snort_2_9_9_0_Installer.exe 
@@ -150,9 +150,9 @@ There will be no network connections shown yet, as we now need to run the Botnet
 ### D.3	Running the bot
 Now we will run the bot, and make a connection. For this determine the public IP address of the Linux instance, and then run the bot with this address as an argument. For example, if the IP address of your Linux instance is 54.205.20.103, the bot can be run with:
 ```
-C:\> b 54.205.20.103
+C:\> b 54.205.20.103 XXXXXXXX
 ```
-Make sure that you have made a connection with the controller (as see in Figure 4 and Figure 5). 
+Make sure that you have made a connection with the controller (as seen in Figure 4 and Figure 5), and where XXXXXXXX is your matriculation number.
 
 
 ![Figure 5: Running the botnet on Windows 2022](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework05.png)  
