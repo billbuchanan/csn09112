@@ -86,6 +86,6 @@ Tables given are ASCII table, Morse and Base 64.
 
 The two main labs you should know about are here:
 
-* Lab 5: Crypto - [Lab 5](https://github.com/billbuchanan/csn09112/blob/master/week06_public_key/labs/csn09112_lab05.pdf).
-* Lab 6: Crypto - [Lab 6](https://github.com/billbuchanan/csn09112/blob/master/week07_dig_cert/labs/lab06.pdf).
+* Lab 5: Crypto - [Lab 5](hhttps://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs).
+* Lab 6: Crypto - [Lab 6](https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/labs).
 
