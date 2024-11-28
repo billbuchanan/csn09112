@@ -286,7 +286,7 @@ def newScan(host, publish='off', startNew='on', all='done', ignoreMismatch='on')
     payload.pop('startNew')
 
     while results['status'] != 'READY' and results['status'] != 'ERROR':
-        time.sleep(30)
+        time.sleep(120)
         results = requestAPI(path, payload)
 
     return results
