@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be no lectures or labs in Week 9. The table you will be given is [here](https://asecuritysite.com/public/table.pdf).
 
-Time for test: Thursday, 7 November 2024 (6-8pm, JKCC)
+Time for test: Thursday, 6 November 2025 (6-8pm, JKCC)
 
 ## Background
 
