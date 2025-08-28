@@ -60,7 +60,7 @@ The controller and the bot should be placed on different hosts, and then enabled
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk) in a PDF format, if possible. The hand-in date is Thursday 19 December 2024 (11:55pm). It will be marked as follows:
+The coursework should be submitted via Turnitin (submit.ac.uk) in a PDF format, if possible. The hand-in date is Friday 19 December 2025 (11:55pm). It will be marked as follows:
 
 ### Research [20 marks]
 
