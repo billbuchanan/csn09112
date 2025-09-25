@@ -142,7 +142,7 @@ On the Windows host, ping 10.10.y.254 and 10.10.y.7 interfaces. You should now b
 
 On the Windows host, ping 10.10.x.254 and 10.10.x.7 interfaces. You should now be able to ping them.
 
-On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port?
+On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port? The answer should be no, as the routing has not been set yet.
 
 Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 10.221.3.254.
 
