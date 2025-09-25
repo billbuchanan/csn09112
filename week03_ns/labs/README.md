@@ -413,7 +413,8 @@ Run NMAP from the Private network with: nmap –sP 10.221.0.0/24
 Which hosts are on-line?
 
 
-Now pick an address which is (where GROUP ID is your ID number):
+Now pick an address which is (where GROUP ID is the third digit of your private network address), eg if your private address is 10.10.43.0, then set up the address of 10.221.2.43:
+
 10.221.2.[GROUP ID]
 
 Now, on the firewall, setup a 1:1 mapping of the External IP address that you have selected and the Internal IP address on the DMZ (Figure 3).
