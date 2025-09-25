@@ -354,15 +354,15 @@ What is the FTP status code for an incorrect login:
 
 What is the FTP status code for a correct login:
 
-Ensure you have snort installed by running `snort -h`. 
-If you have installation issues, run a `sudo apt-get update` first.
+<!--- Ensure you have snort installed by running `snort -h`. --->
+<!---If you have installation issues, run a `sudo apt-get update` first.
 
 Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint, you need to detect “530” in the Port 21 connection.
 
 Which rule have you used:
 
 
-Rerun Hydra and start Snort to detect incorrect logins. Did it detect the scan? [Yes/No]
+Rerun Hydra and start Snort to detect incorrect logins. Did it detect the scan? [Yes/No] --->
 
 
 Next, run Hydra and crack the username and the password for the Web server. With these usernames and passwords we will target the DVWA site. First access the Web server from:
