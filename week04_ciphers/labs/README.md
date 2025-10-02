@@ -274,9 +274,9 @@ Has it changed the welcome? [Yes/No]
 The main logging output is in the /var/log folder. Go into this folder and observe some of the files in there. Identify the contents of the following files:
 
 ```
-What are the likely contents of the “secure” file?
+What are the likely contents of the “secure” file? (auth.log in Ubuntu)
 
-What are the likely contents of the “boot.log” file?
+What are the likely contents of the “boot.log” file? (kern.log in Ubuntu)
 
 List the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
 
