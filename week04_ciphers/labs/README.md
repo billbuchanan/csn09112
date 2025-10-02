@@ -210,8 +210,8 @@ Figure 10: EC2 Instance Connect terminal
 
 Now examine the running services on the instance with:
 ```
-$ netstat -i | grep tcp
-$ netstat -i | grep udp
+$ netstat -l | grep tcp
+$ netstat -l | grep udp
 ```
 Which of the main services are running:
 
