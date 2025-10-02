@@ -278,13 +278,13 @@ What are the likely contents of the “secure” file?
 
 What are the likely contents of the “boot.log” file?
 
-List the log/httpd/access_log file. What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
+List the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
 
 
-Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file. Did it detect the new browser type?
+Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). Did it detect the new browser type?
 
 
-Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file. What is the status code returned for the access?
+Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What is the status code returned for the access?
 ```
 
 
@@ -317,6 +317,7 @@ PasswordAuthentication yes
 Now restart the SSH service with:
 ```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo systemctl restart sshd
+(sudo systemctl restart ssh on Ubuntu)
 ```
 ```
 Can you now connect to your instance with the new user and password (but change for the IP address of your instance):
