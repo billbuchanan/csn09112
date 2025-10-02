@@ -762,7 +762,7 @@ At the end of the lab, you should only have two instances. Please either termina
 
 # Appendix A
 
-Note, if you are using a Microsoft Windows system, you will have to use icacls to make the file read-only. If you are using a domain (such as with NAPIER-MAIL, you would defined your domain name with your matriculation number, such as:
+Note, if you are using a Microsoft Windows system, you will have to use icacls through the Command Terminal to make the file read-only. If you are using a domain (such as with NAPIER-MAIL, you would defined your domain name with your matriculation number, such as:
 
 ```
 > icacls.exe mykey.pem /reset
