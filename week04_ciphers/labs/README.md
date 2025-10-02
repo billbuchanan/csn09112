@@ -220,11 +220,21 @@ Which of the main services are running:
 
 ## C.4	Installing a Web server
 Now we will install a Web server on the instance with:
+
+Amazon Linux Commands
 ```
 sudo yum update -y
 sudo yum install -y httpd.x86_64
 sudo systemctl start httpd.service
 sudo systemctl enable httpd.service
+```
+Ubuntu Commands
+```
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y apache2
+sudo systemctl start apache2
+sudo systemctl enable apache2
 ```
 Next open up a browser on your computer and access your instance for Web access.
 
