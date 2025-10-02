@@ -306,12 +306,23 @@ passwd: all authentication tokens updated successfully.
 
 Now we will add the new user to the login. For this, we use:
 
+Amazon Linux
 ```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
    Add line of (see Figure 15):
 AllowUsers ec2-user napier
    Change the following to “yes” (see Figure 16):
 PasswordAuthentication yes
+```
+Ubuntu
+```
+[ubuntu@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
+   Add line of (similar to Figure 15):
+AllowUsers ubuntu napier
+   Change the following to “yes” (see Figure 16):
+PasswordAuthentication yes
+   Comment out the following:
+#KbdInteractiveAuthentication no
 ```
 
 Now restart the SSH service with:
