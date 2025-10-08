@@ -1,9 +1,17 @@
-Try not to look at these answers, unless you really have too ..
+Try not to look at these answers, unless you really have to..
 
 ## Symmetric
 
-## 10
+## 13
 
+Part 1 (password is glasgow):
+```
+echo "U2FsdGVkX1+7VpBGwevibQGgescaz5nsArtGLNqFaXk="  | openssl enc -d -aes-128-cbc  -pass pass:glasgow -base64 -pbkdf2
+banana
+
+```
+
+Part 2 (password is edinburgh): 
 ```
 echo "U2FsdGVkX18vpjgccu7VkPZrkncqADuy1kVKU9LbLec=" | openssl enc -d -aes-128-cbc  -pass pass:edinburgh -base64 -pbkdf2
 kiwi
