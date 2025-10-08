@@ -4,7 +4,7 @@
 
 Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
-We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). Log into vSoC 2, and select your Kali host  on the public network. You should open up the lab in your Kali instance so that you can copy and paste from the document into your Kali console. The link is here:
+We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). Log into vSoC 2, and select your Kali host on the public network. You should open up the lab in your Kali instance so that you can copy and paste from the document into your Kali console. The link is here:
 
 https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs 
 
@@ -39,7 +39,7 @@ echo 9Z+NtmCdQSpmRl+eZebFXQ== | openssl enc -aes-128-cbc -pass pass:"london" -d 
 Hello     
 ```  
 
-For a ciphertext for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “tZCdiQE4L6QT+Dff82F5bw==”   [qwerty][inkwell][london][paris][cake]
+For a ciphertext for 256-bit AES CBC and a message of “Hello” with a salt value of  ```241fa86763b85341```, try the following passwords, and determine the password used for a ciphertext of ```tZCdiQE4L6QT+Dff82F5bw==```   [qwerty][inkwell][london][paris][cake]
 
 
 10 Now, use the decryption method to prove that you can decrypt the ciphertext.
