@@ -2,7 +2,70 @@ Try not to look at these answers, unless you really have to..
 
 # Symmetric
 
-## 12
+## Q2
+```
+% openssl version
+OpenSSL 3.3.1 4 Jun 2024 (Library: OpenSSL 3.3.1 4 Jun 2024)
+```
+
+## Q3
+```
+% openssl prime -hex 1111 
+1111 (1111) is not prime
+
+```
+
+## Q4
+```
+% openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin -pbkdf2
+enter AES-256-CBC encryption password:
+Verifying - enter AES-256-CBC encryption password:
+% cat encrypted.bin 
+Salted__?P*?!\ ???	8???]?\[?B%   
+```
+
+## Q5
+
+```
+% openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin -base64 -pbkdf2
+enter AES-256-CBC encryption password:
+Verifying - enter AES-256-CBC encryption password:
+% cat encrypted.bin 
+U2FsdGVkX18fxEIzLHSfpYfpaLajibZ7ScHDCqemSEw=
+```
+
+## Q6
+```
+% openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin -base64 -pbkdf2
+enter AES-256-CBC encryption password:
+Verifying - enter AES-256-CBC encryption password:
+% cat encrypted.bin
+U2FsdGVkX19d2L46jUg46+IO1WOOAjKJ/0O473YMxlI=
+```
+
+We use a random salt value each time, as we have now specified a salt value.
+
+## Q7
+```
+% openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64 -pbkdf2
+My message
+```
+## Q9
+
+```
+echo -n "Hello" | openssl enc -aes-256-cbc -pass pass:"paris" -e -base64 -S 241fa86763b85341 -pbkdf2
+tZCdiQE4L6QT+Dff82F5bw==
+```
+
+
+## Q10
+
+```
+echo tZCdiQE4L6QT+Dff82F5bw== | openssl enc -aes-256-cbc -pass pass:paris"" -d  -base64 -S 241fa86763b85341 -pbkdf2
+Hello
+```
+
+## Q12
 
 ```
 echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341 -pbkdf2
@@ -20,7 +83,7 @@ U2FsdGVkX1/VCIe2O1KaYL4NhwY5lpAPO9wMtyWc9Xo=
 
 With the first command, we use the same salt value each time, but the second command uses a random salt value, so it will change each time. 
 
-## 13
+## Q13
 
 Part 1 (password is glasgow):
 ```
@@ -38,7 +101,7 @@ kiwi
 
 # Hashing
 
-## 1
+## Q1
 ```
 Edinburgh - 03CF54D8CE19777B12732B8C50B3B66F
 Glasgow - D586293D554981ED611AB7B01316D2D5
@@ -46,7 +109,7 @@ Falkirk - 48E935332AADEC763F2C82CDB4601A25
 Stirling - EE19033300A54DF2FA41DB9881B4B723
 ```
 
-## 2
+## Q2
 ```
 MD5: 32 hex characters (128 bits)
 SHA-1: 40 hex characters (160 bits)
