@@ -1,5 +1,15 @@
 Try not to look at these answers, unless you really have too ..
 
+## Symmetric
+
+## 10
+
+```
+echo "U2FsdGVkX18vpjgccu7VkPZrkncqADuy1kVKU9LbLec=" | openssl enc -d -aes-128-cbc  -pass pass:edinburgh -base64 -pbkdf2
+kiwi
+
+```
+
 ## Hashing
 
 ## 1
