@@ -10,7 +10,7 @@ https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs
 
 ![](https://github.com/billbuchanan/csn09112/blob/master/zadditional/kali001.png)
 
-## Symmetric Key
+## A Symmetric Key
 
 | No | Description | Result | 
 |-------|--------|---------|
@@ -85,7 +85,7 @@ U2FsdGVkX18vpjgccu7VkPZrkncqADuy1kVKU9LbLec=
 
 What is the fruit?
 
-## Hashing
+## B Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
@@ -191,7 +191,7 @@ From Kali, download the following ZIP file: [here](http://asecuritysite.com/lett
 View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? 
 
 
-## Hashing Cracking (MD5)
+## C Hashing Cracking (MD5)
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 
@@ -287,7 +287,7 @@ Admin:
 
 Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
 
-## AWS Cryptography
+## D AWS Cryptography
 We are generally moving our security into the public cloud, and thus many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
 
 ### Symmetric key
