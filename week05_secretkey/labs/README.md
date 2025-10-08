@@ -54,7 +54,37 @@ echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241
 echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt -pbkdf2
 ```
 What do you observe? Why do you think causes the changes? 
- 
+
+13. We don't always need to use a file to save the cipher, too. With the following, we will encrypt the plaintext of "melon":
+
+```
+echo "melon" | openssl enc -e -aes-128-cbc  -pass pass:stirling -base64 -pbkdf2         
+U2FsdGVkX18cryB3vdNj+Tax1PGecO6ZOW2WL1LmdKQ=
+```
+and then we can decrypt with:
+
+```
+echo "U2FsdGVkX18cryB3vdNj+Tax1PGecO6ZOW2WL1LmdKQ=" | openssl enc -d -aes-128-cbc -pass pass:stirling -base64 -pbkdf2
+
+melon
+```
+
+Now crack the following cipher using a Scottish city as a password (the password is in lower case):
+
+```
+U2FsdGVkX1+7VpBGwevibQGgescaz5nsArtGLNqFaXk=
+```
+
+What is the fruit in the plaintext?
+
+Now try:
+
+```
+U2FsdGVkX18vpjgccu7VkPZrkncqADuy1kVKU9LbLec=
+```
+
+What is the fruit?
+
 ## Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
