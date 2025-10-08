@@ -210,8 +210,8 @@ Figure 10: EC2 Instance Connect terminal
 
 Now examine the running services on the instance with:
 ```
-$ netstat -i | grep tcp
-$ netstat -i | grep udp
+$ netstat -l | grep tcp
+$ netstat -l | grep udp
 ```
 Which of the main services are running:
 
@@ -220,11 +220,21 @@ Which of the main services are running:
 
 ## C.4	Installing a Web server
 Now we will install a Web server on the instance with:
+
+Amazon Linux Commands
 ```
 sudo yum update -y
 sudo yum install -y httpd.x86_64
 sudo systemctl start httpd.service
 sudo systemctl enable httpd.service
+```
+Ubuntu Commands
+```
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y apache2
+sudo systemctl start apache2
+sudo systemctl enable apache2
 ```
 Next open up a browser on your computer and access your instance for Web access.
 
@@ -264,17 +274,17 @@ Has it changed the welcome? [Yes/No]
 The main logging output is in the /var/log folder. Go into this folder and observe some of the files in there. Identify the contents of the following files:
 
 ```
-What are the likely contents of the “secure” file?
+What are the likely contents of the “secure” file? (auth.log in Ubuntu)
 
-What are the likely contents of the “boot.log” file?
+What are the likely contents of the “boot.log” file? (kern.log in Ubuntu)
 
-List the log/httpd/access_log file. What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
-
-
-Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file. Did it detect the new browser type?
+List the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
 
 
-Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file. What is the status code returned for the access?
+Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). Did it detect the new browser type?
+
+
+Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What is the status code returned for the access?
 ```
 
 
@@ -296,6 +306,7 @@ passwd: all authentication tokens updated successfully.
 
 Now we will add the new user to the login. For this, we use:
 
+Amazon Linux
 ```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
    Add line of (see Figure 15):
@@ -303,10 +314,21 @@ AllowUsers ec2-user napier
    Change the following to “yes” (see Figure 16):
 PasswordAuthentication yes
 ```
+Ubuntu
+```
+[ubuntu@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
+   Add line of (similar to Figure 15):
+AllowUsers ubuntu napier
+   Change the following to “yes” (see Figure 16):
+PasswordAuthentication yes
+   Comment out the following:
+#KbdInteractiveAuthentication no
+```
 
 Now restart the SSH service with:
 ```
 [ec2-user@ip-172-31-16-186 .ssh]$ sudo systemctl restart sshd
+(sudo systemctl restart ssh on Ubuntu)
 ```
 ```
 Can you now connect to your instance with the new user and password (but change for the IP address of your instance):
@@ -751,7 +773,7 @@ At the end of the lab, you should only have two instances. Please either termina
 
 # Appendix A
 
-Note, if you are using a Microsoft Windows system, you will have to use icacls to make the file read-only. If you are using a domain (such as with NAPIER-MAIL, you would defined your domain name with your matriculation number, such as:
+Note, if you are using a Microsoft Windows system, you will have to use icacls through the Command Terminal to make the file read-only. If you are using a domain (such as with NAPIER-MAIL, you would defined your domain name with your matriculation number, such as:
 
 ```
 > icacls.exe mykey.pem /reset
