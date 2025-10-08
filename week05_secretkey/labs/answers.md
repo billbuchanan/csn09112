@@ -118,7 +118,7 @@ SHA-384: 96 hex characters (384 bits)
 SHA-256: 128 hex characters (384 bits)
 ```
 
-## 3
+## Q3
 ```
 napier - bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 Use: openssl passwd -apr1 -salt waZS/8Tm napier
 Ankle123 - mike:$apr1$mKfrJquI$Kx0CL9krmqhCu0SHKqp5Q0 Use: openssl passwd -apr1 -salt mKfrJquI Ankle123
@@ -129,7 +129,7 @@ napier - jane: $1$rqOIRBBN$R2pOQH9egTTVN1Nlst2U7. Use: openssl passwd -1 -salt r
 
 
 
-## 4
+## Q4
 The hash values are:
 ```
 $ cat 1.txt | openssl md5
@@ -144,7 +144,7 @@ $ cat 4.txt | openssl md5
 
 We can see that **2.txt** has been modified.
 
-## 5
+## Q5
 The files have the same MD5 signature, but are different in their content:
 ```
 $ cat letter_of_rec.ps | openssl md5
@@ -192,9 +192,10 @@ Speed.#1.........:   189.9 MH/s (10.87ms) @ Accel:1024 Loops:1024 Thr:1 Vec:8
 
 Started: Thu Jan 30 15:56:05 2020
 Stopped: Thu Jan 30 15:56:12 2020
-</pre>
+```
+
 This gives 189 MH/s. For SHA-1:
-<pre>
+```
 $ hashcat -b -m 100
 hashcat (v5.1.0-42-g471a8cc) starting in benchmark mode ...
 
@@ -215,7 +216,8 @@ Stopped: Thu Jan 30 15:57:47 2020
 ```
 	
 We can 139.2 MH/s for SHA-1. For SHA-256:
-	
+```
+
 ```
 $ hashcat -b -m 1400
 hashcat (v5.1.0-42-g471a8cc) starting in benchmark mode...
@@ -266,7 +268,7 @@ Stopped: Thu Jan 30 16:01:18 2020
 	
 This is only 14.4 kH/s, and which is much slower than the other methods.
 
-## 2
+## Q1
 Answers:
 ```
 napier
@@ -357,7 +359,7 @@ Started: Thu Jan 30 16:06:46 2020
 Stopped: Thu Jan 30 16:06:48 2020
 ```
 
-## B.3 
+## Q2
 The answers are:
 ```
 orange
@@ -455,6 +457,7 @@ Started: Thu Jan 30 16:11:51 2020
 Stopped: Thu Jan 30 16:11:53 2020
 ```
 
+<!--
 ## B.4
 The word is "help". Here is a sample run:
 ```
@@ -899,14 +902,17 @@ Candidates.#1....: password1 -> password6
 Started: Thu Jan 30 17:00:36 2020
 Stopped: Thu Jan 30 17:00:39 2020
 ```
+-->
 
-## C.1
+# Hashing Cracking (LM Hash/Windows)
+## Q1
 ```
 bert: APPLE
 fred: ORANGE
-</pre>
+```
+
 A sample run is:
-<pre>
+```
 $ rm -r ~/.john/
 $ nano fruits 
 $ cat pwdump 
@@ -939,7 +945,7 @@ bert:ORANGE:501:10EAF413723CBB15AAD3B435B51404EE:CA8E025E9893E8CE3D2CBF847FC5681
 2 password hashes cracked, 0 left
 ```
 
-## C.2
+## Q2
 ```
 bert: DUNDEE
 fred: ABERDEEN
@@ -970,7 +976,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed
 ```
 
-## C.3
+## Q3
 ```
 Bert: TIGER
 Fred: SNAKE
@@ -1001,6 +1007,7 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed
 ```
 
+<!--
 ## D.1
 Answers:
 ```
@@ -1239,3 +1246,4 @@ d504d64a1062b1bac22de2b01b4ef0c3:mister12
 392da4c651b8e054c40e3d893c1c7cde:missy911        
 
 ```
+-->
