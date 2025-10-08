@@ -1,36 +1,38 @@
 Try not to look at these answers, unless you really have too ..
 
-## A.1
-<pre>
+## Hashing
+
+## 1
+```
 Edinburgh - 03CF54D8CE19777B12732B8C50B3B66F
 Glasgow - D586293D554981ED611AB7B01316D2D5
 Falkirk - 48E935332AADEC763F2C82CDB4601A25
 Stirling - EE19033300A54DF2FA41DB9881B4B723
-</pre>
+```
 
-## A.3
-<pre>
+## 2
+```
 MD5: 32 hex characters (128 bits)
 SHA-1: 40 hex characters (160 bits)
 SHA-256: 64 hex characters (256 bits)
 SHA-384: 96 hex characters (384 bits)
 SHA-256: 128 hex characters (384 bits)
-</pre>
+```
 
-## A.4
-<pre>
+## 3
+```
 napier - bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 Use: openssl passwd -apr1 -salt waZS/8Tm napier
 Ankle123 - mike:$apr1$mKfrJquI$Kx0CL9krmqhCu0SHKqp5Q0 Use: openssl passwd -apr1 -salt mKfrJquI Ankle123
 inkwell - fred:$apr1$Jbe/hCIb$/k3A4kjpJyC06BUUaPRKs0 Use: openssl passwd -apr1 -salt Jbe/hCIb inkwell
 password - ian:$apr1$0GyPhsLi$jTTzW0HNS4Cl5ZEoyFLjB. Use: openssl passwd -apr1 -salt 0GyPhsLi password
 napier - jane: $1$rqOIRBBN$R2pOQH9egTTVN1Nlst2U7. Use: openssl passwd -1 -salt rqOIRBBN napier
-</pre>
+```
 
 
 
-## A.5
+## 4
 The hash values are:
-<pre>
+```
 $ cat 1.txt | openssl md5
 (stdin)= 5d41402abc4b2a76b9719d911017c592
 $ cat 2.txt | openssl md5
@@ -39,21 +41,21 @@ $ cat 3.txt | openssl md5
 (stdin)= fea0f1f6fede90bd0a925b4194deac11
 $ cat 4.txt | openssl md5
 (stdin)= d89b56f81cd7b82856231e662429bcf2
-</pre>
+```
 
 We can see that **2.txt** has been modified.
 
-## A.6
+## 5
 The files have the same MD5 signature, but are different in their content:
-<pre>
+```
 $ cat letter_of_rec.ps | openssl md5
 (stdin)= a25f7f0b29ee0b3968c860738533a4b9
 $ cat order.ps | openssl md5
 (stdin)= a25f7f0b29ee0b3968c860738533a4b9
-</pre>
+```
 
-## B.1
-<pre>
+## Hash Cracking (MD5)
+```
 $ hashcat --help
        # | Name                                             | Category
   ======+==================================================+======================================
@@ -78,9 +80,10 @@ $ hashcat --help
    6000 | RIPEMD-160                                       | Raw Hash
    6100 | Whirlpool                                        | Raw Hash
    6900 | GOST R 34.11-94                                  | Raw Hash
-</pre>
+```
+
 <p>Sample benchmark for MD5:</p>
-<pre>
+```
 $ hashcat -b -m 0
 hashcat (v5.1.0-42-g471a8cc) starting in benchmark mode...
 
@@ -110,9 +113,11 @@ Speed.#1.........:   139.2 MH/s (14.44ms) @ Accel:1024 Loops:1024 Thr:1 Vec:8
 
 Started: Thu Jan 30 15:57:41 2020
 Stopped: Thu Jan 30 15:57:47 2020
-</pre>
+```
+	
 We can 139.2 MH/s for SHA-1. For SHA-256:
-<pre>
+	
+```
 $ hashcat -b -m 1400
 hashcat (v5.1.0-42-g471a8cc) starting in benchmark mode...
 
@@ -131,9 +136,11 @@ Speed.#1.........: 60286.7 kH/s (34.61ms) @ Accel:1024 Loops:1024 Thr:1 Vec:8
 
 Started: Thu Jan 30 15:59:16 2020
 Stopped: Thu Jan 30 15:59:23 2020
-</pre>
+```
+	
 This gives 60.2 MH/s. And for APR-1:
-<pre>
+	
+```
 $ hashcat -b -m 1600
 hashcat (v5.1.0-42-g471a8cc) starting in benchmark mode...
 
@@ -156,19 +163,21 @@ Speed.#1.........:    14387 H/s (70.39ms) @ Accel:1024 Loops:500 Thr:1 Vec:8
 
 Started: Thu Jan 30 16:01:15 2020
 Stopped: Thu Jan 30 16:01:18 2020
-</pre>
+```
+	
 This is only 14.4 kH/s, and which is much slower than the other methods.
 
-## B.2
+## 2
 Answers:
-<pre>
+```
 napier
 password
 Ankle123
 inkwell
-</pre>
+```
+	
 Here is a sample run:
-<pre>
+```
 $ nano words
 $ nano hash1
 $ cat words
@@ -247,19 +256,20 @@ Candidates.#1....: napier -> inkwell
 
 Started: Thu Jan 30 16:06:46 2020
 Stopped: Thu Jan 30 16:06:48 2020
-</pre>
+```
 
 ## B.3 
 The answers are:
-<pre>
+```
 orange
 apple
 banana
 pear
 peach
-</pre>
+```
+	
 Here is a sample run:
-<pre>
+```
 $ nano hash2
 $ nano fruits
 $ cat hash2
@@ -344,11 +354,11 @@ Candidates.#1....: apple -> peach
 
 Started: Thu Jan 30 16:11:51 2020
 Stopped: Thu Jan 30 16:11:53 2020
-</pre>
+```
 
 ## B.4
 The word is "help". Here is a sample run:
-<pre>
+```
 $ nano mywords.txt
 $ nano file.txt
 $ cat mywords.txt 
@@ -417,10 +427,11 @@ Candidates.#1....: hello -> nowhere
 
 Started: Thu Jan 30 16:16:53 2020
 Stopped: Thu Jan 30 16:16:55 2020
-</pre>
+```
+	
 ## B.5
 A sample run is:
-<pre>
+```
 $ nano nthash
 $ cat nthash
 0333c27eb4b9401d91fef02a9f74840e
@@ -487,9 +498,9 @@ Candidates.#1....: hello -> nowhere
 
 Started: Thu Jan 30 16:22:38 2020
 Stopped: Thu Jan 30 16:22:40 2020
-</pre>
+```
 ## B.6
-<pre>
+```
 celtic
 motherwell
 aberdeen
@@ -582,10 +593,10 @@ Candidates.#1....: celtic -> motherwell
 Started: Thu Jan 30 16:42:24 2020
 Stopped: Thu Jan 30 16:42:26 2020
 
-</pre>
+```
 
 ## B.7
-<pre>
+```
 hair
 face
 eye
@@ -723,10 +734,10 @@ Candidates.#1....: snts -> xolc
 
 Started: Thu Jan 30 16:48:54 2020
 Stopped: Thu Jan 30 16:48:57 2020
-</pre>
+```
 
 ## B.8
-<pre>
+```
 passwordW
 passowrd5
 </pre>
@@ -788,10 +799,10 @@ Candidates.#1....: password1 -> password6
 
 Started: Thu Jan 30 17:00:36 2020
 Stopped: Thu Jan 30 17:00:39 2020
-</pre>
+```
 
 ## C.1
-<pre>
+```
 bert: APPLE
 fred: ORANGE
 </pre>
@@ -827,17 +838,17 @@ fred:APPLE:500:E79E56A8E5C6F8FEAAD3B435B51404EE:5EBE7DFA074DA8EE8AEF1FAA2BBDE876
 bert:ORANGE:501:10EAF413723CBB15AAD3B435B51404EE:CA8E025E9893E8CE3D2CBF847FC56814:::	
 
 2 password hashes cracked, 0 left
-
-</pre>
+```
 
 ## C.2
-<pre>
+```
 bert: DUNDEE
 fred: ABERDEEN
 Admin: PERTH
-</pre>
+```
 A sample run:
-<pre>
+	
+```
 $ cat cities
 DUNDEE
 ABERDEEN
@@ -858,16 +869,17 @@ DUNDEE           (Admin)
 Warning: passwords printed above might be partial
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed
-</pre>
+```
 
 ## C.3
-<pre>
+```
 Bert: TIGER
 Fred: SNAKE
 Admin: ELEPHANT
-</pre>
+```
+	
 A sample run is:
-<pre>
+```
 napier@napier-virtual-machine:~/steg/python/lsb$ cat animals 
 tiger
 cat
@@ -888,18 +900,19 @@ SNAKE            (fred)
 Warning: passwords printed above might be partial
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed
-</pre>
+```
 
 ## D.1
 Answers:
-<pre>
+```
 LM Hash:12b9c54f6fe0ec80aad3b435b51404ee
 NT Hash:3ca6cef4b84985b6e3cd7b24843ea7d1
 LM Hash:82121098b60f69f5aad3b435b51404ee
 NT Hash:828f0524d3fffd8632ee97253183fef3
-</pre>
+```
+	
 A sample run is here:
-<pre>
+```
 $ nano d1.py
 $ cat d1.py
 import passlib.hash;
@@ -914,18 +927,20 @@ LM Hash:12b9c54f6fe0ec80aad3b435b51404ee
 NT Hash:3ca6cef4b84985b6e3cd7b24843ea7d1
 LM Hash:82121098b60f69f5aad3b435b51404ee
 NT Hash:828f0524d3fffd8632ee97253183fef3
-</pre>
+```
 
 ## E.1
 Answers:
-<pre>
+	
+```
 $ nano apr1.py
 changeme - $apr1$PkWj6gM4$V2w1yci/N1HCLzcqo3jiZ/
 123456 - $apr1$PkWj6gM4$opHu7xKPBmSPWdVO8vidC/
 password - $apr1$PkWj6gM4$OupRScHgsxe5lQj4.azPy.
-</pre>
+```
+	
 The following is a sample run:
-<pre>
+```
 $ nano apr1.py
 $ cat apr1.py
 import passlib.hash;
@@ -942,17 +957,18 @@ $ <strong>python apr1.py </strong>
 APR1:$apr1$PkWj6gM4$V2w1yci/N1HCLzcqo3jiZ/
 APR1:$apr1$PkWj6gM4$opHu7xKPBmSPWdVO8vidC/
 APR1:$apr1$PkWj6gM4$OupRScHgsxe5lQj4.azPy.
-</pre>
+```
 
 Sample code: [here](https://repl.it/@billbuchanan/chap03ans01#main.py)
 ## F.1
 Answers for "changeme":
-<pre>
+```
 SHA1:$sha1$480000$8sFt66rZ$dNfLzeD4O48TgFqDKd0zBYc4SJ5a
 SHA256:$5$rounds=535000$8sFt66rZ$yNCVBp7NMi3UNzMEIoGoGnQZ.HMGaUETwiQNCBi/cl5
 SHA512:$6$rounds=656000$8sFt66rZ$B/.Msj2UuS3qH.Qxsy.RL82oni6MV75LZ8olN6eCw6.LSHCCcJ4IGnzdX9Qv299whMbpz4rR9e7A9Ab0L3ZA0/
-</pre>
-<pre>
+```
+	
+```
 $ nano sha1.py
 $ cat sha1.py
 import passlib.hash;
@@ -965,12 +981,13 @@ $ python sha1.py
 SHA1:$sha1$480000$8sFt66rZ$dNfLzeD4O48TgFqDKd0zBYc4SJ5a
 SHA256:$5$rounds=535000$8sFt66rZ$yNCVBp7NMi3UNzMEIoGoGnQZ.HMGaUETwiQNCBi/cl5
 SHA512:$6$rounds=656000$8sFt66rZ$B/.Msj2UuS3qH.Qxsy.RL82oni6MV75LZ8olN6eCw6.LSHCCcJ4IGnzdX9Qv299whMbpz4rR9e7A9Ab0L3ZA0/
-</pre>
+```
 
 Sample code: [here](https://repl.it/@billbuchanan/chap03ans02#main.py)
 ## G.1
+	
 Answers:
-<pre>
+```
 $pbkdf2$131000$WkR6UEU0NUM$qS7S53GV52Ha3Qq1SUna.XlrS1U
 $pbkdf2-sha256$29000$WkR6UEU0NUM$gWsN0JM2s94YGo0W9On0Mz6yFvRMCFRE1Ms4dXIpCE4
 
@@ -979,9 +996,10 @@ $pbkdf2-sha256$29000$WkR6UEU0NUM$GHyI8vXC/POt8bfLR35D.9uLvLtPCoBiUDa1O00Ef28
 
 $pbkdf2$131000$WkR6UEU0NUM$.L1L.AVXTBSsc0FuHRQz4PNMVXc
 $pbkdf2-sha256$29000$WkR6UEU0NUM$pd1VbFkOA/VwbhJZhJ.25kHPsKVXika2XsuKYoudcug
-</pre>
+```
+	
 A sample run is:
-<pre>
+```
 $ nano pb.py
 $ cat pb.py 
 import passlib.hash;
@@ -1007,12 +1025,12 @@ PBKDF2 (SHA256):$pbkdf2-sha256$29000$WkR6UEU0NUM$GHyI8vXC/POt8bfLR35D.9uLvLtPCoB
 $ python pb.py password ZDzPE45C
 PBKDF2 (SHA1):$pbkdf2$131000$WkR6UEU0NUM$.L1L.AVXTBSsc0FuHRQz4PNMVXc
 PBKDF2 (SHA256):$pbkdf2-sha256$29000$WkR6UEU0NUM$pd1VbFkOA/VwbhJZhJ.25kHPsKVXika2XsuKYoudcug
-</pre>
+```
 
 Sample code: [here](https://repl.it/@billbuchanan/cha03ans03#main.py)
 
 ## H.1
-A sample run:
+```
 <pre>
 napier@napier-virtual-machine:~/steg/python/lsb$ nano bc.py
 napier@napier-virtual-machine:~/steg/python/lsb$ cat bc.py
@@ -1051,11 +1069,11 @@ SHA1:$sha1$480000$ZDzPE45C$LnzxSENDwEXBWKTQ1fc9/6BervKU
 SHA256:$5$rounds=535000$ZDzPE45C$TTN/Qd.elve1rHLazTSL0KCFxi7z5X9B/5l3xwFniaD
 SHA512:$6$rounds=656000$ZDzPE45C$6VWOiufRnOnxxetIEuLTZiM709Z3SBuNxhCf0Y0N4MUOgSTE85Nf9lI7FJJO4Autc2WEahI4URTibVYNy9V8w.
 Bcrypt:$2b$12$111111111111111111111u/oq5MIbCQah3/a.C6KTM0d7mD3wwZw.
-</pre>
+```
 
 Sample code: [here](https://repl.it/@billbuchanan/cha03ans05#main.py)
 ## K.3
-<pre>
+```
 $ hashcat -m 0 bfield.hash rockyou.txt 
 hashcat (v5.1.0-42-g471a8cc) starting...
 
@@ -1121,4 +1139,4 @@ d504d64a1062b1bac22de2b01b4ef0c3:mister12
 4d85e8c7d14c1dd1497f039e1c807b24:nice1234        
 392da4c651b8e054c40e3d893c1c7cde:missy911        
 
-</pre>
+```
