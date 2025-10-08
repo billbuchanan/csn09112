@@ -1,6 +1,24 @@
 Try not to look at these answers, unless you really have to..
 
-## Symmetric
+# Symmetric
+
+## 12
+
+```
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341 -pbkdf2
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt -pbkdf2
+
+9Z+NtmCdQSpmRl+eZebFXQ==
+U2FsdGVkX1/8ajTn5wyaPAk2PBG/n+nJ38w1N/vZt38=
+
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341 -pbkdf2
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt -pbkdf2
+
+9Z+NtmCdQSpmRl+eZebFXQ==
+U2FsdGVkX1/VCIe2O1KaYL4NhwY5lpAPO9wMtyWc9Xo=
+```
+
+With the first command, we use the same salt value each time, but the second command uses a random salt value, so it will change each time. 
 
 ## 13
 
@@ -18,7 +36,7 @@ kiwi
 
 ```
 
-## Hashing
+# Hashing
 
 ## 1
 ```
@@ -72,7 +90,7 @@ $ cat order.ps | openssl md5
 (stdin)= a25f7f0b29ee0b3968c860738533a4b9
 ```
 
-## Hash Cracking (MD5)
+# Hash Cracking (MD5)
 ```
 $ hashcat --help
        # | Name                                             | Category
