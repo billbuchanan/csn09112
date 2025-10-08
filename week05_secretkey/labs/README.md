@@ -18,38 +18,42 @@ https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs
 | 2 | Use: openssl list -cipher-commands and openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
 | 2 | Use: openssl list -cipher-commands | Outline five encryption methods that are supported:   |
 | 2 | Use: openssl version | Outline the version of OpenSSL:    |
-| 3 | Using openssl and the command in the form: openssl prime –hex 1111 | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
-| 4 | Now create a file named myfile.txt (either use Notepad or another editor). Next encrypt with aes-256-cbc <br/> openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
-| 5 | Now repeat the previous command and add the –base64 option. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
-| 6 | Now repeat the previous command and observe the encrypted output. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 | Has the output changed? [Yes][No] Why has it changed? |
-| 7 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64	Has the output been decrypted correctly? | What happens when you use the wrong password? |
+| 3 | Using openssl and the command in the form: openssl prime -hex 1111 | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
+| 4 | Now create a file named myfile.txt (either use nano or another editor). Next. encrypt with aes-256-cbc <br/> openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin -pbkdf2
+ and enter your password. | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No] | 
+| 5 | Now repeat the previous command and add the –base64 option. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 -pbkdf2 | Use following command to view the output file: cat encrypted.bin Is it easy to write out or transmit the output: [Yes][No]
+| 6 | Now repeat the previous command and observe the encrypted output. <br/>openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 -pbkdf2 | Has the output changed? [Yes][No] Why has it changed? |
+| 7 | Now let’s decrypt the encrypted file with the correct format: openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64 -pbkdf2	Has the output been decrypted correctly? | What happens when you use the wrong password? |
 | 8 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) nc -l -p 1234 > enc.bin And then send to a given IP address with: nc -w 3 [IP] 1234 < enc.bin | Did you manage to decrypt their message? [Yes][No] | 
 
 
 9  With OpenSSL, we can define a fixed salt value that has been used in the cipher process. For example, in Linux:
 
 ```
-echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
-Ulq+o+vs5mvAc3GUIKt8hA==
-echo Ulq+o+vs5mvAc3GUIKt8hA== | openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341
-Hello
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341 -pbkdf2
+```
+and then decrypt:
+```
+echo 9Z+NtmCdQSpmRl+eZebFXQ== | openssl enc -aes-128-cbc -pass pass:"london" -d  -base64 -S 241fa86763b85341 -pbkdf2
+
+Hello     
 ```  
 
-For a cipher text for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “tSq6RAqZ5Q1Crff6nnq4JA==”   [qwerty][inkwell][london][paris][cake]
+For a ciphertext for 256-bit AES CBC and a message of “Hello” with a salt value of  “241fa86763b85341”, try the following passwords, and determine the password used for a ciphertext of “tZCdiQE4L6QT+Dff82F5bw==”   [qwerty][inkwell][london][paris][cake]
 
 
 10 Now, use the decryption method to prove that you can decrypt the ciphertext.
 
 ```
-echo V60XNkEyAAF40k5rFSbrZw== | openssl enc -aes-256-cbc -pass pass:"password" -d  -base64 -S 241fa86763b85341 
+echo tZCdiQE4L6QT+Dff82F5bw== | openssl enc -aes-256-cbc -pass pass:"password" -d  -base64 -S 241fa86763b85341 -pbkdf2
 ```
 
 Did you confirm the right password? [Yes/No] 
 
 11  Investigate the following commands by running them several times:
 ```
-echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341
-echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt 
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -S 241fa86763b85341 -pbkdf2
+echo -n "Hello" | openssl enc -aes-128-cbc -pass pass:"london" -e -base64 -salt -pbkdf2
 ```
 What do you observe? Why do you think causes the changes? 
  
@@ -62,7 +66,7 @@ The current Hashcat version on Kali has problems with a lack of memory. To overc
 wget https://hashcat.net/files/hashcat-6.0.0.7z
 ```
 
-Next unzip it into your home folder:
+Next, unzip it into your home folder:
 
 ```
 p7zip -d hashcat-6.0.0.7z
