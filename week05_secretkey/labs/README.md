@@ -15,7 +15,6 @@ https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs
 | No | Description | Result | 
 |-------|--------|---------|
 | 1 | Log into vSoC 2, and select your Kali host on the public network. | What is your IP address? |
-| 2 | Use: ```openssl list -cipher-commands``` and openssl version | Outline five encryption methods that are supported:  Outline the version of OpenSSL: |
 | 2 | Use: ```openssl list -cipher-commands``` | Outline five encryption methods that are supported:   |
 | 2 | Use: ```openssl version``` | Outline the version of OpenSSL:    |
 | 3 | Using openssl and the command in the form: ```openssl prime -hex 1111``` | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
