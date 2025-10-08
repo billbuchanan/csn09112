@@ -4,7 +4,10 @@
 
 Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
-We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/).
+We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). Log into vSoC 2, and select your Kali host  on the public network. You should open up the lab in your Kali instance, so that you can copy and paste from the document into your Kali console. The link is here:
+
+https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs 
+
 
 
 ## Symmetric Key
