@@ -8,7 +8,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs 
 
-
+![](https://github.com/billbuchanan/csn09112/blob/master/zadditional/kali001.png)
 
 ## Symmetric Key
 
