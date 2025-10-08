@@ -1,4 +1,4 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+![](https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png)
 
 # Lab 3: AWS Security and Server Infrastructure
 
@@ -11,7 +11,7 @@ A demo of the setup of the lab is [here](https://youtu.be/rhf4_1E_wAU)
 
 
 ## Outline
-In previous labs we have set up a range of architectures with VMWare vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, and which reduces the cost in the investment in data centre costs, while providing the opportunity to quickly scale our server, network and data infrastructure. It is generally as pay-as-you-go model, and where we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
+In previous lab we have set up a range of architectures with VMWare vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, which reduces the cost of investment in data centre costs, while providing the opportunity to quickly scale our server, network and data infrastructure. It is generally as pay-as-you-go model, and where we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
 
 ![AWS](https://asecuritysite.com/public/awsfig01.png "AWS Services")
 
@@ -86,7 +86,7 @@ What is the maximum storage size for a free tier storage of the AMI instance we 
 ### C.1	Creating the instance
 Go ahead and create the instance. Then go back to the AWS Management Console, and find your instance. Wait for it to set its state to running. 
 
-Now we will connect to it. For this we need to create an SSH connection and use the private key we have generated. The public key will be stored on the instance and will authenticate our access. We do not need a username or password to access the instance, as this is often insecure. Our PEM file will give us access (or you can use Putty for the connection).
+Now we will connect to it. For this, we need to create an SSH connection and use the private key we have generated. The public key will be stored on the instance and will authenticate our access. We do not need a username or password to access the instance, as this is often insecure. Our PEM file will give us access (or you can use Putty for the connection).
 
 Now, we will examine the details of our instance (Figure 6). On the instance summary, determine the following:
 ```
@@ -106,7 +106,7 @@ Which region of the world is your instance running in?
 ```
 
 ### C.2	Enabling ICMP on firewall
-Now, we will enable ICMP on the instance. First click on the Security tab of the instance summary, and then on the security group.
+Now, we will enable ICMP on the instance. First, click on the Security tab of the instance summary, and then on the security group.
 
 ```
 What is the firewall rule that is applied to the instance?
