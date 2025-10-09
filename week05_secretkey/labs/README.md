@@ -129,7 +129,7 @@ Is it [Falkirk][Edinburgh][Glasgow][Stirling]?
 ```
 Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 ```
-EE19033300A54DF2FA41DB9881B4B723 | D5862: 
+EE19033300A54DF2FA41DB9881B4B723
 ```
 Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 
