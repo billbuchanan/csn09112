@@ -1,4 +1,5 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+
+![](https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png)
 
 # Lab 4: Symmetric Key and Hashing
 
@@ -10,7 +11,7 @@ https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs
 
 ![](https://github.com/billbuchanan/csn09112/blob/master/zadditional/kali001.png)
 
-## Symmetric Key
+## A Symmetric Key
 
 | No | Description | Result | 
 |-------|--------|---------|
@@ -18,9 +19,9 @@ https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs
 | 2 | Use: ```openssl list -cipher-commands``` | Outline five encryption methods that are supported:   |
 | 3 | Use: ```openssl version``` | Outline the version of OpenSSL:    |
 | 4 | Using openssl and the command in the form: ```openssl prime -hex 1111``` | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
-| 5 | Now create a file named myfile.txt (either use nano or another editor). Next. encrypt with aes-256-cbc <br/> ```openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin -pbkdf2``` and enter your password. | Use the following command to view the output file: ```cat encrypted.bin``` Is it easy to write out or transmit the output: [Yes][No]. What does the ```-pbkdf2``` part do? | 
-| 6 | Now repeat the previous command and add the –base64 option. <br/>```openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 -pbkdf2``` | Use the following command to view the output file: ```cat encrypted.bin``` Is it easy to write out or transmit the output: [Yes][No]
-| 7 | Now repeat the previous command and observe the encrypted output. <br/>```openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 -pbkdf2``` | Has the output changed? [Yes][No] Why has it changed? |
+| 5 | Now create a file named myfile.txt (either use nano or another editor). Next. encrypt with aes-256-cbc <br> ```openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin -pbkdf2``` and enter your password. | Use the following command to view the output file: ```cat encrypted.bin``` Is it easy to write out or transmit the output: [Yes][No]. What does the ```-pbkdf2``` part do? | 
+| 6 | Now repeat the previous command and add the –base64 option. <br>```openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 -pbkdf2``` | Use the following command to view the output file: ```cat encrypted.bin``` Is it easy to write out or transmit the output: [Yes][No]
+| 7 | Now repeat the previous command and observe the encrypted output. <br>```openssl enc -aes-256-cbc -in myfile.txt -out encrypted.bin –base64 -pbkdf2``` | Has the output changed? [Yes][No] Why has it changed? |
 | 8 | Now let’s decrypt the encrypted file with the correct format: ```openssl enc -d -aes-256-cbc -in encrypted.bin -pass pass:napier -base64 -pbkdf2``` Has the output been decrypted correctly? | What happens when you use the wrong password? |
 | 9 | If you are working in the lab, now give your secret passphrase to your neighbour, and get them to encrypt a secret message for you.  To receive a file, you listen on a given port (such as Port 1234) ```nc -l -p 1234 > enc.bin``` And then send to a given IP address with: ```nc -w 3 [IP] 1234 < enc.bin``` | Did you manage to decrypt their message? [Yes][No] | 
 
@@ -85,7 +86,7 @@ U2FsdGVkX18vpjgccu7VkPZrkncqADuy1kVKU9LbLec=
 
 What is the fruit?
 
-## Hashing
+## B Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
@@ -112,7 +113,8 @@ v6.0.0
 ```
 
 
-1 Using: [here](http://asecuritysite.com/encryption/md5) Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 
+### Q1 
+Using: [here](http://asecuritysite.com/encryption/md5) Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 
 ```
 03CF54D8CE19777B12732B8C50B3B66F  
 ```
@@ -132,7 +134,8 @@ EE19033300A54DF2FA41DB9881B4B723 | D5862:
 Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 
 
-2 Using: [here](http://asecuritysite.com/encryption/md5) Determine the number of hex characters in the following hash signatures. 
+### Q2
+Using: [here](http://asecuritysite.com/encryption/md5) Determine the number of hex characters in the following hash signatures. 
 
 MD5 hex chars: 
 
@@ -142,7 +145,8 @@ SHA-256 hex chars:
 
 How does the number of hex characters relate to the length of the hash signature: |
 
-3  On Kali, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
+### Q3
+On Kali, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
 
 ```
 bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 
@@ -168,7 +172,8 @@ Jane’s password:
 [Hint: openssl passwd -apr1 -salt ZaZS/8TF napier] 
 
 
-4 On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 hashes : 
+### Q4
+On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 hashes : 
 
 ```
 MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 
@@ -181,16 +186,18 @@ Which file(s) have been modified:
 
 Note: Use can use md5sum to compute MD5 hashes.
 
-5 From Kali, download the following ZIP file: [here](http://asecuritysite.com/letters.zip )
+### Q5
+From Kali, download the following ZIP file: [here](http://asecuritysite.com/letters.zip )
 
 View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? 
 
 
-## Hashing Cracking (MD5)
+## C Hashing Cracking (MD5)
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 
-1 On Kali, next create a word file (words) with the words of “napier”, “password” “Ankle123” and “inkwell”
+### Q1
+On Kali, next create a word file (words) with the words of “napier”, “password” “Ankle123” and “inkwell”
 
 Using hashcat crack the following MD5 signatures (hash1):
 ```
@@ -214,7 +221,8 @@ hashcat –m 0 hash1 words
 
 Note: use the --show option to show the results of the cracking.
 
-2 Using the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
+### Q3
+Using the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
 
 ```
 FE01D67A002DFA0F3AC084298142ECCD
@@ -238,7 +246,8 @@ FE01D:
 All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
 
 
-1 On Kali, and using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
+### Q1
+On Kali, and using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
 ```
 fred:500:E79E56A8E5C6F8FEAAD3B435B51404EE:5EBE7DFA074DA8EE8AEF1FAA2BBDE876:::
 ```
@@ -248,7 +257,8 @@ bert:501:10EAF413723CBB15AAD3B435B51404EE:CA8E025E9893E8CE3D2CBF847FC56814:::
 ```
 Bert's password:
 
-2	On Kali, and using John the Ripper, the following pwdump passwords (they are names of major Scottish cities/towns):
+### Q2
+On Kali, and using John the Ripper, the following pwdump passwords (they are names of major Scottish cities/towns):
 
 ```
 Admin:500:629E2BA1C0338CE0AAD3B435B51404EE:9408CB400B20ABA3DFEC054D2B6EE5A1:::
@@ -262,7 +272,8 @@ Fred:
 
 Bert:
 
-3	On Kali, and using John the Ripper, crack the following pwdump passwords (they are the names of animals):
+### Q3
+On Kali, and using John the Ripper, crack the following pwdump passwords (they are the names of animals):
 ```
 fred:500:5A8BB08EFF0D416AAAD3B435B51404EE:85A2ED1CA59D0479B1E3406972AB1928:::
 bert:501:C6E4266FEBEBD6A8AAD3B435B51404EE:0B9957E8BED733E0350C703AC1CDA822:::
@@ -277,16 +288,16 @@ Admin:
 
 Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
 
-## AWS Cryptography
+## D AWS Cryptography
 We are generally moving our security into the public cloud, and thus many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
 
 ### Symmetric key
 
-With symmetric key, Bob and Alice use the same encryption key to encrypt and decrypt:
+With symmetric key encryption, Bob and Alice use the same encryption key to encrypt and decrypt:
 
 ![image](https://asecuritysite.com/public/kms_30.png)
 
-Normally we use AES encryption for this. Initially in KMS, we create a new key within our Customer managed keys:
+Normally we use AES encryption for this. Initially, in KMS, we create a new key within our Customer managed keys:
 
 ![image](https://asecuritysite.com/public/kms01.png)
 
@@ -578,13 +589,6 @@ Plaintext: Hello
 Cipher b'AQICAHgTBDpVTrBTrduWKdNnvMoMMUWjObqp+GqbghUx7qa6JwHH797e/TF4csEBEFNmjvD5AAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJf0xVfikbMLfLI6jAgEQgCDYBm2NvB/I2NMxGgSw8wuWA/p6c6Jjm19/wK4eVrLXUw=='
 Plain: Hello
 ```
-
-
-
-
-
-
-
 
 
 
