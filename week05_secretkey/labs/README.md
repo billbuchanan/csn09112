@@ -215,7 +215,7 @@ Using hashcat crack the following MD5 signatures (hash1):
 ```
 Command used:
 ```
-hashcat –m 0 hash1 words
+./hashcat –m 0 hash1 words
 ```
 232DD...634C Is it [napier][password][Ankle123][inkwell]?
 
