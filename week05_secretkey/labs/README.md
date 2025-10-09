@@ -148,7 +148,7 @@ How does the number of hex characters relate to the length of the hash signature
 ### Q3
 On Kali, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
 
-[Hint: Try something like ```openssl passwd -apr1 -salt ZaZS/8TF napier```] Find the salt value, and try each password. For example the salt value for ```bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1``` is ```waZS/8Tm```. To check the password and salt, we can run:
+To find the password, we determine the salt value, and try each password. For example the salt value for ```bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1``` is ```waZS/8Tm```. To check the password and salt, we can run:
 
 ```
 openssl passwd -apr1 -salt waZS/8Tm napier
