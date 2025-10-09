@@ -108,7 +108,7 @@ Then from your home folder, setup a link to Hashcat 6.0.0:
 ```
 and then run Hashcat put “./” in from of the program name, such as:
 ```
-# ./hashcat –version
+# ./hashcat –-version
 v6.0.0
 ```
 
