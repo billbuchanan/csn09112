@@ -104,11 +104,11 @@ p7zip -d hashcat-6.0.0.7z
 Then from your home folder, setup a link to Hashcat 6.0.0:
 
 ```
-# ln -s hashcat-6.0.0/hashcat.bin  hashcat
+ln -s hashcat-6.0.0/hashcat.bin  hashcat
 ```
 and then run Hashcat put “./” in from of the program name, such as:
 ```
-# ./hashcat –-version
+./hashcat –-version
 v6.0.0
 ```
 
