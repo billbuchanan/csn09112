@@ -19,7 +19,7 @@ The coursework is [here](https://github.com/billbuchanan/csn09112/tree/master/co
 | 6 | 16 Oct 2025 | 7. Public Key [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>]<br />8. Key Exchange [<a href="https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/lecture">Link</a>] | Public Key and Key Exchange [Lab 5](https://github.com/billbuchanan/csn09112/tree/master/week06_public_key/labs) | 
 | 7 | 23 Oct 2025 | Reading week/Revision session | Reading week/Cipher Challenge |
 | 8 | 30 Oct 2025 | 9. Digital Certificates | Certificates [Lab 6](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/labs) |
-| 9 | 7 Nov 2025 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  |
+| 9 | 6 Nov 2025 |  Test 1 [here](https://github.com/billbuchanan/csn09112/tree/master/week09_test)  (6-8pm, JKCC) |
 | 10 | 13 Nov 2025 | 10 Network Forensics [here](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics) | Network Forensics [Lab 7](https://github.com/billbuchanan/csn09112/tree/master/week08_network_forensics/lab) | 
 | 11 | 20 Nov 2025 | 11. Splunk [here](https://github.com/billbuchanan/csn09112/tree/master/week10_splunk) | Splunk Lab [Lab 8](https://github.com/billbuchanan/csn09112/tree/master/week10_splunk/labs) |
 | 12 | 27 Nov 2025 |  13. Tunnelling [Here](https://github.com/billbuchanan/csn09112/tree/master/week12_tunnelling) | Tunnelling [Lab 9](https://github.com/billbuchanan/csn09112/tree/master/week12_tunnelling/labs) |
