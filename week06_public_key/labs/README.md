@@ -226,7 +226,7 @@ We can use the same type of approach with Python. In the following case we use b
 python3 -W ignore 1.py
 ```
 
-The code is (remember to change the key ID to your own key):
+The code is (remember to change the key ID to your own key, not your alias):
 
 ```
 import base64
@@ -239,7 +239,7 @@ def enable_kms_key(key_ID):
     try:
         response = kms_client.enable_key(KeyId=key_ID)
 
-    except ClientError:
+    except Exception:
         print('KMS Key not working')
         raise
     else:
@@ -250,7 +250,7 @@ def encrypt(secret, alias):
     try:
         ciphertext = kms_client.encrypt(KeyId=alias,EncryptionAlgorithm='RSAES_OAEP_SHA_1',Plaintext=bytes(secret, encoding='utf8'),
         )
-    except ClientError:
+    except Exception:
         print('Problem with encryption.')
         raise
     else:
@@ -260,7 +260,7 @@ def encrypt(secret, alias):
 def decrypt(ciphertext, alias):
     try:
         plain_text = kms_client.decrypt(KeyId=alias,EncryptionAlgorithm='RSAES_OAEP_SHA_1',CiphertextBlob=bytes(base64.b64decode(ciphertext)))
-    except ClientError:
+    except Exception:
         print('Problem with decryption.')
         raise
     else:
