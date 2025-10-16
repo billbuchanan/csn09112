@@ -104,11 +104,11 @@ p7zip -d hashcat-6.0.0.7z
 Then from your home folder, setup a link to Hashcat 6.0.0:
 
 ```
-# ln -s hashcat-6.0.0/hashcat.bin  hashcat
+ln -s hashcat-6.0.0/hashcat.bin  hashcat
 ```
 and then run Hashcat put “./” in from of the program name, such as:
 ```
-# ./hashcat –version
+./hashcat –-version
 v6.0.0
 ```
 
@@ -129,13 +129,13 @@ Is it [Falkirk][Edinburgh][Glasgow][Stirling]?
 ```
 Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 ```
-EE19033300A54DF2FA41DB9881B4B723 | D5862: 
+EE19033300A54DF2FA41DB9881B4B723
 ```
 Is it [Falkirk][Edinburgh][Glasgow][Stirling]? 
 
 
 ### Q2
-Using: [here](http://asecuritysite.com/encryption/md5) Determine the number of hex characters in the following hash signatures. 
+Using: [here](http://asecuritysite.com/encryption/md5), determine the number of hex characters in the following hash signatures. 
 
 MD5 hex chars: 
 
@@ -148,6 +148,13 @@ How does the number of hex characters relate to the length of the hash signature
 ### Q3
 On Kali, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
 
+To find the password, we determine the salt value, and try each password. For example the salt value for ```bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1``` is ```waZS/8Tm```. To check the password and salt, we can run:
+
+```
+openssl passwd -apr1 -salt waZS/8Tm napier
+$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1
+```
+Now try these ones by trying each of the possible passwords:
 ```
 bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1 
 ```
@@ -208,7 +215,7 @@ Using hashcat crack the following MD5 signatures (hash1):
 ```
 Command used:
 ```
-hashcat –m 0 hash1 words
+./hashcat –m 0 hash1 words
 ```
 232DD...634C Is it [napier][password][Ankle123][inkwell]?
 
@@ -285,8 +292,6 @@ Fred:
 Bert:
 
 Admin:
-
-Repeat all 7.1, 7.2 and 7.3 using Ophcrack, and the rainbow table contained on the instance (rainbow_tables_xp_free).
 
 ## D AWS Cryptography
 We are generally moving our security into the public cloud, and thus many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
