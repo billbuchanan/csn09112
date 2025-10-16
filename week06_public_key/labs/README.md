@@ -21,7 +21,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 | No | Description | Result | 
 | -------|--------|---------|
-| 1 | First we need to generate a key pair with: <br/>openssl genrsa -out private.pem 1024	<br/>This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
+| 1 | First we need to generate a key pair with: <br/>```openssl genrsa -out private.pem 1024```	<br/>This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
 | 2 | Use following command to view the output file: <br/>```cat private.pem``` | What can be observed at the start and end of the file: |
 | 3 | Next we view the RSA key pair: <br/>```openssl rsa -in private.pem -text -noout``` | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
 | 4 | Let’s now secure the encrypted key with 3-DES: <BR/>```openssl rsa -in private.pem -des3 -out key3des.pem``` | |
