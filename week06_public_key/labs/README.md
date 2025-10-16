@@ -4,7 +4,7 @@
 
 Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
-We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/).
+We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). You can either create a Ubuntu or Windows 2019 server in the AWS Lab environment and install OpenSSL into it, or use the Kali instance on vSoC2.
 
 ## 1	Diffie-Hellman
 
