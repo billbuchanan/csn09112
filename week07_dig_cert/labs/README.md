@@ -106,7 +106,7 @@ The coursework specification is at: [here](https://github.com/billbuchanan/csn09
 Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, the pass secret messages to each other. Your first task is to analyse the messages they send and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the presence of the bot.
 
  
-![Figure 1: Coursework setup](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework01.png) 
+![Figure 1: Coursework setup](../../zadditional/coursework01.png) 
 
 
 ## D	Coursework setup (AWS)
