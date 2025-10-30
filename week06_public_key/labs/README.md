@@ -21,13 +21,13 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 | No | Description | Result | 
 | -------|--------|---------|
-| 1 | First we need to generate a key pair with: <br/>openssl genrsa -out private.pem 1024	<br/>This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
-| 2 | Use following command to view the output file: <br/>cat private.pem | What can be observed at the start and end of the file: |
-| 3 | Next we view the RSA key pair: <br/>openssl rsa -in private.pem -text -noout | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
-| 4 | Let’s now secure the encrypted key with 3-DES: <BR/>openssl rsa -in private.pem -des3 -out key3des.pem | |
+| 1 | First we need to generate a key pair with: <br/>```openssl genrsa -out private.pem 1024```	<br/>This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
+| 2 | Use following command to view the output file: <br/>```cat private.pem``` | What can be observed at the start and end of the file: |
+| 3 | Next we view the RSA key pair: <br/>```openssl rsa -in private.pem -text -noout``` | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
+| 4 | Let’s now secure the encrypted key with 3-DES: <BR/>```openssl rsa -in private.pem -des3 -out key3des.pem``` | |
 | 5 | Next we will export the public key: <BR/>openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
-| 6 | Now we will encrypt with our public key: <br/>openssl pkeyutl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin | 
-| 7 | And then decrypt with our private key: <br/>openssl pkeyutl -decrypt -inkey private.pem -in file.bin -out decrypted.txt	| What are the contents of decrypted.txt |
+| 6 | Now we will encrypt with our public key: <br/>```openssl pkeyutl -encrypt -inkey public.pem -pubin -in myfile.txt -out file.bin``` | 
+| 7 | And then decrypt with our private key: <br/>```openssl pkeyutl -decrypt -inkey private.pem -in file.bin -out decrypted.txt```	| What are the contents of decrypted.txt |
 | 8 | If you are working in the lab, give your public key to your neighbour to encrypt a message for them and send it back to you to decrypt it with your private key. | Did you manage to decrypt it? [Yes][No] |
 
 
@@ -36,8 +36,8 @@ We have stored our keys on a key ring file (PEM). Normally we would use a digita
 
 | No | Description | Result | 
 | -------|--------|---------|
-| 1 | Next create the crt file with the following: openssl req -new -key private.pem -out cert.csr  openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | View the CRT file by double clicking on it from the File Explorer. What is the type of public key method used: View the certificate file and determine: The size of the public key: The encryption method: |
-| 2 | We can now take the code signing request, and create a certificate. For this we sign the certificate with a private key, in order to validate it:<br/>openssl x509 -req -in cert.csr -signkey private.pem -out server.crt | From the File System, click on the newly created certificate file (server.crt) and determine:<br/>The size of the public key (in bits): [512][1024][2048]<br/>The public key encryption method:<br/>Which is the hashing method that has been signed to sign the certificate: [MD5][SHA-1][SHA-256] |
+| 1 | Next create the crt file with the following: ```openssl req -new -key private.pem -out cert.csr```  | View the CRT file by double clicking on it from the File Explorer. What is the type of public key method used: View the certificate file and determine: The size of the public key: The encryption method: |
+| 2 | We can now take the code signing request, and create a certificate. For this we sign the certificate with a private key, in order to validate it:<br/>```openssl x509 -req -in cert.csr -signkey private.pem -out server.crt``` | From the File System, click on the newly created certificate file (server.crt) and determine:<br/>The size of the public key (in bits): [512][1024][2048]<br/>The public key encryption method:<br/>Which is the hashing method that has been signed to sign the certificate: [MD5][SHA-1][SHA-256] |
 
 ## 4 AWS: Public Key Encryption
 In the following figure, Bob uses Alice’s public key to encrypt data, and which creates ciphertext. Alice then decrypts this ciphertext with her private key:
@@ -226,7 +226,7 @@ We can use the same type of approach with Python. In the following case we use b
 python3 -W ignore 1.py
 ```
 
-The code is (remember to change the key ID to your own key):
+The code is (remember to change the key ID to your own key, not your alias):
 
 ```
 import base64
@@ -239,7 +239,7 @@ def enable_kms_key(key_ID):
     try:
         response = kms_client.enable_key(KeyId=key_ID)
 
-    except ClientError:
+    except Exception:
         print('KMS Key not working')
         raise
     else:
@@ -250,7 +250,7 @@ def encrypt(secret, alias):
     try:
         ciphertext = kms_client.encrypt(KeyId=alias,EncryptionAlgorithm='RSAES_OAEP_SHA_1',Plaintext=bytes(secret, encoding='utf8'),
         )
-    except ClientError:
+    except Exception:
         print('Problem with encryption.')
         raise
     else:
@@ -260,7 +260,7 @@ def encrypt(secret, alias):
 def decrypt(ciphertext, alias):
     try:
         plain_text = kms_client.decrypt(KeyId=alias,EncryptionAlgorithm='RSAES_OAEP_SHA_1',CiphertextBlob=bytes(base64.b64decode(ciphertext)))
-    except ClientError:
+    except Exception:
         print('Problem with decryption.')
         raise
     else:
