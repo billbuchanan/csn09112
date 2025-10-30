@@ -19,7 +19,7 @@ At the end of this lab, you should understand:
 
 
 # Lab 6: Ciphers and Digital Certificates
-In this lab we will investigate a range of ciphers and also how we can view the details within digital certificates.
+In this lab we will investigate a range oxf ciphers and also how we can view the details within digital certificates.
 
 ## A Ciphers
 Use your desktop computer to complete the following:
@@ -103,10 +103,10 @@ Ref: https://pyopenssl.org/en/0.15.1/api/crypto.html#x509name-objects
 ## D Coursework
 The coursework specification is at: [here](https://github.com/billbuchanan/csn09112/tree/master/coursework)
 
-Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, the pass secret messages to each other. Your first task is to analyse the messages they send and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the presence of the bot.
+Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, they pass secret messages to each other. Your first task is to analyse the messages they send and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the presence of the bot.
 
  
-![Figure 1: Coursework setup](../../zadditional/coursework01.png) 
+![Figure 1: Coursework setup](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework01.png)
 
 
 ## D	Coursework setup (AWS)
