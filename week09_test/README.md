@@ -95,4 +95,4 @@ Tables given are ASCII table, Morse and Base 64.
 
 The two main labs you should know about are here:
 
-* Lab 5: Crypto - [Lab 5](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs). Look at Q5.
+* Lab 4: Hahing - [Lab 5](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs). Look at Q5.
