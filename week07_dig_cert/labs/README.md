@@ -38,7 +38,7 @@ Boot up your Linux VM, and download the following archive:
 ```
 # wget https://github.com/billbuchanan/csn09112/blob/master/week07_dig_cert/labs/certs.zip?raw=true
 # mv certs.zip?raw=true certs.zip
-# unzip cert.zip
+# unzip certs.zip
 ```
 
 Next install pyopenssl with:
