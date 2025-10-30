@@ -7,7 +7,7 @@ Time for test: Thursday, 6 November 2025 (6-8pm, JKCC)
 
 Test details:
 
-* 70 minutes.
+* 70 minutes  -closed-books.
 * Seven ciphers (marks vary from 1 to 3 marks).
 * Ten MCQ questions on cryptography (one mark each).
 * Two short-answer questions on cryptography (eg public key, hashing, and so on). Possible practical implementation with OpenSSL (around 12 marks in total).
