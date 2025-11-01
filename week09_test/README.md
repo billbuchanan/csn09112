@@ -3,14 +3,14 @@
 # Test 1
 You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be no lectures or labs in Week 9. The table you will be given is [here](https://asecuritysite.com/public/table.pdf).
 
-Time for test: Thursday, 6 November 2025 (6-8pm, JKCC)
+Time for test: Thursday, 6 November 2025 (6-8pm, Clusters 1-4, JKCC)
 
 Test details:
 
-* 70 minutes  -closed-book.
+* 70 minutes  - closed-book.
 * Seven ciphers (marks vary from 1 to 3 marks).
 * Ten MCQ questions on cryptography (one mark each).
-* Two short-answer questions on cryptography (eg public key, hashing, and so on). Possible practical implementation with OpenSSL (around 12 marks in total).
+* Two short-answer questions on cryptography (eg public key, hashing, and so on). Possible practical implementation with OpenSSL (around 12 marks in total). There may be a sub-question with a practical implementation related to these questions.
 
 Total marks: TBC
 
@@ -58,10 +58,10 @@ Try to review your knowledge by answering these questions:
 
 * Can you convert characters from one format to another, such as in binary, hex, ASCII and Base-64 (remember: hex uses four bits at a time, and Base-64 uses six bits at a time)?
 * Do you know the basic theory of converting a bit stream into Base-64 (remember 6 bits at a time and convert from table)?
-* Do you understand how to use some key ciphers, including shifted alphabet, led alphabet, Vigenere, Pigpen and rail codes?
+* Do you understand how to use some key ciphers, including shifted alphabet, scrambled alphabet, Vigenere, Pigpen and rail codes?
 * Can you do a simple Diffie-Hellman calculation and end up with the same shared key?
-* Do you understand how the number of keys relate to the security of the ciphers?
-* Can you work out key enthropy, so that if you have 2,048 phases, you can calculate that this is equivalent to 11 bits [log(2048)/log(2)]?
+* Do you understand how the number of keys relates to the security of the ciphers?
+* Can you work out key entropy, so that if you have 2,048 phases, you can calculate that this is equivalent to 11 bits [log(2048)/log(2)]?
 * Would you know how long it would take to crack a code next year, if it takes 10 years now, and computing power doubles each year?
 * Do you understand how public and private key encryption is used, along with the usage of digital certificates?
 * Do you understand the conversion of passwords into hashed passwords, and use tools such as John The Ripper, Hashcat, Ophcrack and OpenSSL?
@@ -76,15 +76,14 @@ Try to review your knowledge by answering these questions:
 * Create the Vigenere Code for a given plain text string and key.
 * Able to convert bit streams to hexadecimal.
 * Able to convert binary streams to Base 64.
-* Solve Playfair codes.
 * Solve Rail codes.
-* Solve scrambled alphabet code. Some samples are [here](https://asecuritysite.com/challenges/scramb?coding=1) [here](https://asecuritysite.com/challenges/scramb?coding=2) [here](https://asecuritysite.com/challenges/scramb?coding=3).
+* Solve the scrambled alphabet code. Some samples are [here](https://asecuritysite.com/challenges/scramb?coding=1) [here](https://asecuritysite.com/challenges/scramb?coding=2) [here](https://asecuritysite.com/challenges/scramb?coding=3).
 * Calculate the entropy of passwords.
 * Calculate simple Diffie-Hellman.
-* Determine time to crack a code, on average, given time to test key.
-* Determine time to crack a code, for increasing computing power.
+* Determine the time to crack a code, on average, given time to test the key.
+* Determine the time to crack a code, for increasing computing power.
 * Understands how public key encrypts data.
-* Understands how public key is used to provide identity.
+* Understands how a public key is used to provide identity.
 * Understands the key elements of a digital certificate.
 * Understand the processing of salting a password and its usage in encryption.
 * Password hash cracking/salting (LMHASH/MD5).
@@ -93,6 +92,6 @@ Tables given are ASCII table, Morse and Base 64.
 
 # What about I know from a practical point-of-view?
 
-The two main labs you should know about are here:
+A core lab for practical implementations is:
 
-* Lab 4: Hahing - [Lab 5](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs). Look at Q5.
+* Lab 4: Symmetric Key and Hashing - [Lab 5](https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs), such as those with OpenSSL Hashing of passwords.
