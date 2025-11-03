@@ -23,6 +23,7 @@ Total marks: TBC
 * Digital Certificates. [Link](https://github.com/billbuchanan/csn09112/tree/master/week07_dig_cert/lecture)
 
 ## Test 1 (Challenges)
+Note that it can take up to one minute to generate your challenge.
 
 * Hex Code Challenge [Try](https://asecuritysite.com/challenges/chall_001_hex).
 * Pigpen [Try](https://asecuritysite.com/challenges/chall_002_pigpen).
@@ -32,6 +33,7 @@ Total marks: TBC
 * Scrambled Alphabet [Try](https://asecuritysite.com/cipher/scramb). Can you beat 5 minutes?
 
 ## Test 1 (Examples)
+Note that it can take up to one minute to generate your challenge.
 
 * Rail Code [Try](http://asecuritysite.com/challenges/chall_031_rail).
 * Caeser. [Try](https://asecuritysite.com/tests/tests?sortBy=caesar).
