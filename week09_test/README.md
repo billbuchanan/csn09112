@@ -33,7 +33,7 @@ Total marks: TBC
 
 ## Test 1 (Examples)
 
-* Rail Code [Try](https://asecuritysite.com/challenges/chall_023_rail).
+* Rail Code [Try](http://asecuritysite.com/challenges/chall_031_rail).
 * Caeser. [Try](https://asecuritysite.com/tests/tests?sortBy=caesar).
 * Hex. [Try](https://asecuritysite.com/tests/tests?sortBy=hex01).
 * Binary to ASCII. [Try](https://asecuritysite.com/tests/tests?sortBy=ascii02). 
