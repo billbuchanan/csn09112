@@ -41,7 +41,7 @@ Total marks: TBC
 ## Test 1 (Some principles)
 
 * Key Enthropy [here](https://asecuritysite.com/encryption/en). How many bits can represent X phases? Just take the Log(X), and divide by Log (2).
-* John the Ripper, Hashcat and Ophcrack: [here](http://youtu.be/Xvbk2nSzEPk?t=14m17s)
+* John the Ripper and Hashcat: [here](http://youtu.be/Xvbk2nSzEPk?t=14m17s)
 * Using OpenSSL to salt passwords: [here](http://youtu.be/Xvbk2nSzEPk?t=4m58s)
 
 The table you will use in the test is: [here](https://asecuritysite.com/public/test_table.pdf) and you can use a calculator.
@@ -90,7 +90,7 @@ Try to review your knowledge by answering these questions:
 
 Tables given are ASCII table, Morse and Base 64.
 
-# What about I know from a practical point-of-view?
+# What about I know from a practical point of view?
 
 A core lab for practical implementations is:
 
