@@ -7,7 +7,12 @@ Time for test: Thursday, 6 November 2025 (6-8pm, Clusters 1-4, JKCC)
 
 Test details:
 
-* 1 hour 25 mins (85 mins) - closed-book.
+* 1 hour 25 mins (85 mins). Students with additional time will have this time added automatically.
+* Closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc.
+* Desktop computer preferred, unless the student has a need to use their laptop.
+* Students can use their virtual desktops, either vSoC2 or AWS.
+
+Test structure: 
 * Seven ciphers (marks vary from 1 to 3 marks).
 * Ten MCQ questions on cryptography (one mark each).
 * Two short-answer questions on cryptography (eg public key, hashing, and so on). Possible practical implementation with OpenSSL (around 12 marks in total). There may be a sub-question with a practical implementation related to these questions.
