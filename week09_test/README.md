@@ -13,11 +13,11 @@ Test details:
 * Students can use their virtual desktops, either vSoC2 or AWS.
 
 Test structure: 
-* Seven ciphers (marks vary from 1 to 3 marks).
-* Ten MCQ questions on cryptography (one mark each).
+* Six ciphers (marks vary from 1 to 3 marks).
+* Nine MCQ questions on cryptography (one mark each).
 * Two short-answer questions on cryptography (eg public key, hashing, and so on). Possible practical implementation with OpenSSL (around 12 marks in total). There may be a sub-question with a practical implementation related to these questions.
 
-Total marks: TBC
+Total marks: 33
 
 ## Background
 
