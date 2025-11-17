@@ -102,7 +102,7 @@ The incident response team wants a report of unusual HTTP requests. Produce a re
 
 * The security team would like a report on the most popular user names that have failed on the security logs. What would you report?
 * The company are worried about the sales of some of their games. Which game category has the least amount of sales, and which is the best seller?
-* The Web design department have been told that there are missing files on the Web site. Investigate the files/pages that are missing on the site (Hint: 404 codes). What would you report?
+* The Web design department has been told that there are missing files on the website. Investigate the files/pages that are missing on the site (Hint: 404 codes). What would you report?
 * The IT Team are worried about system outages on the Web server. Can you report on possible Web server downtimes (Hint: the 5xx codes often identify server problems)?
 * You have been asked to investigate access to the file named passwords.pdf in the Buttercup Games Splunk trace. Investigate any accesses related to it, and outline any possible significant evidence of malicious activity related to these accesses.
 
@@ -113,7 +113,7 @@ On AWS, create a Windows 2022 instance and gain access to it (note, you may need
 
 Create a Splunk account, and then install Splunk Enterprise [here](https://www.splunk.com/en_us/download/splunk-enterprise.html).
 
-Once your server is up and running. Now, enter the command line, and stop the server:
+Once your server is up and running, you enter the command line, and stop the server:
 
 ```
 splunk stop
