@@ -41,6 +41,8 @@ Hello 111111
 
 The bot and the controller should connect to each other. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip).
 
+Note: **The bot and controller use TCP Ports 5000-5010, so please open them up on your firewall**
+
 ## Outline Requirements
 
 Botnets are a particular problem and where bot agents may infect machines inside an organisation’s network and connect back to a botnet controller that can receive commands and undertake malicious activities. The focus of this coursework is to create a virtualised testbed environment to analyse a particular botnet agent and the communications to its controller, and then to create and test a detection system to detect its activities. Tasks include:
