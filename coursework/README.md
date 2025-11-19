@@ -39,7 +39,9 @@ Please run with bot w.x.y.z, where w.x.y.z is the address of your controller.
 Hello 111111
 ```
 
-The bot and the controller should connect to each other.
+The bot and the controller should connect to each other. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip).
+
+Note: **The bot and controller use TCP Ports 5000-5010, so please open them up on your firewall**
 
 ## Outline Requirements
 
