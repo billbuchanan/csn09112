@@ -9,7 +9,7 @@ You can download the Bot onto the Linux machine using:
 
 ```
 wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2025_2026.zip?raw=true'
-mv cw_2025_2025.zip?raw=true cw2025_2026.zip
+mv cw_2025_2026.zip?raw=true cw2025_2026.zip
 unzip cw2025_2026.zip
 ```
 
