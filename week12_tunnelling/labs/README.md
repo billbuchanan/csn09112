@@ -43,6 +43,7 @@ preprocessor stream5_udp: timeout 180
 
 ```
 
+
 Now, create a subfolder named log:
 
 ```
@@ -54,7 +55,16 @@ Now run with:
 ```
 c:\snort\bin\snort.exe -c cw.rules -r cw.pcap -k none -l log
 ```
-
+The reason for the -k none is that we have checksum errors in the Wireshark packets:
+```
+All Discard:            0 (  0.000%)
+      Other:            0 (  0.000%)
+Bad Chk Sum:          121 (100.000%)
+    Bad TTL:            0 (  0.000%)
+     S5 G 1:            0 (  0.000%)
+     S5 G 2:            0 (  0.000%)
+      Total:          121
+```
 Your alerts should be in the log\alert.ids folder. An example is:
 
 ```
