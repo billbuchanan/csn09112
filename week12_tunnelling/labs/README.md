@@ -341,7 +341,13 @@ alert tcp any any -> any 5004 (msg:"Port 5004";sid:10004)
 alert tcp any any -> any 5005 (msg:"Port 5005";sid:10005)
 
 
-
+# Content detection (e.g. "bye")
+alert tcp any any -> any 5000 (msg:"Port 5000 command bye"; content:"bye"; sid:11000)
+alert tcp any any -> any 5001 (msg:"Port 5001 command bye"; content:"bye"; sid:11001)
+alert tcp any any -> any 5002 (msg:"Port 5002 command bye"; content:"bye"; sid:11002)
+alert tcp any any -> any 5003 (msg:"Port 5003 command bye"; content:"bye"; sid:11003)
+alert tcp any any -> any 5004 (msg:"Port 5004 command bye"; content:"bye"; sid:11004)
+alert tcp any any -> any 5005 (msg:"Port 5005 command bye"; content:"bye"; sid:11005)
 
 # Some additional pre-processor things
 preprocessor stream5_global: track_tcp yes, \
