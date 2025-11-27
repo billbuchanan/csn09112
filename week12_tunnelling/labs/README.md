@@ -329,7 +329,7 @@ Site rating:
 Other significant details:
 
 ## 6 IDS 
-Setup a Microsoft Windows server (from AWS), and then install Snort in the folder c:\snort. Next locate the snort.exe program and download the coursework as a pcap file [here](http://asecuritysite.com/cw.zip). Next, create a rules file to detect the connection between the bot and the controller, and save it as cw.rules:
+Setup a Microsoft Windows server (from AWS) or use your Windows server on vSoC, and then install Snort in the folder c:\snort. Next locate the snort.exe program and download the coursework as a pcap file [here](http://asecuritysite.com/cw.zip). Next, create a rules file to detect the connection between the bot and the controller, and save it as cw.rules:
 
 ```
 # Connection detection
