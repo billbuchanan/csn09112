@@ -1,6 +1,6 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-## Coursework Prep (Snort)
+## Coursework Prep (Snort on Windows)
 Set up a Microsoft Windows server (from AWS), the Windows server on vSoC or your laptop, and then install Snort V 2.9 [here](https://www.snort.org/downloads/snort/Snort_2_9_20_Installer.x64.exe) in the folder c:\snort. Next, locate the snort.exe (c:\snort\bin\snort.exe) program and download the coursework as a pcap file [here](http://asecuritysite.com/cw.zip). Next, create a rules file to detect the connection between the bot and the controller, and save it as cw.rules:
 
 ```
