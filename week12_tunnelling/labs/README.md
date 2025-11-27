@@ -378,13 +378,39 @@ mkdir log
 Now run with:
 
 ```
-snort.exe -c cw.rules -r cw.pcal -k none
+snort.exe -c cw.rules -r cw.pcap -k none
 ```
 
 What do you observe from the output?
 
 Your alerts should be in the log\alert.ids folder. What do you examine from the contents of this file?
 
-Now try this approach on the pcap file that you have captured for the coursework.
+An example is:
+
+```
+
+
+[**] [1:10000:0] Port 5000 [**]
+[Priority: 0] 
+11/13-15:03:10.666719 10.0.0.106:59444 -> 10.0.0.106:5000
+TCP TTL:128 TOS:0x2 ID:55884 IpLen:20 DgmLen:49 DF
+***AP*** Seq: 0x9A03111F  Ack: 0xC0DAF0E7  Win: 0x27F9  TcpLen: 20
+
+[**] [1:10000:0] Port 5000 [**]
+[Priority: 0] 
+11/13-15:03:10.666917 10.0.0.106:59444 -> 10.0.0.106:5000
+TCP TTL:128 TOS:0x0 ID:55887 IpLen:20 DgmLen:40 DF
+***A**** Seq: 0x9A031128  Ack: 0xC0DAF1E2  Win: 0x27F8  TcpLen: 20
+
+[**] [1:11000:0] Port 5000 command bye [**]
+[Priority: 0] 
+11/13-15:03:13.689070 10.0.0.106:59444 -> 10.0.0.106:5000
+TCP TTL:128 TOS:0x2 ID:55888 IpLen:20 DgmLen:45 DF
+***AP*** Seq: 0x9A031128  Ack: 0xC0DAF1E2  Win: 0x27F8  TcpLen: 20
+```
+
+We can see that the connection to Port 5000 was detected twice, and that the "bye" command was also detected.
+
+Now try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the bot sends to the controller
 
 
