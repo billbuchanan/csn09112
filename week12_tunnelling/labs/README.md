@@ -120,7 +120,7 @@ This gives:
 11/13-15:03:27.029538 10.0.0.106:5000 -> 10.0.0.106:59446
 TCP TTL:128 TOS:0x2 ID:55911 IpLen:20 DgmLen:86 DF
 ***AP*** Seq: 0x6EE75791  Ack: 0xFF366CED  Win: 0x27F9  TcpLen: 20
-``
+```
 
 Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the bot sends to the controller.
 
