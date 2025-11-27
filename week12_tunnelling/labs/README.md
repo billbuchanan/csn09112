@@ -52,7 +52,7 @@ mkdir log
 Now run with:
 
 ```
-c:\snort\bin\snort.exe -c cw.rules -r cw.pcap -k none
+c:\snort\bin\snort.exe -c cw.rules -r cw.pcap -k none -l log
 ```
 
 Your alerts should be in the log\alert.ids folder. An example is:
