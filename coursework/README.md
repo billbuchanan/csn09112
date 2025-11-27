@@ -237,5 +237,8 @@ Now, try this approach on the pcap file that you have captured for the coursewor
 
 Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the controller sends to the bot.
 
+## Setting up the bot and the controller
+Run the controller first and it will wait for a connection from the bot. Now run the bot with the IP address of the controller. The bot will run for a short time, and then stop. Make sure that you run Wireshark to listen to the traffic between the bot and the controller. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip).
 
+Note: The bot and controller use TCP Ports 5000-5010, so please open them up on your firewall
 
