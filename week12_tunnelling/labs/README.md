@@ -81,6 +81,22 @@ What do you examine from the contents of this file (alert.ids)?
 
 We can see that the connection to Port 5000 was detected twice, and that the "bye" command was also detected.
 
+Now we will now detect a range of ports with:
+
+```
+alert tcp any any -> any 5000:5005 (msg:"Command 'bye'"; content:"bye"; sid:11000)
+```
+
+This now gives:
+
+```
+[**] [1:11000:0] Command 'bye' [**]
+[Priority: 0] 
+11/13-15:03:13.689070 10.0.0.106:59444 -> 10.0.0.106:5000
+TCP TTL:128 TOS:0x2 ID:55888 IpLen:20 DgmLen:45 DF
+***AP*** Seq: 0x9A031128  Ack: 0xC0DAF1E2  Win: 0x27F8  TcpLen: 20
+```
+
 Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the bot sends to the controller.
 
 Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the controller sends to the bot.
