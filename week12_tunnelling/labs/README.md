@@ -43,7 +43,8 @@ If the site was susceptible to Poodle, what is the vulnerability?
 </pre>
 
 
-## 2	Viewing details
+
+## 2 Viewing details
 
 1	Go to your public Kali Linux instance. Run Wireshark and capture traffic from your main network connection. Start a Web browser, and go to www.napier.ac.uk.
 
@@ -110,7 +111,7 @@ By examining the certificate from the browser, which hash method is used for the
 By examining the certificate from the browser is the length of the encryption key:
 </pre>
 
-## 3	OpenSSL
+## 43OpenSSL
 
 1	Go to your Kali Linux instance, and make a connection to the www.live.com Web site:
 ```
@@ -327,6 +328,57 @@ Site rating:
 
 Other significant details:
 
+## 6 IDS 
+Setup a Microsoft Windows server (from AWS), and then install Snort in the folder c:\snort. Next locate the snort.exe program and download the coursework as a pcap file [here](http://asecuritysite.com/cw.zip). Next, create a rules file to detect the connection between the bot and the controller, and save it as cw.rules:
 
+```
+# Connection detection
+alert tcp any any -> any 5000 ( msg:"Port 5000";sid:10000)
+alert tcp any any -> any 5001 (msg:"Port 5001";sid:10001)
+alert tcp any any -> any 5002 (msg:"Port 5002";sid:10002)
+alert tcp any any -> any 5003 (msg:"Port 5003";sid:10003)
+alert tcp any any -> any 5004 (msg:"Port 5004";sid:10004)
+alert tcp any any -> any 5005 (msg:"Port 5005";sid:10005)
+
+
+
+
+# Some additional pre-processor things
+preprocessor stream5_global: track_tcp yes, \
+track_udp yes, \
+track_icmp no, \
+max_tcp 262144, \
+max_udp 131072, \
+max_active_responses 2, \
+min_response_seconds 5
+preprocessor stream5_tcp: policy windows, detect_anomalies, require_3whs 180, \
+overlap_limit 10, small_segments 3 bytes 150, timeout 180, \
+ports client 21 22 23 25 42 53 70 79 109 110 111 113 119 135 136 137 139 143 \
+161 445 513 514 587 593 691 1433 1521 1741 2100 3306 6070 6665 6666 6667 6668 6669 \
+7000 8181 32770 32771 32772 32773 32774 32775 32776 32777 32778 32779, \
+ports both 80 81 82 83 84 85 86 87 88 89 90 110 311 383 443 465 563 591 593 631 636 901 989 992 993 994 995 1220 1414 1830 2301 2381 2809 3037 3057 3128 3443 3702 4343 4848 5250 6080 6988 7907 7000 7001 7144 7145 7510 7802 7777 7779 \
+7801 7900 7901 7902 7903 7904 7905 7906 7908 7909 7910 7911 7912 7913 7914 7915 7916 \
+7917 7918 7919 7920 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180 8222 8243 8280 8300 8500 8800 8888 8899 9000 9060 9080 9090 9091 9443 9999 10000 11371 34443 34444 41080 50000 50002 55555
+preprocessor stream5_udp: timeout 180
+
+```
+
+Now create a subfolder named log:
+
+```
+mkdir log
+```
+
+Now run with:
+
+```
+snort.exe -c cw.rules -r cw.pcal -k none
+```
+
+What do you observe from the output?
+
+Your alerts should be in the log\alert.ids folder. What do you examine from the contents of this file?
+
+Now try this approach on the pcap file that you have captured for the coursework.
 
 
