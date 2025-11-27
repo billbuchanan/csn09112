@@ -83,6 +83,8 @@ We can see that the connection to Port 5000 was detected twice, and that the "by
 
 Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the bot sends to the controller.
 
+Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the controller sends to the bot.
+
 
 ## 1	Web cryptography assessment
 In this lab, we will investigate the usage of SSL/TLS and VPN tunnels. 
