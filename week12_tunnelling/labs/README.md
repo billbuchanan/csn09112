@@ -111,7 +111,7 @@ By examining the certificate from the browser, which hash method is used for the
 By examining the certificate from the browser is the length of the encryption key:
 </pre>
 
-## 43OpenSSL
+## 3 OpenSSL
 
 1	Go to your Kali Linux instance, and make a connection to the www.live.com Web site:
 ```
