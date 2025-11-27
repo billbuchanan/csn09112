@@ -1,6 +1,6 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-In this lab we will investigate the usage of SSL/TLS and VPN tunnels.
+In this lab we will investigate the usage of SSL/TLS and VPN tunnels. 
 
 ## 1	Web cryptography assessment
 The ssllabs tool (https://ssllabs.com) can be used to assess the security of the cryptography used on a Web site. You will be given a range of Web sites to scan in the lab, and you should pick three sites from the list. Now perform a test on them, and determine:
