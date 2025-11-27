@@ -91,7 +91,7 @@ What do you examine from the contents of this file (alert.ids)?
 
 We can see that the connection to Port 5000 was detected twice, and that the "bye" command was also detected.
 
-Now we will now detect a range of ports with:
+Now we will detect a range of ports with:
 
 ```
 alert tcp any any -> any 5000:5005 (msg:"Command 'bye'"; content:"bye"; sid:11000)
@@ -106,6 +106,21 @@ This now gives:
 TCP TTL:128 TOS:0x2 ID:55888 IpLen:20 DgmLen:45 DF
 ***AP*** Seq: 0x9A031128  Ack: 0xC0DAF1E2  Win: 0x27F8  TcpLen: 20
 ```
+Next, we can detect the controller response of "MYzJQjYmKdJkBxEe87tDowzbefGKZCYM1VmmRfLf2A4=" with:
+
+```
+alert tcp any 5000:5005 -> any any (msg:"Command 'MYz Base64 detected'"; content:"MYzJQjYmKdJkBxEe87tDowzbefGKZCYM1VmmRfLf2A4=";nocase; sid:11001)
+
+```
+This gives:
+
+```
+[**] [1:11001:0] Command 'MYz Base64 detected' [**]
+[Priority: 0] 
+11/13-15:03:27.029538 10.0.0.106:5000 -> 10.0.0.106:59446
+TCP TTL:128 TOS:0x2 ID:55911 IpLen:20 DgmLen:86 DF
+***AP*** Seq: 0x6EE75791  Ack: 0xFF366CED  Win: 0x27F9  TcpLen: 20
+``
 
 Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the bot sends to the controller.
 
