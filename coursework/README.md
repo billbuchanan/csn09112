@@ -94,7 +94,7 @@ Full academic referencing of peer-reviewed papers, technical papers, books, and 
 - All references cited should be listed at the end of the report, using IEEE referencing format.
 
 
-The report should use the Harvard format for all of the references and, if possible, should include EVERY reference to material sourced from other places. Also, the report should be up to 20 pages long (where appendices do not count in the page count number). 
+The report should use the Harvard format for all of the references and, if possible, should include EVERY reference to material sourced from other places. Also, the report should be up to 20 pages long (where appendices do not count in the page count). 
 
 # Usage of AI tools
 The use of AI tools is not recommended for any part of this coursework. Any use of them **must** be referenced within the coursework - and for all instances of their usage. The coursework should also contain a statement at the start of the coursework which defines whether AI tools have been used or not and a justification for their usage, such as:
