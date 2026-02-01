@@ -294,7 +294,7 @@ Bert:
 Admin:
 
 ## D AWS Cryptography
-We are generally moving our security into the public cloud, and thus many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
+We are generally moving our security into the public cloud, and thus, many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
 
 ### Symmetric key
 
@@ -532,7 +532,7 @@ Here’s a sample run in an AWS Foundation Lab environment:
 
 ### Using Python
 
-Along with using the CLI, we can create the encryption using Python. In the following we use the boto3 library, and have a key ID of “98a90e1f-2cb5–4564-a3aa-d0c060cdcf0a” and which is in the US-East-1 region:
+Along with using the CLI, we can create the encryption using Python. In the following, we use the boto3 library, and have a key ID of “98a90e1f-2cb5–4564-a3aa-d0c060cdcf0a” and which is in the US-East-1 region:
 ```
 import base64
 import binascii
