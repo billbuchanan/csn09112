@@ -76,6 +76,15 @@ then add:
 ```
 nameserver 8.8.8.8
 ```
+## Firewall setup
+We will now configure the firewall. For this, log into the firewall from the Ubuntu host on the Private zone by opening a browser and entering:
+
+```
+http://192.168.10.254
+```
+
+The username for pfSense is **admin** and the password is **pfsense**. 
+
 ### Disable bogon from the public interface
 The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu, and make sure you have connectivity to the firewall:
 
@@ -84,7 +93,7 @@ ping 192.168.10.7
 ping 192.168.10.254
 ```
 
-If any of these fail, you have not setup your basic connectivity. Next we need to test if we have the connectivity to the Web service on the firewall. For this, on Ubuntu, run:
+If any of these fail, you have not set up your basic connectivity. Next, we need to test if we have connectivity to the Web service on the firewall. For this, on Ubuntu, run:
 
 ```
 nmap 192.168.10.254
@@ -94,7 +103,7 @@ You should then see that the http service is enabled (see below). If not, reboot
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/nmap01.png)
 
-Next, go to Ubuntu, and connect to the firewall from the browser:
+Next, go to Ubuntu and connect to the firewall from the browser:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/pfsense01.png)
 
@@ -116,6 +125,16 @@ If any of these answers is No, you need to debug your network and find the probl
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/ub01.png)
 
+## Enable DMZ port
+Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (192.168.11.254/24) and subnet mask (24-bit subnet mask). Note that by default the DMZ is named with the OPT1 network name. 
+
+| | |
+|-|-|
+| 1. Go to the pfSense terminal, and check that the right address is set for OPT1 (192.168.11.254/24). Is it correct? | Yes/No |
+| 2. Go to the Windows 7 server. Can you ping the default gateway (192.168.11.254/24)? | Yes/No |
+
+The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
+
 ### Windows 7 host setup
 On the Windows 7 server, modify the static address on the network interface with:
 
@@ -131,32 +150,18 @@ DNS: 8.8.8.8
 
 The answer to this should be No, as we have not setup the firewall yet for this network port. Also, the firewall will block the traffic by default until we enable it with firewall rules.
 
-### Firewall setup
-We will now configure of the firewall. For this, log into the firewall from the Ubuntu host on the Private zone by opening a browser and entering:
 
-```
-http://192.168.10.254
-```
 
-The username for pfSense is **admin** and the password is **pfsense**. 
+## Enable ICMP on DMZ
 
-Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (192.168.11.254/24) and subnet mask. Note that by default the DMZ is named with the OPT network name. 
-
-| | |
-|-|-|
-| 1. Go to the pfSense terminal, and check that the right address is set for DMX2 (192.168.11.254/24). Is it correct? | Yes/No |
-| 2. Go to the Windows 7 server. Can you ping the default gateway (192.168.11.254/24)? | Yes/No |
-
-The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
-
-Now go to the Rules menu option, and add a rule that will allow ICMP traffic on the DMZ network. 
+Now go to the Rules menu option on the firewall and add a rule that will allow ICMP traffic on the DMZ network. 
 
 | | |
 |-|-|
 | 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
 | 2. Can you ping the main gateway (192.168.122.1)? | Yes/No |
-| 3. Can you ping the 8.8.8.8? | Yes/No |
-| 3. Can you ping the google.com | Yes/No |
+| 3. Can you ping 8.8.8.8? | Yes/No |
+| 3. Can you ping google.com | Yes/No |
 
 The answer to the first three should now be Yes, but the last one should be No, as the firewall will be blocking DNS traffic. For this we need to enable Port 53 UDP traffic from the DMZ. As we did before, go and enable this rule on the firewall, and commit it.
 
@@ -164,8 +169,8 @@ The answer to the first three should now be Yes, but the last one should be No, 
 |-|-|
 | 1. Can you ping the default gateway? | Yes/No |
 | 2. Can you ping the main gateway (192.168.122.1)? | Yes/No |
-| 3. Can you ping the 8.8.8.8? | Yes/No |
-| 4. Can you ping the google.com? | Yes/No |
+| 3. Can you ping  8.8.8.8? | Yes/No |
+| 4. Can you ping  google.com? | Yes/No |
 | 5. Run "nslookup google.com". What IP address does it give? |  |
 | 6. Open a browser and navigate to google.com. Can you access the site? | Yes/No |
 
@@ -177,15 +182,15 @@ Now, set a rule to allow traffic from Port 443 on the DMZ.
 |-|-|
 | 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
 | 2. Can you ping the main gateway (192.168.122.1)? | Yes/No |
-| 3. Can you ping the 8.8.8.8? | Yes/No |
-| 4. Can you ping the google.com? | Yes/No |
+| 3. Can you ping  8.8.8.8? | Yes/No |
+| 4. Can you ping  google.com? | Yes/No |
 | 5. Run "nslookup google.com". What IP address does it give? |  |
 | 6. Open a browser and navigate to google.com. Can you access the site? | Yes/No |
 
 The answer to each of these should be Yes.
 
 ### Kali host setup
-Now we will setup the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (192.168.11.254/24).
+Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (192.168.11.254/24).
 
 ```
 sudo ip link set eth0 up
@@ -193,7 +198,7 @@ sudo ip addr add 10.10.y.8/24 dev eth0
 sudo ip route add default via 192.168.11.254 dev eth0
 ```
 
-Next, set up the nameserver on the Kali host by editing the /etc/resolv.config and adding a nameserver:
+Next, set up the nameserver on the Kali host by editing  /etc/resolv.config and adding a nameserver:
 ```
 sudo nano /etc/resolv.conf
 ```
@@ -205,10 +210,10 @@ nameserver 8.8.8.8
 | | |
 |-|-|
 | 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
-| 2. Can you ping the Windows 7 (192.168.11.7)? | Yes/No |
+| 2. Can you ping  Windows 7 (192.168.11.7)? | Yes/No |
 | 3. Can you ping the main gateway (192.168.122.1)? | Yes/No |
-| 4. Can you ping  8.8.8.8? | Yes/No |
-| 5. Can you ping  google.com? | Yes/No |
+| 4. Can you ping 8.8.8.8? | Yes/No |
+| 5. Can you ping google.com? | Yes/No |
 | 6. Run "nslookup google.com". What IP address does it give? |  |
 | 7. Open a browser and navigate to google.com. Can you access the site? | Yes/No |
 
