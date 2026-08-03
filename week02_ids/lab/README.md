@@ -19,7 +19,7 @@ Our challenge is to set up MyBank Incorp, where each of you will be allocated a 
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
-## Quick guide</h2>
+## Quick guide
 For Ubuntu configuration, for 192.168.10.7/24:
 
 ```
@@ -57,7 +57,7 @@ sudo ip addr add 192.168.10.7/24 dev ens3
 sudo ip route add default via 192.168.10.254 dev ens3
 ```
 
-Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver of 8.8.8.8:
+Next, set up the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver of 8.8.8.8:
 
 ```
 sudo nano /etc/resolv.conf
@@ -66,6 +66,28 @@ then add:
 ```
 nameserver 8.8.8.8
 ```
+### Disable bogon from the public interface
+The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu, and make sure you have connectivity to the firewall:
+
+```
+ping 192.168.10.7
+ping 192.168.10.254
+```
+
+If any of these fail, you have not setup your basic connectivity. Next we need to test if we have the connectivity to the Web service on the firewall. For this, on Ubuntu, run:
+
+```
+nmap 192.168.10.254
+```
+
+You should then see that the http service is enabled (see below). If not, reboot the firewall, and try again.
+
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/nmap01.png)
+
+Next, go to Ubuntu, and complete the following:
+
+## Testing connectivity
+Now, from the Ubuntu terminal, test for the following:
 
 | | |
 |-|-|
