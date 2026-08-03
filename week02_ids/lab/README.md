@@ -84,7 +84,11 @@ You should then see that the http service is enabled (see below). If not, reboot
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/nmap01.png)
 
-Next, go to Ubuntu, and complete the following:
+Next, go to Ubuntu, and connect to the firewall from the browser:
+
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/pfsense01.png)
+
+If you are not getting connectivity, try rebooting the firewall (option 5 from the console) or restart the Webconfigurator.
 
 ## Testing connectivity
 Now, from the Ubuntu terminal, test for the following:
