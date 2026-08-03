@@ -35,7 +35,7 @@ For Ubuntu configuration, for 192.168.10.7/24:
 sudo ip link set ens3 up
 sudo ip addr add 192.168.10.7/24 dev ens3
 sudo ip route add default via 192.168.10.254/24 dev ens3
-sudo nano /etc/resolv.conf and confirm you have "nameserver 8.8.8.8" otherwise, add it.
+sudo nano /etc/resolv.conf and confirm you have "nameserver 8.8.8.8"; otherwise, add it.
 ```
 
 ## Setting up the network
@@ -53,7 +53,7 @@ Power up your pfSense firewall. The interfaces are:
 
 Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 192.168.10.254/24.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall02.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall01.png)
 
 **Answer no through the rest of the prompts.**
 
@@ -137,7 +137,7 @@ Next, navigate to the Interfaces menu item and then set up the required IP on th
 
 The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall02.png)
 
 ### Windows 7 host setup
 On the Windows 7 server, modify the static address on the network interface with:
