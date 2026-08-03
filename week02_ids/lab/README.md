@@ -268,6 +268,8 @@ On the Kali public host, verify that it can ping the default gateway (192.168.12
 
 The answer to these should be Yes.
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/kali_public.png)
+
 ## Final check of connectivity
 Go back to your Windows 7 host, and check that you can ping all of the hosts on the network.
 
