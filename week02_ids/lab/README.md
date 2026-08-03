@@ -84,7 +84,7 @@ We can test our connectivity to the Web service on the firewall. For this, on Ub
 nmap 192.168.10.254
 ```
 
-You should then see that the http service is enabled (see below). Press Ctrl-C to exit from telnet:
+You should then see that the http service is enabled (see below). 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/nmap01.png)
 
