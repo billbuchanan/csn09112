@@ -18,8 +18,7 @@ pfsense- User: admin, Password: pfsense
 Metasploitable- User: msfadmin, Password: napier123  
 
 ## Lab setup
-Our challenge is to set up MyBank Incorp, where each of you will be allocated a network and hosts to configure and get online (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives. 
-
+Our challenge is to set up MyBank Incorp, and get all the hosts online and connect to the Internet/Web (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/pfsense1.png)
 
