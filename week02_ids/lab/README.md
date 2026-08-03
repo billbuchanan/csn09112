@@ -143,7 +143,12 @@ Next, navigate to the Interfaces menu item and then set up the required IP on th
 
 The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/opt1.png)
+
+On the firewall console, we should see the new interface:
+
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall02.png)
+
 
 ### Windows 7 host setup
 On the Windows 7 server, modify the static address on the network interface with:
