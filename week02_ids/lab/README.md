@@ -131,6 +131,8 @@ If any of these answers is No, you need to debug your network and find the probl
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ub01.png)
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/bbc.png)
+
 ## Enable DMZ port
 Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (192.168.11.254/24) and subnet mask (24-bit subnet mask). Note that by default the DMZ is named with the OPT1 network name. 
 
