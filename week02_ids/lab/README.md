@@ -88,7 +88,7 @@ Next, go to Ubuntu, and connect to the firewall from the browser:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/pfsense01.png)
 
-If you are not getting connectivity, try rebooting the firewall (option 5 from the console) or restart the Webconfigurator.
+If you are not getting connectivity, try rebooting the firewall (option 5 from the console) or restarting the Webconfigurator (option 11 from the console).
 
 ## Testing connectivity
 Now, from the Ubuntu terminal, test for the following:
