@@ -90,7 +90,7 @@ You should then see that the http service is enabled (see below). If not, reboot
 
 If you are not getting connectivity, try rebooting the firewall (Option 5 from the pfSense console): 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/reboot01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/reboot.png)
 
 ### Connecting to the firewall
 We will now configure the firewall. For this, log into the firewall from the Ubuntu host on the Private network by opening a browser and entering:
