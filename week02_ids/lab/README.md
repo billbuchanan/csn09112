@@ -266,7 +266,7 @@ On the Kali public host, verify that it can ping the default gateway (192.168.12
 | 4. Can you ping Google.com? |  [Yes/No] | 
 | 5. Can you access Google.com from a browser? | [Yes/No] |
 
-The answer to these should be Yes.
+The answer to these should be Yes. 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/kali_public.png)
 
