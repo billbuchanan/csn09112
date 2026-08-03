@@ -164,7 +164,7 @@ Now go to the Rules menu option on the firewall and add a rule that will allow I
 | 3. Can you ping 8.8.8.8? | Yes/No |
 | 3. Can you ping google.com | Yes/No |
 
-The answer to the first three should now be Yes, but the last one should be No, as the firewall will be blocking DNS traffic. For this we need to enable Port 53 UDP traffic from the DMZ. As we did before, go and enable this rule on the firewall, and commit it.
+The answer to the first three should now be Yes, but the last one should be No, as the firewall will be blocking DNS traffic from the DMZ network (OPT1). For this, we need to enable Port 53 UDP traffic from the DMZ. As we did before, go and enable this rule on the firewall, and commit it.
 
 | | |
 |-|-|
