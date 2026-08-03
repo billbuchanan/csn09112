@@ -20,65 +20,59 @@ Our challenge is to set up MyBank Incorp, where each of you will be allocated a 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
 ## Quick guide</h2>
-For Ubuntu configuration, for 10.10.x.7:
+For Ubuntu configuration, for 192.168.10.7/24:
 
 ```
-sudo ip link set ens160 up
-sudo ip addr add 10.10.x.7/24 dev ens160
-sudo ip route add default via 10.10.x.254 dev ens160
-sudo nano /etc/resolv.conf and confirm you have "nameserver 146.176.1.5" otherwise add it.
+sudo ip link set ens3 up
+sudo ip addr add 192.168.10.7/24 dev ens3
+sudo ip route add default via 192.168.10.254/24 dev ens3
+sudo nano /etc/resolv.conf and confirm you have "nameserver 8.8.8.8" otherwise, add it.
 ```
-
-
 
 ## Setting up the network
-In this lab, we will connect our firewall to the main gateway and be able to complete the challenges in Table 1. You will be given two things:
-
-Group Number:
-
-Your networks will be: 10.10.x.0/24  10.10.y.0/24  
-
-Demo: [here](https://www.youtube.com/watch?v=qIA3LnKTI6k)
+In this lab, we will connect our firewall to the main gateway and be able to complete the challenges in Table 1. The initial setup is:
+ 
+Demo: [here](https://www.youtube.com/watch?v=-7KuYsMNgeI)
 
 
 ## B Initial Firewall Creation
-Power up your Pfsense firewall and the rest of the hosts (do not power up the Vyatta firewall). Select the Pfsense firewall terminal **Do not set VLANs**, and enable the interfaces of:
+Power up your pfSense firewall. The interfaces are:
 
 * vmx0. WAN.
 * vmx1. Private.
 * vmx2. DMZ
 
-Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 10.10.x.254/24.
+Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 192.168.10.254/24.
 
 **Answer no through the rest of the prompts.**
 
 Now we will configure the hosts to sit on the Private and DMZ networks.
 
 ## C Ubuntu setup
-Set up the Ubuntu host to have an IP address of 10.10.x.7/24 (for the ens160 network adaptor) with a default gateway of your firewall port (10.10.x.254/24).
+Set up the Ubuntu host to have an IP address of 192.168.10.7/24 (for the ens3 network adaptor) with a default gateway of your firewall port (192.168.10.254/24).
 
 ```
-sudo ip link set ens160 up
-sudo ip addr add 10.10.x.7/24 dev ens160
-sudo ip route add default via 10.10.x.254 dev ens160
+sudo ip link set ens3 up
+sudo ip addr add 192.168.10.7/24 dev ens3
+sudo ip route add default via 192.168.10.254 dev ens3
 ```
 
-Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver of 146.176.1.6:
+Next setup the nameserver on the Ubuntu host by editing the /etc/resolv.config and adding a nameserver of 8.8.8.8:
 
 ```
 sudo nano /etc/resolv.conf
 ```
 then add:
 ```
-nameserver 146.176.1.5
+nameserver 8.8.8.8
 ```
 
 | | |
 |-|-|
-| 1. Can you ping the default gateway? | Yes/No |
-| 2. Can you ping the main gateway (10.221.3.254)? | Yes/No |
-| 3. Can you ping the 8.8.8.8? | Yes/No |
-| 4. Can you ping the google.com? | Yes/No |
+| 1. Can you ping the default gateway (192.168.10.254)? | Yes/No |
+| 2. Can you ping the main gateway (192.168.122.1)? | Yes/No |
+| 3. Can you ping 8.8.8.8? | Yes/No |
+| 4. Can you ping google.com? | Yes/No |
 | 5. Run "nslookup google.com". What IP address does it give? |  |
 | 6. Open a browser and navigate to google.com. Can you access the site? | Yes/No |
 
@@ -91,7 +85,7 @@ On the Windows 7 server, modify the static address on the network interface with
 IP: 10.10.y.7
 Subnet mask: 255.255.255.0
 Gateway: 10.10.y.254
-DNS: 146.176.1.5
+DNS: 8.8.8.8
 ```
 | | |
 |-|-|
@@ -103,7 +97,7 @@ The answer to this should be No, as we have not setup the firewall yet for this 
 We will now configure of the firewall. For this, log into the firewall from the Ubuntu host on the Private zone by opening a browser and entering:
 
 ```
-http://10.10.x.254
+http://192.168.10.254
 ```
 
 The username for pfSense is **admin** and the password is **pfsense**. 
@@ -167,7 +161,7 @@ sudo nano /etc/resolv.conf
 ```
 then add:
 ```
-nameserver 146.176.1.5
+nameserver 8.8.8.8
 ```
 
 | | |
