@@ -84,13 +84,15 @@ We can test our connectivity to the Web service on the firewall. For this, on Ub
 nmap 192.168.10.254
 ```
 
-You should then see that the http service is enabled (see below). If not, reboot the firewall, and try again.
+You should then see that the http service is enabled (see below). If not, reboot the firewall:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/nmap01.png)
 
-If you are not getting connectivity, try rebooting the firewall (Option 5 from the pfSense console): 
+To reboot the firewall, use Option 5 from the pfSense console: 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/reboot.png)
+
+Try the connectivity again once the firewall has rebooted.
 
 ### Connecting to the firewall
 We will now configure the firewall. For this, log into the firewall from the Ubuntu host on the Private network by opening a browser and entering:
