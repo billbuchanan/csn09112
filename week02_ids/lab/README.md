@@ -104,6 +104,8 @@ Now, from the Ubuntu terminal, test for the following:
 
 If any of these answers is No, you need to debug your network and find the problem. By default, all traffic is allowed to flow from the Private network to the other network, so we do not have to enable any firewall rules. If (1) does not ping, you have a basic connectivity problem and need to check your network adaptor on Ubuntu for its IP address and subnet mask. If (2) doesn't work, you have a problem with your default gateway on Ubuntu, so check that the default gateway of Ubuntu is set of the LAN port of the firewall. If (3) doesn't work, you have a general problem with your firewall, so check the details on the pfSense firewall. If  (4) doesn't work, but (3) does, you have a problem with your DNS service, so check the DNS details on the Ubuntu host. 
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/ub01.png)
+
 ### Windows 7 host setup
 On the Windows 7 server, modify the static address on the network interface with:
 
