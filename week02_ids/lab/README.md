@@ -147,8 +147,9 @@ DNS: 8.8.8.8
 |-|-|
 | 1. Can you ping the default gateway? | Yes/No |
 
-The answer to this should be No, as we have not setup the firewall yet for this network port. Also, the firewall will block the traffic by default until we enable it with firewall rules.
+The answer to this should be No, as we have not set up the firewall yet for this network port. Also, the firewall will block the traffic by default until we enable it with firewall rules.
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ip01.png)
 
 
 ## Enable ICMP on DMZ
