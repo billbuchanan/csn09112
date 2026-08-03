@@ -76,23 +76,7 @@ then add:
 nameserver 8.8.8.8
 ```
 ## Firewall setup
-We will now configure the firewall. For this, log into the firewall from the Ubuntu host on the Private zone by opening a browser and entering:
-
-```
-http://192.168.10.254
-```
-
-The username for pfSense is **admin** and the password is **pfsense**. 
-
-### Disable bogon from the public interface
-The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu, and make sure you have connectivity to the firewall:
-
-```
-ping 192.168.10.7
-ping 192.168.10.254
-```
-
-If any of these fail, you have not set up your basic connectivity. Next, we need to test if we have connectivity to the Web service on the firewall. For this, on Ubuntu, run:
+We can test our connectivity to the Web service on the firewall. For this, on Ubuntu, run:
 
 ```
 nmap 192.168.10.254
@@ -102,11 +86,28 @@ You should then see that the http service is enabled (see below). If not, reboot
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/nmap01.png)
 
-Next, go to Ubuntu and connect to the firewall from the browser:
+If you are not getting connectivity, try rebooting the firewall (option 5 from the console) or restarting the Webconfigurator (option 11 from the console).
+
+### Connecting to the firewall
+We will now configure the firewall. For this, log into the firewall from the Ubuntu host on the Private network by opening a browser and entering:
+
+```
+http://192.168.10.254
+```
+
+The username for pfSense is **admin** and the password is **pfsense**. 
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense01.png)
 
-If you are not getting connectivity, try rebooting the firewall (option 5 from the console) or restarting the Webconfigurator (option 11 from the console).
+### Disable bogon from the public interface
+The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu, and make sure you have connectivity to the firewall:
+
+```
+ping 192.168.10.7
+ping 192.168.10.254
+```
+
+
 
 ## Testing connectivity
 Now, from the Ubuntu terminal, test for the following:
