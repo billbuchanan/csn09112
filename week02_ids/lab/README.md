@@ -7,7 +7,7 @@ The aim of this lab is to build a network of hosts and get the firewall to allow
 
 ## Activities
 
-Complete Lab 1: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/csn09112_lab01.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=-7KuYsMNgeI).</p>
+Complete Lab 1: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/csn09112_lab01.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=-7KuYsMNgeI).</p>
 
 User logins: 
 
@@ -18,15 +18,15 @@ pfsense- User: admin, Password: pfsense
 Metasploitable- User: msfadmin, Password: napier123  
 
 ## Lab setup
-Our challenge is to set up MyBank Incorp, and get all the hosts online and connect to the Internet/Web (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives:
+Our challenge is to set up MyBank Incorp, and get all the hosts online and connected to the Internet/Web (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/pfsense1.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense1.png)
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
 The setup for GNS3 is:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/gns01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/gns01.png)
 
 ## Quick guide
 For Ubuntu configuration, for 192.168.10.7/24:
@@ -100,11 +100,11 @@ nmap 192.168.10.254
 
 You should then see that the http service is enabled (see below). If not, reboot the firewall, and try again.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/nmap01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/nmap01.png)
 
 Next, go to Ubuntu and connect to the firewall from the browser:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/pfsense01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense01.png)
 
 If you are not getting connectivity, try rebooting the firewall (option 5 from the console) or restarting the Webconfigurator (option 11 from the console).
 
@@ -122,7 +122,7 @@ Now, from the Ubuntu terminal, test for the following:
 
 If any of these answers is No, you need to debug your network and find the problem. By default, all traffic is allowed to flow from the Private network to the other network, so we do not have to enable any firewall rules. If (1) does not ping, you have a basic connectivity problem and need to check your network adaptor on Ubuntu for its IP address and subnet mask. If (2) doesn't work, you have a problem with your default gateway on Ubuntu, so check that the default gateway of Ubuntu is set of the LAN port of the firewall. If (3) doesn't work, you have a general problem with your firewall, so check the details on the pfSense firewall. If  (4) doesn't work, but (3) does, you have a problem with your DNS service, so check the DNS details on the Ubuntu host. 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/ub01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ub01.png)
 
 ## Enable DMZ port
 Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (192.168.11.254/24) and subnet mask (24-bit subnet mask). Note that by default the DMZ is named with the OPT1 network name. 
@@ -188,7 +188,7 @@ Now, set a rule to allow traffic from Port 443 on the DMZ.
 
 The answer to each of these should be Yes.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/rules01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/rules01.png)
 
 ### Kali host set up
 Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (192.168.11.254/24).
@@ -302,7 +302,7 @@ From Ubuntu, open up a browser, and connect to the Web server on Windows 7.
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/web02.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web02.png)
 
 From Windows 7, open up a browser, and connect to the Web server on Ubuntu.
 
@@ -310,7 +310,7 @@ From Windows 7, open up a browser, and connect to the Web server on Ubuntu.
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/web01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web01.png)
 
 
 # Appendix
