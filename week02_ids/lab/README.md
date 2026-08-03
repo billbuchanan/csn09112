@@ -92,7 +92,7 @@ To reboot the firewall, use Option 5 from the pfSense console:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/reboot.png)
 
-Try the connectivity again once the firewall has rebooted.
+Try the connectivity again once the firewall has rebooted. If this doesn't work, try restarting the Webconfigurator service (Option 11 from the pfSense console).
 
 ### Connecting to the firewall
 We will now configure the firewall. For this, log into the firewall from the Ubuntu host on the Private network by opening a browser and entering:
