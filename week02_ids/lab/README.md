@@ -53,6 +53,8 @@ Power up your pfSense firewall. The interfaces are:
 
 Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 192.168.10.254/24.
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall02.png)
+
 **Answer no through the rest of the prompts.**
 
 Now we will configure the hosts to sit on the Private and DMZ networks.
@@ -134,6 +136,8 @@ Next, navigate to the Interfaces menu item and then set up the required IP on th
 | 2. Go to the Windows 7 server. Can you ping the default gateway (192.168.11.254/24)? | Yes/No |
 
 The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
+
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall01.png)
 
 ### Windows 7 host setup
 On the Windows 7 server, modify the static address on the network interface with:
