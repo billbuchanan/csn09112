@@ -48,9 +48,9 @@ Demo: [here](https://www.youtube.com/watch?v=-7KuYsMNgeI)
 ## B Initial Firewall Creation
 Power up your pfSense firewall. The interfaces are:
 
-* vmx0. WAN.
-* vmx1. Private.
-* vmx2. DMZ
+* em0. WAN.
+* em1. Private.
+* em2. DMZ
 
 Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 192.168.10.254/24.
 
