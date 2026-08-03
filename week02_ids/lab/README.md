@@ -9,7 +9,13 @@ The aim of this lab is to build a network of hosts and get the firewall to allow
 
 Complete Lab 1: The lab is [here](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/csn09112_lab01.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=qIA3LnKTI6k).</p>
 
+User logins: 
 
+Ubuntu- User: user, Password: 1234  
+Kali-  User: napier, Password: napier123  
+Windows-		User: Administrator, Password: napier123  
+pfsense- User: admin, Password: pfsense  
+Metasploitable- User: msfadmin, Password: napier123  
 
 ## Lab setup
 Our challenge is to set up MyBank Incorp, where each of you will be allocated a network and hosts to configure and get online (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives. 
@@ -110,9 +116,9 @@ If any of these answers is No, you need to debug your network and find the probl
 On the Windows 7 server, modify the static address on the network interface with:
 
 ```
-IP: 10.10.y.7
+IP: 192.168.11.7
 Subnet mask: 255.255.255.0
-Gateway: 10.10.y.254
+Gateway: 192.168.11.254
 DNS: 8.8.8.8
 ```
 | | |
@@ -130,12 +136,12 @@ http://192.168.10.254
 
 The username for pfSense is **admin** and the password is **pfsense**. 
 
-Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (10.10.y.254/24) and subnet mask. Note that by default the DMZ is named with the OPT network name. 
+Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (192.168.11.254/24) and subnet mask. Note that by default the DMZ is named with the OPT network name. 
 
 | | |
 |-|-|
-| 1. Go to the pfSense terminal, and check that the right address is set for DMX2 (10.10.y.254/24). Is it correct? | Yes/No |
-| 2. Go to the Windows 7 server. Can you ping the default gateway (10.10.y.254/24)? | Yes/No |
+| 1. Go to the pfSense terminal, and check that the right address is set for DMX2 (192.168.11.254/24). Is it correct? | Yes/No |
+| 2. Go to the Windows 7 server. Can you ping the default gateway (192.168.11.254/24)? | Yes/No |
 
 The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
 
@@ -143,8 +149,8 @@ Now go to the Rules menu option, and add a rule that will allow ICMP traffic on 
 
 | | |
 |-|-|
-| 1. Can you ping the default gateway (10.10.y.254)? | Yes/No |
-| 2. Can you ping the main gateway (10.221.3.254)? | Yes/No |
+| 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
+| 2. Can you ping the main gateway (192.168.122.1)? | Yes/No |
 | 3. Can you ping the 8.8.8.8? | Yes/No |
 | 3. Can you ping the google.com | Yes/No |
 
@@ -153,7 +159,7 @@ The answer to the first three should now be Yes, but the last one should be No, 
 | | |
 |-|-|
 | 1. Can you ping the default gateway? | Yes/No |
-| 2. Can you ping the main gateway (10.221.3.254)? | Yes/No |
+| 2. Can you ping the main gateway (192.168.122.1)? | Yes/No |
 | 3. Can you ping the 8.8.8.8? | Yes/No |
 | 4. Can you ping the google.com? | Yes/No |
 | 5. Run "nslookup google.com". What IP address does it give? |  |
@@ -165,8 +171,8 @@ Now, set a rule to allow traffic from Port 443 on the DMZ.
 
 | | |
 |-|-|
-| 1. Can you ping the default gateway (10.10.y.254)? | Yes/No |
-| 2. Can you ping the main gateway (10.221.3.254)? | Yes/No |
+| 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
+| 2. Can you ping the main gateway (192.168.122.1)? | Yes/No |
 | 3. Can you ping the 8.8.8.8? | Yes/No |
 | 4. Can you ping the google.com? | Yes/No |
 | 5. Run "nslookup google.com". What IP address does it give? |  |
@@ -175,15 +181,15 @@ Now, set a rule to allow traffic from Port 443 on the DMZ.
 The answer to each of these should be Yes.
 
 ### Kali host setup
-Now we will setup the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (10.10.y.254/24).
+Now we will setup the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (192.168.11.254/24).
 
 ```
 sudo ip link set eth0 up
 sudo ip addr add 10.10.y.8/24 dev eth0
-sudo ip route add default via 10.10.y.254 dev eth0
+sudo ip route add default via 192.168.11.254 dev eth0
 ```
 
-Next setup the nameserver on the Kali host by editing the /etc/resolv.config and adding a nameserver:
+Next, set up the nameserver on the Kali host by editing the /etc/resolv.config and adding a nameserver:
 ```
 sudo nano /etc/resolv.conf
 ```
@@ -194,41 +200,41 @@ nameserver 8.8.8.8
 
 | | |
 |-|-|
-| 1. Can you ping the default gateway (10.10.y.254)? | Yes/No |
-| 2. Can you ping the Windows 7 (10.10.y.7)? | Yes/No |
-| 3. Can you ping the main gateway (10.221.3.254)? | Yes/No |
-| 4. Can you ping the 8.8.8.8? | Yes/No |
-| 5. Can you ping the google.com? | Yes/No |
+| 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
+| 2. Can you ping the Windows 7 (192.168.11.7)? | Yes/No |
+| 3. Can you ping the main gateway (192.168.122.1)? | Yes/No |
+| 4. Can you ping  8.8.8.8? | Yes/No |
+| 5. Can you ping  google.com? | Yes/No |
 | 6. Run "nslookup google.com". What IP address does it give? |  |
 | 7. Open a browser and navigate to google.com. Can you access the site? | Yes/No |
 
 The answer to these should be Yes. If not, you will have to check your configuration.
 
 ### Metasploitable host setup
-Next setup your Metasploitable host on the DMZ (User: msfadmin, Password: napier123). Set up the Metasploitable host to connect to 10.10.y.9/24 with a default gateway of your firewall port (10.10.y.254/24).
+Next, set up your Metasploitable host on the DMZ (User: msfadmin, Password: napier123). Set up the Metasploitable host to connect to 192.168.11.9/24 with a default gateway of your firewall port (192.168.11.254/24).
 ```
-sudo ip addr add 10.10.y.9/24 dev eth0
-sudo ip route add default via 10.10.y.254 dev eth0
+sudo ip addr add 192.168.11.9/24 dev eth0
+sudo ip route add default via 192.168.11.254 dev eth0
 ```
 
 | | |
 |-|-|
-| 1. Can you ping the default gateway (10.10.y.254)? | Yes/No |
-| 2. Can you ping the Windows 7 (10.10.y.7)? | Yes/No |
-| 3. Can you ping the Kali DMZ (10.10.y.8)? | Yes/No |
-| 4. Can you ping the main gateway (10.221.3.254)? | Yes/No |
-| 5. Can you ping the 8.8.8.8? | Yes/No |
-| 6. Can you ping the google.com? | Yes/No |
+| 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
+| 2. Can you ping Windows 7 (192.168.11.7)? | Yes/No |
+| 3. Can you ping Kali DMZ (10.10.y.8)? | Yes/No |
+| 4. Can you ping the main gateway (192.168.122.1)? | Yes/No |
+| 5. Can you ping 8.8.8.8? | Yes/No |
+| 6. Can you ping google.com? | Yes/No |
 
 The answer to these should be Yes. If not, you will have to check your configuration.
 
 ### Kali (Public) host setup
-On the Kali public host, verify that it can ping the default gateway (10.221.3.254), 8.8.8.8 and also google.com? 
+On the Kali public host, verify that it can ping the default gateway (192.168.122.1), 8.8.8.8 and also google.com? 
 
 | | |
 |-|-|
 | 1. What is the IP address of your Kali (Public) host? | |
-| 2. Can you ping 10.221.3.254? | [Yes/No] |
+| 2. Can you ping 192.168.122.1? | [Yes/No] |
 | 3. Can you ping 8.8.8.8? | [Yes/No] | 
 | 4. Can you ping Google.com? |  [Yes/No] | 
 | 5. Can you access Google.com from a browser? | [Yes/No] |
@@ -296,8 +302,8 @@ From Windows 7, open up a browser, and connect to the Web server on Ubuntu.
 # Appendix
 User logins: 
 
-Ubuntu:- User: napier, Password: napier123  
-Kali:-  User: root, Password: toor  
+Ubuntu:- User: user, Password: 1234  
+Kali:-  User: napier, Password: napier123  
 Windows:-		User: Administrator, Password: napier123  
 pfsense:- User: admin, Password: pfsense  
 Metasploitable:- User: msfadmin, Password: napier123  
