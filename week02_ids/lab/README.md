@@ -190,7 +190,7 @@ The answer to each of these should be Yes.
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/rules01.png)
 
-### Kali host setup
+### Kali host set up
 Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (192.168.11.254/24).
 
 ```
@@ -302,11 +302,15 @@ From Ubuntu, open up a browser, and connect to the Web server on Windows 7.
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/web02.png)
+
 From Windows 7, open up a browser, and connect to the Web server on Ubuntu.
 
 | | |
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
+
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/web01.png)
 
 
 # Appendix
