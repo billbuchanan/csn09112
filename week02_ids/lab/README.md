@@ -189,6 +189,8 @@ Now, set a rule to allow traffic from Port 443 on the DMZ.
 
 The answer to each of these should be Yes.
 
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/rules01.png)
+
 ### Kali host setup
 Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (192.168.11.254/24).
 
