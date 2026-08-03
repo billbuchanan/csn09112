@@ -25,6 +25,10 @@ Our challenge is to set up MyBank Incorp, where each of you will be allocated a 
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
+The setup for GNS3 is:
+
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/gns01.png)
+
 ## Quick guide
 For Ubuntu configuration, for 192.168.10.7/24:
 
