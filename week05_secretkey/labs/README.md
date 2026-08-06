@@ -89,6 +89,12 @@ What is the fruit?
 ## B Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
+If Kali, to remove the potfile, use:
+
+```
+rm ~/.local/share/hashcat/hashcat.potfile
+```
+
 The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
 
 ```
