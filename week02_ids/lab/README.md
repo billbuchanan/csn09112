@@ -333,7 +333,7 @@ From Ubuntu, open up a browser, and connect to the Web server on Windows 7.
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web02.png)
 
-From Windows 7, open up a browser, and connect to the Web server on Ubuntu.
+From Windows 7, open up a browser and connect to the Web server on Ubuntu.
 
 | | |
 |-|-|
@@ -342,7 +342,7 @@ From Windows 7, open up a browser, and connect to the Web server on Ubuntu.
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web01.png)
 
 ## And finally ...
-Send a share of your instances to b.buchanan@napier.ac.uk
+Send a shareable link to your instance to Bill Buchanan on Teams chat using "Share Screen" and "Collaborate offline" (Link expires in 1 month).
 
 Now, power down your instances, or suspend them:
 
@@ -351,10 +351,10 @@ Now, power down your instances, or suspend them:
 # Appendix
 User logins: 
 
-Ubuntu:- User: user, Password: 1234  
-Kali:-  User: napier, Password: napier123  
-Windows:-		User: Administrator, Password: napier123  
-pfsense:- User: admin, Password: pfsense  
-Metasploitable:- User: msfadmin, Password: napier123  
+* Ubuntu:- User: user, Password: 1234  
+* Kali:-  User: napier, Password: napier123  
+* Windows:-		User: Administrator, Password: napier123  
+* pfsense:- User: admin, Password: pfsense  
+* Metasploitable:- User: msfadmin, Password: napier123  
 
 
