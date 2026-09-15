@@ -34,7 +34,7 @@ Select “Cyber Modular Labs”, and then select the project “bill_csn09112.gn
 
 The setup for GNS3 is:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/gns01.png)
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/gns_01.png)
 
 ## Quick guide
 For Ubuntu configuration, for 192.168.10.7/24:
