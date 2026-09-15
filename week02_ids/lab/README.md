@@ -334,7 +334,9 @@ From Windows 7, open up a browser, and connect to the Web server on Ubuntu.
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web01.png)
 
 ## And finally ...
-Now, power down your instances, or suspect them:
+Send a share of your instances to b.buchanan@napier.ac.uk
+
+Now, power down your instances, or suspend them:
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/suspend.png)
 
