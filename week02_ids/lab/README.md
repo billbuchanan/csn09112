@@ -11,11 +11,11 @@ Complete Lab 1: The lab is [here](https://github.com/billbuchanan/csn09112/blob/
 
 User logins: 
 
-Ubuntu- User: user, Password: napier123  
-Kali-  User: napier, Password: napier1234  
-Windows-		User: Administrator, Password: napier1234  
+Ubuntu- User: user, Password: 1234  
+Kali-  User: napier, Password: napier123  
+Windows-		User: Administrator, Password: napier123 
 pfsense- User: admin, Password: pfsense  
-Metasploitable- User: msfadmin, Password: napier1234  
+Metasploitable- User: msfadmin, Password: napier123  
 
 ## Lab setup
 Our challenge is to set up MyBank Incorp, and get all the hosts online and connected to the Internet/Web (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives:
