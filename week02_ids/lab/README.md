@@ -210,11 +210,11 @@ The answer to each of these should be Yes.
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/rules01.png)
 
 ### Kali host set up
-Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 10.10.y.8/24 with a default gateway of your firewall port (192.168.11.254/24).
+Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 192.168.11.8/24 with a default gateway of your firewall port (192.168.11.254/24).
 
 ```
 sudo ip link set eth0 up
-sudo ip addr add 10.10.y.8/24 dev eth0
+sudo ip addr add 192.168.11.8/24 dev eth0
 sudo ip route add default via 192.168.11.254 dev eth0
 ```
 
@@ -250,7 +250,7 @@ sudo ip route add default via 192.168.11.254 dev eth0
 |-|-|
 | 1. Can you ping the default gateway (192.168.11.254)? | Yes/No |
 | 2. Can you ping Windows 7 (192.168.11.7)? | Yes/No |
-| 3. Can you ping Kali DMZ (10.10.y.8)? | Yes/No |
+| 3. Can you ping Kali DMZ (192.168.11.8)? | Yes/No |
 | 4. Can you ping the main gateway (192.168.122.1)? | Yes/No |
 | 5. Can you ping 8.8.8.8? | Yes/No |
 | 6. Can you ping google.com? | Yes/No |
