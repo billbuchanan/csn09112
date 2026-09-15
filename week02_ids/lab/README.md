@@ -39,7 +39,7 @@ sudo nano /etc/resolv.conf and confirm you have "nameserver 8.8.8.8"; otherwise,
 ```
 
 ## Setting up the network
-In this lab, we will connect our firewall to the main gateway and be able to complete the challenges in Table 1. The initial setup is:
+In this lab, we will connect our firewall to the main gateway. 
  
 Demo: [here](https://www.youtube.com/watch?v=-7KuYsMNgeI)
 
