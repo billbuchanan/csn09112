@@ -24,7 +24,7 @@ Our challenge is to set up MyBank Incorp, and get all the hosts online and conne
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
-In Moodle, click on Virtual Labs (CSN09112) and open up:
+In Moodle, click on Virtual Labs (CSN09112) and open up [here](https://moodle.napier.ac.uk/mod/lti/view.php?id=3055667):
 
 ![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/intro_01.png)
 
