@@ -355,6 +355,9 @@ User logins:
 * Kali:-  User: napier, Password: napier123  
 * Windows:-		User: Administrator, Password: napier123  
 * pfsense:- User: admin, Password: pfsense  
-* Metasploitable:- User: msfadmin, Password: napier123  
+* Metasploitable:- User: msfadmin, Password: napier123
+
+# Additional notes
+
 
 
