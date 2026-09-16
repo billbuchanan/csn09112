@@ -358,6 +358,9 @@ User logins:
 * Metasploitable:- User: msfadmin, Password: napier123
 
 # Additional notes
+If you find that Windows 7 does not pick-up the network adaptor, change it to wmvnet03:
+
+![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/win7.png)
 
 
 
