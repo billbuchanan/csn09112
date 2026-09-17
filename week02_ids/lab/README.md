@@ -62,7 +62,7 @@ Power up your pfSense firewall. The interfaces are:
 
 Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 192.168.10.254/24.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall01.png"/>
 
 **Answer no through the rest of the prompts.**
 
