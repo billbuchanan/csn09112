@@ -27,15 +27,15 @@ Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ)
 
 In Moodle, click on Virtual Labs (CSN09112) and open up [here](https://moodle.napier.ac.uk/mod/lti/view.php?id=3055667):
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/intro_01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/intro_01.png"/>
 
 Select “Cyber Modular Labs”, and then select the project “bill_csn09112.gns”:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/intro_02.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/intro_02.png"/>
 
 The setup for GNS3 is:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/gns_01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/gns_01.png"/>
 
 ## Quick guide
 For Ubuntu configuration, for 192.168.10.7/24:
