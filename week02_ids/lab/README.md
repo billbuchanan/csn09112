@@ -282,7 +282,7 @@ On the Kali public host, verify that it can ping the default gateway (192.168.12
 
 The answer to these should be Yes. 
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/kali_public.png"/>
+<img width="1382" height="1150" alt="image" src="https://github.com/user-attachments/assets/a0888959-8976-460d-ad6e-d0f3136ce36f" />
 
 
 ## Final check of connectivity
@@ -336,8 +336,7 @@ From Ubuntu, open up a browser and connect to the Web server on Windows 7.
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
 
-
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web02.png"/>
+<img width="1690" height="1102" alt="image" src="https://github.com/user-attachments/assets/e048be87-7123-4bff-87f3-6051fe9323ca" />
 
 From Windows 7, open up a browser and connect to the Web server on Ubuntu.
 
@@ -345,14 +344,16 @@ From Windows 7, open up a browser and connect to the Web server on Ubuntu.
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web01.png"/>
+<img width="1598" height="1092" alt="image" src="https://github.com/user-attachments/assets/b34f1774-3a57-4f29-89e8-7dc9987a3c13" />
+
 
 ## And finally ...
 Send a shareable link to your instance to Bill Buchanan on Teams chat using "Share Screen" and "Collaborate offline" (Link expires in 1 month).
 
 Now, power down your instances, or suspend them:
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/suspend.png"/>
+<img width="1728" height="952" alt="image" src="https://github.com/user-attachments/assets/73de5f95-a179-4c31-b327-2e6243f0d09d" />
+
 
 
 # Appendix
@@ -367,7 +368,9 @@ User logins:
 # Additional notes
 If you find that Windows 7 does not pick up the network adaptor, change it to wmvnet03:
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/win7.png"/>
+<img width="679" height="357" alt="image" src="https://github.com/user-attachments/assets/eb78b7a2-2f9f-4d2e-bae0-28f0445342bd" />
+
+
 
 
 
