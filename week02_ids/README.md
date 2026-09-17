@@ -1,9 +1,10 @@
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/e41a66b6-5370-4c19-86ab-dc124b896eeb" />
 
 # Unit 2: IDS
 ## Objectives
 The key objectives of this unit are:</p>
 
-* Provide an overview of the requirement for Intrusion Detection Systems (IDSs), and  where they are used.</li>
+* Provide an overview of the requirements for Intrusion Detection Systems (IDSs), and  where they are used.</li>
 * Define a practical implementation of IDS using Snort.</li>
 * Outline some typical detection procedures, such as for ping sweeps.</li>
 
