@@ -37,7 +37,8 @@ Select “Cyber Modular Labs”, and then select the project “bill_csn09112.gn
 
 The setup for GNS3 is:
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/gns_01.png"/>
+<img width="1828" height="1084" alt="image" src="https://github.com/user-attachments/assets/22ac0fe0-d99f-4789-9b54-0b4e99c8a3fb" />
+
 
 ## Quick guide
 For Ubuntu configuration, for 192.168.10.7/24:
@@ -64,7 +65,7 @@ Power up your pfSense firewall. The interfaces are:
 
 Let the firewall boot up, and then select **(2) Setup IP Interface(s)**, and set the LAN interface to have an IP address of 192.168.10.254/24.
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall01.png"/>
+<img width="1200" height="266" alt="image" src="https://github.com/user-attachments/assets/ead7ec71-21f3-4178-b18d-60089beab695" />
 
 **Answer no through the rest of the prompts.**
 
@@ -97,11 +98,11 @@ nmap 192.168.10.254
 
 You should then see that the http service is enabled (see below). 
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/nmap01.png"/>
+<img width="1150" height="260" alt="image" src="https://github.com/user-attachments/assets/15088fb5-c021-4cef-be04-6a9632408fc2" />
 
 If not, reboot the firewall. To reboot the firewall, use Option 5 from the pfSense console: 
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/reboot.png"/>
+<img width="1310" height="92" alt="image" src="https://github.com/user-attachments/assets/1085bf6e-3818-4771-88eb-441af7dd5f3d" />
 
 Try the connectivity again once the firewall has rebooted. If this doesn't work, try restarting the Webconfigurator service (Option 11 from the pfSense console).
 
@@ -114,7 +115,7 @@ http://192.168.10.254
 
 The username for pfSense is **admin** and the password is **pfsense**. 
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense01.png"/>
+<img width="1704" height="1046" alt="image" src="https://github.com/user-attachments/assets/33a324dc-ca5b-457e-b603-29e72806df1f" />
 
 ### Disable bogon from the public interface
 The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu, and make sure you have connectivity to the firewall:
@@ -140,10 +141,9 @@ Now, from the Ubuntu terminal, test the following:
 
 If any of these answers is No, you need to debug your network and find the problem. By default, all traffic is allowed to flow from the Private network to the other network, so we do not have to enable any firewall rules. If (1) does not ping, you have a basic connectivity problem and need to check your network adaptor on Ubuntu for its IP address and subnet mask. If (2) doesn't work, you have a problem with your default gateway on Ubuntu, so check that the default gateway of Ubuntu is set of the LAN port of the firewall. If (3) doesn't work, you have a general problem with your firewall, so check the details on the pfSense firewall. If  (4) doesn't work, but (3) does, you have a problem with your DNS service, so check the DNS details on the Ubuntu host. 
 
+<img width="1516" height="1202" alt="image" src="https://github.com/user-attachments/assets/e97be4e7-a145-4dba-a9d2-9cfdd48876e5" />
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ub01.png"/>
-
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/bbc.png"/>
+<img width="1710" height="1014" alt="image" src="https://github.com/user-attachments/assets/03605ac9-c36b-45f0-9a45-e15b3d41a1b2" />
 
 ## Enable DMZ port
 Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (192.168.11.254/24) and subnet mask (24-bit subnet mask). Note that by default the DMZ is named with the OPT1 network name. 
@@ -155,10 +155,9 @@ Next, navigate to the Interfaces menu item and then set up the required IP on th
 
 The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
 
+<img width="2044" height="1568" alt="image" src="https://github.com/user-attachments/assets/8b19f921-118a-4700-ab35-a5e856b61e53" />
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pf02.png"/>
-
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/opt1.png"/>
+<img width="1802" height="1322" alt="image" src="https://github.com/user-attachments/assets/d36d5d5f-abda-4e88-9b6f-5d3ce2b52a9c" />
 
 On the firewall console, we should see the new interface:
 
@@ -179,7 +178,7 @@ DNS: 8.8.8.8
 
 The answer to this should be No, as we have not set up the firewall yet for this network port. Also, the firewall will block the traffic by default until we enable it with firewall rules.
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ip01.png"/>
+<img width="798" height="876" alt="image" src="https://github.com/user-attachments/assets/82df1d45-fc8a-4708-83fb-85cfb46d966e" />
 
 
 ## Enable ICMP on DMZ
@@ -219,7 +218,8 @@ Now, set a rule to allow traffic from Port 443 on the DMZ.
 
 The answer to each of these should be Yes.
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/rules01.png"/>
+<img width="1552" height="756" alt="image" src="https://github.com/user-attachments/assets/5ce8979d-f998-47f6-82eb-dde796e27aa8" />
+
 
 ### Kali host set up
 Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 192.168.11.8/24 with a default gateway of your firewall port (192.168.11.254/24).
