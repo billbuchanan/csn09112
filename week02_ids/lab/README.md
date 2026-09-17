@@ -95,11 +95,11 @@ nmap 192.168.10.254
 
 You should then see that the http service is enabled (see below). 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/nmap01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/nmap01.png"/>
 
 If not, reboot the firewall. To reboot the firewall, use Option 5 from the pfSense console: 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/reboot.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/reboot.png"/>
 
 Try the connectivity again once the firewall has rebooted. If this doesn't work, try restarting the Webconfigurator service (Option 11 from the pfSense console).
 
@@ -112,7 +112,7 @@ http://192.168.10.254
 
 The username for pfSense is **admin** and the password is **pfsense**. 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense01.png"/>
 
 ### Disable bogon from the public interface
 The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu, and make sure you have connectivity to the firewall:
@@ -138,9 +138,10 @@ Now, from the Ubuntu terminal, test the following:
 
 If any of these answers is No, you need to debug your network and find the problem. By default, all traffic is allowed to flow from the Private network to the other network, so we do not have to enable any firewall rules. If (1) does not ping, you have a basic connectivity problem and need to check your network adaptor on Ubuntu for its IP address and subnet mask. If (2) doesn't work, you have a problem with your default gateway on Ubuntu, so check that the default gateway of Ubuntu is set of the LAN port of the firewall. If (3) doesn't work, you have a general problem with your firewall, so check the details on the pfSense firewall. If  (4) doesn't work, but (3) does, you have a problem with your DNS service, so check the DNS details on the Ubuntu host. 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ub01.png)
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/bbc.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ub01.png"/>
+
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/bbc.png"/>
 
 ## Enable DMZ port
 Next, navigate to the Interfaces menu item and then set up the required IP on the DMZ (192.168.11.254/24) and subnet mask (24-bit subnet mask). Note that by default the DMZ is named with the OPT1 network name. 
@@ -152,14 +153,14 @@ Next, navigate to the Interfaces menu item and then set up the required IP on th
 
 The answer to this should still be No, as the firewall will block the traffic by default until we enable it with firewall rules.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pf02.png)
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/opt1.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pf02.png"/>
+
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/opt1.png"/>
 
 On the firewall console, we should see the new interface:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall02.png)
-
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall02.png"/>
 
 ### Windows 7 host setup
 On the Windows 7 server, modify the static address on the network interface with:
@@ -176,7 +177,7 @@ DNS: 8.8.8.8
 
 The answer to this should be No, as we have not set up the firewall yet for this network port. Also, the firewall will block the traffic by default until we enable it with firewall rules.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ip01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/ip01.png"/>
 
 
 ## Enable ICMP on DMZ
@@ -216,7 +217,7 @@ Now, set a rule to allow traffic from Port 443 on the DMZ.
 
 The answer to each of these should be Yes.
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/rules01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/rules01.png"/>
 
 ### Kali host set up
 Now we will set up the Kali host on the DMZ. Set up the Kali host to connect to 192.168.11.8/24 with a default gateway of your firewall port (192.168.11.254/24).
@@ -279,7 +280,8 @@ On the Kali public host, verify that it can ping the default gateway (192.168.12
 
 The answer to these should be Yes. 
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/kali_public.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/kali_public.png"/>
+
 
 ## Final check of connectivity
 Go back to your Windows 7 host, and check that you can ping all of the hosts on the network.
@@ -326,13 +328,14 @@ From Windows 7, run nmap and discover the services that are running on Ubuntu.
 You should now get a range of services shown.
 
 ## Final connectivity
-From Ubuntu, open up a browser, and connect to the Web server on Windows 7.
+From Ubuntu, open up a browser and connect to the Web server on Windows 7.
 
 | | |
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web02.png)
+
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web02.png"/>
 
 From Windows 7, open up a browser and connect to the Web server on Ubuntu.
 
@@ -340,14 +343,15 @@ From Windows 7, open up a browser and connect to the Web server on Ubuntu.
 |-|-|
 | 1. Can you view the Web server? | Yes/No |
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web01.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/web01.png"/>
 
 ## And finally ...
 Send a shareable link to your instance to Bill Buchanan on Teams chat using "Share Screen" and "Collaborate offline" (Link expires in 1 month).
 
 Now, power down your instances, or suspend them:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/suspend.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/suspend.png"/>
+
 
 # Appendix
 User logins: 
@@ -359,9 +363,10 @@ User logins:
 * Metasploitable:- User: msfadmin, Password: napier123
 
 # Additional notes
-If you find that Windows 7 does not pick-up the network adaptor, change it to wmvnet03:
+If you find that Windows 7 does not pick up the network adaptor, change it to wmvnet03:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/win7.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/win7.png"/>
+
 
 
 
