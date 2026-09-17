@@ -1,4 +1,5 @@
 ![logo](https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png)
+![logo](intro01.png)
 
 # Unit 2: IDS
 ## Objectives
