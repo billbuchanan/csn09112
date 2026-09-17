@@ -8,7 +8,7 @@ The aim of this lab is to build a network of hosts and get the firewall to allow
 
 ## Activities
 
-Complete Lab 1: A PDF of the lab is <a href="https://asecuritysite.com/public/csn09112_lab01.pdf" target="_blank">here</a> and there is a demo of the lab [here](https://www.youtube.com/watch?v=-7KuYsMNgeI).</p>
+Complete Lab 1: A PDF of the lab is <a href="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week02_ids/lab/csn09112_lab01.pdf" target="_blank">here</a> and there is a demo of the lab [here](https://www.youtube.com/watch?v=-7KuYsMNgeI).</p>
 
 User logins: 
 
