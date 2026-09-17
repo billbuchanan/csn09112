@@ -20,7 +20,7 @@ User logins:
 ## Lab setup
 Our challenge is to set up MyBank Incorp, and get all the hosts online and connected to the Internet/Web (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives:
 
-![Lab](https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense1.png)
+<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense1.png"/>
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
