@@ -1,4 +1,3 @@
-![logo](https://asecuritysite.com/Content/tops.gif)
 
 # Unit 2: IDS
 ## Objectives
