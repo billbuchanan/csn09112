@@ -24,7 +24,7 @@ The test for this unit is <a href="https://asecuritysite.com/tests/tests?sortBy=
 There is a fun test at: <a href="https://asecuritysite.com/tests/fun?sortBy=sfc02">Test</a>.
 
 ## Slides
-<p>The slides for the chapter are <a href="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week02_ids/lecture/unit02_ids.pdf">here</a>]</p>
+<p>The slides for the chapter are [<a href="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week02_ids/lecture/unit02_ids.pdf">here</a>]</p>
   
 ## Additional
 Snort analyser: <a href="https://asecuritysite.com/forensics/snort2">here</a>
