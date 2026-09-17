@@ -22,7 +22,7 @@ The test for this unit is [here](https://asecuritysite.com/tests/tests?sortBy=cy
 There is a fun test at: [here](https://asecuritysite.com/tests/fun?sortBy=cyberdata04).
 
 ## Slides
-The slides for the unit are [<a href="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week02_ids/lecture/ch04_what_is_data.ppsx.pdf">here</a>]
+The slides for the unit are [<a href="https://raw.githubusercontent.com/billbuchanan/csn09112/master/week02_ids/lecture/ch04_what_is_data.pdf">here</a>]
 
 ## Additional
 
