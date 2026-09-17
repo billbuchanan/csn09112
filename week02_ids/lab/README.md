@@ -1,5 +1,5 @@
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/e41a66b6-5370-4c19-86ab-dc124b896eeb" />
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
 # Lab 1: Virtualised Infrastructures
 
@@ -21,17 +21,19 @@ User logins:
 ## Lab setup
 Our challenge is to set up MyBank Incorp, and get all the hosts online and connected to the Internet/Web (Figure 1). You have a pfSense firewall, an Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host, a Kali (DMZ) host, and a Kali (Public) host to achieve your objectives:
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/pfsense1.png"/>
+<img width="2658" height="1028" alt="image" src="https://github.com/user-attachments/assets/7798f13f-276e-49d4-a452-24d53fbe6ab6" />
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
 In Moodle, click on Virtual Labs (CSN09112) and open up [here](https://moodle.napier.ac.uk/mod/lti/view.php?id=3055667):
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/intro_01.png"/>
+<img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/ebcc8ba4-6865-4aaa-9e0f-2a42f3fbc0f4" />
+
+
 
 Select “Cyber Modular Labs”, and then select the project “bill_csn09112.gns”:
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/intro_02.png"/>
+<img width="2246" height="1008" alt="image" src="https://github.com/user-attachments/assets/9540c908-35b3-477d-a0f3-62e7d28c18d6" />
 
 The setup for GNS3 is:
 
