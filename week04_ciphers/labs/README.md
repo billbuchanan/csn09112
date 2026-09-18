@@ -5,7 +5,7 @@
 ## Aim
 The  aim  of  this  lab  is  to set up AWS server instances and understand the setup of key security aspects.
 
-Note: Please use a **Ubuntu server** rather than an Amazon Linux instance. 
+Note: It may be preferable to use a **Ubuntu server** rather than an Amazon Linux instance. 
 
 ## Activities
 
