@@ -118,7 +118,7 @@ The username for pfSense is **admin** and the password is **pfsense**.
 <img width="1704" height="1046" alt="image" src="https://github.com/user-attachments/assets/33a324dc-ca5b-457e-b603-29e72806df1f" />
 
 ### Disable bogon from the public interface
-The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu, and make sure you have connectivity to the firewall:
+The firewall will disable private IP addresses on the public network, we thus need to enable this. For this, go to Ubuntu and make sure you have connectivity to the firewall:
 
 ```
 ping 192.168.10.7
@@ -161,7 +161,7 @@ The answer to this should still be No, as the firewall will block the traffic by
 
 On the firewall console, we should see the new interface:
 
-<img src="https://github.com/billbuchanan/csn09112/blob/master/week02_ids/lab/graphics/firewall02.png"/>
+<img width="1192" height="328" alt="image" src="https://github.com/user-attachments/assets/5a41195e-bb88-42ad-808c-a9489c2f5745" />
 
 ### Windows 7 host setup
 On the Windows 7 server, modify the static address on the network interface with:
