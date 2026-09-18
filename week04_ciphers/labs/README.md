@@ -197,11 +197,11 @@ Now go to the EC2 Instance Connect (Figure 9), and press on the Connect button. 
 From your console (Figure 10), verify that your file has been created. Has it been created in the instance? [Yes/No]
 ```
 
-![AWS](https://asecuritysite.com/public/awsfig09.png "Connect to instance")  
+<img width="844" height="566" alt="image" src="https://github.com/user-attachments/assets/47fc1feb-9cab-47d4-8a17-ff5e5cd1c2f3" />
 
 Figure 9: EC2 Instance Connect
 
-![AWS](https://asecuritysite.com/public/awsfig09_1.png "EC2 Instance Connect terminal")  
+<img width="904" height="354" alt="image" src="https://github.com/user-attachments/assets/afc19549-633b-4c90-8a89-a68859db7cb5" />
 
 Figure 10: EC2 Instance Connect terminal
 
@@ -241,10 +241,9 @@ Can you connect to it? [Yes/No]
 Why can’t you connect to it? 
 ```
 
-Now enable a firewall rule on Port 80 and Port 443 and allow access for Web traffic (see Figure 11).
+Now enable firewall rules on Ports 80 and 443 to allow Web traffic (see Figure 11).
 
-
-![AWS](https://asecuritysite.com/public/awsfig11.png "Enable HTTP and HTTPs rules")  
+<img width="904" height="324" alt="image" src="https://github.com/user-attachments/assets/d2285976-dc41-4a6b-b969-e0e9b588ad0e" />
 
 Figure 11: Enable HTTP and HTTPs rules
 
@@ -254,7 +253,7 @@ Can you now connect to your Web site? [Yes/No] (see Figure 12)
 
 <img width="904" height="300" alt="image" src="https://github.com/user-attachments/assets/aae731ce-a2a1-4230-9165-7e16c2c67193" />
 
-Figure 12: Sample access to Web site
+Figure 12: Sample access to the website
 
 Now go into the /var/www/html folder, and create a file named “index.html”, and add:
 ```
@@ -337,16 +336,16 @@ ssh   napier@54.209.145.85
 Can you connect with the new user? [Yes/No]
 ```
 
-![AWS](https://asecuritysite.com/public/awsfig13.png "Accessing instances")  
+
+<img width="688" height="436" alt="image" src="https://github.com/user-attachments/assets/71039e8b-c410-4884-b3cc-e84b438aa518" />
 
 Figure 14: Accessing instances
 
-
-![AWS](https://asecuritysite.com/public/awsfig14.png "Accessing instances")  
+<img width="904" height="226" alt="image" src="https://github.com/user-attachments/assets/070f3630-7911-494d-bdd5-d3f3fd7de16a" />
 
 Figure 15: Accessing instances
 
-![AWS](https://asecuritysite.com/public/awsfig15.png "Accessing instances")  
+<img width="904" height="236" alt="image" src="https://github.com/user-attachments/assets/a2330d8f-77a0-4d73-9db8-b73a3879563f" />
 
 Figure 16: Accessing instances
 
@@ -357,7 +356,7 @@ We can also access our instance from the AWS terminal prompt. For this return to
 $ aws ec2 describe-instances
 ```
 
-From the results, can you identify the following.
+From the results, can you identify the following:
 
 Instance type: 
 
@@ -367,18 +366,17 @@ Private IP address:
 
 State: 
 
-![AWS](https://asecuritysite.com/public/awsfig16.png "Stopping an instance")   
-
+<img width="904" height="488" alt="image" src="https://github.com/user-attachments/assets/16377027-c103-457e-b6eb-6a3142d599eb" />
+ 
 Figure 17: Describe instances
 
-Now try we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 18):
+Now we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 18):
 ```
 aws ec2 stop-instances --instance-ids [My-instance-ID]
 ```
 From the AWS Management Console, has your instance stopped? [Yes/No]
 
-
-![AWS](https://asecuritysite.com/public/awsfig17.png "Stopping an instance")   
+<img width="904" height="370" alt="image" src="https://github.com/user-attachments/assets/e85d4cb6-6569-4218-8ced-613fa658f200" />
 
 Figure 18: Stopping an instance
 
@@ -404,9 +402,7 @@ Did it change the instance type? [Yes/No]
 
 Can you still get access to your instance?
 
-By observing the script, and investigate what t3.micro and t3.small are, can you determine what has changed about your instance?
-
-
+By observing the script and investigating what t3.micro and t3.small are, can you determine what has changed about your instance?
 
 
 Now, revert the instance back to t3.micro, and suspend the instance.
@@ -428,7 +424,7 @@ How much will it cost per day to run?
 
 If you selected, t2.medium, how much would it cost per day?
 
-If you selected, t2.large, how much would it cost per day?
+If you selected t2.large, how much would it cost per day?
 
 
 Now create a new key pair and save it to your local drive. This file contains your private key, and which you will need to connect to your instance. Accept all the other defaults.
@@ -456,7 +452,7 @@ What is the maximum storage size for a free tier storage of the AMI instance we 
 
 
 ### D.1	Creating the instance
-Go ahead and create the instance. Go back to the Management Console and find your instance. Wait for it to set its state to running. Now we will connect to it. For this we need to create an RDP connection, and use the private key we have generated to generate the initial password. 
+Go ahead and create the instance. Go back to the Management Console and find your instance. Wait for it to set its state to running. Now we will connect to it. For this, we need to create an RDP connection and use the private key we have generated to generate the initial password. 
 
 Now, we will examine the details of our instance (Figure 20). On the instance summary, determine the following:
 
@@ -495,9 +491,8 @@ Can you now successfully ping your instance? [Yes/No]
 We will not be able to ping the instance yet, as the firewall on Windows is disabling it.
 
 
+<img width="812" height="408" alt="image" src="https://github.com/user-attachments/assets/de876cee-54d6-4e2e-aa53-afd0d28ecd25" />
  
-![AWS](https://asecuritysite.com/public/awsfig19.png "Details of instance")  
-
 Figure 20: Details of instance
 
  
@@ -508,11 +503,11 @@ Figure 21: Enable ICMP
 ### D.3	Accessing your instance
 Now we will connect to our instance. For this you need RDP. Next Connect to instance (Figure 22). Click on “Get password” and present your PEM file, and it should reveal the password (Figure 23).
 
-![AWS](https://asecuritysite.com/public/awsfig21_1.png "Connect to instance")  
+<img width="904" height="510" alt="image" src="https://github.com/user-attachments/assets/224ecf85-fc7c-40d9-b8e6-77060720566d" />
 
 Figure 22: Connect to instance
 
-![AWS](https://asecuritysite.com/public/awsfig21.png "Reveal password")  
+<img width="904" height="664" alt="image" src="https://github.com/user-attachments/assets/060a47af-ee01-42d4-acaf-c21e1d73a644" />
 
 Figure 23: Reveal password
 
@@ -524,18 +519,16 @@ By using “ipconfig” in your instance, what is the private IP address of it?
 
 Can you ping 8.8.8.8 from your instance? [Yes/No]
 
-
-![AWS](https://asecuritysite.com/public/awsgif22.png "Windows 2022")  
+<img width="904" height="464" alt="image" src="https://github.com/user-attachments/assets/28ad20d2-f854-4f36-9850-6cf128501a2b" />
 
 Figure 24: Windows 2022
 
 
-
-
 ### D.4	Enable ICMP on instance
-We have enabled the AWS firewall for ICMP. Now we will open-up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 25.
+We have enabled the AWS firewall for ICMP. Now we will open up ICMP in the instance. For this open-up with Advanced Windows firewall, and enable the rule for “File and Printer Sharing (ICMP-in) – as shown in Figure 25.
 
-![AWS](https://asecuritysite.com/public/awsgif23.png "Enable ICMP")  
+
+<img width="904" height="532" alt="image" src="https://github.com/user-attachments/assets/c2589286-4884-4369-bc07-ad889170e74a" />
  
 Figure 25: Enable ICMP
 
@@ -557,9 +550,7 @@ Which of the main services are running:
 Now select Server Manage, and “Add a Role” for  Web Server (IIS) (Figure 26). 
 
 
-
-
-![AWS](https://asecuritysite.com/public/awsgif24.png "Enable ICMP")  
+<img width="904" height="590" alt="image" src="https://github.com/user-attachments/assets/3c3e99a2-606e-46ad-8848-411d1dd5b7e7" />
  
 Figure 26: Enable ICMP
 
@@ -571,7 +562,7 @@ Can you connect to the IIS Web server? [Yes/No] (see Figure 25)
 
 Now open up your AWS firewall for Port 80 (Figure 27).
 
-![AWS](https://asecuritysite.com/public/awsgif25.png "Enable HTTP")  
+<img width="904" height="262" alt="image" src="https://github.com/user-attachments/assets/5cd6dd53-f524-48f0-ad1b-b4f94f4468c6" />
 
 Figure 27: Enable HTTP
 
@@ -579,14 +570,11 @@ Now open a browser on the instance, and access http://[IP of AWS]
 
 Can you connect to the IIS Web server? [Yes/No] (Figure 29)
 
-
-
-
-![AWS](https://asecuritysite.com/public/awsgif26.png "Local host")  
+<img width="904" height="626" alt="image" src="https://github.com/user-attachments/assets/cbc1d39f-9182-4298-a4bd-481fbfdd05f6" />
 
 Figure 28: Local host
 
-![AWS](https://asecuritysite.com/public/awsgif27.png "Remote access")   
+<img width="904" height="540" alt="image" src="https://github.com/user-attachments/assets/19ef484d-e433-4548-af17-2f75c7b5a72e" />
 
 Figure 29: Remote access 
 
@@ -605,7 +593,7 @@ Has it changed the welcome? [Yes/No]
 The main logging output is in the “C:\inetpub\logs\LogFiles\W3SVC1” folder. Identify the contents of the following files:
 
 
-Go into the “C:\inetpub\logs\LogFiles\W3SVC1” folder, and list the file in there.  What are its contents? Can you identity your browser access? Which browser type accessed your Web server?
+Go into the “C:\inetpub\logs\LogFiles\W3SVC1” folder, and list the file in there.  What are its contents? Can you identify your browser access? Which browser type accessed your Web server?
 
 
 Now try with another browser type, and re-examine the log/httpd/access_log file. Did it detect the new browser type?
@@ -621,7 +609,7 @@ net user administrator mynewpassword$$7k1
 ```
 
 ## E Python Access
-Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been setup with the details already setup for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
+Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been set up with the details already set up for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
 
 ```
 ddd_v1_w_W3n_1455598@runweb63277:~$ ls -al
@@ -778,7 +766,7 @@ Note, if you are using a Microsoft Windows system, you will have to use icacls t
 > icacls.exe mykey.pem /inheritance:r
 ```
 
-If you are on a laptop, you run "whoami" to determine your usename.
+If you are on a laptop, you run "whoami" to determine your username.
 
 
 
