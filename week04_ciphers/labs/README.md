@@ -20,28 +20,26 @@ Figure 1: AWS Services
 ## Enabling your lab
 You should have an AWS Academy login, so go to: https://awsacademy.instructure.com/ and log into the system and select AWS Academy Learner Lab (Figure 2).
 
-![Banner](https://asecuritysite.com/public/awsfig02.png "AWS Academy Learner Lab") 
+<img width="416" height="258" alt="image" src="https://github.com/user-attachments/assets/454943d7-d7b8-4583-b482-53003632c106" />
 
 Figure 2: AWS Academy Learner Lab	
 
-Next, select “Modules”, and then “Learner Lab - Foundational Services”, and should have the lab environment (Figure 3). 
+Next, select “Modules”, and then “Learner Lab - Foundational Services”, and you should have the lab environment (Figure 3). 
 
-![AWS](https://asecuritysite.com/public/awsfig03.png "AWS Academy Learner Lab environment")  
+<img width="904" height="428" alt="image" src="https://github.com/user-attachments/assets/6421bd7a-90ba-4101-9246-9927186f4cf6" />
 
 Figure 3: AWS Academy Learner Lab environment
 
-In the console you can interact with your AWS though the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
+In the console, you can interact with your AWS through the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
 
+<img width="904" height="396" alt="image" src="https://github.com/user-attachments/assets/e65b0011-42a2-46f1-9fa4-d658dfcc6858" />
  
-![AWS](https://asecuritysite.com/public/awsfig04.png "AWS Management Console (EC2)")  
-
 Figure 4: AWS Management Console (EC2)
 
 ## Creating and Securing a Linux Server
-We will now create a Linux Server, and which should be accessible from the Internet. For this select “Launch Instance”, and then give it a name (such as “My Linux Server”) and select the Amazon Linux instance for the AMI (Amazon Machine Instance) – as shown in Figure 5.
+We will now create a Linux Server, and which should be accessible from the Internet. For this, select “Launch Instance”, and then give it a name (such as “My Linux Server”) and select the Amazon Linux instance for the AMI (Amazon Machine Image) – as shown in Figure 5.
 
- 
-![AWS](https://asecuritysite.com/public/awsfig05.png "Creating Amazon Linux instance")  
+<img width="904" height="666" alt="image" src="https://github.com/user-attachments/assets/8efc9a57-84ed-40bd-b9be-8044bb728d26" />
 
 Figure 5: Creating Amazon Linux instance
 
@@ -123,25 +121,24 @@ Can you now successfully ping your instance? [Yes/No]
 
 Now, lock your ICMP rule down to just your IP address (you need to use a /32 address for this). Can you still successfully ping the instance? [Yes/No]
 
-Ask you neighhour or one of the lab tutors to ping your instance. Can they successfully ping it? [Yes/No]
+Ask your neighbour or one of the lab tutors to ping your instance. Can they successfully ping it? [Yes/No]
 
 What is the advantage of applying the firewall in AWS, rather than in the instance?
 ```
 
- 
-![AWS](https://asecuritysite.com/public/awsfig06.png "Details of instance")  
+<img width="834" height="472" alt="image" src="https://github.com/user-attachments/assets/c848bc1c-89d7-4d37-84d6-0e3a10fb8cc0" />
 
 Figure 6: Details of instance
 
+<img width="716" height="248" alt="image" src="https://github.com/user-attachments/assets/3f5403d8-3a01-4d01-b5ed-156fad527ea2" />
  
-![AWS](https://asecuritysite.com/public/awsfig07.png "Enable ICMP")  
 
 Figure 7: Enable ICMP
 
 ### C.3	Accessing your instance
 Now we will connect to our instance. For this you need SSH (such as provided by OpenSSH). This may be installed on the host you are using (such as in vSoC 2), or from Apps Anywhere. Once you have SSH, press Connect on the summary page, and you should then have tabs for Connect to instance (Figure 8). Next select the SSH client tab, and you will see the details of connecting to your instance with SSH. 
 
-![AWS](https://asecuritysite.com/public/awsfig08.png "Connect to instance")  
+<img width="904" height="528" alt="image" src="https://github.com/user-attachments/assets/18cc6043-f2a4-4659-9622-3518bf37e28e" />
 
 Figure 8: Connect to instance
 
@@ -255,7 +252,7 @@ Figure 11: Enable HTTP and HTTPs rules
 Can you now connect to your Web site? [Yes/No] (see Figure 12)
 ```
 
-![AWS](https://asecuritysite.com/public/awsfig12.png "Sample access to Web site")  
+<img width="904" height="300" alt="image" src="https://github.com/user-attachments/assets/aae731ce-a2a1-4230-9165-7e16c2c67193" />
 
 Figure 12: Sample access to Web site
 
@@ -278,7 +275,7 @@ What are the likely contents of the “secure” file? (auth.log in Ubuntu)
 
 What are the likely contents of the “boot.log” file? (kern.log in Ubuntu)
 
-List the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What are its contents? Can you identity your browser access? (see Figure 13). Which browser type accessed your Web server?
+List the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What are its contents? Can you identify your browser access? (see Figure 13). Which browser type accessed your Web server?
 
 
 Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). Did it detect the new browser type?
@@ -287,13 +284,13 @@ Now try with another browser type  (such as Firefox or Chrome) and re-examine th
 Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What is the status code returned for the access?
 ```
 
+<img width="688" height="436" alt="image" src="https://github.com/user-attachments/assets/a8757065-e20d-4b59-86cf-f3874b74b284" />
 
-![AWS](https://asecuritysite.com/public/awsfig13.png "Sample list of log/httpd/access_log")  
 
 Figure 13: Sample list of log/httpd/access_log
 
 ### C.7	Adding a new user
-The ec2_user can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this we use adduser and passwd on the Linux instance:
+The ec2_user can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this, we use adduser and passwd on the Linux instance:
 
 ```
 [ec2-user@ip-172-31-16-186 ~]$ sudo adduser napier
