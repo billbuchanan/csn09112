@@ -317,8 +317,8 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-| DMZ to LAN	| Connect to port 80, with: telnet 192.168.10.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the WebServer? Which WebServer is running and which version? |
-| DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get a HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
+| DMZ to LAN	| Connect to port 80, with: telnet 192.168.10.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the web server? Which web server is running and which version? |
+| DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get an HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
 
 
 ## J	Brute Force
@@ -360,7 +360,7 @@ What is the FTP status code for a correct login:
 <!--- Ensure you have snort installed by running `snort -h`. --->
 <!---If you have installation issues, run a `sudo apt-get update` first.
 
-Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint, you need to detect “530” in the Port 21 connection.
+Now write a Snort rule to detect an incorrect login on FTP (and thus detect a possible Hydra scan on the server). Hint: you need to detect “530” in the Port 21 connection.
 
 Which rule have you used:
 
@@ -368,7 +368,7 @@ Which rule have you used:
 Rerun Hydra and start Snort to detect incorrect logins. Did it detect the scan? [Yes/No] --->
 
 
-Next, run Hydra and crack the username and the password for the Web server. With these usernames and passwords we will target the DVWA site. First, access the Web server from:
+Next, run Hydra and crack the username and the password for the Web server. With these usernames and passwords, we will target the DVWA site. First, access the Web server from:
 
 ```
 http://192.168.11.9/dvwa/login.php
@@ -378,10 +378,10 @@ Next, start Wireshark on Kali (DMZ), and then run Hydra to try a range of logins
 ```
 # hydra -L list_user -P list_password 192.168.11.9 http-post-form ‘/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed’
 ```
-From this determine one of the usernames and passwords.
+From this, determine one of the usernames and passwords.
 
 
-Stop Wireshark and find the hydra trace. What do you observe from the trace:
+Stop Wireshark and find the Hydra trace. What do you observe from the trace:
 
 
 What is the HTTP status code for an incorrect login:
@@ -399,31 +399,29 @@ Now we will attack the Mutillidae site:
 # hydra -L list_user -P list_password 192.168.11.9 http-post-form 
 '/mutillidae/index.php?page=login.php:username=^USER^&password=^PASS^&login-php-submit-button=Login:Not Logged In'
 ```
-From this determine one of the usernames and passwords.
+From this, determine one of the usernames and passwords.
 
 ## K	NAT and 1:1 mappings
 
-No other group can access any of your hosts, as you are behind NAT. Now we need to setup a 1:1 mapping and a virtual IP address (with Proxy ARP) to map an internal address to an external one. First, we need to find an IP address from the 10.221.0.0/22 network which is not being used, and then we will use this to allow other groups’ access to the hosts in the DMZ (Figure 2).
+No other group can access any of your hosts, as you are behind NAT. Now we need to set up a 1:1 mapping and a virtual IP address (with Proxy ARP) to map an internal address to an external one. First, we need to find an IP address from the 10.221.0.0/22 network which is not being used, and then we will use this to allow other groups’ access to the hosts in the DMZ (Figure 2).
 
 Demo: https://youtu.be/1wn2io8EWvs 
 
-
-![image](https://user-images.githubusercontent.com/43025646/192982617-71737c2c-b425-443a-a3b7-bedecfb8c57f.png)
+<img width="940" height="497" alt="image" src="https://github.com/user-attachments/assets/1d1be93f-3d32-49bf-b77d-f83b30ad34c2" />
 
 Figure 2: Setup 1:1 NAT for mapping of servers 
 
 Run NMAP from the Private network with: nmap –sP 10.221.0.0/24
 
-Which hosts are on-line?
-
+Which hosts are online?
 
 Now pick an address which is (where GROUP ID is the third digit of your private network address), eg if your private address is 10.10.43.0, then set up the address of 10.221.2.43:
 
 10.221.2.[GROUP ID]
 
-Now, on the firewall, setup a 1:1 mapping of the External IP address that you have selected and the Internal IP address on the DMZ (Figure 3).
+Now, on the firewall, set up a 1:1 mapping of the External IP address that you have selected and the Internal IP address on the DMZ (Figure 3).
 
-Next, setup a Virtual IP address (with Proxy ARP) for the external address you have selected, which will advertise the IP address (Figure 4).
+Next, set up a Virtual IP address (with Proxy ARP) for the external address you have selected, which will advertise the IP address (Figure 4).
 
 Now from the WAN interface, ping the host in the DMZ. Can you ping it?
 
@@ -433,20 +431,14 @@ Now get them to access the Web server on your host.
 
 Finally get them to NMAP your host? What can you observe from the NMAP?
 
-![image](https://user-images.githubusercontent.com/43025646/192982833-73e61956-9516-4418-9449-64d4f2eb5516.png)
+<img width="732" height="269" alt="image" src="https://github.com/user-attachments/assets/13e5df20-49d2-47f9-aa0a-cbf4bfcd5a88" />
+
 Figure 3: 1:1 NAT settings
 
-![image](https://user-images.githubusercontent.com/43025646/192982896-d6ce86fa-3651-4df0-8b69-9ae2215189c8.png)
+<img width="646" height="222" alt="image" src="https://github.com/user-attachments/assets/2966fa30-08ec-460f-bb3c-28a0ad0bc306" />
+
 Figure 4: Virtual IP addresses
 
-# Connecting to another network
-Now, wait for other teams to finish (or use the Test setup). You should have ready:
-
--	A forward-facing Web and FTP site ready to connect from outside your network.
-
-NMAP their server, and then make sure you can connect to the service. Now get them to block your specific source (just one address), and recheck that you cannot connect. Finally change your IP address, and re-do the NMAP, and make sure you can connect.
-
-Please note some of the information related to their server. What information can you determine? Can you determine the MAC address of their server?
 
 # Software Tutorial
 Complete the software tutorial at: 
