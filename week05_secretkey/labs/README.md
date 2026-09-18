@@ -1,5 +1,4 @@
-
-![](https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png)
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/e41a66b6-5370-4c19-86ab-dc124b896eeb" />
 
 # Lab 4: Symmetric Key and Hashing
 
@@ -9,7 +8,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs 
 
-![](https://github.com/billbuchanan/csn09112/blob/master/zadditional/kali001.png)
+<img width="2602" height="1704" alt="image" src="https://github.com/user-attachments/assets/f82950d7-b8c5-40a2-be68-d1e8edeafb21" />
 
 ## A Symmetric Key
 
@@ -107,7 +106,7 @@ Next, unzip it into your home folder:
 p7zip -d hashcat-6.0.0.7z
 ```
 
-Then from your home folder, setup a link to Hashcat 6.0.0:
+Then, from your home folder, set up a link to Hashcat 6.0.0:
 
 ```
 ln -s hashcat-6.0.0/hashcat.bin  hashcat
@@ -306,31 +305,28 @@ We are generally moving our security into the public cloud, and thus, many of ou
 
 With symmetric key encryption, Bob and Alice use the same encryption key to encrypt and decrypt:
 
-![image](https://asecuritysite.com/public/kms_30.png)
+<img width="2008" height="600" alt="image" src="https://github.com/user-attachments/assets/b595120b-c34e-4510-a1fa-fa1592c9914e" />
 
-Normally we use AES encryption for this. Initially, in KMS, we create a new key within our Customer managed keys:
 
-![image](https://asecuritysite.com/public/kms01.png)
+Normally, we use AES encryption for this. Initially, in KMS, we create a new key within our Customer-managed keys:
+
+<img width="2460" height="1016" alt="image" src="https://github.com/user-attachments/assets/4251a0fa-583e-4aa1-bfc5-24d029715cd3" />
 
 and then create the key:
 
-![image](https://asecuritysite.com/public/kms02.png)
+<img width="1248" height="910" alt="image" src="https://github.com/user-attachments/assets/091bb5fd-2723-4373-aa7a-b868d26d245b" />
 
 Next, we give it a name:
 
-![image](https://asecuritysite.com/public/kms03.png)
+<img width="1262" height="1186" alt="image" src="https://github.com/user-attachments/assets/69930ce0-c07f-44ea-89ea-ad28b381bc1a" />
 
-And then define the adminstrative permission (those who can delete it):
+And then define the administrative permission (those who can delete it):
 
-![image](https://asecuritysite.com/public/kms04.png)
-
+<img width="1260" height="462" alt="image" src="https://github.com/user-attachments/assets/a51fc92e-6397-41a5-bd46-3cd49205be6b" />
 
 And the usage:
 
-
-![image](https://asecuritysite.com/public/kms05.png)
-
-
+<img width="1264" height="452" alt="image" src="https://github.com/user-attachments/assets/163546e5-a93c-44de-a7f6-e78f7ef09a29" />
 
 The policy is then:
 ```
@@ -445,12 +441,12 @@ The policy is then:
 
 With symmetric key encryption, Bob and Alice use the same encryption key to encrypt and decrypt. In the following case, Bob and Alice share the same encryption key, and where Bob encrypts plaintext to produce ciphertext. Alice then decrypts with the same key, in order to recover the plaintext:
 
-![image](https://asecuritysite.com/public/kms_30.png)
-
+<img width="2008" height="600" alt="image" src="https://github.com/user-attachments/assets/02cb3093-e6e4-483a-86c9-1fc84c74d800" />
 
 Now we can create a file named 1.txt, and enter some text:
 
-![image](https://asecuritysite.com/public/kms06.png)
+<img width="1622" height="994" alt="image" src="https://github.com/user-attachments/assets/5b7cb3b7-29da-4815-a31d-14bfab74f4fe" />
+
 
 Once we have this, we can then encrypt the file using the “aws kms encrypt” command, and then use “fileb://1.txt” to refer to the file:
 ```
