@@ -1,4 +1,4 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/e41a66b6-5370-4c19-86ab-dc124b896eeb" />
 
 # Lab 5: Diffie-Hellman and Public Key
 
@@ -22,7 +22,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | No | Description | Result | 
 | -------|--------|---------|
 | 1 | First we need to generate a key pair with: <br/>```openssl genrsa -out private.pem 1024```	<br/>This file contains both the public and the private key. | What is the type of public key method used: How long is the default key: How long did it take to generate a 1,024 bit key? View the contents of the keys. |
-| 2 | Use following command to view the output file: <br/>```cat private.pem``` | What can be observed at the start and end of the file: |
+| 2 | Use the following command to view the output file: <br/>```cat private.pem``` | What can be observed at the start and end of the file: |
 | 3 | Next we view the RSA key pair: <br/>```openssl rsa -in private.pem -text -noout``` | Which are the attributes of the key shown: Which number format is used to display the information on the attributes: What does the –noout option do? |
 | 4 | Let’s now secure the encrypted key with 3-DES: <BR/>```openssl rsa -in private.pem -des3 -out key3des.pem``` | |
 | 5 | Next we will export the public key: <BR/>openssl rsa -in private.pem -out public.pem -outform PEM -pubout  | View the output key. What does the header and footer of the file identify? |
@@ -32,7 +32,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 
 ## 3	Storing keys
-We have stored our keys on a key ring file (PEM). Normally we would use a digital certificate to distribute our public key. In this part of the tutorial we will create a crt digital certificate file.
+We have stored our keys on a key ring file (PEM). Normally we would use a digital certificate to distribute our public key. In this part of the tutorial, we will create a crt digital certificate file.
 
 | No | Description | Result | 
 | -------|--------|---------|
@@ -50,23 +50,23 @@ In the following figure, Bob uses Alice’s public key to encrypt data, and whic
 
 Now, let’s create an RSA key pair for encrypting a file. Our keys are contained in the KMS:
 
-<img src="https://asecuritysite.com/public/kms_11.png" width="750px" />
+<img width="1400" height="555" alt="image" src="https://github.com/user-attachments/assets/1edf20ed-818e-469e-9f95-a2db1b06464d" />
 
 Initially, we can create a Customer-managed key pair with:
 
-<img src="https://asecuritysite.com/public/kms_12.png" width="750px" />
+<img width="1252" height="1082" alt="image" src="https://github.com/user-attachments/assets/a1564a51-2991-4699-a601-68cec6899787" />
 
 The options are 2K, 3K or 4K RSA key pairs. Next, we can give the key an alias:
 
-<img src="https://asecuritysite.com/public/kms_13.png" width="750px" />
+<img width="1250" height="1242" alt="image" src="https://github.com/user-attachments/assets/38770fc0-afd1-4ad1-a99a-6eabd08618b0" />
 
 Then define the ownership of the keys:
 
-<img src="https://asecuritysite.com/public/kms_14.png" width="750px" />
+<img width="1230" height="454" alt="image" src="https://github.com/user-attachments/assets/98cafb5a-e6a9-4af0-97ba-384e35631eb4" />
 
 And finally the permissions:
 
-<img src="https://asecuritysite.com/public/kms_15.png" width="750px" />
+<img width="1252" height="442" alt="image" src="https://github.com/user-attachments/assets/d752e5eb-d17d-4464-b2db-c7fc4cc1b97b" />
 
 The policy is then:
 ```
@@ -146,9 +146,9 @@ The policy is then:
 
 Once created, we cannot access the private key, but will be able to view the public key:
 
-<img src="https://asecuritysite.com/public/kms_16.png" width="750px" />
+<img width="1400" height="558" alt="image" src="https://github.com/user-attachments/assets/adcca853-0362-4046-b857-62fcd7c5c236" />
 
-We can download this from the console, or from the command prompt:
+We can download this from the console or from the command prompt:
 
 ```
 % aws kms get-public-key --key-id alias/PublicKeyForDemo
@@ -169,7 +169,7 @@ We can download this from the console, or from the command prompt:
 
 We can now create a file (1.txt):
 
-<img src="https://asecuritysite.com/public/kms_17.png" width="750px" />
+<img width="1400" height="857" alt="image" src="https://github.com/user-attachments/assets/f55566dc-f0f5-4a1b-9b04-9ed5e83ab727" />
 
 And now encrypt using RSA with OAEP padding (RSAES_OAEP_SHA_1):
 ```
@@ -220,7 +220,7 @@ And, that’s it. Note that the two main encryption methods we can use (with pad
 
 
 ### Using Python
-We can use the same type of approach with Python. In the following case we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption. Note, Boto3 was been depreciated for Pythofn 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+We can use the same type of approach with Python. In the following case, we use boto3, select an RSA key pair, and add the option of EncryptionAlgorithm='RSAES_OAEP_SHA_1' for the encryption and decryption. Note, Boto3 was deprecated for Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
 
 ```
 python3 -W ignore 1.py
@@ -294,19 +294,18 @@ And, that’s it. RSA can be used to encrypt and decrypt data, and where we encr
 
 One thing to watch is that the usage of the keys needs to be locked down to certain users and that the owner of the keys needs to be carefully controlled, as, if someone deletes your keys, you will possibly not be able to decrypt files that have been encrypted with those keys. Luckily, there is a 7–30 day time window for a key to be deleted — just in case you have deleted it by mistake, or if someone has maliciously deleted it:
 
-<img src="https://asecuritysite.com/public/kms_19.png" width="750px" />
-
+<img width="1400" height="826" alt="image" src="https://github.com/user-attachments/assets/af8ee30d-7307-4e2c-b425-b21dc66fdec7" />
 
 ## AWS Digital Signing
 
 ### Generating the signing key pair
 
-With digital signing we often use RSA. With this, Alices uses her private key (d,N) to encrypt the message and produce a signature (sig). This is then passed to Bob and who takes the signature and Alice's public key (e,N), and then decrypts to determine the message. If the message decrypted is the same of the original message, the signature is valid. Overall we create a public key (e,N) and a private key (d,N). N is known as the public modulus, and has, for security reasons, at least, 2048 bits. e is the public exponent (and typically a value of 65,537) and d is the private exponent. In the following, we create a 2K RSA key pair with:
+With digital signing, we often use RSA. With this, Alice uses her private key (d,N) to encrypt the message and produce a signature (sig). This is then passed to Bob and who takes the signature and Alice's public key (e,N), and then decrypts to determine the message. If the message decrypted is the same of the original message, the signature is valid. Overall, we create a public key (e,N) and a private key (d,N). N is known as the public modulus, and has, for security reasons, at least, 2048 bits. e is the public exponent (and typically a value of 65,537) and d is the private exponent. In the following, we create a 2K RSA key pair with:
 
-<img src="https://asecuritysite.com/public/rsa_sig.png" width="750px" />
+<img width="1559" height="915" alt="image" src="https://github.com/user-attachments/assets/76eb81fc-2130-4cdc-bd6c-2f065434de4f" />
 
 ### Creating an RSA key pair
-In AWS, we use  the KMS (Key Management Service) and which integrate a HSM (Hardware Security Module) to create and process with our keys. Within the KMS, we can create and delete keys, along with encrypting and digital signing. It supports both ECDSA and RSA signing. For padding, KMS supports PKCS1 or PSS, and for hashing within the RSA signature, we can either have SHA-256, SHA-384 or SHA-512.  In AWS, we can create a key pair with the "aws kms create-key" command:
+In AWS, we use the KMS (Key Management Service) and which integrates a HSM (Hardware Security Module) to create and process with our keys. Within the KMS, we can create and delete keys, along with encrypting and digital signing. It supports both ECDSA and RSA signing. For padding, KMS supports PKCS1 or PSS, and for hashing within the RSA signature, we can use SHA-256, SHA-384 or SHA-512.  In AWS, we can create a key pair with the "aws kms create-key" command:
             
 ```
 $ aws kms create-key --customer-master-key-spec RSA_2048 --key-usage SIGN_VERIFY --description "My RSA Key Pair"
@@ -497,7 +496,7 @@ Now determine the cipher text for the following (the first example has already b
 | “security”|	“qwerty”	||
 | “Africa” |	“changeme”	||
 
-Finally, change the program so that it does 256-bit AES with CBC mode.
+Finally, change the program so that it uses 256-bit AES with CBC mode.
 
 
 
