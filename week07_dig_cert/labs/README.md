@@ -19,7 +19,7 @@ At the end of this lab, you should understand:
 
 
 # Lab 6: Ciphers and Digital Certificates
-In this lab we will investigate a range oxf ciphers and also how we can view the details within digital certificates.
+In this lab we will investigate a range of ciphers and also how we can view the details within digital certificates.
 
 ## A Ciphers
 Use your desktop computer to complete the following:
@@ -123,8 +123,9 @@ Set up your Windows 2022 for a remote desktop connection (see a previous lab). T
 * Extract Botnet.exe and Controller.exe to the c:\botnet folder.
 * Navigate to c:\botnet from the command line, and test that Botnet.exe will run.
 
-![Figure 2: Installing .NET 3.5 Features](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework02.png)  
+<img width="714" height="512" alt="image" src="https://github.com/user-attachments/assets/dc2312c5-2892-4cb3-b029-f7439101cfe3" />
 
+Figure 2: Installing .NET 3.5 Features
 
 ### D.2	Setup Linux
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
@@ -136,16 +137,21 @@ Setup your Linux AWS instance for a remote SSH connection. The steps are then:
 
 This should extract the files of botnet.exe and controller.exe. The controller will wait for a connection from the botnet.  The ports used for the connection will range from 5,000 to 5,100, so open up the firewall on your Linux AWS instance (Figure 3).
 
-![Figure 3: Opening up Ports 5,000 to 5,100 on Linux](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework03.png)   
+<img width="824" height="266" alt="image" src="https://github.com/user-attachments/assets/1cba84ae-bede-4f90-ad8c-e2f0ff740714" />
 
+Figure 3: Opening up Ports 5,000 to 5,100 on Linux
+  
 You now need to install Mono on your AWS Linux instance. Details are [here](https://gist.github.com/yetanotherchris/42b429059e5fe1b3f7bb4169f5706c00) or on Ubuntu [here](https://linuxgenie.net/install-mono-ubuntu-24-04/).
 
-Next run controller.exe (Figure 4) with:
+Next, run controller.exe (Figure 4) with:
+
 ```
 # mono c.exe
 ```
- 
-![Figure 4: Running the controller.exe ](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework04.png)    
+
+ <img width="790" height="362" alt="image" src="https://github.com/user-attachments/assets/45fbb40b-190e-473a-9de0-5d7c246bd024" />
+
+Figure 4: Running the controller.exe 
 
 There will be no network connections shown yet, as we now need to run the Botnet from the Windows instance.
 
@@ -160,7 +166,7 @@ Make sure that you have made a connection with the controller (as seen in Figure
 ![Figure 5: Running the botnet on Windows 2022](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework05.png)  
 
 
-Now, stop the bot (with Ctrl-C), and will we now run Wireshark and capture the traffic. Restart our Bot, and make sure you are capturing traffic. After it has finished, stop Wireshark and view the Wireshark trace (see Figure 5).  You can use the ip.addr filter to focus on the traffic that relates to your Botnet connection. 
+Now, stop the bot (with Ctrl-C), and we will run Wireshark and capture the traffic. Restart our Bot, and make sure you are capturing traffic. After it has finished, stop Wireshark and view the Wireshark trace (see Figure 5).  You can use the ip.addr filter to focus on the traffic that relates to your Botnet connection. 
 
 
 
@@ -172,17 +178,16 @@ Which TCP client port has been used for the connection:
 
 By clicking on a network packet, and selecting “Follow stream” (Figure 6). What are the messages that the bot sends to the controller:
 
+<img width="792" height="478" alt="image" src="https://github.com/user-attachments/assets/91ccf5ce-b2a5-47a2-bda4-78b215b0d4d5" />
 
-![Figure 6: Capturing network traffic from Bot](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework06.png)  
+Figure 6: Capturing network traffic from Bot
  
+<img width="818" height="418" alt="image" src="https://github.com/user-attachments/assets/e9a9c047-fbf9-480d-b3b1-2d0694210a6b" />
 
-![Figure 7: Analysing traffic flow from bot and controller](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework07.png)  
+Figure 7: Analysing traffic flow from bot and controller
  
-
-
-
 ### D.4	Running Snort
-Quit the bot, and now we will run Snort on Windows 2022. You can also run it on Linux, if you want. Run create a Snort file (such as with the name 1.snort):
+Quit the bot, and now we will run Snort on Windows 2022. You can also run it on Linux, if you want.  Create a Snort file (such as with the name 1.snort):
 ```
 alert tcp any any -> any 5000 ( msg:"Sample alert";  sid:1000; rev:1; )
 alert tcp any any -> any 5001 ( msg:"Sample alert";  sid:1001; rev:1; )
@@ -249,11 +254,9 @@ TCP TTL:128 TOS:0x0 ID:30753 IpLen:20 DgmLen:52 DF
 TCP Options (6) => MSS: 8961 NOP WS: 8 NOP NOP SackOK
 ```
  
+<img width="912" height="552" alt="image" src="https://github.com/user-attachments/assets/66f177c9-276d-4310-8bbc-489a1ab572e0" />
  
-![Figure 8: Running Snort](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework08.png)  
-
-
-
+Figure 8: Running Snort 
 
 
 
