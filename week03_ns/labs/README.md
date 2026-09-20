@@ -29,6 +29,15 @@ The setup for GNS3 is:
 
 <img width="1828" height="1084" alt="image" src="https://github.com/user-attachments/assets/22ac0fe0-d99f-4789-9b54-0b4e99c8a3fb" />
 
+User logins:
+
+* Ubuntu- User: user, Password: 1234
+* Kali- User: napier, Password: napier123
+* Windows- User: Administrator, Password: napier123
+* pfsense- User: admin, Password: pfsense
+* Metasploitable- User: msfadmin, Password: napier123
+
+
 ### Firewall  set up
 On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
 
