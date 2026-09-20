@@ -303,8 +303,7 @@ From this, determine one of the usernames and passwords.
 ## K Metasploit Framework
 Microsoft Windows uses the Server Message Block (SMB) Protocol, one version of which was also known as Common Internet File System (CIFS), and operates as an application-layer network protocol mainly used for providing shared access to files, printers, and serial ports and miscellaneous communications between nodes on a network.
 
-In today’s lab, we use auxiliary modules in Metasploit. The Metasploit Framework includes 
-hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much more. Although these modules will not give you a shell, they are extremely valuable when conducting a penetration test. Generally, they are grouped in three categories: Admin, Scanner and Server. 
+The Metasploit Framework includes hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much more. Although these modules will not give you a shell, they are extremely valuable when conducting a penetration test. Generally, they are grouped in three categories: Admin, Scanner and Server. 
 
 K.1. On Microsoft Windows 7, share the perflogs folder:
 
@@ -335,7 +334,7 @@ What is the name of the folder they created?
 From the Wireshark trace, which TCP port SMB uses to connect?
 
 
-The smb_lookupsid module brute-forces SID lookups on a range of targets to determine what local users exist on the system. Knowing what users exist on a system can greatly  speed up any further brute-force log-on attempts later on.
+K.4 The smb_lookupsid module brute-forces SID lookups on a range of targets to determine what local users exist on the system:
 
 ```
 $ msfconsole
@@ -361,7 +360,7 @@ What is special about the RID values of 1,000 and above?
 
 ### Scanning
 
-We can use Metaploit to perform a scan. First, we will search for the portscan module:
+K.5 We can use Metaploit to perform a scan. First, we will search for the portscan module:
 
 ```
 msf > search portscan
@@ -369,7 +368,7 @@ msf > search portscan
 
 What do you observe from the run:
 
-Start Wireshark. We can now perform a TCP port scan using Metasploit’s auxiliary 
+K.6 Start Wireshark. We can now perform a TCP port scan using Metasploit’s auxiliary 
 module:
 
 ```
@@ -384,6 +383,40 @@ From your Wireshark trace (using the filter in the form ip.addr==1.2.3.4), ident
 Metasploit identifies an open port and a closed port.
 
 
+### SMB Login
+K.7 Metasploit’s smb_login module will attempt to log in via SMB across a provided IP address
+(es). If you have a database plugin loaded, successful logins will be stored in it for future 
+reference and usage.
+
+```
+msf > use auxiliary/scanner/smb/smb_login
+msf auxiliary(smb_login) > set RHOSTS [W.X.Y.Z]
+RHOSTS => [W.X.Y.Z]
+msf auxiliary(smb_login) > set SMBUser [USER]
+SMBUser => Administrator
+msf auxiliary(smb_login) > set SMBPass [PASSWORD]
+SMBPass => napier
+msf auxiliary(smb_login) > run
+```
+
+Using the show options command in Metasploit, you can clearly see that this module has many more options than other auxiliary modules and is quite versatile. The smb_login module can also be passed a username and password list in order to attempt to brute-force login attempts across a range of machines.
+
+K.8 Create a Username file (users.txt) and a Password file (passwords.txt) with all the following using "nano" command in Kali DMZ:
+
+users.txt: Administrator, napier, root, Guest, test, default, [USER]
+passwords.txt: napier123, test, guest, password, changeme, [PASSWORD]
+
+```
+msf > use auxiliary/scanner/smb/smb_login
+msf auxiliary(smb_login) > show options
+Check if you can see PASS_FILE and USER_FILE
+msf auxiliary(smb_login) > set PASS_FILE /home/napier/passwords.txt
+set PASS_FILE /root/passwords.txt
+msf auxiliary(smb_login) > set USER_FILE /home/napier/users.txt
+set USER_FILE /root/users.txt
+msf auxiliary(smb_login) > run
+```
+Which user names and passwords did it detect?
 
 # Appendix
 User logins: 
