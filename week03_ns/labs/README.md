@@ -11,7 +11,7 @@ Complete Lab 2: The lab is [here](https://github.com/billbuchanan/csn09112/blob/
 
 
 ## Lab setup
-Our challenge is to setup MyBank Incorp, where each of you will be allocated a network and hosts to configure and get on-line (Figure 1). You have a pfSense firewall, a Ubuntu (Private) host, a Windows (DMZ) host, a Metasploitable (DMZ) host and a Kali (DMZ) host to achieve your objectives. 
+From Lab 1, we should now have this setup:
 
 <img width="2658" height="1028" alt="image" src="https://github.com/user-attachments/assets/7798f13f-276e-49d4-a452-24d53fbe6ab6" />
 
