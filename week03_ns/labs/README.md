@@ -300,49 +300,89 @@ Now we will attack the Mutillidae site:
 ```
 From this, determine one of the usernames and passwords.
 
-## K	NAT and 1:1 mappings
+## K Metasploit Framework
+Microsoft Windows uses the Server Message Block (SMB) Protocol, one version of which was also known as Common Internet File System (CIFS), and operates as an application-layer network protocol mainly used for providing shared access to files, printers, and serial ports and miscellaneous communications between nodes on a network.
 
-No other group can access any of your hosts, as you are behind NAT. Now we need to set up a 1:1 mapping and a virtual IP address (with Proxy ARP) to map an internal address to an external one. First, we need to find an IP address from the 10.221.0.0/22 network which is not being used, and then we will use this to allow other groups’ access to the hosts in the DMZ (Figure 2).
+In today’s lab, we use auxiliary modules in Metasploit. The Metasploit Framework includes 
+hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much more. Although these modules will not give you a shell, they are extremely valuable when conducting a penetration test. Generally, they are grouped in three categories: Admin, Scanner and Server. 
 
-Demo: https://youtu.be/1wn2io8EWvs 
+K.1. On Microsoft Windows 7, share the perflogs folder:
 
-<img width="940" height="497" alt="image" src="https://github.com/user-attachments/assets/1d1be93f-3d32-49bf-b77d-f83b30ad34c2" />
+<img width="646" height="470" alt="image" src="https://github.com/user-attachments/assets/7450ca91-57d9-4acf-a4d6-be7323faac5a" />
 
-Figure 2: Setup 1:1 NAT for mapping of servers 
+Every Microsoft host has an SID which uniquely identifies it, and where each user has a RID identifier:
 
-Run NMAP from the Private network with: nmap –sP 10.221.0.0/24
+<img width="1088" height="822" alt="image" src="https://github.com/user-attachments/assets/93d87abd-3325-41e3-b2cf-6a4877714b62" />
 
-Which hosts are online?
+K.2. Now go to Kali on your DMZ and start Wireshark. Next, run msfconsole, and set up the scan for the SMB share:
 
-Now pick an address which is (where GROUP ID is the third digit of your private network address), eg if your private address is 10.10.43.0, then set up the address of 10.221.2.43:
+```
+$ msfconsole
+msf > use auxiliary/scanner/smb/smb_enumshares
+msf auxiliary(smb_enumshares) > set RHOSTS 192.168.11.7
+RHOSTS => 192.168.11.7
+msf auxiliary(smb_enumshares) > set SMBUser napier
+SMBUser => napier
+msf auxiliary(smb_enumshares) > set SMBPass napier123
+SMBPass => napier123
+msf auxiliary(smb_enumshares) > run
+```
 
-10.221.2.[GROUP ID]
+K.3. As would be expected, smb_enumshares module enumerates any SMB shares that are available on a remote system.
 
-Now, on the firewall, set up a 1:1 mapping of the External IP address that you have selected and the Internal IP address on the DMZ (Figure 3).
+What is the name of the folder they created?
 
-Next, set up a Virtual IP address (with Proxy ARP) for the external address you have selected, which will advertise the IP address (Figure 4).
-
-Now from the WAN interface, ping the host in the DMZ. Can you ping it?
-
-Finally ask, someone in another group to ping your host in the DMZ. Can they ping it?
-
-Now get them to access the Web server on your host.
-
-Finally get them to NMAP your host? What can you observe from the NMAP?
-
-<img width="732" height="269" alt="image" src="https://github.com/user-attachments/assets/13e5df20-49d2-47f9-aa0a-cbf4bfcd5a88" />
-
-Figure 3: 1:1 NAT settings
-
-<img width="646" height="222" alt="image" src="https://github.com/user-attachments/assets/2966fa30-08ec-460f-bb3c-28a0ad0bc306" />
-
-Figure 4: Virtual IP addresses
+From the Wireshark trace, which TCP port SMB uses to connect?
 
 
-# Software Tutorial
-Complete the software tutorial at: 
+The smb_lookupsid module brute-forces SID lookups on a range of targets to determine what local users exist on the system. Knowing what users exist on a system can greatly  speed up any further brute-force log-on attempts later on.
 
-http://asecuritysite.com/csn09112/software02
+```
+$ msfconsole
+msf > use auxiliary/scanner/smb/smb_lookupsid
+msf auxiliary(smb_lookupsid) > show options
+msf auxiliary(smb_lookupsid) > set RHOSTS 192.168.11.7
+RHOSTS => 192.168.11.7
+msf auxiliary(smb_lookupsid) > set SMBUser napier
+SMBUser => napier
+msf auxiliary(smb_lookupsid) > set SMBPass napier123
+SMBPass => napier123
+msf auxiliary(smb_lookupsid) > run
+```
+
+What is the SID of the Windows 7 computer?
+
+Ask another group for their SID. For the Administrator account, is the SID different from 
+yours?
+
+What does an RID of 500 identify?
+
+What is special about the RID values of 1,000 and above?
+
+### Scanning
+
+We can use Metaploit to perform a scan. First, we will search for the portscan module:
+
+```
+msf > search portscan
+```
+
+What do you observe from the run:
+
+Start Wireshark. We can now perform a TCP port scan using Metasploit’s auxiliary 
+module:
+
+```
+msf > use auxiliary/scanner/portscan/tcp
+msf auxiliary(tcp) > set RHOSTS 192.168.11.7
+run
+```
+
+Which ports are open on the Windows 7 host?
+
+From your Wireshark trace (using the filter in the form ip.addr==1.2.3.4), identify how 
+Metasploit identifies an open port and a closed port.
+
 
 
 # Appendix
