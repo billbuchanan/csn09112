@@ -341,15 +341,15 @@ K.3 We can now perform a SYN port scan and capture the traffic with Wireshark:
 
 ```
 msf > use auxiliary/scanner/portscan/syn
-msf auxiliary(smb_lookupsid) > show options
-msf auxiliary(tcp) > set RHOSTS 192.168.11.7
+msf auxiliary(syn) > show options
+msf auxiliary(syn) > set RHOSTS 192.168.11.7
 RHOSTS => 192.168.11.7
 msf auxiliary(tcp) > run
 ```
 
 What is the main difference between the TCP SYN scan and the TCP port scan?
 
-K.4 Now we will discover the NetBios name of the Windows 2003 (The “nbname” auxiliary module scans a range of hosts and determines their hostnames via NetBIOS.).
+K.4 Now we will discover the NetBIOS name of the Windows 7 (The “nbname” auxiliary module scans a range of hosts and determines their hostnames via NetBIOS).
 
 ```
 use auxiliary/scanner/netbios/nbname
