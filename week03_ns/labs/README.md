@@ -328,11 +328,23 @@ Which ports are open on the Windows 7 host?
 From your Wireshark trace (using the filter in the form ip.addr==1.2.3.4), identify how 
 Metasploit identifies an open port and a closed port.
 
+K.3 We can now perform a SYN port scan and capture the traffic with Wireshark:
+
+```
+msf > use auxiliary/scanner/portscan/syn
+msf auxiliary(smb_lookupsid) > show options
+msf auxiliary(tcp) > set RHOSTS 192.168.11.7
+RHOSTS => 192.168.11.7
+msf auxiliary(tcp) > run
+```
+
+What is the main difference between the TCP SYN scan and the TCP port scan?
+
 ### Server Message Block (SMB)
 
 Microsoft Windows uses the Server Message Block (SMB) Protocol, one version of which was also known as Common Internet File System (CIFS), and operates as an application-layer network protocol mainly used for providing shared access to files, printers, and serial ports and miscellaneous communications between nodes on a network.
 
-K.3. On Microsoft Windows 7, share the perflogs folder:
+K.4. On Microsoft Windows 7, share the perflogs folder:
 
 <img width="646" height="470" alt="image" src="https://github.com/user-attachments/assets/7450ca91-57d9-4acf-a4d6-be7323faac5a" />
 
@@ -340,7 +352,7 @@ Every Microsoft host has an SID which uniquely identifies it, and where each use
 
 <img width="1088" height="822" alt="image" src="https://github.com/user-attachments/assets/93d87abd-3325-41e3-b2cf-6a4877714b62" />
 
-K.4. Now go to Kali on your DMZ and start Wireshark. Next, run msfconsole, and set up the scan for the SMB share:
+K.5. Now go to Kali on your DMZ and start Wireshark. Next, run msfconsole, and set up the scan for the SMB share:
 
 ```
 $ msfconsole
@@ -354,14 +366,14 @@ SMBPass => napier123
 msf auxiliary(smb_enumshares) > run
 ```
 
-K.5. As would be expected, smb_enumshares module enumerates any SMB shares that are available on a remote system.
+K.6. As would be expected, smb_enumshares module enumerates any SMB shares that are available on a remote system.
 
 What is the name of the folder they created?
 
 From the Wireshark trace, which TCP port SMB uses to connect?
 
 
-K.6 The smb_lookupsid module brute-forces SID lookups on a range of targets to determine what local users exist on the system:
+K.7 The smb_lookupsid module brute-forces SID lookups on a range of targets to determine what local users exist on the system:
 
 ```
 $ msfconsole
@@ -385,7 +397,7 @@ What does an RID of 500 identify?
 
 What is special about the RID values of 1,000 and above?
 
-K.7 Metasploit’s smb_login module will attempt to log in via SMB across a provided IP address
+K.8 Metasploit’s smb_login module will attempt to log in via SMB across a provided IP address
 (es). If you have a database plugin loaded, successful logins will be stored in it for future 
 reference and usage.
 
@@ -402,7 +414,7 @@ msf auxiliary(smb_login) > run
 
 Using the show options command in Metasploit, you can clearly see that this module has many more options than other auxiliary modules and is quite versatile. The smb_login module can also be passed a username and password list in order to attempt to brute-force login attempts across a range of machines.
 
-K.8 Create a Username file (users.txt) and a Password file (passwords.txt) with all the following using "nano" command in Kali DMZ:
+K.9 Create a Username file (users.txt) and a Password file (passwords.txt) with all the following using "nano" command in Kali DMZ:
 
 users.txt: Administrator, napier, root, Guest, test, default, [USER]
 passwords.txt: napier123, test, guest, password, changeme, [PASSWORD]
