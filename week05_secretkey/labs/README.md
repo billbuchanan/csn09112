@@ -529,8 +529,7 @@ This is my secret file.
 
 Here’s a sample run in an AWS Foundation Lab environment:
 
-![image](https://asecuritysite.com/public/kms07.png)
-
+<img width="2182" height="1134" alt="image" src="https://github.com/user-attachments/assets/7724d219-171f-40da-8b53-c68b77b764eb" />
 
 ### Using Python
 
