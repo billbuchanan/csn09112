@@ -27,15 +27,22 @@ User logins:
 * pfsense- User: admin, Password: pfsense
 * Metasploitable- User: msfadmin, Password: napier123
 
-Key TCP ports:
+Key UDP/TCP ports:
 
-* 21 FTP commands.
-* 23 Telnet.
-* 25 SMTP. Sending email.
-* 53 DNS.
-* 80 HTTP.
-* 110 POP3. Receiving email.
-* 443 HTTPs. 
+* 21 (TCP) FTP commands.
+* 23 (TCP) Telnet.
+* 25 (TCP) SMTP. Sending email.
+* 53 (UDP) DNS.
+* 80 (TCP) HTTP.
+* 110 (TCP) POP3. Receiving email.
+* 443 (TCP) HTTPs.
+
+Interesting Wireshark filters:
+
+* ip.src=192.168.10.7 - Filter traffic for 192.168.10.7
+* ip.src=192.168.10.7 || ip.src=192.168.10.8 - Filter traffic for 192.168.10.7 or 192.168.10.8
+* tcp.port==21  - Filter traffic for TCP port 21
+* ip.src=192.168.10.7 && tcp.port==21 - Filter traffic for 192.168.10.7 and TCP port 21
 
 
 ### Firewall  set up
@@ -108,7 +115,7 @@ Can you log into Metasploit: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? [Yes/No]
 
-Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.prt==22 as a filter for SSH.
+Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.port==22 as a filter for SSH.
 
 
 
@@ -430,12 +437,12 @@ msf auxiliary(smb_login) > run
 Which user names and passwords did it detect?
 
 # Appendix
-User logins: 
+User logins:
 
-Ubuntu:- User: napier, Password: napier123  
-Kali:-  User: root, Password: toor  
-Windows:-		User: Administrator, Password: napier123  
-pfsense:- User: admin, Password: pfsense  
-Metasploitable:- User: msfadmin, Password: napier123  
+* Ubuntu- User: user, Password: 1234
+* Kali- User: napier, Password: napier123
+* Windows- User: Administrator, Password: napier123
+* pfsense- User: admin, Password: pfsense
+* Metasploitable- User: msfadmin, Password: napier123
 
 
