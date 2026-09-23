@@ -70,7 +70,7 @@ Why is it just a single address?
 
 
 
-### Metasploitable host
+### Metasploitable host - 192.168.11.9
 Now we will investigate the Metasploitable host.
 
 Run NMAP from Windows to Metasploit. Which services are enabled:
