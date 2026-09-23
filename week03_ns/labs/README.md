@@ -39,10 +39,12 @@ Key UDP/TCP ports:
 
 Interesting Wireshark filters:
 
-* ip.src=192.168.10.7 - Filter traffic for 192.168.10.7
-* ip.src=192.168.10.7 || ip.src=192.168.10.8 - Filter traffic for 192.168.10.7 or 192.168.10.8
+* ip.addr==192.168.10.7 - Filter traffic for 192.168.10.7
+* ip.src==192.168.10.7 - Filter traffic for 192.168.10.7 as the source address
+* ip.dest==192.168.10.7 - Filter traffic for 192.168.10.7 as the destination address
+* ip.src==192.168.10.7 || ip.src=192.168.10.8 - Filter traffic for 192.168.10.7 or 192.168.10.8
 * tcp.port==21  - Filter traffic for TCP port 21
-* ip.src=192.168.10.7 && tcp.port==21 - Filter traffic for 192.168.10.7 and TCP port 21
+* ip.src==192.168.10.7 && tcp.port==21 - Filter traffic for 192.168.10.7 for the source and on TCP port 21
 
 
 ### Firewall  set up
