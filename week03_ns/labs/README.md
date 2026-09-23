@@ -56,18 +56,7 @@ On the Windows host, ping 192.168.10.254 and 192.168.10.7 interfaces. You should
 
 On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port? The answer should be no, as the routing has not been set yet.
 
-Now from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 192.168.122.1.
-
-
-### NAT
-Now we will investigate NAT on the device.
-
-Run packet capture on the firewall, and then ping from both the Windows host and the Ubuntu host. Stop the trace.
-
-Which IP address appears in the pings? 
-
-Why is it just a single address?
-
+Now, from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 192.168.122.1.
 
 
 ### Metasploitable host - 192.168.11.9
