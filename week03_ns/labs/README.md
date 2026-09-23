@@ -182,9 +182,9 @@ Within a network infrastructure, we have services which run on hosts. These serv
 |  LAN	|  From Ubuntu, access the Web server at: http://192.168.11.7	| Is the service working: [Yes] [No]| 
 | LAN	|  Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 192.168.11.7 80 then enter:  GET / | 	Outline the message that is returned: | 
 | DMZ	|  Repeat the previous example from the WINDOWS host: telnet 192.168.10.7 80	|  
-| DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: "telnet 192.168.10.7 21"  then enter: "USER napier" then "PASS napier123" and then "QUIT" | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
+| DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: "telnet 192.168.10.7 21"  then enter: "USER user" then "PASS 1234" and then "QUIT" | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
 | LAN | 	From UBUNTU access the WINDOWS host with "telnet 192.168.10.7 21" then enter: "USER Administrator" then "PASS napier" and then "QUIT" | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
-| DMZ	| On the UBUNTU instance you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
+| DMZ	| On the UBUNTU instance, you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
 
 
 
