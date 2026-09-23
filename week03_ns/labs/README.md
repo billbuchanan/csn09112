@@ -70,15 +70,7 @@ Why is it just a single address?
 
 
 
-### Routing table
-Now we will investigate the routing table on the firewall.
-
-On the firewall, investigate the firewall, and identify how the device makes decisions on the routing of data packets. What is the default gateway?
-
-
-
-
-
+### Metasploitable host
 Now we will investigate the Metasploitable host.
 
 Run NMAP from Windows to Metasploit. Which services are enabled:
@@ -95,15 +87,15 @@ From Windows, run Wireshark and capture packets. Now log into Metasploitable usi
 ```
 telnet 192.168.11.9
 ```
-Can you log into each into Metasploit: [Yes/No]
+Can you log into Metasploit with Telnet: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
 
-From Ubuntu run Wireshark and capture packets. Now log into Metasploitable using telnet:
+From Ubuntu, run Wireshark and capture packets. Now log into Metasploitable using telnet:
 ```
 telnet 192.168.11.9
 ```
-Can you log into each into Metasploit: [Yes/No]
+Can you log into Metasploit: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
 
