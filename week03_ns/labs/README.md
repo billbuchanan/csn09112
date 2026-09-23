@@ -17,7 +17,7 @@ From Lab 1, we should now have this setup:
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
-If you do not have this setup, go back to Lab 1 and complete [here]().
+If you do not have this setup, go back to Lab 1 and complete [here](https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs).
 
 User logins:
 
