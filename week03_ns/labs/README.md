@@ -37,6 +37,16 @@ User logins:
 * pfsense- User: admin, Password: pfsense
 * Metasploitable- User: msfadmin, Password: napier123
 
+Key TCP ports:
+
+* 21 FTP commands.
+* 23 Telnet.
+* 25 SMTP. Sending email.
+* 53 DNS.
+* 80 HTTP.
+* 110 POP3. Receiving email.
+* 443 HTTPs. 
+
 
 ### Firewall  set up
 On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
