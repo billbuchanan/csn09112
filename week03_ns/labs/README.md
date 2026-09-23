@@ -15,19 +15,10 @@ From Lab 1, we should now have this setup:
 
 <img width="2658" height="1028" alt="image" src="https://github.com/user-attachments/assets/7798f13f-276e-49d4-a452-24d53fbe6ab6" />
 
-Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
-
-In Moodle, click on Virtual Labs (CSN09112) and open up [here](https://moodle.napier.ac.uk/mod/lti/view.php?id=3055667):
 
 <img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/ebcc8ba4-6865-4aaa-9e0f-2a42f3fbc0f4" />
 
-Select “Cyber Modular Labs”, and then select the project “bill_csn09112.gns”:
-
-<img width="2246" height="1008" alt="image" src="https://github.com/user-attachments/assets/9540c908-35b3-477d-a0f3-62e7d28c18d6" />
-
-The setup for GNS3 is:
-
-<img width="1828" height="1084" alt="image" src="https://github.com/user-attachments/assets/22ac0fe0-d99f-4789-9b54-0b4e99c8a3fb" />
+Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
 
 User logins:
 
