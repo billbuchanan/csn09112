@@ -13,12 +13,11 @@ Complete Lab 2: The lab is [here](https://github.com/billbuchanan/csn09112/blob/
 ## Lab setup
 From Lab 1, we should now have this setup:
 
-<img width="2658" height="1028" alt="image" src="https://github.com/user-attachments/assets/7798f13f-276e-49d4-a452-24d53fbe6ab6" />
-
-
 <img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/ebcc8ba4-6865-4aaa-9e0f-2a42f3fbc0f4" />
 
 Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
+
+If you do not have this setup, go back to Lab 1 and complete [here]().
 
 User logins:
 
