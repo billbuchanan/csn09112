@@ -7,7 +7,7 @@ The aim of this lab is to assess a secure architecture.
 
 ## Activities
 
-Complete Lab 2: The lab is [Network Security Lab 2](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/lab.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=g7dzDM4aU0k).</p>
+Complete Lab 2: The lab is [Network Security Lab 2](https://github.com/billbuchanan/csn09112/blob/master/week03_ns/labs/csn09112_lab02.pdf) and there a demo of the lab [here](https://www.youtube.com/watch?v=g7dzDM4aU0k).</p>
 
 
 ## Lab setup
