@@ -186,7 +186,7 @@ Nmap is one of the most popular network scanning tools. It is widely available f
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-| LAN to WAN|	sudo nmap –sP –r 10.221.0.0/24	|Which hosts are on-line:| 
+| LAN to WAN|	sudo nmap –sP –r 192.168.122.0/24	|Which hosts are on-line:| 
 | LAN to DMZ|	sudo nmap –sP –r 192.168.11.0/24|	Which hosts are on-line:| 
 | DMZ to LAN	|nmap –sP –r 192.168.10.0/24|	Which hosts are on-line:| 
 | LAN to DMZ|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 192.168.11.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
