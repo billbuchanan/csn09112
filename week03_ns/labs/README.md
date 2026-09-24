@@ -129,10 +129,15 @@ Can you log into into Metasploit: [Yes/No]
 
 Stop Wireshark, and examine the data packets. Can you find the Telnet login, and can you discover the password used? [Yes/No]
 
-From Ubuntu, run Wireshark and capture packets. Now log into Metasploitable using SSH:
+From Ubuntu, run Wireshark and capture packets. Now log into Metasploitable using SSH.
+A modern client such as Ubuntu 22 won’t be happy with an ancient server cryptography suite. We need to bypass that issue using: 
+
 ```bash
-ssh 192.168.11.9 -l msfadmin
+ssh -o HostKeyAlgorithms=+ssh-rsa 192.168.11.9 -l msfadmin
 ```
+
+This is only valid for this lab, you would never allow RSA with SHA-1 signature in a production environment, you’ll see in the coming weeks why it has been deprecated.
+
 Can you log into Metasploit: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? (Right-Click, Follow TCP Stream) [Yes/No]
