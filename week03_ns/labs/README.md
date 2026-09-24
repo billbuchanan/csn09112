@@ -322,6 +322,10 @@ From this, determine one of the usernames and passwords.
 
 The Metasploit Framework includes hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much more. Although these modules will not give you a shell, they are extremely valuable when conducting a penetration test. Generally, they are grouped in three categories: Admin, Scanner and Server. 
 
+To find msfconsole, navigate to Kali's menu, type metasploit and select metasploit framework.
+
+<img width="613" height="355" alt="image" src="https://github.com/user-attachments/assets/a783e83a-dafd-4871-a5df-597950b5bbdd" />
+
 ### Scanning
 
 K.1 We can use Metasploit to perform a scan. First, we will search for the portscan module:
@@ -379,10 +383,6 @@ Every Microsoft host has an SID which uniquely identifies it, and where each use
 <img width="1088" height="822" alt="image" src="https://github.com/user-attachments/assets/93d87abd-3325-41e3-b2cf-6a4877714b62" />
 
 K.6 Now go to Kali on your DMZ and start Wireshark. Next, run msfconsole, and set up the scan for the SMB share:
-
-To find msfconsole, navigate to Kali's menu, type metasploit and select metasploit framework.
-
-<img width="613" height="355" alt="image" src="https://github.com/user-attachments/assets/a783e83a-dafd-4871-a5df-597950b5bbdd" />
 
 
 ```
