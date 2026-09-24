@@ -334,7 +334,7 @@ From this, determine one of the usernames and passwords.
 
 The Metasploit Framework includes hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much more. Although these modules will not give you a shell, they are extremely valuable when conducting a penetration test. Generally, they are grouped in three categories: Admin, Scanner and Server. 
 
-To find msfconsole, navigate to Kali's menu, type metasploit and select metasploit framework.
+To run msfconsole, open a terminal console and type `msfconsole`, or navigate to Kali's menu, type metasploit and select metasploit framework, .
 
 <img width="613" height="355" alt="image" src="https://github.com/user-attachments/assets/a783e83a-dafd-4871-a5df-597950b5bbdd" />
 
@@ -343,6 +343,7 @@ To find msfconsole, navigate to Kali's menu, type metasploit and select metasplo
 K.1 We can use Metasploit to perform a scan. First, we will search for the portscan module:
 
 ```
+$ msfconsole
 msf > search portscan
 ```
 
