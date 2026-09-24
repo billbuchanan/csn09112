@@ -136,6 +136,9 @@ A modern client such as Ubuntu 22 won’t be happy with an ancient server crypto
 ssh -o HostKeyAlgorithms=+ssh-rsa 192.168.11.9 -l msfadmin
 ```
 
+<img width="1140" height="612" alt="image" src="https://github.com/user-attachments/assets/c361f798-fba3-4f72-b563-ae207f8f3498" />
+
+
 This is only valid for this lab, you would never allow RSA with SHA-1 signature in a production environment, you’ll see in the coming weeks why it has been deprecated.
 
 Can you log into Metasploit: [Yes/No]
