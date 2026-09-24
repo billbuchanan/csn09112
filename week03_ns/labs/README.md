@@ -15,17 +15,17 @@ From Lab 1, we should now have this setup:
 
 <img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/ebcc8ba4-6865-4aaa-9e0f-2a42f3fbc0f4" />
 
-Figure 1: Lab setup (em0 – Public, em1 – Private, em2 – DMZ) 
+Figure 1: Lab setup (`em0` – Public, `em1` – Private, `em2` – DMZ) 
 
 If you do not have this setup, go back to Lab 1 and complete [here](https://github.com/billbuchanan/csn09112/tree/master/week03_ns/labs).
 
 User logins:
 
-* Ubuntu- User: user, Password: 1234
-* Kali- User: napier, Password: napier123
-* Windows- User: Administrator, Password: napier123
-* pfsense- User: admin, Password: pfsense
-* Metasploitable- User: msfadmin, Password: napier123
+* Ubuntu- User: `user`, Password: `1234`
+* Kali- User: `napier`, Password: `napier123`
+* Windows- User: `Administrator`, Password: `napier123`
+* pfsense- User: `admin`, Password: `pfsense`
+* Metasploitable- User: `msfadmin`, Password: `napier123`
 
 You may have to reinitialise the IP address, IP route, and nameserver for the Metasploitable and the Kali machines.
 
@@ -58,12 +58,12 @@ Key UDP/TCP ports:
 
 Interesting Wireshark filters:
 
-* ip.addr==192.168.10.7 - Filter traffic for 192.168.10.7
-* ip.src==192.168.10.7 - Filter traffic for 192.168.10.7 as the source address
-* ip.dest==192.168.10.7 - Filter traffic for 192.168.10.7 as the destination address
-* ip.src==192.168.10.7 || ip.src=192.168.10.8 - Filter traffic for 192.168.10.7 or 192.168.10.8
-* tcp.port==21  - Filter traffic for TCP port 21
-* ip.src==192.168.10.7 && tcp.port==21 - Filter traffic for 192.168.10.7 for the source and on TCP port 21
+* `ip.addr==192.168.10.7` - Filter traffic for 192.168.10.7
+* `ip.src==192.168.10.7` - Filter traffic for 192.168.10.7 as the source address
+* `ip.dest==192.168.10.7` - Filter traffic for 192.168.10.7 as the destination address
+* `ip.src==192.168.10.7 || ip.src=192.168.10.8` - Filter traffic for 192.168.10.7 or 192.168.10.8
+* `tcp.port==21`  - Filter traffic for TCP port 21
+* `ip.src==192.168.10.7 && tcp.port==21` - Filter traffic for 192.168.10.7 for the source and on TCP port 21
 * Wireshark also accepts protocol filters: `telnet`, `ssh`, `ftp` as a filter will automatically isolate all traffic for these protocols.
 
 ### Firewall  set up
@@ -101,7 +101,7 @@ Run NMAP from Ubuntu to Metasploit. Which services are enabled:
 Now we will investigate the Metasploitable host for Telnet:
 
 From Windows, run Wireshark and capture packets. Now log into Metasploitable using telnet:
-```
+```bash
 telnet 192.168.11.9
 ```
 Can you log into Metasploit with Telnet: [Yes/No]
@@ -109,7 +109,7 @@ Can you log into Metasploit with Telnet: [Yes/No]
 Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
 
 From Ubuntu, run Wireshark and capture packets. Now log into Metasploitable using telnet:
-```
+```bash
 telnet 192.168.11.9
 ```
 Can you log into Metasploit: [Yes/No]
@@ -121,7 +121,7 @@ Note: login for Telnet in Metasploitable is User: msfadmin, Password: napier123
 Now we will investigate the Metasploitable host for Telnet:
 
 From Windows, run Wireshark and capture packets. Now log into Metasploitable using SSH:
-```
+```bash
 ssh 192.168.11.9 -l msfadmin
 ```
 Can you log into into Metasploit: [Yes/No]
@@ -129,7 +129,7 @@ Can you log into into Metasploit: [Yes/No]
 Stop Wireshark, and examine the data packets. Can you find the Telnet login, and can you discover the password used? [Yes/No]
 
 From Ubuntu, run Wireshark and capture packets. Now log into Metasploitable using SSH:
-```
+```bash
 ssh 192.168.11.9 -l msfadmin
 ```
 Can you log into Metasploit: [Yes/No]
@@ -137,9 +137,6 @@ Can you log into Metasploit: [Yes/No]
 Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? (Right-Click, Follow TCP Stream) [Yes/No]
 
 Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.port==22 as a filter for SSH. Or you may also simply use `telnet` or `ssh` as a shortcut.
-
-
-
 
 ## D	Device Audit
 Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
@@ -161,7 +158,7 @@ Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows hos
 | Why are these different in their scope? Where is the blocking happening?
 
 
-Now enable http (Port 80), https (Port 443), and ftp (Port) from the Private network to the DMZ.
+Now enable `http` (Port 80), `https` (Port 443), and `ftp` (Port) from the Private network to the DMZ.
 
 | Perform and answer the following: |
 |-------------------------------|
@@ -185,14 +182,14 @@ Within a network infrastructure, we have services which run on hosts. These serv
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-| DMZ	| On your Windows host, run the command: netstat –a and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
-| LAN		| For the Ubuntu Virtual Machine, and run the command: netstat –l.  	| 	Outline some of the services which are running on your host (define the port number and the name of the service):	| 
-| DMZ		| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: http://192.168.10.7		|  Is the service working: [Yes] [No] 	| 
-|  LAN	|  From Ubuntu, access the Web server at: http://192.168.11.7	| Is the service working: [Yes] [No]| 
-| LAN	|  Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: telnet 192.168.11.7 80 then enter:  GET / | 	Outline the message that is returned: | 
-| DMZ	|  Repeat the previous example from the WINDOWS host: telnet 192.168.10.7 80	|  
-| DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: "telnet 192.168.10.7 21"  then enter: "USER user" then "PASS 1234" and then "QUIT" | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
-| LAN | 	From UBUNTU access the WINDOWS host with "telnet 192.168.10.7 21" then enter: "USER Administrator" then "PASS napier" and then "QUIT" | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
+| DMZ	| On your Windows host, run the command: `netstat –a` and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
+| LAN		| For the Ubuntu Virtual Machine, and run the command: `netstat –l`.  	| 	Outline some of the services which are running on your host (define the port number and the name of the service):	| 
+| DMZ		| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: `http://192.168.10.7`		|  Is the service working: [Yes] [No] 	| 
+|  LAN	|  From Ubuntu, access the Web server at: `http://192.168.11.7`	| Is the service working: [Yes] [No]| 
+| LAN	|  Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: `telnet 192.168.11.7 80` then enter:  `GET /` | 	Outline the message that is returned: | 
+| DMZ	|  Repeat the previous example from the WINDOWS host: `telnet 192.168.10.7 80`	|  
+| DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: `telnet 192.168.10.7 21`  then enter: "USER user" then "PASS 1234" and then "QUIT" | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
+| LAN | 	From UBUNTU access the WINDOWS host with `telnet 192.168.10.7 21` then enter: "USER Administrator" then "PASS napier" and then "QUIT" | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
 | DMZ	| On the UBUNTU instance, you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
 
 
@@ -205,43 +202,44 @@ Nmap is one of the most popular network scanning tools. It is widely available f
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-| LAN to WAN|	sudo nmap –sP –r 192.168.122.0/24	|Which hosts are on-line:| 
-| LAN to DMZ|	sudo nmap –sP –r 192.168.11.0/24|	Which hosts are on-line:| 
-| DMZ to LAN	|nmap –sP –r 192.168.10.0/24|	Which hosts are on-line:| 
-| LAN to DMZ|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 192.168.11.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
-| LAN to LAN|	Run Wireshark on host in LAN, and run: sudo nmap –sP –r 192.168.10.0/24|	Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
+| LAN to WAN|	`sudo nmap –sP –r 192.168.122.0/24`	|Which hosts are on-line:| 
+| LAN to DMZ|	`sudo nmap –sP –r 192.168.11.0/24` |Which hosts are on-line:| 
+| DMZ to LAN| `nmap –sP –r 192.168.10.0/24` |Which hosts are on-line:| 
+| LAN to DMZ|	Run Wireshark on host in LAN, and run: `sudo nmap –sP –r 192.168.11.0/24` |Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
+| LAN to LAN|	Run Wireshark on host in LAN, and run: `sudo nmap –sP –r 192.168.10.0/24` |Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
 
 ## H	Enumeration - Operating System Fingerprinting
 Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-|LAN to DMZ	| Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: sudo nmap –O 192.168.11.0/24 |  Which operating systems does it return: |
-|DMZ to LAN	|Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: nmap –O 192.168.10.0/24	| Which operating systems does it return: |
+|LAN to DMZ	| Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: `sudo nmap –O 192.168.11.0/24` |  Which operating systems does it return: |
+|DMZ to LAN	|Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: `nmap –O 192.168.10.0/24`	| Which operating systems does it return: |
 
 ## I	Enumeration – Application Fingerprinting
 Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-|LAN to DMZ	| Perform an application and version scan for networked services: sudo nmap –sS 192.168.11.7/24 | Which services are running on the Windows host:|
-|DMZ to LAN	Perform an application and version scan for networked services: nmap –sS 192.168.10.7/24 | Which services are running on the Linux host:|
-|LAN to DMZ	|Scan the Web server in the DMZ for its version:  sudo nmap –sV 192.168.11.7/24 –p 80	| Which Web server type is being used:|
-| DMZ to LAN	| Scan the Web server in the LAN for its version: nmap –sV 192.168.10.7/24 –p 80 | Which Web server type is being used:|
+|LAN to DMZ	| Perform an application and version scan for networked services: `sudo nmap –sS 192.168.11.7/24` | Which services are running on the Windows host:|
+|DMZ to LAN	Perform an application and version scan for networked services: `sudo nmap –sS 192.168.10.7/24` | Which services are running on the Linux host:|
+|LAN to DMZ	|Scan the Web server in the DMZ for its version:  `sudo nmap –sV 192.168.11.7/24 –p 80`	| Which Web server type is being used:|
+| DMZ to LAN	| Scan the Web server in the LAN for its version: `sudo nmap –sV 192.168.10.7/24 –p 80` | Which Web server type is being used:|
 
 
 Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-| DMZ to LAN	| Connect to port 80, with: telnet 192.168.10.7 80 and then send the HTTP OPTIONS command to the web server: OPTIONS / HTTP/1.0 | What is returned and how can this be used to fingerprint the web server? Which web server is running and which version? |
-| DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get an HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: HEAD / HTTP/1.0 and GET / HTTP/1.0	| What do you observe from using these HTTP requests:| 
+| DMZ to LAN	| Connect to port 80, with: telnet 192.168.10.7 80 and then send the HTTP OPTIONS command to the web server: `OPTIONS / HTTP/1.0` | What is returned and how can this be used to fingerprint the web server? Which web server is running and which version? |
+| DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get an HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: `HEAD / HTTP/1.0` and `GET / HTTP/1.0`	| What do you observe from using these HTTP requests:| 
 
 
 ## J	Brute Force
 For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will on Kali (DMZ), where you create a user file (you can use Pluma -gui- or nano -command line- no need for file extensions) and password file with the following lists:
 
 list_user: 
+
 * administrator
 * admin
 * root
@@ -260,7 +258,7 @@ list_password:
 Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and passwords:
 
 ```
-# hydra -L list_user -P list_password 192.168.11.9 ftp
+hydra -L list_user -P list_password 192.168.11.9 ftp
 ```
 
 From this, determine one of the usernames and passwords.
