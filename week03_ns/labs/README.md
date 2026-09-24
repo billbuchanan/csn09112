@@ -107,7 +107,12 @@ telnet 192.168.11.9
 ```
 Can you log into Metasploit with Telnet: [Yes/No]
 
-Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
+Stop Wireshark and examine the data packets. Can you find the Telnet login session? Click on one Telnet packet, and right click and select Follow->TCP Stream, and you should see the whole session (see figure below). Can you discover the password used? [Yes/No]
+
+<img width="1032" height="565" alt="image" src="https://github.com/user-attachments/assets/e9e6c46c-c9be-4976-9ac4-5ca18130b30a" />
+Figure: Using Follow-> TCP Stream in Wireshark 
+
+
 
 From Ubuntu, run Wireshark and capture packets. Now log into Metasploitable using telnet:
 ```bash
