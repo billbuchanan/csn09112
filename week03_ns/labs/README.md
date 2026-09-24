@@ -27,6 +27,25 @@ User logins:
 * pfsense- User: admin, Password: pfsense
 * Metasploitable- User: msfadmin, Password: napier123
 
+You may have to reinitialise the IP address, IP route, and nameserver for the Metasploitable and the Kali machines.
+
+Kali (DMZ)
+```bash
+sudo ip link set eth0 up
+sudo ip addr add 192.168.11.8/24 dev eth0
+sudo ip route add default via 192.168.11.254 dev eth0
+# Next, set up the nameserver on the Kali host by editing  /etc/resolv.config and adding a nameserver:
+sudo nano /etc/resolv.conf
+# then add:
+nameserver 8.8.8.8
+```
+
+Metasploitable
+```bash
+sudo ip addr add 192.168.11.9/24 dev eth0
+sudo ip route add default via 192.168.11.254 dev eth0
+```
+
 Key UDP/TCP ports:
 
 * 21 (TCP) FTP commands.
@@ -45,7 +64,7 @@ Interesting Wireshark filters:
 * ip.src==192.168.10.7 || ip.src=192.168.10.8 - Filter traffic for 192.168.10.7 or 192.168.10.8
 * tcp.port==21  - Filter traffic for TCP port 21
 * ip.src==192.168.10.7 && tcp.port==21 - Filter traffic for 192.168.10.7 for the source and on TCP port 21
-
+* Wireshark also accepts protocol filters: `telnet`, `ssh`, `ftp` as a filter will automatically isolate all traffic for these protocols.
 
 ### Firewall  set up
 On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
@@ -115,9 +134,9 @@ ssh 192.168.11.9 -l msfadmin
 ```
 Can you log into Metasploit: [Yes/No]
 
-Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? [Yes/No]
+Stop Wireshark and examine the data packets. Can you find the SSH login session, and can you discover the password used? (Right-Click, Follow TCP Stream) [Yes/No]
 
-Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.port==22 as a filter for SSH.
+Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.port==22 as a filter for SSH. Or you may also simply use `telnet` or `ssh` as a shortcut.
 
 
 
@@ -127,7 +146,7 @@ Now we will make sure everything is in order with our infrastructure, such as fo
 
 | Perform and answer the following: |
 |-------------------------------|
-| On the firewall, capture traffic on the DMZ port, and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ).  Does the traffic have the IP address of the gateway on the LAN port? Tick [ ]
+| On the firewall, capture traffic on the DMZ port (pfsense GUI -via Ubuntu-Private, type 192.168.10.254, admin/pfsense; Diagnostics -> Packet Capture), and generate some traffic from the LAN to the DMZ (such as accessing the Web server in the DMZ).  Does the traffic have the IP address of the gateway on the LAN port? Tick [ ]
 | On the firewall, capture traffic on the WAN port, and generate some traffic from the LAN and DMZ (such as accessing Google.com).  Does the traffic have the IP address of the WAN port? Tick [ ]
 | On the firewall, examine the ARP table. Also on the hosts in the DMZ and the LAN, run arp –a, and determine all your MAC addresses.  Do all the MAC addresses tie up? Tick [ ]
 
@@ -220,7 +239,7 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 
 
 ## J	Brute Force
-For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will on Kali (DMZ), where you create a user file and password file with the following lists:
+For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will on Kali (DMZ), where you create a user file (you can use Pluma -gui- or nano -command line- no need for file extensions) and password file with the following lists:
 
 list_user: 
 * administrator
@@ -247,7 +266,7 @@ Next, start Wireshark on Kali (DMZ), and then run Hydra with these usernames and
 From this, determine one of the usernames and passwords.
 
 
-Stop Wireshark and find the Hydra trace. What do you observe from the trace:
+Stop Wireshark and find the Hydra trace (Follow TCP stream). What do you observe from the trace:
 
 
 What is the FTP status code for an incorrect login:
@@ -360,6 +379,11 @@ Every Microsoft host has an SID which uniquely identifies it, and where each use
 <img width="1088" height="822" alt="image" src="https://github.com/user-attachments/assets/93d87abd-3325-41e3-b2cf-6a4877714b62" />
 
 K.6 Now go to Kali on your DMZ and start Wireshark. Next, run msfconsole, and set up the scan for the SMB share:
+
+To find msfconsole, navigate to Kali's menu, type metasploit and select metasploit framework.
+
+<img width="613" height="355" alt="image" src="https://github.com/user-attachments/assets/a783e83a-dafd-4871-a5df-597950b5bbdd" />
+
 
 ```
 $ msfconsole
