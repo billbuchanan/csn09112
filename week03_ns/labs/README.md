@@ -49,6 +49,7 @@ sudo ip route add default via 192.168.11.254 dev eth0
 Key UDP/TCP ports:
 
 * 21 (TCP) FTP commands.
+* 22 (TCP) SSH.
 * 23 (TCP) Telnet.
 * 25 (TCP) SMTP. Sending email.
 * 53 (UDP) DNS.
