@@ -135,7 +135,7 @@ Can you log into Metasploit: [Yes/No]
 Stop Wireshark, and examine the data packets. Can you find the Telnet login, and can you discover the password used? [Yes/No]
 
 From Ubuntu, run Wireshark and capture packets. Now log into Metasploitable using SSH.
-A modern client such as Ubuntu 22 won’t be happy with an ancient server cryptography suite. We need to bypass that issue using: 
+A modern client, such as Ubuntu 22, won’t be happy with an ancient server's cryptography suite. We need to bypass that issue using: 
 
 ```bash
 ssh -o HostKeyAlgorithms=+ssh-rsa 192.168.11.9 -l msfadmin
@@ -198,12 +198,12 @@ Within a network infrastructure, we have services which run on hosts. These serv
 |------|------------|-------------|
 | DMZ	| On your Windows host, run the command: `netstat –a` and outline some of the services which are running on your host (define the port number and the name of the service and only pick off the LISTENING status on the port).	| Outline some of the services which are running on your host (define the port number and the name of the service): |
 | LAN		| For the Ubuntu Virtual Machine, and run the command: `netstat –l`.  	| 	Outline some of the services which are running on your host (define the port number and the name of the service):	| 
-| DMZ		| Next we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: `http://192.168.10.7`		|  Is the service working: [Yes] [No] 	| 
+| DMZ		| Next, we will determine if these services are working. There should be a Web server working on each of the virtual machines (Ubuntu and Windows 2003), so from the Windows host and using a Web browser, access the home page: `http://192.168.10.7`		|  Is the service working: [Yes] [No] 	| 
 |  LAN	|  From Ubuntu, access the Web server at: `http://192.168.11.7`	| Is the service working: [Yes] [No]| 
-| LAN	|  Next we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: `telnet 192.168.11.7 80` then enter:  `GET /` | 	Outline the message that is returned: | 
+| LAN	|  Next, we will determine if these services are working using a command line. From your UBUNTU host, undertake the following: `telnet 192.168.11.7 80` then enter:  `GET /` | 	Outline the message that is returned: | 
 | DMZ	|  Repeat the previous example from the WINDOWS host: `telnet 192.168.10.7 80`	|  
 | DMZ	|  There should be an FTP server working on Ubuntu and Windows 2003. From WINDOWS, access the FTP server on the UBUNTU server: `telnet 192.168.10.7 21`  then enter: `USER user` then `PASS 1234` and then `QUIT` | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password:  | 
-| LAN | 	From UBUNTU access the WINDOWS host with `telnet 192.168.10.7 21` then enter: `USER Administrator` then `PASS napier` and then `QUIT` | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
+| LAN | 	From UBUNTU, access the WINDOWS host with `telnet 192.168.10.7 21` then enter: `USER Administrator` then `PASS napier` and then `QUIT` | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
 | DMZ	| On the UBUNTU instance, you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
 
 
@@ -223,7 +223,7 @@ Nmap is one of the most popular network scanning tools. It is widely available f
 | LAN to LAN|	Run Wireshark on host in LAN, and run: `sudo nmap –sP –r 192.168.10.0/24` |Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
 
 ## H	Enumeration - Operating System Fingerprinting
-Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap, is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
+Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
@@ -241,11 +241,11 @@ Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs
 | DMZ to LAN	| Scan the Web server in the LAN for its version: `sudo nmap –sV 192.168.10.7/24 –p 80` | Which Web server type is being used:|
 
 
-Telnet is another tool commonly used for banner grabbing. Once open ports have been found using a scanner, Telnet can be used to connect to a service and return its banner.
+Telnet is another tool commonly used for banner grabbing. Once open ports have been identified with a scanner, Telnet can be used to connect to a service and display its banner.
 
 | From → To |	Command	| Observation |
 |------|------------|-------------|
-| DMZ to LAN	| Connect to port 80, with: telnet 192.168.10.7 80 and then send the HTTP OPTIONS command to the web server: `OPTIONS / HTTP/1.0` | What is returned and how can this be used to fingerprint the web server? Which web server is running and which version? |
+| DMZ to LAN	| Connect to port 80, with: `telnet 192.168.10.7 80` and then send the HTTP OPTIONS command to the web server: `OPTIONS / HTTP/1.0` | What is returned and how can this be used to fingerprint the web server? Which web server is running and which version? |
 | DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get an HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: `HEAD / HTTP/1.0` and `GET / HTTP/1.0`	| What do you observe from using these HTTP requests:| 
 
 
