@@ -29,7 +29,7 @@ User logins:
 
 You may have to reinitialise the IP address, IP route, and nameserver for the Metasploitable and the Kali machines.
 
-Kali (DMZ)
+### Kali (DMZ)
 ```bash
 sudo ip link set eth0 up
 sudo ip addr add 192.168.11.8/24 dev eth0
@@ -40,13 +40,13 @@ sudo nano /etc/resolv.conf
 nameserver 8.8.8.8
 ```
 
-Metasploitable
+### Metasploitable
 ```bash
 sudo ip addr add 192.168.11.9/24 dev eth0
 sudo ip route add default via 192.168.11.254 dev eth0
 ```
 
-Key UDP/TCP ports:
+### Key UDP/TCP ports
 
 * 21 (TCP) FTP commands.
 * 22 (TCP) SSH.
@@ -57,7 +57,7 @@ Key UDP/TCP ports:
 * 110 (TCP) POP3. Receiving email.
 * 443 (TCP) HTTPs.
 
-Interesting Wireshark filters:
+### Interesting Wireshark filters
 
 * `ip.addr==192.168.10.7` - Filter traffic for 192.168.10.7
 * `ip.src==192.168.10.7` - Filter traffic for 192.168.10.7 as the source address
