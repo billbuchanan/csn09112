@@ -70,7 +70,7 @@ sudo ip route add default via 192.168.11.254 dev eth0
 ## A Firewall set up
 On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
 
-On the firewall, from Diagnostics, ping each of the 192.168.10.254 and 192.168.10.7 interfaces from the LAN network. Can you ping them? [Yes/No]
+On the firewall, from Diagnostics, ping each of the `192.168.10.254` and `192.168.10.7` interfaces from the LAN network. Can you ping them? [Yes/No]
 
 If you have a rule for ICMP to another network on the DMZ, please remove it from the firewall.
 
