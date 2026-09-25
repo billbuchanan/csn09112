@@ -119,11 +119,12 @@ Can you log into Metasploit: [Yes/No]
 
 Stop Wireshark and examine the data packets. Can you find the Telnet login session, and can you discover the password used? [Yes/No]
 
-Note: login for Telnet in Metasploitable is User: msfadmin, Password: napier123
+Note: login for Telnet in Metasploitable is User: `msfadmin`, Password: `napier123`
 
 Now we will investigate the Metasploitable host for Telnet:
 
 From Windows, run Wireshark and capture packets. Now log into Metasploitable using SSH:
+
 ```bash
 ssh 192.168.11.9 -l msfadmin
 ```
@@ -150,7 +151,7 @@ Stop Wireshark and examine the data packets. Can you find the SSH login session,
 Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.port==22 as a filter for SSH. Or you may also simply use `telnet` or `ssh` as a shortcut.
 
 ## C Device Audit
-Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
+Now we will make sure everything is in order with our infrastructure, such as testing network traffic, MAC addresses and so on. Audit list:
 
 | Perform and answer the following: |
 |-------------------------------|
