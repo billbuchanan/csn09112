@@ -67,25 +67,22 @@ sudo ip route add default via 192.168.11.254 dev eth0
 * `ip.src==192.168.10.7 && tcp.port==21` - Filter traffic for 192.168.10.7 for the source and on TCP port 21
 * Wireshark also accepts protocol filters: `telnet`, `ssh`, `ftp` as a filter will automatically isolate all traffic for these protocols.
 
-## A Firewall  set up
+## A Firewall set up
 On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
 
 On the firewall, from Diagnostics, ping each of the 192.168.10.254 and 192.168.10.7 interfaces from the LAN network. Can you ping them? [Yes/No]
 
+If you have a rule for ICMP to another network on the DMZ, please remove it from the firewall.
 
-On the Windows host, ping the 192.168.11.254 and 192.168.11.7 interfaces. Can you ping them? [Yes/No] Why can’t you ping the 192.168.11.254 interface?
-
-
+On the Windows host, ping the `192.168.11.254` and `192.168.11.7` interfaces. Can you ping them? [Yes/No] Why can’t you ping the `192.168.11.254` interface? Note: 
 
 On the firewall, create a rule which allows a host on the DMZ to use ICMP to any destination.
 
-On the Windows host, ping 192.168.11.254 and 192.168.11.7 interfaces. You should now be able to ping them.
-
-On the Windows host, ping 192.168.10.254 and 192.168.10.7 interfaces. You should now be able to ping them.
+On the Windows host, ping `192.168.11.254` and `192.168.11.7` interfaces. You should now be able to ping them.
 
 On the firewall, create a rule which allows the Public network to ping both the DMZ and Private network. From the firewall, can you ping the hosts in the DMZ and Private network from the WAN port? The answer should be no, as the routing has not been set yet.
 
-Now, from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 192.168.122.1.
+Now, from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway `192.168.122.1`.
 
 
 ## B Metasploitable host - 192.168.11.9
