@@ -67,7 +67,7 @@ sudo ip route add default via 192.168.11.254 dev eth0
 * `ip.src==192.168.10.7 && tcp.port==21` - Filter traffic for 192.168.10.7 for the source and on TCP port 21
 * Wireshark also accepts protocol filters: `telnet`, `ssh`, `ftp` as a filter will automatically isolate all traffic for these protocols.
 
-### Firewall  set up
+## A Firewall  set up
 On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
 
 On the firewall, from Diagnostics, ping each of the 192.168.10.254 and 192.168.10.7 interfaces from the LAN network. Can you ping them? [Yes/No]
@@ -88,7 +88,7 @@ On the firewall, create a rule which allows the Public network to ping both the 
 Now, from the Windows host and the Ubuntu host, ping all the key addresses, including the gateway 192.168.122.1.
 
 
-### Metasploitable host - 192.168.11.9
+## B Metasploitable host - 192.168.11.9
 Now we will investigate the Metasploitable host.
 
 Run NMAP from Windows to Metasploit. Which services are enabled:
@@ -152,7 +152,7 @@ Stop Wireshark and examine the data packets. Can you find the SSH login session,
 
 Note: in Wireshark, use tcp.port==23 as a filter for Telnet and use tcp.port==22 as a filter for SSH. Or you may also simply use `telnet` or `ssh` as a shortcut.
 
-## D	Device Audit
+## C Device Audit
 Now we will make sure everything is in order with our infrastructure, such as for testing for network traffic, MAC addresses and so on. Audit list:
 
 | Perform and answer the following: |
@@ -161,7 +161,7 @@ Now we will make sure everything is in order with our infrastructure, such as fo
 | On the firewall, capture traffic on the WAN port, and generate some traffic from the LAN and DMZ (such as accessing Google.com).  Does the traffic have the IP address of the WAN port? Tick [ ]
 | On the firewall, examine the ARP table. Also on the hosts in the DMZ and the LAN, run arp –a, and determine all your MAC addresses.  Do all the MAC addresses tie up? Tick [ ]
 
-## E	NMAP
+## D	NMAP
 Run Wireshark on both hosts. Now run NMAP from the Linux host to the Windows host, and from the Windows host to the Linux host.
 
 | Perform and answer the following: |
@@ -191,7 +191,7 @@ Access Google.com from the Ubuntu host and also the Windows host.
 
 
 
-## F Identifying Services 
+## E Identifying Services 
 Within a network infrastructure, we have services which run on hosts. These services provide a given functionality, such as for sending/receiving email, file storage, and so on.
 
 | From → To |	Command	| Observation |
@@ -206,11 +206,7 @@ Within a network infrastructure, we have services which run on hosts. These serv
 | LAN | 	From UBUNTU, access the WINDOWS host with `telnet 192.168.10.7 21` then enter: `USER Administrator` then `PASS napier` and then `QUIT` | 	Outline the messages that you received: What happens to each of these when you try with an incorrect username and password: | 
 | DMZ	| On the UBUNTU instance, you will see that the VNC service is running, which is the remote access service. From your WINDOWS host, access the VNC service using a VNC client, and see what happens (you may have to open up Port 5900 to do so). |  What does this service do: | 
 
-
-
-
-
-## G	Enumeration – Host scan 
+## F Enumeration – Host scan 
 
 Nmap is one of the most popular network scanning tools. It is widely available for Windows and Linux/Unix platforms, and has both a Command Line Interface (CLI) and a Graphical User Interface (GUI).  
 
@@ -222,7 +218,7 @@ Nmap is one of the most popular network scanning tools. It is widely available f
 | LAN to DMZ|	Run Wireshark on host in LAN, and run: `sudo nmap –sP –r 192.168.11.0/24` |Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
 | LAN to LAN|	Run Wireshark on host in LAN, and run: `sudo nmap –sP –r 192.168.10.0/24` |Which transport layer protocol does NMAP use to discover the host: [ICMP] or [ARP]| 
 
-## H	Enumeration - Operating System Fingerprinting
+## G Enumeration - Operating System Fingerprinting
 Enumeration is the gathering of information about target hosts. After discovering live target systems, we want to identify which machines are running which OSs. A useful feature of nmap is determining the operating system of hosts on the network. It performs active OS fingerprinting by sending packets to the target system. 
 
 | From → To |	Command	| Observation |
@@ -230,7 +226,7 @@ Enumeration is the gathering of information about target hosts. After discoverin
 |LAN to DMZ	| Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: `sudo nmap –O 192.168.11.0/24` |  Which operating systems does it return: |
 |DMZ to LAN	|Perform an OS Fingerprint Scan on some of the hosts discovered on the network, using a command such as: `nmap –O 192.168.10.0/24`	| Which operating systems does it return: |
 
-## I	Enumeration – Application Fingerprinting
+## H Enumeration – Application Fingerprinting
 Application Fingerprinting or Banner Grabbing covers techniques to enumerate OSs and Applications running on target hosts. An attacker or security tester would be specifically looking for versions of applications and operating systems which have vulnerabilities. Nmap can be used to check applications and versions for network services running on the target for the open ports it finds during a port scan. 
 
 | From → To |	Command	| Observation |
@@ -249,7 +245,7 @@ Telnet is another tool commonly used for banner grabbing. Once open ports have b
 | DMZ to LAN	| Similarly, other HTTP commands such as HEAD (get an HTML page header) and GET (get the whole HTML page) can be used to footprint a web server. Try the following and observe: `HEAD / HTTP/1.0` and `GET / HTTP/1.0`	| What do you observe from using these HTTP requests:| 
 
 
-## J	Brute Force
+## I Brute Force
 For this part of the lab, we will crack the username and password on the FTP login on Metasploitable. We will on Kali (DMZ), where you create a user file (you can use Pluma -gui- or nano -command line- no need for file extensions) and password file with the following lists:
 
 list_user: 
@@ -330,7 +326,7 @@ hydra -L list_user -P list_password 192.168.11.9 http-post-form
 ```
 From this, determine one of the usernames and passwords.
 
-## K Metasploit Framework
+## J Metasploit Framework
 
 The Metasploit Framework includes hundreds of auxiliary modules that perform scanning, fuzzing, sniffing, and much more. Although these modules will not give you a shell, they are extremely valuable when conducting a penetration test. Generally, they are grouped in three categories: Admin, Scanner and Server. 
 
@@ -340,7 +336,7 @@ To run msfconsole, open a terminal console and type `msfconsole`, or navigate to
 
 ### Scanning
 
-K.1 We can use Metasploit to perform a scan. First, we will search for the portscan module:
+J.1 We can use Metasploit to perform a scan. First, we will search for the portscan module:
 
 ```
 $ msfconsole
@@ -349,7 +345,7 @@ msf > search portscan
 
 What do you observe from the run:
 
-K.2 Start Wireshark. We can now perform a TCP port scan using Metasploit’s auxiliary 
+J.2 Start Wireshark. We can now perform a TCP port scan using Metasploit’s auxiliary 
 module:
 
 ```
@@ -363,7 +359,7 @@ Which ports are open on the Windows 7 host?
 From your Wireshark trace (using the filter in the form ip.addr==1.2.3.4), identify how 
 Metasploit identifies an open port and a closed port.
 
-K.3 We can now perform a SYN port scan and capture the traffic with Wireshark:
+J.3 We can now perform a SYN port scan and capture the traffic with Wireshark:
 
 ```
 msf > use auxiliary/scanner/portscan/syn
@@ -375,7 +371,7 @@ msf auxiliary(tcp) > run
 
 What is the main difference between the TCP SYN scan and the TCP port scan?
 
-K.4 Now we will discover the NetBIOS name of the Windows 7 (The “nbname” auxiliary module scans a range of hosts and determines their hostnames via NetBIOS).
+J.4 Now we will discover the NetBIOS name of the Windows 7 (The “nbname” auxiliary module scans a range of hosts and determines their hostnames via NetBIOS).
 
 ```
 use auxiliary/scanner/netbios/nbname
@@ -387,7 +383,7 @@ What are the NETBIOS names on your network (scan the range for the DMZ)?
 
 Microsoft Windows uses the Server Message Block (SMB) Protocol, one version of which was also known as Common Internet File System (CIFS), and operates as an application-layer network protocol mainly used for providing shared access to files, printers, and serial ports and miscellaneous communications between nodes on a network.
 
-K.5 On Microsoft Windows 7, share the perflogs folder:
+J.5 On Microsoft Windows 7, share the perflogs folder:
 
 <img width="646" height="470" alt="image" src="https://github.com/user-attachments/assets/7450ca91-57d9-4acf-a4d6-be7323faac5a" />
 
@@ -395,7 +391,7 @@ Every Microsoft host has an SID which uniquely identifies it, and where each use
 
 <img width="1088" height="822" alt="image" src="https://github.com/user-attachments/assets/93d87abd-3325-41e3-b2cf-6a4877714b62" />
 
-K.6 Now go to Kali on your DMZ and start Wireshark. Next, run msfconsole, and set up the scan for the SMB share:
+J.6 Now go to Kali on your DMZ and start Wireshark. Next, run msfconsole, and set up the scan for the SMB share:
 
 
 ```
@@ -410,14 +406,14 @@ SMBPass => napier123
 msf auxiliary(smb_enumshares) > run
 ```
 
-K.7 As would be expected, smb_enumshares module enumerates any SMB shares that are available on a remote system.
+J.7 As would be expected, smb_enumshares module enumerates any SMB shares that are available on a remote system.
 
 What is the name of the folder they created?
 
 From the Wireshark trace, which TCP port SMB uses to connect?
 
 
-K.8 The smb_lookupsid module brute-forces SID lookups on a range of targets to determine what local users exist on the system:
+J.8 The smb_lookupsid module brute-forces SID lookups on a range of targets to determine what local users exist on the system:
 
 ```
 $ msfconsole
@@ -441,7 +437,7 @@ What does an RID of 500 identify?
 
 What is special about the RID values of 1,000 and above?
 
-K.9 Metasploit’s smb_login module will attempt to log in via SMB across a provided IP address
+J.9 Metasploit’s smb_login module will attempt to log in via SMB across a provided IP address
 (es). If you have a database plugin loaded, successful logins will be stored in it for future 
 reference and usage.
 
@@ -458,7 +454,7 @@ msf auxiliary(smb_login) > run
 
 Using the show options command in Metasploit, you can clearly see that this module has many more options than other auxiliary modules and is quite versatile. The smb_login module can also be passed a username and password list in order to attempt to brute-force login attempts across a range of machines.
 
-K.10 Create a Username file (users.txt) and a Password file (passwords.txt) with all the following using "nano" command in Kali DMZ:
+J.10 Create a Username file (users.txt) and a Password file (passwords.txt) with all the following using "nano" command in Kali DMZ:
 
 users.txt: Administrator, napier, root, Guest, test, default, [USER]
 passwords.txt: napier123, test, guest, password, changeme, [PASSWORD]
