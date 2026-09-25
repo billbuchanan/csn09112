@@ -3,7 +3,7 @@
 # Lab 2: Creating Secure Architectures
 
 ## Aim
-The aim of this lab is to assess a secure architecture.
+The aim of this lab is to assess a secure architecture, and will continue with your network architecture and run tests to discover and probe servers.  Some key tools we will use are telnet/ssh, nmap, Metasploit, Hydra and Wireshark. Our targets include Windows 7 (DMZ), Ubuntu (Private) and Metasploitable (DMZ).
 
 ## Activities
 
