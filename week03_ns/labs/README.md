@@ -3,7 +3,7 @@
 # Lab 2: Creating Secure Architectures
 
 ## Aim
-The aim of this lab is to assess a secure architecture, and will continue with your network architecture and run tests to discover and probe servers.  Some key tools we will use are telnet/ssh, nmap, Metasploit, Hydra and Wireshark. Our targets include Windows 7 (DMZ), Ubuntu (Private) and Metasploitable (DMZ).
+The aim of this lab is to assess a secure architecture, and we will continue with your network architecture and run tests to discover and probe servers.  Some key tools we will use are telnet/ssh, nmap, Metasploit, Hydra and Wireshark. Our targets include Windows 7 (DMZ), Ubuntu (Private) and Metasploitable (DMZ).
 
 ## Activities
 
@@ -68,11 +68,11 @@ sudo ip route add default via 192.168.11.254 dev eth0
 * Wireshark also accepts protocol filters: `telnet`, `ssh`, `ftp` as a filter will automatically isolate all traffic for these protocols.
 
 ## A Firewall set up
-On the firewall, from Diagnostics, view the ARP cache. Which addresses are in the cache?
+If you have a rule for ICMP to another network on the DMZ, please remove it from the firewall.
+
+On the firewall (from the Web interface from Ubuntu), from Diagnostics, view the ARP cache. Which addresses are in the cache?
 
 On the firewall, from Diagnostics, ping each of the `192.168.10.254` and `192.168.10.7` interfaces from the LAN network. Can you ping them? [Yes/No]
-
-If you have a rule for ICMP to another network on the DMZ, please remove it from the firewall.
 
 On the Windows host, ping the `192.168.11.254` and `192.168.11.7` interfaces. Can you ping them? [Yes/No] Why can’t you ping the `192.168.11.254` interface? Note: 
 
