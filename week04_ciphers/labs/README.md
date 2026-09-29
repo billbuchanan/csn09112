@@ -383,7 +383,7 @@ From the AWS Management Console, has your instance stopped? [Yes/No]
 Figure 18: Stopping an instance
 
 
-Now we will restart the instance, with:
+Now we will restart the instance with:
 
 ```
 aws ec2 start-instances --instance-ids [My-instance-ID]
@@ -407,10 +407,10 @@ Can you still get access to your instance?
 By observing the script and investigating what t3.micro and t3.small are, can you determine what has changed about your instance?
 
 
-Now, revert the instance back to t3.micro, and suspend the instance.
+Now, revert the instance to t3.micro and suspend it.
 
 ## D	Creating and Securing a Windows 2022 Server
-In this part of the lab we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
+In this part of the lab, we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
 
 ![AWS](https://asecuritysite.com/public/awsfig18.png "Creating Windows 2022 instance")  
 
