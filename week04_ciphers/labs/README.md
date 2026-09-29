@@ -618,6 +618,9 @@ net user administrator *
 ## E Python Access
 Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been set up with the details already set up for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
 
+<img width="2856" height="897" alt="image" src="https://github.com/user-attachments/assets/97b3b186-8ebe-4505-a521-b04f5b173087" />
+
+
 ```
 ddd_v1_w_W3n_1455598@runweb63277:~$ ls -al
 drwxrwx--- 5 ddd_v1_w_W3n_1455598 apache               6144 Oct  2 10:13 .
