@@ -649,119 +649,188 @@ Are they the same? [Yes/No]
 
 Now create a Python file which will show your instances in the terminal window (such as 1.py):
 
+To create a file:
+```bash
+cd ~ # brings you back to home - no sudo needed here!
+nano 1.py
 ```
+
+Then type or paste the code below. (Remember to use Ctrl+Shift+V to paste anything in terminal or nano)
+
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.describe_instances()
+print(ec2.describe_instances())
 ```
-![AWS](https://asecuritysite.com/public/awsgif28.png "Python file creation")
+Then Ctrl+O, then enter to save, then Ctrl+X to exit.
 
-Figure 28: Python file creation
-
-Save the file, and then run the file with Python3 and prove that it shows your instances (see Figure 29).
-
-![AWS](https://asecuritysite.com/public/awsgif29.png "Running the Python3 file") 
-
-Figure 29: Running the Python3 file
+<img width="1051" height="346" alt="image" src="https://github.com/user-attachments/assets/a34fded2-d42e-420b-9126-7785dc63e0b2" />
+Figure: Python file creation
 
 
+Save the file, and then run the file with Python3 and prove that it shows your instances (Figure).
+
+```bash
+python3 1.py
+```
+
+<img width="1936" height="1207" alt="image" src="https://github.com/user-attachments/assets/ff03c111-e77a-4e7a-a8ea-01da6b82fff0" />
+Figure: Running the Python3 file
 
 ```
 Does the Python3 program show your instances? [Yes/No]
 ```
 
-Note, Boto3 was been depreciated for Pythofn 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+Note, Boto3 has deprecated since Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
 
 ```
 python3 -W ignore 1.py
 ```
 
-Now we will stop one of our instances. For this, get an instance name, and add it to the following file:
-
+Now we will stop one of our instances. For this, get an instance ID, and add it to the following file:
+```bash
+nano 2.py
 ```
+And paste
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.stop_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+ec2.stop_instances(InstanceIds=["i-07b0512e24xxxxxx"]) # where x's are replaced by your instance's ID
 ```
 
 Now run the Python file, and prove that it has stopped your instance.
+```bash
+python3 -W ignore 2.py
 ```
+
 Does the Python3 program stop your instance? [Yes/No]
-```
-Now we will restart one of our instances. For this, get an instance name, and add it to the following file:
 
+Now we will restart one of our instances. For this, get an instance ID, and add it to the following file:
+
+```bash
+nano 3.py
 ```
+And paste
+
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.start_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+ec2.start_instances(InstanceIds=["i-07b0512e24xxxxxx"]) # where x's are replaced by your instance's ID
 ```
 
-Now run the Python file, and prove that it has stopped your instance.
+Now run the Python file, and prove that it has started your instance.
 
+```bash
+python3 -W ignore 3.py
 ```
+
+
 Does the Python3 program start your instance? [Yes/No]
-```
+
 
 Finally, write a Python3 program which will start both of your instances, and another one to stop them both.
-```
-Do your Python3 programs work? [Yes/No]
+
+```bash
+nano do it yourself ;-)
 ```
 
+
+Do your Python3 programs work? [Yes/No]
+
+
 You can also use the AWS prompt. Now try to start and stop your instances with:
-```
-aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx
+```bash
+aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager # remember to change the xxx's for your instance
 ```
 
 and
+```bash
+aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager # remember to change the xxx's for your instance
 ```
-aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx
-```
-```
+
 Do these command line programs work? [Yes/No]
-```
+
 
 Now we will create a keypair with Python, and then create a new Linux instance. First create the keypair with the Python file of:
+
+```bash
+nano 4.py
 ```
+
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-outfile = open('mykeypair.pem','w')
-
 key_pair = ec2.create_key_pair(KeyName='mykeypair2')
 MyKeyPair = key_pair["KeyMaterial"]
+outfile = open('mykeypair2.pem','w')
 
 print(MyKeyPair)
+outfile.write(MyKeyPair)
+outfile.close()
 ```
+
+Save, Exit, Run, Check
+
+```bash
+python3 -W ignore 4.py
+cat mykeypair2.pem
 ```
+
 What is the name of your key pair? Can you find it in your AWS Management console? [Yes/No]
+
+<img width="1359" height="841" alt="image" src="https://github.com/user-attachments/assets/642b1792-a142-41c5-a054-054631661d72" />
+Figure: Key Pair
+
+Now we will create a Linux instance. Take a note of the AMI (not the instance ID!) for your Linux instance (see screenshot below) 
+
+<img width="1692" height="1189" alt="image" src="https://github.com/user-attachments/assets/84aee021-b523-45e4-9624-e289210591c5" />
+Figure: Find the AMI
+
+Now create 
+```bash
+nano create.py
 ```
+ 
+and save the file:
 
-![AWS](https://asecuritysite.com/public/aws31.png "Running the Python3 file") 
-Figure 30: 
-
-Now we will create a Linux instance. Take a note of the AMI for your Linux instance, and check that it is the same as the instance below Now create create.py, and save the file:
-
-```
+```python
 import boto3
-ec2 = boto3.resource('ec2')
+ec2 = boto3.resource('ec2', region_name='us-east-1')
 
 # create a new EC2 instance
 instances = ec2.create_instances(
-     ImageId='ami-026b57f3c383c2eec',
+     ImageId='ami-xxxxxxxxxxxxxxxxx',  # replace with the AMI ID of your Ubuntu instance
      MinCount=1,
-     MaxCount=2,
+     MaxCount=1,
      InstanceType='t2.micro',
      KeyName='mykeypair2'
  )
- ```
+
+print(instances[0].id)
 ```
-Finally run the instance. Has it created the instance? [Yes/No]
+Finally run the script. 
 
-If it has created it, now terminate it. Has it been terminated? [Yes/No]
+```bash
+python3 -W ignore create.py
 ```
 
- 
+Check if it has created it, as in the screenshot below
 
+<img width="2697" height="508" alt="image" src="https://github.com/user-attachments/assets/e7b68149-6785-416f-accb-b1d945bd0fa8" />
+Figure: New instance created (you may need to refresh the page)
 
+Has it created the instance? [Yes/No]
+
+Now terminate it. 
+
+```bash
+aws ec2 terminate-instances --instance-ids i-xxxxxxxxxxxxxxxxx --no-cli-pager # replace xxx's with your instance
+```
+
+<img width="1876" height="535" alt="image" src="https://github.com/user-attachments/assets/072f8455-b122-4c43-bc64-51e706ff90f9" />
+Figure: Terminating your instance
+
+Has it been terminated? [Yes/No]
 
 **NOW TERMINATE YOUR NEWLY CREATED INSTANCE (and any others you have created with Python)!**
 
