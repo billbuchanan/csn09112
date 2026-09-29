@@ -610,6 +610,11 @@ We can change the Administrator password, with something like:
 net user administrator mynewpassword$$7k1
 ```
 
+Or set up your own
+```bash
+net user administrator *
+```
+
 ## E Python Access
 Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been set up with the details already set up for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
 
