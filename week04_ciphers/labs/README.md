@@ -32,7 +32,7 @@ Next, select “Modules”, and then “Learner Lab - Foundational Services”, 
 
 Figure 3: AWS Academy Learner Lab environment
 
-In the console, you can interact with your AWS through the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
+In the console, you can interact with your AWS through the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once it turns green, you can click on it and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
 
 <img width="904" height="396" alt="image" src="https://github.com/user-attachments/assets/e65b0011-42a2-46f1-9fa4-d658dfcc6858" />
  
