@@ -852,7 +852,6 @@ If you are using a domain (such as with NAPIER-MAIL, you would defined your doma
 If you are using your own Windows device, you will first need to run the `whoami` command to determine your domain and username. For example:
 
 ```
-whoami
 > whoami
 > test-domain\test-user
 ```
