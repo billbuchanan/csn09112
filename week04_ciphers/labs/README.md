@@ -32,7 +32,7 @@ Next, select “Modules”, and then “Learner Lab - Foundational Services”, 
 
 Figure 3: AWS Academy Learner Lab environment
 
-In the console, you can interact with your AWS through the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once, green, you can click on it, and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
+In the console, you can interact with your AWS through the console (as you are already logged into AWS). Now, press the “Start Lab” button, and wait for the AWS light to go green. Once it turns green, you can click on it and open up your AWS Management console. After this, just select EC2, and you should see your EC2 environment.
 
 <img width="904" height="396" alt="image" src="https://github.com/user-attachments/assets/e65b0011-42a2-46f1-9fa4-d658dfcc6858" />
  
@@ -383,7 +383,7 @@ From the AWS Management Console, has your instance stopped? [Yes/No]
 Figure 18: Stopping an instance
 
 
-Now we will restart the instance, with:
+Now we will restart the instance with:
 
 ```
 aws ec2 start-instances --instance-ids [My-instance-ID]
@@ -407,10 +407,10 @@ Can you still get access to your instance?
 By observing the script and investigating what t3.micro and t3.small are, can you determine what has changed about your instance?
 
 
-Now, revert the instance back to t3.micro, and suspend the instance.
+Now, revert the instance to t3.micro and suspend it.
 
 ## D	Creating and Securing a Windows 2022 Server
-In this part of the lab we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
+In this part of the lab, we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
 
 ![AWS](https://asecuritysite.com/public/awsfig18.png "Creating Windows 2022 instance")  
 
@@ -610,8 +610,18 @@ We can change the Administrator password, with something like:
 net user administrator mynewpassword$$7k1
 ```
 
+Or set up your own
+```bash
+net user administrator *
+```
+
 ## E Python Access
 Your unique account will have been generated, and you can access it with aws_access_key_id and aws_secret_access_key (from AWS details). You will also find that your console has been set up with the details already set up for you. For this, there is a hidden folder named .aws, and there is a file named credentials in there:
+
+(You need the CLI in the main AWS Academy Learner Lab to find this)
+
+<img width="2856" height="897" alt="image" src="https://github.com/user-attachments/assets/ea34682f-a287-4005-a327-33c803d38861" />
+
 
 ```
 ddd_v1_w_W3n_1455598@runweb63277:~$ ls -al
@@ -639,119 +649,188 @@ Are they the same? [Yes/No]
 
 Now create a Python file which will show your instances in the terminal window (such as 1.py):
 
+To create a file:
+```bash
+cd ~ # brings you back to home - no sudo needed here!
+nano 1.py
 ```
+
+Then type or paste the code below. (Remember to use Ctrl+Shift+V to paste anything in terminal or nano)
+
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.describe_instances()
+print(ec2.describe_instances())
 ```
-![AWS](https://asecuritysite.com/public/awsgif28.png "Python file creation")
+Then Ctrl+O, then enter to save, then Ctrl+X to exit.
 
-Figure 28: Python file creation
-
-Save the file, and then run the file with Python3 and prove that it shows your instances (see Figure 29).
-
-![AWS](https://asecuritysite.com/public/awsgif29.png "Running the Python3 file") 
-
-Figure 29: Running the Python3 file
+<img width="1051" height="346" alt="image" src="https://github.com/user-attachments/assets/a34fded2-d42e-420b-9126-7785dc63e0b2" />
+Figure: Python file creation
 
 
+Save the file, and then run the file with Python3 and prove that it shows your instances (Figure).
+
+```bash
+python3 1.py
+```
+
+<img width="1936" height="1207" alt="image" src="https://github.com/user-attachments/assets/ff03c111-e77a-4e7a-a8ea-01da6b82fff0" />
+Figure: Running the Python3 file
 
 ```
 Does the Python3 program show your instances? [Yes/No]
 ```
 
-Note, Boto3 was been depreciated for Pythofn 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+Note, Boto3 has deprecated since Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
 
 ```
 python3 -W ignore 1.py
 ```
 
-Now we will stop one of our instances. For this, get an instance name, and add it to the following file:
-
+Now we will stop one of our instances. For this, get an instance ID, and add it to the following file:
+```bash
+nano 2.py
 ```
+And paste
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.stop_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+ec2.stop_instances(InstanceIds=["i-07b0512e24xxxxxx"]) # where x's are replaced by your instance's ID
 ```
 
 Now run the Python file, and prove that it has stopped your instance.
+```bash
+python3 -W ignore 2.py
 ```
+
 Does the Python3 program stop your instance? [Yes/No]
-```
-Now we will restart one of our instances. For this, get an instance name, and add it to the following file:
 
+Now we will restart one of our instances. For this, get an instance ID, and add it to the following file:
+
+```bash
+nano 3.py
 ```
+And paste
+
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-ec2.start_instances(InstanceIds=["i-07b0512e24xxxxxx"])
+ec2.start_instances(InstanceIds=["i-07b0512e24xxxxxx"]) # where x's are replaced by your instance's ID
 ```
 
-Now run the Python file, and prove that it has stopped your instance.
+Now run the Python file, and prove that it has started your instance.
 
+```bash
+python3 -W ignore 3.py
 ```
+
+
 Does the Python3 program start your instance? [Yes/No]
-```
+
 
 Finally, write a Python3 program which will start both of your instances, and another one to stop them both.
-```
-Do your Python3 programs work? [Yes/No]
+
+```bash
+nano do it yourself ;-)
 ```
 
+
+Do your Python3 programs work? [Yes/No]
+
+
 You can also use the AWS prompt. Now try to start and stop your instances with:
-```
-aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx
+```bash
+aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager # remember to change the xxx's for your instance
 ```
 
 and
+```bash
+aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager # remember to change the xxx's for your instance
 ```
-aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx
-```
-```
+
 Do these command line programs work? [Yes/No]
-```
+
 
 Now we will create a keypair with Python, and then create a new Linux instance. First create the keypair with the Python file of:
+
+```bash
+nano 4.py
 ```
+
+```python
 import boto3
 ec2 = boto3.client('ec2', region_name='us-east-1')  
-outfile = open('mykeypair.pem','w')
-
 key_pair = ec2.create_key_pair(KeyName='mykeypair2')
 MyKeyPair = key_pair["KeyMaterial"]
+outfile = open('mykeypair2.pem','w')
 
 print(MyKeyPair)
+outfile.write(MyKeyPair)
+outfile.close()
 ```
+
+Save, Exit, Run, Check
+
+```bash
+python3 -W ignore 4.py
+cat mykeypair2.pem
 ```
+
 What is the name of your key pair? Can you find it in your AWS Management console? [Yes/No]
+
+<img width="1359" height="841" alt="image" src="https://github.com/user-attachments/assets/642b1792-a142-41c5-a054-054631661d72" />
+Figure: Key Pair
+
+Now we will create a Linux instance. Take a note of the AMI (not the instance ID!) for your Linux instance (see screenshot below) 
+
+<img width="1692" height="1189" alt="image" src="https://github.com/user-attachments/assets/84aee021-b523-45e4-9624-e289210591c5" />
+Figure: Find the AMI
+
+Now create 
+```bash
+nano create.py
 ```
+ 
+and save the file:
 
-![AWS](https://asecuritysite.com/public/aws31.png "Running the Python3 file") 
-Figure 30: 
-
-Now we will create a Linux instance. Take a note of the AMI for your Linux instance, and check that it is the same as the instance below Now create create.py, and save the file:
-
-```
+```python
 import boto3
-ec2 = boto3.resource('ec2')
+ec2 = boto3.resource('ec2', region_name='us-east-1')
 
 # create a new EC2 instance
 instances = ec2.create_instances(
-     ImageId='ami-026b57f3c383c2eec',
+     ImageId='ami-xxxxxxxxxxxxxxxxx',  # replace with the AMI ID of your Ubuntu instance
      MinCount=1,
-     MaxCount=2,
+     MaxCount=1,
      InstanceType='t2.micro',
      KeyName='mykeypair2'
  )
- ```
+
+print(instances[0].id)
 ```
-Finally run the instance. Has it created the instance? [Yes/No]
+Finally run the script. 
 
-If it has created it, now terminate it. Has it been terminated? [Yes/No]
+```bash
+python3 -W ignore create.py
 ```
 
- 
+Check if it has created it, as in the screenshot below
 
+<img width="2697" height="508" alt="image" src="https://github.com/user-attachments/assets/e7b68149-6785-416f-accb-b1d945bd0fa8" />
+Figure: New instance created (you may need to refresh the page)
 
+Has it created the instance? [Yes/No]
+
+Now terminate it. 
+
+```bash
+aws ec2 terminate-instances --instance-ids i-xxxxxxxxxxxxxxxxx --no-cli-pager # replace xxx's with your instance
+```
+
+<img width="1876" height="535" alt="image" src="https://github.com/user-attachments/assets/072f8455-b122-4c43-bc64-51e706ff90f9" />
+Figure: Terminating your instance
+
+Has it been terminated? [Yes/No]
 
 **NOW TERMINATE YOUR NEWLY CREATED INSTANCE (and any others you have created with Python)!**
 
