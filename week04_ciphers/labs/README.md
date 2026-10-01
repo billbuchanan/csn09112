@@ -846,9 +846,20 @@ Note, if you are using a Microsoft Windows system, you will have to use icacls t
 > icacls.exe mykey.pem /grant:r NAPIER-MAIL\xxxxxxxx:(r)
 > icacls.exe mykey.pem /inheritance:r
 ```
+If you are using your own Windows device, you will first need to run the `whoami` command to determine your domain and username. For example:
 
-If you are on a laptop, you run "whoami" to determine your username.
+```
+whoami
+> whoami
+> test-domain\test-user
+```
 
+Using this information, you will alter the icalcs commands to be specfic to your user details. For example:
+```
+> icacls.exe mykey.pem /reset
+> icacls.exe mykey.pem /grant:r test-domain\test-user:(r)
+> icacls.exe mykey.pem /inheritance:r
+```
 
 
 
