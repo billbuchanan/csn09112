@@ -849,11 +849,16 @@ If you are using a domain (such as with NAPIER-MAIL, you would defined your doma
 > icacls.exe mykey.pem /grant:r NAPIER-MAIL\xxxxxxxx:(r)
 > icacls.exe mykey.pem /inheritance:r
 ```
-If you are using your own Windows device, you will first need to run the `whoami` command to determine your domain and username. For example:
+If you are using your own Windows device, you will first need to run the `whoami` command to determine your domain and username:
 
 ```
 > whoami
-> test-domain\test-user
+```
+
+Which will display you user's domain and username. For example the output of the whoami command could look like:
+
+```
+test-domain\test-user
 ```
 
 Using this information, you will alter the icalcs commands to be specfic to your user details. For example:
@@ -863,15 +868,4 @@ Using this information, you will alter the icalcs commands to be specfic to your
 > icacls.exe mykey.pem /inheritance:r
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
+You can copy the PEM file from the JKCC machines to a USB or OneDrive folder so you can use the same PEM file at home, but the permissions must be updated whenever you move it to another machine. It is also important to store the PEM file on the device itself when calling it in the SSH command, rather than keeping it stored in OneDrive.
