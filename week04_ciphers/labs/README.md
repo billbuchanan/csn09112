@@ -5,7 +5,7 @@
 ## Aim
 The  aim  of  this  lab  is  to set up AWS server instances and understand the setup of key security aspects.
 
-Note: It may be preferable to use a **Ubuntu server** rather than an Amazon Linux instance. 
+It is preferable to use a **Ubuntu server** rather than an Amazon Linux instance. 
 
 ## Activities
 
@@ -13,7 +13,7 @@ A demo of the setup of the lab is [here](https://youtu.be/rhf4_1E_wAU)
 
 
 ## Outline
-In the previous lab, we have set up a range of architectures with VMware vSphere. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, which reduces data centre investment costs while providing the opportunity to quickly scale our server, network, and data infrastructure. It is generally a pay-as-you-go model, and we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
+In the previous lab, we have set up a range of architectures with GN3. This is a private cloud environment and creates infrastructure-as-a-service. Increasingly, we use the public cloud to build our information systems, which reduces data centre investment costs while providing the opportunity to quickly scale our server, network, and data infrastructure. It is generally a pay-as-you-go model, and we pay for CPU time, network bandwidth and data costs. The most popular public cloud provider is AWS (Amazon Web Services), and which provides EC2 (for compute), S3 (for data buckets), RDS (for databases) and AWS Network Firewall (for firewalls). Some of these services are outlined in Figure 1.
 
 <img width="638" height="394" alt="image" src="https://github.com/user-attachments/assets/f93ef760-97c9-47f2-a21d-849c8760d555" />
 
@@ -38,12 +38,12 @@ In the console, you can interact with your AWS through the console (as you are a
  
 Figure 4: AWS Management Console (EC2)
 
-## Creating and Securing a Linux Server
-We will now create a Linux Server, and which should be accessible from the Internet. For this, select “Launch Instance”, and then give it a name (such as “My Linux Server”) and select the Amazon Linux instance for the AMI (Amazon Machine Image) – as shown in Figure 5.
+## Creating and Securing a Ubuntu Server
+We will now create a Ubuntu Server, and which should be accessible from the Internet. For this, select “Launch Instance”, and then give it a name (such as “My Linux Server”) and select the Ubuntu instance for the AMI (Amazon Machine Image) – as shown in Figure 5.
 
-<img width="904" height="666" alt="image" src="https://github.com/user-attachments/assets/8efc9a57-84ed-40bd-b9be-8044bb728d26" />
+<img width="1720" height="1189" alt="image" src="https://github.com/user-attachments/assets/9da1061f-ab01-445c-98c4-161c7bfa0081" />
 
-Figure 5: Creating Amazon Linux instance
+Figure 5: Creating Ubuntu instance
 
 ```  
 Now select t2.micro for the instance type.
@@ -161,7 +161,7 @@ ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
 What is the name of the user that logs in?
 
 
-An example of connecting is:
+An example of connecting is (In this example it is Amazon Linux Instance, but your Ubuntu should display something similar):
 ```
 % ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
 The authenticity of host 'ec2-52-90-3-121.compute-1.amazonaws.com (52.90.3.121)' can't be established.
@@ -220,13 +220,6 @@ Which of the main services are running:
 ## C.4	Installing a Web server
 Now we will install a Web server on the instance with:
 
-Amazon Linux Commands
-```
-sudo yum update -y
-sudo yum install -y httpd.x86_64
-sudo systemctl start httpd.service
-sudo systemctl enable httpd.service
-```
 Ubuntu Commands
 ```
 sudo apt update -y
@@ -304,14 +297,6 @@ passwd: all authentication tokens updated successfully.
 
 Now we will add the new user to the login. For this, we use:
 
-Amazon Linux
-```
-[ec2-user@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
-   Add line of (see Figure 15):
-AllowUsers ec2-user napier
-   Change the following to “yes” (see Figure 16):
-PasswordAuthentication yes
-```
 Ubuntu
 ```
 [ubuntu@ip-172-31-16-186 .ssh]$ sudo nano /etc/ssh/sshd_config
