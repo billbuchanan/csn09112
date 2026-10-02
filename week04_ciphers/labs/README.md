@@ -140,14 +140,14 @@ Figure 7: Enable ICMP
 ### C.3	Accessing your instance
 Now we will connect to our instance. For this you need SSH (such as provided by OpenSSH). This may be installed on the host you are using (such as in vSoC 2), or from Apps Anywhere. Once you have SSH, press Connect on the summary page, and you should then have tabs for Connect to instance (Figure 8). Next select the SSH client tab, and you will see the details of connecting to your instance with SSH. 
 
-<img width="904" height="528" alt="image" src="https://github.com/user-attachments/assets/18cc6043-f2a4-4659-9622-3518bf37e28e" />
+<img width="2497" height="1134" alt="image" src="https://github.com/user-attachments/assets/72a49b2c-de30-4c8e-999b-c90d03ec9251" />
 
 Figure 8: Connect to instance
 
 Now find your PEM file on your local machine (from the command line), and protect it with:
 
 ```
-chmod 400 myfile.pem
+chmod 400 "aws_ubuntu_keys.pem"
 ```
 
 If you are using a Windows console, please see the note in Appendix A.
@@ -156,10 +156,10 @@ What protection does this put on your private key?
 
 Next, use the SSH connection with the name of your PEM file and with the DNS (or IP address) for your instance. For example, in the case in Figure 8, we have:
 ```
-ssh -i "mynewkeypair.pem" ubuntu@ec2-52-90-3-121.compute-1.amazonaws.com
+ssh -i "aws_ubuntu_keys.pem" ubuntu@ec2-54-205-195-229.compute-1.amazonaws.com
 ```
-What is the name of the user that logs in?
 
+What is the name of the user that logs in?
 
 An example of connecting is (In this example it is Amazon Linux Instance, but your Ubuntu should display something similar):
 ```
@@ -183,7 +183,7 @@ https://aws.amazon.com/amazon-linux-2/
 ```
 Have you managed to connect? [Yes/No]
 
-By using “ip addr show” or “ifconfig” in your instance, what is the private IP address of it?
+By using “ip addr show” or “ifconfig” in your instance, what is the private IP address of it? 
 
 Can you ping 8.8.8.8 from your instance? [Yes/No]
 
@@ -199,11 +199,11 @@ Now go to the EC2 Instance Connect (Figure 9), and press on the Connect button. 
 From your console (Figure 10), verify that your file has been created. Has it been created in the instance? [Yes/No]
 ```
 
-<img width="844" height="566" alt="image" src="https://github.com/user-attachments/assets/47fc1feb-9cab-47d4-8a17-ff5e5cd1c2f3" />
+<img width="2497" height="1228" alt="image" src="https://github.com/user-attachments/assets/dc60322a-5d60-4493-ab7d-e7d094693de7" />
 
 Figure 9: EC2 Instance Connect
 
-<img width="904" height="354" alt="image" src="https://github.com/user-attachments/assets/afc19549-633b-4c90-8a89-a68859db7cb5" />
+<img width="1068" height="1399" alt="image" src="https://github.com/user-attachments/assets/735d9941-da8d-49bc-87f4-23fd2d44067a" />
 
 Figure 10: EC2 Instance Connect terminal
 
@@ -824,6 +824,28 @@ At the end of the lab, you should only have two instances. Please either termina
 
 
 # Appendix A
+
+If working on your own Windows Machine, installing WSL is a convenient option. It installs Linux within your Windows operating system and gives you a Linux CLI:
+
+Open Powershell as Administrator
+Run
+```bash
+wsl --install
+```
+And restart your PC as prompted. And now you should have Ubuntu living inside your Windows! Convenient.
+Don't forget the always important updating:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+To use WSL for the SSH step, the PEM file has to live inside the Linux filesystem, not on /mnt/c/.... Permissions on Windows drives don't really apply, so chmod 400 appears to work but SSH still rejects the key as "unprotected". The fix:
+```bash
+cp /mnt/c/Users/<name>/Downloads/mykey.pem ~/ # Copies the key from the Windows Downloads folder into the Linux home directory, where permissions actually work
+chmod 400 ~/mykey.pem
+ssh -i ~/mykey.pem ubuntu@<instance-ip>
+```
+
+But if you are using the University's machine, then follow the next steps.
 
 Note, if you are using a Microsoft Windows system, you will have to use icacls through the Command Terminal to make the file read-only. **The following commands must be ran from the windows command prompt**. Once you have opened the command prompt window, please ensure you are in the same directory that the PEM file is stored in. You can run the `dir` command to display the contents of the current directory.
 
