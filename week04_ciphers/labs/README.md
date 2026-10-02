@@ -156,7 +156,7 @@ What protection does this put on your private key?
 
 Next, use the SSH connection with the name of your PEM file and with the DNS (or IP address) for your instance. For example, in the case in Figure 8, we have:
 ```
-ssh -i "mynewkeypair.pem" ec2-user@ec2-52-90-3-121.compute-1.amazonaws.com
+ssh -i "mynewkeypair.pem" ubuntu@ec2-52-90-3-121.compute-1.amazonaws.com
 ```
 What is the name of the user that logs in?
 
@@ -209,8 +209,11 @@ Figure 10: EC2 Instance Connect terminal
 
 Now examine the running services on the instance with:
 ```
-$ netstat -l | grep tcp
-$ netstat -l | grep udp
+# First you need install the netstat tools
+sudo apt install net-tools
+# Then type
+netstat -l | grep tcp
+netstat -l | grep udp
 ```
 Which of the main services are running:
 
@@ -265,30 +268,29 @@ Has it changed the welcome? [Yes/No]
 The main logging output is in the /var/log folder. Go into this folder and observe some of the files in there. Identify the contents of the following files:
 
 ```
-What are the likely contents of the “secure” file? (auth.log in Ubuntu)
+What are the likely contents of the "auth.log" file?
 
-What are the likely contents of the “boot.log” file? (kern.log in Ubuntu)
+What are the likely contents of the "kern.log" file?
 
-List the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What are its contents? Can you identify your browser access? (see Figure 13). Which browser type accessed your Web server?
-
-
-Now try with another browser type  (such as Firefox or Chrome) and re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). Did it detect the new browser type?
+List the "/var/log/apache2/access.log" file in Ubuntu. What are its contents? Can you identify your browser access? (see Figure 13). Which browser type accessed your Web server?
 
 
-Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the log/httpd/access_log file (/var/log/apache2/access.log in Ubuntu). What is the status code returned for the access?
+Now try with another browser type  (such as Firefox or Chrome) and re-examine the /var/log/apache2/access.log file. Did it detect the new browser type?
+
+
+Now access a file that does not exist in your site (such as http://AWSIP/test.htm). Now re-examine the /var/log/apache2/access.log file in Ubuntu. What is the status code returned for the access?
 ```
 
 <img width="688" height="436" alt="image" src="https://github.com/user-attachments/assets/a8757065-e20d-4b59-86cf-f3874b74b284" />
 
 
-Figure 13: Sample list of log/httpd/access_log
+Figure 13: Sample list of log/httpd/access_log (you should have something similar and your ubuntu)
 
 ### C.7	Adding a new user
-The ec2_user can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this, we use adduser and passwd on the Linux instance:
+The ubuntu username can be used to connect back into the server using access authenticated with the private key. We will now create a new user named “napier”, and which can connect to the instance with SSH. For this, we use adduser and passwd on the Linux instance:
 
 ```
-[ec2-user@ip-172-31-16-186 ~]$ sudo adduser napier
-[ec2-user@ip-172-31-16-186 ~]$ sudo passwd napier
+[ubuntu@ip-172-31-16-186 ~]$ sudo adduser napier
 Changing password for user napier.
 New password:  <yourpass>
 Retype new password:  <yourpass>
@@ -310,14 +312,13 @@ PasswordAuthentication yes
 
 Now restart the SSH service with:
 ```
-[ec2-user@ip-172-31-16-186 .ssh]$ sudo systemctl restart sshd
-(sudo systemctl restart ssh on Ubuntu)
+[ubuntu@ip-172-31-16-186 .ssh]$ sudo systemctl restart ssh
 ```
 ```
 Can you now connect to your instance with the new user and password (but change for the IP address of your instance):
 ```
 ```
-ssh   napier@54.209.145.85
+ssh napier@54.209.145.85
 ```
 ```
 Can you connect with the new user? [Yes/No]
@@ -397,7 +398,7 @@ Now, revert the instance to t3.micro and suspend it.
 ## D	Creating and Securing a Windows 2022 Server
 In this part of the lab, we will create a Windows 2022 server instance with t3.micro (note, that this is very low for vCPUs and memory, so the performance may be a little lacking). First create a new instance, and give it a name, such as “MyWindowsServer” (Figure 19).
 
-![AWS](https://asecuritysite.com/public/awsfig18.png "Creating Windows 2022 instance")  
+<img width="1720" height="1189" alt="image" src="https://github.com/user-attachments/assets/d25e07a1-fcf1-4bfa-91a0-7c5c36a6b08a" />
 
 Figure 19: Creating Windows 2022 instance
 
