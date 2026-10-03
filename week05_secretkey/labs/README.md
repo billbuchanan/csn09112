@@ -111,33 +111,13 @@ What is the fruit?
 ## B Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
-If Kali, to remove the potfile, use:
+### Hashcat Tool
 
-```
-rm ~/.local/share/hashcat/hashcat.potfile
-```
+If using Kali or Parrot, hashcat is already pre-installed. If using ubuntu, you need to install it with:
 
-The current Hashcat version on Kali has problems with a lack of memory. To overcome this, install Hashcat 6.0.0. On Kali on your public network, first download Hashcat 6.0.0:
-
-```
-wget https://hashcat.net/files/hashcat-6.0.0.7z
-```
-
-Next, unzip it into your home folder:
-
-```
-p7zip -d hashcat-6.0.0.7z
-```
-
-Then, from your home folder, set up a link to Hashcat 6.0.0:
-
-```
-ln -s hashcat-6.0.0/hashcat.bin  hashcat
-```
-and then run Hashcat put “./” in from of the program name, such as:
-```
-./hashcat –-version
-v6.0.0
+```bash
+sudo apt update
+sudo apt install -y hashcat
 ```
 
 
@@ -174,7 +154,7 @@ SHA-256 hex chars:
 How does the number of hex characters relate to the length of the hash signature: |
 
 ### Q3
-On Kali, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
+On Ubuntu/Kali/Parrot, for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123):
 
 To find the password, we determine the salt value, and try each password. For example the salt value for ```bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1``` is ```waZS/8Tm```. To check the password and salt, we can run:
 
@@ -208,7 +188,16 @@ Jane’s password:
 
 
 ### Q4
-On Kali, download the following: [here](http://asecuritysite.com/files02.zip) and the files should have the following MD5 hashes : 
+
+First you need to get the files
+
+```bash
+curl -LO https://raw.githubusercontent.com/billbuchanan/csn09112/master/week05_secretkey/labs/files02.zip
+unzip files02.zip -d files02
+cd files02
+```
+
+the files should have the following MD5 hashes : 
 
 ```
 MD5(1.txt)= 5d41402abc4b2a76b9719d911017c592 
@@ -221,8 +210,19 @@ Which file(s) have been modified:
 
 Note: Use can use md5sum to compute MD5 hashes.
 
+```bash
+md5sum 1.txt
+```
+
 ### Q5
-From Kali, download the following ZIP file: [here](http://asecuritysite.com/letters.zip )
+
+First you need to get the files
+
+```bash
+curl -LO https://raw.githubusercontent.com/billbuchanan/csn09112/master/week05_secretkey/labs/letters.zip
+unzip letters.zip -d letters
+cd letters
+```
 
 View the letters. Are they different? Now determine the MD5 signature for them. What can you observe from the result? 
 
@@ -232,15 +232,23 @@ Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
 
 ### Q1
-On Kali, next create a word file (words) with the words of “napier”, “password” “Ankle123” and “inkwell”
+Next create a word file (words) with the words of “napier”, “password” “Ankle123” and “inkwell”
 
-Using hashcat crack the following MD5 signatures (hash1):
+```bash
+nano words
+```
+
+Then create a word file (hash1) with the following hashes
+
 ```
 232DD5D7274E0D662F36C575A3BD634C
 5F4DCC3B5AA765D61D8327DEB882CF99
 6D5875265D1979BDAD1C8A8F383C5FF5
 04013F78ACCFEC9B673005FC6F20698D
 ```
+
+Using hashcat crack the following MD5 signatures (hash1):
+
 Command used:
 ```
 ./hashcat –m 0 hash1 words
@@ -257,7 +265,7 @@ Command used:
 Note: use the --show option to show the results of the cracking.
 
 ### Q3
-Using the method used in the first part of this tutorial, find crack the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
+Using the method used in the Q2 part of this tutorial, find the hashes of the following for names of fruits such as "orange", "apple", "banana", "pear", "peach" (the fruits are all in lowercase):
 
 ```
 FE01D67A002DFA0F3AC084298142ECCD
@@ -281,8 +289,29 @@ FE01D:
 All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
 
 
+## John the Ripper
+
+First, check if you have John installed:
+```bash
+john --list=build-info
+```
+
+If not, install it
+
+```bash
+sudo snap install john-the-ripper
+sudo snap alias john-the-ripper john
+```
+
 ### Q1
-On Kali, and using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
+
+```bash
+john --format=NT --wordlist=words hash.txt
+# words is the list of different passwords you need to create/update
+# hash.txt is the hashed password you need to create by copy/pasting the hashes below
+```
+
+Using John the Ripper, and using a word list with the names of fruits, crack the following pwdump passwords:
 ```
 fred:500:E79E56A8E5C6F8FEAAD3B435B51404EE:5EBE7DFA074DA8EE8AEF1FAA2BBDE876:::
 ```
@@ -293,7 +322,7 @@ bert:501:10EAF413723CBB15AAD3B435B51404EE:CA8E025E9893E8CE3D2CBF847FC56814:::
 Bert's password:
 
 ### Q2
-On Kali, and using John the Ripper, the following pwdump passwords (they are names of major Scottish cities/towns):
+Using John the Ripper, the following pwdump passwords (they are names of major Scottish cities/towns):
 
 ```
 Admin:500:629E2BA1C0338CE0AAD3B435B51404EE:9408CB400B20ABA3DFEC054D2B6EE5A1:::
