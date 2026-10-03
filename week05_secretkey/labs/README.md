@@ -6,7 +6,7 @@ Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
 We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). 
 
-There are different ways you can do this lab. You will need Ubuntu. If using the university's computers, you can either access it via Apporto and GN3, as we did for the labs 1 & 2:
+There are different ways you can do this lab. You will need Ubuntu (or Kali, Parrot or any Debian distro). If using the university's computers, you can either access it via Apporto and GN3, as we did for the labs 1 & 2:
 
 <img width="2869" height="1347" alt="image" src="https://github.com/user-attachments/assets/d00f9944-c43a-4c99-81b6-a1fb14c6ae17" />
 
@@ -37,7 +37,7 @@ sudo apt install -y openssl
 
 | No | Description | Result | 
 |-------|--------|---------|
-| 1 | Log into vSoC 2, and select your Kali host on the public network. | What is your IP address? |
+| 1 | Get a terminal open on Linux and check OpenSSL install `openssl version`. | What is your OpenSSL version? |
 | 2 | Use: ```openssl list -cipher-commands``` | Outline five encryption methods that are supported:   |
 | 3 | Use: ```openssl version``` | Outline the version of OpenSSL:    |
 | 4 | Using openssl and the command in the form: ```openssl prime -hex 1111``` | Check if the following are prime numbers: |  42 [Yes][No] 1421 [Yes][No] | 
