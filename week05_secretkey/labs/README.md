@@ -4,11 +4,34 @@
 
 Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
-We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). Log into vSoC 2, and select your Kali host on the public network. You should open up the lab in your Kali instance so that you can copy and paste from the document into your Kali console. The link is here:
+We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). 
 
-https://github.com/billbuchanan/csn09112/tree/master/week05_secretkey/labs 
+There are different ways you can do this lab. You will need Ubuntu. If using the university's computers, you can either access it via Apporto and GN3, as we did for the labs 1 & 2:
 
-<img width="2602" height="1704" alt="image" src="https://github.com/user-attachments/assets/f82950d7-b8c5-40a2-be68-d1e8edeafb21" />
+<img width="2869" height="1347" alt="image" src="https://github.com/user-attachments/assets/d00f9944-c43a-4c99-81b6-a1fb14c6ae17" />
+
+Or you can use the ubuntu instance you created in AWS last week:
+
+<img width="2869" height="1347" alt="image" src="https://github.com/user-attachments/assets/2d412dd9-3f11-432a-963c-2241c36f6720" />
+
+If you have your own Windows machine, you may want to install WSL (see last week's appendix for instructions).
+
+Or if you plan on continuing your journey in the world of cybersecurity, you may want to consider installing your own virtual machines with VirtualBox or VMWare (Windows/Linux) or UTM (Mac). Instructions for this can be found in the Appendix and the demonstrators will be happy to help in the JKCC.
+
+Once you have a command line with Ubuntu (or any Debian distro), first check if OpenSSL is installed.
+
+```bash
+openssl version
+```
+<img width="910" height="168" alt="image" src="https://github.com/user-attachments/assets/a7efc59a-5cf1-46a2-8f25-729c46692510" />
+
+If not, install it:
+
+```bash
+sudo apt update
+sudo apt install -y openssl
+```
+
 
 ## A Symmetric Key
 
@@ -597,4 +620,52 @@ Plain: Hello
 ```
 
 
+### Appendix
+
+Installing your own virtual lab on your own computer.
+
+Windows & Linux
+
+You can install VirtualBox
+https://www.virtualbox.org/wiki/Downloads
+
+Next, download the image of any of the following distros (select virtualbox image):
+
+https://www.kali.org/get-kali/#kali-virtual-machines 
+https://www.parrotsec.org/download/
+https://www.osboxes.org/ubuntu/
+
+Choose whichever one you prefer. Kali and Parrot both come with all the security tools installed, but each tool can be installed on a Ubuntu with a single command line, so it is really up to you which distro you want to use. 
+
+Once your image is downloaded, unpack it if it is zipped
+
+<img width="2025" height="384" alt="image" src="https://github.com/user-attachments/assets/65ad57ff-61f2-49e1-8d28-99c373bb3bd3" />
+
+And open it in VirtualBox
+
+<img width="3128" height="1690" alt="image" src="https://github.com/user-attachments/assets/de787467-6045-47de-93d8-7b5abe00f9bb" />
+
+Then in the Settings, in the System tab, in Memory, use as much as your system can be comfortable with (It will run on 2GB, but 4GB may make it more stable.)
+
+<img width="1658" height="1216" alt="image" src="https://github.com/user-attachments/assets/00310a3d-fcc6-4663-a999-c67df0eba743" />
+
+Similarly, give as many cores of cpu as your system can comfortably give. 
+
+<img width="1658" height="1216" alt="image" src="https://github.com/user-attachments/assets/6838738b-599f-4d35-885c-710d6f9bdf51" />
+
+Click ok and start your new machine.
+
+For Kali, username and password is kali, for Parrot user / toor, and Ubuntu via osboxes is osboxes / osboxes.org
+
+<img width="1656" height="1428" alt="image" src="https://github.com/user-attachments/assets/a3c7ea72-4ae3-47ec-b652-0aaa0bf5a449" />
+
+And that's it! You can now follow the lab's instruction within your own VM! Later on you may want to add more machines and experiment with creating a whole network with intentionally vulnerable nodes, but this is beyond the scope of this module.
+
+#### Alternative for Mac
+
+If using a Mac, VirtualBox is an option, but you may want to use UTM instead:
+
+https://mac.getutm.app/
+
+Handily, it comes with direct links to popular virtual machines images directly via its GUI, in the UTM Gallery. 
 
