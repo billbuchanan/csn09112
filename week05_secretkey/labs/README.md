@@ -352,6 +352,10 @@ Admin:
 
 ## D AWS Cryptography
 We are generally moving our security into the public cloud, and thus, many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
+In the services dashboard in your AWS learner's lab, select Key Management Service
+
+<img width="2374" height="1234" alt="image" src="https://github.com/user-attachments/assets/7a58fdaa-afb2-4b03-b4a5-79b8861c16eb" />
+
 
 ### Symmetric key
 
@@ -362,131 +366,100 @@ With symmetric key encryption, Bob and Alice use the same encryption key to encr
 
 Normally, we use AES encryption for this. Initially, in KMS, we create a new key within our Customer-managed keys:
 
-<img width="2460" height="1016" alt="image" src="https://github.com/user-attachments/assets/4251a0fa-583e-4aa1-bfc5-24d029715cd3" />
+<img width="2497" height="1282" alt="image" src="https://github.com/user-attachments/assets/ef1e20bf-4740-4eb4-bdd2-cfc24f389d98" />
 
 and then create the key:
 
-<img width="1248" height="910" alt="image" src="https://github.com/user-attachments/assets/091bb5fd-2723-4373-aa7a-b868d26d245b" />
+<img width="2868" height="1317" alt="image" src="https://github.com/user-attachments/assets/ef7a0575-ce38-4934-bcc3-de98998383f3" />
 
 Next, we give it a name:
 
-<img width="1262" height="1186" alt="image" src="https://github.com/user-attachments/assets/69930ce0-c07f-44ea-89ea-ad28b381bc1a" />
+<img width="2868" height="1317" alt="image" src="https://github.com/user-attachments/assets/90fcaa98-33df-4caf-94b3-126df6e9855d" />
 
 And then define the administrative permission (those who can delete it):
 
-<img width="1260" height="462" alt="image" src="https://github.com/user-attachments/assets/a51fc92e-6397-41a5-bd46-3cd49205be6b" />
+<img width="2868" height="1317" alt="image" src="https://github.com/user-attachments/assets/e136ab5b-76ae-42c9-bc4c-30d0723c50c6" />
 
 And the usage:
 
-<img width="1264" height="452" alt="image" src="https://github.com/user-attachments/assets/163546e5-a93c-44de-a7f6-e78f7ef09a29" />
+<img width="2868" height="1317" alt="image" src="https://github.com/user-attachments/assets/68b9ca55-3b82-47c8-9b8f-1313abe25a5f" />
 
 The policy is then:
 ```
 {
-    "Id": "key-consolepolicy-3",
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "Enable IAM User Permissions",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::22222222:root"
-            },
-            "Action": "kms:*",
-            "Resource": "*"
-        },
-        {
-            "Sid": "Allow access for Key Administrators",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": [
-                    "arn:aws:iam::22222222:role/LabRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
-                    "arn:aws:iam::22222222:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents",
-                    "arn:aws:iam::22222222:role/EMR_EC2_DefaultRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
-                    "arn:aws:iam::22222222:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
-                    "arn:aws:iam::22222222:role/EMR_DefaultRole",
-                    "arn:aws:iam::22222222:role/EMR_AutoScaling_DefaultRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/cloud9.amazonaws.com/AWSServiceRoleForAWSCloud9",
-                    "arn:aws:iam::22222222:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport"
-                ]
-            },
-            "Action": [
-                "kms:Create*",
-                "kms:Describe*",
-                "kms:Enable*",
-                "kms:List*",
-                "kms:Put*",
-                "kms:Update*",
-                "kms:Revoke*",
-                "kms:Disable*",
-                "kms:Get*",
-                "kms:Delete*",
-                "kms:TagResource",
-                "kms:UntagResource",
-                "kms:ScheduleKeyDeletion",
-                "kms:CancelKeyDeletion"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "Allow use of the key",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": [
-                    "arn:aws:iam::22222222:role/LabRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
-                    "arn:aws:iam::22222222:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents",
-                    "arn:aws:iam::22222222:role/EMR_EC2_DefaultRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
-                    "arn:aws:iam::22222222:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
-                    "arn:aws:iam::22222222:role/EMR_DefaultRole",
-                    "arn:aws:iam::22222222:role/EMR_AutoScaling_DefaultRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/cloud9.amazonaws.com/AWSServiceRoleForAWSCloud9",
-                    "arn:aws:iam::22222222:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport"
-                ]
-            },
-            "Action": [
-                "kms:Encrypt",
-                "kms:Decrypt",
-                "kms:ReEncrypt*",
-                "kms:GenerateDataKey*",
-                "kms:DescribeKey"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "Allow attachment of persistent resources",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": [
-                    "arn:aws:iam::22222222:role/LabRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
-                    "arn:aws:iam::22222222:role/aws-service-role/events.amazonaws.com/AWSServiceRoleForCloudWatchEvents",
-                    "arn:aws:iam::22222222:role/EMR_EC2_DefaultRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
-                    "arn:aws:iam::22222222:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
-                    "arn:aws:iam::22222222:role/EMR_DefaultRole",
-                    "arn:aws:iam::22222222:role/EMR_AutoScaling_DefaultRole",
-                    "arn:aws:iam::22222222:role/aws-service-role/cloud9.amazonaws.com/AWSServiceRoleForAWSCloud9",
-                    "arn:aws:iam::22222222:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport"
-                ]
-            },
-            "Action": [
-                "kms:CreateGrant",
-                "kms:ListGrants",
-                "kms:RevokeGrant"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "Bool": {
-                    "kms:GrantIsForAWSResource": "true"
-                }
-            }
+  "Id": "key-consolepolicy-3",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Enable IAM User Permissions",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::590269919252:root"
+      },
+      "Action": "kms:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "Allow access for Key Administrators",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::590269919252:role/voclabs"
+      },
+      "Action": [
+        "kms:Create*",
+        "kms:Describe*",
+        "kms:Enable*",
+        "kms:List*",
+        "kms:Put*",
+        "kms:Update*",
+        "kms:Revoke*",
+        "kms:Disable*",
+        "kms:Get*",
+        "kms:Delete*",
+        "kms:TagResource",
+        "kms:UntagResource",
+        "kms:ScheduleKeyDeletion",
+        "kms:CancelKeyDeletion",
+        "kms:RotateKeyOnDemand"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Allow use of the key",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::590269919252:role/voclabs"
+      },
+      "Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Allow attachment of persistent resources",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::590269919252:role/voclabs"
+      },
+      "Action": [
+        "kms:CreateGrant",
+        "kms:ListGrants",
+        "kms:RevokeGrant"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "kms:GrantIsForAWSResource": "true"
         }
-    ]
+      }
+    }
+  ]
 }
+
 ```
 
 ### AWS and Symmetric Key
@@ -495,42 +468,37 @@ With symmetric key encryption, Bob and Alice use the same encryption key to encr
 
 <img width="2008" height="600" alt="image" src="https://github.com/user-attachments/assets/02cb3093-e6e4-483a-86c9-1fc84c74d800" />
 
-Now we can create a file named 1.txt, and enter some text:
+In the Amazon Learners Lab CLI, now we can create a file named 1.txt, and enter some text:
 
-<img width="1622" height="994" alt="image" src="https://github.com/user-attachments/assets/5b7cb3b7-29da-4815-a31d-14bfab74f4fe" />
+<img width="2868" height="1317" alt="image" src="https://github.com/user-attachments/assets/c8548441-932b-47a2-be33-46e37eade923" />
 
 
 Once we have this, we can then encrypt the file using the “aws kms encrypt” command, and then use “fileb://1.txt” to refer to the file:
-```
+```bash
 aws kms encrypt  --key-id alias/MySymKey   --plaintext fileb://1.txt   --query CiphertextBlob --output text > 1.out
 cat 1.out
 ```
 
 This produces a ciphertext blob, and which is in Base64 format:
-```
+```bash
 AQICAHgTBDpVTrBTrduWKdNnvMoMMUWjObqp+GqbghUx7qa6JwEQ7F2Fzubd+pcz3I06bFuLAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMgl3vWRVPyL7KK3klAgEQgDP+dQ4KsqT94hiARF8zlybFAtXJJBIucc8M952KHmkJzBGQQP4f8YQQ70DELV97ZXizzME=
 ```
 
 We could transmit this in Base64 format, but we need to convert it into a binary format for us to now decrypt it. For this we use the “Base64 -d” command:
-```
-$ base64 -i 1.out  --decode > 1.enc
-$ cat 1.enc
+```bash
+base64 -i 1.out  --decode > 1.enc
+cat 1.enc
 ```
 
 The result is a binary output:
 
-```
-$ cat 1.enc
-x:UNSۖ)g
-00e0`  1`He.0']3܍:l[v0t *H
-]YOȾ+y%3u
-D_3&$.q
-i        @-_{exddd_v1_w_W3n_145559
-```
+<img width="1128" height="153" alt="image" src="https://github.com/user-attachments/assets/e2efd217-aae9-428a-8998-b0f7b2b646f3" />
+
+
 Now we can decrypt this with our key, and using the command of:
-```
-$ aws kms decrypt --key-id alias/BillsNewKey --output text --query Plaintext --ciphertext-blob fileb://1.enc > 2.out
-$ cat 2.out
+```bash
+aws kms decrypt --key-id alias/MySymKey --output text --query Plaintext --ciphertext-blob fileb://1.enc > 2.out
+cat 2.out
 ```
 
 The output of this is our secret message in Base64 format:
@@ -542,19 +510,20 @@ VGhpcyBpcyBteSBzZWNyZXQgZmlsZS4K
 and now we can decode this into plaintext:
 
 ```
-$ base64 -i 2.out  --decode
-This is my secret file.
+base64 -i 2.out  --decode
 ```
+
+<img width="1653" height="177" alt="image" src="https://github.com/user-attachments/assets/d29a954a-8016-471a-9e34-233818883531" />
+
 
 The commands we have used are:
 ```
-aws kms encrypt  --key-id alias/BillsNewKey   --plaintext fileb://1.txt  --query CiphertextBlob --output text > 1.out
-echo "== Ciphertext (Base64)"
+aws kms encrypt  --key-id alias/MySymKey
 cat 1.out
 echo "== Ciphertext (Binary)"
 base64 -i 1.out  --decode > 1.enc
 cat 1.enc
-aws kms decrypt --key-id alias/BillsNewKey --output text --query Plaintext --ciphertext-blob fileb://1.enc > 2.out
+aws kms decrypt --key-id alias/MySymKey --output text --query Plaintext --ciphertext-blob fileb://1.enc > 2.out
 echo "== Plaintext (Base64)"
 cat 2.out
 echo "== Plaintext"
@@ -585,68 +554,74 @@ Here’s a sample run in an AWS Foundation Lab environment:
 
 ### Using Python
 
-Along with using the CLI, we can create the encryption using Python. In the following, we use the boto3 library, and have a key ID of “98a90e1f-2cb5–4564-a3aa-d0c060cdcf0a” and which is in the US-East-1 region:
+Along with using the CLI, we can create the encryption using Python. In the following, we use the boto3 library, and have a key ID of “MySymKey” and which is in the US-East-1 region:
+
+First, create the python file:
+
+```bash
+nano kms_encrypt.py
 ```
+
+And in it paste in this code
+
+```python
 import base64
-import binascii
 import boto3
+from botocore.exceptions import ClientError
 
 AWS_REGION = 'us-east-1'
 
-def enable_kms_key(key_ID):
+KEY_ALIAS = 'alias/MySymKey'
+
+kms_client = boto3.client("kms", region_name=AWS_REGION)
+
+
+def encrypt(secret, key_id):
     try:
-        response = kms_client.enable_key(KeyId=key_ID)
-
-    except ClientError:
-        print('KMS Key not working')
-        raise
-    else:
-        return response
-
-
-def encrypt(secret, alias):
-    try:
-        ciphertext = kms_client.encrypt(KeyId=alias,Plaintext=bytes(secret, encoding='utf8'),
+        response = kms_client.encrypt(
+            KeyId=key_id,
+            Plaintext=bytes(secret, encoding='utf8'),
         )
     except ClientError:
         print('Problem with encryption.')
         raise
     else:
-        return base64.b64encode(ciphertext["CiphertextBlob"])
+        return base64.b64encode(response["CiphertextBlob"])
 
 
-def decrypt(ciphertext, alias):
+def decrypt(ciphertext, key_id):
     try:
-        plain_text = kms_client.decrypt(KeyId=alias,CiphertextBlob=bytes(base64.b64decode(ciphertext)))
+        response = kms_client.decrypt(
+            KeyId=key_id,
+            CiphertextBlob=bytes(base64.b64decode(ciphertext)),
+        )
     except ClientError:
         print('Problem with decryption.')
         raise
     else:
-        return plain_text['Plaintext']
+        return response['Plaintext']
 
-kms_client = boto3.client("kms", region_name=AWS_REGION)
 
-KEY_ID = '98a90e1f-2cb5-4564-a3aa-d0c060cdcf0a'
-kms = enable_kms_key(KEY_ID)
-print(f'KMS key ID {KEY_ID} ')
-msg='Hello'
+print(f'Using KMS key: {KEY_ALIAS}')
+
+msg = 'Hello'
 print(f"Plaintext: {msg}")
 
-cipher=encrypt(msg,KEY_ID)
-print(f"Cipher {cipher}")
-plaintext=decrypt(cipher,KEY_ID)
+cipher = encrypt(msg, KEY_ALIAS)
+print(f"Cipher: {cipher}")
+
+plaintext = decrypt(cipher, KEY_ALIAS)
 print(f"Plain: {plaintext.decode()}")
 ```
-    
+
+Then run it
+```bash
+python3 kms_encrypt.py
+```
 
 Each of the steps is similar to our CLI approach. A sample run gives:
 
-```
-KMS key ID 98a90e1f-2cb5-4564-a3aa-d0c060cdcf0a 
-Plaintext: Hello
-Cipher b'AQICAHgTBDpVTrBTrduWKdNnvMoMMUWjObqp+GqbghUx7qa6JwHH797e/TF4csEBEFNmjvD5AAAAYzBhBgkqhkiG9w0BBwagVDBSAgEAME0GCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMJf0xVfikbMLfLI6jAgEQgCDYBm2NvB/I2NMxGgSw8wuWA/p6c6Jjm19/wK4eVrLXUw=='
-Plain: Hello
-```
+<img width="1794" height="292" alt="image" src="https://github.com/user-attachments/assets/825b2711-4d89-40ee-bfd8-c9671b4b36db" />
 
 
 ### Appendix
