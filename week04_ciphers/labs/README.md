@@ -483,8 +483,7 @@ We will not be able to ping the instance yet, as the firewall on Windows is disa
  
 Figure 20: Details of instance
 
- 
-![AWS](https://asecuritysite.com/public/awsfig20.png "Enable ICMP")  
+<img width="904" height="202" alt="image" src="https://github.com/user-attachments/assets/9f458c3c-dd87-48cc-beab-93ef94b79fa0" />
 
 Figure 21: Enable ICMP
 
