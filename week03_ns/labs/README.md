@@ -421,7 +421,7 @@ msf > use auxiliary/scanner/smb/smb_lookupsid
 msf auxiliary(smb_lookupsid) > show options
 msf auxiliary(smb_lookupsid) > set RHOSTS 192.168.11.7
 RHOSTS => 192.168.11.7
-msf auxiliary(smb_lookupsid) > set SMBUser napier
+msf auxiliary(smb_lookupsid) > set SMBUser Administrator
 SMBUser => napier
 msf auxiliary(smb_lookupsid) > set SMBPass napier123
 SMBPass => napier123
