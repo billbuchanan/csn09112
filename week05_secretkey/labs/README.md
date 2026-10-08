@@ -16,6 +16,7 @@ You may find it useful to open this repo with chrome within the instance or easy
 
 Kali comes with all the tools you need for this lab.
 
+<img width="1171" height="879" alt="image" src="https://github.com/user-attachments/assets/38ca9bd9-e8c2-48f2-8f4c-e3e305588771" />
 
 Optionally if you plan on continuing your journey in the world of cybersecurity, you may want to consider installing your own virtual machines with VirtualBox or VMWare (Windows/Linux) or UTM (Mac). Instructions for this can be found in the Appendix and the demonstrators will be happy to help in the JKCC.
 
