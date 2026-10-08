@@ -6,31 +6,18 @@ Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
 We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). 
 
-There are different ways you can do this lab. You will need Ubuntu (or Kali, Parrot or any Debian distro). If using the university's computers, you can either access it via Apporto and GN3, as we did for the labs 1 & 2:
+In the Virtual Labs (as used in Labs 1 & 2), open GNS3, and start and run the Kali-Public instance
 
-<img width="2869" height="1347" alt="image" src="https://github.com/user-attachments/assets/d00f9944-c43a-4c99-81b6-a1fb14c6ae17" />
+<img width="1851" height="811" alt="image" src="https://github.com/user-attachments/assets/550c3206-21e9-4e93-8902-aaad47852879" />
 
-Or you can use the ubuntu instance you created in AWS last week:
+Username: napier / password: napier123
 
-<img width="2869" height="1347" alt="image" src="https://github.com/user-attachments/assets/2d412dd9-3f11-432a-963c-2241c36f6720" />
+You may find it useful to open this repo with chrome within the instance or easy copy/paste of the instructions.
 
-If you have your own Windows machine, you may want to install WSL (see last week's appendix for instructions).
+Kali comes with all the tools you need for this lab.
 
-Or if you plan on continuing your journey in the world of cybersecurity, you may want to consider installing your own virtual machines with VirtualBox or VMWare (Windows/Linux) or UTM (Mac). Instructions for this can be found in the Appendix and the demonstrators will be happy to help in the JKCC.
 
-Once you have a command line with Ubuntu (or any Debian distro), first check if OpenSSL is installed.
-
-```bash
-openssl version
-```
-<img width="910" height="168" alt="image" src="https://github.com/user-attachments/assets/a7efc59a-5cf1-46a2-8f25-729c46692510" />
-
-If not, install it:
-
-```bash
-sudo apt update
-sudo apt install -y openssl
-```
+Optionally if you plan on continuing your journey in the world of cybersecurity, you may want to consider installing your own virtual machines with VirtualBox or VMWare (Windows/Linux) or UTM (Mac). Instructions for this can be found in the Appendix and the demonstrators will be happy to help in the JKCC.
 
 
 ## A Symmetric Key
@@ -111,16 +98,6 @@ What is the fruit?
 ## B Hashing
 Video: [here](http://youtu.be/Xvbk2nSzEPk)
 
-### Hashcat Tool
-
-If using Kali or Parrot, hashcat is already pre-installed. If using ubuntu, you need to install it with:
-
-```bash
-sudo apt update
-sudo apt install -y hashcat
-```
-
-
 ### Q1 
 Using: [here](http://asecuritysite.com/encryption/md5) Match the hash signatures with their words (“Falkirk”, “Edinburgh”, “Glasgow” and “Stirling”). 
 ```
@@ -154,7 +131,7 @@ SHA-256 hex chars:
 How does the number of hex characters relate to the length of the hash signature: |
 
 ### Q3
-The hashes below have been found for the following /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123) - Remember to change the salt!
+The hashes below have been found in a /etc/shadow file, determine the matching password (the passwords are password, napier, inkwell and Ankle123) - Remember to change the salt!
 
 To find the password, we determine the salt value, and try each password. For example the salt value for ```bill:$apr1$waZS/8Tm$jDZmiZBct/c2hysERcZ3m1``` is ```waZS/8Tm```. To check the password and salt, we can run:
 
@@ -287,21 +264,6 @@ FE01D:
 
 ## Hashing Cracking (LM Hash/Windows)
 All of the passwords in this section are in lowercase. http://youtu.be/Xvbk2nSzEPk
-
-
-## John the Ripper
-
-First, check if you have John installed:
-```bash
-john --list=build-info
-```
-
-If not, install it
-
-```bash
-sudo snap install john-the-ripper
-sudo snap alias john-the-ripper john
-```
 
 ### Q1
 
@@ -633,7 +595,7 @@ How do we solve this? By creating a vault.
 
 You have seen in class how Symmetric Keys work. Now let us see them being used in practice.
 
-Firstly, on Ubuntu (or Kali, or Parrot), you need to install gocryptfs (and OpenSSL, if you have not yet done it, see above for instructions)
+Firstly, on Ubuntu (in your AWS instance) or Kali (in your GN3 lab) or on your own debian-based machine, you need to install gocryptfs (and OpenSSL, if you have not yet done it, see above for instructions)
 
 ```bash
 sudo apt install gocryptfs
