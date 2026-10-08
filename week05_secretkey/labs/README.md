@@ -677,7 +677,7 @@ cat open_vault/private.pem
 
 Now lock your vault! The following action will make open_vault an empty directory. 
 ```bash
-fusermount -u open_vault
+umount ~/open_vault
 ```
 And you can see the encrypted data in the vault:
 ```bash
