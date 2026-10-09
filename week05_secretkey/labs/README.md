@@ -231,8 +231,8 @@ ln -s hashcat-6.0.0/hashcat.bin  hashcat
 Then the version should show Verion 6.0.0:
 
 ```
-# ./hashcat –-version
-v6.0.0
+./hashcat –-version
+# v6.0.0
 ```
 
 ### Q1
