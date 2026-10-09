@@ -6,13 +6,13 @@ Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
 We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). 
 
-In the Virtual Labs (as used in Labs 1 & 2), open GNS3, and start and run the Kali-Public instance
+In the Virtual Labs (as used in Labs 1 & 2), open GNS3, select bill's lab in previous labs and start and run the Kali-Public instance
 
 <img width="1851" height="811" alt="image" src="https://github.com/user-attachments/assets/550c3206-21e9-4e93-8902-aaad47852879" />
 
 Username: napier / password: napier123
 
-You may find it useful to open this repo with chrome within the instance or easy copy/paste of the instructions.
+You may find it useful to open this repo with chrome within the instance or easy copy/paste of the instructions. Simply do a google search: github billbuchanan csn09112, and the repo should be the top pick.
 
 Kali comes with all the tools you need for this lab.
 
