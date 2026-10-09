@@ -640,7 +640,7 @@ cd ~ # brings you back to home - no sudo needed here!
 nano 1.py
 ```
 
-Then type or paste the code below. (Remember to use Ctrl+Shift+V to paste anything in terminal or nano)
+Then type or paste the code below. (Remember to use Ctrl+Shift+V to paste anything in the terminal or nano)
 
 ```python
 import boto3
@@ -666,7 +666,7 @@ Figure: Running the Python3 file
 Does the Python3 program show your instances? [Yes/No]
 ```
 
-Note, Boto3 has deprecated since Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
+Note, Boto3 has been deprecated since Python 3.7, so just force Python to ignore any warnings with (assuming you have named the file 1.py):
 
 ```
 python3 -W ignore 1.py
@@ -916,7 +916,9 @@ eee_W_7008910@172.31.10.67:~$
 ```
 
 You can get your user credentials by clicking on AWS Details. 
- 
+
+<img width="796" height="732" alt="image" src="https://github.com/user-attachments/assets/826b5302-0d61-4a93-8ce2-c2229e6c00af" />
+
 You created the myconfig file in your home folder - and which is ~\:
  
  
