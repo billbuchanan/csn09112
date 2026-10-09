@@ -750,3 +750,69 @@ https://mac.getutm.app/
 
 Handily, it comes with direct links to popular virtual machines images directly via its GUI, in the UTM Gallery. 
 
+## AWS Credentials
+
+Theory: AWS uses the credentials of aws_access_key_id  and aws_secret_access_key to gain access to your instances from the CLI and Python (such as on your own machine). These details are normally stored in the .aws folder (normally hidden in listings) and in the credentials file in that folder. For example:
+ 
+ 
+```
+% cd .aws
+% ls
+config		credentials
+.aws % cat credentials 
+[default]
+aws_access_key_id = AHHHHHHHHHHHHHHHH
+aws_secret_access_key = Xdddddddddddddddddddddd
+```
+ 
+Some of you do not have the rights to access your instances from the AWS CLI. Normally, your aws_access_key_id and your aws_secret_access_key would be stored in the ./aws/credentials file, but they are not added to the environment (but were in the past). If you can run your CLI commands and Python programs without any authorisation problems, then things are working okay; if not, read on.
+ 
+Unfortunately, you will not have the rights to edit the credentials file, so just copy the details from your user credentials (see the screenshot) and paste them into a file named myconfig. Next, change the AWS config file to myconfig and it should work:
+ 
+ 
+```
+eee_W_7008910@172.31.10.67:~$ export AWS_CONFIG_FILE=myconfig
+
+eee_W_7008910@172.31.10.67:~$ nano myconfig 
+    <<paste your user credentials in the editor >>
+
+eee_W_7008910@172.31.10.67:~$ cat myconfig 
+[default]
+aws_access_key_id=ABBBUWYEY47O5FQCEWLA
+aws_secret_access_key=iLLLLLiGocWkg+W6XyS4HhnWDXzcBKkayS8LAtM
+
+eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances
+{
+    "Reservations": []
+}
+eee_W_7008910@172.31.10.67:~$
+```
+
+You can get your user credentials by clicking on AWS Details. 
+
+<img width="796" height="732" alt="image" src="https://github.com/user-attachments/assets/826b5302-0d61-4a93-8ce2-c2229e6c00af" />
+
+You created the myconfig file in your home folder - and which is ~\:
+ 
+ 
+```
+eee_W_7008910@172.31.10.67:~$ cd
+eee_W_7008910@172.31.10.67:~$ pwd
+/mnt/vocwork1/work/eee_W_7008910/asn5850536_1/asn5850537_1/work
+```
+
+Once we copied my credentials (along with aws_session_token) in myconfig, the CLI and Python code works:
+ 
+``` 
+eee_W_7008910@172.31.10.67:~$ nano myconfig
+eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances
+{
+    "Reservations": []
+}
+eee_W_7008910@172.31.10.67:~$ python 1.py
+/usr/lib/python3.7/site-packages/boto3/compat.py:82: PythonDeprecationWarning: Boto3 will no longer support Python 3.7 starting December 13, 2023. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.8 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
+  warnings.warn(warning, PythonDeprecationWarning)
+{'Reservations': [], 'ResponseMetadata': {'RequestId': '647341cc-7b90-40ea-9a11-3e81759d9fe0', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '647341cc-7b90-40ea-9a11-3e81759d9fe0', 'cache-control': 'no-cache, no-store', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'content-type': 'text/xml;charset=UTF-8', 'content-length': '219', 'date': 'Fri, 09 Oct 2026 08:42:28 GMT', 'server': 'AmazonEC2'}, 'RetryAttempts': 0}}
+eee_W_7008910@172.31.10.67:~$
+```
+
