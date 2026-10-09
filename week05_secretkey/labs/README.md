@@ -14,6 +14,9 @@ Username: napier / password: napier123
 
 You may find it useful to open this repo with chrome within the instance or easy copy/paste of the instructions. Simply do a google search: github billbuchanan csn09112, and the repo should be the top pick.
 
+<img width="1156" height="879" alt="image" src="https://github.com/user-attachments/assets/b1675041-7068-49d4-95b9-6802aba0d800" />
+
+
 Kali comes with all the tools you need for this lab.
 
 <img width="1171" height="879" alt="image" src="https://github.com/user-attachments/assets/38ca9bd9-e8c2-48f2-8f4c-e3e305588771" />
