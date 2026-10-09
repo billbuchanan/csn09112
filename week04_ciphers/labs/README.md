@@ -936,7 +936,8 @@ eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances
 {
     "Reservations": []
 }
-eee_W_7008910@172.31.10.67:~$ python 1.py/usr/lib/python3.7/site-packages/boto3/compat.py:82: PythonDeprecationWarning: Boto3 will no longer support Python 3.7 starting December 13, 2023. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.8 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
+eee_W_7008910@172.31.10.67:~$ python 1.py
+/usr/lib/python3.7/site-packages/boto3/compat.py:82: PythonDeprecationWarning: Boto3 will no longer support Python 3.7 starting December 13, 2023. To continue receiving service updates, bug fixes, and security updates please upgrade to Python 3.8 or later. More information can be found here: https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/
   warnings.warn(warning, PythonDeprecationWarning)
 {'Reservations': [], 'ResponseMetadata': {'RequestId': '647341cc-7b90-40ea-9a11-3e81759d9fe0', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '647341cc-7b90-40ea-9a11-3e81759d9fe0', 'cache-control': 'no-cache, no-store', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'content-type': 'text/xml;charset=UTF-8', 'content-length': '219', 'date': 'Fri, 09 Oct 2026 08:42:28 GMT', 'server': 'AmazonEC2'}, 'RetryAttempts': 0}}
 eee_W_7008910@172.31.10.67:~$
