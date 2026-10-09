@@ -242,6 +242,13 @@ Next create a word file (words) with the words of “napier”, “password” �
 nano words
 ```
 
+```bash
+napier
+password
+Ankle123
+inkwell
+```
+
 Then create a word file (hash1) with the following hashes
 
 ```
