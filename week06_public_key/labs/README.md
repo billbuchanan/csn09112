@@ -23,7 +23,7 @@ python3
 | 2 | Now they exchange the values. Next calculate the shared key: | Bob’s value (A<sup>b</sup> mod N):	Alice’s value (B<sup>a</sup> mod N): Do they match? [Yes] [No] |
 | 3 | If you are in the lab, select someone to share a value with. Next agree on two numbers (g and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for g and N: <br/>Your b value: <br/>Your B value:  <br/>The A value you received: <br/>Shared key: <br/>Do they match: [Yes] [No] |
 
-Remember that in python, **A = g<sup>a</sup> mod N** is done with `A = pow(g, a, N)` instead of `(g**a) % N`, it is far more efficient.
+Remember that in python, **A = g<sup>a</sup> mod N** is done with `A = pow(g, a, N)` instead of `A = (g**a) % N`, it is far more efficient.
 
 
 ## 2 Public Key
