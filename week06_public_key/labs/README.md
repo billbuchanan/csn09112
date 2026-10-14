@@ -4,9 +4,18 @@
 
 Part 1 Demo: [here](http://youtu.be/HbVenKMGRmE)
 
-We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). You can either create a Ubuntu or Windows 2019 server in the AWS Lab environment and install OpenSSL into it, or use the Kali instance on vSoC2.
+We will use OpenSSL for a few tutorial examples. If you want to find out more about the program, discover [here](https://asecuritysite.com/openssl/). You can use the Kali instance on GNS3, the same way than the previous lab, or use your own Virtual Machine if you prefer.
 
 ## 1	Diffie-Hellman
+
+To do these exercises, you can use python. Just open a terminal and type:
+
+```bash
+python3
+```
+
+<img width="1219" height="291" alt="image" src="https://github.com/user-attachments/assets/85bd5ac4-6bcb-4e99-b4ef-f8ce02d626bf" />
+
 
 | No | Description | Result | 
 | -------|--------|---------|
@@ -14,7 +23,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 | 2 | Now they exchange the values. Next calculate the shared key: | Bob’s value (A<sup>b</sup> mod N):	Alice’s value (B<sup>a</sup> mod N): Do they match? [Yes] [No] |
 | 3 | If you are in the lab, select someone to share a value with. Next agree on two numbers (g and N).  | You should generate a random number, and so should they. Do not tell them what your random number is. Next calculate your A value, and get them to do the same. Next exchange values. | Numbers for g and N: <br/>Your b value: <br/>Your B value:  <br/>The A value you received: <br/>Shared key: <br/>Do they match: [Yes] [No] |
 
-
+Remember that in python, `A = g<sup>a</sup> mod N` is done with `A = pow(g, a, N)` instead of `(g**a) % N`, it is far more efficient.
 
 
 ## 2 Public Key
