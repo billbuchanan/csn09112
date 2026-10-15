@@ -360,7 +360,7 @@ Figure 17: Describe instances
 
 Now we will stop our instance using an AWS EC2 command. Run the following with your instance ID (see Figure 18):
 ```
-aws ec2 stop-instances --instance-ids [My-instance-ID]
+aws ec2 stop-instances --instance-ids [My-instance-ID] --region us-east-1
 ```
 From the AWS Management Console, has your instance stopped? [Yes/No]
 
@@ -372,7 +372,7 @@ Figure 18: Stopping an instance
 Now we will restart the instance with:
 
 ```
-aws ec2 start-instances --instance-ids [My-instance-ID]
+aws ec2 start-instances --instance-ids [My-instance-ID] --region us-east-1
 ```
 
 Has the instance re-started? [Yes/No]
@@ -380,10 +380,10 @@ Has the instance re-started? [Yes/No]
 
 Now we will change the instance type from t3.micro to t3.small. To do this, run the following commands:
 ```
-aws ec2 stop-instances --instance-ids [My-instance-ID]
-aws ec2 wait instance-stopped --instance-ids [My-instance-ID]
-aws ec2 modify-instance-attribute --instance-id [My-instance-ID] --instance-type "{\"Value\": \"t3.small\"}"
-aws ec2 start-instances --instance-ids [My-instance-ID]
+aws ec2 stop-instances --instance-ids [My-instance-ID] --region us-east-1
+aws ec2 wait instance-stopped --instance-ids [My-instance-ID] --region us-east-1
+aws ec2 modify-instance-attribute --instance-id [My-instance-ID] --instance-type "{\"Value\": \"t3.small\"}" --region us-east-1
+aws ec2 start-instances --instance-ids [My-instance-ID] --region us-east-1
 ```
 
 Did it change the instance type? [Yes/No]
@@ -725,12 +725,12 @@ Do your Python3 programs work? [Yes/No]
 
 You can also use the AWS prompt. Now try to start and stop your instances with:
 ```bash
-aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager # remember to change the xxx's for your instance
+aws ec2 stop-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager --region us-east-1 # remember to change the xxx's for your instance
 ```
 
 and
 ```bash
-aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager # remember to change the xxx's for your instance
+aws ec2 start-instances --instance-ids i-07b0512e24xxxxxx --no-cli-pager --region us-east-1 # remember to change the xxx's for your instance
 ```
 
 Do these command line programs work? [Yes/No]
@@ -809,7 +809,7 @@ Has it created the instance? [Yes/No]
 Now terminate it. 
 
 ```bash
-aws ec2 terminate-instances --instance-ids i-xxxxxxxxxxxxxxxxx --no-cli-pager # replace xxx's with your instance
+aws ec2 terminate-instances --instance-ids i-xxxxxxxxxxxxxxxxx --no-cli-pager --region us-east-1 # replace xxx's with your instance
 ```
 
 <img width="1876" height="535" alt="image" src="https://github.com/user-attachments/assets/072f8455-b122-4c43-bc64-51e706ff90f9" />
@@ -932,7 +932,7 @@ Once we copied my credentials (along with aws_session_token) in myconfig, the CL
  
 ``` 
 eee_W_7008910@172.31.10.67:~$ nano myconfig
-eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances
+eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances --region us-east-1
 {
     "Reservations": []
 }
