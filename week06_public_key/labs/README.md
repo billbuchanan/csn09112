@@ -8,7 +8,7 @@ We will use OpenSSL for a few tutorial examples. If you want to find out more ab
 
 ## 1	Diffie-Hellman
 
-To do these exercises, you can use python. Just open a terminal and type:
+To do these exercises, you can use Python. Just open a terminal and type:
 
 ```bash
 python3
