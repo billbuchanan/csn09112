@@ -12,7 +12,7 @@ In the Virtual Labs (as used in Labs 1 & 2), open GNS3, select bill's lab in pre
 
 Username: napier / password: napier123
 
-You may find it useful to open this repo with chrome within the instance or easy copy/paste of the instructions. Simply do a google search: github billbuchanan csn09112, and the repo should be the top pick.
+You may find it useful to open this repo with chrome within the instance or easy copy/paste of the instructions. Simply do a Google search: github billbuchanan csn09112, and the repo should be the top pick.
 
 <img width="1156" height="879" alt="image" src="https://github.com/user-attachments/assets/b1675041-7068-49d4-95b9-6802aba0d800" />
 
@@ -781,7 +781,7 @@ eee_W_7008910@172.31.10.67:~$ cat myconfig
 aws_access_key_id=ABBBUWYEY47O5FQCEWLA
 aws_secret_access_key=iLLLLLiGocWkg+W6XyS4HhnWDXzcBKkayS8LAtM
 
-eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances
+eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances --region us-east-1
 {
     "Reservations": []
 }
@@ -805,7 +805,7 @@ Once we copied my credentials (along with aws_session_token) in myconfig, the CL
  
 ``` 
 eee_W_7008910@172.31.10.67:~$ nano myconfig
-eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances
+eee_W_7008910@172.31.10.67:~$ aws ec2 describe-instances --region us-east-1
 {
     "Reservations": []
 }
