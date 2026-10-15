@@ -338,10 +338,10 @@ Figure 15: Accessing instances
 Figure 16: Accessing instances
 
 ### C.8	Accessing from AWS prompt
-We can also access our instance from the AWS terminal prompt. For this return to your AWS Academy console, and enter the command (Figure 17):
+We can also access our instance from the AWS terminal prompt. For this, return to your AWS Academy console, and enter the command (Figure 17):
 
 ```
-$ aws ec2 describe-instances
+$ aws ec2 describe-instances --region us-east-1
 ```
 
 From the results, can you identify the following:
