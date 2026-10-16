@@ -175,6 +175,9 @@ We can download this from the console or from the command prompt:
 ```
 
 ### Encrypting with the public key
+The AWS Console in the AWS Lab environment is not working reliably with your AWS credentials. To overcome this, you can use CloudShell instead (and which is one of the icons at the top right-hand side of your AWS Console:
+
+<img width="1917" height="943" alt="image" src="https://github.com/user-attachments/assets/ae149996-fe33-4230-ba08-95dd46f8e67f" />
 
 We can now create a file (1.txt):
 
