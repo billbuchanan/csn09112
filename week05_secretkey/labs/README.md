@@ -471,7 +471,7 @@ With symmetric key encryption, Bob and Alice use the same encryption key to encr
 
 <img width="2008" height="600" alt="image" src="https://github.com/user-attachments/assets/02cb3093-e6e4-483a-86c9-1fc84c74d800" />
 
-In the Amazon Learners Lab CLI, now we can create a file named 1.txt, and enter some text:
+In the AWS Learners Lab CLI (or with CloudShell), now we can create a file named 1.txt, and enter some text:
 
 <img width="2868" height="1317" alt="image" src="https://github.com/user-attachments/assets/c8548441-932b-47a2-be33-46e37eade923" />
 
