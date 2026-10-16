@@ -347,8 +347,15 @@ Bert:
 Admin:
 
 ## D AWS Cryptography
+The AWS Console in the AWS Lab environment is not working reliably with your AWS credentials. To overcome this, you can use CloudShell instead (and which is one of the icons at the top right-hand side of your AWS Console):
+
+<img width="1917" height="943" alt="image" src="https://github.com/user-attachments/assets/ae149996-fe33-4230-ba08-95dd46f8e67f" />
+
+
 We are generally moving our security into the public cloud, and thus, many of our keys are stored there. In AWS, we use KMS (Key Management System), and can create either symmetric keys or asymmetric keys (public keys).
-In the services dashboard in your AWS learner's lab, select Key Management Service
+
+
+In the services dashboard in your AWS learner's lab, select Key Management Service:
 
 <img width="2374" height="1234" alt="image" src="https://github.com/user-attachments/assets/7a58fdaa-afb2-4b03-b4a5-79b8861c16eb" />
 
