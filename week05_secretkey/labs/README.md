@@ -12,7 +12,7 @@ In the Virtual Labs (as used in Labs 1 & 2), open GNS3, select bill's lab in pre
 
 Username: napier / password: napier123
 
-You may find it useful to open this repo with chrome within the instance or easy copy/paste of the instructions. Simply do a Google search: github billbuchanan csn09112, and the repo should be the top pick.
+You may find it useful to open this repo with Chrome within the instance or for easy copy/paste of the instructions. Simply do a Google search: github billbuchanan csn09112, and the repo should be the top pick.
 
 <img width="1156" height="879" alt="image" src="https://github.com/user-attachments/assets/b1675041-7068-49d4-95b9-6802aba0d800" />
 
