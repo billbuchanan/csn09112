@@ -10,7 +10,7 @@ Test details:
 * 1 hour 25 mins (85 mins). Students with additional time will have this time added automatically.
 * Closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc.
 * Desktop computer preferred, unless the student has a need to use their laptop.
-* Students can use their virtual desktops, either vSoC2 or AWS.
+* Students can use their virtual desktops, either GNS3 or AWS.
 
 Test structure: 
 * Six ciphers (marks vary from 1 to 3 marks).
