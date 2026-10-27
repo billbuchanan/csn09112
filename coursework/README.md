@@ -16,7 +16,7 @@ unzip cw2026_2027.zip
 Set up the controller to run on Linux and the botnet to run on Windows. Go to your Windows machine on the DMZ and download the ZIP file. You can run the controller on our Linux machine with:</p>
 
 ```
-mono c.exe
+> mono c.exe
 ```
 
 The output should show the form of:
@@ -28,12 +28,12 @@ Bot Controller Version 9.0 -  - 2026/2027 (27 Oct 2026)
 Take note of the controller's IP address (W.X.Y.Z). Now go to your Windows machine, and run:</p>
 
 ```
-b.exe W.X.Y.Z MATRIC
+> b.exe W.X.Y.Z MATRIC
 ```
 and where MATRIC is your Matriculation Number.
 
 ```
-b.exe 10.0.0.106 40000677
+> b.exe 10.0.0.106 40000000
 Bot Version 9.0 - 2026/2027 (27 Oct 2026)
 Hello: 40000000 Botnet ID: 320933250
 $$?[+][+].~[+]+]
