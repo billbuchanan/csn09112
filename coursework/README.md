@@ -1,5 +1,4 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
-
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/74e1dfa0-4073-4de5-a873-c5dd974589ac" />
 
 # CSN09112 - Network Security and Cryptography
 Author: Bill Buchanan
@@ -8,9 +7,9 @@ Author: Bill Buchanan
 You can download the Bot onto the Linux machine using:
 
 ```
-wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2025_2026.zip?raw=true'
-mv cw_2025_2026.zip?raw=true cw2025_2026.zip
-unzip cw2025_2026.zip
+wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2026_2027.zip?raw=true'
+mv cw_2026_2027.zip?raw=true cw2026_2027.zip
+unzip cw2026_2027.zip
 ```
 
 
@@ -23,10 +22,10 @@ mono c.exe
 The output should show the form of:
 
 ```
-Bot Controller Version 8.1
+Bot Controller Version 9.0 -  - 2026/2027 (27 Oct 2026)
 ```
 
-Take a note of the IP address of the controller (W.X.Y.Z). Now go to your Windows machine, and run:</p>
+Take note of the controller's IP address (W.X.Y.Z). Now go to your Windows machine, and run:</p>
 
 ```
 b.exe W.X.Y.Z MATRIC
@@ -34,9 +33,10 @@ b.exe W.X.Y.Z MATRIC
 and where MATRIC is your Matriculation Number.
 
 ```
-Bot Version 8.1 - 2025/2026
-Please run with bot w.x.y.z, where w.x.y.z is the address of your controller.
-Hello 111111
+b.exe 10.0.0.106 40000677
+Bot Version 9.0 - 2026/2027 (27 Oct 2026)
+Hello: 40000000 Botnet ID: 320933250
+$$?[+][+].~[+]+]
 ```
 
 The bot and the controller should connect to each other. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip).
@@ -59,7 +59,8 @@ Your network architecture should be similar to that shown in Figure 1 and should
 
 Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then, use this architecture as your testbed to thoroughly investigate and analyse the Botnet activity. Try to plan and be scientific in the experimental method you use and don’t simply run it once and report. Static analysis can then be used to complement the dynamic analysis. After this, design an Intrusion Detection System (IDS) which will detect the various bot activities, leading to an implementation of a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. If you have time investigate tuning the rules. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Finally, the botnet can be tested within the vSoC environment.
 
-![Figure 1](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework01.png)
+<img width="1015" height="640" alt="image" src="https://github.com/user-attachments/assets/8e9e83d1-b2fa-426c-a541-62192b0bb761" />
+
 
 The controller and the bot should be placed on different hosts, and then enabled to communicate. It is then your task to capture and analyse the traffic generated and try and build up an understanding of the requests and replies that are used by the bot and controller. Once you understand the requests and replies, then create a Snort-based IDS detector to detect the presence of the Bot and Controller.
 
@@ -243,8 +244,7 @@ Now, try this approach on the pcap file that you have captured for the coursewor
 ## Setting up the bot and the controller
 Run the controller first and it will wait for a connection from the bot. Now run the bot with the IP address of the controller. The bot will run for a short time, and then stop. Make sure that you run Wireshark to listen to the traffic between the bot and the controller. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip). A sample TCP flow analysis gives:
 
-![Wireshark](https://github.com/billbuchanan/csn09112/blob/master/zadditional/wireshark_001.png)
-
+<img width="3168" height="1812" alt="image" src="https://github.com/user-attachments/assets/b7be0126-db41-46ed-a44f-a67346cbfe4b" />
 
 Note: The bot and controller use TCP Ports 5000-5010, so please open them up on your firewall
 
