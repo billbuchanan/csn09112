@@ -59,7 +59,7 @@ Your network architecture should be similar to that shown in Figure 1 and should
 
 Start by allowing all traffic from the internal network out to the external network so the bot can communicate with the bot controller. Then, use this architecture as your testbed to thoroughly investigate and analyse the Botnet activity. Try to plan and be scientific in the experimental method you use and don’t simply run it once and report. Static analysis can then be used to complement the dynamic analysis. After this, design an Intrusion Detection System (IDS) which will detect the various bot activities, leading to an implementation of a prototype using a Snort sensor running on the internal Linux system. The alerts generated should be useful to a security admin. If you have time investigate tuning the rules. Once the IDS has been tested, design and create firewall rules to close down the firewall to prevent future botnet activity, possibly highlight/log specific botnet activity, and test the configuration. Finally, the botnet can be tested within the vSoC environment.
 
-<img width="1015" height="640" alt="image" src="https://github.com/user-attachments/assets/8e9e83d1-b2fa-426c-a541-62192b0bb761" />
+<img width="1188" height="761" alt="image" src="https://github.com/user-attachments/assets/f7feb4e5-088a-4b99-add4-99485313f5a6" />
 
 
 The controller and the bot should be placed on different hosts, and then enabled to communicate. It is then your task to capture and analyse the traffic generated and try and build up an understanding of the requests and replies that are used by the bot and controller. Once you understand the requests and replies, then create a Snort-based IDS detector to detect the presence of the Bot and Controller.
