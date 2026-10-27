@@ -84,19 +84,19 @@ A brief literature review towards your botnet analysis method and IDS rule devel
 Analyse the operation of the running Bot agent and Botnet controller, including any connections created by the bot, host activities on the victim, any communications between the bot and controller, and any network scanning by the bot. For example, screenshots and brief discussion for: botnet components running, analysis tools, outputs and interesting data, tools and outputs of cracking codes, with a brief discussion.  
 
 *	Dynamic analysis of bot and botnet controller
-1. Identifying botnet network connections and traffic, filtering out unrelated traffic using appropriate tools such as Wireshark
-2. Identify types of traffic, reconnaissance/command and control traffic
-3. Identify specific botnet commands and responses
-4. Decode botnet traffic if necessary – some may be encoded/encrypted! Crack the messages for extra marks
-5. Challenge: create your own bot traffic so individual commands can be sent and analysed separately
-*	Challenge: To verify your findings from the dynamic analysis of the botnet behaviour, try to reverse engineer the bot agent code and statically analyse the code.
+1. Identifying botnet network connections and traffic, filtering out unrelated traffic using appropriate tools such as Wireshark.
+2. Identify types of traffic, reconnaissance/command and control traffic.
+3. Identify specific botnet commands and responses.
+4. Decode botnet traffic if necessary – some may be encoded/encrypted! Crack the messages for extra marks.
+5. Challenge: create your own bot traffic so individual commands can be sent and analysed separately.
+*	Challenge: To verify your findings from the dynamic analysis of the botnet behaviour.
 
-The GitHub will be used to assess progress and documentation.
+Your GitHub will be used to assess progress and documentation.
 
 ### IDS Detector [30 marks]
 From your botnet analysis, create and test a basic prototype detection system for the Botnet agent and controller using an IDS sensor.  Create IDS rules/signatures to detect the bot activity and not too many false positives. This section could show the Snort rules with descriptions of how they work, and screenshots of the testing/outputs and discussion on this. 
 
-The GitHub will be used to assess progress and documentation.
+Your GitHub will be used to assess progress and documentation.
 
 ### References/Presentation [10 marks]
 
