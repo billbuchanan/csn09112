@@ -66,6 +66,9 @@ The controller and the bot should be placed on different hosts, and then enabled
 
 <img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/bf575ff9-42f5-44c7-87b5-f543d0c44ce7" />
 
+To test and capture traffic, you can also run on the same host, and within different console windows:
+
+<img width="1990" height="912" alt="image" src="https://github.com/user-attachments/assets/dceb9ba6-4f86-4ebb-bd24-ea072018add3" />
 
 ## Marking schedule
 
