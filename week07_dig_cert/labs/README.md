@@ -1,5 +1,9 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
+If you are using Apporto, the setup is:
+
+<img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/0ac23737-ee20-41c5-8c73-896865e77616" />
+
 # Ciphers, Digital Certificates and Coursework Setup
 
 The aim of this lab is to give an introduction to ciphers, basic encoding/decoding techniques and frequency analysis, as to provide some fundamental understanding. Activities include decoding a range of ciphers and simple calculations. 
