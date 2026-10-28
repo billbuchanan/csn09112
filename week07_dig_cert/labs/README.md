@@ -27,10 +27,10 @@ Use your desktop computer to complete the following:
 | No | Description | Result | 
 | -------|--------|---------|
 | 1 | Go to: [here](http://asecuritysite.com/Challenges) Click on the “Start Challenge” button, and see if you can score over 30 points. |	Your score: |
-| 2 | Now see if you can crack the five minute cracking challenge for: [here](http://asecuritysite.com/challenges/scramb)| Your fastest time? |
+| 2 | Now see if you can crack the five-minute cracking challenge for: [here](http://asecuritysite.com/challenges/scramb)| Your fastest time? |
 
 
-##  Digital Certificates
+##  B Digital Certificates
 1. We can also create a short Python script to try to crack the same certificates.
 
 Boot up your Linux VM, and download the following archive: 
@@ -100,32 +100,34 @@ Can you modify the code so that it shows other details from the certificate, suc
 
 Ref: https://pyopenssl.org/en/0.15.1/api/crypto.html#x509name-objects
 
-## D Coursework
+## C Coursework
 The coursework specification is at: [here](https://github.com/billbuchanan/csn09112/tree/master/coursework)
 
-Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, they pass secret messages to each other. Your first task is to analyse the messages they send and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the presence of the bot.
+Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, they pass secret messages to each other. Your first task is to analyse the messages they send and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the bot.
 
- 
-![Figure 1: Coursework setup](https://github.com/billbuchanan/csn09112/blob/master/zadditional/coursework01.png)
+<img width="1188" height="761" alt="image" src="https://github.com/user-attachments/assets/ba78591c-b23f-4851-8540-52a9211ec0c5" />
 
+## D	Coursework setup
+You can complete your coursework either on Apporto or within AWS.  This section will set up your environment for Snort and the Botnet for Linux and Windows. If you are using Apporto, continue to Section D.2.
 
-## D	Coursework setup (AWS)
-You can complete your coursework either on vSoC or within AWS.  This section will setup your environment for Snort and the Botnet for Linux and Windows 2022.
-
-### D.1	Setup Windows
-Set up your Windows 2022 for a remote desktop connection (see a previous lab). The steps are then:
+### D.1	Setup Windows (AWS)
+If you are using AWS, set up your Windows 2022 for a remote desktop connection (see a previous lab). The steps are then:
 
 * Install .NET 2.0 and .NET 3.0. For this, select Server Manager, and then add “.NET Framework 3.5 Features” (as shown in Figure 2). 
 * Install WinPCap from https://www.winpcap.org/.
 * Install Wireshark from https://www.wireshark.org/download.html.
-* Install Snort 2.9.9.0 from https://www.snort.org/downloads/archive/snort/Snort_2_9_9_0_Installer.exe 
-* Download Botnet.exe and Controller.exe from https://github.com/billbuchanan/csn09112/blob/master/coursework/c.zip
-* Extract Botnet.exe and Controller.exe to the c:\botnet folder.
-* Navigate to c:\botnet from the command line, and test that Botnet.exe will run.
+* Install Snort 2.9.9.0 from https://www.snort.org/downloads/archive/snort/Snort_2_9_9_0_Installer.exe
 
 <img width="714" height="512" alt="image" src="https://github.com/user-attachments/assets/dc2312c5-2892-4cb3-b029-f7439101cfe3" />
 
 Figure 2: Installing .NET 3.5 Features
+
+### D.2	Running bot on Windows
+Now: 
+
+* Download Botnet.exe and Controller.exe from [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/c.zip).
+* Extract Botnet.exe and Controller.exe to the c:\botnet folder.
+* Navigate to c:\botnet from the command line, and test that Botnet.exe will run.
 
 ### D.2	Setup Linux
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
@@ -141,7 +143,7 @@ This should extract the files of botnet.exe and controller.exe. The controller w
 
 Figure 3: Opening up Ports 5,000 to 5,100 on Linux
   
-You now need to install Mono on your AWS Linux instance. Details are [here](https://gist.github.com/yetanotherchris/42b429059e5fe1b3f7bb4169f5706c00) or on Ubuntu [here](https://linuxgenie.net/install-mono-ubuntu-24-04/).
+If you are using AWS, you now need to install Mono on your AWS Linux instance. Details are [here](https://gist.github.com/yetanotherchris/42b429059e5fe1b3f7bb4169f5706c00) or on Ubuntu [here](https://linuxgenie.net/install-mono-ubuntu-24-04/).
 
 Next, run controller.exe (Figure 4) with:
 
@@ -156,7 +158,7 @@ Figure 4: Running the controller.exe
 There will be no network connections shown yet, as we now need to run the Botnet from the Windows instance.
 
 ### D.3	Running the bot
-Now we will run the bot, and make a connection. For this determine the public IP address of the Linux instance, and then run the bot with this address as an argument. For example, if the IP address of your Linux instance is 54.205.20.103, the bot can be run with:
+Now we will run the bot, and make a connection. For this, determine the public IP address of the Linux instance, and then run the bot with this address as an argument. For example, if the IP address of your Linux instance is 54.205.20.103, the bot can be run with:
 ```
 C:\> b 54.205.20.103 XXXXXXXX
 ```
