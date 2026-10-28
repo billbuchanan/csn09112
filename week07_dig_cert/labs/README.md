@@ -1,9 +1,5 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
-If you are using Apporto, the setup is:
-
-<img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/0ac23737-ee20-41c5-8c73-896865e77616" />
-
 # Ciphers, Digital Certificates and Coursework Setup
 
 The aim of this lab is to give an introduction to ciphers, basic encoding/decoding techniques and frequency analysis, as to provide some fundamental understanding. Activities include decoding a range of ciphers and simple calculations. 
@@ -110,6 +106,10 @@ The coursework specification is at: [here](https://github.com/billbuchanan/csn09
 Overall, you must analyse the operation of a bot and a controller, and where the controller waits for a network connection from the bot (Figure 1). Once connected, they pass secret messages to each other. Your first task is to analyse the messages they send and try and crack them. You can either use your AWS instances or vSoC 2. In the second part of the coursework, we will use Snort to detect the bot.
 
 <img width="1188" height="761" alt="image" src="https://github.com/user-attachments/assets/ba78591c-b23f-4851-8540-52a9211ec0c5" />
+
+If you are using Apporto, the setup is:
+
+<img width="1810" height="981" alt="image" src="https://github.com/user-attachments/assets/0ac23737-ee20-41c5-8c73-896865e77616" />
 
 ## D	Coursework setup
 You can complete your coursework either on Apporto or within AWS.  This section will set up your environment for Snort and the Botnet for Linux and Windows. If you are using Apporto, continue to Section D.2.
