@@ -1,5 +1,9 @@
 # Creating ML-Keys
-Initially we can define our region, and create an ML-KEM-768 key:
+With ML-KEM, Bob creates a secret to share with Alice. He will encapsulate it with Alice's ML-KEM public key, and then she will decapulate it with her ML-KEM private key:
+
+<img width="1393" height="925" alt="image" src="https://github.com/user-attachments/assets/2e63a007-72a9-47c7-85d4-da86de50fb17" />
+
+Initially Alice define the AWS region, and creates an ML-KEM-768 key pair in the KMS:
 
 ```
 ~ $ export AWS_DEFAULT_REGION=us-east-1
