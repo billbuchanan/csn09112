@@ -129,9 +129,9 @@ Figure 2: Installing .NET 3.5 Features
 ### D.2	Running bot on Windows
 Now: 
 
-* Download Botnet.exe and Controller.exe from [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/c.zip).
-* Extract Botnet.exe and Controller.exe to the c:\botnet folder.
-* Navigate to c:\botnet from the command line, and test that Botnet.exe will run.
+* Download b.exe and c.exe from [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip) or [here](http://asecuritysite.com/cw_2026_2027.zip).
+* Extract b.exe and c.exe to the c:\botnet folder.
+* Navigate to c:\botnet from the command line, and test that b.exe will run.
 
 ### D.2	Setup Linux
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
