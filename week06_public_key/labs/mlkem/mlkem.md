@@ -52,7 +52,7 @@ Next, we can Bob will create a secret key and encapsulate it with Alice's public
 }
 ```
 
-Bob now can see the shared secret with: 
+Bob can now see the shared secret with: 
 
 ```
 ~ $ jq -r '.SharedSecret' encapsulated.json   | base64 --decode > secret1.bin
@@ -83,3 +83,11 @@ xlnZBlCguX0YQ/6CrhljK8vid3rB0RjLmnNOfr9UZkQ=
 ~ $ cat secret2.bin | base64
 xlnZBlCguX0YQ/6CrhljK8vid3rB0RjLmnNOfr9UZkQ=
 ```
+## Note
+In real life, if we do not want to use the key ID, we can use OpenSSL to encapsulate the secret:
+
+```
+~ $ aws kms get-public-key  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"  --query PublicKey  --output text > alice_pub.pem
+openssl pkeyutl -encap -inkey alice_pub.pem -pubin -secret shared_sender.bin -out ciphertext.bin
+```
+
