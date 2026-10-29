@@ -84,7 +84,7 @@ xlnZBlCguX0YQ/6CrhljK8vid3rB0RjLmnNOfr9UZkQ=
 xlnZBlCguX0YQ/6CrhljK8vid3rB0RjLmnNOfr9UZkQ=
 ```
 ## Note
-In real life, if we do not want to use the key ID, we can use OpenSSL to encapsulate the secret:
+In real life, if we do not want to use the key ID for the key encapsulation, we can use OpenSSL to encapsulate the secret:
 
 ```
 ~ $ aws kms get-public-key  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"  --query PublicKey  --output text > alice_pub.pem
