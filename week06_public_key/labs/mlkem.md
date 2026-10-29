@@ -1,8 +1,12 @@
+# Creating ML-Keys
+Initially we can define our region, and create an ML-KEM-768 key:
+
+```
 ~ $ export AWS_DEFAULT_REGION=us-east-1
 ~ $ aws kms create-key  --key-spec ML_KEM_768 --key-usage ENCAPSULATE_DECAPSULATE --description "ML-KEM-768 keys"
 {
     "KeyMetadata": {
-        "AWSAccountId": "103269750866",
+        "AWSAccountId": "XXXXXXXXXXX",
         "KeyId": "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25",
         "Arn": "arn:aws:kms:us-east-1:103269750866:key/abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25",
         "CreationDate": "2026-10-29T20:27:26.425000+00:00",
@@ -17,11 +21,15 @@
         "EncapsulationAlgorithms": [
             "ML_KEM"
         ],
-~ $ aws kms get-public-key  --key-id "1a4add68-8bf3-49f9-a7ef-fc0ceaa793cf"  --query PublicKey  --output text
+```
+Now we can extract the public key with:
 
-aws: [ERROR]: An error occurred (NotFoundException) when calling the GetPublicKey operation: Key 'arn:aws:kms:us-east-1:103269750866:key/1a4add68-8bf3-49f9-a7ef-fc0ceaa793cf' does not exist
+```
+
 ~ $ aws kms get-public-key  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"  --query PublicKey  --output text
 MIIEsjALBglghkgBZQMEBAIDggShAInpfQW0pxGUyPT8UsibDolSuKfRIOnHgn1HksJQTzAlRu4krxvTKlrZfFMcpzuxK/35FCV8ziXkYqYhZF/KxqahsWMnN4awd8lzg7iiG+b6vayjDHk2HVopZFmKfKEzqjSpsIn4i4yXE+rBo3sLNhGWtt2rhhMAF9KHxWV7jqgIAoc0CbJEWTJbgPC7ClP7QyAiB/QabVu6cmUogSN7T1nVobeQNGSKkf7YnI0olrJkBH3mEHzqWBBHM5nVOqfAlklhYxp5KFjVgQSMTz7sMmQDIbvXkKTJzn9rSzDxNGRqPeCir3MFb/S4q0O4c2qCH4/ABXGaAZh8LqNhFpByzirRJhxByfa6hb6cyjW4YKnSwSYVRD3cvWUnzfJ2p4CznLSbOhhDJhOqc/yUCzpJEwioWouSiMRah1jVag67DKuiy5J8BL8xAWR7JrzqeagiEkDiTS2yazEros4GEYGweKv7OUoAnIE1Y350USRojGIcaC8jxHOSePzpnWHQzOC0KWqEwNqHa3cwh7tcC5NKROnUOzF5GH7JKa2hGCjrGIYSYxuIfW6ZSH74U3UEO/KTQBLCj8IEOzbTJeBptSlGCxQRJxrKgF5IAFpnIKDoJGHBF9aVGevimWzLmSaKateUUBhyf0kBpbWMg6AqXG7Iw6PizbwMn5eWIYdgBXLJsHvsyb5HlgRZuynZHP8gWQo0SXZsSO3WCnJZoCOqPR2xpIMgK2E1PlhSlrkwjb0IH96oHltBAz9kOgtVhypMhkOssNeYDfKKQgbXWKBjtn3gfJwrFDUaxG3XgCtKQxZ6w9NJeDi1Ejvnkwt4rJPJXsX8Z9V5Gj/pfGfVOhnVzCRgq5i8DloDN+9SuC2Wrse1dQtyM7vSadHsCztHkBWbPXn6bzrlgLTyxdnheIOiFLdCo+nBMaMlXQh5xuRYF5p5kKqYSyomq8lwq+BJoCwlqFjyO9QqxKX4jHHZbQHRXr80ocIaUcBXd7iJGsZ6reV8YnpWYmF1CWr5w6vrU1mJAKvsEAmcAveCa1PKLqRaD7KHLezFsUU3ziQAo6bRlYfsanSwDzH8tdaEsTf5XzkQsf76yLkBA9TQv1apTwb7uqyLImIMR/K4LERbtLxctHT7ynDAGOryD/GZJ6W7dAZrALoGXjiQWXRUi6XhQpxXthcEBGB3w2y1XhRLUaOVJZRKMxr5GL7WbD0XA3R0VaGMKWlBYrf8t+vTzodqFflQaXiAxlHEwieQsVhWy9FxYZZUlK+Wvn/3mBexWQ5CKY9ViyHneu5pDAiCzb3iJRtTwjW6kTZUWfM8iihlfqr2gw3KnQ3wxrQsS+hXOHZRCmsTrBHka7PHltJDywqXpki4mk1BUY1GsZGYns48r/dJpoIMWqsGre61qwDweYcokxxXB18bsvxBN7YhS3npiv87PKbViMHCkMACQ/0DRvLXWQPAVwmneK45dChceo8QWyP1BFDMJGSHaYGqfUjyfXmHPqgAXSC1zrEmtAZ6bm32fJrLdaNKQ0DrVtZsc3U5kLMhtsCxiLygkErBQ0ZpetFcZRGABL56DXPXb7TAZpPRXWvH38UZ
+```
+
 ~ $ aws kms get-public-key  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"  --query PublicKey  --output text | base64 --decode > mypublic.der
 ~ $ aws kms encapsulate  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"   --encapsulation-algorithm ML_KEM  --output json > encapsulated.json                                                        
 ~ $ cat encapsulated.json 
