@@ -3,7 +3,7 @@ With ML-KEM, Bob creates a secret to share with Alice. He will encapsulate it wi
 
 <img width="1393" height="925" alt="image" src="https://github.com/user-attachments/assets/2e63a007-72a9-47c7-85d4-da86de50fb17" />
 
-Initially Alice define the AWS region, and creates an ML-KEM-768 key pair in the KMS:
+Initially, Alice defines the AWS region, and creates an ML-KEM-768 key pair in the KMS:
 
 ```
 ~ $ export AWS_DEFAULT_REGION=us-east-1
@@ -26,7 +26,7 @@ Initially Alice define the AWS region, and creates an ML-KEM-768 key pair in the
             "ML_KEM"
         ],
 ```
-Now we can extract the public key with:
+Alice can now extract her ML-KEM-768 public key with:
 
 ```
 
@@ -39,7 +39,7 @@ This is a Base-64 format, but can also create a binary format with:
 ```
 ~ $ aws kms get-public-key  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"  --query PublicKey  --output text | base64 --decode > mypublic.der
 ```
-Next we can ensaplate a secret key using the public key:
+Next, we can Bob will create a secret key and encapsulate it with Alice's public key:
 
 ```
 ~ $ aws kms encapsulate  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"   --encapsulation-algorithm ML_KEM  --output json > encapsulated.json                                                        
@@ -52,19 +52,19 @@ Next we can ensaplate a secret key using the public key:
 }
 ```
 
-We can now extract the secret key with:
+Bob now can see the shared secret with: 
 
 ```
 ~ $ jq -r '.SharedSecret' encapsulated.json   | base64 --decode > secret1.bin
 ```
 
-And the ciphertext to send to the other side:
+And then extract the ciphertext for Alice:
 
 ```
 ~ $ jq -r '.SharedSecretCiphertextBlob' encapsulated.json   | base64 --decode > ciphertext.bin
 ```
 
-Once the ciphertext is received, it can be decapulated in the KMS with the private key:
+Once the ciphertext is received, Alice decapsulates in the KMS with her private key:
 
 ```
 ~ $ aws kms decapsulate  --key-id "abcf3ac4-3dbe-43c0-947f-25ca1c3a8b25"    --encapsulation-algorithm ML_KEM    --shared-secret-ciphertext-blob fileb://ciphertext.bin    --query SharedSecret    --output text | base64 --decode > secret2.bin
