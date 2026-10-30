@@ -36,19 +36,19 @@ Use your desktop computer to complete the following:
 Boot up your Linux VM, and download the following archive: 
 
 ```
-# wget https://github.com/billbuchanan/csn09112/blob/master/week07_dig_cert/labs/certs.zip?raw=true
-# mv certs.zip?raw=true certs.zip
-# unzip certs.zip
+wget https://github.com/billbuchanan/csn09112/blob/master/week07_dig_cert/labs/certs.zip?raw=true
+mv certs.zip?raw=true certs.zip
+unzip certs.zip
 ```
 
 Next install pyopenssl with:
 ```
-pip3 install pyopenssl==23
+sudo apt install python3-openssl
 ```
 
 Extract the certificates into the home folder, and then move into that folder. Now use openssl to try a password:
 ```
-openssl pkcs12 -nokeys -in bill01.pfx -passin pass:orange
+openssl pkcs12 -legacy -nokeys -in bill01.pfx -passin pass:orange
 ```
 
 Did you manage to run the script? 
@@ -57,33 +57,27 @@ What password is correct for bill01.pfx?
 
 Now implement the Python script given below (you can use the Repl.it link below for you code):
 
-```Python
-from OpenSSL import crypto
-words=[]
-words.append("coconut")
-words.append("mango")
-words.append("apples")
-words.append("apple")
-words.append("oranges")
-words.append("orange")
-words.append("ankle")
-words.append("password")
-words.append("bill")
-words.append("battery")
+```python
+import subprocess
+
+words = ["coconut", "mango", "apples", "apple", "oranges",
+         "orange", "ankle", "password", "bill", "battery"]
 
 for passwd in words:
-
-  try:
-    p12 = crypto.load_pkcs12(open("fredpfx.pfx", 'rb').read(), passwd.encode())
-    certificate =p12.get_certificate()
-    
-    p12.get_privatekey()
-    print (certificate.get_serial_number())
-    print (certificate.get_issuer().get_components())
-    print (certificate.get_signature_algorithm())
-    print ("Success: "+passwd)
-  except Exception as ex:
-    print (".")
+    r = subprocess.run(
+        ["openssl", "pkcs12", "-legacy", "-nokeys", "-clcerts",
+         "-in", "fredpfx.pfx", "-passin", f"pass:{passwd}"],
+        capture_output=True, text=True)
+    if r.returncode == 0:
+        print("Success:", passwd)
+        # pull out the cert details
+        info = subprocess.run(
+            ["openssl", "x509", "-noout", "-serial", "-issuer", "-text"],
+            input=r.stdout, capture_output=True, text=True)
+        print(info.stdout.split("Signature Algorithm")[0])  # or just print info.stdout
+        break
+    else:
+        print(".")
 ```
 
 You need to install pyopenssl in pip.
