@@ -114,7 +114,7 @@ If you are using AWS, set up your Windows 2022 for a remote desktop connection (
 * Install .NET 2.0 and .NET 3.0. For this, select Server Manager, and then add “.NET Framework 3.5 Features” (as shown in Figure 2). 
 * Install WinPCap from https://www.winpcap.org/.
 * Install Wireshark from https://www.wireshark.org/download.html.
-* Install Snort 2.9.9.0 from https://www.snort.org/downloads/archive/snort/Snort_2_9_9_0_Installer.exe
+* Install Snort 2.9.9.0 from [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/Snort_2_9_20_Installer.x64.exe).
 
 <img width="714" height="512" alt="image" src="https://github.com/user-attachments/assets/dc2312c5-2892-4cb3-b029-f7439101cfe3" />
 
