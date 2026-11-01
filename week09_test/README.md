@@ -1,7 +1,7 @@
 <img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
 
 # Test 1
-You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be no lectures or labs in Week 9. The table you will be given is [here](https://asecuritysite.com/public/table.pdf).
+You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be **no lectures or labs in Week 9**. The table you will be given is [here](https://asecuritysite.com/public/table.pdf).
 
 Time for test: **6-8pm, Thursday, 5 November 2026** (Clusters 1-5, JKCC). Some students will use C30 (you should receive a Teams message if you are using this room).
 
