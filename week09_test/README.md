@@ -7,16 +7,15 @@ Time for test: **6-8pm, Thursday, 5 November 2026** (Clusters 1-5, JKCC). Some s
 
 Test details:
 
-* 1 hour 25 mins (85 mins). Students with additional time will have this time added automatically.
-* Closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc.
+* No lectures or labs in Week 9. I will be online if you have any questions, and will be on campus later in the afternoon.
+* The study guide is on this page.
 * We will give you this table: [here](https://github.com/billbuchanan/csn09112/blob/master/week09_test/test_table.pdf).
-* Desktop computer preferred, unless the student has a need to use their laptop.
-* ASecuritySite can get busy, so please contact me if it slows down. On the day of the test, I will make sure it has enough computing power to cope.
+* ASecuritySite.com [here](https://asecuritysite.com) can get busy, so please contact me if it slows down. On the day of the test, I will make sure it has enough computing power to cope.
 * On the scrambled alphabet question, we will give you this link: [here](https://asecuritysite.com/challenges/scramb).
-* It is a closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc. Python can only be used as a replacement for a calculator, and not to run pre-prepared scripts.
-* If you are to receive additional time, it will be automatically added. 
+* The test time is 1 hour 25 mins (85 mins). Students with additional time will have this time added automatically.
 * If you require separate room arrangements, I will contact you on Teams chat to finalise. The main test is taken in the JKCC clusters, and the additional room will be C30.
-* For practical sections, students can use their virtual desktops, either GNS3 or AWS.
+* For practical sections, students can use their virtual desktop with GNS3 (Kali on public network).
+* Closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc. Python can only be used as a replacement for a calculator, and not to run pre-prepared scripts.
 
 
 Test structure: 
