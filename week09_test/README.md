@@ -15,7 +15,7 @@ Test details:
 * The test time is 1 hour 25 mins (85 mins). Students with additional time will have this time added automatically.
 * If you require separate room arrangements, I will contact you on Teams chat to finalise. The main test is taken in the JKCC clusters, and the additional room will be C30.
 * For practical sections, students can use their virtual desktop with GNS3 (Kali on public network).
-* If not already done, students should share their Apporto link (or GitHub link) before the test.
+* If not already done, you should share their Apporto link (or GitHub link) before the test. Here is an example: [here](https://github.com/billbuchanan/csn09112_coursework). **MAKE SURE IT IS PRIVATE and includes your Apporto share**, and add me as a collaborator.
 * Closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc. Python can only be used as a replacement for a calculator, and not to run pre-prepared scripts.
 
 
