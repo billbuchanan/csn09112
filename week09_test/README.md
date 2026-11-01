@@ -9,11 +9,11 @@ Test details:
 
 * 1 hour 25 mins (85 mins). Students with additional time will have this time added automatically.
 * Closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc.
-* We will give you this table: csn09112/week09_test/test_table.pdf at master.
+* We will give you this table: [here](https://github.com/billbuchanan/csn09112/blob/master/week09_test/test_table.pdf).
 * Desktop computer preferred, unless the student has a need to use their laptop.
 * ASecuritySite can get busy, so please contact me if it slows down. On the day of the test, I will make sure it has enough computing power to cope.
 * On the scrambled alphabet question, we will give you this link: https://asecuritysite.com/challenges/scramb
-* You can use Python, but only as a calculator (and no running of pre-prepared scripts).
+* It is a closed-book test, but students can use Python and/or a calculator (online or handheld). No GenAI, Google, online searching, etc. Python can only be used as a replacement for a calculator, and not to run pre-prepared scripts.
 * If you are to receive additional time, it will be automatically added. 
 * If you require separate room arrangements, I will contact you on Teams chat to finalise. The main test is taken in the JKCC clusters, and the additional room will be C30.
 * For practical sections, students can use their virtual desktops, either GNS3 or AWS.
