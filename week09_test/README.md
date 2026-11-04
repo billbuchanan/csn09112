@@ -3,7 +3,7 @@
 # Test 1
 You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be **no lectures or labs in Week 9**. The table you will be given is [here](https://asecuritysite.com/public/table.pdf).
 
-Time for test: **6-8pm, Thursday, 5 November 2026** (Clusters 1-5, JKCC). Some students will use C30 (you should receive a Teams message if you are using this room).
+Time for test: **6-8pm, Thursday, 5 November 2026** (Clusters 1-5, JKCC). Some students will use C30 (you should receive a Teams message if you are using this room). It counts for 50% of the overall grade for the module.
 
 Test details:
 
