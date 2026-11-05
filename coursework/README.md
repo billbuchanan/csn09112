@@ -3,7 +3,7 @@
 # CSN09112 - Network Security and Cryptography
 Author: Bill Buchanan
 
-The coursework should be submitted via Turnitin (submit.ac.uk) in a PDF format, if possible. The hand-in date is Friday 18 December 2026 (11:55pm). It will be marked as follows:
+The coursework should be submitted via Turnitin (through Moodle) in a PDF format, if possible. The hand-in date is Friday 18 December 2026 (11:55pm). It will be marked as follows:
 
 ## Running the bot and controller
 You can download the Bot onto the Linux machine using:
@@ -74,7 +74,7 @@ To test and capture traffic, you can also run on the same host, and within diffe
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (submit.ac.uk) in a PDF format, if possible. The hand-in date is Friday 18 December 2026 (11:55pm). It will be marked as follows:
+The coursework should be submitted via Turnitin (through Moodle) in a PDF format, if possible. The hand-in date is Friday 18 December 2026 (11:55 pm). It will be marked as follows:
 
 ### Research [20 marks]
 
