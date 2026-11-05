@@ -1,6 +1,11 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/83b22956-3a59-44c5-8b5f-70ebd6cc2c7f" />
+
 
 # Test 1
+
+Note: If you have trouble viewing PDFs on an on-campus computer. Take the URL, and replace github.com with pdfgithub.com.
+
 You will answer the questions with either fixed answers, short explanations or with multiple choice. The test is a closed-book test. Note there will be **no lectures or labs in Week 9**. The table you will be given is [here](https://asecuritysite.com/public/table.pdf).
 
 Time for test: **6-8pm, Thursday, 5 November 2026** (Clusters 1-5, JKCC). Some students will use C30 (you should receive a Teams message if you are using this room). It counts for 50% of the overall grade for the module.
