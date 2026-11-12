@@ -1,4 +1,5 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/6a93cb8d-97d6-4a87-b9fb-993242f89d42" />
+
 
 ## Lab: Ethernet, IP and TCP
 
@@ -60,7 +61,6 @@ What is the MAC address of the local gateway, and which is the manufacturer of t
 
 Identify the packets used for the SYN, SYN/ACK and ACK sequence. Which packets are these:
 
-By tracing the TCP stream, can you view the contents of the CSS file? Give an example of some of the text in it?
 ```
 
 #### L1.3 Start capturing network packets on your main network adapter. 
