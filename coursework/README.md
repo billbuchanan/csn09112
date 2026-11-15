@@ -1,6 +1,6 @@
 <img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/74e1dfa0-4073-4de5-a873-c5dd974589ac" />
 
-# CSN09112 - Network Security and Cryptography
+# CSN09112 - Incident Report for Botnet Analysis and IDS Mitigation
 Author: Bill Buchanan
 
 The coursework should be submitted via Turnitin (through Moodle) in a PDF format, if possible. The hand-in date is Friday 18 December 2026 (11:55pm). It will be marked as follows:
