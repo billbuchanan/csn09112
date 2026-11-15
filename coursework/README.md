@@ -252,7 +252,7 @@ Now, try this approach on the pcap file that you have captured for the coursewor
 Now, try this approach on the pcap file that you have captured for the coursework, and try to detect the commands that the controller sends to the bot.
 
 ## Setting up the bot and the controller
-Run the controller first and it will wait for a connection from the bot. Now run the bot with the IP address of the controller. The bot will run for a short time, and then stop. Make sure that you run Wireshark to listen to the traffic between the bot and the controller. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip). A sample TCP flow analysis gives:
+Run the controller first and it will wait for a connection from the bot. Now run the bot with the IP address of the controller. The bot will run for a short time, and then stop. Make sure that you run Wireshark to listen to the traffic between the bot and the controller. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2026_2027.pcap.zip). A sample TCP flow analysis gives:
 
 <img width="3168" height="1812" alt="image" src="https://github.com/user-attachments/assets/b7be0126-db41-46ed-a44f-a67346cbfe4b" />
 
