@@ -46,7 +46,7 @@ The bot and the controller should connect to each other. A sample Wireshark trac
 Note: **The bot and controller use TCP Ports 5000-5010, so please open them up on your firewall**
 
 ## GitHub
-You must show your progress within a GitHub, and which should be shared with the module leader.
+**You must show your progress within GitHub**, and it should be shared with the module leader (Bill). All submitted work in the PDF report will be assessed against your GitHub.
 
 ## Outline Requirements
 
@@ -74,7 +74,7 @@ To test and capture traffic, you can also run on the same host, and within diffe
 
 ## Marking schedule
 
-The coursework should be submitted via Turnitin (through Moodle) in a PDF format, if possible. The hand-in date is Friday 18 December 2026 (11:55 pm). It will be marked as follows:
+The coursework should be submitted via Turnitin (through Moodle) in a PDF format, if possible. **There should be a reference to your GitHub in the report**, and which should contain documentation related to the incident report (on the reporting of behaviour of the bot and the controller) and mitigation (through your IDS setup). The hand-in date is Friday 18 December 2026 (11:55 pm). It will be marked as follows:
 
 ### Research [20 marks]
 
