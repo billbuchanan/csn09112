@@ -41,7 +41,7 @@ Hello: 40000000 Botnet ID: 320933250
 $$?[+][+].~[+]+]
 ```
 
-The bot and the controller should connect to each other. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw.zip).
+The bot and the controller should connect to each other. A sample Wireshark trace is [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2026_2027.pcap.zip).
 
 Note: **The bot and controller use TCP Ports 5000-5010, so please open them up on your firewall**
 
