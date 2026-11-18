@@ -1,10 +1,10 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/961c87be-1c37-48fe-af02-044b33190613" />
 
 # Splunk Tutorial
 
 ## Question 1.
 
-If you want to see the answers, click [here](https://asecuritysite.com/cyberdata/ch15_02).
+If you want to see the answers, click [here](https://asecuritysite.com/cyberdata/ch15_02). A demo video is [here](https://www.youtube.com/watch?v=bOQmd6B8jGo).
 
 Using Splunk at [link](https://asecuritysite.com:8443) determine the following [PDF](https://asecuritysite.com/public/splunk01.pdf). You will be allocated a login.
 
@@ -26,7 +26,7 @@ Using Splunk at [link](https://asecuritysite.com:8443) determine the following [
 * For the access.log from www1, which is the most popular IP address for accesses? 
 * For the access.log from www1, which is the second most popular IP address for accesses? Refer to the Splunk analysis. For the access.log from www1, there is a parameter named action, which is the most popular value for the action parameter? 
 * Refer to the Splunk analysis. For the access.log from www1, there is a parameter named action, which is the second most popular value for the action parameter? For the access.log from www1, estimate the number of iPad accesses? 
-* For the access.log from www1, what is the top refer domain: Which is the first time for a refer from Google?
+* For the access.log from www1, what is the top refer domain? Which is the first time for a refer from Google?
 * Which is the IP address of the client which is first referred from google.com?
 * Are there any successful accesses to signals.zip? 
 * Refer to the Splunk analysis for secure*.log. How many failed password attempts were there from 194.8.74.23? 
@@ -38,8 +38,8 @@ Using Splunk at [link](https://asecuritysite.com:8443) determine the following [
 * How many SIMULATION games have been successfully purchased? How many SHOOTER games have been successfully purchased? 
 * How many SHOOTER games have been unsuccessfully purchased? 
 * Refer to the Splunk analysis for secure*.log. What day of the week had the least failed password attempts from 194.8.74.23? 
-* For an HTTP GET request, which is the most popular return code For an HTTP GET request, which is the 2nd most popular return code How many IP addresses have accessed the "passwords.pdf" file. 
-* What is/are the return HTTP status code(s) for these accesses? For an HTTP GET request, which is the 2nd most popular return code?
+* For an HTTP GET request, which is the most popular return code? For an HTTP GET request, which is the 2nd most popular return code? How many IP addresses have accessed the "passwords.pdf" file? 
+* What is/are the HTTP status code(s) for these accesses? For an HTTP GET request, which is the 2nd most popular return code?
 
 ## Question 2. 
 We can use regular expressions to find information. For example, to find the number of accesses from an IP address which starts with “182.”, we can use [here]:
@@ -50,7 +50,7 @@ get | regex _raw="182\.\d{1,3}\.\d{1,3}\.\d{1,3}"
 Determine the number of accesses for GET from any address which begins with 182:
 
 ## Question 3. 
-The security team search for an address that is ending with .22, and do a search with [here]:
+The security team search for an address that ends with .22, and does a search with [here]:
 ```
 get | regex _raw="\d{1,3}.\d{1,3}.\d{1,3}.22"
 ```
@@ -93,7 +93,7 @@ We can search for times using regular expressions, such as [here]:
 ```
 get | regex _raw="[0-9]{2}\:22\:[0-9]{2}"
 ```
-How many GET requests where there at 22 minutes past the hour:
+How many GET requests were there at 22 minutes past the hour:
 
 How many GET requests were made at 14 seconds past the minute:
 
