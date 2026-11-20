@@ -84,7 +84,7 @@ Outline which ones have been added:
 We can search for email addresses with [here]:
 
 ```
-get | regex _raw="(?<email>[\w\d\.\-]+\@[\w\d\.]+)""
+get | regex _raw="(?<email>[\w\d\.\-]+\@[\w\d\.]+)"
 ```
 Which email addresses are present:
 
