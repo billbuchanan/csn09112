@@ -122,7 +122,7 @@ splunk stop
 Check that the server is stopped, and restart it with:
 
 ```
-splunk stop
+splunk start
 ```
 
 Next add a new user (user01) and with a password of "snowsnow":
