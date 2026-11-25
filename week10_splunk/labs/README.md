@@ -84,7 +84,7 @@ Outline which ones have been added:
 We can search for email addresses with [here]:
 
 ```
-get | regex _raw="(?<email>[\w\d\.\-]+\@[\w\d\.]+)""
+get | regex _raw="(?<email>[\w\d\.\-]+\@[\w\d\.]+)"
 ```
 Which email addresses are present:
 
@@ -122,7 +122,7 @@ splunk stop
 Check that the server is stopped, and restart it with:
 
 ```
-splunk stop
+splunk start
 ```
 
 Next add a new user (user01) and with a password of "snowsnow":
