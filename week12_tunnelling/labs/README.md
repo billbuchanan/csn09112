@@ -3,7 +3,7 @@
 ## Coursework Prep (Snort on Windows)
 If you prefer Linux, you can follow the main steps of the section, but use Linux commands. 
 
-Set up a Microsoft Windows server (from AWS), the Windows server on Apporto or your laptop, and then install Snort V 2.9 [here](https://www.snort.org/downloads/snort/Snort_2_9_20_Installer.x64.exe) in the folder c:\snort. Next, locate the snort.exe (c:\snort\bin\snort.exe) program and download the coursework as a pcap file [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2026_2027.pcap.zip). Next, create a rules file to detect the connection between the bot and the controller, and save it as cw.rules:
+Set up a Microsoft Windows server (from AWS), the Windows server on Apporto or your laptop, and then install Snort V 2.9 [here](https://www.snort.org/downloads/snort/Snort_2_9_20_Installer.x64.exe) in the folder c:\snort_new. Next, locate the snort.exe (c:\snort_new\bin\snort.exe) program and download the coursework as a pcap file [here](https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2026_2027.pcap.zip). Next, create a rules file to detect the connection between the bot and the controller, and save it as cw.rules:
 
 ```
 # Connection detection
@@ -53,7 +53,8 @@ mkdir log
 Now run with:
 
 ```
-c:\snort\bin\snort.exe -c cw.rules -r cw_2026_2027.pcap -k none -l log
+c:\ cd snort_new\bin
+c:\snort_new\bin> snort.exe -c cw.rules -r cw_2026_2027.pcap -k none -l log
 ```
 The reason for the -k none is that we have checksum errors in the Wireshark packets:
 ```
