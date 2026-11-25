@@ -53,8 +53,7 @@ mkdir log
 Now run with:
 
 ```
-c:\ cd snort_new\bin
-c:\snort_new\bin> snort.exe -c cw.rules -r cw_2026_2027.pcap -k none -l log
+c:\snort_new\bin\snort.exe -c cw.rules -r cw_2026_2027.pcap -k none -l log
 ```
 The reason for the -k none is that we have checksum errors in the Wireshark packets:
 ```
