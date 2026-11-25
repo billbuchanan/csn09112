@@ -15,13 +15,13 @@ alert tcp any any -> any 5004 (msg:"Port 5004";sid:10004)
 alert tcp any any -> any 5005 (msg:"Port 5005";sid:10005)
 
 
-# Content detection (e.g. "bye")
-alert tcp any any -> any 5000 (msg:"Port 5000 command bye"; content:"bye"; sid:11000)
-alert tcp any any -> any 5001 (msg:"Port 5001 command bye"; content:"bye"; sid:11001)
-alert tcp any any -> any 5002 (msg:"Port 5002 command bye"; content:"bye"; sid:11002)
-alert tcp any any -> any 5003 (msg:"Port 5003 command bye"; content:"bye"; sid:11003)
-alert tcp any any -> any 5004 (msg:"Port 5004 command bye"; content:"bye"; sid:11004)
-alert tcp any any -> any 5005 (msg:"Port 5005 command bye"; content:"bye"; sid:11005)
+# Content detection (e.g. "connecting")
+alert tcp any any -> any 5000 (msg:"Port 5000 command connecting"; content:"connecting"; sid:11000)
+alert tcp any any -> any 5001 (msg:"Port 5001 command connecting"; content:"connecting"; sid:11001)
+alert tcp any any -> any 5002 (msg:"Port 5002 command connecting"; content:"connecting"; sid:11002)
+alert tcp any any -> any 5003 (msg:"Port 5003 command connecting"; content:"connecting"; sid:11003)
+alert tcp any any -> any 5004 (msg:"Port 5004 command connecting"; content:"connecting"; sid:11004)
+alert tcp any any -> any 5005 (msg:"Port 5005 command connecting"; content:"connecting"; sid:11005)
 
 # Some additional pre-processor things
 preprocessor stream5_global: track_tcp yes, \
@@ -53,7 +53,7 @@ mkdir log
 Now run with:
 
 ```
-c:\snort\bin\snort.exe -c cw.rules -r cw.pcap -k none -l log
+c:\snort\bin\snort.exe -c cw.rules -r cw_2026_2027.pcap -k none -l log
 ```
 The reason for the -k none is that we have checksum errors in the Wireshark packets:
 ```
@@ -80,7 +80,7 @@ TCP TTL:128 TOS:0x2 ID:55884 IpLen:20 DgmLen:49 DF
 TCP TTL:128 TOS:0x0 ID:55887 IpLen:20 DgmLen:40 DF
 ***A**** Seq: 0x9A031128  Ack: 0xC0DAF1E2  Win: 0x27F8  TcpLen: 20
 
-[**] [1:11000:0] Port 5000 command bye [**]
+[**] [1:11000:0] Port 5000 command connecting [**]
 [Priority: 0] 
 11/13-15:03:13.689070 10.0.0.106:59444 -> 10.0.0.106:5000
 TCP TTL:128 TOS:0x2 ID:55888 IpLen:20 DgmLen:45 DF
@@ -94,28 +94,28 @@ We can see that the connection to Port 5000 was detected twice, and that the "by
 Now we will detect a range of ports with:
 
 ```
-alert tcp any any -> any 5000:5005 (msg:"Command 'bye'"; content:"bye"; sid:11000)
+alert tcp any any -> any 5000:5005 (msg:"Command 'connecting'"; content:"connecting"; sid:11000)
 ```
 
 This now gives:
 
 ```
-[**] [1:11000:0] Command 'bye' [**]
+[**] [1:11000:0] Command 'connecting' [**]
 [Priority: 0] 
 11/13-15:03:13.689070 10.0.0.106:59444 -> 10.0.0.106:5000
 TCP TTL:128 TOS:0x2 ID:55888 IpLen:20 DgmLen:45 DF
 ***AP*** Seq: 0x9A031128  Ack: 0xC0DAF1E2  Win: 0x27F8  TcpLen: 20
 ```
-Next, we can detect the controller response of "MYzJQjYmKdJkBxEe87tDowzbefGKZCYM1VmmRfLf2A4=" with:
+Next, we can detect the controller response of "3a4a6b99ab30d85c56e36409443911d3" with:
 
 ```
-alert tcp any 5000:5005 -> any any (msg:"Command 'MYz Base64 detected'"; content:"MYzJQjYmKdJkBxEe87tDowzbefGKZCYM1VmmRfLf2A4=";nocase; sid:11001)
+alert tcp any 5000:5005 -> any any (msg:"Command 'Looping detected'"; content:"3a4a6b99ab30d85c56e36409443911d3";nocase; sid:11001)
 
 ```
 This gives:
 
 ```
-[**] [1:11001:0] Command 'MYz Base64 detected' [**]
+[**] [1:11001:0] Command 'MYz Looping detected' [**]
 [Priority: 0] 
 11/13-15:03:27.029538 10.0.0.106:5000 -> 10.0.0.106:59446
 TCP TTL:128 TOS:0x2 ID:55911 IpLen:20 DgmLen:86 DF
