@@ -17,6 +17,7 @@ The following are some sample PCAP files (you will need to install Wireshark to 
  
 * IPSec (PCAP file): [here](https://asecuritysite.com/log/ipsec.zip)
 * SSL (PCAP file): [here](https://asecuritysite.com/log/ssl.zip)
+* Tor: [here](https://asecuritysite.com/log/tor.zip)
 * Heartbleed (PCAP file): [here](https://asecuritysite.com/log/heart.zip)
 
 ## Additional
