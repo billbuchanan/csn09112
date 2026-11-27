@@ -120,7 +120,8 @@ function add(uint a, uint b) public view returns (uint) {
 
 In this case, the "public" part makes sure we can see the output of the function, and the "view" part allows it to be stateless (and where we just have to receiver the value without the smart contact remember the state). On Ethereum we normally use the Solidity language to create a smart contract and then compile it into the byte code required for the ledger. First, can we start by entering the Solidity code into Remix [<a href="https://remix.ethereum.org/" target="_blank">here</a>]:
 
-![here](https://asecuritysite.com/public/eth001.png)
+<img width="2264" height="1228" alt="image" src="https://github.com/user-attachments/assets/22efa8ad-64b2-4078-a63d-cce1bafda22f" />
+
 
 Once entered, we can then compile it with the Solidity compiler. It is important to take a note of the compiler version at this stage, as we will need this later:
 
@@ -147,7 +148,7 @@ In another example:
 
 ![image](https://user-images.githubusercontent.com/44439128/205040755-0796dba5-c8ab-4f6e-ad74-5e023e32d4fb.png)
 
-The address of the contract is "0x3a40..", so you can visit it from from: [here](https://sepolia.etherscan.io/address/0x3a407068a13bfef0db1e319c364c153391b158cf). We now need to verify and publish the contact, with click on “Verify and Publish”:
+The address of the contract is "0x3a40..", so you can visit it from: [here](https://sepolia.etherscan.io/address/0x3a407068a13bfef0db1e319c364c153391b158cf). We now need to verify and publish the contact, with click on “Verify and Publish”:
     
 ![here](https://asecuritysite.com/public/eth006.png)   
 
