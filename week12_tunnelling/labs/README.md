@@ -43,6 +43,7 @@ preprocessor stream5_udp: timeout 180
 
 ```
 
+>Note: If snort reports an error stating that the PCAP is "not a regular file", this issue can be resolved by opening the PCAP in wireshark on the Windows device and then saving it as a new file, ensuring to keep the default file type offered. This will then ensure that the PCAP is in the same format that snort expects it to be. 
 
 Now, create a subfolder named log:
 
