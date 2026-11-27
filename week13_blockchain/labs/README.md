@@ -1,4 +1,5 @@
-<img src="https://github.com/billbuchanan/csn09112/blob/master/zadditional/top_csn09112.png"/>
+<img width="1086" height="214" alt="image" src="https://github.com/user-attachments/assets/24af435f-a598-43a0-819c-d92cae38b1b0" />
+
 
 ## Introduction
 This provides an outline of cryptocurrencies and blockchain:
@@ -125,21 +126,22 @@ In this case, the "public" part makes sure we can see the output of the function
 
 Once entered, we can then compile it with the Solidity compiler. It is important to take a note of the compiler version at this stage, as we will need this later:
 
+<img width="2398" height="1222" alt="image" src="https://github.com/user-attachments/assets/24290b75-69d3-4dbc-871d-f3c94dde7606" />
 
-![here](https://asecuritysite.com/public/eth002.png)
    
-Once compiled we can then deploy the smart contract to a test network (Sepolia). For this , we need to connect our Metamask wallet:
+Once compiled, we can then deploy the smart contract to a test network (Sepolia). For this, we need to connect our Metamask wallet:
    
-![here](https://asecuritysite.com/public/eth003.png)   
+<img width="1273" height="572" alt="image" src="https://github.com/user-attachments/assets/6a61c6a8-6d72-4725-8788-19c159401b9f" />
 
 
 Once it has been deployed, we can see our wallet identifies the deployed contract:
     
- ![here](https://asecuritysite.com/public/eth004.png)     
+ <img width="2426" height="1204" alt="image" src="https://github.com/user-attachments/assets/24461552-c7a4-453b-b31c-9766c38d3c4c" />
+
 
 And clicking through gives us the address of the contract, and then viewing it on the explorer, we can see the transaction:
     
-![here](https://asecuritysite.com/public/eth005.png)     
+ <img width="2284" height="846" alt="image" src="https://github.com/user-attachments/assets/959a9393-b5cd-48c2-9f4b-d1bf49a5397e" />
 
 
 The address in the screenshot above is “0x0895..”, so you can click on your own address and view the smart contract in Etherscan. 
@@ -150,37 +152,33 @@ In another example:
 
 The address of the contract is "0x3a40..", so you can visit it from: [here](https://sepolia.etherscan.io/address/0x3a407068a13bfef0db1e319c364c153391b158cf). We now need to verify and publish the contact, with click on “Verify and Publish”:
     
-![here](https://asecuritysite.com/public/eth006.png)   
-
+<img width="2402" height="1058" alt="image" src="https://github.com/user-attachments/assets/a7c73ce4-394b-4b78-bd0a-1da98213f9b3" />
 
 After this, we can define the Compiler Version and the licence
     
- ![here](https://asecuritysite.com/public/eth007.png)   
+<img width="2046" height="1220" alt="image" src="https://github.com/user-attachments/assets/e67daa6a-f536-4cbd-851e-8081f7ed717d" />
 
 We then need to add your code for it to be checked:
     
- ![here](https://asecuritysite.com/public/eth008.png)       
+ <img width="2176" height="1186" alt="image" src="https://github.com/user-attachments/assets/ad9dca07-3a0f-4006-959f-a869bb0074eb" />
 
  It takes around 30 seconds, but, eventually, we should have our code accepted:
     
- ![here](https://asecuritysite.com/public/eth009.png)        
-
+ <img width="2134" height="1224" alt="image" src="https://github.com/user-attachments/assets/d4dedbe1-7ed4-4465-b0c2-4e4768635d65" />
 
 We now have the contract published to the Sepolia test network:
     
-![here](https://asecuritysite.com/public/eth010.png)       
+<img width="2202" height="1146" alt="image" src="https://github.com/user-attachments/assets/29b3d2be-ca5f-4a7b-940e-2628b204ecaf" />
 
-
-Next, by selected the Contract tab, and can view the read parameters. The exposed functions are add(), mul(), sqr(), sqrt() and sub():
+Next, by selecting the Contract tab, we can view the read parameters. The exposed functions are add(), mul(), sqr(), sqrt() and sub():
     
-![here](https://asecuritysite.com/public/eth011.png)       
- 
+<img width="2156" height="1074" alt="image" src="https://github.com/user-attachments/assets/df355108-ad9a-45bd-924a-5f9f890bb952" />
+
 To test, we can just enter the variables for a given function, and get a result:
     
-![here](https://asecuritysite.com/public/eth012.png)       
+<img width="2168" height="1030" alt="image" src="https://github.com/user-attachments/assets/23f60bfd-4fb3-48d9-ab66-6dd077c69a6e" />
  
-Note:You can get Ether for our wallet [here](https://faucet.metamask.io/)
-
+Note: You can get Ether for our wallet [here](https://faucet.metamask.io/)
 
 ## Creating ERC-20 tokens
 Within the Ethereum blockchain, we can record transactions and run smart contracts. These things allow us to run DApps (decentralized applications) and which can support the running of the infrastructure in return for some payment (Ether). A DApp can also create tokens for new currencies, shares in a company or to prove the ownership of an asset. ERC-20 is a standard format for a Fungible Token and which can support the sharing, transfer and storage of tokens. These tokens are supported by the whole of the Ethereum infrastructure and can be easily traded. They support a number of mandatory functions:
@@ -199,7 +197,7 @@ There are also a number of options:
 * Symbol. This is the symbol that the token will use.
 * Decimal. This is the number of decimal places to be used for any transactions.
 
-Now we you create your own token. If you are Bob Smith, then call your token "BobSmithToken", and your currency will be "BobSmith". 
+Now you can create your own token. If you are Bob Smith, then call your token "BobSmithToken", and your currency will be "BobSmith". 
 
 So, let's create a token named "ENUToken" (change the name to your name), and use the tutorial sample from [here](https://github.com/bitfwdcommunity/Issue-your-own-ERC20-token/blob/master/contracts/erc20_tutorial.sol). First, we open up [https://remix.ethereum.org/](https://remix.ethereum.org/), and enter the following Solidy contract:
 
@@ -442,33 +440,35 @@ When you create your own contract, make sure you change the public constructor()
 
 The wallet ID is the public ID of your wallet in Metamask. Now we compile:
 
-![Alt text](https://asecuritysite.com/public/sc01.png)
+<img width="2262" height="1144" alt="image" src="https://github.com/user-attachments/assets/61d35c1f-afcc-49e0-8725-ec9d2fcdd2b7" />
+
 
 Next, we will deploy to the Sepolia test network:
 
-![Alt text](https://asecuritysite.com/public/sc02.png)
+<img width="2408" height="1212" alt="image" src="https://github.com/user-attachments/assets/2a871025-bc28-47de-bc46-9394e6fd4b12" />
 
 After this, our contract will be shown as being pending deployment:
 
-![Alt text](https://asecuritysite.com/public/sc03.png)
+<img width="2426" height="1188" alt="image" src="https://github.com/user-attachments/assets/9775d95d-ade5-47e6-b8c7-b59ae80e769c" />
 
-It will take 10–15 minutes to deploy, but it can be speeded up by increasing the gas limit:
+It will take 10–15 minutes to deploy, but it can be sped up by increasing the gas limit:
 
-![Alt text](https://asecuritysite.com/public/sc04.png)
+<img width="636" height="1060" alt="image" src="https://github.com/user-attachments/assets/c16ac7fb-ba57-4545-ace6-ceda78db003b" />
 
 Once deployed, we can view the contract details:
 
-![Alt text](https://asecuritysite.com/public/sc05.png)
+<img width="2408" height="1190" alt="image" src="https://github.com/user-attachments/assets/c32bcefa-02d5-4649-8f45-8d36aecce264" />
 
 And can then view the transaction for the contract: 
 <!-- [<a href="https://ropsten.etherscan.io/tx/0x70604b7c25c12eea5210c75afaa89879f383dc94b894d570f06925d0d95b7fdb" target="_blank">here</a>] -->
 
-![Alt text](https://asecuritysite.com/public/sc06.png)
+<img width="1455" height="684" alt="image" src="https://github.com/user-attachments/assets/1e61c43f-0c5c-46e1-86ed-5f7ffb44ebee" />
+
 
 And then view the contact: 
 <!-- [here](https://ropsten.etherscan.io/address/0x7db2f938e1037a13dde315634a71a91625542a52")] -->
 
-![Alt text](https://asecuritysite.com/public/sc07.png)
+<img width="2236" height="1196" alt="image" src="https://github.com/user-attachments/assets/3bb53b56-9d2b-4334-8cd1-1f12b7190761" />
 
 Next, we select the Contract tab:
     
