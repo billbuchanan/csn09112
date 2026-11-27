@@ -472,44 +472,52 @@ And then view the contact:
 
 Next, we select the Contract tab:
     
-![Alt text](https://asecuritysite.com/public/sc08.png)
+
+<img width="2156" height="1210" alt="image" src="https://github.com/user-attachments/assets/7c3fe9c8-f3a3-4aee-a134-31e00d90f8dc" />
+
 
 And then select "Verify and Publish" and enter the details of the compiler version (v0.4.26):
 
-![Alt text](https://asecuritysite.com/public/sc09.png)
+<img width="1868" height="1070" alt="image" src="https://github.com/user-attachments/assets/4b860880-d2ef-4086-9555-ac4987fc3878" />
 
-We then need to copy-and-pasete the contract code into the Source Code text box:
 
-![Alt text](https://asecuritysite.com/public/sc10.png)
+We then need to copy-and-paste the contract code into the Source Code text box:
+
+<img width="2174" height="1192" alt="image" src="https://github.com/user-attachments/assets/8304876e-03d4-41fc-bbd9-6f7b58d0548d" />
+
 
 After less than 45 seconds, the contract will be approved:
     
-![Alt text](https://asecuritysite.com/public/sc11.png)
+<img width="2094" height="1210" alt="image" src="https://github.com/user-attachments/assets/245effa9-9a14-4cca-a98b-89e4726fbd94" />
 
-When the contact is run there is a constructor to transfer the tokens to the wallet we have defined (and who will be the owner of the token). We can now go back to the wallet which is specified, to see if the tokens have been transferred:
+When the contract is run, there is a constructor to transfer the tokens to the wallet we have defined (and who will be the owner of the token). We can now go back to the wallet which is specified, to see if the tokens have been transferred:
 
-![Alt text](https://asecuritysite.com/public/sc12.png)
+<img width="2214" height="1146" alt="image" src="https://github.com/user-attachments/assets/7a88b09d-526e-4f64-8375-99170fbd8366" />
+
 
 Next, we can transfer the tokens into our wallet, by defining the contract address:
 
-![Alt text](https://asecuritysite.com/public/sc13.png)
+<img width="2220" height="1152" alt="image" src="https://github.com/user-attachments/assets/c5c52ba7-f294-4e54-894f-560bccff9864" />
+
 
 We will now have our new tokens in the wallet:
 
-![Alt text](https://asecuritysite.com/public/sc14.png)
+<img width="2258" height="1150" alt="image" src="https://github.com/user-attachments/assets/92adf618-6194-454d-9c95-70cd7540f5f9" />
 
 And with:
 
-![Alt text](https://asecuritysite.com/public/sc15.png)
+<img width="2164" height="1126" alt="image" src="https://github.com/user-attachments/assets/69dce86a-d0a6-4b0c-aea8-a547ddaab2de" />
+
 
 We can now transfer the cryptocurrency to another wallet:
 
-![Alt text](https://asecuritysite.com/public/sc16.png)
+<img width="1455" height="644" alt="image" src="https://github.com/user-attachments/assets/2d484a29-dec8-4b1b-8cc0-8ade00153705" />
+
 
 We can view the ENUToken:
 <!-- [here](https://ropsten.etherscan.io/token/0x7db2f938e1037a13dde315634a71a91625542a52)] -->
 
-![Alt text](https://asecuritysite.com/public/sc17.png)
+<img width="2684" height="952" alt="image" src="https://github.com/user-attachments/assets/8e4a4366-c654-4ce7-98ae-2fb0eab19ba7" />
 
 Now answer the following:
 
