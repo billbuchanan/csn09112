@@ -129,13 +129,19 @@ Now:
 
 ### D.2	Setup Linux
 Setup your Linux AWS instance for a remote SSH connection. The steps are then:
-```
-# wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2026_2027.zip?raw=true'
-# mv cw_2026_2027.zip?raw=true cw_2024_2025.zip
-# unzip cw_2026_2027.zip
+```bash
+wget 'https://github.com/billbuchanan/csn09112/blob/master/coursework/cw_2026_2027.zip?raw=true'
+mv cw_2026_2027.zip?raw=true cw_2024_2025.zip
 ```
 
-This should extract the files of botnet.exe and controller.exe. The controller will wait for a connection from the botnet.  The ports used for the connection will range from 5,000 to 5,100, so open up the firewall on your Linux AWS instance (Figure 3).
+You might have to install unzip tool first
+```bash
+sudo apt update
+sudo apt install unzip
+unzip cw_2026_2027.zip
+```
+
+This should extract the files of the botnet b.exe and the controller c.exe. The controller will wait for a connection from the botnet.  The ports used for the connection will range from 5,000 to 5,100, so open up the firewall on your Linux AWS instance (Figure 3).
 
 <img width="824" height="266" alt="image" src="https://github.com/user-attachments/assets/1cba84ae-bede-4f90-ad8c-e2f0ff740714" />
 
@@ -143,10 +149,12 @@ Figure 3: Opening up Ports 5,000 to 5,100 on Linux
   
 If you are using AWS, you now need to install Mono on your AWS Linux instance. Details are [here](https://gist.github.com/yetanotherchris/42b429059e5fe1b3f7bb4169f5706c00) or on Ubuntu [here](https://linuxgenie.net/install-mono-ubuntu-24-04/).
 
-Next, run controller.exe (Figure 4) with:
+Next, install mono if required then run controller.exe (Figure 4) with:
 
-```
-# mono c.exe
+```bash
+sudo apt update
+sudo apt install mono-runtime
+mono c.exe
 ```
 
  <img width="790" height="362" alt="image" src="https://github.com/user-attachments/assets/45fbb40b-190e-473a-9de0-5d7c246bd024" />
